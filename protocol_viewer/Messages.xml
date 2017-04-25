@@ -1,0 +1,3258 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!-- TODO:
+	fix message loader to allow maskmap to use a flags value that is itself found in another maskmap (real fix)
+	fix message loader to allow mask to contain nothing but maskmaps
+	review gameData field 0x04000000, check houses without restrictions and houses without guest lists
+	add outbound F653 (after decal messages.xml parser is updated to handle two messages with the same type)
+-->
+<schema version="0.9">
+
+  <revision version="2006.08.22.1" />
+
+  <datatypes>
+
+    <type name="BYTE" primitive="true" />
+    <type name="WORD" primitive="true" />
+    <type name="PackedWORD" primitive="true" />
+    <type name="DWORD" primitive="true" />
+    <type name="PackedDWORD" primitive="true" />
+    <type name="QWORD" primitive="true" />
+    <type name="float" primitive="true" />
+    <type name="double" primitive="true" />
+    <type name="String" primitive="true" />
+    <type name="WString" primitive="true" />
+
+    <type name="ObjectID" parent="DWORD" />
+    <type name="ResourceID" parent="DWORD" />
+    <type name="SpellID" parent="WORD" />
+    <type name="Boolean" parent="DWORD" />
+
+    <type name="Position" text="The Position structure defines an object's position, orientation and motion.">
+      <member type="PositionFlags" name="flags" />
+      <member type="DWORD" name="landcell" text="the landcell in which the object is located" />
+      <group name="displacement" text="a vector describing the object's position within the landblock containing the landcell">
+        <member type="float" name="x" />
+        <member type="float" name="y" />
+        <member type="float" name="z" />
+      </group>
+      <group name="orientation" text="a quaternion describing the object's orientation">
+        <maskmap name="flags" xor="0x00000078" >
+          <mask value="0x00000008">
+            <member type="float" name="wQuat" />
+          </mask>
+          <mask value="0x00000010">
+            <member type="float" name="xQuat" />
+          </mask>
+          <mask value="0x00000020">
+            <member type="float" name="yQuat" />
+          </mask>
+          <mask value="0x00000040">
+            <member type="float" name="zQuat" />
+          </mask>
+        </maskmap>
+      </group>
+      <maskmap name="flags" >
+        <mask value="0x00000001">
+          <group name="velocity" text="a vector describing the object's velocity">
+            <member type="float" name="dx" />
+            <member type="float" name="dy" />
+            <member type="float" name="dz" />
+          </group>
+        </mask>
+        <mask value="0x000002">
+          <member type="DWORD" name="unknown" />
+        </mask>
+      </maskmap>
+    </type>
+    <type name="Position0" text="A Position structure with an implied flags value of 0.">
+      <member type="DWORD" name="landcell" text="the landcell in which the object is located" />
+      <group name="displacement" text="a vector describing the object's position within the landblock containing the landcell">
+        <member type="float" name="x" />
+        <member type="float" name="y" />
+        <member type="float" name="z" />
+      </group>
+      <group name="orientation" text="a quaternion describing the object's orientation">
+        <member type="float" name="wQuat" />
+        <member type="float" name="xQuat" />
+        <member type="float" name="yQuat" />
+        <member type="float" name="zQuat" />
+      </group>
+    </type>
+
+    <type name="ModelData" text="The ModelData structure defines an object's visual appearance.">
+      <member type="BYTE" name="eleven" text="always 0x11" />
+      <member type="BYTE" name="paletteCount" text="the number of palettes associated with this object" />
+      <member type="BYTE" name="textureCount" text="the number of textures associated with this object" />
+      <member type="BYTE" name="modelCount" text="the number of models associated with this object" />
+      <maskmap name="paletteCount">
+        <mask value="0xFF">
+          <member type="PackedDWORD" name="palette" text="palette ResourceID (minus 0x04000000)" />
+        </mask>
+      </maskmap>
+      <!-- the palettes vector below doesn't seem to work if placed inside the above <mask> entity -->
+      <vector name="palettes" length="paletteCount">
+        <member type="PackedDWORD" name="palette" text="palette ResourceID (minus 0x04000000)" />
+        <member type="BYTE" name="offset" text="The number of palette entries to skip" />
+        <member type="BYTE" name="length" text="The number of palette entries to copy" />
+      </vector>
+      <vector name="textures" length="textureCount">
+        <member type="BYTE" name="index" text="the index of the model we are replacing the texture in" />
+        <member type="PackedDWORD" name="old" text="texture ResourceID (minus 0x05000000)" />
+        <member type="PackedDWORD" name="new" text="texture ResourceID (minus 0x05000000)" />
+      </vector>
+      <vector name="models" length="modelCount">
+        <member type="BYTE" name="index" text="The index of the model" />
+        <member type="PackedDWORD" name="model" text="model ResourceID (minus 0x01000000)" />
+      </vector>
+      <align type="DWORD" />
+    </type>
+
+    <type name="PhysicsData" text="The PhysicsData structure defines an object's physical behavior.">
+      <member type="DWORD" name="flags" text="physics data flags" />
+      <member type="DWORD" name="unknown" />
+      <maskmap name="flags">
+        <mask value="0x00010000">
+          <member type="DWORD" name="byteCount" text="the number of BYTEs that follow" />
+          <vector name="bytes" length="byteCount">
+            <member type="BYTE" name="byte" />
+          </vector>
+          <member type="DWORD" name="unknown10000" />
+        </mask>
+        <mask value="0x00020000">
+          <member type="DWORD" name="unknown20000" />
+        </mask>
+        <mask value="0x00008000">
+          <member type="Position0" name="position" text="object position" />
+        </mask>
+        <mask value="0x00000002">
+          <member type="ResourceID" name="animations" text="animation set ResourceID" />
+        </mask>
+        <mask value="0x00000800">
+          <member type="ResourceID" name="sounds" text="sound set ResourceID" />
+        </mask>
+        <mask value="0x00001000">
+          <member type="ResourceID" name="unknown1000" text="unknown ResourceID" />
+        </mask>
+        <mask value="0x00000001">
+          <member type="ResourceID" name="model" text="model ResourceID" />
+        </mask>
+        <mask value="0x00000020">
+          <member type="ObjectID" name="equipper" text="the creature equipping this object" />
+          <member type="EquipMask" name="equipperSlot" text="the slot in which this object is equipped" />
+        </mask>
+        <mask value="0x00000040">
+          <member type="DWORD" name="equippedCount" text="the number of items equipped by this creature" />
+          <vector name="equipped" length="equippedCount">
+            <member type="ObjectID" name="item" />
+            <member type="EquipMask" name="slot" />
+          </vector>
+        </mask>
+        <mask value="0x00000080">
+          <member type="float" name="scale" text="the size of this object" />
+        </mask>
+        <mask value="0x00000100">
+          <member type="DWORD" name="unknown100" />
+        </mask>
+        <mask value="0x00000200">
+          <member type="DWORD" name="unknown200" />
+        </mask>
+        <mask value="0x00040000">
+          <member type="float" name="unknown40000" />
+        </mask>
+        <mask value="0x00000004">
+          <member type="float" name="dx" text="velocity vector x component" />
+          <member type="float" name="dy" text="velocity vector y component" />
+          <member type="float" name="dz" text="velocity vector z component" />
+        </mask>
+        <mask value="0x00000008">
+          <member type="float" name="unknown8_1" />
+          <member type="float" name="unknown8_2" />
+          <member type="float" name="unknown8_3" />
+        </mask>
+        <mask value="0x00000010">
+          <member type="float" name="rx" text="rotation vector x component" />
+          <member type="float" name="ry" text="rotation vector y component" />
+          <member type="float" name="rz" text="rotation vector z component" />
+        </mask>
+        <mask value="0x00002000">
+          <member type="DWORD" name="unknown2000" />
+        </mask>
+        <mask value="0x00004000">
+          <member type="DWORD" name="unknown4000" />
+        </mask>
+      </maskmap>
+      <member type="WORD" name="unknown1" />
+      <member type="WORD" name="unknown2" />
+      <member type="WORD" name="unknown3" />
+      <member type="WORD" name="unknown4" />
+      <member type="WORD" name="unknown5" />
+      <member type="WORD" name="unknown6" />
+      <member type="WORD" name="unknown7" />
+      <member type="WORD" name="unknown8" />
+      <member type="WORD" name="unknown9" />
+      <align type="DWORD" />
+    </type>
+
+    <type name="GameData" text="The GameData structure defines an object's game behavior.">
+      <member type="DWORD" name="flags1" text="game data flags" />
+      <member type="String" name="name" text="object name" />
+      <member type="PackedDWORD" name="type" text="object type" />
+      <member type="PackedDWORD" name="icon" text="icon ResourceID (minus 0x06000000)" />
+      <member type="ObjectCategoryFlags" name="category" text="object categories" />
+      <member type="ObjectBehaviorFlags" name="behavior" text="object behaviors" />
+      <align type="DWORD" />
+      <maskmap name="behavior">
+        <mask value="0x04000000">
+          <member type="DWORD" name="flags2" text="additional game data flags" />
+        </mask>
+      </maskmap>
+      <base type="GameData1a" />
+      <base type="GameData2a" />
+      <base type="GameData1b" />
+      <align type="DWORD" />
+    </type>
+    <type name="GameData1a">
+      <maskmap name="flags1">
+        <mask value="0x00000001">
+          <member type="String" name="namePlural" text="plural object name (if not specified, use &lt;name&gt; followed by 's' or 'es')" />
+        </mask>
+        <mask value="0x00000002">
+          <member type="BYTE" name="itemSlots" text="number of item slots" />
+        </mask>
+        <mask value="0x00000004">
+          <member type="BYTE" name="packSlots" text="number of pack slots (a pack slot is a slot that may hold a pack or a foci)" />
+        </mask>
+        <mask value="0x00000100">
+          <member type="AmmoType" name="ammunition" text="missile ammunition type" />
+        </mask>
+        <mask value="0x00000008">
+          <member type="DWORD" name="value" text="object value" />
+        </mask>
+        <mask value="0x00000010">
+          <member type="DWORD" name="unknown10" />
+        </mask>
+        <mask value="0x00000020">
+          <member type="float" name="approachDistance" text="distance a player will walk to pick up the object" />
+        </mask>
+        <mask value="0x00080000">
+          <member type="DWORD" name="usableOn" text="the object categories this object may be used on" />
+        </mask>
+        <mask value="0x00000080">
+          <member type="IconHighlight" name="iconHighlight" text="the type of highlight (outline) applied to the object's icon" />
+        </mask>
+        <mask value="0x00000200">
+          <member type="WieldType" name="wieldType" text="the type of wieldable item this is" />
+        </mask>
+        <mask value="0x00000400">
+          <member type="WORD" name="uses" text="the number of uses remaining for this item (also salvage quantity)" />
+        </mask>
+        <mask value="0x00000800">
+          <member type="WORD" name="usesLimit" text="the maximum number of uses possible for this item (also maximum salvage quantity)" />
+        </mask>
+        <mask value="0x00001000">
+          <member type="WORD" name="stack" text="the number of items in this stack of objects" />
+        </mask>
+        <mask value="0x00002000">
+          <member type="WORD" name="stackLimit" text="the maximum number of items possible in this stack of objects" />
+        </mask>
+        <mask value="0x00004000">
+          <member type="ObjectID" name="container" text="the ID of the container holding this object" />
+        </mask>
+        <mask value="0x00008000">
+          <member type="ObjectID" name="equipper" text="the ID of the creature equipping this object" />
+        </mask>
+        <mask value="0x00010000">
+          <member type="EquipMask" name="equipPossible" text="the potential equipment slots this object may be placed in" />
+        </mask>
+        <mask value="0x00020000">
+          <member type="EquipMask" name="equipActual" text="the actual equipment slots this object is currently placed in" />
+        </mask>
+        <mask value="0x00040000">
+          <member type="CoverageMask" name="coverage" text="the parts of the body this object protects" />
+        </mask>
+        <mask value="0x00100000">
+          <member type="BYTE" name="unknown100000" />
+        </mask>
+        <mask value="0x00800000">
+          <member type="BYTE" name="unknown800000" />
+        </mask>
+        <mask value="0x08000000">
+          <member type="WORD" name="unknown8000000" />
+        </mask>
+        <mask value="0x01000000">
+          <member type="float" name="workmanship" text="object workmanship" />
+        </mask>
+        <mask value="0x00200000">
+          <member type="WORD" name="burden" text="total burden of this object" />
+        </mask>
+        <mask value="0x00400000">
+          <member type="SpellID" name="spell" text="the spell cast by this object" />
+        </mask>
+        <mask value="0x02000000">
+          <member type="ObjectID" name="owner" text="the owner of this object" />
+        </mask>
+        <mask value="0x04000000">
+          <member type="DwellingACL" name="acl" text="the access control list for this dwelling object" />
+        </mask>
+        <mask value="0x20000000">
+          <member type="WORD" name="hookTypeUnknown" text="always -1" />
+          <member type="HookType" name="hookType" text="what type of dwelling hook is this" />
+        </mask>
+        <mask value="0x00000040">
+          <member type="ObjectID" name="monarch" text="this player's monarch" />
+        </mask>
+        <mask value="0x10000000">
+          <member type="HookType" name="hookableOn" text="the types of hooks this object may be placed on (-1 for hooks)" />
+        </mask>
+        <mask value="0x40000000">
+          <member type="PackedDWORD" name="iconOverlay" text="icon overlay ResourceID (minus 0x06000000)" />
+        </mask>
+      </maskmap>
+    </type>
+    <type name="GameData2a">
+      <maskmap name="behavior">
+        <mask value="0x04000000">
+          <member type="PackedDWORD" name="iconUnderlay" text="icon underlay ResourceID (minus 0x06000000)" />
+        </mask>
+      </maskmap>
+    </type>
+    <type name="GameData1b">
+      <maskmap name="flags1">
+        <mask value="0x80000000">
+          <member type="MaterialType" name="material" text="the type of material this object is made of" />
+        </mask>
+      </maskmap>
+    </type>
+
+    <type name="AttributeData" text="The AttributeData structure contains information about a character primary.">
+      <member type="DWORD" name="raised" text="points raised" />
+      <member type="DWORD" name="innate" text="innate points" />
+      <member type="DWORD" name="xp" text="XP spent on this attribute" />
+    </type>
+
+    <type name="VitalData" text="The VitalData structure contains information about a character vital.">
+      <member type="DWORD" name="raised" text="points raised" />
+      <member type="DWORD" name="unknown" />
+      <member type="DWORD" name="xp" text="XP spent on this attribute" />
+      <member type="DWORD" name="current" text="current value" />
+    </type>
+
+    <type name="SkillData" text="The SkillData structure contains information about a character skill.">
+      <member type="WORD" name="raised" text="points raised" />
+      <member type="WORD" name="unknown1" />
+      <member type="SkillState" name="state" text="skill state" />
+      <member type="DWORD" name="xp" text="XP spent on this skill" />
+      <member type="DWORD" name="bonus" text="bonus points applied to this skill" />
+      <member type="DWORD" name="diff" text="task difficulty" />
+      <member type="double" name="unknown2" />
+    </type>
+
+    <type name="CharacterPropertyData" text="The CharacterPropertyData structure contains character properties.">
+      <member type="DWORD" name="flags" text="determines which property types appear in the message" />
+      <member type="DWORD" name="unknown1" text="Unknown - always 0x0A" />
+      <maskmap name="flags">
+        <mask value="0x00000001">
+          <member type="WORD" name="dwordCount" text="number of DWORD properties" />
+          <member type="WORD" name="dwordUnknown" text="unknown" />
+          <vector name="dwords" length="dwordCount">
+            <member type="DWORDPropertyID" name="key" text="the property ID" />
+            <member type="DWORD" name="value" text="the value" />
+          </vector>
+        </mask>
+        <mask value="0x00000080">
+          <member type="WORD" name="qwordCount" text="number of QWORD properties" />
+          <member type="WORD" name="qwordUnknown" text="unknown" />
+          <vector name="qwords" length="qwordCount">
+            <member type="QWORDPropertyID" name="key" text="the property ID" />
+            <member type="QWORD" name="value" text="the value" />
+          </vector>
+        </mask>
+        <mask value="0x00000002">
+          <member type="WORD" name="booleanCount" text="number of Boolean properties" />
+          <member type="WORD" name="booleanUnknown" text="unknown" />
+          <vector name="booleans" length="booleanCount">
+            <member type="BooleanPropertyID" name="key" text="the property ID" />
+            <member type="Boolean" name="value" text="Boolean property value (0=False, 1=True)" />
+          </vector>
+        </mask>
+        <mask value="0x00000004">
+          <member type="WORD" name="doubleCount" text="number of Double properties" />
+          <member type="WORD" name="doubleUnknown" text="unknown" />
+          <vector name="doubles" length="doubleCount">
+            <member type="DoublePropertyID" name="key" text="the property ID" />
+            <member type="double" name="value" text="the value" />
+          </vector>
+        </mask>
+        <mask value="0x00000010">
+          <member type="WORD" name="stringCount" text="number of String properties" />
+          <member type="WORD" name="stringUnknown" text="unknown" />
+          <vector name="strings" length="stringCount">
+            <member type="StringPropertyID" name="key" text="the property ID" />
+            <member type="String" name="value" text="the value" />
+          </vector>
+        </mask>
+        <mask value="0x00000040">
+          <member type="WORD" name="resourceCount" text="number of Resource properties" />
+          <member type="WORD" name="resourceUnknown" text="unknown" />
+          <vector name="resources" length="resourceCount">
+            <member type="ResourcePropertyID" name="key" text="the property ID" />
+            <member type="ResourceID" name="value" text="the value" />
+          </vector>
+        </mask>
+        <mask value="0x00000008">
+          <member type="WORD" name="linkCount" text="number of Link properties" />
+          <member type="WORD" name="linkUnknown" text="unknown" />
+          <vector name="links" length="linkCount">
+            <member type="LinkPropertyID" name="key" text="the property ID" />
+            <member type="ObjectID" name="value" text="the value" />
+          </vector>
+        </mask>
+        <mask value="0x00000020">
+          <member type="WORD" name="positionCount" text="number of Position properties" />
+          <member type="WORD" name="positionUnknown" text="unknown" />
+          <vector name="positions" length="positionCount">
+            <member type="PositionPropertyID" name="key" text="the property ID" />
+            <member type="Position0" name="value" text="the value" />
+          </vector>
+        </mask>
+      </maskmap>
+    </type>
+
+    <type name="CharacterVectorData" text="The CharacterVectorData structure contains character property lists.">
+      <member type="DWORD" name="flags" text="determines which property vector types appear in the message" />
+      <member type="DWORD" name="unknown2" text="Unknown - always 1." />
+      <maskmap name="flags">
+        <mask value="0x00000001">
+          <member type="DWORD" name="attributeFlags" text="The attributes included in the character description - this is always 0x1FF" />
+          <maskmap name="attributeFlags">
+            <mask value="0x00000001">
+              <member type="AttributeData" name="strength" text="strength attribute information" />
+            </mask>
+            <mask value="0x00000002">
+              <member type="AttributeData" name="endurance" text="endurance attribute information" />
+            </mask>
+            <mask value="0x00000004">
+              <member type="AttributeData" name="quickness" text="quickness attribute information" />
+            </mask>
+            <mask value="0x00000008">
+              <member type="AttributeData" name="coordination" text="coordination attribute information" />
+            </mask>
+            <mask value="0x00000010">
+              <member type="AttributeData" name="focus" text="focus attribute information" />
+            </mask>
+            <mask value="0x00000020">
+              <member type="AttributeData" name="self" text="self attribute information" />
+            </mask>
+            <mask value="0x00000040">
+              <member type="VitalData" name="health" text="health vital information" />
+            </mask>
+            <mask value="0x00000080">
+              <member type="VitalData" name="stamina" text="stamina vital information" />
+            </mask>
+            <mask value="0x00000100">
+              <member type="VitalData" name="mana" text="mana vital information" />
+            </mask>
+          </maskmap>
+        </mask>
+        <mask value="0x00000002">
+          <member type="WORD" name="skillCount" />
+          <member type="WORD" name="skillUnknown" />
+          <vector name="skills" length="skillCount">
+            <member type="SkillID" name="key" text="skill ID" />
+            <member type="SkillData" name="value" text="skill information" />
+          </vector>
+        </mask>
+        <mask value="0x00000100">
+          <member type="WORD" name="spellbookCount" text="The number of spells in your Spellbook" />
+          <member type="WORD" name="spellbookUnknown" text="Probably indicates what type of data is in this section" />
+          <vector name="spellbook" length="spellbookCount">
+            <member type="DWORD" name="spell" text="The Spell ID." />
+            <member type="float" name="charge" text="The spell's charge.  Ranges from 0.0 to 1.0" />
+          </vector>
+        </mask>
+        <mask value="0x00000200">
+          <member type="DWORD" name="enchantmentMask" text="Enchantment mask." />
+          <maskmap name="enchantmentMask">
+            <mask value="0x0001">
+              <member type="DWORD" name="lifeSpellCount" text="Number of Life Magic enchantments in effect." />
+              <vector name="lifeSpells" length="lifeSpellCount">
+                <member type="Enchantment" name="enchantment" text="Information about the spell." />
+              </vector>
+            </mask>
+            <mask value="0x0002">
+              <member type="DWORD" name="creatureSpellCount" text="Number of Creature Magic enchantments in effect." />
+              <vector name="creatureSpells" length="creatureSpellCount">
+                <member type="Enchantment" name="enchantment" text="Information about the spell." />
+              </vector>
+            </mask>
+            <mask value="0x0004">
+              <member type="Enchantment" name="vitae" text="Vitae Penalty." />
+            </mask>
+          </maskmap>
+        </mask>
+      </maskmap>
+    </type>
+
+    <type name="CharacterOptionData" text="The CharacterOptionData structure contains character options.">
+      <member type="DWORD" name="flags" />
+      <member type="CharacterOptions1" name="options" text="The options in the Character tab (F11 by default)" />
+      <maskmap name="flags">
+        <mask value="0x00000001">
+          <member type="DWORD" name="shortcutCount" text="Number of shortcut items." />
+          <vector name="shortcuts" length="shortcutCount">
+            <member type="DWORD" name="position" text="Position" />
+            <member type="ObjectID" name="target" text="Object ID" />
+            <member type="DWORD" name="unknown3" />
+          </vector>
+        </mask>
+      </maskmap>
+      <member type="DWORD" name="tab1Count" text="Number of spells in the first spelltab." />
+      <vector name="tab1" length="tab1Count">
+        <member type="DWORD" name="spell" text="The Spell's ID" />
+      </vector>
+      <maskmap name="flags">
+        <mask value="0x00000010">
+          <member type="DWORD" name="tab2Count" text="Number of spells in the second spelltab." />
+          <vector name="tab2" length="tab2Count">
+            <member type="DWORD" name="spell" text="The Spell's ID" />
+          </vector>
+          <member type="DWORD" name="tab3Count" text="Number of spells in the third spelltab." />
+          <vector name="tab3" length="tab3Count">
+            <member type="DWORD" name="spell" text="The Spell's ID" />
+          </vector>
+          <member type="DWORD" name="tab4Count" text="Number of spells in the fourth spelltab." />
+          <vector name="tab4" length="tab4Count">
+            <member type="DWORD" name="spell" text="The Spell's ID" />
+          </vector>
+          <member type="DWORD" name="tab5Count" text="Number of spells in the fifth spelltab." />
+          <vector name="tab5" length="tab5Count">
+            <member type="DWORD" name="spell" text="The Spell's ID" />
+          </vector>
+          <member type="DWORD" name="tab6Count" text="Number of spells in the fifth spelltab." />
+          <vector name="tab6" length="tab6Count">
+            <member type="DWORD" name="spell" text="The Spell's ID" />
+          </vector>
+          <member type="DWORD" name="tab7Count" text="Number of spells in the fifth spelltab." />
+          <vector name="tab7" length="tab7Count">
+            <member type="DWORD" name="spell" text="The Spell's ID" />
+          </vector>
+        </mask>
+        <mask value="0x00000008">
+          <member type="WORD" name="fillcompsCount" text="Number of components being tracked" />
+          <member type="WORD" name="fillcompsUnknown" />
+          <vector name="fillcomps" length="fillcompsCount">
+            <member type="DWORD" name="component" text="Component ID" />
+            <member type="DWORD" name="count" text="Number of this component for compbuyer to refill to" />
+          </vector>
+        </mask>
+        <mask value="0x00000020">
+          <member type="DWORD" name="unk20mask3" text="Unknown mask value" />
+        </mask>
+        <mask value="0x00000040">
+          <member type="CharacterOptions2" name="optionFlags" text="Character options" />
+        </mask>
+        <mask value="0x00000100">
+          <member type="DWORD" name="unknown100_1" />
+          <member type="WORD" name="optionStringCount" />
+          <member type="WORD" name="optionStringUnknown" />
+          <vector name="optionStrings" length="optionStringCount">
+            <member type="DWORD" name="key" />
+            <member type="String" name="value" />
+          </vector>
+        </mask>
+        <mask value="0x00000200">
+          <member type="DWORD" name="unknown200_1" />
+          <member type="BYTE" name="unknown200_2" />
+          <member type="BYTE" name="optionPropertyCount" />
+          <vector name="optionProperties" length="optionPropertyCount">
+            <member type="PropertyType" name="type" />
+            <switch name="type">
+              <case value="0x1000008c" text="window property lists for each window">
+                <member type="DWORD" name="unknown" />
+                <member type="DWORD" name="windowCount" />
+                <vector name="windows" length="windowCount">
+                  <member type="PropertyType" name="type" />
+                  <switch name="type">
+                    <case value="0x1000008b" text="a window property list">
+                      <member type="BYTE" name="unknown" />
+                      <member type="BYTE" name="propertyCount" />
+                      <vector name="properties" length="propertyCount">
+                        <member type="PropertyType" name="key" />
+                        <switch name="key">
+                          <case value="0x1000008d" text="chat window title">
+                            <member type="DWORD" name="unknown" />
+                            <member type="SourceType" name="titleSource" />
+                            <switch name="titleSource">
+                              <case value="0x00">
+                                <member type="DWORD" name="stringID" />
+                                <member type="DWORD" name="fileID" />
+                              </case>
+                              <case value="0x01">
+                                <member type="WString" name="value" />
+                              </case>
+                            </switch>
+                            <member type="DWORD" name="unknown_1b" />
+                            <member type="WORD" name="unknown_1c" />
+                          </case>
+                          <case value="0x1000008a" text="chat window enabled">
+                            <member type="DWORD" name="unknown" />
+                            <member type="BYTE" name="value" />
+                          </case>
+                          <case value="0x10000089" text="chat window size (y)">
+                            <member type="DWORD" name="unknown" />
+                            <member type="DWORD" name="value" />
+                          </case>
+                          <case value="0x10000088" text="chat window size (x)">
+                            <member type="DWORD" name="unknown" />
+                            <member type="DWORD" name="value" />
+                          </case>
+                          <case value="0x10000087" text="chat window position (y)">
+                            <member type="DWORD" name="unknown" />
+                            <member type="DWORD" name="value" />
+                          </case>
+                          <case value="0x10000086" text="chat window position (x)">
+                            <member type="DWORD" name="unknown" />
+                            <member type="DWORD" name="value" />
+                          </case>
+                          <case value="0x1000007F" text="chat window display mask">
+                            <member type="DWORD" name="unknown" />
+                            <member type="ChatDisplayMask" name="value" />
+                          </case>
+                        </switch>
+                      </vector>
+                    </case>
+                  </switch>
+                </vector>
+              </case>
+              <case value="0x10000081" text="active window opacity">
+                <member type="DWORD" name="unknown" />
+                <member type="float" name="activeOpacity" />
+              </case>
+              <case value="0x10000080" text="inactive window opacity">
+                <member type="DWORD" name="unknown" />
+                <member type="float" name="inactiveOpacity" />
+              </case>
+            </switch>
+          </vector>
+          <align type="DWORD" />
+        </mask>
+      </maskmap>
+    </type>
+
+    <type name="SourceType" parent="BYTE" text="Chat window string source">
+      <value value="0x00" text="String is Loaded from the localization Dat" />
+      <value value="0x01" text="String value follows inline" />
+    </type>
+    
+    <type name="Enchantment" text="The Enchantment structure describes an active enchantment.">
+      <member type="SpellID" name="spell" text="the spell ID of the enchantment" />
+      <member type="WORD" name="layer" text="identifies the specific enchantment, if the same spell is applied more than once" />
+      <member type="WORD" name="family" text="the family of related spells this enchantment belongs to" />
+      <member type="WORD" name="unknown0" text="unknown" />
+      <member type="DWORD" name="difficulty" text="the difficulty of the spell" />
+      <member type="double" name="elapsedTime" text="the amount of time this enchantment has been active" />
+      <member type="double" name="duration" text="the duration of the spell" />
+      <member type="ObjectID" name="caster" text="the object ID of the creature or item that cast this enchantment" />
+      <member type="DWORD" name="unknown1" text="unknown" />
+      <member type="DWORD" name="unknown2" text="unknown" />
+      <member type="double" name="startTime" text="the time when this enchantment was cast" />
+      <member type="DWORD" name="flags" text="flags that indicate the type of effect the spell has" />
+      <member type="DWORD" name="key" text="along with flags, indicates which attribute is affected by the spell" />
+      <member type="float" name="value" text="the effect value/amount" />
+      <member type="DWORD" name="unknown3" text="unknown" />
+    </type>
+
+    <type name="FellowInfo" text="The FellowInfo structure contains information about a fellowship member.">
+      <member type="ObjectID" name="fellow" text="Fellowship member" />
+      <member type="WORD" name="unknown1" text="unknown1, seems to be 0" />
+      <member type="WORD" name="level" text="level of member" />
+      <member type="DWORD" name="maxHealth" text="Maximum Health" />
+      <member type="DWORD" name="maxStam" text="Maximum Stamina" />
+      <member type="DWORD" name="maxMana" text="Maximum Mana" />
+      <member type="DWORD" name="curHealth" text="Current Health" />
+      <member type="DWORD" name="curStam" text="Current Stamina" />
+      <member type="DWORD" name="curMana" text="Current Mana" />
+      <member type="DWORD" name="shareLoot" text="if 0 then noSharePhatLoot, if 16 (0x0010) then sharePhatLoot" />
+      <member type="String" name="name" text="Name of Member" />
+    </type>
+
+    <type name="FriendsUpdateType" parent="DWORD"  text="The type of the friend change event.">
+      <value value="0x0000" text="Full friends list (at log in)" />
+      <value value="0x0001" text="Friend added" />
+      <value value="0x0002" text="Friend removed" />
+      <value value="0x0004" text="Friend logged in or out" />
+    </type>
+
+    <type name="DwellingACL" text="The DwellingACL contains the access control list for a dwelling object.">
+      <member type="DWORD" name="flags" text="believed to be flags that control the size and content of this structure" />
+      <member type="DWORD" name="open" text="0 = private dwelling, 1 = open to public" />
+      <member type="ObjectID" name="allegiance" text="allegiance monarch (if allegiance access granted)" />
+      <member type="WORD" name="guestCount" text="number of guests on list" />
+      <member type="WORD" name="guestLimit" text="Maximum number of guests on guest list (cottage is 32)" />
+      <vector name="guestList" length="guestCount">
+        <member type="ObjectID" name="guest" text="the ID of the guest" />
+        <member type="Boolean" name="storage" text="0 = dwelling access only, 1 = storage access also" />
+      </vector>
+    </type>
+
+    <type name="DwellingItem" text="The DwellingItem structure contains information about a dwelling purchas or maintenance item.">
+      <member type="DWORD" name="quantityRequired" text="the quantity required" />
+      <member type="DWORD" name="quantityPaid" text="the quantity paid" />
+      <member type="DWORD" name="type" text="the item's object type" />
+      <member type="String" name="name" text="the name of this item" />
+      <member type="String" name="pluralName" text="the plural name of this item (if not specified, use &lt;name&gt; followed by 's' or 'es')" />
+    </type>
+
+    <type name="PropertyType" parent="DWORD" text="The PropertyType value defines the structure and content of a property.">
+      <value value="0x1000007F" text="chat window display mask" />
+      <value value="0x10000080" text="inactive window opacity" />
+      <value value="0x10000081" text="active window opacity" />
+      <value value="0x10000086" text="chat window position (x)" />
+      <value value="0x10000087" text="chat window position (y)" />
+      <value value="0x10000088" text="chat window size (x)" />
+      <value value="0x10000089" text="chat window size (y)" />
+      <value value="0x1000008A" text="chat window enabled" />
+      <value value="0x1000008B" text="a window property list" />
+      <value value="0x1000008C" text="a vector of window property lists" />
+      <value value="0x1000008D" text="chat window title" />
+    </type>
+
+    <type name="PositionFlags" parent="DWORD" text="The PositionFlags value defines the fields present in the Position structure.">
+      <mask value="0x00000001" text="velocity vector is present" />
+      <mask value="0x00000002" text="unknown DWORD is present" />
+      <mask value="0x00000004" text="object is grounded" />
+      <mask value="0x00000008" text="orientation quaternion has no w component" />
+      <mask value="0x00000010" text="orientation quaternion has no x component" />
+      <mask value="0x00000020" text="orientation quaternion has no y component" />
+      <mask value="0x00000040" text="orientation quaternion has no z component" />
+    </type>
+
+    <type name="ObjectCategoryFlags" parent="DWORD" text="Part one of an object's flags">
+      <mask value="0x00000001" text="Melee Weapon" />
+      <mask value="0x00000002" text="Armor" />
+      <mask value="0x00000004" text="Clothing" />
+      <mask value="0x00000008" text="Jewelry" />
+      <mask value="0x00000010" text="Creature (Player/NPC/Monster)" />
+      <mask value="0x00000020" text="Food" />
+      <mask value="0x00000040" text="Pyreals" />
+      <mask value="0x00000080" text="Miscellaneous" />
+      <mask value="0x00000100" text="Missile Weapons/Ammunition" />
+      <mask value="0x00000200" text="Containers" />
+      <mask value="0x00000400" text="Wrapped Fletching Supplies, House Decorations" />
+      <mask value="0x00000800" text="Gems, Pack dolls, Decorative Statues" />
+      <mask value="0x00001000" text="Spell Components" />
+      <mask value="0x00002000" text="Books, Parchment, Scrolls, Signs, Statues" />
+      <mask value="0x00004000" text="Keys, Lockpicks" />
+      <mask value="0x00008000" text="Casting Item (wand, orb, staff)" />
+      <mask value="0x00010000" text="Portal" />
+      <mask value="0x00020000" text="Lockable" />
+      <mask value="0x00040000" text="Trade Notes" />
+      <mask value="0x00080000" text="Mana Stones, Mana Charges" />
+      <mask value="0x00100000" text="Services" />
+      <mask value="0x00200000" text="unknown (no longer plants)" />
+      <mask value="0x00400000" text="Cooking Ingredients and Supplies, Plants, Dye Pots" />
+      <mask value="0x00800000" text="Loose Fletching Supplies" />
+      <mask value="0x01000000" text="unknown" />
+      <mask value="0x02000000" text="unknown" />
+      <mask value="0x04000000" text="Alchemy Ingredients and Supplies, Oils, Dye Vials" />
+      <mask value="0x08000000" text="unknown" />
+      <mask value="0x10000000" text="Lifestone" />
+      <mask value="0x20000000" text="Ust" />
+      <mask value="0x40000000" text="Salvage" />
+      <mask value="0x80000000" text="unknown" />
+    </type>
+
+    <type name="ObjectBehaviorFlags" parent="DWORD" text="Flags related to the use of the item.">
+      <mask value="0x00000001" text="can be opened (false if locked)" />
+      <mask value="0x00000002" text="can be inscribed" />
+      <mask value="0x00000004" text="cannot be picked up" />
+      <mask value="0x00000008" text="is a player" />
+      <mask value="0x00000010" text="is not an npc" />
+      <mask value="0x00000020" text="unknown" />
+      <mask value="0x00000040" text="unknown" />
+      <mask value="0x00000080" text="cannot be selected" />
+      <mask value="0x00000100" text="can be read" />
+      <mask value="0x00000200" text="is a merchant" />
+      <mask value="0x00000400" text="is a pk altar" />
+      <mask value="0x00000800" text="is an npk altar" />
+      <mask value="0x00001000" text="is a door" />
+      <mask value="0x00002000" text="is a corpse" />
+      <mask value="0x00004000" text="can be attuned to (lifestone)" />
+      <mask value="0x00008000" text="adds to health, stamina or mana" />
+      <mask value="0x00010000" text="is a healing kit" />
+      <mask value="0x00020000" text="is a lockpick" />
+      <mask value="0x00040000" text="is a portal" />
+      <mask value="0x00800000" text="is a foci" />
+      <mask value="0x04000000" text="has an extra flags DWORD" />
+    </type>
+
+    <type name="AttrID" parent="DWORD" text="The AttrID identifies a specific Character attribute.">
+      <value value="0x01" text="Strength" />
+      <value value="0x02" text="Endurance" />
+      <value value="0x03" text="Quickness" />
+      <value value="0x04" text="Coordination" />
+      <value value="0x05" text="Focus" />
+      <value value="0x06" text="Self" />
+    </type>
+
+    <type name="VitalID" parent="DWORD" text="The VitalID identifies a specific Character vital (secondary attribute).">
+      <value value="0x01" text="Maximum Health" />
+      <value value="0x03" text="Maximum Stamina" />
+      <value value="0x05" text="Maximum Mana" />
+    </type>
+
+    <type name="CurVitalID" parent="DWORD" text="The CurVitalID identifies a specific Character vital (secondary attribute).">
+      <value value="0x02" text="Current Health" />
+      <value value="0x04" text="Current Stamina" />
+      <value value="0x06" text="Current Mana" />
+    </type>
+
+    <type name="SkillID" parent="DWORD" text="The SkillID identifies a specific Character skill.">
+      <value value="0x01" text="Axe" />
+      <value value="0x02" text="Bow" />
+      <value value="0x03" text="Crossbow" />
+      <value value="0x04" text="Dagger" />
+      <value value="0x05" text="Mace" />
+      <value value="0x06" text="Melee Defense" />
+      <value value="0x07" text="Missile Defense" />
+      <value value="0x09" text="Spear" />
+      <value value="0x0A" text="Staff" />
+      <value value="0x0B" text="Sword" />
+      <value value="0x0C" text="Thrown Weapons" />
+      <value value="0x0D" text="Unarmed Combat" />
+      <value value="0x0E" text="Arcane Lore" />
+      <value value="0x0F" text="Magic Defense" />
+      <value value="0x10" text="Mana Conversion" />
+      <value value="0x12" text="Item Tinkering" />
+      <value value="0x13" text="Assess Person" />
+      <value value="0x14" text="Deception" />
+      <value value="0x15" text="Healing" />
+      <value value="0x16" text="Jump" />
+      <value value="0x17" text="Lockpick" />
+      <value value="0x18" text="Run" />
+      <value value="0x1B" text="Assess Creature" />
+      <value value="0x1C" text="Weapon Tinkering" />
+      <value value="0x1D" text="Armor Tinkering" />
+      <value value="0x1E" text="Magic Item Tinkering" />
+      <value value="0x1F" text="Creature Enchantment" />
+      <value value="0x20" text="Item Enchantment" />
+      <value value="0x21" text="Life Magic" />
+      <value value="0x22" text="War Magic" />
+      <value value="0x23" text="Leadership" />
+      <value value="0x24" text="Loyalty" />
+      <value value="0x25" text="Fletching" />
+      <value value="0x26" text="Alchemy" />
+      <value value="0x27" text="Cooking" />
+      <value value="0x28" text="Salvaging" />
+    </type>
+
+    <type name="SkillState" parent="DWORD" text="The SkillState identifies whether a skill is untrained, trained or specialized.">
+      <value value="0x01" text="Untrained" />
+      <value value="0x02" text="Trained" />
+      <value value="0x03" text="Specialized" />
+    </type>
+
+    <type name="ItemType" parent="DWORD" text="The ItemType specifies whether an object is a pack, a foci, or a regular item.">
+      <value value="0x00" text="item" />
+      <value value="0x01" text="pack" />
+      <value value="0x02" text="foci" />
+    </type>
+
+    <type name="HookType" parent="WORD" text="The HookType identifies the types of dwelling hooks.">
+      <mask value="0x0001" text="floor hook" />
+      <mask value="0x0002" text="wall hook" />
+      <mask value="0x0004" text="ceiling hook" />
+      <mask value="0x0008" text="yard hook" />
+      <mask value="0x0010" text="roof hook" />
+    </type>
+
+    <type name="AmmoType" parent="WORD" text="The AmmoType value describes the type of ammunition a missile weapon uses.">
+      <mask value="0x0000" text="thrown weapon (no launcher required)" />
+      <mask value="0x0001" text="arrow (for bows)" />
+      <mask value="0x0002" text="bolt (for crossbows)" />
+      <mask value="0x0004" text="dart (for atlatls)" />
+    </type>
+
+    <type name="WieldType" parent="BYTE" text="The WieldType value describes a wieldable item's type.">
+      <value value="0x01" text="melee weapon" />
+      <value value="0x02" text="missile weapon" />
+      <value value="0x03" text="missile ammunition" />
+      <value value="0x04" text="shield" />
+    </type>
+
+    <type name="DamageType" parent="DWORD" text="The DamageType identifies the type of damage.">
+      <mask value="0x01" text="Slashing" />
+      <mask value="0x02" text="Piercing" />
+      <mask value="0x04" text="Bludgeoning" />
+      <mask value="0x08" text="Cold" />
+      <mask value="0x10" text="Fire" />
+      <mask value="0x20" text="Acid" />
+      <mask value="0x40" text="Electric" />
+    </type>
+
+    <type name="DamageLocation" parent="DWORD" text="The DamageLocation indicates where damage was done.">
+      <value value="0x00" text="Head" />
+      <value value="0x01" text="Chest" />
+      <value value="0x02" text="Abdomen" />
+      <value value="0x03" text="Upper Arm" />
+      <value value="0x04" text="Lower Arm" />
+      <value value="0x05" text="Hand" />
+      <value value="0x06" text="Upper Leg" />
+      <value value="0x07" text="Lower Leg" />
+      <value value="0x08" text="Foot" />
+    </type>
+
+    <type name="EquipMask" parent="DWORD" text="The EquipMask value describes the equipment slots an item uses.">
+      <mask value="0x00000001" text="head" />
+      <mask value="0x00000002" text="underwear: chest" />
+      <mask value="0x00000004" text="underwear: abdomen" />
+      <mask value="0x00000008" text="underwear: upper arms" />
+      <mask value="0x00000010" text="underwear: lower arms" />
+      <mask value="0x00000020" text="hands" />
+      <mask value="0x00000040" text="underwear: upper legs" />
+      <mask value="0x00000080" text="underwear: lower legs" />
+      <mask value="0x00000100" text="feet" />
+      <mask value="0x00000200" text="outerwear: chest" />
+      <mask value="0x00000400" text="outerwear: abdomen" />
+      <mask value="0x00000800" text="outerwear: upper arms" />
+      <mask value="0x00001000" text="outerwear: lower arms" />
+      <mask value="0x00002000" text="outerwear: upper legs" />
+      <mask value="0x00004000" text="outerwear: lower legs" />
+      <mask value="0x00008000" text="necklace" />
+      <mask value="0x00010000" text="bracelet (right)" />
+      <mask value="0x00020000" text="bracelet (left)" />
+      <mask value="0x00040000" text="ring (right)" />
+      <mask value="0x00080000" text="ring (left)" />
+      <mask value="0x00100000" text="melee weapon" />
+      <mask value="0x00200000" text="shield" />
+      <mask value="0x00400000" text="missile weapon" />
+      <mask value="0x00800000" text="ammunition" />
+      <mask value="0x01000000" text="wand" />
+    </type>
+
+    <type name="CoverageMask" parent="DWORD" text="The CoverageMask value describes what parts of the body an item protects.">
+      <mask value="0x00000002" text="underwear: upper legs" />
+      <mask value="0x00000004" text="underwear: lower legs" />
+      <mask value="0x00000008" text="underwear: chest" />
+      <mask value="0x00000010" text="underwear: abdomen" />
+      <mask value="0x00000020" text="underwear: upper arms" />
+      <mask value="0x00000040" text="underwear: lower arms" />
+      <mask value="0x00000100" text="outerwear: upper legs" />
+      <mask value="0x00000200" text="outerwear: lower legs" />
+      <mask value="0x00000400" text="outerwear: chest" />
+      <mask value="0x00000800" text="outerwear: abdomen" />
+      <mask value="0x00001000" text="outerwear: upper arms" />
+      <mask value="0x00002000" text="outerwear: lower arms" />
+      <mask value="0x00004000" text="head" />
+      <mask value="0x00008000" text="hands" />
+      <mask value="0x00010000" text="feet" />
+    </type>
+
+    <type name="IconHighlight" parent="DWORD" text="The IconHighlight value describes the type of highlight (outline) applied to an icon.">
+      <mask value="0x00000001" text="enchanted item (blue)" />
+      <mask value="0x00000004" text="healing foods (red)" />
+      <mask value="0x00000008" text="mana foods (blue)" />
+      <mask value="0x00000010" text="hearty stamina foods (yellow)" />
+      <mask value="0x00000020" text="fire weapon/ammo (orange)" />
+      <mask value="0x00000040" text="lightning weapon/ammo (purple)" />
+      <mask value="0x00000080" text="cold weapon/ammo (white)" />
+      <mask value="0x00000100" text="acid weapon/ammo (green)" />
+    </type>
+
+    <type name="AttributeHighlightMask" parent="WORD" text="The AttributeHighlightMask selects which creature attributes highlighting is applied to.">
+      <mask value="0x0001" text="Strength" />
+      <mask value="0x0002" text="Endurance" />
+      <mask value="0x0004" text="Quickness" />
+      <mask value="0x0008" text="Coordination" />
+      <mask value="0x0010" text="Focus" />
+      <mask value="0x0020" text="Self" />
+      <mask value="0x0040" text="Health" />
+      <mask value="0x0080" text="Stamina" />
+      <mask value="0x0100" text="Mana" />
+    </type>
+
+    <type name="ArmorHighlightMask" parent="WORD" text="The ArmorHighlightMask selects which armor attributes highlighting is applied to.">
+      <value value="0x0001" text="Armor Level" />
+      <value value="0x0002" text="Slashing Protection" />
+      <value value="0x0004" text="Piercing Protection" />
+      <value value="0x0008" text="Bludgeoning Protection" />
+      <value value="0x0010" text="Cold Protection" />
+      <value value="0x0020" text="Fire Protection" />
+      <value value="0x0040" text="Acid Protection" />
+      <value value="0x0080" text="Electrical Protection" />
+    </type>
+
+    <type name="WandHighlightMask" parent="WORD" text="The WandHighlightMask selects which wand attributes highlighting is applied to.">
+      <value value="0x1000" text="Mana Conversion Bonus" />
+    </type>
+
+    <type name="WeaponHighlightMask" parent="WORD" text="The WeaponHighlightMask selects which weapon attributes highlighting is applied to.">
+      <value value="0x0001" text="Bonus to Attack Skill" />
+      <value value="0x0002" text="Bonus to Melee Defense" />
+      <value value="0x0004" text="Speed" />
+      <value value="0x0008" text="Damage" />
+    </type>
+
+    <type name="MaterialType" parent="DWORD" text="The MaterialType identifies the material an object is made of.">
+      <value value="0x00000001" text="Ceramic" />
+      <value value="0x00000002" text="Porcelain" />
+      <value value="0x00000004" text="Linen" />
+      <value value="0x00000005" text="Satin" />
+      <value value="0x00000006" text="Silk" />
+      <value value="0x00000007" text="Velvet" />
+      <value value="0x00000008" text="Wool" />
+      <value value="0x0000000A" text="Agate" />
+      <value value="0x0000000B" text="Amber" />
+      <value value="0x0000000C" text="Amethyst" />
+      <value value="0x0000000D" text="Aquamarine" />
+      <value value="0x0000000E" text="Azurite" />
+      <value value="0x0000000F" text="Black Garnet" />
+      <value value="0x00000010" text="Black Opal" />
+      <value value="0x00000011" text="Bloodstone" />
+      <value value="0x00000012" text="Carnelian" />
+      <value value="0x00000013" text="Citrine" />
+      <value value="0x00000014" text="Diamond" />
+      <value value="0x00000015" text="Emerald" />
+      <value value="0x00000016" text="Fire Opal" />
+      <value value="0x00000017" text="Green Garnet" />
+      <value value="0x00000018" text="Green Jade" />
+      <value value="0x00000019" text="Hematite" />
+      <value value="0x0000001A" text="Imperial Topaz" />
+      <value value="0x0000001B" text="Jet" />
+      <value value="0x0000001C" text="Lapis Lazuli" />
+      <value value="0x0000001D" text="Lavender Jade" />
+      <value value="0x0000001E" text="Malachite" />
+      <value value="0x0000001F" text="Moonstone" />
+      <value value="0x00000020" text="Onyx" />
+      <value value="0x00000021" text="Opal" />
+      <value value="0x00000022" text="Peridot" />
+      <value value="0x00000023" text="Red Garnet" />
+      <value value="0x00000024" text="Red Jade" />
+      <value value="0x00000025" text="Rose Quartz" />
+      <value value="0x00000026" text="Ruby" />
+      <value value="0x00000027" text="Sapphire" />
+      <value value="0x00000028" text="Smokey Quartz" />
+      <value value="0x00000029" text="Sunstone" />
+      <value value="0x0000002A" text="Tiger Eye" />
+      <value value="0x0000002B" text="Tourmaline" />
+      <value value="0x0000002C" text="Turquoise" />
+      <value value="0x0000002D" text="White Jade" />
+      <value value="0x0000002E" text="White Quartz" />
+      <value value="0x0000002F" text="White Sapphire" />
+      <value value="0x00000030" text="Yellow Garnet" />
+      <value value="0x00000031" text="Yellow Topaz" />
+      <value value="0x00000032" text="Zircon" />
+      <value value="0x00000033" text="Ivory" />
+      <value value="0x00000034" text="Leather" />
+      <value value="0x00000035" text="Armoredillo Hide" />
+      <value value="0x00000036" text="Gromnie Hide" />
+      <value value="0x00000037" text="Reed Shark Hide" />
+      <value value="0x00000039" text="Brass" />
+      <value value="0x0000003A" text="Bronze" />
+      <value value="0x0000003B" text="Copper" />
+      <value value="0x0000003C" text="Gold" />
+      <value value="0x0000003D" text="Iron" />
+      <value value="0x0000003E" text="Pyreal" />
+      <value value="0x0000003F" text="Silver" />
+      <value value="0x00000040" text="Steel" />
+      <value value="0x00000042" text="Alabaster" />
+      <value value="0x00000043" text="Granite" />
+      <value value="0x00000044" text="Marble" />
+      <value value="0x00000045" text="Obsidian" />
+      <value value="0x00000046" text="Sandstone" />
+      <value value="0x00000047" text="Serpentine" />
+      <value value="0x00000049" text="Ebony" />
+      <value value="0x0000004A" text="Mahogany" />
+      <value value="0x0000004B" text="Oak" />
+      <value value="0x0000004C" text="Pine" />
+      <value value="0x0000004D" text="Teak" />
+    </type>
+
+    <type name="EndTradeReason" parent="DWORD" text="The EndTradeReason identifies the reason trading was ended.">
+      <value value="0x00" text="trade ended normally" />
+      <value value="0x02" text="party entered combat mode" />
+      <value value="0x51" text="party moved out of range or cancelled trade" />
+    </type>
+
+    <type name="ConfirmationType" parent="DWORD" text="The ConfirmationType identifies the specific confirmation panel to be displayed.">
+      <value value="0x01" text="&lt;text&gt; would like to swear allegiance to you. Do you accept? (Default is No)" />
+      <value value="0x02" text="&lt;text&gt; Continue? (Default is No)" />
+      <value value="0x04" text="&lt;text&gt; has invited you to join their fellowship. Do you accept? (Default is No)" />
+      <value value="0x05" text="You determine that you have a &lt;text&gt; percent chance to succeed, do you wish to continue? (Default is No)" />
+    </type>
+
+    <type name="ChatMessageType" parent="DWORD" text="The ChatMessageType categorizes chat window messages to control color and filtering.">
+      <value value="0x00" text="Broadcast (e.g. allegiance MOTD)" />
+      <value value="0x02" text="Public Chat" />
+      <value value="0x03" text="Private Tell" />
+      <value value="0x04" text="Outgoing Tell (e.g. 'You tell ...')" />
+      <value value="0x07" text="Magic Spell Results" />
+      <value value="0x0c" text="NPC Chat" />
+      <value value="0x11" text="Player Spellcasting" />
+      <value value="0x12" text="Creature Chat (e.g. 'Fellow warriors, aid me!')" />
+      <value value="0x17" text="Recall (e.g. 'Player is recalling home.')" />
+    </type>
+
+    <type name="GroupChatType" parent="DWORD" text="The GroupChatType identifies the type of group chat message.">
+      <mask value="0x00000800" text="@f - Tell Fellowship" />
+      <mask value="0x00001000" text="@v - Tell Vassals" />
+      <mask value="0x00002000" text="@p - Tell Patron" />
+      <mask value="0x00004000" text="@m - Tell Monarch" />
+      <mask value="0x01000000" text="@c - Tell Co-Vassals" />
+      <mask value="0x02000000" text="@allegiance broadcast - Tell All Allegiance Members" />
+    </type>
+
+    <type name="ChatDisplayMask" parent="QWORD" text="The ChatDisplayMask identifies that types of chat that are displayed in each chat window.">
+      <mask value="0x0000000003912021" text="Gameplay (main chat window only)" />
+      <mask value="0x000000000000c302" text="Mandatory (main chat window only, cannot be disabled)" />
+      <mask value="0x0000000000001004" text="Area Chat" />
+      <mask value="0x0000000000000018" text="Tells" />
+      <mask value="0x0000000000600040" text="Combat" />
+      <mask value="0x0000000000020080" text="Magic" />
+      <mask value="0x0000000000040c00" text="Allegiance" />
+      <mask value="0x0000000000080000" text="Fellowship" />
+      <mask value="0x0000000004000000" text="Errors" />
+      <mask value="0x0000000008000000" text="General Channel" />
+      <mask value="0x0000000010000000" text="Trade Channel" />
+      <mask value="0x0000000020000000" text="LFG Channel" />
+      <mask value="0x0000000040000000" text="Roleplay Channel" />
+    </type>
+
+    <type name="ChatFilterMask" parent="DWORD" text="The ChatFilterMask identifies types of messages that are squelched or filtered (/messagetypes).">
+      <mask value="0x00000004" text="Speech" />
+      <mask value="0x00000008" text="Tell" />
+      <mask value="0x00000040" text="Combat" />
+      <mask value="0x00000080" text="Magic" />
+      <mask value="0x00001000" text="Emote" />
+      <mask value="0x00010000" text="Appraisal" />
+      <mask value="0x00020000" text="Spellcasting" />
+      <mask value="0x00040000" text="Allegiance" />
+      <mask value="0x00080000" text="Fellowship" />
+      <mask value="0x00200000" text="Combat_Enemy" />
+      <mask value="0x00400000" text="Combat_Self" />
+      <mask value="0x00800000" text="Recall" />
+      <mask value="0x01000000" text="Craft" />
+      <mask value="0x02000000" text="Salvaging" />
+      <mask value="0xFFFFFFFF" text="All message types" />
+    </type>
+
+    <type name="StatusMessageType1" parent="DWORD" text="The StatusMessageType1 identifies the specific message to be displayed in the chat window.">
+      <value value="0x001D" text="You're too busy!" />
+      <value value="0x03F7" text="You are too fatigued to attack!" />
+      <value value="0x03F8" text="You are out of ammunition!" />
+      <value value="0x03F9" text="Your missile attack misfired!" />
+      <value value="0x03FA" text="You've attempted an impossible spell path!" />
+      <value value="0X03FE" text="You don't know that spell!" />
+      <value value="0X03FF" text="Incorrect target type" />
+      <value value="0x0400" text="You don't have all the components for this spell." />
+      <value value="0x0401" text="You don't have enough Mana to cast this spell." />
+      <value value="0x0402" text="Your spell fizzled." />
+      <value value="0x0403" text="Your spell's target is missing!" />
+      <value value="0x0404" text="Your projectile spell mislaunched!" />
+      <value value="0x043E" text="You have solved this quest too recently!" />
+      <value value="0x043F" text="You have solved this quest too many times!" />
+      <value value="0x051B" text="You have entered your allegiance chat room." />
+      <value value="0x051C" text="You have left an allegiance chat room." />
+      <value value="0x051D" text="Turbine Chat is enabled." />
+    </type>
+
+    <type name="StatusMessageType2" parent="DWORD" text="The StatusMessageType2 identifies the specific message to be displayed in the chat window.">
+      <value value="0x001E" text="&lt;text&gt; is too busy to accept gifts right now." />
+      <value value="0x002B" text="&lt;text&gt; cannot carry anymore." />
+      <value value="0x03EF" text="&lt;text&gt; is not accepting gifts right now." />
+      <value value="0x046A" text="&lt;text&gt; doesn't know what to do with that." />
+      <value value="0x04D6" text="You have succeeded in specializing your &lt;text&gt; skill!" />
+      <value value="0x04D7" text="You have succeeded in lowering your &lt;text&gt; skill from specialized to trained!" />
+      <value value="0x04D8" text="You have succeeded in untraining your &lt;text&gt; skill!" />
+      <value value="0x04D9" text="Although you cannot untrain your &lt;text&gt; skill, you have succeeded in recovering all the experience you had invested in it." />
+    </type>
+
+    <type name="Effect" parent="DWORD" text="Audio/Visual Effect ID">
+      <value value="0x04" text="War Launch" />
+      <value value="0x05" text="War Land" />
+      <value value="0x06" text="Red Clouds Rising (Strength/Health Buff)" />
+      <value value="0x07" text="Red Clouds Falling (Strength/Health Debuff)" />
+      <value value="0x08" text="Orange Clouds Rising (Coordination Buff)" />
+      <value value="0x09" text="Orange Clouds Falling (Coordination Debuff)" />
+      <value value="0x0A" text="Yellow Clouds Rising (Endurance Buff)" />
+      <value value="0x0B" text="Yellow Clouds Falling (Endurance Debuff)" />
+      <value value="0x0C" text="Green Clouds Rising (Quickness Buff)" />
+      <value value="0x0D" text="Green Clouds Falling (Quickness Debuff)" />
+      <value value="0x0E" text="Cyan Clouds Rising (Self Buff, Lifestone Recall/Tie)" />
+      <value value="0x0F" text="Cyan Clouds Falling (Self Debuff)" />
+      <value value="0x10" text="Purple Clouds Rising (Focus Buff, Portal Recall/Summon/Tie)" />
+      <value value="0x11" text="Purple Clouds Falling (Focus Debuff)" />
+      <value value="0x12" text="Red Bubbles Rising (Weapon Skill Buff)" />
+      <value value="0x13" text="Red Bubbles Falling (Weapon Skill Debuff)" />
+      <value value="0x14" text="Orange Bubbles Rising (Allegiance/Crafting Skill Buff)" />
+      <value value="0x15" text="Orange Bubbles Falling (Allegiance/Crafting Skill Debuff)" />
+      <value value="0x16" text="Yellow Bubbles Rising (Defense Skill Buff)" />
+      <value value="0x17" text="Yellow Bubbles Falling (Defense Skill Debuff)" />
+      <value value="0x18" text="Green Bubbles Rising (Run/Jump Skill Buff)" />
+      <value value="0x19" text="Green Bubbles Falling (Run/Jump Skill Debuff)" />
+      <value value="0x1A" text="Cyan Bubbles Rising (Magic/Alchemy Skill Buff)" />
+      <value value="0x1B" text="Cyan Bubbles Falling (Magic/Alchemy Skill Debuff)" />
+      <value value="0x1C" text="Purple Bubbles Rising (Assessment/Tinkering Skill Buff, Learn Spell)" />
+      <value value="0x1D" text="Purple Bubbles Falling (Assessment/Tinkering Skill Debuff)" />
+      <value value="0x1E" text="Red Stars In (Heal, Infuse Health)" />
+      <value value="0x1F" text="Red Stars Out (Harm, Drain Health)" />
+      <value value="0x20" text="Blue Stars In (Mana Boost, Infuse Mana)" />
+      <value value="0x21" text="Blue Stars Out (Mana Drain, Drain Mana)" />
+      <value value="0x22" text="Yellow Stars In (Revitalize, Infuse Stamina)" />
+      <value value="0x23" text="Yellow Stars Out (Enfeeble, Drain Stamina)" />
+      <value value="0x24" text="Red Stars Rotating Out (Regeneration)" />
+      <value value="0x25" text="Red Stars Rotating In (Fester)" />
+      <value value="0x26" text="Blue Stars Rotating Out (Mana Renewal)" />
+      <value value="0x27" text="Blue Stars Rotating In (Mana Depletion)" />
+      <value value="0x28" text="Yellow Stars Rotating In (Rejuvenation)" />
+      <value value="0x29" text="Yellow Stars Rotating Out (Exhaustion)" />
+      <value value="0x2A" text="Red Shield Rising (Fire Protection)" />
+      <value value="0x2B" text="Red Shield Falling (Fire Vulnerability)" />
+      <value value="0x2C" text="Orange Shield Rising (Piercing Protection)" />
+      <value value="0x2D" text="Orange Shield Falling (Piercing Vulnerability)" />
+      <value value="0x2E" text="Yellow Shield Rising (Blade Protection)" />
+      <value value="0x2F" text="Yellow Shield Falling (Blade Vulnerability)" />
+      <value value="0x30" text="Green Shield Rising (Acid Protection)" />
+      <value value="0x31" text="Green Shield Falling (Acid Vulnerability)" />
+      <value value="0x32" text="Cyan Shield Rising (Cold Protection)" />
+      <value value="0x33" text="Cyan Shield Falling (Cold Vulnerability)" />
+      <value value="0x34" text="Purple Shield Rising (Lightning Protection)" />
+      <value value="0x35" text="Purple Shield Falling (Lightning Vulnerability)" />
+      <value value="0x36" text="Black Shield Rising (Bludgeon Protection, Armor)" />
+      <value value="0x37" text="Black Shield Falling (Bludgeon Vulnerability, Imperil)" />
+      <value value="0x38" text="Red/White Sparks (Flame Bane, Blood Drinker)" />
+      <value value="0x39" text="Red/Black Sparks (Flame Lure, Blood Loather)" />
+      <value value="0x3A" text="Orange/White Sparks (Piercing Bane, Heart Seeker, Strengthen Lock)" />
+      <value value="0x3B" text="Orange/Black Sparks (Piercing Lure, Turn Blade, Weaken Lock)" />
+      <value value="0x3C" text="Yellow/White Sparks (Blade Bane, Defender)" />
+      <value value="0x3D" text="Yellow/Black Sparks (Blade Lure, Lure Blade)" />
+      <value value="0x3E" text="Green/White Sparks (Acid Bane, Swift Killer)" />
+      <value value="0x3F" text="Green/Black Sparks (Acid Lure, Leaden Weapon)" />
+      <value value="0x40" text="Cyan/White Sparks (Frost Bane)" />
+      <value value="0x41" text="Cyan/Black Sparks (Frost Lure)" />
+      <value value="0x42" text="Purple/White Sparks (Bludgeon/Lightning Bane, Hermetic Link)" />
+      <value value="0x43" text="Purple/Black Sparks (Bludgeon/Lightning Lure, Hermetic Void, Dispel)" />
+      <value value="0x48" text="Red Stars Out / Yellow Stars In (Health to Stamina)" />
+      <value value="0x49" text="Red Stars Out / Blue Stars In (Health to Mana)" />
+      <value value="0x4A" text="Yellow Stars Out / Red Stars In (Stamina to Health)" />
+      <value value="0x4B" text="Yellow Stars Out / Blue Stars In (Stamina to Mana)" />
+      <value value="0x4C" text="Blue Stars Out / Red Stars In (Mana to Health)" />
+      <value value="0x4D" text="Blue Stars Out / Yellow Stars In (Mana to Stamina)" />
+      <value value="0x50" text="Fizzle" />
+      <value value="0x57" text="Idle Emote" />
+      <value value="0x58" text="Item Dissolve" />
+      <value value="0x73" text="Portal Bubbles" />
+      <value value="0x76" text="Raise Attribute or Skill" />
+      <value value="0x77" text="Equip Item" />
+      <value value="0x78" text="Unequip Item" />
+      <value value="0x79" text="Give Item" />
+      <value value="0x7A" text="Pick Up Item" />
+      <value value="0x7B" text="Drop Item" />
+      <value value="0x7E" text="Unlock Item" />
+      <value value="0x81" text="Enchantment Expiration" />
+      <value value="0x82" text="Item Out of Mana" />
+      <value value="0x89" text="Gain Level" />
+      <value value="0x8D" text="White/White Sparks (Impenetrability)" />
+      <value value="0x8E" text="White/Black Sparks (Brittlemail)" />
+      <value value="0x91" text="White/Purple Clouds (Life Dispel)" />
+      <value value="0x92" text="White/Cyan Clouds (Creature Dispel)" />
+    </type>
+
+    <type name="DWORDPropertyID" parent="DWORD" text="The DWORDPropertyID identifies a specific Character or Object DWORD property.">
+      <value value="0x02" text="Species" />
+      <value value="0x05" text="Burden" />
+      <value value="0x0A" text="Equipped Slots" />
+      <value value="0x11" text="Rare ID" />
+      <value value="0x13" text="Value" />
+      <value value="0x14" text="Total Pyreals" />
+      <value value="0x18" text="Skill Credits Available" />
+      <value value="0x19" text="Creature Level" />
+      <value value="0x1A" text="Restricted to AC:ToD Purchasers" />
+      <value value="0x1C" text="Armor Level" />
+      <value value="0x1E" text="Rank" />
+      <value value="0x21" text="Bonded" />
+      <value value="0x23" text="Number of Followers" />
+      <value value="0x24" text="Unenchantable" />
+      <value value="0x26" text="Lockpick Difficulty" />
+      <value value="0x2B" text="Deaths" />
+      <value value="0x2D" text="Wand Elemental Damage Bonus: DamageType" />
+      <value value="0x56" text="Minimum Level Restriction" />
+      <value value="0x57" text="Maximum Level Restriction" />
+      <value value="0x58" text="Lockpick Skill Bonus" />
+      <value value="0x59" text="Affects Vital: VitalID" />
+      <value value="0x5A" text="Affects Vital: Amount (also Healing Kit Skill Bonus)" />
+      <value value="0x5B" text="Uses Total" />
+      <value value="0x5C" text="Uses Remaining" />
+      <value value="0x62" text="Date of Birth" />
+      <value value="0x69" text="Workmanship" />
+      <value value="0x6A" text="Spellcraft" />
+      <value value="0x6B" text="Current Mana" />
+      <value value="0x6C" text="Maximum Mana" />
+      <value value="0x6D" text="Activation Requirement - Arcane Lore (Difficulty)" />
+      <value value="0x6E" text="Activation Requirement - Rank" />
+      <value value="0x6F" text="Portal Restriction Flags" />
+      <value value="0x71" text="Gender" />
+      <value value="0x72" text="Attuned" />
+      <value value="0x73" text="Activation Requirement - Skill Level" />
+      <value value="0x75" text="Mana Cost" />
+      <value value="0x7D" text="Age (seconds)" />
+      <value value="0x81" text="XP needed for next point of Vitae Penalty reduction" />
+      <value value="0x83" text="Material" />
+      <value value="0x9E" text="Wield Requirement - Type" />
+      <value value="0x9F" text="Wield Requirement - Attribute" />
+      <value value="0xA0" text="Wield Requirement - Value" />
+      <value value="0xA6" text="Slayer Species" />
+      <value value="0xAA" text="Number of Items Salvaged From" />
+      <value value="0xAB" text="Number of Times Tinkered" />
+      <value value="0xAC" text="Description Format" />
+      <value value="0xAE" text="Pages Used" />
+      <value value="0xAF" text="Pages Total" />
+      <value value="0xB0" text="Activation Requirement - Skill ID" />
+      <value value="0xB1" text="Gemstone Setting Quantity" />
+      <value value="0xB2" text="Gemstone Setting Type" />
+      <value value="0xB3" text="Imbued" />
+      <value value="0xB5" text="Chess Rank" />
+      <value value="0xBC" text="Heritage" />
+      <value value="0xC0" text="Fishing Skill" />
+      <value value="0xC1" text="Keys Held" />
+      <value value="0xCC" text="Elemental Damage Bonus" />
+      <value value="0xDA" text="Augmentation: Reinforcement of the Lugians" />
+      <value value="0xDB" text="Augmentation: Bleeargh's Fortitude" />
+      <value value="0xDC" text="Augmentation: Oswald's Enhancement" />
+      <value value="0xDD" text="Augmentation: Siraluun's Blessing" />
+      <value value="0xDE" text="Augmentation: Enduring Calm" />
+      <value value="0xDF" text="Augmentation: Steadfast Will" />
+      <value value="0xE0" text="Augmentation: Ciandra's Essence" />
+      <value value="0xE1" text="Augmentation: Yoshi's Essence" />
+      <value value="0xE2" text="Augmentation: Jibril's Essence"/>
+      <value value="0xE3" text="Augmentation: Celdiseth's Essence" />
+      <value value="0xE4" text="Augmentation: Koga's Essence"/>
+      <value value="0xE5" text="Augmentation: Shadow of the Seventh Mule" />
+      <value value="0xE6" text="Augmentation: Might of the Seventh Mule" />
+      <value value="0xE7" text="Augmentation: Clutch of the Miser" />
+      <value value="0xE8" text="Augmentation: Enduring Enchantment" />
+      <value value="0xE9" text="Augmentation: Critical Protection" />
+      <value value="0xEA" text="Augmentation: Quick Learner" />
+      <value value="0xEB" text="Augmentation: Ciandra's Fortune" />
+      <value value="0xEC" text="Augmentation: Charmed Smith" />
+      <value value="0xED" text="Augmentation: Innate Renewal" />
+      <value value="0xEE" text="Augmentation: Archmage's Endurance" />
+      <value value="0xF0" text="Augmentation: Enchancement of the Blade Turner" />
+      <value value="0xF1" text="Augmentation: Enchancement of the Arrow Turner" />
+      <value value="0xF2" text="Augmentation: Enchancement of the Mace Turner" />
+      <value value="0xF3" text="Augmentation: Caustic Enhancement" />
+      <value value="0xF4" text="Augmentation: Fiery Enchancement" />
+      <value value="0xF5" text="Augmentation: Icy Enchancement" />
+      <value value="0xF6" text="Augmentation: Storm's Enhancement" />
+      <value value="0x106" text="Titles Earned" />
+    </type>
+
+    <type name="QWORDPropertyID" parent="DWORD" text="The QWORDPropertyID identifies a specific Character or Object QWORD property.">
+      <value value="0x01" text="Total Experience" />
+      <value value="0x02" text="Unassigned Experience" />
+    </type>
+
+    <type name="BooleanPropertyID" parent="DWORD" text="The BooleanPropertyID identifies a specific Character or Object Boolean property.">
+      <value value="0x02" text="Open" />
+      <value value="0x03" text="Locked" />
+      <value value="0x18" text="Hook Visibility" />
+      <value value="0x3F" text="Unlimited Uses" />
+      <value value="0x45" text="Can be Sold" />
+      <value value="0x5B" text="Retained" />
+      <value value="0x63" text="Ivoryable" />
+      <value value="0x64" text="Dyeable" />
+      <value value="0x6E" text="Away From Keyboard" />
+    </type>
+
+    <type name="DoublePropertyID" parent="DWORD" text="The DoublePropertyID identifies a specific Character or Object Double property.">
+      <value value="0x05" text="Mana Rate of Change (points per second)" />
+      <value value="0x1D" text="Melee Defense Bonus (multiplier)" />
+      <value value="0x57" text="Mana Transfer Efficiency" />
+      <value value="0x64" text="Healing Kit Restoration Bonus" />
+      <value value="0x89" text="Mana Stone Chance of Destruction" />
+      <value value="0x90" text="Mana Conversion Bonus (percentage to add)" />
+      <value value="0x95" text="Missile Defense Bonus (multiplier)" />
+      <value value="0x96" text="Magic Defense Bonus (multiplier)" />
+      <value value="0x98" text="Elemental Damage Bonus vs. Monsters (multiplier)" />
+    </type>
+    <type name="StringPropertyID" parent="DWORD" text="The StringPropertyID identifies a specific Character or Object String property.">
+      <value value="0x01" text="Name" />
+      <value value="0x05" text="Title" />
+      <value value="0x07" text="Inscription" />
+      <value value="0x08" text="Inscribed By" />
+      <value value="0x0A" text="Fellowship Name" />
+      <value value="0x0E" text="Usage Instructions" />
+      <value value="0x0F" text="Simple Description" />
+      <value value="0x10" text="Full Description" />
+      <value value="0x15" text="Monarch" />
+      <value value="0x19" text="Can Only Be Activated By" />
+      <value value="0x23" text="Patron" />
+      <value value="0x26" text="Portal Destination" />
+      <value value="0x27" text="Last Tinkered By" />
+      <value value="0x28" text="Imbued By" />
+      <value value="0x2B" text="Date of Birth" />
+    </type>
+
+    <type name="ResourcePropertyID" parent="DWORD" text="The ResourcePropertyID identifies a specific Character or Object Resource property.">
+      <value value="0x08" text="Icon" />
+    </type>
+
+    <type name="LinkPropertyID" parent="DWORD" text="The LinkPropertyID identifies a specific Character or Object Link property.">
+      <value value="0x02" text="Container" />
+      <value value="0x03" text="Equipped By" />
+      <value value="0x0B" text="Last Attacker" />
+      <value value="0x18" text="Allegiance Object" />
+      <value value="0x19" text="Patron" />
+      <value value="0x1A" text="Monarch" />
+      <value value="0x20" text="Owned By" />
+    </type>
+
+    <type name="PositionPropertyID" parent="DWORD" text="The PositionPropertyID identifies a specific Character or Object Position property.">
+      <value value="0x0E" text="Last Corpse Location" />
+    </type>
+
+    <type name="OptionPropertyID" parent="DWORD" text="The OptionPropertyID identifies a specific character option.">
+      <value value="0x00" text="Automatically Repeat Attacks" />
+      <value value="0x01" text="Ignore Allegiance Requests" />
+      <value value="0x02" text="Ignore Fellowship Requests" />
+      <value value="0x0F" text="Share Fellowship Experience" />
+      <value value="0x10" text="Accept Corpse-Looting Permissions" />
+      <value value="0x11" text="Share Fellowship Loot" />
+      <value value="0x12" text="Automatically Accept Fellowship Requests" />
+      <value value="0x19" text="Use Charge Attack" />
+      <value value="0x1B" text="Listen to Allegiance Chat" />
+      <value value="0x23" text="Listen to General Chat" />
+      <value value="0x24" text="Listen to Trade Chat" />
+      <value value="0x25" text="Listen to LFG Chat" />
+      <value value="0x26" text="Listen to Roleplaying Chat" />
+      <value value="0x2A" text="Lead Missle Targets" />
+      <value value="0x2B" text="Use Fast Missles" />
+    </type>
+
+    <type name="CharacterOptions1" parent="DWORD" text="The CharacterOptions1 word contains character options.">
+      <value value="0x00000001" text="unused (was Automatically Create Shortcuts)" />
+      <value value="0x00000002" text="Automatically Repeat Attacks" />
+      <value value="0x00000004" text="Accept Allegiance Requests (Inverted)" />
+      <value value="0x00000008" text="Accept Fellowship Requests (Inverted)" />
+      <value value="0x00000010" text="unused (was Invert Mouse Look Up/Down)" />
+      <value value="0x00000020" text="unused (was Disable House Restriction Effects)" />
+      <value value="0x00000040" text="Let Other Players Give You Items" />
+      <value value="0x00000080" text="Automatically keep combat targets in view" />
+      <value value="0x00000100" text="Display Tooltips" />
+      <value value="0x00000200" text="Attempt to Deceive Other Players" />
+      <value value="0x00000400" text="Run as Default Movement" />
+      <value value="0x00000800" text="Stay in Chat Mode after sending a Message" />
+      <value value="0x00001000" text="Advanced Combet Interface (No Panel)" />
+      <value value="0x00002000" text="Auto Target" />
+      <value value="0x00004000" text="unused (was Right-click mouselook)" />
+      <value value="0x00008000" text="Vivid Targeting Indicator" />
+      <value value="0x00010000" text="unused (was Disable Most Weather Effects)" />
+      <value value="0x00020000" text="Ignore All Trade Requests" />
+      <value value="0x00040000" text="Share Fellowship Experience" />
+      <value value="0x00080000" text="Accept Corpse-Looting Permissions" />
+      <value value="0x00100000" text="Share Fellowship Loot" />
+      <value value="0x00200000" text="Stretch UI" />
+      <value value="0x00400000" text="Show Coordinates Below The Radar" />
+      <value value="0x00800000" text="Display Spell Durations" />
+      <value value="0x01000000" text="unused (was Play Sounds Only When Active Application)" />
+      <value value="0x02000000" text="Disable House Restriction Effects" />
+      <value value="0x04000000" text="Drag Items open secure Trade" />
+      <value value="0x08000000" text="Show Allegiance Logons" />
+      <value value="0x10000000" text="Use Charge Attack" />
+      <value value="0x20000000" text="Automatically Accept Fellowship Requests" />
+      <value value="0x40000000" text="Listen to Allegiance Chat" />
+      <value value="0x80000000" text="Use Crafting Chance of Success Dialog" />
+    </type>
+
+    <type name="CharacterOptions2" parent="DWORD" text="The CharacterOptions2 word contains additional character options.">
+      <value value="0x00000001" text="Always Daylight Outdoors" />
+      <value value="0x00000002" text="Allow Others to See Your Date of Birth" />
+      <value value="0x00000004" text="Allow Others to See Your Chess Rank" />
+      <value value="0x00000008" text="Allow Others to See Your Fishing Skill" />
+      <value value="0x00000010" text="Allow Others to See Your Number of Deaths" />
+      <value value="0x00000020" text="Allow Others to See Your Age" />
+      <value value="0x00000040" text="Display Timestamps" />
+      <value value="0x00000080" text="Salvage Multiple Materials at Once" />
+      <value value="0x00000100" text="Listen to General Chat" />
+      <value value="0x00000200" text="Listen to Trade Chat" />
+      <value value="0x00000400" text="Listen to LFG Chat" />
+      <value value="0x00000800" text="Listen to Roleplaying Chat" />
+      <value value="0x00002000" text="Allow Others to See Your Number of Titles" />
+      <value value="0x00004000" text="Use Main Pack as Default for Picking Up Items" />
+      <value value="0x00008000" text="Lead Missle Targets" />
+      <value value="0x00010000" text="Use Fast Missles" />
+      <value value="0x00020000" text="Filter Language" />
+      <value value="0x00040000" text="Confirm use of Rare Gems" />
+    </type>
+
+    <type name="TurbineChatType" parent="DWORD" text="The TurbineChatType identifies the type of Turbine Chat message.">
+      <value value="0x01" text="inbound message" />
+      <value value="0x03" text="outbound message" />
+      <value value="0x05" text="outbound message acknowledgement" />
+    </type>
+
+    <type name="ResourceType" parent="DWORD" text="The ResourceType identifies the dat file to be used.">
+      <value value="0x01" text="client_portal.dat" />
+      <value value="0x02" text="client_cell_1.dat" />
+      <value value="0x03" text="client_local_English.dat" />
+    </type>
+
+    <type name="CompressionType" parent="BYTE" text="The CompressionType identifies the type of data compression used.">
+      <value value="0x00" text="no compression" />
+      <value value="0x01" text="zlib compression" />
+    </type>
+
+    <type name="GameEvent" parent="DWORD" text="The GameEvent identifies the meaning of the rest of the message.">
+      <value value="0x0004" text="Message Box" />
+      <value value="0x0013" text="Login Character" />
+      <value value="0x0016" text="Retired - Transaction Message" />
+      <value value="0x0020" text="Allegiance Info" />
+      <value value="0x0021" text="Friends List Update" />
+      <value value="0x0022" text="Insert Inventory Item" />
+      <value value="0x0023" text="Wear Item" />
+      <value value="0x0029" text="Title List" />
+      <value value="0x002b" text="Set Title" />
+      <value value="0x0038" text="Retired - Direct Chat" />
+      <value value="0x004C" text="Retired - Add Spell to Spellbook / Cast Spell" />
+      <value value="0x004D" text="Retired - Delete Spell from Spellbook" />
+      <value value="0x004E" text="Retired - Add Enchantment" />
+      <value value="0x004F" text="Retired - Remove Enchantment" />
+      <value value="0x0052" text="Close Container" />
+      <value value="0x0062" text="Approach Vendor" />
+      <value value="0x009C" text="Retired - End Portal Storm" />
+      <value value="0x009D" text="Retired - Mild Portal Storm" />
+      <value value="0x009E" text="Retired - Heavy Portal Storm" />
+      <value value="0x009F" text="Retired - Portal Stormed" />
+      <value value="0x00A0" text="Failure to Give Item" />
+      <value value="0x00A3" text="Fellowship Member Quit" />
+      <value value="0x00A4" text="Fellowship Member Dismissed" />
+      <value value="0x00A7" text="Retired - Quit Fellowship" />
+      <value value="0x00AF" text="Retired - Create Fellowship" />
+      <value value="0x00B0" text="Retired - Recruit Member" />
+      <value value="0x00B1" text="Retired - Dismiss Member" />
+      <value value="0x00B3" text="Retired - Disband Fellowship" />
+      <value value="0x00B4" text="Read Table of Contents" />
+      <value value="0x00B8" text="Read Page" />
+      <value value="0x00C9" text="Identify Object" />
+      <value value="0x0147" text="Group Chat" />
+      <value value="0x014A" text="Retired - Group Chat" />
+      <value value="0x0196" text="Set Pack Contents" />
+      <value value="0x019A" text="Drop from Inventory" />
+      <value value="0x01A4" text="Retired - Remove Enchantment (Silent)" />
+      <value value="0x01A6" text="Retired - Remove Multiple Enchantments" />
+      <value value="0x01A7" text="Attack Completed" />
+      <value value="0x01A8" text="Delete Spell from Spellbook" />
+      <value value="0x01AC" text="Your death." />
+      <value value="0x01AD" text="Kill/Death Message" />
+      <value value="0x01AE" text="Retired - Remove Multiple Enchantments" />
+      <value value="0x01B1" text="Inflict Melee Damage" />
+      <value value="0x01B2" text="Receive Melee Damage" />
+      <value value="0x01B3" text="Other Melee Evade" />
+      <value value="0x01B4" text="Self Melee Evade" />
+      <value value="0x01B8" text="Start Melee Attack" />
+      <value value="0x01C0" text="Update Health" />
+      <value value="0x01C3" text="Age Command Result" />
+      <value value="0x01C7" text="Ready. Previous action complete" />
+      <value value="0x01C8" text="Update Allegiance Info" />
+      <value value="0x01CB" text="Close Assess Panel" />
+      <value value="0x01EA" text="Ping Reply" />
+      <value value="0x01F4" text="Squelched Users List" />
+      <value value="0x01FD" text="Enter Trade" />
+      <value value="0x01FF" text="End Trade" />
+      <value value="0x0200" text="Add Trade Item" />
+      <value value="0x0202" text="Accept Trade" />
+      <value value="0x0203" text="Un-Accept Trade" />
+      <value value="0x0205" text="Reset Trade" />
+      <value value="0x0207" text="Failure to add a trade item" />
+      <value value="0x0208" text="Failure to complete a trade" />
+      <value value="0x021D" text="Display Dwelling Purchase/Maintenance Panel" />
+      <value value="0x0225" text="House Information for Owners" />
+      <value value="0x0226" text="House Information for Non-Owners" />
+      <value value="0x0257" text="House Guest List" />
+      <value value="0x0264" text="Update Item Mana Bar" />
+      <value value="0x0271" text="Houses Available" />
+      <value value="0x0274" text="Confirmation Panel" />
+      <value value="0x0276" text="Confirmation Panel Closed" />
+      <value value="0x027A" text="Allegiance Member Login/out" />
+      <value value="0x028A" text="Display Status Message" />
+      <value value="0x028B" text="Display Parameterized Status Message" />
+      <value value="0x0295" text="Set Turbine Chat Channels" />
+      <value value="0x02BD" text="Tell" />
+      <value value="0x02BE" text="Create Fellowship" />
+      <value value="0x02BF" text="Disband Fellowship" />
+      <value value="0x02C0" text="Add Fellowship Member" />
+      <value value="0x02C1" text="Add Spell to Spellbook" />
+      <value value="0x02C2" text="Add Character Enchantment" />
+      <value value="0x02C3" text="Remove Character Enchantment" />
+      <value value="0x02C5" text="Remove Multiple Character Enchantments" />
+      <value value="0x02C6" text="Remove All Character Enchantments (Silent)" />
+      <value value="0x02C7" text="Remove Character Enchantment (Silent)" />
+      <value value="0x02C8" text="Remove Multiple Character Enchantments (Silent)" />
+      <value value="0x02C9" text="Mild Portal Storm" />
+      <value value="0x02CA" text="Heavy Portal Storm" />
+      <value value="0x02CB" text="Portal Stormed" />
+      <value value="0x02CC" text="End Portal Storm" />
+      <value value="0x02EB" text="Status Message" />
+    </type>
+
+    <type name="GameAction" parent="DWORD" text="The GameAction identifies the meaning of the rest of the message.">
+      <value value="0x0005" text="Set Single Character Option" />
+      <value value="0x0010" text="Set AFK Message" />
+      <value value="0x0019" text="Store Item" />
+      <value value="0x001A" text="Equip Item" />
+      <value value="0x001B" text="Drop Item" />
+      <value value="0x0036" text="Use Item" />
+      <value value="0x0044" text="Raise Vital" />
+      <value value="0x0045" text="Raise Attribute" />
+      <value value="0x0046" text="Raise Skill" />
+      <value value="0x0047" text="Train Skill" />
+      <value value="0x0048" text="Cast Spell" />
+      <value value="0x004A" text="Cast Spell on Object" />
+      <value value="0x00A1" text="Materialize" />
+      <value value="0x00CD" text="Give Item" />
+      <value value="0x019C" text="Make Shortcut" />
+      <value value="0x019D" text="Remove Shortcut" />
+      <value value="0x01A1" text="Set Character Options" />
+      <value value="0x01E3" text="Add Spell to Spellbar" />
+      <value value="0x01E4" text="Remove Spell from Spellbar" />
+    </type>
+
+    <!-- pre-AC:TD types, to be reviewed -->
+    <type name="StanceMode" parent="WORD" text="The stance for a character or monster.">
+      <value value="0x3C" text="melee UA weapon with no shield in attack stance" />
+      <value value="0x3D" text="Standing" />
+      <value value="0x3E" text="melee weapon with no shield in attack stance" />
+      <value value="0x3F" text="bow in attack stance" />
+      <value value="0x40" text="melee weapon with shield in attack stance" />
+      <value value="0x49" text="Spellcasting" />
+    </type>
+    <type name="AnimationMask" parent="DWORD" text="Dictates which parts of the animation packet will be present.">
+      <value value="0x00000001" text="Starting Stance for Animation" />
+      <value value="0x00000002" text="Secondary Animation flowed into from previous packet" />
+      <value value="0x00000008" text="unknown" />
+      <value value="0x00000020" text="unknown" />
+      <value value="0x00000004" text="unknown" />
+      <value value="0x00000010" text="unknown" />
+      <value value="0x00000040" text="unknown" />
+      <value value="0x00000080" text="Primary Animation" />
+    </type>
+    <type name="AnimationType" parent="BYTE" text="The animation type defines the fields for the rest of the message">
+      <value value="0x00" text="General Animation" />
+      <value value="0x06" text="Move to Object" />
+      <value value="0x07" text="Move to Position" />
+      <value value="0x08" text="Turn to Object" />
+      <value value="0x09" text="Turn to Position" />
+    </type>
+
+  </datatypes>
+
+  <messages>
+
+    <message type="0024" name="Destroy Object" text="Sent every time an object you are aware of ceases to exist. Merely running out of range does not generate this message - in that case, the client just automatically stops tracking it after receiving no updates for a while (which I presume is a very short while)."
+			lastUpdate="20050918" lastUpdater="kgober">
+      <field type="ObjectID" name="object" text="The object that ceases to exist." />
+    </message>
+
+    <message type="0037" name="Retired - Local Chat" text="Contains a message, type, person's name and source person ID. If this is local chat or spellcasting, the radar filtering is done on the client (so actually hear talking within 2 landblocks)."
+			retired="true" lastUpdate="20050807" lastUpdater="kgober">
+      <field type="String" name="text" text="The message text." />
+      <field type="String" name="senderName" text="Character name of the speaker." />
+      <field type="ObjectID" name="sender" text=" Character ID of the speaker." />
+      <field type="DWORD" name="type" text="Type of text." />
+    </message>
+
+    <message type="005E" name="Retired - Attack" text="A player has attacked a monster (or player)."
+			retired="true" lastUpdate="20050807" lastUpdater="kgober">
+      <field type="ObjectID" name="target" text="Object ID of the monster (or player) being attacked." />
+      <field type="DWORD" name="unknown" text="unknown - 0x00000019" />
+      <field type="ObjectID" name="attacker" text="Object ID of the attacking player." />
+    </message>
+
+    <message type="0197" name="Adjust Stack Size" text="For stackable items, this changes the number of items in the stack.">
+      <field type="BYTE" name="sequence" text="Seems to be a sequence number of some sort" />
+      <field type="ObjectID" name="item" text="Item getting it's stack adjusted." />
+      <field type="DWORD" name="count" text="New number of items in the stack." />
+      <field type="DWORD" name="value" text="New value for the item." />
+    </message>
+
+    <message type="019E" name="Player Killed" text="A Player Kill occurred nearby (also sent for suicides). This could be interesting to monitor for tournements."
+			lastUpdate="20050918" lastUpdater="kgober">
+      <field type="String" name="text" text="The death message (is blank for suicides causing a blank line on your scrolling window)." />
+      <field type="ObjectID" name="killed" text="The ID of the departed." />
+      <field type="ObjectID" name="killer" text="The ID of the character doing the killing." />
+    </message>
+
+    <message type="01B5" name="Retired - Broadcast Text" text="Used for leather crafter and collector advertisements."
+			retired="true" lastUpdate="20050807" lastUpdater="kgober">
+      <field type="String" name="message" text="The text for display." />
+      <field type="String" name="senderName" text="Name of the speaker." />
+      <field type="ObjectID" name="sender" text="Character ID of the sender - used for squelch and radar filtering." />
+      <field type="float" name="unknown1" text="Unknown - Usually 20.0." />
+      <field type="DWORD" name="color" text="Color the client uses for displaying the text." />
+    </message>
+
+    <message type="01E0" name="Indirect Text" text="Indirect '/e' text.">
+      <field type="ObjectID" name="sender" text="The ID of the character performing the emote - used for squelch/radar filtering." />
+      <field type="String" name="senderName" text="Name of the character performing the emote." />
+      <field type="String" name="text" text="Text representation of the emote." />
+    </message>
+
+    <message type="01E2" name="Emote Text" text="Contains the text associated with an emote action.">
+      <field type="ObjectID" name="sender" text="The ID of the character performing the emote - used for squelch/radar filtering." />
+      <field type="String" name="senderName" text="Name of the character performing the emote." />
+      <field type="String" name="text" text="Text representation of the emote." />
+    </message>
+
+    <message type="0229" name="Retired - Set Coverage" text="Sets the coverage of an object"
+			retired="true" lastUpdate="20050807" lastUpdater="kgober">
+      <field type="BYTE" name="sequence" text="Count of times this object has been equipped" />
+      <field type="ObjectID" name="object" text="The ID of the object this message refers to." />
+      <field type="DWORD" name="unknown" text="Unknown, was always 0x0A (10) in testing" />
+      <field type="DWORD" name="coverage" text="If this item can be worn or wielded, the mask of slots it occupies." />
+    </message>
+
+    <message type="022C" name="Retired - Set Character Flag" text="Set a flag for a character."
+			retired="true" lastUpdate="20050807" lastUpdater="kgober">
+      <field type="BYTE" name="unknown" text="Possibly a sequence number, or it stays as is every time." />
+      <field type="ObjectID" name="character" text="The character getting it's flags changed (including yourself)." />
+      <field type="BooleanPropertyID" name="flag" text="The getting changed, this may be a mask into an actual mask somewhere." />
+      <field type="DWORD" name="set" text="1 to set the flag, 0 to clear the flag." />
+    </message>
+
+    <message type="022D" name="Retired - Set Wielder/Container" text="Sets the wielder/container of an object, used in equipping"
+			retired="true" lastUpdate="20050807" lastUpdater="kgober">
+      <field type="BYTE" name="sequence" text="Number of equips of this object" />
+      <field type="ObjectID" name="object" text="The ID of the object this message refers to." />
+      <field type="DWORD" name="equipType" text="3 = Set Wielder, 2 = Set Container" />
+      <field type="ObjectID" name="container" text="The object that the wielder or container being being set to" />
+    </message>
+
+    <message type="022E" name="Retired - Set Object Resource" text="set a resource for a character."
+			retired="true" lastUpdate="20050807" lastUpdater="kgober">
+      <field type="BYTE" name="sequence" text="seems to be a sequence number of some sort" />
+      <field type="ObjectID" name="object" text="The ID of the object this message refers to." />
+      <field type="DWORD" name="unknown1" text="Unknown" />
+      <field type="DWORD" name="unknown2" text="Unknown" />
+    </message>
+
+    <message type="0237" name="Retired - Update Statistic" text="Record a stat changing"
+			retired="true" lastUpdate="20050807" lastUpdater="kgober">
+      <field type="BYTE" name="sequence" text="Seems to be a sequence number of some sort" />
+      <field type="DWORD" name="statistic" text="Statistic being set." />
+      <field type="DWORD" name="value" text="Replacement value." />
+    </message>
+
+    <message type="023B" name="Retired - Update Last Attacker" text="Sent whenever the last attacker changes"
+			retired="true" lastUpdate="20050807" lastUpdater="kgober">
+      <field type="BYTE" name="sequence" text="Seems to be a sequence number of some sort" />
+      <field type="DWORD" name="unknown" text="An unknown value (0x0000000B in testing). (this seems to be a key, indicating what ObjectID is, with 0x0B being Last attacker)" />
+      <field type="ObjectID" name="objectID" text="Previous attackers ObjectID" />
+    </message>
+
+    <message type="023D" name="Retired - Update Last Corpse Location" text="Sent whenever you leave a corpse (wasn't tested in a dungeon)."
+			retired="true" lastUpdate="20050807" lastUpdater="kgober">
+      <field type="DWORD" name="unknown" text="Unknown - 0x0000000E" />
+      <field type="Position0" name="position" text="Location of the (outdoor) corpse you just left." />
+    </message>
+
+    <message type="023E" name="Retired - Skill Experience" text="Experience directly applied to your skill"
+			retired="true" lastUpdate="20050807" lastUpdater="kgober">
+      <field type="WORD" name="skill" text="Your skill that's receiving XP" />
+      <field type="BYTE" name="unknown" text="Unknown filler. Always 0 for me." />
+      <field type="BYTE" name="sequence" text="Seems to be a sequence number of some sort" />
+      <field type="WORD" name="skillOffset" text="The offset from the attribute base." />
+      <field type="WORD" name="unknown1" text="Sept unknown added, always 0x0001?" />
+      <field type="DWORD" name="skillTrained" text="Skill disposition" />
+      <field type="DWORD" name="appliedXP" text="experience applied towards this skill so far" />
+      <field type="DWORD" name="bonusPoints" text="Bonus points given during character creation" />
+      <field type="DWORD" name="difficulty" text="probably used in the xp timer calculation" />
+      <field type="DWORD" name="unknown2" text="unknown" />
+      <field type="DWORD" name="unknown3" text="unknown" />
+    </message>
+
+    <message type="0240" name="Retired - Train Skill" text="Change training state of a skill"
+			retired="true" lastUpdate="20050807" lastUpdater="kgober">
+      <field type="BYTE" name="sequence" text="Seems to be a sequence number of some sort." />
+      <field type="WORD" name="skillID" text="ID of the skill that is changing" />
+      <field type="DWORD" name="trained" text="new training disposition" />
+    </message>
+
+    <message type="0241" name="Retired - Update Attribute" text="Sent every time you upgrade one of the 6 primary attributes."
+			retired="true" lastUpdate="20050807" lastUpdater="kgober">
+      <field type="WORD" name="Attribute" text="Atribute being set." />
+      <field type="BYTE" name="SpaceHolder" text="Space holder for byte alignment." />
+      <field type="BYTE" name="sequence" text="Sequence number." />
+      <field type="DWORD" name="NewIncrement" text="What this Attribute's increment is now" />
+      <field type="DWORD" name="StartingValue" text="What this Attribute's value was on creation." />
+      <field type="DWORD" name="TotalAppliedXP" text="How much XP has been applied directly to this attribute." />
+    </message>
+
+    <message type="0243" name="Retired - Update Secondary Attribute" text="Sent every time you upgrade one of the 3 secondary attributes."
+			retired="true" lastUpdate="20050807" lastUpdater="kgober">
+      <field type="WORD" name="Attribute" text="Attribute being set." />
+      <field type="BYTE" name="SpaceHolder" text="Space holder for byte alignment." />
+      <field type="BYTE" name="sequence" text="Sequence number." />
+      <field type="DWORD" name="PointsAdded" text="Number of total points added to this attribute." />
+      <field type="DWORD" name="Unknown" text="Not enough data yet." />
+      <field type="DWORD" name="TotalAppliedXP" text="How much XP has been applied directly to this attribute." />
+      <field type="DWORD" name="NewValue" text="The new value of this attribute." />
+    </message>
+
+    <message type="0244" name="Retired - Vital Statistic Update" text="Sent whenever the current value of a vital statistic changes"
+			retired="true" lastUpdate="20050807" lastUpdater="kgober">
+      <field type="BYTE" name="sequence" text="Seems to be a sequence number of some sort" />
+      <field type="DWORD" name="vital" text="The Vital Statistic being updated." />
+      <field type="DWORD" name="value" text="The new value." />
+    </message>
+
+    <message type="02BB" name="Creature Message" text="A message to be displayed in the chat window, spoken by a nearby player, NPC or creature"
+			lastUpdate="20050807" lastUpdater="kgober">
+      <field type="String" name="text" text="message text" />
+      <field type="String" name="senderName" text="sender name" />
+      <field type="ObjectID" name="sender" text="sender ID" />
+      <field type="ChatMessageType" name="type" text="message type" />
+    </message>
+
+    <message type="02BC" name="Creature Message (Ranged)" text="A message to be displayed in the chat window, spoken by a nearby player, NPC or creature"
+			lastUpdate="20050807" lastUpdater="kgober">
+      <field type="String" name="text" text="message text" />
+      <field type="String" name="senderName" text="sender name" />
+      <field type="ObjectID" name="sender" text="sender ID" />
+      <field type="float" name="range" text="broadcast range" />
+      <field type="ChatMessageType" name="type" text="message type" />
+    </message>
+
+    <message type="02CD" name="Set Character DWORD" text="Set or update a Character DWORD property value"
+			lastUpdate="20050807" lastUpdater="kgober">
+      <field type="BYTE" name="sequence" text="sequence number" />
+      <field type="DWORDPropertyID" name="key" text="DWORD property ID" />
+      <field type="DWORD" name="value" text="DWORD property value" />
+    </message>
+
+    <message type="02CE" name="Set Object DWORD" text="Set or update an Object DWORD property value"
+			lastUpdate="20050807" lastUpdater="kgober">
+      <field type="BYTE" name="sequence" text="sequence number" />
+      <field type="ObjectID" name="object" text="object ID" />
+      <field type="DWORDPropertyID" name="key" text="DWORD property ID" />
+      <field type="DWORD" name="value" text="DWORD property value" />
+    </message>
+
+    <message type="02CF" name="Set Character QWORD" text="Set or update a Character QWORD property value"
+			lastUpdate="20050807" lastUpdater="kgober">
+      <field type="BYTE" name="sequence" text="sequence number" />
+      <field type="QWORDPropertyID" name="key" text="QWORD property ID" />
+      <field type="QWORD" name="value" text="QWORD property value" />
+    </message>
+
+    <message type="02D1" name="Set Character Boolean" text="Set or update a Character Boolean property value"
+			lastUpdate="20050918" lastUpdater="kgober">
+      <field type="BYTE" name="sequence" text="sequence number" />
+      <field type="BooleanPropertyID" name="key" text="Boolean property ID" />
+      <field type="Boolean" name="value" text="Boolean property value (0=False, 1=True)" />
+    </message>
+
+    <message type="02D2" name="Set Object Boolean" text="Set or update an Object Boolean property value"
+			lastUpdate="20050807" lastUpdater="kgober">
+      <field type="BYTE" name="sequence" text="sequence number" />
+      <field type="ObjectID" name="object" text="object ID" />
+      <field type="BooleanPropertyID" name="key" text="Boolean property ID" />
+      <field type="Boolean" name="value" text="Boolean property value (0=False, 1=True)" />
+    </message>
+
+    <message type="02D6" name="Set Object String" text="Set or update an Object String property value"
+			lastUpdate="20050807" lastUpdater="kgober">
+      <field type="BYTE" name="sequence" text="sequence number" />
+      <field type="StringPropertyID" name="key" text="String property ID" />
+      <field type="ObjectID" name="object" text="object ID" />
+      <align type="DWORD" />
+      <field type="String" name="value" text="String property value" />
+    </message>
+
+    <message type="02D8" name="Set Object Resource" text="Set or update an Object Resource property value"
+			lastUpdate="20050807" lastUpdater="kgober">
+      <field type="BYTE" name="sequence" text="sequence number" />
+      <field type="ObjectID" name="object" text="object ID" />
+      <field type="ResourcePropertyID" name="key" text="Resource property ID" />
+      <field type="DWORD" name="value" text="Resource property value" />
+    </message>
+
+    <message type="02D9" name="Set Character Link" text="Set or update a Character Link property value"
+			lastUpdate="20050914" lastUpdater="kgober">
+      <field type="BYTE" name="sequence" text="sequence number" />
+      <field type="LinkPropertyID" name="key" text="Link property ID" />
+      <field type="ObjectID" name="value" text="Link property value" />
+    </message>
+
+    <message type="02DA" name="Set Object Link" text="Set or update an Object Link property value"
+			lastUpdate="20050914" lastUpdater="kgober">
+      <field type="BYTE" name="sequence" text="sequence number" />
+      <field type="ObjectID" name="object" text="object ID" />
+      <field type="LinkPropertyID" name="key" text="Link property ID" />
+      <field type="ObjectID" name="value" text="Link property value" />
+    </message>
+
+    <message type="02DB" name="Set Character Position" text="Set or update a Character Position property value"
+			lastUpdate="20050807" lastUpdater="kgober">
+      <field type="BYTE" name="sequence" text="sequence number" />
+      <field type="PositionPropertyID" name="key" text="Position property ID" />
+      <field type="Position0" name="value" text="Position property value" />
+    </message>
+
+    <message type="02DD" name="Set Character Skill Level" text="Set or update a Character Skill value"
+			lastUpdate="20050807" lastUpdater="kgober">
+      <field type="BYTE" name="sequence" text="sequence number" />
+      <field type="SkillID" name="key" text="skill ID" />
+      <field type="SkillData" name="value" text="skill information" />
+    </message>
+
+    <message type="02E1" name="Set Character Skill State" text="Set or update a Character Skill state"
+			lastUpdate="20050807" lastUpdater="kgober">
+      <field type="BYTE" name="sequence" text="sequence number" />
+      <field type="SkillID" name="key" text="skill ID" />
+      <field type="SkillState" name="value" text="skill state" />
+    </message>
+
+    <message type="02E3" name="Set Character Attribute" text="Set or update a Character Attribute value"
+			lastUpdate="20050918" lastUpdater="kgober">
+      <field type="BYTE" name="sequence" text="sequence number" />
+      <field type="AttrID" name="key" text="attribute ID" />
+      <field type="AttributeData" name="value" text="attribute information" />
+    </message>
+
+    <message type="02E7" name="Set Character Vital" text="Set or update a Character Vital value"
+			lastUpdate="20050918" lastUpdater="kgober">
+      <field type="BYTE" name="sequence" text="sequence number" />
+      <field type="VitalID" name="key" text="vital ID" />
+      <field type="VitalData" name="value" text="vital information" />
+    </message>
+
+    <message type="02E9" name="Set Character Current Vital" text="Set or update a Character Vital value"
+			lastUpdate="20050807" lastUpdater="kgober">
+      <field type="BYTE" name="sequence" text="sequence number" />
+      <field type="CurVitalID" name="key" text="vital ID" />
+      <field type="DWORD" name="value" text="current value" />
+    </message>
+
+    <message type="F619" name="Lifestone Materialize" text="Sent when a character rematerializes at the lifestone after death."
+			lastUpdate="20050918" lastUpdater="kgober">
+      <field type="ObjectID" name="object" text="ObjectID of the character doing the animation" />
+      <field type="Position" name="position" />
+      <field type="DWORD" name="unknown2" text="Unknown" />
+      <field type="DWORD" name="unknown3" text="Unknown" />
+      <field type="DWORD" name="unknown4" text="Unknown" />
+      <field type="DWORD" name="unknown5" text="Unknown" />
+    </message>
+
+    <message type="F625" name="Change Model" text="Sent whenever a character changes their clothes. It contains the entire description of what their wearing (and possibly their facial features as well). This message is only sent for changes, when the character is first created, the body of this message is included inside the creation message."
+			lastUpdate="20050918" lastUpdater="kgober">
+      <field type="ObjectID" name="object" text="The ID of character changing their clothing." />
+      <field type="ModelData" name="model" />
+      <field type="WORD" name="modelSequenceType" text="Unknown stream number. Used to sequence model changes on an object." />
+      <field type="WORD" name="modelSequence" text="Increments for every model change." />
+    </message>
+
+    <message type="F62C" name="Retired - Server Text" text="Contains the text and then a number for the type (which I would expect just translates to a color)."
+			retired="true" lastUpdate="20050809" lastUpdater="kgober">
+      <field type="String" name="text" text="The message for display." />
+      <field type="DWORD" name="color" text="The color for displaying th message." />
+    </message>
+
+    <message type="F643" name="Char Creation Initilisation" text="Uncracked - Character creation screen initilised."
+			lastUpdate="20020407" lastUpdater="Keba" />
+
+    <message type="F653" name="End 3D Mode" text="Instructs the client to return to 2D mode - the character list."
+			direction="inbound" lastUpdate="20050908" lastUpdater="kgober" />
+
+    <!--		<message type="F653" name="Leave World" text="Sent to indicate that the client would like to log off."
+			direction="outbound" lastUpdate="20050908" lastUpdater="kgober">
+			<field type="ObjectID" name="character" text="The character ID of the character to log off" />
+		</message>
+-->
+    <message type="F655" name="Char Deletion" text="A character was marked for  delete."
+			lastUpdate="20030622" lastUpdater="GKusnick" />
+
+    <message type="F657" name="Request Login" text="The character to log in."
+			direction="outbound" lastUpdate="20050823" lastUpdater="kgober">
+      <field type="ObjectID" name="character" text="The character ID of the character to log in" />
+      <field type="String" name="zonename" text="The account name associated with the character" />
+    </message>
+
+    <message type="F658" name="Character List" text="The list of characters on the current account."
+			lastUpdate="20050807" lastUpdater="kgober">
+      <field type="DWORD" name="unknown1" text="" />
+      <field type="DWORD" name="characterCount" text="The number of characters in the list.  Characters appear in the list ordered most-recently-used first, but are displayed alphabetically." />
+      <vector name="characters" length="characterCount">
+        <field type="ObjectID" name="character" text="The character ID for this entry." />
+        <field type="String" name="name" text="The name of this character." />
+        <field type="DWORD" name="deleteTimeout" text="When 0, this character is not being deleted (not shown crossed out). Otherwise, it's a countdown timer in the number of seconds until the character is submitted for deletion." />
+      </vector>
+      <field type="DWORD" name="unknown2" text="" />
+      <field type="DWORD" name="slotCount" text="The total count of character slots." />
+      <field type="String" name="zonename" text="The zonename for this account." />
+      <field type="DWORD" name="turbineChatEnabled" text="Whether or not Turbine Chat (Allegiance chat) enabled." />
+      <field type="DWORD" name="unknown3" text="" />
+    </message>
+
+    <message type="F659" name="Character Login Failure" text="Failure to log in"
+			lastUpdate="20050918" lastUpdater="kgober">
+      <field type="DWORD" name="reason" text="0x0d = Character still in World" />
+    </message>
+
+    <message type="F65A" name="Retired - Message of the Day" text="The message of the day during logon. There are 2 strings, one for the number of clients connected, the second is the message of the day."
+			retired="true" lastUpdate="20050809" lastUpdater="kgober">
+      <field type="String" name="connections" text="The number of connections: 'Currently xxx clients connected." />
+      <field type="String" name="message" text="The remaining message of the day text. As far as I can tell, the 2 strings are concatenanted (with a line break) and thrown into the text box on the login screen." />
+    </message>
+
+    <message type="F745" name="Create Object" text="Create an object somewhere in the world"
+			lastUpdate="20050809" lastUpdater="kgober">
+      <field type="ObjectID" name="object" text="object ID" />
+      <field type="ModelData" name="model" />
+      <field type="PhysicsData" name="physics" />
+      <field type="GameData" name="game" />
+    </message>
+
+    <message type="F746" name="Login Character">
+      <field type="ObjectID" name="character" text="ID of the character logging on - should be you." />
+    </message>
+
+    <message type="F747" name="Remove Item" text="Sent whenever an object is removed from the scene.">
+      <field type="ObjectID" name="object" text="The character or monster who was recently erased." />
+      <field type="DWORD" name="unknown" text="Unknown" />
+    </message>
+
+    <message type="F748" name="Set Position and Motion" text="Set position - the server pathologically sends these after every actions - sometimes more than once. If has options for setting a fixed velocity or an arc for thrown weapons and arrows.">
+      <field type="ObjectID" name="object" text="The object with the position changing." />
+      <field type="Position" name="position" text="The current or starting location." />
+      <field type="WORD" name="logins" text="logins" />
+      <field type="WORD" name="sequence" text="A sequence number of some sort" />
+      <field type="WORD" name="portals" text="number of portals" />
+      <field type="WORD" name="adjustments" text="Adjustments to position" />
+    </message>
+
+    <message type="F749" name="Wield Object" text="Multipurpose message.  So far object wielding has been decoded.  Lots of unknowns">
+      <field type="ObjectID" name="owner" text="id of the owner of this object" />
+      <field type="ObjectID" name="object" text="id of the object" />
+      <field type="DWORD" name="unknown1" text="Unknown, always 1 in investigations" />
+      <field type="DWORD" name="unknown2" text="Unknown, always 1 in investigations" />
+      <field type="DWORD" name="unknown3" text="Unknown, Some sort of an equip counter, formula used to generate it: 0x00254 | (0x40000 + 0x30000*((ConnUser[UserParsing].EquipCount - 1) / 2))" />
+    </message>
+
+    <message type="F74A" name="Move object into inventory.">
+      <field type="ObjectID" name="object" />
+      <field type="WORD" name="unknown" text="unknown, was 0335 during testing" />
+      <field type="WORD" name="unknown1" text="unknown, appears to be a sequence number of some kind" />
+    </message>
+
+    <message type="F74B" name="Toggle Object Visibility" text="Signals your client to end the portal animation for you or another char and also is fired when war spells dissapear as they hit an object blocking their path."
+			lastUpdate="20050918" lastUpdater="kgober">
+      <field type="ObjectID" name="object" text="The character exiting portal animation or the object that just dissapeared/appeared." />
+      <field type="WORD" name="portalType" text="Type of portal user is exiting. For begin it's 0x4410, for end it's 0x0408, figure it out for war spell objects!  :)" />
+      <field type="WORD" name="unknown_1" text="Unknown word - Always 0x40 (64)" />
+      <field type="WORD" name="logins" text="Total times this user has logged in AC, seems to be something else for war spell objects" />
+      <field type="WORD" name="loginPortals" text="Number of portals user has entered during this login" />
+    </message>
+
+    <message type="F74C" name="Animation" text="These are animations. Whenever a human, monster or object moves - one of these little messages is sent. Even idle emotes (like head scratching and nodding) are sent in this manner."
+           lastUpdate="20051121" lastUpdater="kgober">
+      <field type="ObjectID" name="object" text="ID of the character moving" />
+      <field type="WORD" name="logins" text="Number of User Logins" />
+      <field type="WORD" name="sequence" text="Number of animations this login for the object" />
+      <field type="WORD" name="index" text="Number of animations, increased by one every time another f74c call is sent for that object" />
+      <field type="WORD" name="activity" text="0x0 - idle, 0x1 - active" />
+      <field type="AnimationType" name="animation_type" text="Determines the type of animation that follows" />
+      <field type="BYTE" name="type_flags" text="0x01 = has target (attack animation)" />
+      <field type="StanceMode" name="stance" text="Stance or animation." />
+      <!-- /* This section is not quite complete */ -->
+      <switch name="animation_type" summary-exclude="true">
+        <case value="0x0000">
+          <field name="flags" type="DWORD" />
+          <maskmap name="flags">
+            <mask value="0x00000001">
+              <field name="stance2" type="StanceMode" />
+            </mask>
+            <mask value="0x00000002">
+              <field name="animation_1" type="WORD" text="Animation 1, needs more investigation" />
+            </mask>
+            <mask value="0x00000008">
+              <field name="animation_2" type="WORD" text="Animation 2, needs more investigation" />
+            </mask>
+            <mask value="0x00000020">
+              <field name="animation_3" type="WORD" text="Animation 3, needs more investigation" />
+            </mask>
+            <mask value="0x00000004">
+              <field name="float_1" type="float" text="Related to animation_1, maybe speed?" />
+            </mask>
+            <mask value="0x00000010">
+              <field name="float_2" type="float" text="Related to animation_2, maybe speed?" />
+            </mask>
+            <mask value="0x00000040">
+              <field name="float_3" type="float" text="Related to animation_3, maybe speed?" />
+            </mask>
+          </maskmap>
+          <vector name="animations" length="flags" mask="0x00000F80">
+            <field name="animation" type="WORD" text="Animation ID" />
+            <field name="sequence" type="WORD" text="The order in which this animation should be processed" />
+            <field name="animation_speed" type="float" text="Animation Speed" />
+          </vector>
+          <!--
+					<vector size="(flags >> 7) & 0x1f">
+						<field name="animation_value" type="WORD" />
+						<field name="animation_flags" type="WORD" />
+						<field name="animation_float" type="float" />
+					</vector>
+					<align size="DWORD" />
+				-->
+        </case>
+        <case value="0x0006">
+          <field name="target" type="ObjectID" text="The object that's being moved to" />
+          <field name="landblock" type="DWORD" text="Looks like a standard coordinate" />
+          <field name="xOffset" type="float" text="Looks like a standard coordinate" />
+          <field name="yOffset" type="float" text="Looks like a standard coordinate" />
+          <field name="zOffset" type="float" text="Looks like a standard coordinate" />
+          <field name="flags_2" type="DWORD" text="This looks like a bitfield" />
+          <field name="float_1" type="float" text="Unknown float" />
+          <field name="float_2" type="float" text="Unknown float" />
+          <field name="unknown_3" type="DWORD" text="Unknown DWORD" />
+          <field name="animation_speed" type="float" text="Looks like speed" />
+          <field name="float_4" type="float" text="Unknown float" />
+          <field name="heading" type="float" text="Appears to be the heading the object is turning to" />
+          <field name="unknown_value" type="DWORD" text="???" />
+        </case>
+        <case value="0x0007">
+          <field name="landblock" type="DWORD" text="Looks like a standard coordinate" />
+          <field name="xOffset" type="float" text="Looks like a standard coordinate" />
+          <field name="yOffset" type="float" text="Looks like a standard coordinate" />
+          <field name="zOffset" type="float" text="Looks like a standard coordinate" />
+          <field name="flags_2" type="DWORD" text="This looks like a bitfield" />
+          <field name="float_1" type="float" text="Unknown float" />
+          <field name="float_2" type="float" text="Unknown float" />
+          <field name="unknown_3" type="DWORD" text="Unknown DWORD" />
+          <field name="animation_speed" type="float" text="Looks like speed" />
+          <field name="float_4" type="float" text="Unknown float" />
+          <field name="heading" type="float" text="Appears to be the heading the object is turning to" />
+          <field name="unknown_value" type="DWORD" text="???" />
+        </case>
+        <case value="0x0008">
+          <field name="target" type="ObjectID" text="The object that's being faced" />
+          <field name="unknown_value" type="DWORD" text="???" />
+          <field name="flags_2" type="DWORD" text="This looks like a bitfield" />
+          <field name="animation_speed" type="float" text="Looks like speed" />
+          <field name="heading" type="float" text="Appears to be the heading the object is turning to" />
+        </case>
+        <case value="0x0009">
+          <field name="flags_2" type="DWORD" text="This looks like a bitfield" />
+          <field name="animation_speed" type="float" text="Looks like speed" />
+          <field name="heading" type="float" text="Appears to be the heading the object is turning to" />
+        </case>
+      </switch>
+      <align type="DWORD" />
+      <maskmap name="type_flags">
+        <mask value="0x01">
+          <field name="targetid" type="ObjectID" text="The target that's being attacked" />
+        </mask>
+        <mask value="0x02" text="This section seems to be related to jumping, but has no data that I've seen"></mask>
+      </maskmap>
+    </message>
+
+    <message type="F74E" name="Jumping" text="An object has jumped"
+			lastUpdate="20050918" lastUpdater="kgober">
+      <field type="ObjectID" name="object" text="ID of the object jumping" />
+      <field type="DWORD" name="unknown_1" text="Always zero" />
+      <field type="float" name="heading" text="Direction you are jumping. Zero for stationary jump" />
+      <field type="float" name="height" text="How high the object jumped" />
+      <field type="DWORD" name="unknown_3" text="Always zero" />
+      <field type="DWORD" name="unknown_4" text="Always zero" />
+      <field type="DWORD" name="unknown_5" text="Always zero" />
+      <field type="WORD" name="logins" text="Number of times you've logged into AC" />
+      <field type="WORD" name="sequence" text="Number of times you've jumped since logging into AC" />
+    </message>
+
+    <message type="F750" name="Apply Sound Effect" text="Applies a sound effect."
+			lastUpdate="20050918" lastUpdater="kgober">
+      <field type="ObjectID" name="object" text="ID of the object from which the effect originates. Can be you, another char/npc or an item." />
+      <field type="Effect" name="effect" text="The particle effect ID." />
+      <field type="float" name="parameter" text="Some sort of parameter to the effect, possibly speed or color." />
+    </message>
+
+    <message type="F751" name="Enter Portal Mode" text="Instructs the client to show the portal graphic.">
+      <field type="DWORD" name="sequence" text="Increases by 1 or 2 each time you portal" />
+    </message>
+
+    <message type="F755" name="Apply Visual/Sound Effect" text="Applies an effect with visual and sound."
+			lastUpdate="20050918" lastUpdater="kgober">
+      <field type="ObjectID" name="object" text="ID of the object from which the effect originates. Can be you, another char/npc or an item." />
+      <field type="Effect" name="effect" text="The particle effect ID." />
+      <field type="float" name="speed" text="Speed to play the particle effect at.  1.0 is default, lower for slower, higher for faster." />
+    </message>
+
+    <message type="F7B0" name="Game Event" text="Game Events are messages that are sequenced.">
+      <field type="ObjectID" name="character" text="the object ID of the message recipient (should be you)" />
+      <field type="DWORD" name="sequence" text="sequence number" />
+      <field type="GameEvent" name="event" text="the (sequenced) message type" />
+      <switch name="event">
+
+        <case value="0x0004" text="Display a message in a popup message window."
+					lastUpdate="20050807" lastUpdater="kgober">
+          <field type="String" name="text" text="the message text" />
+        </case>
+
+        <case value="0x0013" text="Information describing your character."
+					lastUpdate="20050918" lastUpdater="kgober">
+          <field type="CharacterPropertyData" name="properties" />
+          <field type="CharacterVectorData" name="vectors" />
+          <field type="CharacterOptionData" name="options" />
+          <field type="DWORD" name="inventoryCount" text="Number of items in your main pack." />
+          <vector name="inventory" length="inventoryCount">
+            <field type="ObjectID" name="item" />
+            <field type="DWORD" name="type" text="Whether or not this object is a container. 1=unlocked container, 2=foci" />
+          </vector>
+          <field type="DWORD" name="equippedCount" text="Number of items currently equipped." />
+          <vector name="equipped" length="equippedCount">
+            <field type="ObjectID" name="item" />
+            <field type="EquipMask" name="slot" />
+            <field type="DWORD" name="unknown3" />
+          </vector>
+        </case>
+
+        <case value="0x0016" text="Trade text/Chat Partner not Available"
+					retired="true" lastUpdate="20050809" lastUpdater="kgober">
+          <field type="String" name="text" text="Text detailing parts of the trade, or that trades aren't being accepted - Also is used to tell you that somebody isn't available for chat (direct/fellow/monarch/patron/vassal etc)." />
+        </case>
+
+        <case value="0x0020" text="Returns info related to your monarch, patron and vassals."
+					lastUpdate="20060518" lastUpdater="kgober">
+          <field type="DWORD" name="unknown0" />
+          <field type="DWORD" name="allegianceSize" text="The number of allegiance members." />
+          <field type="DWORD" name="followers" text="Your personal number of followers." />
+          <field type="WORD" name="recordCount" text="Number of character allegiance records." />
+          <field type="WORD" name="unknown1" text="0030" />
+          <field type="DWORD" name="unknown2" text="unknown" />
+          <field type="DWORD" name="unknown2a" text="00000000" />
+          <field type="DWORD" name="unknown3" text="00000000" />
+          <field type="DWORD" name="unknown4" text="00000000" />
+          <field type="DWORD" name="unknown5" text="00000000" />
+          <field type="DWORD" name="unknown6" text="00000000" />
+          <field type="DWORD" name="unknown7" text="00000000" />
+          <field type="DWORD" name="unknown8" text="00000000" />
+          <field type="DWORD" name="unknown9" text="allegiance chat channel number" />
+          <field type="DWORD" name="unknown10" text="00000000" />
+          <field type="DWORD" name="unknown11" text="00000000" />
+          <field type="DWORD" name="unknown12" text="00000000" />
+          <field type="DWORD" name="unknown13" text="00000000" />
+          <field type="float" name="unknown14" text="1.0" />
+          <field type="DWORD" name="unknown15" text="00000000" />
+          <field type="DWORD" name="unknown16" text="00000000" />
+          <field type="DWORD" name="unknown16a" text="00000000" />
+          <field type="String" name="allegianceName" text="The name of the allegiance." />
+          <field type="DWORD" name="unknown16c" text="unknown" />
+          <field type="DWORD" name="unknown16d" text="00000000" />
+          <switch name="recordCount">
+            <case value="0x0000">
+              <field type="DWORD" name="unknown17" />
+            </case>
+          </switch>
+          <vector name="records" length="recordCount">
+            <field type="ObjectID" name="treeParent" text="The Object ID for the parent character to this character.  Used by the client to decide how to build the display in the Allegiance tab. 1 is the monarch." />
+            <field type="ObjectID" name="character" text="Character ID" />
+            <field type="DWORD" name="pendingXP" text="XP gained while logged off" />
+            <field type="QWORD" name="exp" text="Total allegiance XP contribution." />
+            <field type="BYTE" name="gender" text="The gender of the character (for determining title)." />
+            <field type="BYTE" name="race" text="The heritage of the character (for determining title)." />
+            <field type="BYTE" name="rank" text="The numerical rank (1 is lowest)." />
+            <align type="DWORD" />
+            <field type="Boolean" name="online" text="online: 0=no, 1=yes" />
+            <field type="WORD" name="loyalty" text="Character loyalty." />
+            <field type="WORD" name="leadership" text="Character leadership." />
+            <field type="double" name="unknown" />
+            <field type="String" name="name" />
+          </vector>
+        </case>
+
+        <case value="0x0021" text="Friends list update"
+					lastUpdate="20061218" lastUpdater="Digero">
+          <field type="DWORD" name="friendsCount" text="The number of friends in the list" />
+          <vector name="friends" length="friendsCount">
+            <member type="ObjectID" name="friend" text="Friend's ID" />
+            <member type="Boolean" name="online" text="Whether this friend is online" />
+            <member type="DWORD" name="unknown1" text="unknown1, seems to be 0" />
+            <member type="String" name="name" text="Name of the friend" />
+            <member type="DWORD" name="outFriendsCount" text="The number of people on this player's friends list" />
+            <vector name="outFriends" length="outFriendsCount">
+              <member type="ObjectID" name="outFriend" text="The ID of a character on this player's friends list" />
+            </vector>
+            <member type="DWORD" name="inFriendsCount" text="The number of people who have this player on their friends list" />
+            <vector name="inFriends" length="inFriendsCount">
+              <member type="ObjectID" name="inFriend" text="The ID of a character who has this player on their friends list" />
+            </vector>
+          </vector>
+          <field type="FriendsUpdateType" name="type" text="The type of the update" />
+        </case>
+
+        <case value="0x0022" text="Store an item in a container."
+					lastUpdate="20020801" lastUpdater="GKusnick">
+          <field type="ObjectID" name="item" text="the object ID of the item being stored" />
+          <field type="ObjectID" name="container" text="the object ID of the container the item is being stored in" />
+          <field type="DWORD" name="slot" text="the item slot within the container where the item is being placed (0-based)" />
+          <field type="ItemType" name="type" text="the type of item being stored (pack, foci or regular item)" />
+        </case>
+
+        <case value="0x0023" text="Equip an item.">
+          <field type="ObjectID" name="item" text="the object ID of the item being equipped" />
+          <field type="EquipMask" name="slot" text="the slot(s) the item uses" />
+        </case>
+
+        <case value="0x0029" text="Titles for the current character."
+          lastUpdate="20060216" lastUpdater="kgober">
+          <field type="DWORD" name="unknown" />
+          <field type="DWORD" name="current" text="the title ID of the currently active title" />
+          <field type="DWORD" name="count" text="the number of available titles" />
+          <vector name="titles" length="count">
+            <field type="DWORD" name="title" text="the title ID of an available title" />
+          </vector>
+        </case>
+
+        <case value="0x002b" text="Set a title for the current character."
+          lastUpdate="20060216" lastUpdater="kgober">
+          <field type="DWORD" name="title" text="the title ID of the new title" />
+          <field type="Boolean" name="active" text="true if the title should be made the current title, false if it should just be added to the title list" />
+        </case>
+
+        <case value="0x0038" text="Received when someone sends you an @tell."
+					retired="true" lastUpdate="20050809" lastUpdater="kgober">
+          <field type="String" name="text" text="The message text." />
+          <field type="String" name="sourceName" text="The name of the person sending you the message." />
+          <field type="ObjectID" name="source" text="The character ID for the person sending you the message." />
+          <field type="ObjectID" name="destination" text="The person receiving the message - which should always be you." />
+          <field type="DWORD" name="color" text="The color of the message - should always be 0x04 for normal tells, but may change if a VIP is talking to you." />
+        </case>
+
+        <case value="0x004C" text="Adds a spell to the spellbook.  Also indicates you have cast a spell  - a separate message contains the details on the spell."
+					retired="true" lastUpdate="20050809" lastUpdater="kgober">
+          <field type="SpellID" name="spell" text="The ID of the spell" />
+        </case>
+
+        <case value="0x004D" text="Deletes a spell from the spellbook."
+					retired="true" lastUpdate="20050809" lastUpdater="kgober">
+          <field type="SpellID" name="spell" text="The ID of the spell" />
+        </case>
+
+        <case value="0x004E" text="Contains the details for spells cast of your character."
+					retired="true" lastUpdate="20050809" lastUpdater="kgober">
+          <field type="Enchantment" name="enchantment" text="enchantment info" />
+        </case>
+
+        <case value="0x004F" text="An active enchantment has expired. Sent to update the client list and display a message."
+					retired="true" lastUpdate="20050809" lastUpdater="kgober">
+          <field type="SpellID" name="spell" text="The spell copy that's begin removed." />
+          <field type="WORD" name="layer" text="The index of this exact spell on the on the player/item. It will increment one each time the spell is cast if there is one already on the player/item." />
+        </case>
+
+        <case value="0x0052" text="Close Container - Only sent when explicitly closed"
+					lastUpdate="20021209" lastUpdater="Mekle">
+          <field type="ObjectID" name="object" text="Chest or corpse being closed" />
+        </case>
+
+        <case value="0x0062" text="Open the buy/sell panel for a merchant."
+					lastUpdate="20050807" lastUpdater="kgober">
+          <field type="ObjectID" name="merchant" text="the object ID of the merchant" />
+          <field type="DWORD" name="buyCategories" text="the categories of items the merchant will buy" />
+          <field type="DWORD" name="unknown1" />
+          <field type="DWORD" name="buyValue" text="the highest value of an item the merchant will buy" />
+          <field type="DWORD" name="unknown2" />
+          <field type="float" name="buyRate" text="the merchant's buy rate" />
+          <field type="float" name="sellRate" text="the merchant's sell rate" />
+          <field type="DWORD" name="itemCount" text="the number of items the merchant is selling" />
+          <vector name="items" length="itemCount">
+            <field type="WORD" name="count" text="the number of items for sale (-1 for an unlimited supply)" />
+            <field type="WORD" name="flags" />
+            <field type="ObjectID" name="object" text="the object ID of the item" />
+            <field type="GameData" name="game" text="details about the item" />
+          </vector>
+        </case>
+
+        <case value="0x009C" text="End Portal Storm - 'The Portal Storm has subsided' message"
+					retired="true" lastUpdate="20050809" lastUpdater="kgober" />
+
+        <case value="0x009D" text="Portal Storm warning - Level 1 of 3"
+					retired="true" lastUpdate="20050809" lastUpdater="kgober">
+          <field type="float" name="severity" text="Could be severity - was 0.40 during testing" />
+        </case>
+
+        <case value="0x009E" text="Portal Storm warning - Level 2 of 3"
+					retired="true" lastUpdate="20050809" lastUpdater="kgober">
+          <field type="float" name="severity" text="Could be severity - was 0.60 during testing" />
+        </case>
+
+        <case value="0x009F" text="Character was portal stormed"
+					retired="true" lastUpdate="20050809" lastUpdater="kgober">
+          <field type="String" name="desc" text="Portal storm description" />
+        </case>
+
+        <case value="0x00A0" text="Failure to give an item">
+          <field type="ObjectID" name="item" text="Item that could not be given" />
+          <field type="DWORD" name="reason" text="Unknown, was 0x3EF when I tested (Zyrca: appears to be a failure reason ID)" />
+        </case>
+
+        <case value="0x00A3" text="Member left fellowship"
+					lastUpdate="20050907" lastUpdater="GKusnick">
+          <field type="ObjectID" name="fellow" text="Person who quit the fellowship" />
+        </case>
+
+        <case value="0x00A4" text="Member dismissed from fellowship"
+					lastUpdate="20050907" lastUpdater="GKusnick">
+          <field type="ObjectID" name="fellow" text="Person who was dismissed from the fellowship" />
+        </case>
+
+        <case value="0x00A7" text="Fellowship quit"
+					retired="true" lastUpdate="20050809" lastUpdater="kgober">
+          <field type="ObjectID" name="fellow" text="Person who quit the fellowship" />
+        </case>
+
+        <case value="0x00AF" text="Create new fellowship"
+					retired="true" lastUpdate="20050809" lastUpdater="kgober">
+          <field type="WORD" name="fellowCount" text="Number of current members in Fellowship" />
+          <field type="WORD" name="unknown2" text="unknown2, seems to be 16 (0x0010) always, could be a 'set SharePhatLoot mask' entry" />
+          <vector name="fellows" length="fellowCount">
+            <field type="ObjectID" name="fellow" text="Fellowship member" />
+            <field type="WORD" name="unknown1" text="unknown1, seems to be 0" />
+            <field type="WORD" name="level" text="level of member" />
+            <field type="DWORD" name="maxHealth" text="Maximum Health" />
+            <field type="DWORD" name="maxStam" text="Maximum Stamina" />
+            <field type="DWORD" name="maxMana" text="Maximum Mana" />
+            <field type="DWORD" name="curHealth" text="Current Health" />
+            <field type="DWORD" name="curStam" text="Current Stamina" />
+            <field type="DWORD" name="curMana" text="Current Mana" />
+            <field type="DWORD" name="shareLoot" text="if 0 then noSharePhatLoot, if 16 (0x0010) then sharePhatLoot" />
+            <field type="String" name="name" text="Name of Member" />
+          </vector>
+          <field type="String" name="fellowship" text="Fellowship Name" />
+          <field type="ObjectID" name="leader" text="Fellowship Leader" />
+          <field type="DWORD" name="shareExp1" text="Seems to match ShareExp" />
+          <field type="DWORD" name="shareExp" text="if value==0 then share==0, if value==1 then share==percentage based on level and numberOfFellows" />
+          <field type="DWORD" name="openfellow" text="Open fellowship" />
+          <field type="DWORD" name="unknown3" text="unknown" />
+        </case>
+
+        <case value="0x00B0" text="Fellowship recruit member"
+					retired="true" lastUpdate="20050809" lastUpdater="kgober">
+          <field type="ObjectID" name="fellow" text="New fellowship member" />
+          <field type="WORD" name="unknown1" text="unknown1" />
+          <field type="WORD" name="level" text="Level of recruited member" />
+          <field type="DWORD" name="maxHealth" text="Maximum Health" />
+          <field type="DWORD" name="maxStam" text="Maximum Stamina" />
+          <field type="DWORD" name="maxMana" text="Maximum Mana" />
+          <field type="DWORD" name="curHealth" text="Current Health" />
+          <field type="DWORD" name="curStam" text="Current Stamina" />
+          <field type="DWORD" name="curMana" text="Current Mana" />
+          <field type="DWORD" name="shareLoot" text="if 0 then noSharePhatLoot, if 16 (0x0010) then sharePhatLoot" />
+          <field type="String" name="name" text="Name of Member" />
+          <field type="DWORD" name="unknown" text="ShareXPS?" />
+        </case>
+
+        <case value="0x00B1" text="Fellowship dismissal"
+					retired="true" lastUpdate="20050809" lastUpdater="kgober">
+          <field type="ObjectID" name="fellow" text="Person who was dismissed from the fellowship" />
+        </case>
+
+        <case value="0x00B3" text="Fellowship was disbanded"
+					retired="true" lastUpdate="20050809" lastUpdater="kgober" />
+
+        <case value="0x00B4" text="Sent when you first open a book, contains the entire table of contents.">
+          <field type="ObjectID" name="object" text="The readable object you have just opened." />
+          <field type="DWORD" name="totalPages" text="The total number of pages in the book." />
+          <field type="DWORD" name="contentsPages" text="The number of pages that appear in the contents." />
+          <field type="DWORD" name="unknown1" text="Unknown - Always 0x3E8, may be some sort of media type." />
+          <field type="DWORD" name="usedPages" text="The number of used pages, and the number of content records." />
+          <vector name="pages" length="usedPages">
+            <field type="ObjectID" name="author" text="The character ID of the author. For preauthored books, this value is 0xFFFFFFFF." />
+            <field type="String" name="authorName" text="The character name of the author. Preauthored books often use this as a table of contents instead." />
+            <field type="String" name="zoneAccount" text="The zone account name of the author (expect this to be remove in the near future - Cibo, October 20, 2000). For prewritten books, this is always 'prewritten'." />
+            <field type="DWORD" name="unknown1" text="Unknown - Always 0" />
+          </vector>
+          <field type="String" name="comment" text="The inscription comment and the book title." />
+          <field type="ObjectID" name="commentAuthor" text="The author of the inscription (and not coincidentally, the book title)." />
+          <field type="String" name="commentAuthorName" text="The name of the inscription author." />
+        </case>
+
+        <case value="0x00B8" text="Contains the text of a single page of a book, parchment or sign.">
+          <field type="ObjectID" name="object" text="The object id for the readable object." />
+          <field type="DWORD" name="page" text="The 0-based index of the page you are currently viewing." />
+          <field type="ObjectID" name="author" text="The character ID of the author. For preauthored books, this value is 0xFFFFFFFF." />
+          <field type="String" name="authorName" text="The character name of the author. Preauthored books often use this as a table of contents instead." />
+          <field type="String" name="zoneAccount" text="The zone account name of the author (expect this to be remove in the near future - Cibo, October 20, 2000). For prewritten books, this is always 'prewritten'." />
+          <field type="DWORD" name="unknown3" text="unknown" />
+          <field type="DWORD" name="unknown1" text="Unknown - Always 1" />
+          <field type="DWORD" name="unknown2" text="unknown" />
+          <field type="String" name="text" text="The text of the page." />
+        </case>
+
+        <case value="0x00C9" text="The result of an attempt to assess an item or creature."
+					lastUpdate="20050807" lastUpdater="kgober">
+          <field type="ObjectID" name="object" text="the object ID of the item or creature being assessed" />
+          <field type="DWORD" name="flags" />
+          <field type="Boolean" name="success" text="assessment successful: 0=no, 1=yes" />
+          <maskmap name="flags">
+            <mask value="0x00000001">
+              <field type="WORD" name="dwordCount"/>
+              <field type="WORD" name="dwordUnknown"/>
+              <vector name="dwords" length="dwordCount">
+                <field type="DWORDPropertyID" name="key" />
+                <field type="DWORD" name="value" />
+              </vector>
+            </mask>
+            <mask value="0x00002000">
+              <field type="WORD" name="qwordCount" />
+              <field type="WORD" name="qwordUnknown" />
+              <vector name="qwords" length="qwordCount">
+                <field type="QWORDPropertyID" name="key" />
+                <field type="QWORD" name="value" />
+              </vector>
+            </mask>
+            <mask value="0x00000002">
+              <field type="WORD" name="booleanCount" />
+              <field type="WORD" name="booleanUnknown" />
+              <vector name="booleans" length="booleanCount">
+                <field type="BooleanPropertyID" name="key" />
+                <field type="Boolean" name="value" text="Boolean property value (0=False, 1=True)" />
+              </vector>
+            </mask>
+            <mask value="0x00000004">
+              <field type="WORD" name="doubleCount" />
+              <field type="WORD" name="doubleUnknown" />
+              <vector name="doubles" length="doubleCount">
+                <field type="DoublePropertyID" name="key" />
+                <field type="double" name="value" />
+              </vector>
+            </mask>
+            <mask value="0x00000008">
+              <field type="WORD" name="stringCount" />
+              <field type="WORD" name="stringUnknown" />
+              <vector name="strings" length="stringCount">
+                <field type="StringPropertyID" name="key" />
+                <field type="String" name="value" />
+              </vector>
+            </mask>
+            <mask value="0x00001000">
+              <field type="WORD" name="resourceCount" />
+              <field type="WORD" name="resourceUnknown" />
+              <vector name="resources" length="resourceCount">
+                <field type="ResourcePropertyID" name="key" />
+                <field type="ResourceID" name="value" />
+              </vector>
+            </mask>
+            <mask value="0x00000010">
+              <field type="WORD" name="spellCount" />
+              <field type="WORD" name="spellUnknown" />
+              <vector name="spells" length="spellCount">
+                <field type="SpellID" name="spell" />
+                <field type="WORD" name="flags" />
+              </vector>
+            </mask>
+            <mask value="0x00000080">
+              <field type="float" name="protSlashing" text="relative protection against slashing damage (multiply by AL for actual protection)" />
+              <field type="float" name="protPiercing" text="relative protection against piercing damage (multiply by AL for actual protection)" />
+              <field type="float" name="protBludgeoning" text="relative protection against bludgeoning damage (multiply by AL for actual protection)" />
+              <field type="float" name="protCold" text="relative protection against cold damage (multiply by AL for actual protection)" />
+              <field type="float" name="protFire" text="relative protection against fire damage (multiply by AL for actual protection)" />
+              <field type="float" name="protAcid" text="relative protection against acid damage (multiply by AL for actual protection)" />
+              <field type="float" name="protLightning" text="relative protection against lightning damage (multiply by AL for actual protection)" />
+            </mask>
+            <mask value="0x00000100">
+              <field type="DWORD" name="flags1" text="These Flags indication which fields will be available for assess." />
+              <field type="DWORD" name="health" text="current health" />
+              <field type="DWORD" name="healthMax" text="maximum health" />
+              <maskmap name="flags1">
+                <mask value="0x00000008">
+                  <field type="DWORD" name="strength" text="strength" />
+                  <field type="DWORD" name="endurance" text="endurance" />
+                  <field type="DWORD" name="quickness" text="quickness" />
+                  <field type="DWORD" name="coordination" text="coordination" />
+                  <field type="DWORD" name="focus" text="focus" />
+                  <field type="DWORD" name="self" text="self" />
+                  <field type="DWORD" name="stamina" text="current stamina" />
+                  <field type="DWORD" name="mana" text="current mana" />
+                  <field type="DWORD" name="staminaMax" text="maximum stamina" />
+                  <field type="DWORD" name="manaMax" text="maximum mana" />
+                </mask>
+                <mask value="0x00000001">
+                  <field type="AttributeHighlightMask" name="attrHighlight" text="highlight enable bitmask: 0=no, 1=yes" />
+                  <field type="AttributeHighlightMask" name="attrColor" text="highlight color bitmask: 0=red, 1=green" />
+                </mask>
+              </maskmap>
+            </mask>
+            <mask value="0x00000020">
+              <field type="DamageType" name="weapType" text="the type of damage done by the weapon" />
+              <field type="DWORD" name="weapSpeed" text="the speed of the weapon" />
+              <field type="SkillID" name="weapSkill" text="the skill used by the weapon (-1 if none)" />
+              <field type="DWORD" name="weapDamage" text="the maximum damage done by the weapon" />
+              <field type="double" name="weapVariance" text="the maximum damage variance of the weapon" />
+              <field type="double" name="weapModifier" text="the damage modifier of the weapon" />
+              <field type="double" name="weapUnknown1" />
+              <field type="double" name="weapPower" text="the power of the weapon (this affects range)" />
+              <field type="double" name="weapAttack" text="the attack skill bonus of the weapon" />
+              <field type="DWORD" name="weapUnknown3" />
+            </mask>
+            <mask value="0x00000040">
+              <field type="DWORD" name="unknown40_1" />
+              <field type="DWORD" name="unknown40_2" />
+              <field type="DWORD" name="unknown40_3" />
+            </mask>
+            <mask value="0x00000200">
+              <field type="ArmorHighlightMask" name="protHighlight" text="highlight enable bitmask: 0=no, 1=yes" />
+              <field type="ArmorHighlightMask" name="protColor" text="highlight color bitmask: 0=red, 1=green" />
+            </mask>
+            <mask value="0x00000800">
+              <field type="WeaponHighlightMask" name="weapHighlight" text="highlight enable bitmask: 0=no, 1=yes" />
+              <field type="WeaponHighlightMask" name="weapColor" text="highlight color bitmask: 0=red, 1=green" />
+            </mask>
+            <mask value="0x00000400">
+              <field type="WandHighlightMask" name="wandHighlight" text="highlight enable bitmask: 0=no, 1=yes" />
+              <field type="WandHighlightMask" name="wandColor" text="highlight color bitmask: 0=red, 1=green" />
+            </mask>
+          </maskmap>
+        </case>
+
+        <case value="0x0147" text="Group Chat"
+					lastUpdate="20050818" lastUpdater="kgober">
+          <field type="GroupChatType" name="type" text="the message type" />
+          <field type="String" name="senderName" text="the name of the player sending the message" />
+          <field type="String" name="text" text="the message text." />
+        </case>
+
+        <case value="0x014A" text="Allegiance and Fellowship chats come on these messages."
+					retired="true" lastUpdate="20050809" lastUpdater="kgober">
+          <field type="DWORD" name="group" text="The type of group chat." />
+          <field type="String" name="senderName" text="The name of the character sending you the message." />
+          <field type="String" name="text" text="The text of the message." />
+        </case>
+
+        <case value="0x0196" text="Set Pack Contents"
+					lastUpdate="20050918" lastUpdater="kgober">
+          <field type="ObjectID" name="container" text="The pack we are setting the contents of. This pack objects and the contained objects may be created before or after the message." />
+          <field type="DWORD" name="itemCount" text="Number of items in the pack (does not reflect the capacity - see the pack creation message)." />
+          <vector name="items" length="itemCount">
+            <field type="ObjectID" name="item" text="An item for the pack." />
+            <field type="ItemType" name="type" text="The type of this inventory. In this message it will always be 0 since there are no subpacks currently." />
+          </vector>
+        </case>
+
+        <case value="0x019A" text="Removes an item from inventory (when you place it on the ground or give it away)">
+          <field type="ObjectID" name="item" text="The item leaving your inventory." />
+        </case>
+
+        <case value="0x01A4" text="An enchantment was removed (via magic item)."
+					retired="true" lastUpdate="20050809" lastUpdater="kgober">
+          <field type="SpellID" name="spell" text="The ID of the spell being removed." />
+          <field type="WORD" name="layers" text="Index of this spell (for layers)." />
+        </case>
+
+        <case value="0x01A6" text="Removes a bunch of enchantments to the list (when multiple spells expire simultaneously)."
+					retired="true" lastUpdate="20050809" lastUpdater="kgober">
+          <field type="DWORD" name="count" text="The number of enchantments" />
+          <vector name="enchantments" length="count">
+            <field type="SpellID" name="spell" text="The spell being removed." />
+            <field type="WORD" name="layer" text="Index of the spell being removed, if this index is 1 the enchantment is entirely removed." />
+          </vector>
+        </case>
+
+        <case value="0x01A7" text="Melee attack completed">
+          <field type="DWORD" name="number" text="Number of user attacks" />
+        </case>
+
+        <case value="0x01A8" text="Delete a spell from your spellbook."
+					lastUpdate="20050823" lastUpdater="kgober">
+          <field type="SpellID" name="spell" text="The spell being deleted" />
+          <field type="WORD" name="unknown" />
+        </case>
+
+        <case value="0x01AC" text="You just died.">
+          <field type="String" name="text" text="Your (typically mocking) death message." />
+        </case>
+
+        <case value="0x01AD" text="Message for a death, something you killed or your own death message.">
+          <field type="String" name="text" text="The text of the nearby or present death message." />
+        </case>
+
+        <case value="0x01AE" text="Remove a bunch of enchantments in a single shot."
+					retired="true" lastUpdate="20050809" lastUpdater="kgober">
+          <field type="DWORD" name="count" text="The number of enchantments" />
+          <vector name="enchantments" length="count">
+            <field type="SpellID" name="spell" text="The spell being removed." />
+            <field type="WORD" name="layer" text="The layer being removed." />
+          </vector>
+        </case>
+
+        <case value="0x01B1" text="You have hit your target with a melee attack."
+					lastUpdate="20050807" lastUpdater="kgober">
+          <field type="String" name="target" text="the name of your target" />
+          <field type="DamageType" name="type" text="the type of damage done" />
+          <field type="double" name="severity" text="the severity of the attack, scaled from 0.0 (low) to 1.0 (high)" />
+          <field type="DWORD" name="damage" text="the amount of damage done" />
+          <field type="Boolean" name="critical" text="critical hit: 0=no, 1=yes" />
+          <field type="DWORD" name="unknown" />
+        </case>
+
+        <case value="0x01B2" text="You have been hit by a creature's melee attack."
+					lastUpdate="20050807" lastUpdater="kgober">
+          <field type="String" name="attacker" text="the name of the creature" />
+          <field type="DamageType" name="type" text="the type of damage done" />
+          <field type="double" name="severity" text="the severity of the attack, scaled from 0.0 (low) to 1.0 (high)" />
+          <field type="DWORD" name="damage" text="the amount of damage done" />
+          <field type="DamageLocation" name="location" text="the location of the damage done" />
+          <field type="Boolean" name="critical" text="critical hit: 0=no, 1=yes" />
+          <field type="DWORD" name="unknown" />
+        </case>
+
+        <case value="0x01B3" text="Your target has evaded your melee attack.">
+          <field type="String" name="target" text="the name of your target" />
+        </case>
+
+        <case value="0x01B4" text="You have evaded a creature's melee attack.">
+          <field type="String" name="attacker" text="the name of the creature" />
+        </case>
+
+        <case value="0x01B8" text="Start melee attack" />
+
+        <case value="0x01C0" text="Update a creature's health bar.">
+          <field type="ObjectID" name="object" text="the object ID of the creature" />
+          <field type="float" name="health" text="the amount of health remaining, scaled from 0.0 (none) to 1.0 (full)" />
+        </case>
+
+        <case value="0x01C3" text="Age Command Result - happens when you do /age in the game">
+          <field type="String" name="unknown" text="Unknown - always seems to be a null string" />
+          <field type="String" name="age" text="Your age in the format 1mo 1d 1h 1m 1s" />
+        </case>
+
+        <case value="0x01C7" text="Ready.  Previous action complete"
+					lastUpdate="20050914" lastUpdater="kgober">
+          <field type="DWORD" name="unknown"/>
+        </case>
+
+        <case value="0x01C8" text="Update Allegiance info, sent when allegiance panel is open"
+					lastUpdate="20050922" lastUpdater="kgober">
+          <field type="DWORD" name="unknown"/>
+        </case>
+
+        <case value="0x01CA" text="Unknown"
+					unknown="true" />
+
+        <case value="0x01CB" text="Close Assess Panel">
+          <field type="DWORD" name="unknown" />
+        </case>
+
+        <case value="0x01EA" text="Ping Reply" />
+
+        <case value="0x01F4" text="Squelch and Filter List"
+          lastUpdate="20061218" lastUpdater="Digero">
+          <field type="DWORD" name="unknown1" text="Unknown Always 0" />
+          <field type="WORD" name="squelchCount" text="The number of squelched users." />
+          <field type="WORD" name="squelchUnknown" text="Unknown flags, sometimes 0x0020 is set" />
+          <vector name="users" length="squelchCount">
+            <field type="ObjectID" name="user" text="the object ID of the squelched player." />
+            <field type="DWORD" name="squelchMaskCount" text="The number of squelch masks (1=specific types, 4=all types)" />
+            <vector name="squelchMasks" length="squelchMaskCount">
+              <field type="ChatFilterMask" name="squelchMask" text="One of the squelch masks" />
+            </vector>
+            <field type="String" name="name" text="the name of the squelched player" />
+            <field type="Boolean" name="account" text="Whether this squelch applies to the entire account" />
+          </vector>
+          <field type="DWORD" name="filterMaskCount" text="The number of global filter masks (1=specific types, 4=all types)" />
+          <vector name="filterMasks" length="filterMaskCount">
+            <field type="ChatFilterMask" name="filterMask" text="One of the global filter masks" />
+          </vector>
+          <field type="DWORD" name="unknown2" />
+          <field type="DWORD" name="unknown3" />
+        </case>
+
+        <case value="0x01FD" text="Send to begin a trade and display the trade window">
+          <field type="ObjectID" name="trader" text="Person initiating the trade" />
+          <field type="ObjectID" name="tradee" text="Person receiving the trade" />
+          <field type="DWORD" name="unknown1" text="unknown" />
+          <field type="DWORD" name="unknown2" text="unknown" />
+        </case>
+
+        <case value="0x01FF" text="End trading">
+          <field type="EndTradeReason" name="reason" text="Reason trade was cancelled" />
+        </case>
+
+        <case value="0x0200" text="Item was added to trade window - you will receive a Create Object (0xF745) with details of the item">
+          <field type="ObjectID" name="item" text="The item being dropped into trade window" />
+          <field type="DWORD" name="side" text="Side of the trade window object was inserted (1 or 2)" />
+          <field type="DWORD" name="unknown1" text="unknown, was zero when testing" />
+        </case>
+
+        <case value="0x0202" text="The trade was accepted"
+					lastUpdate="20050918" lastUpdater="kgober">
+          <field type="ObjectID" name="trader" text="Person who accepted the trade" />
+        </case>
+
+        <case value="0x0203" text="The trade was un-accepted"
+					lastUpdate="20050918" lastUpdater="kgober">
+          <field type="ObjectID" name="trader" text="Person who un-accepted the trade" />
+        </case>
+
+        <case value="0x0205" text="The trade window was reset"
+					lastUpdate="20050918" lastUpdater="kgober">
+          <field type="ObjectID" name="trader" text="Person who cleared the window" />
+        </case>
+
+        <case value="0x0207" text="Failure to add a trade item">
+          <field type="ObjectID" name="item" text="Item that could not be added to trade window" />
+          <field type="DWORD" name="reason" text="The numeric reason it couldn't be traded." />
+        </case>
+
+        <case value="0x0208" text="Failure to complete a trade" />
+
+        <case value="0x021D" text="Buy a dwelling or pay maintenance"
+					lastUpdate="20060822" lastUpdater="kgober">
+          <field type="ObjectID" name="object" text="the object ID of the dwelling's covenant crystal" />
+          <field type="DWORD" name="dwellingID" text="the number associated with this dwelling" />
+          <field type="ObjectID" name="owner" text="the object ID of the the current owner" />
+          <field type="DWORD" name="unknown1" />
+          <field type="DWORD" name="levelReq" text="the level requirement to purchase this dwelling (-1 if no requirement)" />
+          <field type="DWORD" name="unknown2" />
+          <field type="DWORD" name="rankReq" text="the rank requirement to purchase this dwelling (-1 if no requirement)" />
+          <field type="DWORD" name="unknown3" />
+          <field type="DWORD" name="unknown4" />
+          <field type="DWORD" name="dwellingType" text="the type of dwelling (1=cottage, 2=villa, 3=mansion, 4=apartment)" />
+          <field type="String" name="ownerName" text="the name of the current owner" />
+          <field type="DWORD" name="purchaseCount" text="the number of items required to purchase this dwelling" />
+          <vector name="purchaseItems" length="purchaseCount">
+            <field type="DwellingItem" name="item" />
+          </vector>
+          <field type="DWORD" name="maintenanceCount" text="the number of items required to pay the maintenance cost for this dwelling" />
+          <vector name="maintenanceItems" length="maintenanceCount">
+            <field type="DwellingItem" name="item" />
+          </vector>
+        </case>
+
+        <case value="0x0225" text="House panel information for owners."
+          lastUpdate="20060822" lastUpdater="kgober">
+          <field type="DWORD" name="purchaseDate" text="when the dwelling was purchased (Unix timestamp)" />
+          <field type="DWORD" name="maintenanceDate" text="when the current maintenance period begain (Unix timestamp)" />
+          <field type="DWORD" name="dwellingType" text="the type of dwelling (1=cottage, 2=villa, 3=mansion, 4=apartment)" />
+          <field type="DWORD" name="unknown1" />
+          <field type="DWORD" name="purchaseCount" text="the number of items required to purchase this dwelling" />
+          <vector name="purchaseItems" length="purchaseCount">
+            <field type="DwellingItem" name="item" />
+          </vector>
+          <field type="DWORD" name="maintenanceCount" text="the number of items required to pay the maintenance cost for this dwelling" />
+          <vector name="maintenanceItems" length="maintenanceCount">
+            <field type="DwellingItem" name="item" />
+          </vector>
+          <field type="Position0" name="position" text="object position" />
+        </case>
+
+        <case value="0x0226" text="House panel information for non-owners." />
+
+        <case value="0x0257" text="House Guest List, Sent in response to asking for one.">
+          <field type="DWORD" name="unknown" text="so far always 0x10000001" />
+          <field type="DWORD" name="public" text="0 is private house, 1 = open to public" />
+          <field type="ObjectID" name="monarch" text="populated when any allegiance access is specified" />
+          <field type="WORD" name="guestCount" text="number of guests on list" />
+          <field type="WORD" name="guestLimit" text="Maximum number of guests on guest list (cottage is 32)" />
+          <vector name="guestList" length="guestCount">
+            <field type="ObjectID" name="guest" text="ID of the guest" />
+            <field type="DWORD" name="access" text="0 is just access to house, 1 = access to storage" />
+            <field type="String" name="guestName" text="Name of the guest" />
+          </vector>
+        </case>
+
+        <case value="0x0264" text="Update an item's mana bar."
+					lastUpdate="20050918" lastUpdater="kgober">
+          <field type="ObjectID" name="item" text="the object ID of the item" />
+          <field type="float" name="mana" text="the amount of mana remaining, scaled from 0.0 (none) to 1.0 (full)" />
+          <field type="Boolean" name="show" text="show mana bar: 0=no, 1=yes" />
+        </case>
+
+        <case value="0x0271" text="Display a list of available dwellings in the chat window."
+					lastUpdate="20061218" lastUpdater="Digero">
+          <field type="DWORD" name="dwellingType" text="The type of dwelling (1=cottage, 2=villa, 3=mansion, 4=apartment)" />
+          <field type="DWORD" name="landcellCount" text="The number of dwelling locations returned" />
+          <vector name="landcells" length="landcellCount">
+            <field type="DWORD" name="landcell" />
+          </vector>
+          <field type="DWORD" name="availableCount" text="The total number of dwellings of this type available" />
+        </case>
+
+        <case value="0x0274" text="Display a confirmation panel."
+					lastUpdate="20050918" lastUpdater="kgober">
+          <field type="ConfirmationType" name="type" text="the type of confirmation panel to display" />
+          <field type="DWORD" name="number" text="sequence number" />
+          <field type="String" name="text" text="text to be included in the confirmation panel message" />
+        </case>
+
+        <case value="0x0276" text="A player has closed your confirmation panel."
+					lastUpdate="20050918" lastUpdater="kgober">
+          <field type="DWORD" name="unknown" />
+          <field type="DWORD" name="number" text="sequence number" />
+        </case>
+
+        <case value="0x027A" text="Display an allegiance login/logout message in the chat window."
+					lastUpdate="20030302" lastUpdater="Merlyn of Harvestgain">
+          <field type="ObjectID" name="member" text="the object ID of the player logging in or out" />
+          <field type="Boolean" name="logon" text="0=logout, 1=login" />
+        </case>
+
+        <case value="0x028A" text="Display a status message in the chat window.">
+          <field type="StatusMessageType1" name="type" text="the type of status message to display" />
+        </case>
+
+        <case value="0x028B" text="Display a parameterized status message in the chat window.">
+          <field type="StatusMessageType2" name="type" text="the type of status message to display" />
+          <field type="String" name="text" text="text to be included in the status message" />
+        </case>
+
+        <case value="0x0295" text="Set Turbine Chat channel numbers."
+					lastUpdate="20050921" lastUpdater="kgober">
+          <field type="DWORD" name="allegiance" text="the channel number of the allegiance channel" />
+          <field type="DWORD" name="general" text="the channel number of the general channel" />
+          <field type="DWORD" name="trade" text="the channel number of the trade channel" />
+          <field type="DWORD" name="lfg" text="the channel number of the looking-for-group channel" />
+          <field type="DWORD" name="roleplay" text="the channel number of the roleplay channel" />
+        </case>
+
+        <case value="0x02BD" text="Someone has sent you a @tell."
+					lastUpdate="20050807" lastUpdater="kgober">
+          <field type="String" name="text" text="the message text" />
+          <field type="String" name="senderName" text="the name of the creature sending you the message" />
+          <field type="ObjectID" name="sender" text="the object ID of the creature sending you the message" />
+          <field type="ObjectID" name="target" text="the object ID of the recipient of the message (should be you)" />
+          <field type="ChatMessageType" name="type" text="the message type, controls color and @filter processing" />
+        </case>
+
+        <case value="0x02BE" text="Create or join a fellowship"
+					lastUpdate="20050807" lastUpdater="kgober">
+          <field type="WORD" name="fellowCount" text="the current number of fellowship members" />
+          <field type="WORD" name="fellowUnknown" />
+          <vector name="fellows" length="fellowCount">
+            <field type="FellowInfo" name="fellow" />
+          </vector>
+          <field type="String" name="name" text="the fellowship name" />
+          <field type="ObjectID" name="leader" text="the object ID of the fellowship leader" />
+          <field type="DWORD" name="unknown1" />
+          <field type="Boolean" name="shareXP" text="XP sharing: 0=no, 1=yes" />
+          <field type="Boolean" name="open" text="open fellowship: 0=no, 1=yes" />
+          <field type="DWORD" name="unknown2" />
+          <field type="DWORD" name="unknown3" />
+          <field type="DWORD" name="unknown4" />
+        </case>
+
+        <case value="0x02BF" text="Disband your fellowship."
+					lastUpdate="20050807" lastUpdater="kgober" />
+
+        <case value="0x02C0" text="Add a member to your fellowship."
+					lastUpdate="20050807" lastUpdater="kgober">
+          <field type="FellowInfo" name="fellow" />
+          <field type="DWORD" name="unknown" />
+        </case>
+
+        <case value="0x02C1" text="Add a spell to your spellbook."
+					lastUpdate="20050823" lastUpdater="kgober">
+          <field type="SpellID" name="spell" text="the spell ID of the new spell" />
+          <field type="WORD" name="unknown" />
+        </case>
+
+        <case value="0x02C2" text="Apply an enchantment to your character."
+					lastUpdate="20050807" lastUpdater="kgober">
+          <field type="Enchantment" name="enchantment" />
+        </case>
+
+        <case value="0x02C3" text="Remove an enchantment from your character."
+					lastUpdate="20050807" lastUpdater="kgober">
+          <field type="SpellID" name="spell" text="the spell ID of the enchantment to be removed" />
+          <field type="WORD" name="layer" text="identifies the specific enchantment, if the same spell is applied more than once" />
+        </case>
+
+        <case value="0x02C5" text="Remove multiple enchantments from your character."
+					lastUpdate="20050807" lastUpdater="kgober">
+          <field type="DWORD" name="count" text="the number of enchantments to be removed" />
+          <vector name="enchantments" length="count">
+            <field type="SpellID" name="spell" text="the spell ID of the enchantment to be removed" />
+            <field type="WORD" name="layer" text="identifies the specific enchantment, if the same spell is applied more than once" />
+          </vector>
+        </case>
+
+        <case value="0x02C6" text="Silently remove all enchantments from your character, e.g. when you die (no message in the chat window)."
+					lastUpdate="20050807" lastUpdater="kgober" />
+
+        <case value="0x02C7" text="Silently remove An enchantment from your character."
+					lastUpdate="20050910" lastUpdater="GKusnick">
+          <field type="SpellID" name="spell" text="the spell ID of the enchantment to be removed" />
+          <field type="WORD" name="layer" text="identifies the specific enchantment, if the same spell is applied more than once" />
+        </case>
+
+        <case value="0x02C8" text="Silently remove multiple enchantments from your character (no message in the chat window)."
+					lastUpdate="20050807" lastUpdater="kgober">
+          <field type="DWORD" name="count" text="the number of enchantments to be removed" />
+          <vector name="enchantments" length="count">
+            <field type="SpellID" name="spell" text="the spell ID of the enchantment to be removed" />
+            <field type="WORD" name="layer" text="identifies the specific enchantment, if the same spell is applied more than once" />
+          </vector>
+        </case>
+
+        <case value="0x02C9" text="A portal storm is brewing."
+					lastUpdate="20050922" lastUpdater="kgober">
+          <field type="float" name="severity" />
+        </case>
+
+        <case value="0x02CA" text="A portal storm is imminent."
+					lastUpdate="20050922" lastUpdater="kgober">
+          <field type="float" name="severity" />
+        </case>
+
+        <case value="0x02CB" text="You have been portal stormed."
+					lastUpdate="20050922" lastUpdater="kgober" />
+
+        <case value="0x02CC" text="The portal storm has subsided."
+					lastUpdate="20050922" lastUpdater="kgober" />
+
+        <case value="0x02EB" text="Display a status message on the Action Viewscreen (the red text overlaid on the 3D area)."
+					lastUpdate="20050807" lastUpdater="kgober">
+          <field type="String" name="text" text="the message text" />
+        </case>
+
+      </switch>
+    </message>
+    <!-- F7B0 -->
+
+    <message type="F7B1" name="Game Action" text="Game Actions are outgoing messages that are sequenced."
+			direction="outbound" lastUpdate="20050906" lastUpdater="kgober">
+      <field type="DWORD" name="sequence" text="message sequence number" />
+      <field type="GameAction" name="action" text="sequenced message type" />
+      <switch name="action">
+
+        <case value="0x0005" text="Set a single character option."
+					lastUpdate="20050907" lastUpdater="GKusnick">
+          <field type="OptionPropertyID" name="key" text="the option being set" />
+          <field type="Boolean" name="value" text="the value of the option" />
+        </case>
+
+        <case value="0x0010" text="Set AFK message."
+					lastUpdate="20050925" lastUpdater="kgober">
+          <field type="String" name="text" text="The message text" />
+        </case>
+
+        <case value="0x0019" text="Store an item in a container."
+					lastUpdate="20050925" lastUpdater="kgober">
+          <field type="ObjectID" name="item" text="The item being stored" />
+          <field type="ObjectID" name="container" text="The container the item is being stored in" />
+          <field type="DWORD" name="slot" text="The position in the container where the item is being placed" />
+        </case>
+
+        <case value="0x001A" text="Equip an item."
+					lastUpdate="20050925" lastUpdater="kgober">
+          <field type="ObjectID" name="item" text="The item being equipped" />
+          <field type="EquipMask" name="slot" text="The position in the container where the item is being placed" />
+        </case>
+
+        <case value="0x001B" text="Drop an item."
+					lastUpdate="20050925" lastUpdater="kgober">
+          <field type="ObjectID" name="object" text="The item being dropped" />
+        </case>
+
+        <case value="0x0036" text="Attempt to use an item."
+					lastUpdate="20050907" lastUpdater="GKusnick">
+          <field type="ObjectID" name="object" text="The item being used" />
+        </case>
+
+        <case value="0x0044" text="Spend XP to raise a vital."
+          lastUpdate="20051213" lastUpdater="kgober">
+          <field type="DWORD" name="vital" text="The ID of the vital" />
+          <field type="DWORD" name="xp" text="The amount of XP being spent" />
+        </case>
+
+        <case value="0x0045" text="Spend XP to raise an attribute."
+          lastUpdate="20051213" lastUpdater="kgober">
+          <field type="DWORD" name="attr" text="The ID of the attribute" />
+          <field type="DWORD" name="xp" text="The amount of XP being spent" />
+        </case>
+
+        <case value="0x0046" text="Spend XP to raise a skill."
+          lastUpdate="20051213" lastUpdater="kgober">
+          <field type="DWORD" name="skill" text="The ID of the skill" />
+          <field type="DWORD" name="xp" text="The amount of XP being spent" />
+        </case>
+
+        <case value="0x0047" text="Spend skill credits to train a skill."
+          lastUpdate="20051213" lastUpdater="kgober">
+          <field type="DWORD" name="skill" text="The ID of the skill" />
+          <field type="DWORD" name="credits" text="The number of skill credits being spent" />
+        </case>
+
+        <case value="0x0048" text="Cast a spell."
+					lastUpdate="20050911" lastUpdater="kgober">
+          <field type="DWORD" name="spell" text="The ID of the spell" />
+        </case>
+
+        <case value="0x004A" text="Cast a spell."
+					lastUpdate="20050918" lastUpdater="kgober">
+          <field type="ObjectID" name="target" text="The target of the spell" />
+          <field type="DWORD" name="spell" text="The ID of the spell" />
+        </case>
+
+        <case value="0x00A1" text="The client is ready for the character to materialize after portalling or logging on."
+					lastUpdate="20050906" lastUpdater="kgober">
+        </case>
+
+        <case value="0x00CD" text="Give an item to someone."
+					lastUpdate="20050927" lastUpdater="kgober">
+          <field type="ObjectID" name="target" text="The recipient of the item" />
+          <field type="ObjectID" name="item" text="The item being given" />
+          <field type="DWORD" name="unknown" />
+        </case>
+
+        <case value="0x019C" text="Add an item to the shortcut bar."
+              lastUpdate="20051120" lastUpdater="kgober">
+          <field type="DWORD" name="position" text="Position on the shortcut bar (0-8) where the item is to be added" />
+          <field type="ObjectID" name="target" text="Object ID" />
+          <field type="DWORD" name="unknown3" />
+        </case>
+
+        <case value="0x019D" text="Remove an item from the shortcut bar."
+              lastUpdate="20051120" lastUpdater="kgober">
+          <field type="DWORD" name="position" text="Position on the shortcut bar (0-8) of the item to be removed" />
+        </case>
+
+        <case value="0x01A1" text="Set multiple character options."
+					lastUpdate="20050907" lastUpdater="GKusnick">
+          <field type="CharacterOptionData" name="options" />
+        </case>
+
+        <case value="0x01E3" text="Add a spell to a spell bar."
+              lastUpdate="20051120" lastUpdater="kgober">
+          <field type="DWORD" name="spell" text="The spell's ID" />
+          <field type="DWORD" name="position" text="Position on the spell bar where the spell is to be added" />
+          <field type="DWORD" name="spellbar" text="The spell bar number"/>
+        </case>
+
+        <case value="0x01E4" text="Remove a spell from a spell bar."
+              lastUpdate="20051120" lastUpdater="kgober">
+          <field type="DWORD" name="spell" text="The spell's ID" />
+          <field type="DWORD" name="spellbar" text="The spell bar number"/>
+        </case>
+
+      </switch>
+    </message>
+    <!-- F7B1 -->
+
+    <message type="F7C7" name="Retired - Start 3D Mode" text="Sent to instruct the client to login. Client changes video mode and enter's portal mode."
+			retired="true" lastUpdate="20050809" lastUpdater="kgober" />
+
+    <message type="F7C8" name="Enter Game" text="The user has clicked 'Enter'. This message does not contain the ID of the character logging on; that comes later."
+			direction="outbound" lastUpdate="20050908" lastUpdater="kgober" />
+
+    <message type="F7DB" name="Update Object" text="Update an existing object's data."
+			lastUpdate="20050914" lastUpdater="kgober">
+      <field type="ObjectID" name="object" text="the object being updated" />
+      <field type="ModelData" name="model" text="updated model data" />
+      <field type="PhysicsData" name="physics" text="updated physics data" />
+      <field type="GameData" name="game" text="updated game data" />
+    </message>
+
+    <message type="F7DE" name="Turbine Chat" text="Send or receive a message using Turbine Chat."
+			direction="both" lastUpdate="20050818" lastUpdater="kgober">
+      <field type="DWORD" name="size" text="the number of bytes that follow after this DWORD" />
+      <field type="TurbineChatType" name="type" text="the type of data contained in this message" />
+      <field type="DWORD" name="unknown1" />
+      <field type="DWORD" name="unknown2" />
+      <field type="DWORD" name="unknown3" />
+      <field type="DWORD" name="unknown4" />
+      <field type="DWORD" name="unknown5" />
+      <field type="DWORD" name="unknown6" />
+      <field type="DWORD" name="payload" text="the number of bytes that follow after this DWORD" />
+      <switch name="type" summary-exclude="true">
+        <case value="0x01" text="inbound message">
+          <field type="DWORD" name="channel" text="the channel number of the message" />
+          <field type="WString" name="senderName" text="the name of the player sending the message" />
+          <field type="WString" name="text" text="the message text" />
+          <field type="DWORD" name="unknown01_1" />
+          <field type="ObjectID" name="sender" text="the object ID of the player sending the message" />
+          <field type="DWORD" name="unknown01_2" />
+          <field type="DWORD" name="unknown01_3" />
+        </case>
+        <case value="0x03" text="outbound message">
+          <field type="DWORD" name="unknown03_1" />
+          <field type="DWORD" name="unknown03_2" />
+          <field type="DWORD" name="unknown03_3" />
+          <field type="DWORD" name="outChannel" text="the channel number of the message" />
+          <field type="WString" name="outText" text="the message text" />
+          <field type="DWORD" name="unknown03_4" />
+          <field type="ObjectID" name="outSender" text="the object ID of the player sending the message (should be you)" />
+          <field type="DWORD" name="unknown03_5" />
+          <field type="DWORD" name="unknown03_6" />
+        </case>
+        <case value="0x05" text="inbound acknowledgement of outbound message">
+          <field type="DWORD" name="unknown05_1" />
+          <field type="DWORD" name="unknown05_2" />
+          <field type="DWORD" name="unknown05_3" />
+          <field type="DWORD" name="unknown05_4" />
+        </case>
+      </switch>
+    </message>
+
+    <message type="F7DF" name="Start 3D Mode" text="Switch from the character display to the game display."
+			lastUpdate="20050807" lastUpdater="kgober" />
+
+    <message type="F7E0" name="Server Message" text="Display a message in the chat window."
+			lastUpdate="20050807" lastUpdater="kgober">
+      <field type="String" name="text" text="the message text" />
+      <field type="ChatMessageType" name="type" text="the message type, controls color and @filter processing" />
+    </message>
+
+    <message type="F7E1" name="Server Name" text="The name of the current world."
+			lastUpdate="20050807" lastUpdater="kgober">
+      <field type="DWORD" name="players" text="the number of players connected" />
+      <field type="DWORD" name="unknown" text="unknown" />
+      <field type="String" name="server" text="the name of the current world" />
+    </message>
+
+    <message type="F7E2" name="Update Resource" text="Add or update a dat file Resource."
+			lastUpdate="20051001" lastUpdater="kgober">
+      <field type="DWORD" name="unknown1" text="unknown" />
+      <field type="ResourceType" name="type" text="which dat file should store this resource" />
+      <field type="DWORD" name="unknown3" text="unknown" />
+      <field type="ResourceID" name="resource" text="the resource ID number" />
+      <field type="DWORD" name="version" text="the file version number" />
+      <field type="CompressionType" name="compression" text="the type of compression used" />
+      <field type="DWORD" name="unknown4" text="unknown" />
+      <field type="DWORD" name="dataSize" text="the number of bytes required for the remainder of this message, including this DWORD" />
+      <switch name="compression" summary-exclude="true">
+        <case value="0x00">
+          <vector name="data" length="dataSize" skip="4">
+            <field type="BYTE" name="byte" text="(dataSize-4) bytes of uncompressed file data" />
+          </vector>
+        </case>
+        <case value="0x01">
+          <field type="DWORD" name="fileSize" text="the size of the uncompressed file" />
+          <vector name="data" length="dataSize" skip="8">
+            <field type="BYTE" name="byte" text="(dataSize-8) bytes of zlib compressed file data" />
+          </vector>
+        </case>
+      </switch>
+    </message>
+
+    <message type="F7E7" name="Dat File Patch List" text="A list of dat files that need to be patched"
+			lastUpdate="20050828" lastUpdater="Lane">
+      <field type="DWORD" name="size" text="Total size of all revisions" />
+      <field type="DWORD" name="revisionCount" text="Total number of revisions to follow" />
+      <vector name="revisions" length="revisionCount">
+        <field type="DWORD" name="header_0150" text="Dat File header offset 0x0150" />
+        <field type="DWORD" name="header_014C" text="Dat File header offset 0x014C" />
+        <field type="DWORD" name="revision" text="The corresponding Dat file revision for this patch set" />
+        <field type="DWORD" name="portalCount" text="Number of portal resources in this revision" />
+        <vector name="portalResources" length="portalCount">
+          <field type="ResourceID" name="resource" text="the resource ID number" />
+        </vector>
+        <field type="DWORD" name="cellCount" text="Number of cell resources in this revision" />
+        <vector name="cellResources" length="cellCount">
+          <field type="ResourceID" name="resource" text="the resource ID number" />
+        </vector>
+      </vector>
+      <!-- 0x11 unknown bytes -->
+    </message>
+
+  </messages>
+
+</schema>
