@@ -66,7 +66,7 @@
         <member type="float" name="dy" />
         <member type="float" name="dz" />
 	</type>
-	
+
     <type name="PositionPack" text="A position with sequences">
       <member type="Position" name="position" text="position" />
       <member type="WORD" name="object_instance_sequence" text="The instance sequence value for the object (number of logins for players)" />
@@ -74,7 +74,7 @@
       <member type="WORD" name="object_teleport_sequence" text="The teleport sequence value for the object" />
       <member type="WORD" name="object_force_position_sequence" text="The forced position sequence value for the object" />
     </type>
-	
+
 	<type name="AutonomousPositionPack" text="An autonomous position with sequences">
       <member type="Position0" name="position" text="position" />
       <member type="WORD" name="object_instance_sequence" text="The instance sequence value for the object (number of logins for players)" />
@@ -84,7 +84,7 @@
 	  <member type="BYTE" name="contact" text="Whether the player has contact with the ground" />
 	  <align type="DWORD" />
     </type>
-	
+
 	<type name="JumpPack" text="A jump with sequences">
       <member type="float" name="extent" text="Power of jump?" />
 	  <member type="Velocity" name="velocity" text="Velocity data" />
@@ -94,7 +94,7 @@
       <member type="WORD" name="object_force_position_sequence" text="The forced position sequence value for the object" />
 	  <align type="DWORD" />
     </type>
-	
+
 	<type name="MoveToStatePack" text="A set of data related to changing states with sequences">
       <member type="RawMotionState" name="raw_motion_state" text="Raw motion data" />
 	  <member type="Position0" name="position" text="Position data" />
@@ -1148,7 +1148,7 @@
 			<member name="speed" type="float" text="Command speed" />
 		</vector>
 	</type>
-	
+
     <type name="MovementData" text="Data related to the movement (animation) of the object">
       <member type="WORD" name="object_movement_sequence" text="The movement sequence value for this object" />
       <member type="WORD" name="object_server_control_sequence" text="The server control sequence value for this object (Increments when a movement is not autonomous)" />
@@ -1236,7 +1236,7 @@
         </case>
       </switch>
     </type>
-	
+
 	<type name="ItemProfile" text="Data related to an item, namely the amount and description">
 		<member type="DWORD" name="packed_amount" text="the object ID of the item">
 		  <submember type="DWORD" name="amount" and="0xFFFFFF" value="packed_amount &amp; 0xFFFFFF" text="the number of items for sale (-1 for an unlimited supply)" />
@@ -1252,7 +1252,7 @@
 		  </case>
 		</switch>
 	</type>
-			
+
 
     <type name="SourceType" parent="BYTE" text="Chat window string source">
       <value value="0x00" text="String is Loaded from the localization Dat" />
@@ -1360,7 +1360,7 @@
       <member type="String" name="name" text="the name of this item" />
       <member type="String" name="plural_name" text="the plural name of this item (if not specified, use &lt;name&gt; followed by 's' or 'es')" />
     </type>
-	
+
 	<type name="Trade" text="Information related to a secure trade.">
       <member type="ObjectID" name="partner" text="ID of other participant in the trade" />
       <member type="QWORD" name="stamp" text="Some kind of sequence" />
@@ -2275,7 +2275,7 @@
       <value value="0x400" text="Your opponent is in Check." />
       <value value="0x800" text="You have checkmated your opponent!" />
     </type>
-	
+
 	<type name="SpellBookFilterOptions" parent="DWORD" text="The various options for filtering the spellbook">
       <mask value="0x00000000" text="None" />
       <mask value="0x00000001" text="Creature" />
@@ -2292,7 +2292,7 @@
       <mask value="0x00000800" text="Level8" />
       <mask value="0x00002000" text="Void" />
     </type>
-	
+
 	<type name="AllegianceHouseAction" parent="DWORD" text="Actions related to /allegiance house">
       <value value="0x01" text="Help?" />
       <value value="0x02" text="GuestOpen" />
@@ -2300,14 +2300,14 @@
 	  <value value="0x04" text="StorageOpen" />
 	  <value value="0x05" text="StorageClosed" />
     </type>
-	
+
 	<type name="HouseType" parent="DWORD" text="House types">
       <value value="0x01" text="Cottage" />
       <value value="0x02" text="Villa" />
       <value value="0x03" text="Mansion" />
 	  <value value="0x04" text="Apartment" />
     </type>
-	
+
 	<type name="AllegianceLockAction" parent="DWORD" text="Actions related to /allegiance lock">
       <value value="0x01" text="LockedOff" />
       <value value="0x02" text="LockedOn" />
@@ -2316,13 +2316,13 @@
 	  <value value="0x05" text="DisplayBypass" />
 	  <value value="0x06" text="ClearBypass" />
     </type>
-	
+
 	<type name="AllegianceOfficerLevel" parent="uint" text="The permission levels that can be given to an allegiance officer">
       <value value="0x01" text="Speaker" />
       <value value="0x02" text="Seneschal" />
       <value value="0x03" text="Castellan" />
     </type>
-	
+
 	<type name="AttackHeight" parent="uint" text="Height of the attack.  TODO these need to be verified.">
       <value value="0x01" text="High" />
       <value value="0x02" text="Medium" />
@@ -2951,7 +2951,7 @@
       <mask value="0x4" text="Missle" />
       <mask value="0x8" text="Magic" />
     </type>
-	
+
     <type name="StanceMode" parent="WORD" text="The stance for a character or monster.">
       <value value="0x3C" text="melee UA weapon with no shield in attack stance" />
       <value value="0x3D" text="Standing" />
@@ -2960,7 +2960,7 @@
       <value value="0x40" text="melee weapon with shield in attack stance" />
       <value value="0x49" text="Spellcasting" />
     </type>
-    
+
     <type name="AnimationMask" parent="DWORD" text="Dictates which parts of the animation packet will be present.">
       <value value="0x00000001" text="Starting Stance for Animation" />
       <value value="0x00000002" text="Secondary Animation flowed into from previous packet" />
@@ -2971,7 +2971,7 @@
       <value value="0x00000040" text="unknown" />
       <value value="0x00000080" text="Primary Animation" />
     </type>
-    
+
     <type name="MovementType" parent="BYTE" text="The animation type defines the fields for the rest of the message">
       <value value="0x00" text="Interperted Motion State" />
       <value value="0x06" text="Move to Object" />
@@ -2979,7 +2979,7 @@
       <value value="0x08" text="Turn to Object" />
       <value value="0x09" text="Turn to Position" />
     </type>
-    
+
     <type name="MovementOption" parent="BYTE" text="The animation type defines the fields for the rest of the message">
       <value value="0x00" text="None" />
       <value value="0x01" text="Stick to object" />
@@ -4475,14 +4475,14 @@
           <field type="OptionPropertyID" name="po" text="the option being set" />
           <field type="Boolean" name="value" text="the value of the option" />
         </case>
-		
+
 		<case value="0x0008" text="Starts a melee attack against a target"
 					lastUpdate="20170907" lastUpdater="zegeger">
           <field type="ObjectID" name="target" text="ID of creature being attacked" />
           <field type="AttackHeight" name="ah" text="Height of the attack" />
 		  <field type="Float" name="power_level" text="Attack power level" />
         </case>
-		
+
 		<case value="0x000A" text="Starts a missle attack against a target"
 					lastUpdate="20170907" lastUpdater="zegeger">
           <field type="ObjectID" name="target" text="ID of creature being attacked" />
@@ -4494,22 +4494,22 @@
 					lastUpdate="20170902" lastUpdater="zegeger">
           <field type="Boolean" name="afk" text="Whether the user is AFK" />
         </case>
-		
+
         <case value="0x0010" text="Set AFK message."
 					lastUpdate="20170902" lastUpdater="zegeger">
           <field type="String" name="message" text="The message text" />
         </case>
-		
+
 		<case value="0x0015" text="Talking"
 					lastUpdate="20170902" lastUpdater="zegeger">
           <field type="String" name="msg" text="The message text" />
         </case>
-		
+
 		<case value="0x0017" text="Removes a friend"
 					lastUpdate="20170902" lastUpdater="zegeger">
           <field type="ObjectID" name="friend_id" text="The id of the friend to remove" />
         </case>
-		
+
 		<case value="0x0018" text="Adds a friend"
 					lastUpdate="20170902" lastUpdater="zegeger">
           <field type="String" name="friend_name" text="The name of the friend to add" />
@@ -4532,48 +4532,48 @@
 					lastUpdate="20170908" lastUpdater="zegeger">
           <field type="ObjectID" name="item" text="The item being dropped" />
         </case>
-		
+
 		<case value="0x001D" text="Swear allegiance"
 					lastUpdate="20170904" lastUpdater="zegeger">
           <field type="ObjectID" name="target" text="The person you are swearing allegiance to" />
         </case>
-		
+
 		<case value="0x001E" text="Break allegiance"
 					lastUpdate="20170904" lastUpdater="zegeger">
           <field type="ObjectID" name="target" text="The person you are breaking allegiance from" />
         </case>
-		
+
 		<case value="0x001F" text="Allegiance update request"
 					lastUpdate="20170904" lastUpdater="zegeger">
           <field type="Boolean" name="on" text="Whether the UI panel is open" />
         </case>
-		
+
 		<case value="0x0025" text="Clears friend list"
 					lastUpdate="20170902" lastUpdater="zegeger" />
-		
+
 		<case value="0x0026" text="Teleport to the PKLite Arena"
 					lastUpdate="20170831" lastUpdater="zegeger" />
-					
+
 		<case value="0x0027" text="Teleport to the PK Arena"
 					lastUpdate="20170831" lastUpdater="zegeger" />
-		
+
 		<case value="0x002C" text="Sets a character's display title"
 					lastUpdate="20170902" lastUpdater="zegeger">
           <field type="DWORD" name="title_id" text="Title id" />
         </case>
-		
+
 		<case value="0x0030" text="Query the allegiance name"
 					lastUpdate="20170904" lastUpdater="zegeger" />
-		
+
 		<case value="0x0031" text="Clears the allegiance name"
 					lastUpdate="20170904" lastUpdater="zegeger" />
-		
+
 		<case value="0x0032" text="Direct message by ID"
 					lastUpdate="20170902" lastUpdater="zegeger">
           <field type="String" name="msg" text="The message text" />
 		  <field type="ObjectID" name="target_id" text="" />
         </case>
-		
+
 		<case value="0x0033" text="Sets the allegiance name"
 					lastUpdate="20170905" lastUpdater="zegeger">
           <field type="String" name="msg" text="The new allegiance name" />
@@ -4584,27 +4584,27 @@
           <field type="ObjectID" name="object" text="The item being used" />
 		  <field type="ObjectID" name="target" text="The target" />
         </case>
-		
+
         <case value="0x0036" text="Attempt to use an item."
 					lastUpdate="20170908" lastUpdater="zegeger">
           <field type="ObjectID" name="object" text="The item being used" />
         </case>
-		
+
 		<case value="0x003B" text="Sets an allegiance officer"
 					lastUpdate="20170905" lastUpdater="zegeger">
           <field type="String" name="char_name" text="The allegiance officer's name" />
 		  <field type="AllegianceOfficerLevel" name="level" text="Level of the officer" />
         </case>
-		
+
 		<case value="0x003C" text="Sets an allegiance officer title for a given level"
 					lastUpdate="20170905" lastUpdater="zegeger">
           <field type="AllegianceOfficerLevel" name="level" text="The allegiance officer level" />
 		  <field type="String" name="title" text="The new title for officers at that level" />
         </case>
-		
+
 		<case value="0x003D" text="List the allegiance officer titles"
 			lastUpdate="20170904" lastUpdater="zegeger" />
-		
+
 		<case value="0x003E" text="Clears the allegiance officer titles"
 			lastUpdate="20170904" lastUpdater="zegeger" />
 
@@ -4612,23 +4612,23 @@
           lastUpdate="20170904" lastUpdater="zegeger">
           <field type="AllegianceLockAction" name="action" text="Allegiance housing action to take" />
         </case>
-		
+
 		<case value="0x0040" text="Sets a person as an approved vassal"
           lastUpdate="20170904" lastUpdater="zegeger">
           <field type="String" name="char_name" text="Player who is being approved as a vassal" />
         </case>
-		
+
 		<case value="0x0041" text="Gags a person in allegiance chat"
           lastUpdate="20170904" lastUpdater="zegeger">
           <field type="String" name="char_name" text="Player who is being gagged or ungagged" />
 		  <field type="Boolean" name="on" text="Whether the gag is on" />
         </case>
-		
+
 		<case value="0x0042" text="Perform the allegiance house action"
           lastUpdate="20170904" lastUpdater="zegeger">
           <field type="AllegianceHouseAction" name="action" text="Allegiance housing action to take" />
         </case>
-		
+
         <case value="0x0044" text="Spend XP to raise a vital."
           lastUpdate="20170905" lastUpdater="zegeger">
           <field type="DWORD" name="atype" text="The ID of the vital" />
@@ -4657,19 +4657,19 @@
 					lastUpdate="20170831" lastUpdater="zegeger">
           <field type="DWORD" name="spell_id" text="The ID of the spell" />
         </case>
-		
+
 		<case value="0x0053" text="Changes the combat mode"
 					lastUpdate="20170907" lastUpdater="zegeger">
           <field type="CombatMode" name="mode" text="New combat mode for player" />
         </case>
-		
+
 		<case value="0x0054" text="Merges one stack with another"
 					lastUpdate="20170908" lastUpdater="zegeger">
           <field type="ObjectID" name="mergeFromID" text="ID of object where items are being taken from" />
 		  <field type="ObjectID" name="mergeToID" text="ID of object where items are being merged into" />
 		  <field type="int" name="amount" text="Number of items from the source stack to be added to the destination stack" />
         </case>
-		
+
 		<case value="0x0055" text="Split a stack and place it into a container"
 					lastUpdate="20170908" lastUpdater="zegeger">
           <field type="ObjectID" name="stackID" text="ID of object where items are being taken from" />
@@ -4677,13 +4677,13 @@
 		  <field type="int" name="place" text="Slot in container where items are being moved to" />
 		  <field type="int" name="amount" text="Number of items from the stack to placed into the container" />
         </case>
-		
+
 		<case value="0x0056" text="Split a stack and place it into the world"
 					lastUpdate="20170908" lastUpdater="zegeger">
           <field type="ObjectID" name="stackID" text="ID of object where items are being taken from" />
 		  <field type="int" name="amount" text="Number of items from the stack to placed into the world" />
         </case>
-		
+
 		<case value="0x0058" text="Changes an account squelch"
 					lastUpdate="20170902" lastUpdater="zegeger">
           <field type="Boolean" name="add" text="0 = unsquelch, 1 = squelch" />
@@ -4691,25 +4691,25 @@
 		  <field type="String" name="character_name" text="The character's name who's acount should be squelched" />
           <field type="DWORD" name="msg_type" text="The message type to squelch or unsquelch" />
         </case>
-		
+
 		<case value="0x0059" text="Changes an account squelch"
 					lastUpdate="20170902" lastUpdater="zegeger">
           <field type="Boolean" name="add" text="0 = unsquelch, 1 = squelch" />
 		  <field type="String" name="character_name" text="The character who's acount should be squelched" />
         </case>
-		
+
 		<case value="0x005B" text="Changes the global filters, /filter -type as well as /chat and /notell"
 					lastUpdate="20170901" lastUpdater="zegeger">
           <field type="Boolean" name="add" text="0 = unsquelch, 1 = squelch" />
 		  <field type="ChatMessageType" name="msg_type" text="The message type to squelch or unsquelch" />
         </case>
-		
+
 		<case value="0x005D" text="Direct message by name"
 					lastUpdate="20170902" lastUpdater="zegeger">
           <field type="String" name="msg" text="The message text" />
 		  <field type="String" name="target_name" text="Name of person you are sending a message to" />
         </case>
-		
+
 		<case value="0x005F" text="Buy from a vendor"
 					lastUpdate="20170907" lastUpdater="zegeger">
           <field type="ObjectID" name="vendorID" text="ID of vendor being bought from" />
@@ -4719,7 +4719,7 @@
           </vector>
 		  <field type="DWORD" name="alternateCurrencyID" text="the type of alternate currency being used" />
         </case>
-		
+
 		<case value="0x0060" text="Sell to a vendor"
 					lastUpdate="20170907" lastUpdater="zegeger">
           <field type="ObjectID" name="vendorID" text="ID of vendor being sold to" />
@@ -4728,7 +4728,7 @@
             <field type="ItemProfile" name="profile" text="the profile for the item" />
           </vector>
         </case>
-		
+
 		<case value="0x0063" text="Teleport to your lifestone. (/lifestone)"
 					lastUpdate="20170831" lastUpdater="zegeger" />
 
@@ -4741,66 +4741,69 @@
         <case value="0x00A1" text="The client is ready for the character to materialize after portalling or logging on."
 					lastUpdate="20170830" lastUpdater="zegeger">
         </case>
-		
+
 		<case value="0x00A2" text="Fellowship: Create a fellowship"
               lastUpdate="20170903" lastUpdater="zegeger">
           <field type="String" name="name" text="Name of the fellowship" />
 		  <field type="Boolean" name="share_xp" text="Whether fellowship shares xp" />
         </case>
-		
+
 		<case value="0x00A3" text="Fellowship: Quit the fellowship"
               lastUpdate="20170903" lastUpdater="zegeger">
           <field type="Boolean" name="disband" text="Whether to disband the fellowship while quiting" />
         </case>
-		
+
 		<case value="0x00A4" text="Fellowship: Dismiss a player from the fellowship"
               lastUpdate="20170903" lastUpdater="zegeger">
           <field type="ObjectID" name="target" text="ID of player being dismissed from the fellowship" />
         </case>
-		
+
 		<case value="0x00A5" text="Fellowship: Recruit a player to the fellowship"
               lastUpdate="20170903" lastUpdater="zegeger">
           <field type="ObjectID" name="target" text="ID of player being recruited to the fellowship" />
         </case>
-		
+
 		<case value="0x00A6" text="Fellowship: Update request"
               lastUpdate="20170903" lastUpdater="zegeger">
           <field type="Boolean" name="on" text="Whether the fellowship UI is visible" />
         </case>
-		
+
 		<case value="0x00AA" text="Request update to book data (seems to be sent after failed add page)"
               lastUpdate="20170906" lastUpdater="zegeger">
           <field type="ObjectID" name="objectID" text="Object id of book" />
         </case>
-		
+
 		<case value="0x00AB" text="Updates a page in a book"
               lastUpdate="20170906" lastUpdater="zegeger">
           <field type="ObjectID" name="objectID" text="ID of book" />
 		  <field type="int" name="pageNum" text="Number of page being updated" />
 		  <field type="String" name="pageText" text="New text for the page" />
         </case>
-		
+
 		<case value="0x00AC" text="Add a page to a book"
               lastUpdate="20170906" lastUpdater="zegeger">
           <field type="ObjectID" name="objectID" text="ID of book to add a page to" />
         </case>
-		
+
 		<case value="0x00AD" text="Removes a page from a book"
               lastUpdate="20170906" lastUpdater="zegeger">
           <field type="ObjectID" name="objectID" text="ID of book to remove a page from" />
 		  <field type="int" name="pageNum" text="Number of page to remove" />
         </case>
-		
+
 		<case value="0x00AE" text="Requests data for a page in a book"
               lastUpdate="20170906" lastUpdater="zegeger">
           <field type="ObjectID" name="objectID" text="ID of book" />
 		  <field type="int" name="pageNum" text="Number of page to get data for" />
         </case>
-		
+
 		<case value="0x00BF" text="Sets the inscription on an object"
               lastUpdate="20170906" lastUpdater="zegeger">
           <field type="ObjectID" name="objectID" text="ID of object being inscribed" />
 		  <field type="String" name="inscription" text="Inscription text" />
+		  <field type="ObjectID" name="scribeID" text="Guid of scribe" />
+		  <field type="String" name="scribeName" text="Name of the scribe" />
+		  <field type="String" name="scribeAccount" text="Account of the scribe" />
         </case>
 
         <case value="0x00CD" text="Give an item to someone."
@@ -4809,12 +4812,12 @@
           <field type="ObjectID" name="objectID" text="The item being given" />
           <field type="uint" name="amount" text="The amount from a stack being given" />
         </case>
-		
+
 		<case value="0x00C8" text="Appraise something"
 					lastUpdate="20170906" lastUpdater="zegeger">
           <field type="ObjectID" name="objectID" text="The object being appraised" />
         </case>
-		
+
 		<case value="0x00D6" text="Advocate: Teleport"
               lastUpdate="20170905" lastUpdater="zegeger">
           <field type="String" name="target" text="Person being teleported" />
@@ -4827,43 +4830,43 @@
           <field type="DWORD" name="status" text="1" />
           <field type="String" name="complaint" text="Description of complaint" />
         </case>
-		
+
 		<case value="0x0145" text="Joins a chat channel"
               lastUpdate="20170831" lastUpdater="zegeger">
           <field type="DWORD" name="chan" text="Channel id, TODO get enum" />
         </case>
-		
+
 		<case value="0x0146" text="Joins a chat channel"
               lastUpdate="20170902" lastUpdater="zegeger">
           <field type="DWORD" name="chan" text="Channel id, TODO get enum" />
         </case>
-		
+
 		<case value="0x0147" text="Sends a message to a chat channel"
               lastUpdate="20170902" lastUpdater="zegeger">
           <field type="DWORD" name="chan" text="Channel id, TODO get enum" />
 		  <field type="String" name="msg" text="Message being sent" />
         </case>
-		
+
 		<case value="0x0148" text=""
               lastUpdate="20170831" lastUpdater="zegeger">
           <field type="DWORD" name="chan" text="Channel id, TODO get enum" />
         </case>
-		
+
 		<case value="0x0149" text="Requests a channel index"
               lastUpdate="20170901" lastUpdater="zegeger" />
-	
+
 		<case value="0x0195" text="Stop viewing the contents of a container"
               lastUpdate="20170908" lastUpdater="zegeger">
           <field type="ObjectID" name="container" text="ID of the container" />
         </case>
-		
+
 		<case value="0x019B" text="Splits an item to a wield location."
               lastUpdate="20170908" lastUpdater="zegeger">
           <field type="ObjectID" name="stackID" text="ID of object being split" />
           <field type="EquipMask" name="loc" text="Equip location to place the stack" />
           <field type="int" name="amount" text="Amount of stack being split" />
         </case>
-		
+
         <case value="0x019C" text="Add an item to the shortcut bar."
               lastUpdate="20170829" lastUpdater="zegeger">
           <field type="DWORD" name="index" text="Position on the shortcut bar (0-8) where the item is to be added" />
@@ -4880,35 +4883,35 @@
 					lastUpdate="20170829" lastUpdater="zegeger">
           <field type="PlayerModule" name="options" />
         </case>
-		
+
 		<case value="0x01A8" text="Removes a spell from the spell book"
 					lastUpdate="20170831" lastUpdater="zegeger">
           <field type="DWORD" name="spell_id" />
         </case>
-		
+
 		<case value="0x01B7" text="Cancels an attack"
 					lastUpdate="20170906" lastUpdater="zegeger" />
-		
+
 		<case value="0x01C2" text="Query a character's age"
 					lastUpdate="20170829" lastUpdater="zegeger">
           <field type="ObjectID" name="target_id" />
         </case>
-		
+
 		<case value="0x01C4" text="Query a character's birth day"
 					lastUpdate="20170829" lastUpdater="zegeger">
           <field type="ObjectID" name="target_id" />
         </case>
-		
+
 		<case value="0x01DD" text="Query's a creatures health"
 					lastUpdate="20170907" lastUpdater="zegeger">
           <field type="ObjectID" name="target" />
         </case>
-		
+
 		<case value="0x01DF" text="Emote message"
 					lastUpdate="20170902" lastUpdater="zegeger">
           <field type="String" name="msg" />
         </case>
-		
+
 		<case value="0x01E1" text="Soul emote message"
 					lastUpdate="20170902" lastUpdater="zegeger">
           <field type="String" name="msg" />
@@ -4926,51 +4929,51 @@
           <field type="DWORD" name="spid" text="The spell's ID" />
           <field type="DWORD" name="list" text="The spell bar number"/>
         </case>
-		
+
 		<case value="0x01E9" text="Request a ping"
               lastUpdate="20170830" lastUpdater="zegeger"  />
-		
+
 		<case value="0x01F6" text="Starts trading with another player."
               lastUpdate="20170908" lastUpdater="zegeger">
           <field type="ObjectID" name="other" text="ID of player to trade with" />
         </case>
-		
+
 		<case value="0x01F7" text="Ends trading, when trade window is closed?"
               lastUpdate="20170908" lastUpdater="zegeger"  />
-		
+
 		<case value="0x01F8" text="Adds an object to the trade."
               lastUpdate="20170908" lastUpdater="zegeger">
           <field type="ObjectID" name="item" text="ID of object to add to the trade" />
 		  <field type="uint" name="loc" text="Slot in trade window to add the object" />
         </case>
-		
+
 		<case value="0x01FA" text="Accepts a trade."
               lastUpdate="20170908" lastUpdater="zegeger">
           <field type="Trade" name="stuff" text="The contents of the trade" />
         </case>
-		
+
 		<case value="0x01FB" text="Declines a trade, when cancel is clicked?"
               lastUpdate="20170908" lastUpdater="zegeger"  />
-			  
+
 		<case value="0x0204" text="Resets the trade, when clear all is clicked?"
               lastUpdate="20170908" lastUpdater="zegeger"  />
-		
+
 		<case value="0x0216" text="Clears the player's corpse looting consent list, /consent clear"
               lastUpdate="20170830" lastUpdater="zegeger"  />
-			  
+
 		<case value="0x0217" text="Display the player's corpse looting consent list, /consent who "
               lastUpdate="20170830" lastUpdater="zegeger"  />
-		
+
 		<case value="0x0218" text="Remove your corpse looting permission for the given player, /consent remove "
               lastUpdate="20170831" lastUpdater="zegeger">
           <field type="String" name="targetName" text="Name of player to remove permission to loot the playes corpses" />
         </case>
-		
+
 		<case value="0x0219" text="Grants a player corpse looting permission, /permit add"
               lastUpdate="20170831" lastUpdater="zegeger">
           <field type="String" name="targetName" text="Name of player to grant permission to loot the playes corpses" />
         </case>
-		
+
 		<case value="0x021C" text="Buy a house"
               lastUpdate="20170907" lastUpdater="zegeger">
           <field type="ObjectID" name="slumlord" text="" />
@@ -4979,18 +4982,18 @@
             <field type="ObjectID" name="item" text="item being used to buy the house" />
           </vector>
         </case>
-		
+
 		<case value="0x021E" text="Query your house info, during signin"
               lastUpdate="20170907" lastUpdater="zegeger" />
-		
+
 		<case value="0x021F" text="Abandons your house"
               lastUpdate="20170907" lastUpdater="zegeger" />
-		
+
 		<case value="0x0220" text="Revokes a player's corpse looting permission, /permit remove"
               lastUpdate="20170831" lastUpdater="zegeger">
           <field type="String" name="targetName" text="Name of player to remove permission to loot the playes corpses" />
         </case>
-		
+
 		<case value="0x0221" text="Pay rent for a house"
               lastUpdate="20170907" lastUpdater="zegeger">
           <field type="ObjectID" name="slumlord" text="" />
@@ -4999,147 +5002,147 @@
             <field type="ObjectID" name="item" text="item being used to pay rent the house" />
           </vector>
         </case>
-			 
+
 		<case value="0x0224" text="Sets a new fill complevel for a component"
               lastUpdate="20170830" lastUpdater="zegeger">
           <field type="DWORD" name="wcid" text="class id of the component" />
           <field type="DWORD" name="amount" text=""/>
         </case>
-		
+
 		<case value="0x0245" text="Adds a guest to your house guest list"
               lastUpdate="20170908" lastUpdater="zegeger">
           <field type="String" name="guest_name" text="Player name to add to your house guest list" />
         </case>
-		
+
 		<case value="0x0246" text="Removes a specific player from your house guest list, /house guest remove"
               lastUpdate="20170908" lastUpdater="zegeger">
           <field type="String" name="guest_name" text="Player name to remove from your house guest list" />
         </case>
-		
+
 		<case value="0x0247" text="Sets your house open status"
               lastUpdate="20170908" lastUpdater="zegeger">
           <field type="Boolean" name="open_house" text="Whether the house is open or not" />
         </case>
-		
+
 		<case value="0x0249" text="Changes a specific players storage permission, /house storage add/remove"
               lastUpdate="20170908" lastUpdater="zegeger">
           <field type="String" name="guest_name" text="Player name to boot from your house" />
 		  <field type="Boolean" name="has_permission" text="Whether the player has permission on your storage" />
         </case>
-		
+
 		<case value="0x024A" text="Boots a specific player from your house /house boot"
               lastUpdate="20170908" lastUpdater="zegeger">
           <field type="String" name="guest_name" text="Player name to boot from your house" />
         </case>
-		
+
 		<case value="0x024C" text="Removes all storage permissions, /house storage remove_all"
               lastUpdate="20170907" lastUpdater="zegeger"  />
-			  
+
 		<case value="0x024D" text="Requests your full guest list, /house guest list"
               lastUpdate="20170907" lastUpdater="zegeger"  />
-		
+
 		<case value="0x0254" text="Sets the allegiance message of the day, /allegiance motd set"
               lastUpdate="20170905" lastUpdater="zegeger">
           <field type="String" name="msg" text="Text motd to display" />
         </case>
-		
+
 		<case value="0x0255" text="Query the motd, /allegiance motd"
               lastUpdate="20170904" lastUpdater="zegeger"  />
-		
+
 		<case value="0x0256" text="Clear the motd, /allegiance motd clear"
               lastUpdate="20170904" lastUpdater="zegeger"  />
-			  
+
 		<case value="0x0258" text="Gets SlumLord info, sent after getting a failed house transaction"
               lastUpdate="20170907" lastUpdater="zegeger">
           <field type="ObjectID" name="lord" text="Text motd to display" />
         </case>
-			  
+
 		<case value="0x025C" text="Adds all to your storage permissions, /house storage add -all"
               lastUpdate="20170907" lastUpdater="zegeger"  />
-			  
+
 		<case value="0x025E" text="Removes all guests, /house guest remove_all"
               lastUpdate="20170907" lastUpdater="zegeger"  />
-			  
+
 		<case value="0x025F" text="Boot everyone from your house, /house boot -all"
               lastUpdate="20170908" lastUpdater="zegeger"  />
-		
+
 		<case value="0x0262" text="Teleports you to your house, /house recall"
               lastUpdate="20170908" lastUpdater="zegeger"  />
-		
+
 		<case value="0x0263" text="Queries an item's mana"
               lastUpdate="20170905" lastUpdater="zegeger">
           <field type="ObjectID" name="target" text="ID of object whos mana is being queried" />
         </case>
-		
+
 		<case value="0x0266" text="Modify whether house hooks are visibile or not, /house hooks on/off"
               lastUpdate="20170907" lastUpdater="zegeger">
           <field type="Boolean" name="visible" text="Whether hooks are visible or not" />
         </case>
-		
+
 		<case value="0x0267" text="Modify whether allegiance members are guests, /house guest add_allegiance/remove_allegiance"
               lastUpdate="20170907" lastUpdater="zegeger">
           <field type="Boolean" name="add" text="Whether we are adding or removing permissions" />
         </case>
-		
+
 		<case value="0x0268" text="Modify whether allegiance members can access storage, /house storage add_allegiance/remove_allegiance"
               lastUpdate="20170907" lastUpdater="zegeger">
           <field type="Boolean" name="add" text="Whether we are adding or removing permissions" />
         </case>
-		
+
 		<case value="0x0269" text="Joins a chess game"
               lastUpdate="20170906" lastUpdater="zegeger">
           <field type="uint" name="gameID" text="ID of the game the player is joining" />
 		  <field type="uint" name="whichTeam" text="Which team the player is joining as" />
-        </case>	 
-		
+        </case>
+
 		<case value="0x026A" text="Quits a chess game"
-              lastUpdate="20170906" lastUpdater="zegeger" /> 
-		
+              lastUpdate="20170906" lastUpdater="zegeger" />
+
 		<case value="0x026B" text="Makes a chess move"
               lastUpdate="20170906" lastUpdater="zegeger">
           <field type="int" name="xFrom" text="Current x location of piece being moved" />
 		  <field type="int" name="yFrom" text="Current y location of piece being moved" />
 		  <field type="int" name="xTo" text="Destination x location of piece being moved" />
 		  <field type="int" name="yTo" text="Destination y location of piece being moved" />
-        </case>	 
-		
+        </case>
+
 		<case value="0x026D" text="Skip a move?"
-              lastUpdate="20170906" lastUpdater="zegeger" /> 
-			  
+              lastUpdate="20170906" lastUpdater="zegeger" />
+
 		<case value="0x026E" text="Offer or confirm stalemate"
               lastUpdate="20170906" lastUpdater="zegeger">
 			<field type="Boolean" name="on" text="Whether stalemate offer is active or not" />
-		</case>			  
-		
+		</case>
+
 		<case value="0x0270" text="Lists available house /house available"
               lastUpdate="20170907" lastUpdater="zegeger">
 			<field type="HouseType" name="houseType" text="Type of house being listed" />
-		</case>		
-		
+		</case>
+
 		<case value="0x0275" text="Confirms a dialog"
               lastUpdate="20170830" lastUpdater="zegeger">
           <field type="ConfirmationType" name="confirmType" text="" />
           <field type="DWORD" name="context" text=""/>
 		  <field type="Boolean" name="accepted" text=""/>
         </case>
-		
+
 		<case value="0x0277" text="Boots a player from the allegiance, optionally all characters on their account"
               lastUpdate="20170904" lastUpdater="zegeger">
           <field type="String" name="bootee_name" text="Name of character to boot" />
           <field type="Boolean" name="account_boot" text="Whether to boot all characters on their account"/>
         </case>
-		
+
 		<case value="0x0278" text="Teleports player to their allegiance housing, /house mansion_recall"
               lastUpdate="20170908" lastUpdater="zegeger"  />
-		
+
 		<case value="0x0279" text="Player is commiting suicide"
               lastUpdate="20170830" lastUpdater="zegeger"  />
-		
+
 		<case value="0x027B" text="Request allegiance info for a player"
               lastUpdate="20170904" lastUpdater="zegeger">
           <field type="String" name="target_name" text="Name of player whom the request is targeting" />
         </case>
-		
+
 		<case value="0x027D" text="Salvages items"
               lastUpdate="20170908" lastUpdater="zegeger">
           <field type="ObjectID" name="toolID" text="" />
@@ -5148,67 +5151,67 @@
             <field type="ObjectID" name="item" text="Item ID to be salvaged" />
           </vector>
         </case>
-		
+
 		<case value="0x0286" text="Changes the spell book filter"
               lastUpdate="20170830" lastUpdater="zegeger">
           <field type="SpellBookFilterOptions" name="options" text="Mask containing the different filters applied to the spellbook"/>
         </case>
-		
+
 		<case value="0x0290" text="Fellowship: Assign a new leader"
               lastUpdate="20170903" lastUpdater="zegeger">
           <field type="ObjectID" name="target" text="ID of player to make the new leader of the fellowship"/>
         </case>
-		
+
 		<case value="0x0291" text="Fellowship: Change openness"
               lastUpdate="20170903" lastUpdater="zegeger">
           <field type="Boolean" name="open" text="Sets whether the fellowship is open or not"/>
         </case>
-		
+
 		<case value="0x028D" text="Teleport to the marketplace"
               lastUpdate="20170830" lastUpdater="zegeger"  />
-		
+
 		<case value="0x028F" text="Enter PKLite mode"
               lastUpdate="20170830" lastUpdater="zegeger"  />
-		
+
 		<case value="0x02A0" text="Boots a player from the allegiance chat"
               lastUpdate="20170904" lastUpdater="zegeger">
           <field type="String" name="char_name" text="Character name being booted"/>
 		  <field type="String" name="reason" text="Reason for getting booted"/>
         </case>
-		
+
 		<case value="0x02A1" text="Bans a player from the allegiance"
               lastUpdate="20170904" lastUpdater="zegeger">
           <field type="String" name="char_name" text="Character name being banned"/>
         </case>
-		
+
 		<case value="0x02A2" text="Removes a player ban from the allegiance"
               lastUpdate="20170904" lastUpdater="zegeger">
           <field type="String" name="char_name" text="Character name being banned"/>
         </case>
-		
+
 		<case value="0x02A3" text="Display allegiance bans"
               lastUpdate="20170904" lastUpdater="zegeger"  />
-		
+
 		<case value="0x02A5" text="Removes an allegiance officer"
               lastUpdate="20170904" lastUpdater="zegeger">
           <field type="String" name="char_name" text="Character name being banned"/>
         </case>
-		
+
 		<case value="0x02A6" text="List allegiance officers"
               lastUpdate="20170904" lastUpdater="zegeger"  />
-		
+
 		<case value="0x02A7" text="Clear allegiance officers"
               lastUpdate="20170904" lastUpdater="zegeger"  />
-		
+
 		<case value="0x02AB" text="Recalls to players allegiance hometown"
               lastUpdate="20170908" lastUpdater="zegeger"  />
-		
+
 		<case value="0x02AF" text="Admin: Returns a plugin list response"
               lastUpdate="20170908" lastUpdater="zegeger">
           <field type="uint" name="context" text=""/>
 		  <field type="String" name="pluginList" text=""/>
         </case>
-		
+
 		<case value="0x02B2" text="Admin: Returns plugin info"
               lastUpdate="20170908" lastUpdater="zegeger">
           <field type="uint" name="context" text=""/>
@@ -5218,7 +5221,7 @@
 		  <field type="String" name="pluginEmail" text=""/>
 		  <field type="String" name="pluginWebpage" text=""/>
         </case>
-		
+
 		<case value="0x0311" text="Completes the barber interaction"
               lastUpdate="20170831" lastUpdater="zegeger">
           <field type="DWORD" name="base_palette" text="" />
@@ -5237,55 +5240,55 @@
 		  <field type="DWORD" name="option1" text="Specifies the toggle option for some races, such as floating empyrean or flaming head on undead"/>
 		  <field type="DWORD" name="option2" text="Seems to be unused"/>
         </case>
-		
+
 		<case value="0x0316" text="Abandons a contract"
               lastUpdate="20170902" lastUpdater="zegeger">
           <field type="DWORD" name="contract_id" text="ID of contact being abandoned" />
         </case>
-		
+
 		<case value="0xF649" text="Turn to event data"
               lastUpdate="20170908" lastUpdater="zegeger">
           <field type="TurnToEventPack" name="ttep" text="set of turning data" />
         </case>
-		
+
 		<case value="0xF61B" text="Performs a jump"
               lastUpdate="20170908" lastUpdater="zegeger">
           <field type="JumpPack" name="jp" text="set of jumping data" />
         </case>
-		
+
 		<case value="0xF61C" text="Move to state data"
               lastUpdate="20170908" lastUpdater="zegeger">
           <field type="MoveToStatePack" name="mtsp" text="set of jumping data" />
         </case>
-		
+
 		<case value="0xF61E" text="Performs a movement based on input"
               lastUpdate="20170908" lastUpdater="zegeger">
           <field type="uint" name="motion" text="motion command" />
 		  <field type="float" name="speed" text="speed of movement" />
 		  <field type="HoldKey" name="hold_key" text="run key being held" />
         </case>
-		
+
 		<case value="0xF661" text="Stops a movement"
               lastUpdate="20170908" lastUpdater="zegeger">
           <field type="uint" name="motion" text="Motion being stopped" />
 		  <field type="uint" name="hold_key" text="Key being held" />
         </case>
-		
+
 		<case value="0xF752" text="Sets an autonomy level"
               lastUpdate="20170908" lastUpdater="zegeger">
           <field type="uint" name="autonomy_level" text="TODO" />
         </case>
-		
+
 		<case value="0xF753" text="Sends an autonomous position"
               lastUpdate="20170908" lastUpdater="zegeger">
           <field type="AutonomousPositionPack" name="app" text="Set of autonomous position data" />
         </case>
-		
+
 		<case value="0xF7C9" text="Performs a non autonomous jump"
               lastUpdate="20170908" lastUpdater="zegeger">
           <field type="float" name="extent" text="Power of jump" />
         </case>
-		
+
       </switch>
     </message>
     <!-- F7B1 -->
