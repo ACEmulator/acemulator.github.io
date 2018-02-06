@@ -11,8 +11,8 @@
 
 <xsl:template match="/">
 	<xsl:apply-templates select="php:function('ElemFromXpath', $elemToTransform)"/>
+  
 </xsl:template>
-
 
 <!-- Generate the message TOC. -->
 <xsl:template match="messages">
@@ -36,10 +36,11 @@
 <!-- Generate the TOC entry for one message. -->
 <xsl:template name="GenTOCMsg">
   <xsl:param name="message"/>
-	
 	<tr>
 		<td class="TOCEntry">
 			<p>
+	    <xsl:variable name="msgEnum" select="/schema/datatypes/enums/enum[@name = 'MessageType']" />
+      <xsl:variable name="msgEnumEntry" select="$msgEnum/value[@value = $message/@type]"/>
 			<xsl:attribute name="class"><xsl:choose>
 			  <xsl:when test="$message/@retired">TOC1Retired</xsl:when>
 			  <xsl:otherwise>TOC1</xsl:otherwise>
@@ -47,55 +48,14 @@
 			<xsl:call-template name="GenLink">
 				<xsl:with-param name="frame">frameMsg</xsl:with-param>
 				<xsl:with-param name="type" select="$message/@type"/>
-				<xsl:with-param name="text"><b><xsl:value-of select="$message/@type"/>:</b><xsl:text> </xsl:text><xsl:value-of select="$message/@name"/></xsl:with-param>
+				<xsl:with-param name="text"><b><xsl:value-of select="$message/@type"/>:</b><xsl:text> </xsl:text><xsl:value-of select="$msgEnumEntry/@name"/></xsl:with-param>
 			</xsl:call-template>
-			</p>
-		</td>
-	</tr>
-	
-	<xsl:if test="$message/@type = 'F7B0' or $message/@type = 'F7B1'">
-		<xsl:for-each select="$message/switch">
-			<xsl:variable name="casefield" select="$message/field[@name = ./@name]"/>
-			<xsl:variable name="casetype" select="/schema/datatypes/type[@name = $casefield/@type]"/>
-			<xsl:for-each select="case[not(@unknown)]">
-				<xsl:call-template name="GenTOCCase">
-					<xsl:with-param name="type" select="$message/@type"/>
-					<xsl:with-param name="casetype" select="$casetype"/>
-					<xsl:with-param name="case" select="."/>
-				</xsl:call-template>
-			</xsl:for-each>
-		</xsl:for-each>
-	</xsl:if>
-	
-</xsl:template>
-
-<!-- Generate the TOC entry for one message subtype. -->
-<xsl:template name="GenTOCCase">
-  <xsl:param name="type"/>
-  <xsl:param name="casetype"/>
-  <xsl:param name="case"/>
-	
-	<xsl:variable name="casedesc" select="$casetype/value[@value = $case/@value]"/>
-	
-	<tr>
-		<td class="TOCEntry">
-			<p>
-			<xsl:attribute name="class"><xsl:choose>
-				<xsl:when test="$case/@retired">TOC2Retired</xsl:when>
-				<xsl:otherwise>TOC2</xsl:otherwise>
-				</xsl:choose></xsl:attribute>
-			<xsl:call-template name="GenLink">
-				<xsl:with-param name="frame">frameMsg</xsl:with-param>
-				<xsl:with-param name="type" select="$type"/>
-				<xsl:with-param name="case" select="$case/@value"/>
-				<xsl:with-param name="text"><b><xsl:value-of select="$case/@value"/>:</b><xsl:text> </xsl:text><xsl:value-of select="$casedesc/@text"/></xsl:with-param>
-			</xsl:call-template>
+       - <xsl:value-of select="$message/@direction"/> - <xsl:value-of select="$message/@queue"/>
 			</p>
 		</td>
 	</tr>
 	
 </xsl:template>
-
 
 <!-- Generate the type TOC. -->
 <xsl:template match="datatypes">
@@ -107,14 +67,14 @@
 			</td>
 		</tr>
 	
-		<xsl:for-each select="type[count(.//member) != 0]">
+		<xsl:for-each select="types/type[count(.//member) != 0]">
 			<xsl:sort select="@name"/>
 			<xsl:call-template name="GenTOCType">
 				<xsl:with-param name="typedef" select="."/>
 			</xsl:call-template>
 		</xsl:for-each>
 	</table>
-	
+
 	<table cellspacing="0" cellpadding="0" class="TOC">
 		<tr>
 			<td class="TOCHead">
@@ -122,16 +82,14 @@
 			</td>
 		</tr>
 	
-		<xsl:for-each select="type[value | mask]">
+		<xsl:for-each select="enums/enum[value]">
 			<xsl:sort select="@name"/>
-			<xsl:call-template name="GenTOCType">
+			<xsl:call-template name="GenTOCEnum">
 				<xsl:with-param name="typedef" select="."/>
 			</xsl:call-template>
 		</xsl:for-each>
 	</table>
 	
-	<!-- Might be nice to put mask types in a separate table from enums, 
-	     except that they aren't consistently defined using "mask" instead of "value".
 	<table cellspacing="0" cellpadding="0" class="TOC">
 		<tr>
 			<td class="TOCHead">
@@ -139,14 +97,13 @@
 			</td>
 		</tr>
 	
-		<xsl:for-each select="type[mask]">
+		<xsl:for-each select="enums/enum[mask]">
 			<xsl:sort select="@name"/>
-			<xsl:call-template name="GenTOCType">
+			<xsl:call-template name="GenTOCEnum">
 				<xsl:with-param name="typedef" select="."/>
 			</xsl:call-template>
 		</xsl:for-each>
 	</table>
-	-->
 	
 </xsl:template>
 
@@ -167,18 +124,38 @@
 	</tr>
 	
 </xsl:template>
+  
+  <!-- Generate the TOC entry for one type. -->
+<xsl:template name="GenTOCEnum">
+  <xsl:param name="typedef"/>
+	
+	<tr>
+		<td class="TOCEntry">
+			<p class="TOC1">
+			<xsl:call-template name="GenLink">
+				<xsl:with-param name="frame">frameEnum</xsl:with-param>
+				<xsl:with-param name="type" select="$typedef/@name"/>
+				<xsl:with-param name="text"><b><xsl:value-of select="$typedef/@name"/></b></xsl:with-param>
+			</xsl:call-template>
+			</p>
+		</td>
+	</tr>
+	
+</xsl:template>
 
 
 <!-- Generate the full documentation for one message. -->
 <xsl:template match="message">
-	
-	<xsl:call-template name="GenFieldTable">
-		<xsl:with-param name="title"><b><xsl:value-of select="@type"/>:</b><xsl:text> </xsl:text><xsl:value-of select="@name"/></xsl:with-param>
+  <xsl:variable name="type" select="@type"/>
+  <xsl:variable name="msgEnum" select="/schema/datatypes/enums/enum[@name = 'MessageType']" />
+  <xsl:variable name="msgEnumEntry" select="$msgEnum/value[@value = $type]"/>
+	<xsl:call-template name="GenMessageTable">
+		<xsl:with-param name="title"><b><xsl:value-of select="@type"/>:</b><xsl:text> </xsl:text><xsl:value-of select="$msgEnumEntry/@name"/></xsl:with-param>
 		<xsl:with-param name="desc"><xsl:value-of select="@text"/></xsl:with-param>
 		<xsl:with-param name="list" select="."/>
-		<xsl:with-param name="case">
-			<xsl:if test="@type = 'F7B0' or @type = 'F7B1'">None</xsl:if>
-		</xsl:with-param>
+		<xsl:with-param name="ordered" select="@ordered"/>
+    <xsl:with-param name="direction" select="@direction"/>
+    <xsl:with-param name="type" select="@type"/>
 		<xsl:with-param name="style">
 			<xsl:choose>
 				<xsl:when test="@retired">Retired</xsl:when>
@@ -191,25 +168,8 @@
 	
 </xsl:template>
 
-<!-- Generate the full documentation for one message subtype. -->
-<xsl:template match="case">
-
-	<xsl:variable name="msg" select="parent::node()/parent::node()"></xsl:variable>
-	
-	<xsl:call-template name="GenFieldTable">
-		<xsl:with-param name="title"><b><xsl:value-of select="$msg/@type"/>:</b><xsl:text> </xsl:text><xsl:value-of select="$msg/@name"/></xsl:with-param>
-		<xsl:with-param name="desc"><xsl:value-of select="$msg/@text"/></xsl:with-param>
-		<xsl:with-param name="list" select="$msg"/>
-		<xsl:with-param name="case" select="@value"/>
-	</xsl:call-template>
-	
-	<p class="Version">Messages.xml version <xsl:value-of select="/schema/revision/@version"/></p>
-	
-</xsl:template>
-
-
 <!-- Generate the full documentation for one type. -->
-<xsl:template match="type">
+<xsl:template match="type | enum">
 
 	<xsl:variable name="title"><b><xsl:value-of select="@name"/></b><xsl:if test="@parent">: <xsl:value-of select="@parent"/></xsl:if></xsl:variable>
 	
@@ -236,7 +196,123 @@
 	
 </xsl:template>
 
+<xsl:template name="GenMessageTable">
+  <xsl:param name="title"/>
+  <xsl:param name="desc"/>
+  <xsl:param name="list"/>
+  <xsl:param name="case"/>
+  <xsl:param name="ordered"/>
+  <xsl:param name="direction"/>
+  <xsl:param name="type"/>
+  <xsl:param name="style" select="'List'"/>
+  <xsl:param name="depth" select="0"/>
+	
+	<xsl:variable name="istyle" select="($depth mod 2) + 1"/>
+	<xsl:variable name="styleTable"><xsl:value-of select="$style"/><xsl:value-of select="$istyle"/></xsl:variable>
+	<xsl:variable name="styleHead">BoxHead<xsl:value-of select="$istyle"/></xsl:variable>
+	
+	<table cellspacing="0" cellpadding="0">
+		<xsl:attribute name="class"><xsl:value-of select="$styleTable"/></xsl:attribute>
+		
+		<xsl:if test="$title">
+			<tr>
+				<td colspan="3">
+					<p>
+						<xsl:attribute name="class"><xsl:value-of select="$styleHead"/></xsl:attribute>
+						<xsl:copy-of select="$title"/>
+					</p>
+				</td>
+			</tr>
+		</xsl:if>
+		
+		<tr>
+			<td class="PadTop" colspan="3"/>
+		</tr>
+		
+		<xsl:if test="$desc">
+			<tr>
+				<td colspan="3">
+					<p class="BoxDesc"><xsl:value-of select="$desc"/></p>
+				</td>
+			</tr>
+			<xsl:if test="count($list/*)">
+				<tr>
+					<td colspan="3" class="SeqRowSep">
+						<p class="SeqRowSep"/>
+					</td>
+				</tr>
+			</xsl:if>
+		</xsl:if>
 
+    
+      
+    <xsl:if test="$ordered = 'TRUE' and $direction">
+      <tr class="SeqHeader">
+        <td class="FieldType"><p class="FieldType"><span class="TypeRef" title="uint">uint</span></p></td>
+        <td class="FieldName"><p class="FieldName">
+           orderHdr = 
+        <xsl:choose>
+          <xsl:when test="$direction='S2C'">
+            0xF7B0
+          </xsl:when>
+          <xsl:when test="$direction='C2S'">
+            0xF7B1
+          </xsl:when>
+        </xsl:choose>
+        </p></td>
+        <td class="FieldDesc"><p class="FieldDesc">Value indicating this message has a sequencing header</p></td>
+      </tr>
+      <tr><td colspan="3" class="SeqRowSep"><p class="SeqRowSep"></p></td></tr>
+      <tr class="SeqHeader">
+        <td class="FieldType"><p class="FieldType"><span class="TypeRef" title="uint">ObjectID</span></p></td>
+        <td class="FieldName"><p class="FieldName">characterID</p></td>
+        <td class="FieldDesc"><p class="FieldDesc">the object ID of the message recipient (should be you)</p></td>
+      </tr>
+      <tr><td colspan="3" class="SeqRowSep"><p class="SeqRowSep"></p></td></tr>
+      <tr class="SeqHeader">
+        <td class="FieldType"><p class="FieldType"><span class="TypeRef" title="uint">uint</span></p></td>
+        <td class="FieldName"><p class="FieldName">sequence</p></td>
+        <td class="FieldDesc"><p class="FieldDesc">sequence number</p></td>
+      </tr>
+      <tr><td colspan="3" class="SeqRowSep"><p class="SeqRowSep"></p></td></tr>
+		</xsl:if>
+		
+    <xsl:if test="$type">
+      <tr>
+        <td class="FieldType"><p class="FieldType"><span class="TypeRef" title="uint">
+        <xsl:call-template name="GenLink">
+			    <xsl:with-param name="frame">frameEnum</xsl:with-param>
+			    <xsl:with-param name="type" select="'MessageType'"/>
+			    <xsl:with-param name="text"><xsl:value-of select="'MessageType'"/></xsl:with-param>
+		    </xsl:call-template>
+        </span></p></td>
+        <td class="FieldName"><p class="FieldName">type = <xsl:value-of select="$type"/></p></td>
+        <td class="FieldDesc"><p class="FieldDesc">type of this message</p></td>
+      </tr>
+      <xsl:if test="count($list/*)">
+				<tr>
+					<td colspan="3" class="FieldRowSep">
+						<p class="FieldRowSep"/>
+					</td>
+				</tr>
+			</xsl:if>
+    </xsl:if>
+    
+		<xsl:call-template name="GenFieldList">
+			<xsl:with-param name="list" select="$list"/>
+			<xsl:with-param name="case" select="$case"/>
+			<xsl:with-param name="style" select="$style"/>
+			<xsl:with-param name="depth" select="$depth"/>
+		</xsl:call-template>
+		
+		<tr>
+			<td class="PadBottom" colspan="3"/>
+		</tr>
+		
+	</table>
+	
+</xsl:template>
+    
 <xsl:template name="GenFieldTable">
   <xsl:param name="title"/>
   <xsl:param name="desc"/>
@@ -281,7 +357,7 @@
 				</tr>
 			</xsl:if>
 		</xsl:if>
-		
+
 		<xsl:call-template name="GenFieldList">
 			<xsl:with-param name="list" select="$list"/>
 			<xsl:with-param name="case" select="$case"/>
@@ -358,6 +434,66 @@
 	
 </xsl:template>
 
+<xsl:template name="GenIfTable">
+  <xsl:param name="title"/>
+  <xsl:param name="list"/>
+  <xsl:param name="case"/>
+  <xsl:param name="style" select="'List'"/>
+  <xsl:param name="depth" select="0"/>
+	
+	<xsl:variable name="istyle" select="($depth mod 2) + 1"/>
+	<xsl:variable name="styleTable">CaseList<xsl:value-of select="$istyle"/></xsl:variable>
+	<xsl:variable name="styleHead">CaseHead<xsl:value-of select="$istyle"/></xsl:variable>
+	
+	<table cellspacing="0" cellpadding="0">
+		<xsl:attribute name="class"><xsl:value-of select="$styleTable"/></xsl:attribute>
+		
+		<tr>
+			<td colspan="2">
+				<p>
+					<xsl:attribute name="class"><xsl:value-of select="$styleHead"/></xsl:attribute>
+					<xsl:copy-of select="$title"/>
+				</p>
+			</td>
+		</tr>
+		
+		<xsl:call-template name="GenFieldList">
+			<xsl:with-param name="list" select="$list"/>
+			<xsl:with-param name="case" select="$case"/>
+			<xsl:with-param name="style" select="$style"/>
+			<xsl:with-param name="depth" select="$depth"/>
+		</xsl:call-template>
+		
+	</table>
+	
+</xsl:template>
+
+<xsl:template name="GenIfEntry">
+  <xsl:param name="case"/>
+  <xsl:param name="style" select="'List'"/>
+  <xsl:param name="depth" select="0"/>
+	
+	<xsl:variable name="istyle" select="($depth mod 2) + 1"/>
+	<xsl:variable name="styleVal">CaseVal<xsl:value-of select="$istyle"/></xsl:variable>
+	<xsl:variable name="styleFields">CaseFields<xsl:value-of select="$istyle"/></xsl:variable>
+	
+	<tr>
+		<td><xsl:attribute name="class"><xsl:value-of select="$styleVal"/></xsl:attribute>
+			<p><xsl:attribute name="class"><xsl:value-of select="$styleVal"/></xsl:attribute>
+				<xsl:value-of select="name($case)"/>
+			</p>
+		</td>
+		<td><xsl:attribute name="class"><xsl:value-of select="$styleFields"/></xsl:attribute>
+			<xsl:call-template name="GenFieldTable">
+				<xsl:with-param name="desc" select="$case/@text"/>
+				<xsl:with-param name="list" select="$case"/>
+				<xsl:with-param name="style" select="$style"/>
+				<xsl:with-param name="depth" select="$depth"/>
+			</xsl:call-template>
+		</td>
+	</tr>
+	
+</xsl:template>
 
 <xsl:template name="GenFieldList">
   <xsl:param name="list"/>
@@ -396,6 +532,30 @@
 					<xsl:with-param name="depth" select="$depth"/>
 				</xsl:call-template>
 			</xsl:if>
+			
+		</xsl:when>
+    <xsl:when test="name(.) = 'if'">
+			
+			<tr>
+				<td class="NestedTable" colspan="3">
+					<xsl:call-template name="GenIfTable">
+						<xsl:with-param name="title">Choose based on testing <b><xsl:value-of select="@test"/></b></xsl:with-param>
+						<xsl:with-param name="list" select="."/>
+						<xsl:with-param name="case" select="$case"/>
+						<xsl:with-param name="style" select="$style"/>
+						<xsl:with-param name="depth" select="$depth"/>
+					</xsl:call-template>
+				</td>
+			</tr>
+			
+		</xsl:when>
+    <xsl:when test="name(.) = 'true' or name(.) = 'false'">
+			
+			<xsl:call-template name="GenIfEntry">
+				<xsl:with-param name="case" select="."/>
+				<xsl:with-param name="style" select="$style"/>
+				<xsl:with-param name="depth" select="$depth"/>
+			</xsl:call-template>
 			
 		</xsl:when>
 		<xsl:when test="name(.) = 'maskmap'">
@@ -453,7 +613,7 @@
 		<xsl:when test="name(.) = 'base'">
 			
 			<xsl:variable name="type" select="@type"/>
-			<xsl:variable name="typedef" select="/schema/datatypes/type[@name = $type]"/>
+			<xsl:variable name="typedef" select="/schema/datatypes/types/type[@name = $type]"/>
 			
 			<xsl:call-template name="GenFieldList">
 				<xsl:with-param name="list" select="$typedef"/>
@@ -528,18 +688,39 @@
 		<td class="FieldType">
 			<p class="FieldType">
 				<xsl:call-template name="GenTypeRef">
-				  <xsl:with-param name="type" select="$field/@type"/>
+				  <xsl:with-param name="field" select="$field"/>
 				</xsl:call-template>
 			</p>
 		</td>
 		<td class="FieldName">
 			<p class="FieldName">
 				<xsl:value-of select="$field/@name"/>
+        <xsl:if test="$field/@staticValue">
+          = <xsl:value-of select="$field/@staticValue"/>
+        </xsl:if>
 			</p>
 		</td>
 		<td class="FieldDesc">
 			<p class="FieldDesc">
-				<xsl:value-of select="$field/@text"/>
+        <xsl:if test="$field/submember | $field/subfield">
+          write: 
+          <xsl:for-each select="$field/*">
+              <xsl:if test="position() > 1">
+                | 
+              </xsl:if>
+              (<xsl:value-of select="./@name"/>
+              <xsl:if test="./@and">
+               &amp; <xsl:value-of select="./@and"/>
+              </xsl:if>
+              <xsl:if test="./@shift">
+               &lt;&lt; <xsl:value-of select="./@shift"/>
+              </xsl:if>)
+          </xsl:for-each>
+          <xsl:if test="$field/@text">
+          ;
+          </xsl:if>
+        </xsl:if>
+        <xsl:value-of select="$field/@text"/>
 			</p>
 		</td>
 	</tr>
@@ -560,7 +741,7 @@
       <td class="FieldType">
         <p class="FieldType">
           <xsl:call-template name="GenTypeRef">
-            <xsl:with-param name="type" select="$field/@type"/>
+            <xsl:with-param name="field" select="$field"/>
           </xsl:call-template>
         </p>
       </td>
@@ -571,7 +752,22 @@
       </td>
       <td class="FieldDesc">
         <p class="FieldDesc">
-          Value computed with <xsl:value-of select="$field/@value"/>
+          read: 
+          <xsl:if test="$field/@shift | $field/@and">
+           <xsl:value-of select="$field/../@name"/>
+          </xsl:if>
+          <xsl:if test="$field/@shift">
+           &gt;&gt; <xsl:value-of select="$field/@shift"/>
+          </xsl:if>
+          <xsl:if test="$field/@and">
+           &amp; <xsl:value-of select="$field/@and"/>
+          </xsl:if>
+          <xsl:if test="$field/@value">
+           <xsl:value-of select="$field/@value"/>
+          </xsl:if>
+          <xsl:if test="$field/@text">
+           ; <xsl:value-of select="$field/@text"/>
+          </xsl:if>
         </p>
       </td>
     </tr>
@@ -579,18 +775,39 @@
   </xsl:template>
 
 <xsl:template name="GenTypeRef">
+  <xsl:param name="field"/>
+  <xsl:call-template name="GenTypeRefLink">
+    <xsl:with-param name="type"><xsl:value-of select="$field//@type"/></xsl:with-param>
+	</xsl:call-template>
+  <xsl:choose>
+	  <xsl:when test="$field//@genericType">&lt;<xsl:call-template name="GenTypeRefLink">
+        <xsl:with-param name="type"><xsl:value-of select="$field//@genericType"/></xsl:with-param>
+	    </xsl:call-template>&gt;</xsl:when>
+	  <xsl:otherwise>
+      <xsl:choose>
+	      <xsl:when test="$field//@genericKey and $field//@genericValue">&lt;<xsl:call-template name="GenTypeRefLink">
+            <xsl:with-param name="type"><xsl:value-of select="$field//@genericKey"/></xsl:with-param>
+	        </xsl:call-template>,<xsl:call-template name="GenTypeRefLink">
+            <xsl:with-param name="type"><xsl:value-of select="$field//@genericValue"/></xsl:with-param>
+	        </xsl:call-template>&gt;</xsl:when>
+	      <xsl:otherwise>
+	      </xsl:otherwise>
+	    </xsl:choose>
+	  </xsl:otherwise>
+	</xsl:choose>
+</xsl:template>
+    
+<xsl:template name="GenTypeRefLink">
   <xsl:param name="type"/>
-  	
-	<xsl:variable name="typedef" select="/schema/datatypes/type[@name = $type]"/>
+	<xsl:variable name="typedef" select="/schema/datatypes/types/type[@name = $type]"/>
+  <xsl:variable name="typedef2" select="/schema/datatypes/enums/enum[@name = $type]"/>
 	<xsl:variable name="tip">
 		<xsl:choose>
 		<xsl:when test="$typedef//member">Struct</xsl:when>
 		<xsl:otherwise><xsl:value-of select="$typedef/@parent"/></xsl:otherwise>
 		</xsl:choose>
 	</xsl:variable>
-	
 	<span class="TypeRef"><xsl:attribute name="title"><xsl:value-of select="$tip"/></xsl:attribute>
-	
 	<xsl:choose>
 	<xsl:when test="($typedef//member | $typedef//value | $typedef//mask) or $typedef/@text">
 		<xsl:call-template name="GenLink">
@@ -600,12 +817,21 @@
 		</xsl:call-template>
 	</xsl:when>
 	<xsl:otherwise>
-		<xsl:value-of select="$type"/>
+		<xsl:choose>
+	    <xsl:when test="($typedef2//member | $typedef2//value | $typedef2//mask) or $typedef2/@text">
+		    <xsl:call-template name="GenLink">
+			    <xsl:with-param name="frame">frameEnum</xsl:with-param>
+			    <xsl:with-param name="type" select="$type"/>
+			    <xsl:with-param name="text"><xsl:value-of select="$type"/></xsl:with-param>
+		    </xsl:call-template>
+	    </xsl:when>
+	    <xsl:otherwise>
+		    <xsl:value-of select="$type"/>
+	    </xsl:otherwise>
+	  </xsl:choose>
 	</xsl:otherwise>
 	</xsl:choose>
-	
 	</span>
-	
 </xsl:template>
 
 
@@ -624,7 +850,7 @@
 		<xsl:attribute name="class"><xsl:value-of select="$styleTable"/></xsl:attribute>
 		
 		<tr>
-			<td colspan="2">
+			<td colspan="3">
 				<p>
 					<xsl:attribute name="class"><xsl:value-of select="$styleHead"/></xsl:attribute>
 					<xsl:copy-of select="$title"/>
@@ -638,13 +864,13 @@
 		
 		<xsl:if test="$desc">
 			<tr>
-				<td colspan="2">
+				<td colspan="3">
 					<p class="BoxDesc"><xsl:value-of select="$desc"/></p>
 				</td>
 			</tr>
 			<xsl:if test="count($list/*)">
 				<tr>
-					<td colspan="2" class="ValueRowSep">
+					<td colspan="3" class="ValueRowSep">
 						<p class="ValueRowSep"/>
 					</td>
 				</tr>
@@ -672,7 +898,7 @@
 			
 			<xsl:if test="position() > 1">
 				<tr>
-					<td colspan="2" class="ValueRowSep">
+					<td colspan="3" class="ValueRowSep">
 						<p class="ValueRowSep"/>
 					</td>
 				</tr>
@@ -697,10 +923,17 @@
 				<xsl:value-of select="$value/@value"/>
 			</p>
 		</td>
-		<td class="ValueDesc">
+    <td class="ValueName">
+			<p class="ValueName">
+				<xsl:value-of select="$value/@name"/>
+			</p>
+		</td>
+    <td class="ValueDesc">
+    <xsl:if test="$value/@text and $value/@text != ''">
 			<p class="ValueDesc">
 				<xsl:value-of select="$value/@text"/>
 			</p>
+		</xsl:if>
 		</td>
 	</tr>
 	
@@ -713,15 +946,18 @@
   <xsl:param name="text"/>
 	
 	<a>
-		<xsl:attribute name="target"><xsl:value-of select="$frame"/></xsl:attribute>
+		<xsl:attribute name="target">
+      <xsl:choose>
+				<xsl:when test="$frame = 'frameEnum'">frameType</xsl:when>
+				<xsl:otherwise><xsl:value-of select="$frame"/></xsl:otherwise>
+				</xsl:choose>
+    </xsl:attribute>
 		<xsl:attribute name="href"><xsl:value-of select="$URLPrefix"/><xsl:text
 			/>&amp;frame=<xsl:value-of select="$frame"/><xsl:text
 			/>&amp;type=<xsl:value-of select="$type"/><xsl:text
 			/><xsl:if test="$case">&amp;case=<xsl:value-of select="$case"/></xsl:if><xsl:text
-			/></xsl:attribute>
-		<xsl:copy-of select="$text"/>
-	</a>
-	
+			/></xsl:attribute><xsl:copy-of select="$text"/>
+  </a>
 </xsl:template>
 
 
