@@ -1,0 +1,294 @@
+<html xmlns:fo="http://www.w3.org/1999/XSL/Format" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:fn="http://www.w3.org/2005/xpath-functions">
+   <head>
+      <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+      <title>AC Protocol version 2017.11.14.0</title>
+      <link type="text/css" rel="stylesheet" href="../Classic.css">
+   </head>
+   <body>
+      <table cellspacing="0" cellpadding="0" class="List2">
+         <tr>
+            <td colspan="3">
+               <p class="BoxHead2"><b>AllegianceData</b></p>
+            </td>
+         </tr>
+         <tr>
+            <td class="PadTop" colspan="3"></td>
+         </tr>
+         <tr>
+            <td colspan="3">
+               <p class="BoxDesc">Set of allegiance data for a specific player</p>
+            </td>
+         </tr>
+         <tr>
+            <td colspan="3" class="FieldRowSep">
+               <p class="FieldRowSep"></p>
+            </td>
+         </tr>
+         <tr>
+            <td class="FieldType">
+               <p class="FieldType"><span class="TypeRef" title="uint">ObjectID</span></p>
+            </td>
+            <td class="FieldName">
+               <p class="FieldName">characterID</p>
+            </td>
+            <td class="FieldDesc">
+               <p class="FieldDesc">Character ID</p>
+            </td>
+         </tr>
+         <tr>
+            <td colspan="3" class="FieldRowSep">
+               <p class="FieldRowSep"></p>
+            </td>
+         </tr>
+         <tr>
+            <td class="FieldType">
+               <p class="FieldType"><span class="TypeRef" title="">uint</span></p>
+            </td>
+            <td class="FieldName">
+               <p class="FieldName">cpCached</p>
+            </td>
+            <td class="FieldDesc">
+               <p class="FieldDesc">XP gained while logged off</p>
+            </td>
+         </tr>
+         <tr>
+            <td colspan="3" class="FieldRowSep">
+               <p class="FieldRowSep"></p>
+            </td>
+         </tr>
+         <tr>
+            <td class="FieldType">
+               <p class="FieldType"><span class="TypeRef" title="">uint</span></p>
+            </td>
+            <td class="FieldName">
+               <p class="FieldName">cpTithed</p>
+            </td>
+            <td class="FieldDesc">
+               <p class="FieldDesc">Total allegiance XP contribution.</p>
+            </td>
+         </tr>
+         <tr>
+            <td colspan="3" class="FieldRowSep">
+               <p class="FieldRowSep"></p>
+            </td>
+         </tr>
+         <tr>
+            <td class="FieldType">
+               <p class="FieldType"><span class="TypeRef" title="">uint</span></p>
+            </td>
+            <td class="FieldName">
+               <p class="FieldName">bitfield</p>
+            </td>
+            <td class="FieldDesc">
+               <p class="FieldDesc"></p>
+            </td>
+         </tr>
+         <tr>
+            <td colspan="3" class="FieldRowSep">
+               <p class="FieldRowSep"></p>
+            </td>
+         </tr>
+         <tr>
+            <td class="FieldType">
+               <p class="FieldType"><span class="TypeRef" title=""><a target="frameType" href="Gender.html">Gender</a></span></p>
+            </td>
+            <td class="FieldName">
+               <p class="FieldName">gender</p>
+            </td>
+            <td class="FieldDesc">
+               <p class="FieldDesc">The gender of the character (for determining title).</p>
+            </td>
+         </tr>
+         <tr>
+            <td colspan="3" class="FieldRowSep">
+               <p class="FieldRowSep"></p>
+            </td>
+         </tr>
+         <tr>
+            <td class="FieldType">
+               <p class="FieldType"><span class="TypeRef" title=""><a target="frameType" href="HeritageGroup.html">HeritageGroup</a></span></p>
+            </td>
+            <td class="FieldName">
+               <p class="FieldName">hg</p>
+            </td>
+            <td class="FieldDesc">
+               <p class="FieldDesc">The heritage of the character (for determining title).</p>
+            </td>
+         </tr>
+         <tr>
+            <td colspan="3" class="FieldRowSep">
+               <p class="FieldRowSep"></p>
+            </td>
+         </tr>
+         <tr>
+            <td class="FieldType">
+               <p class="FieldType"><span class="TypeRef" title="">ushort</span></p>
+            </td>
+            <td class="FieldName">
+               <p class="FieldName">rank</p>
+            </td>
+            <td class="FieldDesc">
+               <p class="FieldDesc">The numerical rank (1 is lowest).</p>
+            </td>
+         </tr>
+         <tr>
+            <td class="NestedTable" colspan="3">
+               <table cellspacing="0" cellpadding="0" class="CaseList2">
+                  <tr>
+                     <td colspan="2">
+                        <p class="CaseHead2">Choose valid sections by masking against <b>bitfield</b></p>
+                     </td>
+                  </tr>
+                  <tr>
+                     <td class="CaseVal2">
+                        <p class="CaseVal2">0x8</p>
+                     </td>
+                     <td class="CaseFields2">
+                        <table cellspacing="0" cellpadding="0" class="List2">
+                           <tr>
+                              <td class="PadTop" colspan="3"></td>
+                           </tr>
+                           <tr>
+                              <td class="FieldType">
+                                 <p class="FieldType"><span class="TypeRef" title="">uint</span></p>
+                              </td>
+                              <td class="FieldName">
+                                 <p class="FieldName">level</p>
+                              </td>
+                              <td class="FieldDesc">
+                                 <p class="FieldDesc"></p>
+                              </td>
+                           </tr>
+                           <tr>
+                              <td class="PadBottom" colspan="3"></td>
+                           </tr>
+                        </table>
+                     </td>
+                  </tr>
+               </table>
+            </td>
+         </tr>
+         <tr>
+            <td class="FieldType">
+               <p class="FieldType"><span class="TypeRef" title="">ushort</span></p>
+            </td>
+            <td class="FieldName">
+               <p class="FieldName">loyalty</p>
+            </td>
+            <td class="FieldDesc">
+               <p class="FieldDesc">Character loyalty.</p>
+            </td>
+         </tr>
+         <tr>
+            <td colspan="3" class="FieldRowSep">
+               <p class="FieldRowSep"></p>
+            </td>
+         </tr>
+         <tr>
+            <td class="FieldType">
+               <p class="FieldType"><span class="TypeRef" title="">ushort</span></p>
+            </td>
+            <td class="FieldName">
+               <p class="FieldName">leadership</p>
+            </td>
+            <td class="FieldDesc">
+               <p class="FieldDesc">Character leadership.</p>
+            </td>
+         </tr>
+         <tr>
+            <td class="NestedTable" colspan="3">
+               <table cellspacing="0" cellpadding="0" class="CaseList2">
+                  <tr>
+                     <td colspan="2">
+                        <p class="CaseHead2">Choose based on testing <b>bitfield == 0x4</b></p>
+                     </td>
+                  </tr>
+                  <tr>
+                     <td class="CaseVal2">
+                        <p class="CaseVal2">true</p>
+                     </td>
+                     <td class="CaseFields2">
+                        <table cellspacing="0" cellpadding="0" class="List2">
+                           <tr>
+                              <td class="PadTop" colspan="3"></td>
+                           </tr>
+                           <tr>
+                              <td class="FieldType">
+                                 <p class="FieldType"><span class="TypeRef" title="">ulong</span></p>
+                              </td>
+                              <td class="FieldName">
+                                 <p class="FieldName">timeOnline</p>
+                              </td>
+                              <td class="FieldDesc">
+                                 <p class="FieldDesc"></p>
+                              </td>
+                           </tr>
+                           <tr>
+                              <td class="PadBottom" colspan="3"></td>
+                           </tr>
+                        </table>
+                     </td>
+                  </tr>
+                  <tr>
+                     <td class="CaseVal2">
+                        <p class="CaseVal2">false</p>
+                     </td>
+                     <td class="CaseFields2">
+                        <table cellspacing="0" cellpadding="0" class="List2">
+                           <tr>
+                              <td class="PadTop" colspan="3"></td>
+                           </tr>
+                           <tr>
+                              <td class="FieldType">
+                                 <p class="FieldType"><span class="TypeRef" title="">uint</span></p>
+                              </td>
+                              <td class="FieldName">
+                                 <p class="FieldName">timeOnline</p>
+                              </td>
+                              <td class="FieldDesc">
+                                 <p class="FieldDesc"></p>
+                              </td>
+                           </tr>
+                           <tr>
+                              <td colspan="3" class="FieldRowSep">
+                                 <p class="FieldRowSep"></p>
+                              </td>
+                           </tr>
+                           <tr>
+                              <td class="FieldType">
+                                 <p class="FieldType"><span class="TypeRef" title="">uint</span></p>
+                              </td>
+                              <td class="FieldName">
+                                 <p class="FieldName">allegianceAge</p>
+                              </td>
+                              <td class="FieldDesc">
+                                 <p class="FieldDesc"></p>
+                              </td>
+                           </tr>
+                           <tr>
+                              <td class="PadBottom" colspan="3"></td>
+                           </tr>
+                        </table>
+                     </td>
+                  </tr>
+               </table>
+            </td>
+         </tr>
+         <tr>
+            <td class="FieldType">
+               <p class="FieldType"><span class="TypeRef" title="">string</span></p>
+            </td>
+            <td class="FieldName">
+               <p class="FieldName">name</p>
+            </td>
+            <td class="FieldDesc">
+               <p class="FieldDesc"></p>
+            </td>
+         </tr>
+         <tr>
+            <td class="PadBottom" colspan="3"></td>
+         </tr>
+      </table>
+      <p class="Version">Messages.xml version 2017.11.14.0</p>
+   </body>
+</html>

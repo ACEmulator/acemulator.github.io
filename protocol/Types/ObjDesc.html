@@ -1,0 +1,221 @@
+<html xmlns:fo="http://www.w3.org/1999/XSL/Format" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:fn="http://www.w3.org/2005/xpath-functions">
+   <head>
+      <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+      <title>AC Protocol version 2017.11.14.0</title>
+      <link type="text/css" rel="stylesheet" href="../Classic.css">
+   </head>
+   <body>
+      <table cellspacing="0" cellpadding="0" class="List2">
+         <tr>
+            <td colspan="3">
+               <p class="BoxHead2"><b>ObjDesc</b></p>
+            </td>
+         </tr>
+         <tr>
+            <td class="PadTop" colspan="3"></td>
+         </tr>
+         <tr>
+            <td colspan="3">
+               <p class="BoxDesc">The ObjDesc structure defines an object's visual appearance.</p>
+            </td>
+         </tr>
+         <tr>
+            <td colspan="3" class="FieldRowSep">
+               <p class="FieldRowSep"></p>
+            </td>
+         </tr>
+         <tr>
+            <td class="FieldType">
+               <p class="FieldType"><span class="TypeRef" title="">ubyte</span></p>
+            </td>
+            <td class="FieldName">
+               <p class="FieldName">version
+                  = 0x11
+               </p>
+            </td>
+            <td class="FieldDesc">
+               <p class="FieldDesc">always 0x11</p>
+            </td>
+         </tr>
+         <tr>
+            <td colspan="3" class="FieldRowSep">
+               <p class="FieldRowSep"></p>
+            </td>
+         </tr>
+         <tr>
+            <td class="FieldType">
+               <p class="FieldType"><span class="TypeRef" title="">ubyte</span></p>
+            </td>
+            <td class="FieldName">
+               <p class="FieldName">paletteCount</p>
+            </td>
+            <td class="FieldDesc">
+               <p class="FieldDesc">the number of palettes associated with this object</p>
+            </td>
+         </tr>
+         <tr>
+            <td colspan="3" class="FieldRowSep">
+               <p class="FieldRowSep"></p>
+            </td>
+         </tr>
+         <tr>
+            <td class="FieldType">
+               <p class="FieldType"><span class="TypeRef" title="">ubyte</span></p>
+            </td>
+            <td class="FieldName">
+               <p class="FieldName">textureCount</p>
+            </td>
+            <td class="FieldDesc">
+               <p class="FieldDesc">the number of textures associated with this object</p>
+            </td>
+         </tr>
+         <tr>
+            <td colspan="3" class="FieldRowSep">
+               <p class="FieldRowSep"></p>
+            </td>
+         </tr>
+         <tr>
+            <td class="FieldType">
+               <p class="FieldType"><span class="TypeRef" title="">ubyte</span></p>
+            </td>
+            <td class="FieldName">
+               <p class="FieldName">modelCount</p>
+            </td>
+            <td class="FieldDesc">
+               <p class="FieldDesc">the number of models associated with this object</p>
+            </td>
+         </tr>
+         <tr>
+            <td class="NestedTable" colspan="3">
+               <table cellspacing="0" cellpadding="0" class="CaseList2">
+                  <tr>
+                     <td colspan="2">
+                        <p class="CaseHead2">Choose based on testing <b>paletteCount &gt; 0</b></p>
+                     </td>
+                  </tr>
+                  <tr>
+                     <td class="CaseVal2">
+                        <p class="CaseVal2">true</p>
+                     </td>
+                     <td class="CaseFields2">
+                        <table cellspacing="0" cellpadding="0" class="List2">
+                           <tr>
+                              <td class="PadTop" colspan="3"></td>
+                           </tr>
+                           <tr>
+                              <td class="FieldType">
+                                 <p class="FieldType"><span class="TypeRef" title="PackedDWORD">DataID</span></p>
+                              </td>
+                              <td class="FieldName">
+                                 <p class="FieldName">palette</p>
+                              </td>
+                              <td class="FieldDesc">
+                                 <p class="FieldDesc">palette DataID (minus 0x04000000)</p>
+                              </td>
+                           </tr>
+                           <tr>
+                              <td class="NestedTable" colspan="3">
+                                 <table cellspacing="0" cellpadding="0" class="List1">
+                                    <tr>
+                                       <td colspan="3">
+                                          <p class="BoxHead1"><b>subpalettes</b>: vector of length <b>paletteCount</b></p>
+                                       </td>
+                                    </tr>
+                                    <tr>
+                                       <td class="PadTop" colspan="3"></td>
+                                    </tr>
+                                    <tr>
+                                       <td class="FieldType">
+                                          <p class="FieldType"><span class="TypeRef" title="Struct"><a target="frameType" href="Subpalette.html">Subpalette</a></span></p>
+                                       </td>
+                                       <td class="FieldName">
+                                          <p class="FieldName">subpalette</p>
+                                       </td>
+                                       <td class="FieldDesc">
+                                          <p class="FieldDesc">subpalette data</p>
+                                       </td>
+                                    </tr>
+                                    <tr>
+                                       <td class="PadBottom" colspan="3"></td>
+                                    </tr>
+                                 </table>
+                              </td>
+                           </tr>
+                           <tr>
+                              <td class="PadBottom" colspan="3"></td>
+                           </tr>
+                        </table>
+                     </td>
+                  </tr>
+               </table>
+            </td>
+         </tr>
+         <tr>
+            <td class="NestedTable" colspan="3">
+               <table cellspacing="0" cellpadding="0" class="List1">
+                  <tr>
+                     <td colspan="3">
+                        <p class="BoxHead1"><b>tmChanges</b>: vector of length <b>textureCount</b></p>
+                     </td>
+                  </tr>
+                  <tr>
+                     <td class="PadTop" colspan="3"></td>
+                  </tr>
+                  <tr>
+                     <td class="FieldType">
+                        <p class="FieldType"><span class="TypeRef" title="Struct"><a target="frameType" href="TextureMapChange.html">TextureMapChange</a></span></p>
+                     </td>
+                     <td class="FieldName">
+                        <p class="FieldName">tmChange</p>
+                     </td>
+                     <td class="FieldDesc">
+                        <p class="FieldDesc">Texture Map Change</p>
+                     </td>
+                  </tr>
+                  <tr>
+                     <td class="PadBottom" colspan="3"></td>
+                  </tr>
+               </table>
+            </td>
+         </tr>
+         <tr>
+            <td class="NestedTable" colspan="3">
+               <table cellspacing="0" cellpadding="0" class="List1">
+                  <tr>
+                     <td colspan="3">
+                        <p class="BoxHead1"><b>apChanges</b>: vector of length <b>modelCount</b></p>
+                     </td>
+                  </tr>
+                  <tr>
+                     <td class="PadTop" colspan="3"></td>
+                  </tr>
+                  <tr>
+                     <td class="FieldType">
+                        <p class="FieldType"><span class="TypeRef" title="Struct"><a target="frameType" href="AnimPartChange.html">AnimPartChange</a></span></p>
+                     </td>
+                     <td class="FieldName">
+                        <p class="FieldName">apChange</p>
+                     </td>
+                     <td class="FieldDesc">
+                        <p class="FieldDesc">Anim Part Change</p>
+                     </td>
+                  </tr>
+                  <tr>
+                     <td class="PadBottom" colspan="3"></td>
+                  </tr>
+               </table>
+            </td>
+         </tr>
+         <tr>
+            <td colspan="3">
+               <p class="Align">Align to <b>DWORD</b> boundary
+               </p>
+            </td>
+         </tr>
+         <tr>
+            <td class="PadBottom" colspan="3"></td>
+         </tr>
+      </table>
+      <p class="Version">Messages.xml version 2017.11.14.0</p>
+   </body>
+</html>

@@ -1,0 +1,474 @@
+<html xmlns:fo="http://www.w3.org/1999/XSL/Format" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:fn="http://www.w3.org/2005/xpath-functions">
+   <head>
+      <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+      <title>AC Protocol version 2017.11.14.0</title>
+      <link type="text/css" rel="stylesheet" href="../Classic.css">
+   </head>
+   <body>
+      <table cellspacing="0" cellpadding="0" class="List2">
+         <tr>
+            <td colspan="3">
+               <p class="BoxHead2"><b>RawMotionState</b></p>
+            </td>
+         </tr>
+         <tr>
+            <td class="PadTop" colspan="3"></td>
+         </tr>
+         <tr>
+            <td colspan="3">
+               <p class="BoxDesc">Data related to the movement of the object sent from a client</p>
+            </td>
+         </tr>
+         <tr>
+            <td colspan="3" class="FieldRowSep">
+               <p class="FieldRowSep"></p>
+            </td>
+         </tr>
+         <tr>
+            <td class="FieldType">
+               <p class="FieldType"><span class="TypeRef" title="">uint ushort</span></p>
+            </td>
+            <td class="FieldName">
+               <p class="FieldName">flags</p>
+            </td>
+            <td class="FieldDesc">
+               <p class="FieldDesc">
+                  write: 
+                  
+                  (commandListLength
+                  &amp; 0xF8
+                  &lt;&lt; 11)
+                  
+                  ;
+                  Command ID
+               </p>
+            </td>
+         </tr>
+         <tr align="right">
+            <td class="FieldType">
+               <p class="FieldType"><span class="TypeRef" title="">ushort</span></p>
+            </td>
+            <td class="FieldName">
+               <p class="FieldName">commandListLength</p>
+            </td>
+            <td class="FieldDesc">
+               <p class="FieldDesc">
+                  read: 
+                  flags
+                  &gt;&gt; 11
+                  &amp; 0xF8
+                  ; Sequence of the animation.
+               </p>
+            </td>
+         </tr>
+         <tr>
+            <td class="NestedTable" colspan="3">
+               <table cellspacing="0" cellpadding="0" class="CaseList2">
+                  <tr>
+                     <td colspan="2">
+                        <p class="CaseHead2">Choose valid sections by masking against <b>flags</b></p>
+                     </td>
+                  </tr>
+                  <tr>
+                     <td class="CaseVal2">
+                        <p class="CaseVal2">0x00000001</p>
+                     </td>
+                     <td class="CaseFields2">
+                        <table cellspacing="0" cellpadding="0" class="List2">
+                           <tr>
+                              <td class="PadTop" colspan="3"></td>
+                           </tr>
+                           <tr>
+                              <td class="FieldType">
+                                 <p class="FieldType"><span class="TypeRef" title="">uint</span></p>
+                              </td>
+                              <td class="FieldName">
+                                 <p class="FieldName">currentHoldkey</p>
+                              </td>
+                              <td class="FieldDesc">
+                                 <p class="FieldDesc"></p>
+                              </td>
+                           </tr>
+                           <tr>
+                              <td class="PadBottom" colspan="3"></td>
+                           </tr>
+                        </table>
+                     </td>
+                  </tr>
+                  <tr>
+                     <td class="CaseVal2">
+                        <p class="CaseVal2">0x00000002</p>
+                     </td>
+                     <td class="CaseFields2">
+                        <table cellspacing="0" cellpadding="0" class="List2">
+                           <tr>
+                              <td class="PadTop" colspan="3"></td>
+                           </tr>
+                           <tr>
+                              <td class="FieldType">
+                                 <p class="FieldType"><span class="TypeRef" title=""><a target="frameType" href="StanceMode.html">StanceMode</a></span></p>
+                              </td>
+                              <td class="FieldName">
+                                 <p class="FieldName">currentStyle</p>
+                              </td>
+                              <td class="FieldDesc">
+                                 <p class="FieldDesc">Current stance.  If not present, defaults to 0x3D (NonCombat)</p>
+                              </td>
+                           </tr>
+                           <tr>
+                              <td class="PadBottom" colspan="3"></td>
+                           </tr>
+                        </table>
+                     </td>
+                  </tr>
+                  <tr>
+                     <td class="CaseVal2">
+                        <p class="CaseVal2">0x00000004</p>
+                     </td>
+                     <td class="CaseFields2">
+                        <table cellspacing="0" cellpadding="0" class="List2">
+                           <tr>
+                              <td class="PadTop" colspan="3"></td>
+                           </tr>
+                           <tr>
+                              <td class="FieldType">
+                                 <p class="FieldType"><span class="TypeRef" title=""><a target="frameType" href="MovementCommand.html">MovementCommand</a></span></p>
+                              </td>
+                              <td class="FieldName">
+                                 <p class="FieldName">forwardCommand</p>
+                              </td>
+                              <td class="FieldDesc">
+                                 <p class="FieldDesc">Command for our forward movement. If not present, defaults to 0x03 (Ready)</p>
+                              </td>
+                           </tr>
+                           <tr>
+                              <td class="PadBottom" colspan="3"></td>
+                           </tr>
+                        </table>
+                     </td>
+                  </tr>
+                  <tr>
+                     <td class="CaseVal2">
+                        <p class="CaseVal2">0x0000008</p>
+                     </td>
+                     <td class="CaseFields2">
+                        <table cellspacing="0" cellpadding="0" class="List2">
+                           <tr>
+                              <td class="PadTop" colspan="3"></td>
+                           </tr>
+                           <tr>
+                              <td class="FieldType">
+                                 <p class="FieldType"><span class="TypeRef" title="">uint</span></p>
+                              </td>
+                              <td class="FieldName">
+                                 <p class="FieldName">forwardHoldkey</p>
+                              </td>
+                              <td class="FieldDesc">
+                                 <p class="FieldDesc">Whether forward key is being held</p>
+                              </td>
+                           </tr>
+                           <tr>
+                              <td class="PadBottom" colspan="3"></td>
+                           </tr>
+                        </table>
+                     </td>
+                  </tr>
+                  <tr>
+                     <td class="CaseVal2">
+                        <p class="CaseVal2">0x00000010</p>
+                     </td>
+                     <td class="CaseFields2">
+                        <table cellspacing="0" cellpadding="0" class="List2">
+                           <tr>
+                              <td class="PadTop" colspan="3"></td>
+                           </tr>
+                           <tr>
+                              <td class="FieldType">
+                                 <p class="FieldType"><span class="TypeRef" title="">float</span></p>
+                              </td>
+                              <td class="FieldName">
+                                 <p class="FieldName">forwardSpeed</p>
+                              </td>
+                              <td class="FieldDesc">
+                                 <p class="FieldDesc">Forward movement speed. If not present, defaults to 1.0</p>
+                              </td>
+                           </tr>
+                           <tr>
+                              <td class="PadBottom" colspan="3"></td>
+                           </tr>
+                        </table>
+                     </td>
+                  </tr>
+                  <tr>
+                     <td class="CaseVal2">
+                        <p class="CaseVal2">0x00000020</p>
+                     </td>
+                     <td class="CaseFields2">
+                        <table cellspacing="0" cellpadding="0" class="List2">
+                           <tr>
+                              <td class="PadTop" colspan="3"></td>
+                           </tr>
+                           <tr>
+                              <td class="FieldType">
+                                 <p class="FieldType"><span class="TypeRef" title=""><a target="frameType" href="MovementCommand.html">MovementCommand</a></span></p>
+                              </td>
+                              <td class="FieldName">
+                                 <p class="FieldName">sidestepCommand</p>
+                              </td>
+                              <td class="FieldDesc">
+                                 <p class="FieldDesc">Command for our sidestep movememnt. If not present, defaults to 0x00</p>
+                              </td>
+                           </tr>
+                           <tr>
+                              <td class="PadBottom" colspan="3"></td>
+                           </tr>
+                        </table>
+                     </td>
+                  </tr>
+                  <tr>
+                     <td class="CaseVal2">
+                        <p class="CaseVal2">0x00000040</p>
+                     </td>
+                     <td class="CaseFields2">
+                        <table cellspacing="0" cellpadding="0" class="List2">
+                           <tr>
+                              <td class="PadTop" colspan="3"></td>
+                           </tr>
+                           <tr>
+                              <td class="FieldType">
+                                 <p class="FieldType"><span class="TypeRef" title="">uint</span></p>
+                              </td>
+                              <td class="FieldName">
+                                 <p class="FieldName">sidestepHoldkey</p>
+                              </td>
+                              <td class="FieldDesc">
+                                 <p class="FieldDesc">Whether sidestep key is being held</p>
+                              </td>
+                           </tr>
+                           <tr>
+                              <td class="PadBottom" colspan="3"></td>
+                           </tr>
+                        </table>
+                     </td>
+                  </tr>
+                  <tr>
+                     <td class="CaseVal2">
+                        <p class="CaseVal2">0x00000080</p>
+                     </td>
+                     <td class="CaseFields2">
+                        <table cellspacing="0" cellpadding="0" class="List2">
+                           <tr>
+                              <td class="PadTop" colspan="3"></td>
+                           </tr>
+                           <tr>
+                              <td class="FieldType">
+                                 <p class="FieldType"><span class="TypeRef" title="">float</span></p>
+                              </td>
+                              <td class="FieldName">
+                                 <p class="FieldName">sidestepSpeed</p>
+                              </td>
+                              <td class="FieldDesc">
+                                 <p class="FieldDesc">Sidestep movement speed. If not present, defaults to 1.0</p>
+                              </td>
+                           </tr>
+                           <tr>
+                              <td class="PadBottom" colspan="3"></td>
+                           </tr>
+                        </table>
+                     </td>
+                  </tr>
+                  <tr>
+                     <td class="CaseVal2">
+                        <p class="CaseVal2">0x00000100</p>
+                     </td>
+                     <td class="CaseFields2">
+                        <table cellspacing="0" cellpadding="0" class="List2">
+                           <tr>
+                              <td class="PadTop" colspan="3"></td>
+                           </tr>
+                           <tr>
+                              <td class="FieldType">
+                                 <p class="FieldType"><span class="TypeRef" title=""><a target="frameType" href="MovementCommand.html">MovementCommand</a></span></p>
+                              </td>
+                              <td class="FieldName">
+                                 <p class="FieldName">turnCommand</p>
+                              </td>
+                              <td class="FieldDesc">
+                                 <p class="FieldDesc">Command for our turn movememnt. If not present, defaults to 0x00</p>
+                              </td>
+                           </tr>
+                           <tr>
+                              <td class="PadBottom" colspan="3"></td>
+                           </tr>
+                        </table>
+                     </td>
+                  </tr>
+                  <tr>
+                     <td class="CaseVal2">
+                        <p class="CaseVal2">0x00000200</p>
+                     </td>
+                     <td class="CaseFields2">
+                        <table cellspacing="0" cellpadding="0" class="List2">
+                           <tr>
+                              <td class="PadTop" colspan="3"></td>
+                           </tr>
+                           <tr>
+                              <td class="FieldType">
+                                 <p class="FieldType"><span class="TypeRef" title="">uint</span></p>
+                              </td>
+                              <td class="FieldName">
+                                 <p class="FieldName">turnHoldkey</p>
+                              </td>
+                              <td class="FieldDesc">
+                                 <p class="FieldDesc">Whether turn key is being held</p>
+                              </td>
+                           </tr>
+                           <tr>
+                              <td class="PadBottom" colspan="3"></td>
+                           </tr>
+                        </table>
+                     </td>
+                  </tr>
+                  <tr>
+                     <td class="CaseVal2">
+                        <p class="CaseVal2">0x00000400</p>
+                     </td>
+                     <td class="CaseFields2">
+                        <table cellspacing="0" cellpadding="0" class="List2">
+                           <tr>
+                              <td class="PadTop" colspan="3"></td>
+                           </tr>
+                           <tr>
+                              <td class="FieldType">
+                                 <p class="FieldType"><span class="TypeRef" title="">float</span></p>
+                              </td>
+                              <td class="FieldName">
+                                 <p class="FieldName">turnSpeed</p>
+                              </td>
+                              <td class="FieldDesc">
+                                 <p class="FieldDesc">Turn movement speed. If not present, defaults to 1.0</p>
+                              </td>
+                           </tr>
+                           <tr>
+                              <td class="PadBottom" colspan="3"></td>
+                           </tr>
+                        </table>
+                     </td>
+                  </tr>
+               </table>
+            </td>
+         </tr>
+         <tr>
+            <td class="NestedTable" colspan="3">
+               <table cellspacing="0" cellpadding="0" class="List1">
+                  <tr>
+                     <td colspan="3">
+                        <p class="BoxHead1"><b>commands</b>: vector of length <b>commandListLength</b></p>
+                     </td>
+                  </tr>
+                  <tr>
+                     <td class="PadTop" colspan="3"></td>
+                  </tr>
+                  <tr>
+                     <td class="FieldType">
+                        <p class="FieldType"><span class="TypeRef" title=""><a target="frameType" href="Command.html">Command</a></span></p>
+                     </td>
+                     <td class="FieldName">
+                        <p class="FieldName">commandID</p>
+                     </td>
+                     <td class="FieldDesc">
+                        <p class="FieldDesc">Command ID</p>
+                     </td>
+                  </tr>
+                  <tr>
+                     <td colspan="3" class="FieldRowSep">
+                        <p class="FieldRowSep"></p>
+                     </td>
+                  </tr>
+                  <tr>
+                     <td class="FieldType">
+                        <p class="FieldType"><span class="TypeRef" title="">ushort ushort ushort</span></p>
+                     </td>
+                     <td class="FieldName">
+                        <p class="FieldName">packedSequence</p>
+                     </td>
+                     <td class="FieldDesc">
+                        <p class="FieldDesc">
+                           write: 
+                           
+                           (serverActionSequence
+                           &amp; 0x7FFF)
+                           
+                           | 
+                           
+                           (autonomous
+                           &amp; 0x1
+                           &lt;&lt; 15)
+                           
+                           ;
+                           Sequence of the animation.
+                        </p>
+                     </td>
+                  </tr>
+                  <tr align="right">
+                     <td class="FieldType">
+                        <p class="FieldType"><span class="TypeRef" title="">ushort</span></p>
+                     </td>
+                     <td class="FieldName">
+                        <p class="FieldName">serverActionSequence</p>
+                     </td>
+                     <td class="FieldDesc">
+                        <p class="FieldDesc">
+                           read: 
+                           packedSequence
+                           &amp; 0x7FFF
+                           ; Sequence of the animation.
+                        </p>
+                     </td>
+                  </tr>
+                  <tr align="right">
+                     <td class="FieldType">
+                        <p class="FieldType"><span class="TypeRef" title="">ushort</span></p>
+                     </td>
+                     <td class="FieldName">
+                        <p class="FieldName">autonomous</p>
+                     </td>
+                     <td class="FieldDesc">
+                        <p class="FieldDesc">
+                           read: 
+                           packedSequence
+                           &gt;&gt; 15
+                           &amp; 0x1
+                           ; Whether command is autonomous
+                        </p>
+                     </td>
+                  </tr>
+                  <tr>
+                     <td colspan="3" class="FieldRowSep">
+                        <p class="FieldRowSep"></p>
+                     </td>
+                  </tr>
+                  <tr>
+                     <td class="FieldType">
+                        <p class="FieldType"><span class="TypeRef" title="">float</span></p>
+                     </td>
+                     <td class="FieldName">
+                        <p class="FieldName">speed</p>
+                     </td>
+                     <td class="FieldDesc">
+                        <p class="FieldDesc">Command speed</p>
+                     </td>
+                  </tr>
+                  <tr>
+                     <td class="PadBottom" colspan="3"></td>
+                  </tr>
+               </table>
+            </td>
+         </tr>
+         <tr>
+            <td class="PadBottom" colspan="3"></td>
+         </tr>
+      </table>
+      <p class="Version">Messages.xml version 2017.11.14.0</p>
+   </body>
+</html>

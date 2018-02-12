@@ -1,0 +1,5610 @@
+<html xmlns:fo="http://www.w3.org/1999/XSL/Format" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:fn="http://www.w3.org/2005/xpath-functions">
+   <head>
+      <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+      <title>AC Protocol version 2017.11.14.0</title>
+      <link type="text/css" rel="stylesheet" href="../Classic.css">
+   </head>
+   <body>
+      <table cellspacing="0" cellpadding="0" class="List2">
+         <tr>
+            <td colspan="3">
+               <p class="BoxHead2"><b>StatusMessage</b>: uint
+               </p>
+            </td>
+         </tr>
+         <tr>
+            <td class="PadTop" colspan="2"></td>
+         </tr>
+         <tr>
+            <td colspan="3">
+               <p class="BoxDesc">Set of predefined status messages, some of which take additional data as input</p>
+            </td>
+         </tr>
+         <tr>
+            <td colspan="3" class="ValueRowSep">
+               <p class="ValueRowSep"></p>
+            </td>
+         </tr>
+         <tr>
+            <td class="ValueVal">
+               <p class="ValueVal">0x17</p>
+            </td>
+            <td class="ValueName">
+               <p class="ValueName"></p>
+            </td>
+            <td class="ValueDesc">
+               <p class="ValueDesc">You failed to go to non-combat mode.</p>
+            </td>
+         </tr>
+         <tr>
+            <td colspan="3" class="ValueRowSep">
+               <p class="ValueRowSep"></p>
+            </td>
+         </tr>
+         <tr>
+            <td class="ValueVal">
+               <p class="ValueVal">0x1D</p>
+            </td>
+            <td class="ValueName">
+               <p class="ValueName"></p>
+            </td>
+            <td class="ValueDesc">
+               <p class="ValueDesc">You're too busy!</p>
+            </td>
+         </tr>
+         <tr>
+            <td colspan="3" class="ValueRowSep">
+               <p class="ValueRowSep"></p>
+            </td>
+         </tr>
+         <tr>
+            <td class="ValueVal">
+               <p class="ValueVal">0x1E</p>
+            </td>
+            <td class="ValueName">
+               <p class="ValueName"></p>
+            </td>
+            <td class="ValueDesc">
+               <p class="ValueDesc"> is too busy to accept gifts right now.\n</p>
+            </td>
+         </tr>
+         <tr>
+            <td colspan="3" class="ValueRowSep">
+               <p class="ValueRowSep"></p>
+            </td>
+         </tr>
+         <tr>
+            <td class="ValueVal">
+               <p class="ValueVal">0x20</p>
+            </td>
+            <td class="ValueName">
+               <p class="ValueName"></p>
+            </td>
+            <td class="ValueDesc">
+               <p class="ValueDesc">You must control both objects!</p>
+            </td>
+         </tr>
+         <tr>
+            <td colspan="3" class="ValueRowSep">
+               <p class="ValueRowSep"></p>
+            </td>
+         </tr>
+         <tr>
+            <td class="ValueVal">
+               <p class="ValueVal">0x23</p>
+            </td>
+            <td class="ValueName">
+               <p class="ValueName"></p>
+            </td>
+            <td class="ValueDesc">
+               <p class="ValueDesc">Unable to move to object!</p>
+            </td>
+         </tr>
+         <tr>
+            <td colspan="3" class="ValueRowSep">
+               <p class="ValueRowSep"></p>
+            </td>
+         </tr>
+         <tr>
+            <td class="ValueVal">
+               <p class="ValueVal">0x24</p>
+            </td>
+            <td class="ValueName">
+               <p class="ValueName"></p>
+            </td>
+            <td class="ValueDesc">
+               <p class="ValueDesc">You can't jump while in the air</p>
+            </td>
+         </tr>
+         <tr>
+            <td colspan="3" class="ValueRowSep">
+               <p class="ValueRowSep"></p>
+            </td>
+         </tr>
+         <tr>
+            <td class="ValueVal">
+               <p class="ValueVal">0x26</p>
+            </td>
+            <td class="ValueName">
+               <p class="ValueName"></p>
+            </td>
+            <td class="ValueDesc">
+               <p class="ValueDesc">That is not a valid command.</p>
+            </td>
+         </tr>
+         <tr>
+            <td colspan="3" class="ValueRowSep">
+               <p class="ValueRowSep"></p>
+            </td>
+         </tr>
+         <tr>
+            <td class="ValueVal">
+               <p class="ValueVal">0x28</p>
+            </td>
+            <td class="ValueName">
+               <p class="ValueName"></p>
+            </td>
+            <td class="ValueDesc">
+               <p class="ValueDesc">The item is under someone else's control!</p>
+            </td>
+         </tr>
+         <tr>
+            <td colspan="3" class="ValueRowSep">
+               <p class="ValueRowSep"></p>
+            </td>
+         </tr>
+         <tr>
+            <td class="ValueVal">
+               <p class="ValueVal">0x29</p>
+            </td>
+            <td class="ValueName">
+               <p class="ValueName"></p>
+            </td>
+            <td class="ValueDesc">
+               <p class="ValueDesc">You cannot pick that up!</p>
+            </td>
+         </tr>
+         <tr>
+            <td colspan="3" class="ValueRowSep">
+               <p class="ValueRowSep"></p>
+            </td>
+         </tr>
+         <tr>
+            <td class="ValueVal">
+               <p class="ValueVal">0x2A</p>
+            </td>
+            <td class="ValueName">
+               <p class="ValueName"></p>
+            </td>
+            <td class="ValueDesc">
+               <p class="ValueDesc">You are too encumbered to carry that!</p>
+            </td>
+         </tr>
+         <tr>
+            <td colspan="3" class="ValueRowSep">
+               <p class="ValueRowSep"></p>
+            </td>
+         </tr>
+         <tr>
+            <td class="ValueVal">
+               <p class="ValueVal">0x2B</p>
+            </td>
+            <td class="ValueName">
+               <p class="ValueName"></p>
+            </td>
+            <td class="ValueDesc">
+               <p class="ValueDesc"> cannot carry anymore.\n</p>
+            </td>
+         </tr>
+         <tr>
+            <td colspan="3" class="ValueRowSep">
+               <p class="ValueRowSep"></p>
+            </td>
+         </tr>
+         <tr>
+            <td class="ValueVal">
+               <p class="ValueVal">0x36</p>
+            </td>
+            <td class="ValueName">
+               <p class="ValueName"></p>
+            </td>
+            <td class="ValueDesc">
+               <p class="ValueDesc">Action cancelled!</p>
+            </td>
+         </tr>
+         <tr>
+            <td colspan="3" class="ValueRowSep">
+               <p class="ValueRowSep"></p>
+            </td>
+         </tr>
+         <tr>
+            <td class="ValueVal">
+               <p class="ValueVal">0x37</p>
+            </td>
+            <td class="ValueName">
+               <p class="ValueName"></p>
+            </td>
+            <td class="ValueDesc">
+               <p class="ValueDesc">Unable to move to object!</p>
+            </td>
+         </tr>
+         <tr>
+            <td colspan="3" class="ValueRowSep">
+               <p class="ValueRowSep"></p>
+            </td>
+         </tr>
+         <tr>
+            <td class="ValueVal">
+               <p class="ValueVal">0x38</p>
+            </td>
+            <td class="ValueName">
+               <p class="ValueName"></p>
+            </td>
+            <td class="ValueDesc">
+               <p class="ValueDesc">Unable to move to object!</p>
+            </td>
+         </tr>
+         <tr>
+            <td colspan="3" class="ValueRowSep">
+               <p class="ValueRowSep"></p>
+            </td>
+         </tr>
+         <tr>
+            <td class="ValueVal">
+               <p class="ValueVal">0x39</p>
+            </td>
+            <td class="ValueName">
+               <p class="ValueName"></p>
+            </td>
+            <td class="ValueDesc">
+               <p class="ValueDesc">Unable to move to object!</p>
+            </td>
+         </tr>
+         <tr>
+            <td colspan="3" class="ValueRowSep">
+               <p class="ValueRowSep"></p>
+            </td>
+         </tr>
+         <tr>
+            <td class="ValueVal">
+               <p class="ValueVal">0x3A</p>
+            </td>
+            <td class="ValueName">
+               <p class="ValueName"></p>
+            </td>
+            <td class="ValueDesc">
+               <p class="ValueDesc">You can't do that... you're dead!</p>
+            </td>
+         </tr>
+         <tr>
+            <td colspan="3" class="ValueRowSep">
+               <p class="ValueRowSep"></p>
+            </td>
+         </tr>
+         <tr>
+            <td class="ValueVal">
+               <p class="ValueVal">0x3D</p>
+            </td>
+            <td class="ValueName">
+               <p class="ValueName"></p>
+            </td>
+            <td class="ValueDesc">
+               <p class="ValueDesc">You charged too far!</p>
+            </td>
+         </tr>
+         <tr>
+            <td colspan="3" class="ValueRowSep">
+               <p class="ValueRowSep"></p>
+            </td>
+         </tr>
+         <tr>
+            <td class="ValueVal">
+               <p class="ValueVal">0x3E</p>
+            </td>
+            <td class="ValueName">
+               <p class="ValueName"></p>
+            </td>
+            <td class="ValueDesc">
+               <p class="ValueDesc">You are too tired to do that!</p>
+            </td>
+         </tr>
+         <tr>
+            <td colspan="3" class="ValueRowSep">
+               <p class="ValueRowSep"></p>
+            </td>
+         </tr>
+         <tr>
+            <td class="ValueVal">
+               <p class="ValueVal">0x3EE</p>
+            </td>
+            <td class="ValueName">
+               <p class="ValueName"></p>
+            </td>
+            <td class="ValueDesc">
+               <p class="ValueDesc">The container is closed!</p>
+            </td>
+         </tr>
+         <tr>
+            <td colspan="3" class="ValueRowSep">
+               <p class="ValueRowSep"></p>
+            </td>
+         </tr>
+         <tr>
+            <td class="ValueVal">
+               <p class="ValueVal">0x3EF</p>
+            </td>
+            <td class="ValueName">
+               <p class="ValueName"></p>
+            </td>
+            <td class="ValueDesc">
+               <p class="ValueDesc"> is not accepting gifts right now.\n</p>
+            </td>
+         </tr>
+         <tr>
+            <td colspan="3" class="ValueRowSep">
+               <p class="ValueRowSep"></p>
+            </td>
+         </tr>
+         <tr>
+            <td class="ValueVal">
+               <p class="ValueVal">0x3F1</p>
+            </td>
+            <td class="ValueName">
+               <p class="ValueName"></p>
+            </td>
+            <td class="ValueDesc">
+               <p class="ValueDesc">You failed to go to non-combat mode.</p>
+            </td>
+         </tr>
+         <tr>
+            <td colspan="3" class="ValueRowSep">
+               <p class="ValueRowSep"></p>
+            </td>
+         </tr>
+         <tr>
+            <td class="ValueVal">
+               <p class="ValueVal">0x3F7</p>
+            </td>
+            <td class="ValueName">
+               <p class="ValueName"></p>
+            </td>
+            <td class="ValueDesc">
+               <p class="ValueDesc">You are too fatigued to attack!</p>
+            </td>
+         </tr>
+         <tr>
+            <td colspan="3" class="ValueRowSep">
+               <p class="ValueRowSep"></p>
+            </td>
+         </tr>
+         <tr>
+            <td class="ValueVal">
+               <p class="ValueVal">0x3F8</p>
+            </td>
+            <td class="ValueName">
+               <p class="ValueName"></p>
+            </td>
+            <td class="ValueDesc">
+               <p class="ValueDesc">You are out of ammunition!</p>
+            </td>
+         </tr>
+         <tr>
+            <td colspan="3" class="ValueRowSep">
+               <p class="ValueRowSep"></p>
+            </td>
+         </tr>
+         <tr>
+            <td class="ValueVal">
+               <p class="ValueVal">0x3F9</p>
+            </td>
+            <td class="ValueName">
+               <p class="ValueName"></p>
+            </td>
+            <td class="ValueDesc">
+               <p class="ValueDesc">Your missile attack misfired!</p>
+            </td>
+         </tr>
+         <tr>
+            <td colspan="3" class="ValueRowSep">
+               <p class="ValueRowSep"></p>
+            </td>
+         </tr>
+         <tr>
+            <td class="ValueVal">
+               <p class="ValueVal">0x3FA</p>
+            </td>
+            <td class="ValueName">
+               <p class="ValueName"></p>
+            </td>
+            <td class="ValueDesc">
+               <p class="ValueDesc">You've attempted an impossible spell path!</p>
+            </td>
+         </tr>
+         <tr>
+            <td colspan="3" class="ValueRowSep">
+               <p class="ValueRowSep"></p>
+            </td>
+         </tr>
+         <tr>
+            <td class="ValueVal">
+               <p class="ValueVal">0x3FE</p>
+            </td>
+            <td class="ValueName">
+               <p class="ValueName"></p>
+            </td>
+            <td class="ValueDesc">
+               <p class="ValueDesc">You don't know that spell!</p>
+            </td>
+         </tr>
+         <tr>
+            <td colspan="3" class="ValueRowSep">
+               <p class="ValueRowSep"></p>
+            </td>
+         </tr>
+         <tr>
+            <td class="ValueVal">
+               <p class="ValueVal">0x3FF</p>
+            </td>
+            <td class="ValueName">
+               <p class="ValueName"></p>
+            </td>
+            <td class="ValueDesc">
+               <p class="ValueDesc">Incorrect target type</p>
+            </td>
+         </tr>
+         <tr>
+            <td colspan="3" class="ValueRowSep">
+               <p class="ValueRowSep"></p>
+            </td>
+         </tr>
+         <tr>
+            <td class="ValueVal">
+               <p class="ValueVal">0x400</p>
+            </td>
+            <td class="ValueName">
+               <p class="ValueName"></p>
+            </td>
+            <td class="ValueDesc">
+               <p class="ValueDesc">You don't have all the components for this spell.</p>
+            </td>
+         </tr>
+         <tr>
+            <td colspan="3" class="ValueRowSep">
+               <p class="ValueRowSep"></p>
+            </td>
+         </tr>
+         <tr>
+            <td class="ValueVal">
+               <p class="ValueVal">0x401</p>
+            </td>
+            <td class="ValueName">
+               <p class="ValueName"></p>
+            </td>
+            <td class="ValueDesc">
+               <p class="ValueDesc">You don't have enough Mana to cast this spell.</p>
+            </td>
+         </tr>
+         <tr>
+            <td colspan="3" class="ValueRowSep">
+               <p class="ValueRowSep"></p>
+            </td>
+         </tr>
+         <tr>
+            <td class="ValueVal">
+               <p class="ValueVal">0x402</p>
+            </td>
+            <td class="ValueName">
+               <p class="ValueName"></p>
+            </td>
+            <td class="ValueDesc">
+               <p class="ValueDesc">Your spell fizzled.\n</p>
+            </td>
+         </tr>
+         <tr>
+            <td colspan="3" class="ValueRowSep">
+               <p class="ValueRowSep"></p>
+            </td>
+         </tr>
+         <tr>
+            <td class="ValueVal">
+               <p class="ValueVal">0x403</p>
+            </td>
+            <td class="ValueName">
+               <p class="ValueName"></p>
+            </td>
+            <td class="ValueDesc">
+               <p class="ValueDesc">Your spell's target is missing!</p>
+            </td>
+         </tr>
+         <tr>
+            <td colspan="3" class="ValueRowSep">
+               <p class="ValueRowSep"></p>
+            </td>
+         </tr>
+         <tr>
+            <td class="ValueVal">
+               <p class="ValueVal">0x404</p>
+            </td>
+            <td class="ValueName">
+               <p class="ValueName"></p>
+            </td>
+            <td class="ValueDesc">
+               <p class="ValueDesc">Your projectile spell mislaunched!</p>
+            </td>
+         </tr>
+         <tr>
+            <td colspan="3" class="ValueRowSep">
+               <p class="ValueRowSep"></p>
+            </td>
+         </tr>
+         <tr>
+            <td class="ValueVal">
+               <p class="ValueVal">0x407</p>
+            </td>
+            <td class="ValueName">
+               <p class="ValueName"></p>
+            </td>
+            <td class="ValueDesc">
+               <p class="ValueDesc">Your spell cannot be cast outside</p>
+            </td>
+         </tr>
+         <tr>
+            <td colspan="3" class="ValueRowSep">
+               <p class="ValueRowSep"></p>
+            </td>
+         </tr>
+         <tr>
+            <td class="ValueVal">
+               <p class="ValueVal">0x408</p>
+            </td>
+            <td class="ValueName">
+               <p class="ValueName"></p>
+            </td>
+            <td class="ValueDesc">
+               <p class="ValueDesc">Your spell cannot be cast inside</p>
+            </td>
+         </tr>
+         <tr>
+            <td colspan="3" class="ValueRowSep">
+               <p class="ValueRowSep"></p>
+            </td>
+         </tr>
+         <tr>
+            <td class="ValueVal">
+               <p class="ValueVal">0x40A</p>
+            </td>
+            <td class="ValueName">
+               <p class="ValueName"></p>
+            </td>
+            <td class="ValueDesc">
+               <p class="ValueDesc">You are unprepared to cast a spell</p>
+            </td>
+         </tr>
+         <tr>
+            <td colspan="3" class="ValueRowSep">
+               <p class="ValueRowSep"></p>
+            </td>
+         </tr>
+         <tr>
+            <td class="ValueVal">
+               <p class="ValueVal">0x40B</p>
+            </td>
+            <td class="ValueName">
+               <p class="ValueName"></p>
+            </td>
+            <td class="ValueDesc">
+               <p class="ValueDesc">You've already sworn your Allegiance</p>
+            </td>
+         </tr>
+         <tr>
+            <td colspan="3" class="ValueRowSep">
+               <p class="ValueRowSep"></p>
+            </td>
+         </tr>
+         <tr>
+            <td class="ValueVal">
+               <p class="ValueVal">0x40C</p>
+            </td>
+            <td class="ValueName">
+               <p class="ValueName"></p>
+            </td>
+            <td class="ValueDesc">
+               <p class="ValueDesc">You don't have enough experience available to swear Allegiance</p>
+            </td>
+         </tr>
+         <tr>
+            <td colspan="3" class="ValueRowSep">
+               <p class="ValueRowSep"></p>
+            </td>
+         </tr>
+         <tr>
+            <td class="ValueVal">
+               <p class="ValueVal">0x413</p>
+            </td>
+            <td class="ValueName">
+               <p class="ValueName"></p>
+            </td>
+            <td class="ValueDesc">
+               <p class="ValueDesc">%s is already one of your followers</p>
+            </td>
+         </tr>
+         <tr>
+            <td colspan="3" class="ValueRowSep">
+               <p class="ValueRowSep"></p>
+            </td>
+         </tr>
+         <tr>
+            <td class="ValueVal">
+               <p class="ValueVal">0x414</p>
+            </td>
+            <td class="ValueName">
+               <p class="ValueName"></p>
+            </td>
+            <td class="ValueDesc">
+               <p class="ValueDesc">You are not in an allegiance!</p>
+            </td>
+         </tr>
+         <tr>
+            <td colspan="3" class="ValueRowSep">
+               <p class="ValueRowSep"></p>
+            </td>
+         </tr>
+         <tr>
+            <td class="ValueVal">
+               <p class="ValueVal">0x416</p>
+            </td>
+            <td class="ValueName">
+               <p class="ValueName"></p>
+            </td>
+            <td class="ValueDesc">
+               <p class="ValueDesc">%s cannot have any more Vassals</p>
+            </td>
+         </tr>
+         <tr>
+            <td colspan="3" class="ValueRowSep">
+               <p class="ValueRowSep"></p>
+            </td>
+         </tr>
+         <tr>
+            <td class="ValueVal">
+               <p class="ValueVal">0x41D</p>
+            </td>
+            <td class="ValueName">
+               <p class="ValueName"></p>
+            </td>
+            <td class="ValueDesc">
+               <p class="ValueDesc">You must be the leader of a Fellowship</p>
+            </td>
+         </tr>
+         <tr>
+            <td colspan="3" class="ValueRowSep">
+               <p class="ValueRowSep"></p>
+            </td>
+         </tr>
+         <tr>
+            <td class="ValueVal">
+               <p class="ValueVal">0x41E</p>
+            </td>
+            <td class="ValueName">
+               <p class="ValueName"></p>
+            </td>
+            <td class="ValueDesc">
+               <p class="ValueDesc">Your Fellowship is full</p>
+            </td>
+         </tr>
+         <tr>
+            <td colspan="3" class="ValueRowSep">
+               <p class="ValueRowSep"></p>
+            </td>
+         </tr>
+         <tr>
+            <td class="ValueVal">
+               <p class="ValueVal">0x41F</p>
+            </td>
+            <td class="ValueName">
+               <p class="ValueName"></p>
+            </td>
+            <td class="ValueDesc">
+               <p class="ValueDesc">That Fellowship name is not permitted</p>
+            </td>
+         </tr>
+         <tr>
+            <td colspan="3" class="ValueRowSep">
+               <p class="ValueRowSep"></p>
+            </td>
+         </tr>
+         <tr>
+            <td class="ValueVal">
+               <p class="ValueVal">0x422</p>
+            </td>
+            <td class="ValueName">
+               <p class="ValueName"></p>
+            </td>
+            <td class="ValueDesc">
+               <p class="ValueDesc">That channel doesn't exist.</p>
+            </td>
+         </tr>
+         <tr>
+            <td colspan="3" class="ValueRowSep">
+               <p class="ValueRowSep"></p>
+            </td>
+         </tr>
+         <tr>
+            <td class="ValueVal">
+               <p class="ValueVal">0x423</p>
+            </td>
+            <td class="ValueName">
+               <p class="ValueName"></p>
+            </td>
+            <td class="ValueDesc">
+               <p class="ValueDesc">You can't use that channel.</p>
+            </td>
+         </tr>
+         <tr>
+            <td colspan="3" class="ValueRowSep">
+               <p class="ValueRowSep"></p>
+            </td>
+         </tr>
+         <tr>
+            <td class="ValueVal">
+               <p class="ValueVal">0x424</p>
+            </td>
+            <td class="ValueName">
+               <p class="ValueName"></p>
+            </td>
+            <td class="ValueDesc">
+               <p class="ValueDesc">You're already on that channel.</p>
+            </td>
+         </tr>
+         <tr>
+            <td colspan="3" class="ValueRowSep">
+               <p class="ValueRowSep"></p>
+            </td>
+         </tr>
+         <tr>
+            <td class="ValueVal">
+               <p class="ValueVal">0x425</p>
+            </td>
+            <td class="ValueName">
+               <p class="ValueName"></p>
+            </td>
+            <td class="ValueDesc">
+               <p class="ValueDesc">You're not currently on that channel.</p>
+            </td>
+         </tr>
+         <tr>
+            <td colspan="3" class="ValueRowSep">
+               <p class="ValueRowSep"></p>
+            </td>
+         </tr>
+         <tr>
+            <td class="ValueVal">
+               <p class="ValueVal">0x427</p>
+            </td>
+            <td class="ValueName">
+               <p class="ValueName"></p>
+            </td>
+            <td class="ValueDesc">
+               <p class="ValueDesc">You cannot merge different stacks!</p>
+            </td>
+         </tr>
+         <tr>
+            <td colspan="3" class="ValueRowSep">
+               <p class="ValueRowSep"></p>
+            </td>
+         </tr>
+         <tr>
+            <td class="ValueVal">
+               <p class="ValueVal">0x428</p>
+            </td>
+            <td class="ValueName">
+               <p class="ValueName"></p>
+            </td>
+            <td class="ValueDesc">
+               <p class="ValueDesc">You cannot merge enchanted items!</p>
+            </td>
+         </tr>
+         <tr>
+            <td colspan="3" class="ValueRowSep">
+               <p class="ValueRowSep"></p>
+            </td>
+         </tr>
+         <tr>
+            <td class="ValueVal">
+               <p class="ValueVal">0x429</p>
+            </td>
+            <td class="ValueName">
+               <p class="ValueName"></p>
+            </td>
+            <td class="ValueDesc">
+               <p class="ValueDesc">You must control at least one stack!</p>
+            </td>
+         </tr>
+         <tr>
+            <td colspan="3" class="ValueRowSep">
+               <p class="ValueRowSep"></p>
+            </td>
+         </tr>
+         <tr>
+            <td class="ValueVal">
+               <p class="ValueVal">0x432</p>
+            </td>
+            <td class="ValueName">
+               <p class="ValueName"></p>
+            </td>
+            <td class="ValueDesc">
+               <p class="ValueDesc">Your craft attempt fails.</p>
+            </td>
+         </tr>
+         <tr>
+            <td colspan="3" class="ValueRowSep">
+               <p class="ValueRowSep"></p>
+            </td>
+         </tr>
+         <tr>
+            <td class="ValueVal">
+               <p class="ValueVal">0x433</p>
+            </td>
+            <td class="ValueName">
+               <p class="ValueName"></p>
+            </td>
+            <td class="ValueDesc">
+               <p class="ValueDesc">Your craft attempt fails.</p>
+            </td>
+         </tr>
+         <tr>
+            <td colspan="3" class="ValueRowSep">
+               <p class="ValueRowSep"></p>
+            </td>
+         </tr>
+         <tr>
+            <td class="ValueVal">
+               <p class="ValueVal">0x434</p>
+            </td>
+            <td class="ValueName">
+               <p class="ValueName"></p>
+            </td>
+            <td class="ValueDesc">
+               <p class="ValueDesc">Given that number of items, you cannot craft anything.</p>
+            </td>
+         </tr>
+         <tr>
+            <td colspan="3" class="ValueRowSep">
+               <p class="ValueRowSep"></p>
+            </td>
+         </tr>
+         <tr>
+            <td class="ValueVal">
+               <p class="ValueVal">0x435</p>
+            </td>
+            <td class="ValueName">
+               <p class="ValueName"></p>
+            </td>
+            <td class="ValueDesc">
+               <p class="ValueDesc">Your craft attempt fails.</p>
+            </td>
+         </tr>
+         <tr>
+            <td colspan="3" class="ValueRowSep">
+               <p class="ValueRowSep"></p>
+            </td>
+         </tr>
+         <tr>
+            <td class="ValueVal">
+               <p class="ValueVal">0x437</p>
+            </td>
+            <td class="ValueName">
+               <p class="ValueName"></p>
+            </td>
+            <td class="ValueDesc">
+               <p class="ValueDesc">Either you or one of the items involved does not pass the requirements for this craft
+                  interaction.
+               </p>
+            </td>
+         </tr>
+         <tr>
+            <td colspan="3" class="ValueRowSep">
+               <p class="ValueRowSep"></p>
+            </td>
+         </tr>
+         <tr>
+            <td class="ValueVal">
+               <p class="ValueVal">0x438</p>
+            </td>
+            <td class="ValueName">
+               <p class="ValueName"></p>
+            </td>
+            <td class="ValueDesc">
+               <p class="ValueDesc">You do not have all the neccessary items.</p>
+            </td>
+         </tr>
+         <tr>
+            <td colspan="3" class="ValueRowSep">
+               <p class="ValueRowSep"></p>
+            </td>
+         </tr>
+         <tr>
+            <td class="ValueVal">
+               <p class="ValueVal">0x439</p>
+            </td>
+            <td class="ValueName">
+               <p class="ValueName"></p>
+            </td>
+            <td class="ValueDesc">
+               <p class="ValueDesc">Not all the items are avaliable.</p>
+            </td>
+         </tr>
+         <tr>
+            <td colspan="3" class="ValueRowSep">
+               <p class="ValueRowSep"></p>
+            </td>
+         </tr>
+         <tr>
+            <td class="ValueVal">
+               <p class="ValueVal">0x43A</p>
+            </td>
+            <td class="ValueName">
+               <p class="ValueName"></p>
+            </td>
+            <td class="ValueDesc">
+               <p class="ValueDesc">You must be at rest in peace mode to do trade skills.</p>
+            </td>
+         </tr>
+         <tr>
+            <td colspan="3" class="ValueRowSep">
+               <p class="ValueRowSep"></p>
+            </td>
+         </tr>
+         <tr>
+            <td class="ValueVal">
+               <p class="ValueVal">0x43B</p>
+            </td>
+            <td class="ValueName">
+               <p class="ValueName"></p>
+            </td>
+            <td class="ValueDesc">
+               <p class="ValueDesc">You are not trained in that trade skill.</p>
+            </td>
+         </tr>
+         <tr>
+            <td colspan="3" class="ValueRowSep">
+               <p class="ValueRowSep"></p>
+            </td>
+         </tr>
+         <tr>
+            <td class="ValueVal">
+               <p class="ValueVal">0x43C</p>
+            </td>
+            <td class="ValueName">
+               <p class="ValueName"></p>
+            </td>
+            <td class="ValueDesc">
+               <p class="ValueDesc">Your hands must be free.</p>
+            </td>
+         </tr>
+         <tr>
+            <td colspan="3" class="ValueRowSep">
+               <p class="ValueRowSep"></p>
+            </td>
+         </tr>
+         <tr>
+            <td class="ValueVal">
+               <p class="ValueVal">0x43D</p>
+            </td>
+            <td class="ValueName">
+               <p class="ValueName"></p>
+            </td>
+            <td class="ValueDesc">
+               <p class="ValueDesc">You cannot link to that portal!\n</p>
+            </td>
+         </tr>
+         <tr>
+            <td colspan="3" class="ValueRowSep">
+               <p class="ValueRowSep"></p>
+            </td>
+         </tr>
+         <tr>
+            <td class="ValueVal">
+               <p class="ValueVal">0x43E</p>
+            </td>
+            <td class="ValueName">
+               <p class="ValueName"></p>
+            </td>
+            <td class="ValueDesc">
+               <p class="ValueDesc">You have solved this quest too recently!\n</p>
+            </td>
+         </tr>
+         <tr>
+            <td colspan="3" class="ValueRowSep">
+               <p class="ValueRowSep"></p>
+            </td>
+         </tr>
+         <tr>
+            <td class="ValueVal">
+               <p class="ValueVal">0x43F</p>
+            </td>
+            <td class="ValueName">
+               <p class="ValueName"></p>
+            </td>
+            <td class="ValueDesc">
+               <p class="ValueDesc">You have solved this quest too many times!\n</p>
+            </td>
+         </tr>
+         <tr>
+            <td colspan="3" class="ValueRowSep">
+               <p class="ValueRowSep"></p>
+            </td>
+         </tr>
+         <tr>
+            <td class="ValueVal">
+               <p class="ValueVal">0x445</p>
+            </td>
+            <td class="ValueName">
+               <p class="ValueName"></p>
+            </td>
+            <td class="ValueDesc">
+               <p class="ValueDesc">This item requires you to complete a specific quest before you can pick it up!\n</p>
+            </td>
+         </tr>
+         <tr>
+            <td colspan="3" class="ValueRowSep">
+               <p class="ValueRowSep"></p>
+            </td>
+         </tr>
+         <tr>
+            <td class="ValueVal">
+               <p class="ValueVal">0x45C</p>
+            </td>
+            <td class="ValueName">
+               <p class="ValueName"></p>
+            </td>
+            <td class="ValueDesc">
+               <p class="ValueDesc">Player killers may not interact with that portal!\n</p>
+            </td>
+         </tr>
+         <tr>
+            <td colspan="3" class="ValueRowSep">
+               <p class="ValueRowSep"></p>
+            </td>
+         </tr>
+         <tr>
+            <td class="ValueVal">
+               <p class="ValueVal">0x45D</p>
+            </td>
+            <td class="ValueName">
+               <p class="ValueName"></p>
+            </td>
+            <td class="ValueDesc">
+               <p class="ValueDesc">Non-player killers may not interact with that portal!\n</p>
+            </td>
+         </tr>
+         <tr>
+            <td colspan="3" class="ValueRowSep">
+               <p class="ValueRowSep"></p>
+            </td>
+         </tr>
+         <tr>
+            <td class="ValueVal">
+               <p class="ValueVal">0x45E</p>
+            </td>
+            <td class="ValueName">
+               <p class="ValueName"></p>
+            </td>
+            <td class="ValueDesc">
+               <p class="ValueDesc">You do not own a house!</p>
+            </td>
+         </tr>
+         <tr>
+            <td colspan="3" class="ValueRowSep">
+               <p class="ValueRowSep"></p>
+            </td>
+         </tr>
+         <tr>
+            <td class="ValueVal">
+               <p class="ValueVal">0x45F</p>
+            </td>
+            <td class="ValueName">
+               <p class="ValueName"></p>
+            </td>
+            <td class="ValueDesc">
+               <p class="ValueDesc">You do not own a house!</p>
+            </td>
+         </tr>
+         <tr>
+            <td colspan="3" class="ValueRowSep">
+               <p class="ValueRowSep"></p>
+            </td>
+         </tr>
+         <tr>
+            <td class="ValueVal">
+               <p class="ValueVal">0x466</p>
+            </td>
+            <td class="ValueName">
+               <p class="ValueName"></p>
+            </td>
+            <td class="ValueDesc">
+               <p class="ValueDesc">You must purchase Asheron's Call: Dark Majesty to interact with that portal.\n</p>
+            </td>
+         </tr>
+         <tr>
+            <td colspan="3" class="ValueRowSep">
+               <p class="ValueRowSep"></p>
+            </td>
+         </tr>
+         <tr>
+            <td class="ValueVal">
+               <p class="ValueVal">0x469</p>
+            </td>
+            <td class="ValueName">
+               <p class="ValueName"></p>
+            </td>
+            <td class="ValueDesc">
+               <p class="ValueDesc">You have used all the hooks you are allowed to use for this house.\n</p>
+            </td>
+         </tr>
+         <tr>
+            <td colspan="3" class="ValueRowSep">
+               <p class="ValueRowSep"></p>
+            </td>
+         </tr>
+         <tr>
+            <td class="ValueVal">
+               <p class="ValueVal">0x46A</p>
+            </td>
+            <td class="ValueName">
+               <p class="ValueName"></p>
+            </td>
+            <td class="ValueDesc">
+               <p class="ValueDesc"> doesn't know what to do with that.\n</p>
+            </td>
+         </tr>
+         <tr>
+            <td colspan="3" class="ValueRowSep">
+               <p class="ValueRowSep"></p>
+            </td>
+         </tr>
+         <tr>
+            <td class="ValueVal">
+               <p class="ValueVal">0x474</p>
+            </td>
+            <td class="ValueName">
+               <p class="ValueName"></p>
+            </td>
+            <td class="ValueDesc">
+               <p class="ValueDesc">You must complete a quest to interact with that portal.\n</p>
+            </td>
+         </tr>
+         <tr>
+            <td colspan="3" class="ValueRowSep">
+               <p class="ValueRowSep"></p>
+            </td>
+         </tr>
+         <tr>
+            <td class="ValueVal">
+               <p class="ValueVal">0x47F</p>
+            </td>
+            <td class="ValueName">
+               <p class="ValueName"></p>
+            </td>
+            <td class="ValueDesc">
+               <p class="ValueDesc">You must own a house to use this command.</p>
+            </td>
+         </tr>
+         <tr>
+            <td colspan="3" class="ValueRowSep">
+               <p class="ValueRowSep"></p>
+            </td>
+         </tr>
+         <tr>
+            <td class="ValueVal">
+               <p class="ValueVal">0x48</p>
+            </td>
+            <td class="ValueName">
+               <p class="ValueName"></p>
+            </td>
+            <td class="ValueDesc">
+               <p class="ValueDesc">You can't jump from this position</p>
+            </td>
+         </tr>
+         <tr>
+            <td colspan="3" class="ValueRowSep">
+               <p class="ValueRowSep"></p>
+            </td>
+         </tr>
+         <tr>
+            <td class="ValueVal">
+               <p class="ValueVal">0x480</p>
+            </td>
+            <td class="ValueName">
+               <p class="ValueName"></p>
+            </td>
+            <td class="ValueDesc">
+               <p class="ValueDesc">Your monarch does not own a mansion or a villa!</p>
+            </td>
+         </tr>
+         <tr>
+            <td colspan="3" class="ValueRowSep">
+               <p class="ValueRowSep"></p>
+            </td>
+         </tr>
+         <tr>
+            <td class="ValueVal">
+               <p class="ValueVal">0x481</p>
+            </td>
+            <td class="ValueName">
+               <p class="ValueName"></p>
+            </td>
+            <td class="ValueDesc">
+               <p class="ValueDesc">Your monarch does not own a mansion or a villa!</p>
+            </td>
+         </tr>
+         <tr>
+            <td colspan="3" class="ValueRowSep">
+               <p class="ValueRowSep"></p>
+            </td>
+         </tr>
+         <tr>
+            <td class="ValueVal">
+               <p class="ValueVal">0x482</p>
+            </td>
+            <td class="ValueName">
+               <p class="ValueName"></p>
+            </td>
+            <td class="ValueDesc">
+               <p class="ValueDesc">Your monarch has closed the mansion to the Allegiance.</p>
+            </td>
+         </tr>
+         <tr>
+            <td colspan="3" class="ValueRowSep">
+               <p class="ValueRowSep"></p>
+            </td>
+         </tr>
+         <tr>
+            <td class="ValueVal">
+               <p class="ValueVal">0x488</p>
+            </td>
+            <td class="ValueName">
+               <p class="ValueName"></p>
+            </td>
+            <td class="ValueDesc">
+               <p class="ValueDesc">You must be above level %s to purchase this dwelling.\n</p>
+            </td>
+         </tr>
+         <tr>
+            <td colspan="3" class="ValueRowSep">
+               <p class="ValueRowSep"></p>
+            </td>
+         </tr>
+         <tr>
+            <td class="ValueVal">
+               <p class="ValueVal">0x489</p>
+            </td>
+            <td class="ValueName">
+               <p class="ValueName"></p>
+            </td>
+            <td class="ValueDesc">
+               <p class="ValueDesc">You must be at or below level %s to purchase this dwelling.\n</p>
+            </td>
+         </tr>
+         <tr>
+            <td colspan="3" class="ValueRowSep">
+               <p class="ValueRowSep"></p>
+            </td>
+         </tr>
+         <tr>
+            <td class="ValueVal">
+               <p class="ValueVal">0x48A</p>
+            </td>
+            <td class="ValueName">
+               <p class="ValueName"></p>
+            </td>
+            <td class="ValueDesc">
+               <p class="ValueDesc">You must be a monarch to purchase this dwelling.\n</p>
+            </td>
+         </tr>
+         <tr>
+            <td colspan="3" class="ValueRowSep">
+               <p class="ValueRowSep"></p>
+            </td>
+         </tr>
+         <tr>
+            <td class="ValueVal">
+               <p class="ValueVal">0x48B</p>
+            </td>
+            <td class="ValueName">
+               <p class="ValueName"></p>
+            </td>
+            <td class="ValueDesc">
+               <p class="ValueDesc">You must be above allegiance rank %s to purchase this dwelling.\n</p>
+            </td>
+         </tr>
+         <tr>
+            <td colspan="3" class="ValueRowSep">
+               <p class="ValueRowSep"></p>
+            </td>
+         </tr>
+         <tr>
+            <td class="ValueVal">
+               <p class="ValueVal">0x48C</p>
+            </td>
+            <td class="ValueName">
+               <p class="ValueName"></p>
+            </td>
+            <td class="ValueDesc">
+               <p class="ValueDesc">You must be at or below allegiance rank %s to purchase this dwelling.\n</p>
+            </td>
+         </tr>
+         <tr>
+            <td colspan="3" class="ValueRowSep">
+               <p class="ValueRowSep"></p>
+            </td>
+         </tr>
+         <tr>
+            <td class="ValueVal">
+               <p class="ValueVal">0x48E</p>
+            </td>
+            <td class="ValueName">
+               <p class="ValueName"></p>
+            </td>
+            <td class="ValueDesc">
+               <p class="ValueDesc">Your offer of Allegiance has been ignored.</p>
+            </td>
+         </tr>
+         <tr>
+            <td colspan="3" class="ValueRowSep">
+               <p class="ValueRowSep"></p>
+            </td>
+         </tr>
+         <tr>
+            <td class="ValueVal">
+               <p class="ValueVal">0x48F</p>
+            </td>
+            <td class="ValueName">
+               <p class="ValueName"></p>
+            </td>
+            <td class="ValueDesc">
+               <p class="ValueDesc">You are already involved in something!</p>
+            </td>
+         </tr>
+         <tr>
+            <td colspan="3" class="ValueRowSep">
+               <p class="ValueRowSep"></p>
+            </td>
+         </tr>
+         <tr>
+            <td class="ValueVal">
+               <p class="ValueVal">0x49</p>
+            </td>
+            <td class="ValueName">
+               <p class="ValueName"></p>
+            </td>
+            <td class="ValueDesc">
+               <p class="ValueDesc">You're too loaded down to jump</p>
+            </td>
+         </tr>
+         <tr>
+            <td colspan="3" class="ValueRowSep">
+               <p class="ValueRowSep"></p>
+            </td>
+         </tr>
+         <tr>
+            <td class="ValueVal">
+               <p class="ValueVal">0x490</p>
+            </td>
+            <td class="ValueName">
+               <p class="ValueName"></p>
+            </td>
+            <td class="ValueDesc">
+               <p class="ValueDesc">You must be a monarch to use this command.</p>
+            </td>
+         </tr>
+         <tr>
+            <td colspan="3" class="ValueRowSep">
+               <p class="ValueRowSep"></p>
+            </td>
+         </tr>
+         <tr>
+            <td class="ValueVal">
+               <p class="ValueVal">0x491</p>
+            </td>
+            <td class="ValueName">
+               <p class="ValueName"></p>
+            </td>
+            <td class="ValueDesc">
+               <p class="ValueDesc">You must specify a character to boot.</p>
+            </td>
+         </tr>
+         <tr>
+            <td colspan="3" class="ValueRowSep">
+               <p class="ValueRowSep"></p>
+            </td>
+         </tr>
+         <tr>
+            <td class="ValueVal">
+               <p class="ValueVal">0x492</p>
+            </td>
+            <td class="ValueName">
+               <p class="ValueName"></p>
+            </td>
+            <td class="ValueDesc">
+               <p class="ValueDesc">You can't boot yourself!</p>
+            </td>
+         </tr>
+         <tr>
+            <td colspan="3" class="ValueRowSep">
+               <p class="ValueRowSep"></p>
+            </td>
+         </tr>
+         <tr>
+            <td class="ValueVal">
+               <p class="ValueVal">0x493</p>
+            </td>
+            <td class="ValueName">
+               <p class="ValueName"></p>
+            </td>
+            <td class="ValueDesc">
+               <p class="ValueDesc">That character does not exist.</p>
+            </td>
+         </tr>
+         <tr>
+            <td colspan="3" class="ValueRowSep">
+               <p class="ValueRowSep"></p>
+            </td>
+         </tr>
+         <tr>
+            <td class="ValueVal">
+               <p class="ValueVal">0x494</p>
+            </td>
+            <td class="ValueName">
+               <p class="ValueName"></p>
+            </td>
+            <td class="ValueDesc">
+               <p class="ValueDesc">That person is not a member of your Allegiance!</p>
+            </td>
+         </tr>
+         <tr>
+            <td colspan="3" class="ValueRowSep">
+               <p class="ValueRowSep"></p>
+            </td>
+         </tr>
+         <tr>
+            <td class="ValueVal">
+               <p class="ValueVal">0x495</p>
+            </td>
+            <td class="ValueName">
+               <p class="ValueName"></p>
+            </td>
+            <td class="ValueDesc">
+               <p class="ValueDesc">No patron from which to break!</p>
+            </td>
+         </tr>
+         <tr>
+            <td colspan="3" class="ValueRowSep">
+               <p class="ValueRowSep"></p>
+            </td>
+         </tr>
+         <tr>
+            <td class="ValueVal">
+               <p class="ValueVal">0x496</p>
+            </td>
+            <td class="ValueName">
+               <p class="ValueName"></p>
+            </td>
+            <td class="ValueDesc">
+               <p class="ValueDesc">Your Allegiance has been dissolved!\n</p>
+            </td>
+         </tr>
+         <tr>
+            <td colspan="3" class="ValueRowSep">
+               <p class="ValueRowSep"></p>
+            </td>
+         </tr>
+         <tr>
+            <td class="ValueVal">
+               <p class="ValueVal">0x497</p>
+            </td>
+            <td class="ValueName">
+               <p class="ValueName"></p>
+            </td>
+            <td class="ValueDesc">
+               <p class="ValueDesc">Your patron's Allegiance to you has been broken!\n</p>
+            </td>
+         </tr>
+         <tr>
+            <td colspan="3" class="ValueRowSep">
+               <p class="ValueRowSep"></p>
+            </td>
+         </tr>
+         <tr>
+            <td class="ValueVal">
+               <p class="ValueVal">0x498</p>
+            </td>
+            <td class="ValueName">
+               <p class="ValueName"></p>
+            </td>
+            <td class="ValueDesc">
+               <p class="ValueDesc">You have moved too far!</p>
+            </td>
+         </tr>
+         <tr>
+            <td colspan="3" class="ValueRowSep">
+               <p class="ValueRowSep"></p>
+            </td>
+         </tr>
+         <tr>
+            <td class="ValueVal">
+               <p class="ValueVal">0x499</p>
+            </td>
+            <td class="ValueName">
+               <p class="ValueName"></p>
+            </td>
+            <td class="ValueDesc">
+               <p class="ValueDesc">That is not a valid destination!</p>
+            </td>
+         </tr>
+         <tr>
+            <td colspan="3" class="ValueRowSep">
+               <p class="ValueRowSep"></p>
+            </td>
+         </tr>
+         <tr>
+            <td class="ValueVal">
+               <p class="ValueVal">0x49A</p>
+            </td>
+            <td class="ValueName">
+               <p class="ValueName"></p>
+            </td>
+            <td class="ValueDesc">
+               <p class="ValueDesc">You must purchase Asheron's Call -- Dark Majesty to use this function.</p>
+            </td>
+         </tr>
+         <tr>
+            <td colspan="3" class="ValueRowSep">
+               <p class="ValueRowSep"></p>
+            </td>
+         </tr>
+         <tr>
+            <td class="ValueVal">
+               <p class="ValueVal">0x49B</p>
+            </td>
+            <td class="ValueName">
+               <p class="ValueName"></p>
+            </td>
+            <td class="ValueDesc">
+               <p class="ValueDesc">You fail to link with the lifestone!\n</p>
+            </td>
+         </tr>
+         <tr>
+            <td colspan="3" class="ValueRowSep">
+               <p class="ValueRowSep"></p>
+            </td>
+         </tr>
+         <tr>
+            <td class="ValueVal">
+               <p class="ValueVal">0x49C</p>
+            </td>
+            <td class="ValueName">
+               <p class="ValueName"></p>
+            </td>
+            <td class="ValueDesc">
+               <p class="ValueDesc">You wandered too far to link with the lifestone!\n</p>
+            </td>
+         </tr>
+         <tr>
+            <td colspan="3" class="ValueRowSep">
+               <p class="ValueRowSep"></p>
+            </td>
+         </tr>
+         <tr>
+            <td class="ValueVal">
+               <p class="ValueVal">0x49D</p>
+            </td>
+            <td class="ValueName">
+               <p class="ValueName"></p>
+            </td>
+            <td class="ValueDesc">
+               <p class="ValueDesc">You successfully link with the lifestone!\n</p>
+            </td>
+         </tr>
+         <tr>
+            <td colspan="3" class="ValueRowSep">
+               <p class="ValueRowSep"></p>
+            </td>
+         </tr>
+         <tr>
+            <td class="ValueVal">
+               <p class="ValueVal">0x49E</p>
+            </td>
+            <td class="ValueName">
+               <p class="ValueName"></p>
+            </td>
+            <td class="ValueDesc">
+               <p class="ValueDesc">You must have linked with a lifestone in order to recall to it!\n</p>
+            </td>
+         </tr>
+         <tr>
+            <td colspan="3" class="ValueRowSep">
+               <p class="ValueRowSep"></p>
+            </td>
+         </tr>
+         <tr>
+            <td class="ValueVal">
+               <p class="ValueVal">0x49F</p>
+            </td>
+            <td class="ValueName">
+               <p class="ValueName"></p>
+            </td>
+            <td class="ValueDesc">
+               <p class="ValueDesc">You fail to recall to the lifestone!\n</p>
+            </td>
+         </tr>
+         <tr>
+            <td colspan="3" class="ValueRowSep">
+               <p class="ValueRowSep"></p>
+            </td>
+         </tr>
+         <tr>
+            <td class="ValueVal">
+               <p class="ValueVal">0x4A</p>
+            </td>
+            <td class="ValueName">
+               <p class="ValueName"></p>
+            </td>
+            <td class="ValueDesc">
+               <p class="ValueDesc">Ack! You killed yourself!\n</p>
+            </td>
+         </tr>
+         <tr>
+            <td colspan="3" class="ValueRowSep">
+               <p class="ValueRowSep"></p>
+            </td>
+         </tr>
+         <tr>
+            <td class="ValueVal">
+               <p class="ValueVal">0x4A0</p>
+            </td>
+            <td class="ValueName">
+               <p class="ValueName"></p>
+            </td>
+            <td class="ValueDesc">
+               <p class="ValueDesc">You fail to link with the portal!\n</p>
+            </td>
+         </tr>
+         <tr>
+            <td colspan="3" class="ValueRowSep">
+               <p class="ValueRowSep"></p>
+            </td>
+         </tr>
+         <tr>
+            <td class="ValueVal">
+               <p class="ValueVal">0x4A1</p>
+            </td>
+            <td class="ValueName">
+               <p class="ValueName"></p>
+            </td>
+            <td class="ValueDesc">
+               <p class="ValueDesc">You successfully link with the portal!\n</p>
+            </td>
+         </tr>
+         <tr>
+            <td colspan="3" class="ValueRowSep">
+               <p class="ValueRowSep"></p>
+            </td>
+         </tr>
+         <tr>
+            <td class="ValueVal">
+               <p class="ValueVal">0x4A2</p>
+            </td>
+            <td class="ValueName">
+               <p class="ValueName"></p>
+            </td>
+            <td class="ValueDesc">
+               <p class="ValueDesc">You fail to recall to the portal!\n</p>
+            </td>
+         </tr>
+         <tr>
+            <td colspan="3" class="ValueRowSep">
+               <p class="ValueRowSep"></p>
+            </td>
+         </tr>
+         <tr>
+            <td class="ValueVal">
+               <p class="ValueVal">0x4A3</p>
+            </td>
+            <td class="ValueName">
+               <p class="ValueName"></p>
+            </td>
+            <td class="ValueDesc">
+               <p class="ValueDesc">You must have linked with a portal in order to recall to it!\n</p>
+            </td>
+         </tr>
+         <tr>
+            <td colspan="3" class="ValueRowSep">
+               <p class="ValueRowSep"></p>
+            </td>
+         </tr>
+         <tr>
+            <td class="ValueVal">
+               <p class="ValueVal">0x4A4</p>
+            </td>
+            <td class="ValueName">
+               <p class="ValueName"></p>
+            </td>
+            <td class="ValueDesc">
+               <p class="ValueDesc">You fail to summon the portal!\n</p>
+            </td>
+         </tr>
+         <tr>
+            <td colspan="3" class="ValueRowSep">
+               <p class="ValueRowSep"></p>
+            </td>
+         </tr>
+         <tr>
+            <td class="ValueVal">
+               <p class="ValueVal">0x4A5</p>
+            </td>
+            <td class="ValueName">
+               <p class="ValueName"></p>
+            </td>
+            <td class="ValueDesc">
+               <p class="ValueDesc">You must have linked with a portal in order to summon it!\n</p>
+            </td>
+         </tr>
+         <tr>
+            <td colspan="3" class="ValueRowSep">
+               <p class="ValueRowSep"></p>
+            </td>
+         </tr>
+         <tr>
+            <td class="ValueVal">
+               <p class="ValueVal">0x4A6</p>
+            </td>
+            <td class="ValueName">
+               <p class="ValueName"></p>
+            </td>
+            <td class="ValueDesc">
+               <p class="ValueDesc">You fail to teleport!\n</p>
+            </td>
+         </tr>
+         <tr>
+            <td colspan="3" class="ValueRowSep">
+               <p class="ValueRowSep"></p>
+            </td>
+         </tr>
+         <tr>
+            <td class="ValueVal">
+               <p class="ValueVal">0x4A7</p>
+            </td>
+            <td class="ValueName">
+               <p class="ValueName"></p>
+            </td>
+            <td class="ValueDesc">
+               <p class="ValueDesc">You have been teleported too recently!\n</p>
+            </td>
+         </tr>
+         <tr>
+            <td colspan="3" class="ValueRowSep">
+               <p class="ValueRowSep"></p>
+            </td>
+         </tr>
+         <tr>
+            <td class="ValueVal">
+               <p class="ValueVal">0x4A8</p>
+            </td>
+            <td class="ValueName">
+               <p class="ValueName"></p>
+            </td>
+            <td class="ValueDesc">
+               <p class="ValueDesc">You must be an Advocate to interact with that portal.\n</p>
+            </td>
+         </tr>
+         <tr>
+            <td colspan="3" class="ValueRowSep">
+               <p class="ValueRowSep"></p>
+            </td>
+         </tr>
+         <tr>
+            <td class="ValueVal">
+               <p class="ValueVal">0x4AA</p>
+            </td>
+            <td class="ValueName">
+               <p class="ValueName"></p>
+            </td>
+            <td class="ValueDesc">
+               <p class="ValueDesc">Players may not interact with that portal.\n</p>
+            </td>
+         </tr>
+         <tr>
+            <td colspan="3" class="ValueRowSep">
+               <p class="ValueRowSep"></p>
+            </td>
+         </tr>
+         <tr>
+            <td class="ValueVal">
+               <p class="ValueVal">0x4AB</p>
+            </td>
+            <td class="ValueName">
+               <p class="ValueName"></p>
+            </td>
+            <td class="ValueDesc">
+               <p class="ValueDesc">You are not powerful enough to interact with that portal!\n</p>
+            </td>
+         </tr>
+         <tr>
+            <td colspan="3" class="ValueRowSep">
+               <p class="ValueRowSep"></p>
+            </td>
+         </tr>
+         <tr>
+            <td class="ValueVal">
+               <p class="ValueVal">0x4AC</p>
+            </td>
+            <td class="ValueName">
+               <p class="ValueName"></p>
+            </td>
+            <td class="ValueDesc">
+               <p class="ValueDesc">You are too powerful to interact with that portal!\n</p>
+            </td>
+         </tr>
+         <tr>
+            <td colspan="3" class="ValueRowSep">
+               <p class="ValueRowSep"></p>
+            </td>
+         </tr>
+         <tr>
+            <td class="ValueVal">
+               <p class="ValueVal">0x4AD</p>
+            </td>
+            <td class="ValueName">
+               <p class="ValueName"></p>
+            </td>
+            <td class="ValueDesc">
+               <p class="ValueDesc">You cannot recall to that portal!\n</p>
+            </td>
+         </tr>
+         <tr>
+            <td colspan="3" class="ValueRowSep">
+               <p class="ValueRowSep"></p>
+            </td>
+         </tr>
+         <tr>
+            <td class="ValueVal">
+               <p class="ValueVal">0x4AE</p>
+            </td>
+            <td class="ValueName">
+               <p class="ValueName"></p>
+            </td>
+            <td class="ValueDesc">
+               <p class="ValueDesc">You cannot summon that portal!\n</p>
+            </td>
+         </tr>
+         <tr>
+            <td colspan="3" class="ValueRowSep">
+               <p class="ValueRowSep"></p>
+            </td>
+         </tr>
+         <tr>
+            <td class="ValueVal">
+               <p class="ValueVal">0x4AF</p>
+            </td>
+            <td class="ValueName">
+               <p class="ValueName"></p>
+            </td>
+            <td class="ValueDesc">
+               <p class="ValueDesc">The lock is already unlocked.</p>
+            </td>
+         </tr>
+         <tr>
+            <td colspan="3" class="ValueRowSep">
+               <p class="ValueRowSep"></p>
+            </td>
+         </tr>
+         <tr>
+            <td class="ValueVal">
+               <p class="ValueVal">0x4B0</p>
+            </td>
+            <td class="ValueName">
+               <p class="ValueName"></p>
+            </td>
+            <td class="ValueDesc">
+               <p class="ValueDesc">You can't lock or unlock that!</p>
+            </td>
+         </tr>
+         <tr>
+            <td colspan="3" class="ValueRowSep">
+               <p class="ValueRowSep"></p>
+            </td>
+         </tr>
+         <tr>
+            <td class="ValueVal">
+               <p class="ValueVal">0x4B1</p>
+            </td>
+            <td class="ValueName">
+               <p class="ValueName"></p>
+            </td>
+            <td class="ValueDesc">
+               <p class="ValueDesc">You can't lock or unlock what is open!</p>
+            </td>
+         </tr>
+         <tr>
+            <td colspan="3" class="ValueRowSep">
+               <p class="ValueRowSep"></p>
+            </td>
+         </tr>
+         <tr>
+            <td class="ValueVal">
+               <p class="ValueVal">0x4B2</p>
+            </td>
+            <td class="ValueName">
+               <p class="ValueName"></p>
+            </td>
+            <td class="ValueDesc">
+               <p class="ValueDesc">The key doesn't fit this lock.\n</p>
+            </td>
+         </tr>
+         <tr>
+            <td colspan="3" class="ValueRowSep">
+               <p class="ValueRowSep"></p>
+            </td>
+         </tr>
+         <tr>
+            <td class="ValueVal">
+               <p class="ValueVal">0x4B3</p>
+            </td>
+            <td class="ValueName">
+               <p class="ValueName"></p>
+            </td>
+            <td class="ValueDesc">
+               <p class="ValueDesc">The lock has been used too recently.</p>
+            </td>
+         </tr>
+         <tr>
+            <td colspan="3" class="ValueRowSep">
+               <p class="ValueRowSep"></p>
+            </td>
+         </tr>
+         <tr>
+            <td class="ValueVal">
+               <p class="ValueVal">0x4B4</p>
+            </td>
+            <td class="ValueName">
+               <p class="ValueName"></p>
+            </td>
+            <td class="ValueDesc">
+               <p class="ValueDesc">You aren't trained in lockpicking!</p>
+            </td>
+         </tr>
+         <tr>
+            <td colspan="3" class="ValueRowSep">
+               <p class="ValueRowSep"></p>
+            </td>
+         </tr>
+         <tr>
+            <td class="ValueVal">
+               <p class="ValueVal">0x4B5</p>
+            </td>
+            <td class="ValueName">
+               <p class="ValueName"></p>
+            </td>
+            <td class="ValueDesc">
+               <p class="ValueDesc">You must specify a character to query.</p>
+            </td>
+         </tr>
+         <tr>
+            <td colspan="3" class="ValueRowSep">
+               <p class="ValueRowSep"></p>
+            </td>
+         </tr>
+         <tr>
+            <td class="ValueVal">
+               <p class="ValueVal">0x4B6</p>
+            </td>
+            <td class="ValueName">
+               <p class="ValueName"></p>
+            </td>
+            <td class="ValueDesc">
+               <p class="ValueDesc">Please use the allegiance panel to view your own information.</p>
+            </td>
+         </tr>
+         <tr>
+            <td colspan="3" class="ValueRowSep">
+               <p class="ValueRowSep"></p>
+            </td>
+         </tr>
+         <tr>
+            <td class="ValueVal">
+               <p class="ValueVal">0x4B7</p>
+            </td>
+            <td class="ValueName">
+               <p class="ValueName"></p>
+            </td>
+            <td class="ValueDesc">
+               <p class="ValueDesc">You have used that command too recently.</p>
+            </td>
+         </tr>
+         <tr>
+            <td colspan="3" class="ValueRowSep">
+               <p class="ValueRowSep"></p>
+            </td>
+         </tr>
+         <tr>
+            <td class="ValueVal">
+               <p class="ValueVal">0x4B8</p>
+            </td>
+            <td class="ValueName">
+               <p class="ValueName"></p>
+            </td>
+            <td class="ValueDesc">
+               <p class="ValueDesc">SendNotice_AbuseReportResponse</p>
+            </td>
+         </tr>
+         <tr>
+            <td colspan="3" class="ValueRowSep">
+               <p class="ValueRowSep"></p>
+            </td>
+         </tr>
+         <tr>
+            <td class="ValueVal">
+               <p class="ValueVal">0x4B9</p>
+            </td>
+            <td class="ValueName">
+               <p class="ValueName"></p>
+            </td>
+            <td class="ValueDesc">
+               <p class="ValueDesc">SendNotice_AbuseReportResponse</p>
+            </td>
+         </tr>
+         <tr>
+            <td colspan="3" class="ValueRowSep">
+               <p class="ValueRowSep"></p>
+            </td>
+         </tr>
+         <tr>
+            <td class="ValueVal">
+               <p class="ValueVal">0x4BA</p>
+            </td>
+            <td class="ValueName">
+               <p class="ValueName"></p>
+            </td>
+            <td class="ValueDesc">
+               <p class="ValueDesc">SendNotice_AbuseReportResponse</p>
+            </td>
+         </tr>
+         <tr>
+            <td colspan="3" class="ValueRowSep">
+               <p class="ValueRowSep"></p>
+            </td>
+         </tr>
+         <tr>
+            <td class="ValueVal">
+               <p class="ValueVal">0x4BD</p>
+            </td>
+            <td class="ValueName">
+               <p class="ValueName"></p>
+            </td>
+            <td class="ValueDesc">
+               <p class="ValueDesc">You do not own that salvage tool!\n</p>
+            </td>
+         </tr>
+         <tr>
+            <td colspan="3" class="ValueRowSep">
+               <p class="ValueRowSep"></p>
+            </td>
+         </tr>
+         <tr>
+            <td class="ValueVal">
+               <p class="ValueVal">0x4BE</p>
+            </td>
+            <td class="ValueName">
+               <p class="ValueName"></p>
+            </td>
+            <td class="ValueDesc">
+               <p class="ValueDesc">You do not own that item!\n</p>
+            </td>
+         </tr>
+         <tr>
+            <td colspan="3" class="ValueRowSep">
+               <p class="ValueRowSep"></p>
+            </td>
+         </tr>
+         <tr>
+            <td class="ValueVal">
+               <p class="ValueVal">0x4BF</p>
+            </td>
+            <td class="ValueName">
+               <p class="ValueName"></p>
+            </td>
+            <td class="ValueDesc">
+               <p class="ValueDesc">The %s was not suitable for salvaging.</p>
+            </td>
+         </tr>
+         <tr>
+            <td colspan="3" class="ValueRowSep">
+               <p class="ValueRowSep"></p>
+            </td>
+         </tr>
+         <tr>
+            <td class="ValueVal">
+               <p class="ValueVal">0x4C0</p>
+            </td>
+            <td class="ValueName">
+               <p class="ValueName"></p>
+            </td>
+            <td class="ValueDesc">
+               <p class="ValueDesc">The %s contains the wrong material.</p>
+            </td>
+         </tr>
+         <tr>
+            <td colspan="3" class="ValueRowSep">
+               <p class="ValueRowSep"></p>
+            </td>
+         </tr>
+         <tr>
+            <td class="ValueVal">
+               <p class="ValueVal">0x4C1</p>
+            </td>
+            <td class="ValueName">
+               <p class="ValueName"></p>
+            </td>
+            <td class="ValueDesc">
+               <p class="ValueDesc">The material cannot be created.\n</p>
+            </td>
+         </tr>
+         <tr>
+            <td colspan="3" class="ValueRowSep">
+               <p class="ValueRowSep"></p>
+            </td>
+         </tr>
+         <tr>
+            <td class="ValueVal">
+               <p class="ValueVal">0x4C2</p>
+            </td>
+            <td class="ValueName">
+               <p class="ValueName"></p>
+            </td>
+            <td class="ValueDesc">
+               <p class="ValueDesc">The list of items you are attempting to salvage is invalid.\n</p>
+            </td>
+         </tr>
+         <tr>
+            <td colspan="3" class="ValueRowSep">
+               <p class="ValueRowSep"></p>
+            </td>
+         </tr>
+         <tr>
+            <td class="ValueVal">
+               <p class="ValueVal">0x4C3</p>
+            </td>
+            <td class="ValueName">
+               <p class="ValueName"></p>
+            </td>
+            <td class="ValueDesc">
+               <p class="ValueDesc">You cannot salvage items that you are trading!\n</p>
+            </td>
+         </tr>
+         <tr>
+            <td colspan="3" class="ValueRowSep">
+               <p class="ValueRowSep"></p>
+            </td>
+         </tr>
+         <tr>
+            <td class="ValueVal">
+               <p class="ValueVal">0x4C4</p>
+            </td>
+            <td class="ValueName">
+               <p class="ValueName"></p>
+            </td>
+            <td class="ValueDesc">
+               <p class="ValueDesc">You must be a guest in this house to interact with that portal.\n</p>
+            </td>
+         </tr>
+         <tr>
+            <td colspan="3" class="ValueRowSep">
+               <p class="ValueRowSep"></p>
+            </td>
+         </tr>
+         <tr>
+            <td class="ValueVal">
+               <p class="ValueVal">0x4C5</p>
+            </td>
+            <td class="ValueName">
+               <p class="ValueName"></p>
+            </td>
+            <td class="ValueDesc">
+               <p class="ValueDesc">Your Allegiance Rank is too low to use that item's magic.</p>
+            </td>
+         </tr>
+         <tr>
+            <td colspan="3" class="ValueRowSep">
+               <p class="ValueRowSep"></p>
+            </td>
+         </tr>
+         <tr>
+            <td class="ValueVal">
+               <p class="ValueVal">0x4C6</p>
+            </td>
+            <td class="ValueName">
+               <p class="ValueName"></p>
+            </td>
+            <td class="ValueDesc">
+               <p class="ValueDesc">You must be %s to use that item's magic.</p>
+            </td>
+         </tr>
+         <tr>
+            <td colspan="3" class="ValueRowSep">
+               <p class="ValueRowSep"></p>
+            </td>
+         </tr>
+         <tr>
+            <td class="ValueVal">
+               <p class="ValueVal">0x4C7</p>
+            </td>
+            <td class="ValueName">
+               <p class="ValueName"></p>
+            </td>
+            <td class="ValueDesc">
+               <p class="ValueDesc">Your Arcane Lore skill is too low to use that item's magic.</p>
+            </td>
+         </tr>
+         <tr>
+            <td colspan="3" class="ValueRowSep">
+               <p class="ValueRowSep"></p>
+            </td>
+         </tr>
+         <tr>
+            <td class="ValueVal">
+               <p class="ValueVal">0x4C8</p>
+            </td>
+            <td class="ValueName">
+               <p class="ValueName"></p>
+            </td>
+            <td class="ValueDesc">
+               <p class="ValueDesc">That item doesn't have enough Mana.</p>
+            </td>
+         </tr>
+         <tr>
+            <td colspan="3" class="ValueRowSep">
+               <p class="ValueRowSep"></p>
+            </td>
+         </tr>
+         <tr>
+            <td class="ValueVal">
+               <p class="ValueVal">0x4C9</p>
+            </td>
+            <td class="ValueName">
+               <p class="ValueName"></p>
+            </td>
+            <td class="ValueDesc">
+               <p class="ValueDesc">Your %s is too low to use that item's magic.</p>
+            </td>
+         </tr>
+         <tr>
+            <td colspan="3" class="ValueRowSep">
+               <p class="ValueRowSep"></p>
+            </td>
+         </tr>
+         <tr>
+            <td class="ValueVal">
+               <p class="ValueVal">0x4CA</p>
+            </td>
+            <td class="ValueName">
+               <p class="ValueName"></p>
+            </td>
+            <td class="ValueDesc">
+               <p class="ValueDesc">Only %s may use that item's magic.</p>
+            </td>
+         </tr>
+         <tr>
+            <td colspan="3" class="ValueRowSep">
+               <p class="ValueRowSep"></p>
+            </td>
+         </tr>
+         <tr>
+            <td class="ValueVal">
+               <p class="ValueVal">0x4CB</p>
+            </td>
+            <td class="ValueName">
+               <p class="ValueName"></p>
+            </td>
+            <td class="ValueDesc">
+               <p class="ValueDesc">You must have %s specialized to use that item's magic.</p>
+            </td>
+         </tr>
+         <tr>
+            <td colspan="3" class="ValueRowSep">
+               <p class="ValueRowSep"></p>
+            </td>
+         </tr>
+         <tr>
+            <td class="ValueVal">
+               <p class="ValueVal">0x4CC</p>
+            </td>
+            <td class="ValueName">
+               <p class="ValueName"></p>
+            </td>
+            <td class="ValueDesc">
+               <p class="ValueDesc">You have been involved in a player killer battle too recently to do that!\n</p>
+            </td>
+         </tr>
+         <tr>
+            <td colspan="3" class="ValueRowSep">
+               <p class="ValueRowSep"></p>
+            </td>
+         </tr>
+         <tr>
+            <td class="ValueVal">
+               <p class="ValueVal">0x4CE</p>
+            </td>
+            <td class="ValueName">
+               <p class="ValueName"></p>
+            </td>
+            <td class="ValueDesc">
+               <p class="ValueDesc"> is too busy to accept gifts right now.\n</p>
+            </td>
+         </tr>
+         <tr>
+            <td colspan="3" class="ValueRowSep">
+               <p class="ValueRowSep"></p>
+            </td>
+         </tr>
+         <tr>
+            <td class="ValueVal">
+               <p class="ValueVal">0x4CF</p>
+            </td>
+            <td class="ValueName">
+               <p class="ValueName"></p>
+            </td>
+            <td class="ValueDesc">
+               <p class="ValueDesc"> cannot accept stacked objects. Try giving one at a time.\n</p>
+            </td>
+         </tr>
+         <tr>
+            <td colspan="3" class="ValueRowSep">
+               <p class="ValueRowSep"></p>
+            </td>
+         </tr>
+         <tr>
+            <td class="ValueVal">
+               <p class="ValueVal">0x4D</p>
+            </td>
+            <td class="ValueName">
+               <p class="ValueName"></p>
+            </td>
+            <td class="ValueDesc">
+               <p class="ValueDesc">Invalid PK status!</p>
+            </td>
+         </tr>
+         <tr>
+            <td colspan="3" class="ValueRowSep">
+               <p class="ValueRowSep"></p>
+            </td>
+         </tr>
+         <tr>
+            <td class="ValueVal">
+               <p class="ValueVal">0x4D0</p>
+            </td>
+            <td class="ValueName">
+               <p class="ValueName"></p>
+            </td>
+            <td class="ValueDesc">
+               <p class="ValueDesc">You have failed to alter your skill.\n</p>
+            </td>
+         </tr>
+         <tr>
+            <td colspan="3" class="ValueRowSep">
+               <p class="ValueRowSep"></p>
+            </td>
+         </tr>
+         <tr>
+            <td class="ValueVal">
+               <p class="ValueVal">0x4D1</p>
+            </td>
+            <td class="ValueName">
+               <p class="ValueName"></p>
+            </td>
+            <td class="ValueDesc">
+               <p class="ValueDesc">Your %s skill must be trained, not untrained or specialized, in order to be altered
+                  in this way!\n
+               </p>
+            </td>
+         </tr>
+         <tr>
+            <td colspan="3" class="ValueRowSep">
+               <p class="ValueRowSep"></p>
+            </td>
+         </tr>
+         <tr>
+            <td class="ValueVal">
+               <p class="ValueVal">0x4D2</p>
+            </td>
+            <td class="ValueName">
+               <p class="ValueName"></p>
+            </td>
+            <td class="ValueDesc">
+               <p class="ValueDesc">You do not have enough skill credits to specialize your %s skill.\n</p>
+            </td>
+         </tr>
+         <tr>
+            <td colspan="3" class="ValueRowSep">
+               <p class="ValueRowSep"></p>
+            </td>
+         </tr>
+         <tr>
+            <td class="ValueVal">
+               <p class="ValueVal">0x4D3</p>
+            </td>
+            <td class="ValueName">
+               <p class="ValueName"></p>
+            </td>
+            <td class="ValueDesc">
+               <p class="ValueDesc">You have too many available experience points to be able to absorb the experience
+                  points from your %s skill. Please spend some of your experience points and try again.\n
+               </p>
+            </td>
+         </tr>
+         <tr>
+            <td colspan="3" class="ValueRowSep">
+               <p class="ValueRowSep"></p>
+            </td>
+         </tr>
+         <tr>
+            <td class="ValueVal">
+               <p class="ValueVal">0x4D4</p>
+            </td>
+            <td class="ValueName">
+               <p class="ValueName"></p>
+            </td>
+            <td class="ValueDesc">
+               <p class="ValueDesc">Your %s skill is already untrained!\n</p>
+            </td>
+         </tr>
+         <tr>
+            <td colspan="3" class="ValueRowSep">
+               <p class="ValueRowSep"></p>
+            </td>
+         </tr>
+         <tr>
+            <td class="ValueVal">
+               <p class="ValueVal">0x4D5</p>
+            </td>
+            <td class="ValueName">
+               <p class="ValueName"></p>
+            </td>
+            <td class="ValueDesc">
+               <p class="ValueDesc">You are currently wielding items which require a certain level of %s.  Your %s skill
+                  cannot be lowered while you are wielding these items.  Please remove these items and
+                  try again.\n
+               </p>
+            </td>
+         </tr>
+         <tr>
+            <td colspan="3" class="ValueRowSep">
+               <p class="ValueRowSep"></p>
+            </td>
+         </tr>
+         <tr>
+            <td class="ValueVal">
+               <p class="ValueVal">0x4D6</p>
+            </td>
+            <td class="ValueName">
+               <p class="ValueName"></p>
+            </td>
+            <td class="ValueDesc">
+               <p class="ValueDesc">You have succeeded in specializing your %s skill!\n</p>
+            </td>
+         </tr>
+         <tr>
+            <td colspan="3" class="ValueRowSep">
+               <p class="ValueRowSep"></p>
+            </td>
+         </tr>
+         <tr>
+            <td class="ValueVal">
+               <p class="ValueVal">0x4D7</p>
+            </td>
+            <td class="ValueName">
+               <p class="ValueName"></p>
+            </td>
+            <td class="ValueDesc">
+               <p class="ValueDesc">You have succeeded in lowering your %s skill from specialized to trained!\n</p>
+            </td>
+         </tr>
+         <tr>
+            <td colspan="3" class="ValueRowSep">
+               <p class="ValueRowSep"></p>
+            </td>
+         </tr>
+         <tr>
+            <td class="ValueVal">
+               <p class="ValueVal">0x4D8</p>
+            </td>
+            <td class="ValueName">
+               <p class="ValueName"></p>
+            </td>
+            <td class="ValueDesc">
+               <p class="ValueDesc">You have succeeded in untraining your %s skill!\n</p>
+            </td>
+         </tr>
+         <tr>
+            <td colspan="3" class="ValueRowSep">
+               <p class="ValueRowSep"></p>
+            </td>
+         </tr>
+         <tr>
+            <td class="ValueVal">
+               <p class="ValueVal">0x4D9</p>
+            </td>
+            <td class="ValueName">
+               <p class="ValueName"></p>
+            </td>
+            <td class="ValueDesc">
+               <p class="ValueDesc">Although you cannot untrain your %s skill, you have succeeded in recovering all the
+                  experience you had invested in it.\n
+               </p>
+            </td>
+         </tr>
+         <tr>
+            <td colspan="3" class="ValueRowSep">
+               <p class="ValueRowSep"></p>
+            </td>
+         </tr>
+         <tr>
+            <td class="ValueVal">
+               <p class="ValueVal">0x4DA</p>
+            </td>
+            <td class="ValueName">
+               <p class="ValueName"></p>
+            </td>
+            <td class="ValueDesc">
+               <p class="ValueDesc">You have too many credits invested in specialized skills already! Before you can specialize
+                  your %s skill, you will need to unspecialize some other skill.\n
+               </p>
+            </td>
+         </tr>
+         <tr>
+            <td colspan="3" class="ValueRowSep">
+               <p class="ValueRowSep"></p>
+            </td>
+         </tr>
+         <tr>
+            <td class="ValueVal">
+               <p class="ValueVal">0x4DD</p>
+            </td>
+            <td class="ValueName">
+               <p class="ValueName"></p>
+            </td>
+            <td class="ValueDesc">
+               <p class="ValueDesc">You have failed to alter your attributes.\n</p>
+            </td>
+         </tr>
+         <tr>
+            <td colspan="3" class="ValueRowSep">
+               <p class="ValueRowSep"></p>
+            </td>
+         </tr>
+         <tr>
+            <td class="ValueVal">
+               <p class="ValueVal">0x4DE</p>
+            </td>
+            <td class="ValueName">
+               <p class="ValueName"></p>
+            </td>
+            <td class="ValueDesc">
+               <p class="ValueDesc">\n</p>
+            </td>
+         </tr>
+         <tr>
+            <td colspan="3" class="ValueRowSep">
+               <p class="ValueRowSep"></p>
+            </td>
+         </tr>
+         <tr>
+            <td class="ValueVal">
+               <p class="ValueVal">0x4DF</p>
+            </td>
+            <td class="ValueName">
+               <p class="ValueName"></p>
+            </td>
+            <td class="ValueDesc">
+               <p class="ValueDesc">\n</p>
+            </td>
+         </tr>
+         <tr>
+            <td colspan="3" class="ValueRowSep">
+               <p class="ValueRowSep"></p>
+            </td>
+         </tr>
+         <tr>
+            <td class="ValueVal">
+               <p class="ValueVal">0x4E</p>
+            </td>
+            <td class="ValueName">
+               <p class="ValueName"></p>
+            </td>
+            <td class="ValueDesc">
+               <p class="ValueDesc">You fail to affect %s because you cannot affect anyone!\n</p>
+            </td>
+         </tr>
+         <tr>
+            <td colspan="3" class="ValueRowSep">
+               <p class="ValueRowSep"></p>
+            </td>
+         </tr>
+         <tr>
+            <td class="ValueVal">
+               <p class="ValueVal">0x4E0</p>
+            </td>
+            <td class="ValueName">
+               <p class="ValueName"></p>
+            </td>
+            <td class="ValueDesc">
+               <p class="ValueDesc">You are currently wielding items which require a certain level of skill. Your attributes
+                  cannot be transferred while you are wielding these items. Please remove these items
+                  and try again.\n
+               </p>
+            </td>
+         </tr>
+         <tr>
+            <td colspan="3" class="ValueRowSep">
+               <p class="ValueRowSep"></p>
+            </td>
+         </tr>
+         <tr>
+            <td class="ValueVal">
+               <p class="ValueVal">0x4E1</p>
+            </td>
+            <td class="ValueName">
+               <p class="ValueName"></p>
+            </td>
+            <td class="ValueDesc">
+               <p class="ValueDesc">You have succeeded in transferring your attributes!\n</p>
+            </td>
+         </tr>
+         <tr>
+            <td colspan="3" class="ValueRowSep">
+               <p class="ValueRowSep"></p>
+            </td>
+         </tr>
+         <tr>
+            <td class="ValueVal">
+               <p class="ValueVal">0x4E2</p>
+            </td>
+            <td class="ValueName">
+               <p class="ValueName"></p>
+            </td>
+            <td class="ValueDesc">
+               <p class="ValueDesc">This hook is a duplicated housing object. You may not add items to a duplicated housing
+                  object. Please empty the hook and allow it to reset.\n
+               </p>
+            </td>
+         </tr>
+         <tr>
+            <td colspan="3" class="ValueRowSep">
+               <p class="ValueRowSep"></p>
+            </td>
+         </tr>
+         <tr>
+            <td class="ValueVal">
+               <p class="ValueVal">0x4E3</p>
+            </td>
+            <td class="ValueName">
+               <p class="ValueName"></p>
+            </td>
+            <td class="ValueDesc">
+               <p class="ValueDesc">That item is of the wrong type to be placed on this hook.\n</p>
+            </td>
+         </tr>
+         <tr>
+            <td colspan="3" class="ValueRowSep">
+               <p class="ValueRowSep"></p>
+            </td>
+         </tr>
+         <tr>
+            <td class="ValueVal">
+               <p class="ValueVal">0x4E4</p>
+            </td>
+            <td class="ValueName">
+               <p class="ValueName"></p>
+            </td>
+            <td class="ValueDesc">
+               <p class="ValueDesc">This chest is a duplicated housing object. You may not add items to a duplicated housing
+                  object. Please empty everything -- including backpacks -- out of the chest and allow
+                  the chest to reset.\n
+               </p>
+            </td>
+         </tr>
+         <tr>
+            <td colspan="3" class="ValueRowSep">
+               <p class="ValueRowSep"></p>
+            </td>
+         </tr>
+         <tr>
+            <td class="ValueVal">
+               <p class="ValueVal">0x4E5</p>
+            </td>
+            <td class="ValueName">
+               <p class="ValueName"></p>
+            </td>
+            <td class="ValueDesc">
+               <p class="ValueDesc">This hook was a duplicated housing object. Since it is now empty, it will be deleted
+                  momentarily. Once it is gone, it is safe to use the other, non-duplicated hook that
+                  is here.\n
+               </p>
+            </td>
+         </tr>
+         <tr>
+            <td colspan="3" class="ValueRowSep">
+               <p class="ValueRowSep"></p>
+            </td>
+         </tr>
+         <tr>
+            <td class="ValueVal">
+               <p class="ValueVal">0x4E6</p>
+            </td>
+            <td class="ValueName">
+               <p class="ValueName"></p>
+            </td>
+            <td class="ValueDesc">
+               <p class="ValueDesc">This chest was a duplicated housing object. Since it is now empty, it will be deleted
+                  momentarily. Once it is gone, it is safe to use the other, non-duplicated chest that
+                  is here.\n
+               </p>
+            </td>
+         </tr>
+         <tr>
+            <td colspan="3" class="ValueRowSep">
+               <p class="ValueRowSep"></p>
+            </td>
+         </tr>
+         <tr>
+            <td class="ValueVal">
+               <p class="ValueVal">0x4E7</p>
+            </td>
+            <td class="ValueName">
+               <p class="ValueName"></p>
+            </td>
+            <td class="ValueDesc">
+               <p class="ValueDesc">You cannot swear allegiance to anyone because you own a monarch-only house. Please
+                  abandon your house and try again.\n
+               </p>
+            </td>
+         </tr>
+         <tr>
+            <td colspan="3" class="ValueRowSep">
+               <p class="ValueRowSep"></p>
+            </td>
+         </tr>
+         <tr>
+            <td class="ValueVal">
+               <p class="ValueVal">0x4E8</p>
+            </td>
+            <td class="ValueName">
+               <p class="ValueName"></p>
+            </td>
+            <td class="ValueDesc">
+               <p class="ValueDesc">The %s cannot be used while on a hook and only the owner may open the hook.\n</p>
+            </td>
+         </tr>
+         <tr>
+            <td colspan="3" class="ValueRowSep">
+               <p class="ValueRowSep"></p>
+            </td>
+         </tr>
+         <tr>
+            <td class="ValueVal">
+               <p class="ValueVal">0x4E9</p>
+            </td>
+            <td class="ValueName">
+               <p class="ValueName"></p>
+            </td>
+            <td class="ValueDesc">
+               <p class="ValueDesc">The %s cannot be used while on a hook, use the '@house hooks on' command to make the
+                  hook openable.\n
+               </p>
+            </td>
+         </tr>
+         <tr>
+            <td colspan="3" class="ValueRowSep">
+               <p class="ValueRowSep"></p>
+            </td>
+         </tr>
+         <tr>
+            <td class="ValueVal">
+               <p class="ValueVal">0x4EA</p>
+            </td>
+            <td class="ValueName">
+               <p class="ValueName"></p>
+            </td>
+            <td class="ValueDesc">
+               <p class="ValueDesc">The %s can only be used while on a hook.\n</p>
+            </td>
+         </tr>
+         <tr>
+            <td colspan="3" class="ValueRowSep">
+               <p class="ValueRowSep"></p>
+            </td>
+         </tr>
+         <tr>
+            <td class="ValueVal">
+               <p class="ValueVal">0x4EB</p>
+            </td>
+            <td class="ValueName">
+               <p class="ValueName"></p>
+            </td>
+            <td class="ValueDesc">
+               <p class="ValueDesc">You can't do that while in the air!</p>
+            </td>
+         </tr>
+         <tr>
+            <td colspan="3" class="ValueRowSep">
+               <p class="ValueRowSep"></p>
+            </td>
+         </tr>
+         <tr>
+            <td class="ValueVal">
+               <p class="ValueVal">0x4EC</p>
+            </td>
+            <td class="ValueName">
+               <p class="ValueName"></p>
+            </td>
+            <td class="ValueDesc">
+               <p class="ValueDesc">You cannot modify your player killer status while you are recovering from a PK death.\n</p>
+            </td>
+         </tr>
+         <tr>
+            <td colspan="3" class="ValueRowSep">
+               <p class="ValueRowSep"></p>
+            </td>
+         </tr>
+         <tr>
+            <td class="ValueVal">
+               <p class="ValueVal">0x4ED</p>
+            </td>
+            <td class="ValueName">
+               <p class="ValueName"></p>
+            </td>
+            <td class="ValueDesc">
+               <p class="ValueDesc">Advocates may not change their player killer status!\n</p>
+            </td>
+         </tr>
+         <tr>
+            <td colspan="3" class="ValueRowSep">
+               <p class="ValueRowSep"></p>
+            </td>
+         </tr>
+         <tr>
+            <td class="ValueVal">
+               <p class="ValueVal">0x4EE</p>
+            </td>
+            <td class="ValueName">
+               <p class="ValueName"></p>
+            </td>
+            <td class="ValueDesc">
+               <p class="ValueDesc">Your level is too low to change your player killer status with this object.\n</p>
+            </td>
+         </tr>
+         <tr>
+            <td colspan="3" class="ValueRowSep">
+               <p class="ValueRowSep"></p>
+            </td>
+         </tr>
+         <tr>
+            <td class="ValueVal">
+               <p class="ValueVal">0x4EF</p>
+            </td>
+            <td class="ValueName">
+               <p class="ValueName"></p>
+            </td>
+            <td class="ValueDesc">
+               <p class="ValueDesc">Your level is too high to change your player killer status with this object.\n</p>
+            </td>
+         </tr>
+         <tr>
+            <td colspan="3" class="ValueRowSep">
+               <p class="ValueRowSep"></p>
+            </td>
+         </tr>
+         <tr>
+            <td class="ValueVal">
+               <p class="ValueVal">0x4F</p>
+            </td>
+            <td class="ValueName">
+               <p class="ValueName"></p>
+            </td>
+            <td class="ValueDesc">
+               <p class="ValueDesc">You fail to affect %s because $s cannot be harmed!\n</p>
+            </td>
+         </tr>
+         <tr>
+            <td colspan="3" class="ValueRowSep">
+               <p class="ValueRowSep"></p>
+            </td>
+         </tr>
+         <tr>
+            <td class="ValueVal">
+               <p class="ValueVal">0x4F0</p>
+            </td>
+            <td class="ValueName">
+               <p class="ValueName"></p>
+            </td>
+            <td class="ValueDesc">
+               <p class="ValueDesc">You feel a harsh dissonance, and you sense that an act of killing you have committed
+                  recently is interfering with the conversion.\n
+               </p>
+            </td>
+         </tr>
+         <tr>
+            <td colspan="3" class="ValueRowSep">
+               <p class="ValueRowSep"></p>
+            </td>
+         </tr>
+         <tr>
+            <td class="ValueVal">
+               <p class="ValueVal">0x4F1</p>
+            </td>
+            <td class="ValueName">
+               <p class="ValueName"></p>
+            </td>
+            <td class="ValueDesc">
+               <p class="ValueDesc">Bael'Zharon's power flows through you again. You are once more a player killer.\n</p>
+            </td>
+         </tr>
+         <tr>
+            <td colspan="3" class="ValueRowSep">
+               <p class="ValueRowSep"></p>
+            </td>
+         </tr>
+         <tr>
+            <td class="ValueVal">
+               <p class="ValueVal">0x4F2</p>
+            </td>
+            <td class="ValueName">
+               <p class="ValueName"></p>
+            </td>
+            <td class="ValueDesc">
+               <p class="ValueDesc">Bael'Zharon has granted you respite after your moment of weakness. You are temporarily
+                  no longer a player killer.\n
+               </p>
+            </td>
+         </tr>
+         <tr>
+            <td colspan="3" class="ValueRowSep">
+               <p class="ValueRowSep"></p>
+            </td>
+         </tr>
+         <tr>
+            <td class="ValueVal">
+               <p class="ValueVal">0x4F3</p>
+            </td>
+            <td class="ValueName">
+               <p class="ValueName"></p>
+            </td>
+            <td class="ValueDesc">
+               <p class="ValueDesc">Lite Player Killers may not interact with that portal!\n</p>
+            </td>
+         </tr>
+         <tr>
+            <td colspan="3" class="ValueRowSep">
+               <p class="ValueRowSep"></p>
+            </td>
+         </tr>
+         <tr>
+            <td class="ValueVal">
+               <p class="ValueVal">0x4F4</p>
+            </td>
+            <td class="ValueName">
+               <p class="ValueName"></p>
+            </td>
+            <td class="ValueDesc">
+               <p class="ValueDesc">%s fails to affect you because $s cannot affect anyone!\n</p>
+            </td>
+         </tr>
+         <tr>
+            <td colspan="3" class="ValueRowSep">
+               <p class="ValueRowSep"></p>
+            </td>
+         </tr>
+         <tr>
+            <td class="ValueVal">
+               <p class="ValueVal">0x4F5</p>
+            </td>
+            <td class="ValueName">
+               <p class="ValueName"></p>
+            </td>
+            <td class="ValueDesc">
+               <p class="ValueDesc">%s fails to affect you because you cannot be harmed!\n</p>
+            </td>
+         </tr>
+         <tr>
+            <td colspan="3" class="ValueRowSep">
+               <p class="ValueRowSep"></p>
+            </td>
+         </tr>
+         <tr>
+            <td class="ValueVal">
+               <p class="ValueVal">0x4F6</p>
+            </td>
+            <td class="ValueName">
+               <p class="ValueName"></p>
+            </td>
+            <td class="ValueDesc">
+               <p class="ValueDesc">%s fails to affect you because %s is not a player killer!\n</p>
+            </td>
+         </tr>
+         <tr>
+            <td colspan="3" class="ValueRowSep">
+               <p class="ValueRowSep"></p>
+            </td>
+         </tr>
+         <tr>
+            <td class="ValueVal">
+               <p class="ValueVal">0x4F7</p>
+            </td>
+            <td class="ValueName">
+               <p class="ValueName"></p>
+            </td>
+            <td class="ValueDesc">
+               <p class="ValueDesc"> fails to affect you because you are not a player killer!\n</p>
+            </td>
+         </tr>
+         <tr>
+            <td colspan="3" class="ValueRowSep">
+               <p class="ValueRowSep"></p>
+            </td>
+         </tr>
+         <tr>
+            <td class="ValueVal">
+               <p class="ValueVal">0x4F8</p>
+            </td>
+            <td class="ValueName">
+               <p class="ValueName"></p>
+            </td>
+            <td class="ValueDesc">
+               <p class="ValueDesc"> fails to affect you because you are not the same sort of player killer as </p>
+            </td>
+         </tr>
+         <tr>
+            <td colspan="3" class="ValueRowSep">
+               <p class="ValueRowSep"></p>
+            </td>
+         </tr>
+         <tr>
+            <td class="ValueVal">
+               <p class="ValueVal">0x4F9</p>
+            </td>
+            <td class="ValueName">
+               <p class="ValueName"></p>
+            </td>
+            <td class="ValueDesc">
+               <p class="ValueDesc"> fails to affect you across a house boundary!\n</p>
+            </td>
+         </tr>
+         <tr>
+            <td colspan="3" class="ValueRowSep">
+               <p class="ValueRowSep"></p>
+            </td>
+         </tr>
+         <tr>
+            <td class="ValueVal">
+               <p class="ValueVal">0x4FA</p>
+            </td>
+            <td class="ValueName">
+               <p class="ValueName"></p>
+            </td>
+            <td class="ValueDesc">
+               <p class="ValueDesc"> is an invalid target.\n</p>
+            </td>
+         </tr>
+         <tr>
+            <td colspan="3" class="ValueRowSep">
+               <p class="ValueRowSep"></p>
+            </td>
+         </tr>
+         <tr>
+            <td class="ValueVal">
+               <p class="ValueVal">0x4FB</p>
+            </td>
+            <td class="ValueName">
+               <p class="ValueName"></p>
+            </td>
+            <td class="ValueDesc">
+               <p class="ValueDesc">You are an invalid target for the spell of %s.\n</p>
+            </td>
+         </tr>
+         <tr>
+            <td colspan="3" class="ValueRowSep">
+               <p class="ValueRowSep"></p>
+            </td>
+         </tr>
+         <tr>
+            <td class="ValueVal">
+               <p class="ValueVal">0x4FC</p>
+            </td>
+            <td class="ValueName">
+               <p class="ValueName"></p>
+            </td>
+            <td class="ValueDesc">
+               <p class="ValueDesc">You aren't trained in healing!</p>
+            </td>
+         </tr>
+         <tr>
+            <td colspan="3" class="ValueRowSep">
+               <p class="ValueRowSep"></p>
+            </td>
+         </tr>
+         <tr>
+            <td class="ValueVal">
+               <p class="ValueVal">0x4FD</p>
+            </td>
+            <td class="ValueName">
+               <p class="ValueName"></p>
+            </td>
+            <td class="ValueDesc">
+               <p class="ValueDesc">You don't own that healing kit!</p>
+            </td>
+         </tr>
+         <tr>
+            <td colspan="3" class="ValueRowSep">
+               <p class="ValueRowSep"></p>
+            </td>
+         </tr>
+         <tr>
+            <td class="ValueVal">
+               <p class="ValueVal">0x4FE</p>
+            </td>
+            <td class="ValueName">
+               <p class="ValueName"></p>
+            </td>
+            <td class="ValueDesc">
+               <p class="ValueDesc">You can't heal that!</p>
+            </td>
+         </tr>
+         <tr>
+            <td colspan="3" class="ValueRowSep">
+               <p class="ValueRowSep"></p>
+            </td>
+         </tr>
+         <tr>
+            <td class="ValueVal">
+               <p class="ValueVal">0x4FF</p>
+            </td>
+            <td class="ValueName">
+               <p class="ValueName"></p>
+            </td>
+            <td class="ValueDesc">
+               <p class="ValueDesc"> is already at full health!</p>
+            </td>
+         </tr>
+         <tr>
+            <td colspan="3" class="ValueRowSep">
+               <p class="ValueRowSep"></p>
+            </td>
+         </tr>
+         <tr>
+            <td class="ValueVal">
+               <p class="ValueVal">0x50</p>
+            </td>
+            <td class="ValueName">
+               <p class="ValueName"></p>
+            </td>
+            <td class="ValueDesc">
+               <p class="ValueDesc">You fail to affect %s because beneficial spells do not affect %s!\n</p>
+            </td>
+         </tr>
+         <tr>
+            <td colspan="3" class="ValueRowSep">
+               <p class="ValueRowSep"></p>
+            </td>
+         </tr>
+         <tr>
+            <td class="ValueVal">
+               <p class="ValueVal">0x500</p>
+            </td>
+            <td class="ValueName">
+               <p class="ValueName"></p>
+            </td>
+            <td class="ValueDesc">
+               <p class="ValueDesc">You aren't ready to heal!</p>
+            </td>
+         </tr>
+         <tr>
+            <td colspan="3" class="ValueRowSep">
+               <p class="ValueRowSep"></p>
+            </td>
+         </tr>
+         <tr>
+            <td class="ValueVal">
+               <p class="ValueVal">0x501</p>
+            </td>
+            <td class="ValueName">
+               <p class="ValueName"></p>
+            </td>
+            <td class="ValueDesc">
+               <p class="ValueDesc">You can only use Healing Kits on player characters.</p>
+            </td>
+         </tr>
+         <tr>
+            <td colspan="3" class="ValueRowSep">
+               <p class="ValueRowSep"></p>
+            </td>
+         </tr>
+         <tr>
+            <td class="ValueVal">
+               <p class="ValueVal">0x502</p>
+            </td>
+            <td class="ValueName">
+               <p class="ValueName"></p>
+            </td>
+            <td class="ValueDesc">
+               <p class="ValueDesc">The Lifestone's magic protects you from the attack!\n</p>
+            </td>
+         </tr>
+         <tr>
+            <td colspan="3" class="ValueRowSep">
+               <p class="ValueRowSep"></p>
+            </td>
+         </tr>
+         <tr>
+            <td class="ValueVal">
+               <p class="ValueVal">0x503</p>
+            </td>
+            <td class="ValueName">
+               <p class="ValueName"></p>
+            </td>
+            <td class="ValueDesc">
+               <p class="ValueDesc">The portal's residual energy protects you from the attack!\n</p>
+            </td>
+         </tr>
+         <tr>
+            <td colspan="3" class="ValueRowSep">
+               <p class="ValueRowSep"></p>
+            </td>
+         </tr>
+         <tr>
+            <td class="ValueVal">
+               <p class="ValueVal">0x504</p>
+            </td>
+            <td class="ValueName">
+               <p class="ValueName"></p>
+            </td>
+            <td class="ValueDesc">
+               <p class="ValueDesc">You are enveloped in a feeling of warmth as you are brought back into the protection
+                  of the Light. You are once again a Non-Player Killer.\n
+               </p>
+            </td>
+         </tr>
+         <tr>
+            <td colspan="3" class="ValueRowSep">
+               <p class="ValueRowSep"></p>
+            </td>
+         </tr>
+         <tr>
+            <td class="ValueVal">
+               <p class="ValueVal">0x505</p>
+            </td>
+            <td class="ValueName">
+               <p class="ValueName"></p>
+            </td>
+            <td class="ValueDesc">
+               <p class="ValueDesc">You're too close to your sanctuary!</p>
+            </td>
+         </tr>
+         <tr>
+            <td colspan="3" class="ValueRowSep">
+               <p class="ValueRowSep"></p>
+            </td>
+         </tr>
+         <tr>
+            <td class="ValueVal">
+               <p class="ValueVal">0x506</p>
+            </td>
+            <td class="ValueName">
+               <p class="ValueName"></p>
+            </td>
+            <td class="ValueDesc">
+               <p class="ValueDesc">You can't do that -- you're trading!</p>
+            </td>
+         </tr>
+         <tr>
+            <td colspan="3" class="ValueRowSep">
+               <p class="ValueRowSep"></p>
+            </td>
+         </tr>
+         <tr>
+            <td class="ValueVal">
+               <p class="ValueVal">0x507</p>
+            </td>
+            <td class="ValueName">
+               <p class="ValueName"></p>
+            </td>
+            <td class="ValueDesc">
+               <p class="ValueDesc">Only Non-Player Killers may enter PK Lite. Please see @help pklite for more details
+                  about this command.\n
+               </p>
+            </td>
+         </tr>
+         <tr>
+            <td colspan="3" class="ValueRowSep">
+               <p class="ValueRowSep"></p>
+            </td>
+         </tr>
+         <tr>
+            <td class="ValueVal">
+               <p class="ValueVal">0x508</p>
+            </td>
+            <td class="ValueName">
+               <p class="ValueName"></p>
+            </td>
+            <td class="ValueDesc">
+               <p class="ValueDesc">A cold wind touches your heart. You are now a Player Killer Lite.\n</p>
+            </td>
+         </tr>
+         <tr>
+            <td colspan="3" class="ValueRowSep">
+               <p class="ValueRowSep"></p>
+            </td>
+         </tr>
+         <tr>
+            <td class="ValueVal">
+               <p class="ValueVal">0x509</p>
+            </td>
+            <td class="ValueName">
+               <p class="ValueName"></p>
+            </td>
+            <td class="ValueDesc">
+               <p class="ValueDesc"> has no appropriate targets equipped for this spell.\n</p>
+            </td>
+         </tr>
+         <tr>
+            <td colspan="3" class="ValueRowSep">
+               <p class="ValueRowSep"></p>
+            </td>
+         </tr>
+         <tr>
+            <td class="ValueVal">
+               <p class="ValueVal">0x50A</p>
+            </td>
+            <td class="ValueName">
+               <p class="ValueName"></p>
+            </td>
+            <td class="ValueDesc">
+               <p class="ValueDesc">You have no appropriate targets equipped for %s's spell.\n</p>
+            </td>
+         </tr>
+         <tr>
+            <td colspan="3" class="ValueRowSep">
+               <p class="ValueRowSep"></p>
+            </td>
+         </tr>
+         <tr>
+            <td class="ValueVal">
+               <p class="ValueVal">0x50B</p>
+            </td>
+            <td class="ValueName">
+               <p class="ValueName"></p>
+            </td>
+            <td class="ValueDesc">
+               <p class="ValueDesc"> is now an open fellowship; anyone may recruit new members.\n</p>
+            </td>
+         </tr>
+         <tr>
+            <td colspan="3" class="ValueRowSep">
+               <p class="ValueRowSep"></p>
+            </td>
+         </tr>
+         <tr>
+            <td class="ValueVal">
+               <p class="ValueVal">0x50C</p>
+            </td>
+            <td class="ValueName">
+               <p class="ValueName"></p>
+            </td>
+            <td class="ValueDesc">
+               <p class="ValueDesc"> is now a closed fellowship.\n</p>
+            </td>
+         </tr>
+         <tr>
+            <td colspan="3" class="ValueRowSep">
+               <p class="ValueRowSep"></p>
+            </td>
+         </tr>
+         <tr>
+            <td class="ValueVal">
+               <p class="ValueVal">0x50D</p>
+            </td>
+            <td class="ValueName">
+               <p class="ValueName"></p>
+            </td>
+            <td class="ValueDesc">
+               <p class="ValueDesc"> is now the leader of this fellowship.\n</p>
+            </td>
+         </tr>
+         <tr>
+            <td colspan="3" class="ValueRowSep">
+               <p class="ValueRowSep"></p>
+            </td>
+         </tr>
+         <tr>
+            <td class="ValueVal">
+               <p class="ValueVal">0x50E</p>
+            </td>
+            <td class="ValueName">
+               <p class="ValueName"></p>
+            </td>
+            <td class="ValueDesc">
+               <p class="ValueDesc">You have passed leadership of the fellowship to %s\n</p>
+            </td>
+         </tr>
+         <tr>
+            <td colspan="3" class="ValueRowSep">
+               <p class="ValueRowSep"></p>
+            </td>
+         </tr>
+         <tr>
+            <td class="ValueVal">
+               <p class="ValueVal">0x50F</p>
+            </td>
+            <td class="ValueName">
+               <p class="ValueName"></p>
+            </td>
+            <td class="ValueDesc">
+               <p class="ValueDesc">You do not belong to a Fellowship.</p>
+            </td>
+         </tr>
+         <tr>
+            <td colspan="3" class="ValueRowSep">
+               <p class="ValueRowSep"></p>
+            </td>
+         </tr>
+         <tr>
+            <td class="ValueVal">
+               <p class="ValueVal">0x51</p>
+            </td>
+            <td class="ValueName">
+               <p class="ValueName"></p>
+            </td>
+            <td class="ValueDesc">
+               <p class="ValueDesc">You fail to affect %s because you are not a player killer!\n</p>
+            </td>
+         </tr>
+         <tr>
+            <td colspan="3" class="ValueRowSep">
+               <p class="ValueRowSep"></p>
+            </td>
+         </tr>
+         <tr>
+            <td class="ValueVal">
+               <p class="ValueVal">0x510</p>
+            </td>
+            <td class="ValueName">
+               <p class="ValueName"></p>
+            </td>
+            <td class="ValueDesc">
+               <p class="ValueDesc">You may not hook any more %s on your house.  You already have the maximum number of
+                  %s hooked or you are not permitted to hook any on your type of house.\n
+               </p>
+            </td>
+         </tr>
+         <tr>
+            <td colspan="3" class="ValueRowSep">
+               <p class="ValueRowSep"></p>
+            </td>
+         </tr>
+         <tr>
+            <td class="ValueVal">
+               <p class="ValueVal">0x512</p>
+            </td>
+            <td class="ValueName">
+               <p class="ValueName"></p>
+            </td>
+            <td class="ValueDesc">
+               <p class="ValueDesc">You are now using the maximum number of hooks.  You cannot use another hook until
+                  you take an item off one of your hooks.\n
+               </p>
+            </td>
+         </tr>
+         <tr>
+            <td colspan="3" class="ValueRowSep">
+               <p class="ValueRowSep"></p>
+            </td>
+         </tr>
+         <tr>
+            <td class="ValueVal">
+               <p class="ValueVal">0x513</p>
+            </td>
+            <td class="ValueName">
+               <p class="ValueName"></p>
+            </td>
+            <td class="ValueDesc">
+               <p class="ValueDesc">You are no longer using the maximum number of hooks.  You may again add items to your
+                  hooks.\n
+               </p>
+            </td>
+         </tr>
+         <tr>
+            <td colspan="3" class="ValueRowSep">
+               <p class="ValueRowSep"></p>
+            </td>
+         </tr>
+         <tr>
+            <td class="ValueVal">
+               <p class="ValueVal">0x514</p>
+            </td>
+            <td class="ValueName">
+               <p class="ValueName"></p>
+            </td>
+            <td class="ValueDesc">
+               <p class="ValueDesc">You now have the maximum number of %s hooked.  You cannot hook any additional %s until
+                  you remove one or more from your house.\n
+               </p>
+            </td>
+         </tr>
+         <tr>
+            <td colspan="3" class="ValueRowSep">
+               <p class="ValueRowSep"></p>
+            </td>
+         </tr>
+         <tr>
+            <td class="ValueVal">
+               <p class="ValueVal">0x515</p>
+            </td>
+            <td class="ValueName">
+               <p class="ValueName"></p>
+            </td>
+            <td class="ValueDesc">
+               <p class="ValueDesc">You no longer have the maximum number of %s hooked.  You may hook additional %s.\n</p>
+            </td>
+         </tr>
+         <tr>
+            <td colspan="3" class="ValueRowSep">
+               <p class="ValueRowSep"></p>
+            </td>
+         </tr>
+         <tr>
+            <td class="ValueVal">
+               <p class="ValueVal">0x516</p>
+            </td>
+            <td class="ValueName">
+               <p class="ValueName"></p>
+            </td>
+            <td class="ValueDesc">
+               <p class="ValueDesc">You are not permitted to use that hook.\n</p>
+            </td>
+         </tr>
+         <tr>
+            <td colspan="3" class="ValueRowSep">
+               <p class="ValueRowSep"></p>
+            </td>
+         </tr>
+         <tr>
+            <td class="ValueVal">
+               <p class="ValueVal">0x517</p>
+            </td>
+            <td class="ValueName">
+               <p class="ValueName"></p>
+            </td>
+            <td class="ValueDesc">
+               <p class="ValueDesc"> is not close enough to your level.\n</p>
+            </td>
+         </tr>
+         <tr>
+            <td colspan="3" class="ValueRowSep">
+               <p class="ValueRowSep"></p>
+            </td>
+         </tr>
+         <tr>
+            <td class="ValueVal">
+               <p class="ValueVal">0x518</p>
+            </td>
+            <td class="ValueName">
+               <p class="ValueName"></p>
+            </td>
+            <td class="ValueDesc">
+               <p class="ValueDesc">This fellowship is locked; %s cannot be recruited into the fellowship.\n</p>
+            </td>
+         </tr>
+         <tr>
+            <td colspan="3" class="ValueRowSep">
+               <p class="ValueRowSep"></p>
+            </td>
+         </tr>
+         <tr>
+            <td class="ValueVal">
+               <p class="ValueVal">0x519</p>
+            </td>
+            <td class="ValueName">
+               <p class="ValueName"></p>
+            </td>
+            <td class="ValueDesc">
+               <p class="ValueDesc">The fellowship is locked, you were not added to the fellowship.\n</p>
+            </td>
+         </tr>
+         <tr>
+            <td colspan="3" class="ValueRowSep">
+               <p class="ValueRowSep"></p>
+            </td>
+         </tr>
+         <tr>
+            <td class="ValueVal">
+               <p class="ValueVal">0x51A</p>
+            </td>
+            <td class="ValueName">
+               <p class="ValueName"></p>
+            </td>
+            <td class="ValueDesc">
+               <p class="ValueDesc">Only the original owner may use that item's magic.</p>
+            </td>
+         </tr>
+         <tr>
+            <td colspan="3" class="ValueRowSep">
+               <p class="ValueRowSep"></p>
+            </td>
+         </tr>
+         <tr>
+            <td class="ValueVal">
+               <p class="ValueVal">0x51B</p>
+            </td>
+            <td class="ValueName">
+               <p class="ValueName"></p>
+            </td>
+            <td class="ValueDesc">
+               <p class="ValueDesc">You have entered the %s channel.\n</p>
+            </td>
+         </tr>
+         <tr>
+            <td colspan="3" class="ValueRowSep">
+               <p class="ValueRowSep"></p>
+            </td>
+         </tr>
+         <tr>
+            <td class="ValueVal">
+               <p class="ValueVal">0x51C</p>
+            </td>
+            <td class="ValueName">
+               <p class="ValueName"></p>
+            </td>
+            <td class="ValueDesc">
+               <p class="ValueDesc">You have left the %s channel.\n</p>
+            </td>
+         </tr>
+         <tr>
+            <td colspan="3" class="ValueRowSep">
+               <p class="ValueRowSep"></p>
+            </td>
+         </tr>
+         <tr>
+            <td class="ValueVal">
+               <p class="ValueVal">0x51E</p>
+            </td>
+            <td class="ValueName">
+               <p class="ValueName"></p>
+            </td>
+            <td class="ValueDesc">
+               <p class="ValueDesc"> will not receive your message, please use urgent assistance to speak with an in-game
+                  representative\n
+               </p>
+            </td>
+         </tr>
+         <tr>
+            <td colspan="3" class="ValueRowSep">
+               <p class="ValueRowSep"></p>
+            </td>
+         </tr>
+         <tr>
+            <td class="ValueVal">
+               <p class="ValueVal">0x51F</p>
+            </td>
+            <td class="ValueName">
+               <p class="ValueName"></p>
+            </td>
+            <td class="ValueDesc">
+               <p class="ValueDesc">Message Blocked: %s</p>
+            </td>
+         </tr>
+         <tr>
+            <td colspan="3" class="ValueRowSep">
+               <p class="ValueRowSep"></p>
+            </td>
+         </tr>
+         <tr>
+            <td class="ValueVal">
+               <p class="ValueVal">0x52</p>
+            </td>
+            <td class="ValueName">
+               <p class="ValueName"></p>
+            </td>
+            <td class="ValueDesc">
+               <p class="ValueDesc">You fail to affect %s because %s is not a player killer!\n</p>
+            </td>
+         </tr>
+         <tr>
+            <td colspan="3" class="ValueRowSep">
+               <p class="ValueRowSep"></p>
+            </td>
+         </tr>
+         <tr>
+            <td class="ValueVal">
+               <p class="ValueVal">0x520</p>
+            </td>
+            <td class="ValueName">
+               <p class="ValueName"></p>
+            </td>
+            <td class="ValueDesc">
+               <p class="ValueDesc">You cannot add anymore people to the list of players that you can hear.\n</p>
+            </td>
+         </tr>
+         <tr>
+            <td colspan="3" class="ValueRowSep">
+               <p class="ValueRowSep"></p>
+            </td>
+         </tr>
+         <tr>
+            <td class="ValueVal">
+               <p class="ValueVal">0x521</p>
+            </td>
+            <td class="ValueName">
+               <p class="ValueName"></p>
+            </td>
+            <td class="ValueDesc">
+               <p class="ValueDesc"> has been added to the list of people you can hear.\n</p>
+            </td>
+         </tr>
+         <tr>
+            <td colspan="3" class="ValueRowSep">
+               <p class="ValueRowSep"></p>
+            </td>
+         </tr>
+         <tr>
+            <td class="ValueVal">
+               <p class="ValueVal">0x522</p>
+            </td>
+            <td class="ValueName">
+               <p class="ValueName"></p>
+            </td>
+            <td class="ValueDesc">
+               <p class="ValueDesc"> has been removed from the list of people you can hear.\n</p>
+            </td>
+         </tr>
+         <tr>
+            <td colspan="3" class="ValueRowSep">
+               <p class="ValueRowSep"></p>
+            </td>
+         </tr>
+         <tr>
+            <td class="ValueVal">
+               <p class="ValueVal">0x523</p>
+            </td>
+            <td class="ValueName">
+               <p class="ValueName"></p>
+            </td>
+            <td class="ValueDesc">
+               <p class="ValueDesc">You are now deaf to player's screams.\n</p>
+            </td>
+         </tr>
+         <tr>
+            <td colspan="3" class="ValueRowSep">
+               <p class="ValueRowSep"></p>
+            </td>
+         </tr>
+         <tr>
+            <td class="ValueVal">
+               <p class="ValueVal">0x524</p>
+            </td>
+            <td class="ValueName">
+               <p class="ValueName"></p>
+            </td>
+            <td class="ValueDesc">
+               <p class="ValueDesc">You can hear all players once again.\n</p>
+            </td>
+         </tr>
+         <tr>
+            <td colspan="3" class="ValueRowSep">
+               <p class="ValueRowSep"></p>
+            </td>
+         </tr>
+         <tr>
+            <td class="ValueVal">
+               <p class="ValueVal">0x525</p>
+            </td>
+            <td class="ValueName">
+               <p class="ValueName"></p>
+            </td>
+            <td class="ValueDesc">
+               <p class="ValueDesc">You fail to remove %s from your loud list.\n</p>
+            </td>
+         </tr>
+         <tr>
+            <td colspan="3" class="ValueRowSep">
+               <p class="ValueRowSep"></p>
+            </td>
+         </tr>
+         <tr>
+            <td class="ValueVal">
+               <p class="ValueVal">0x526</p>
+            </td>
+            <td class="ValueName">
+               <p class="ValueName"></p>
+            </td>
+            <td class="ValueDesc">
+               <p class="ValueDesc">You chicken out.</p>
+            </td>
+         </tr>
+         <tr>
+            <td colspan="3" class="ValueRowSep">
+               <p class="ValueRowSep"></p>
+            </td>
+         </tr>
+         <tr>
+            <td class="ValueVal">
+               <p class="ValueVal">0x527</p>
+            </td>
+            <td class="ValueName">
+               <p class="ValueName"></p>
+            </td>
+            <td class="ValueDesc">
+               <p class="ValueDesc">You cannot posssibly succeed.</p>
+            </td>
+         </tr>
+         <tr>
+            <td colspan="3" class="ValueRowSep">
+               <p class="ValueRowSep"></p>
+            </td>
+         </tr>
+         <tr>
+            <td class="ValueVal">
+               <p class="ValueVal">0x528</p>
+            </td>
+            <td class="ValueName">
+               <p class="ValueName"></p>
+            </td>
+            <td class="ValueDesc">
+               <p class="ValueDesc">The fellowship is locked; you cannot open locked fellowships.\n</p>
+            </td>
+         </tr>
+         <tr>
+            <td colspan="3" class="ValueRowSep">
+               <p class="ValueRowSep"></p>
+            </td>
+         </tr>
+         <tr>
+            <td class="ValueVal">
+               <p class="ValueVal">0x529</p>
+            </td>
+            <td class="ValueName">
+               <p class="ValueName"></p>
+            </td>
+            <td class="ValueDesc">
+               <p class="ValueDesc">Trade Complete!</p>
+            </td>
+         </tr>
+         <tr>
+            <td colspan="3" class="ValueRowSep">
+               <p class="ValueRowSep"></p>
+            </td>
+         </tr>
+         <tr>
+            <td class="ValueVal">
+               <p class="ValueVal">0x52A</p>
+            </td>
+            <td class="ValueName">
+               <p class="ValueName"></p>
+            </td>
+            <td class="ValueDesc">
+               <p class="ValueDesc">That is not a salvaging tool.</p>
+            </td>
+         </tr>
+         <tr>
+            <td colspan="3" class="ValueRowSep">
+               <p class="ValueRowSep"></p>
+            </td>
+         </tr>
+         <tr>
+            <td class="ValueVal">
+               <p class="ValueVal">0x52B</p>
+            </td>
+            <td class="ValueName">
+               <p class="ValueName"></p>
+            </td>
+            <td class="ValueDesc">
+               <p class="ValueDesc">That person is not available now.</p>
+            </td>
+         </tr>
+         <tr>
+            <td colspan="3" class="ValueRowSep">
+               <p class="ValueRowSep"></p>
+            </td>
+         </tr>
+         <tr>
+            <td class="ValueVal">
+               <p class="ValueVal">0x52C</p>
+            </td>
+            <td class="ValueName">
+               <p class="ValueName"></p>
+            </td>
+            <td class="ValueDesc">
+               <p class="ValueDesc">You are now snooping on %s.\n</p>
+            </td>
+         </tr>
+         <tr>
+            <td colspan="3" class="ValueRowSep">
+               <p class="ValueRowSep"></p>
+            </td>
+         </tr>
+         <tr>
+            <td class="ValueVal">
+               <p class="ValueVal">0x52D</p>
+            </td>
+            <td class="ValueName">
+               <p class="ValueName"></p>
+            </td>
+            <td class="ValueDesc">
+               <p class="ValueDesc">You are no longer snooping on %s.\n</p>
+            </td>
+         </tr>
+         <tr>
+            <td colspan="3" class="ValueRowSep">
+               <p class="ValueRowSep"></p>
+            </td>
+         </tr>
+         <tr>
+            <td class="ValueVal">
+               <p class="ValueVal">0x52E</p>
+            </td>
+            <td class="ValueName">
+               <p class="ValueName"></p>
+            </td>
+            <td class="ValueDesc">
+               <p class="ValueDesc">You fail to snoop on %s.\n</p>
+            </td>
+         </tr>
+         <tr>
+            <td colspan="3" class="ValueRowSep">
+               <p class="ValueRowSep"></p>
+            </td>
+         </tr>
+         <tr>
+            <td class="ValueVal">
+               <p class="ValueVal">0x52F</p>
+            </td>
+            <td class="ValueName">
+               <p class="ValueName"></p>
+            </td>
+            <td class="ValueDesc">
+               <p class="ValueDesc">%s attempted to snoop on you.\n</p>
+            </td>
+         </tr>
+         <tr>
+            <td colspan="3" class="ValueRowSep">
+               <p class="ValueRowSep"></p>
+            </td>
+         </tr>
+         <tr>
+            <td class="ValueVal">
+               <p class="ValueVal">0x53</p>
+            </td>
+            <td class="ValueName">
+               <p class="ValueName"></p>
+            </td>
+            <td class="ValueDesc">
+               <p class="ValueDesc">You fail to affect %s because you are not the same sort of player killer as %s!\n</p>
+            </td>
+         </tr>
+         <tr>
+            <td colspan="3" class="ValueRowSep">
+               <p class="ValueRowSep"></p>
+            </td>
+         </tr>
+         <tr>
+            <td class="ValueVal">
+               <p class="ValueVal">0x530</p>
+            </td>
+            <td class="ValueName">
+               <p class="ValueName"></p>
+            </td>
+            <td class="ValueDesc">
+               <p class="ValueDesc">%s is already being snooped on, only one person may snoop on another at a time.\n</p>
+            </td>
+         </tr>
+         <tr>
+            <td colspan="3" class="ValueRowSep">
+               <p class="ValueRowSep"></p>
+            </td>
+         </tr>
+         <tr>
+            <td class="ValueVal">
+               <p class="ValueVal">0x531</p>
+            </td>
+            <td class="ValueName">
+               <p class="ValueName"></p>
+            </td>
+            <td class="ValueDesc">
+               <p class="ValueDesc">%s is in limbo and cannot receive your message.\n</p>
+            </td>
+         </tr>
+         <tr>
+            <td colspan="3" class="ValueRowSep">
+               <p class="ValueRowSep"></p>
+            </td>
+         </tr>
+         <tr>
+            <td class="ValueVal">
+               <p class="ValueVal">0x532</p>
+            </td>
+            <td class="ValueName">
+               <p class="ValueName"></p>
+            </td>
+            <td class="ValueDesc">
+               <p class="ValueDesc">You must wait 30 days after purchasing a house before you may purchase another with
+                  any character on the same account. This applies to all housing except apartments.\n
+               </p>
+            </td>
+         </tr>
+         <tr>
+            <td colspan="3" class="ValueRowSep">
+               <p class="ValueRowSep"></p>
+            </td>
+         </tr>
+         <tr>
+            <td class="ValueVal">
+               <p class="ValueVal">0x533</p>
+            </td>
+            <td class="ValueName">
+               <p class="ValueName"></p>
+            </td>
+            <td class="ValueDesc">
+               <p class="ValueDesc">You have been booted from your allegiance chat room. Use "@allegiance chat on" to
+                  rejoin. (%s).\n
+               </p>
+            </td>
+         </tr>
+         <tr>
+            <td colspan="3" class="ValueRowSep">
+               <p class="ValueRowSep"></p>
+            </td>
+         </tr>
+         <tr>
+            <td class="ValueVal">
+               <p class="ValueVal">0x534</p>
+            </td>
+            <td class="ValueName">
+               <p class="ValueName"></p>
+            </td>
+            <td class="ValueDesc">
+               <p class="ValueDesc">%s has been booted from the allegiance chat room.\n</p>
+            </td>
+         </tr>
+         <tr>
+            <td colspan="3" class="ValueRowSep">
+               <p class="ValueRowSep"></p>
+            </td>
+         </tr>
+         <tr>
+            <td class="ValueVal">
+               <p class="ValueVal">0x535</p>
+            </td>
+            <td class="ValueName">
+               <p class="ValueName"></p>
+            </td>
+            <td class="ValueDesc">
+               <p class="ValueDesc">You do not have the authority within your allegiance to do that.\n</p>
+            </td>
+         </tr>
+         <tr>
+            <td colspan="3" class="ValueRowSep">
+               <p class="ValueRowSep"></p>
+            </td>
+         </tr>
+         <tr>
+            <td class="ValueVal">
+               <p class="ValueVal">0x536</p>
+            </td>
+            <td class="ValueName">
+               <p class="ValueName"></p>
+            </td>
+            <td class="ValueDesc">
+               <p class="ValueDesc">The account of %s is already banned from the allegiance.\n</p>
+            </td>
+         </tr>
+         <tr>
+            <td colspan="3" class="ValueRowSep">
+               <p class="ValueRowSep"></p>
+            </td>
+         </tr>
+         <tr>
+            <td class="ValueVal">
+               <p class="ValueVal">0x537</p>
+            </td>
+            <td class="ValueName">
+               <p class="ValueName"></p>
+            </td>
+            <td class="ValueDesc">
+               <p class="ValueDesc">The account of %s is not banned from the allegiance.\n</p>
+            </td>
+         </tr>
+         <tr>
+            <td colspan="3" class="ValueRowSep">
+               <p class="ValueRowSep"></p>
+            </td>
+         </tr>
+         <tr>
+            <td class="ValueVal">
+               <p class="ValueVal">0x538</p>
+            </td>
+            <td class="ValueName">
+               <p class="ValueName"></p>
+            </td>
+            <td class="ValueDesc">
+               <p class="ValueDesc">The account of %s was not unbanned from the allegiance.\n</p>
+            </td>
+         </tr>
+         <tr>
+            <td colspan="3" class="ValueRowSep">
+               <p class="ValueRowSep"></p>
+            </td>
+         </tr>
+         <tr>
+            <td class="ValueVal">
+               <p class="ValueVal">0x539</p>
+            </td>
+            <td class="ValueName">
+               <p class="ValueName"></p>
+            </td>
+            <td class="ValueDesc">
+               <p class="ValueDesc">The account of %s has been banned from the allegiance.\n</p>
+            </td>
+         </tr>
+         <tr>
+            <td colspan="3" class="ValueRowSep">
+               <p class="ValueRowSep"></p>
+            </td>
+         </tr>
+         <tr>
+            <td class="ValueVal">
+               <p class="ValueVal">0x53A</p>
+            </td>
+            <td class="ValueName">
+               <p class="ValueName"></p>
+            </td>
+            <td class="ValueDesc">
+               <p class="ValueDesc">The account of %s is no longer banned from the allegiance.\n</p>
+            </td>
+         </tr>
+         <tr>
+            <td colspan="3" class="ValueRowSep">
+               <p class="ValueRowSep"></p>
+            </td>
+         </tr>
+         <tr>
+            <td class="ValueVal">
+               <p class="ValueVal">0x53B</p>
+            </td>
+            <td class="ValueName">
+               <p class="ValueName"></p>
+            </td>
+            <td class="ValueDesc">
+               <p class="ValueDesc">Banned Characters: </p>
+            </td>
+         </tr>
+         <tr>
+            <td colspan="3" class="ValueRowSep">
+               <p class="ValueRowSep"></p>
+            </td>
+         </tr>
+         <tr>
+            <td class="ValueVal">
+               <p class="ValueVal">0x53E</p>
+            </td>
+            <td class="ValueName">
+               <p class="ValueName"></p>
+            </td>
+            <td class="ValueDesc">
+               <p class="ValueDesc">%s is banned from the allegiance!\n</p>
+            </td>
+         </tr>
+         <tr>
+            <td colspan="3" class="ValueRowSep">
+               <p class="ValueRowSep"></p>
+            </td>
+         </tr>
+         <tr>
+            <td class="ValueVal">
+               <p class="ValueVal">0x53F</p>
+            </td>
+            <td class="ValueName">
+               <p class="ValueName"></p>
+            </td>
+            <td class="ValueDesc">
+               <p class="ValueDesc">You are banned from %s's allegiance!\n</p>
+            </td>
+         </tr>
+         <tr>
+            <td colspan="3" class="ValueRowSep">
+               <p class="ValueRowSep"></p>
+            </td>
+         </tr>
+         <tr>
+            <td class="ValueVal">
+               <p class="ValueVal">0x54</p>
+            </td>
+            <td class="ValueName">
+               <p class="ValueName"></p>
+            </td>
+            <td class="ValueDesc">
+               <p class="ValueDesc">You fail to affect %s because you are acting across a house boundary!\n</p>
+            </td>
+         </tr>
+         <tr>
+            <td colspan="3" class="ValueRowSep">
+               <p class="ValueRowSep"></p>
+            </td>
+         </tr>
+         <tr>
+            <td class="ValueVal">
+               <p class="ValueVal">0x540</p>
+            </td>
+            <td class="ValueName">
+               <p class="ValueName"></p>
+            </td>
+            <td class="ValueDesc">
+               <p class="ValueDesc">You have the maximum number of accounts banned.!\n</p>
+            </td>
+         </tr>
+         <tr>
+            <td colspan="3" class="ValueRowSep">
+               <p class="ValueRowSep"></p>
+            </td>
+         </tr>
+         <tr>
+            <td class="ValueVal">
+               <p class="ValueVal">0x541</p>
+            </td>
+            <td class="ValueName">
+               <p class="ValueName"></p>
+            </td>
+            <td class="ValueDesc">
+               <p class="ValueDesc">%s is now an allegiance officer.\n</p>
+            </td>
+         </tr>
+         <tr>
+            <td colspan="3" class="ValueRowSep">
+               <p class="ValueRowSep"></p>
+            </td>
+         </tr>
+         <tr>
+            <td class="ValueVal">
+               <p class="ValueVal">0x542</p>
+            </td>
+            <td class="ValueName">
+               <p class="ValueName"></p>
+            </td>
+            <td class="ValueDesc">
+               <p class="ValueDesc">An unspecified error occurred while attempting to set %s as an allegiance officer.\n</p>
+            </td>
+         </tr>
+         <tr>
+            <td colspan="3" class="ValueRowSep">
+               <p class="ValueRowSep"></p>
+            </td>
+         </tr>
+         <tr>
+            <td class="ValueVal">
+               <p class="ValueVal">0x543</p>
+            </td>
+            <td class="ValueName">
+               <p class="ValueName"></p>
+            </td>
+            <td class="ValueDesc">
+               <p class="ValueDesc">%s is no longer an allegiance officer.\n</p>
+            </td>
+         </tr>
+         <tr>
+            <td colspan="3" class="ValueRowSep">
+               <p class="ValueRowSep"></p>
+            </td>
+         </tr>
+         <tr>
+            <td class="ValueVal">
+               <p class="ValueVal">0x544</p>
+            </td>
+            <td class="ValueName">
+               <p class="ValueName"></p>
+            </td>
+            <td class="ValueDesc">
+               <p class="ValueDesc">An unspecified error occurred while attempting to remove %s as an allegiance officer.\n</p>
+            </td>
+         </tr>
+         <tr>
+            <td colspan="3" class="ValueRowSep">
+               <p class="ValueRowSep"></p>
+            </td>
+         </tr>
+         <tr>
+            <td class="ValueVal">
+               <p class="ValueVal">0x545</p>
+            </td>
+            <td class="ValueName">
+               <p class="ValueName"></p>
+            </td>
+            <td class="ValueDesc">
+               <p class="ValueDesc">You already have the maximum number of allegiance officers. You must remove some before
+                  you add any more.\n
+               </p>
+            </td>
+         </tr>
+         <tr>
+            <td colspan="3" class="ValueRowSep">
+               <p class="ValueRowSep"></p>
+            </td>
+         </tr>
+         <tr>
+            <td class="ValueVal">
+               <p class="ValueVal">0x546</p>
+            </td>
+            <td class="ValueName">
+               <p class="ValueName"></p>
+            </td>
+            <td class="ValueDesc">
+               <p class="ValueDesc">Your allegiance officers have been cleared.\n</p>
+            </td>
+         </tr>
+         <tr>
+            <td colspan="3" class="ValueRowSep">
+               <p class="ValueRowSep"></p>
+            </td>
+         </tr>
+         <tr>
+            <td class="ValueVal">
+               <p class="ValueVal">0x547</p>
+            </td>
+            <td class="ValueName">
+               <p class="ValueName"></p>
+            </td>
+            <td class="ValueDesc">
+               <p class="ValueDesc">You must wait %s before communicating again!\n</p>
+            </td>
+         </tr>
+         <tr>
+            <td colspan="3" class="ValueRowSep">
+               <p class="ValueRowSep"></p>
+            </td>
+         </tr>
+         <tr>
+            <td class="ValueVal">
+               <p class="ValueVal">0x548</p>
+            </td>
+            <td class="ValueName">
+               <p class="ValueName"></p>
+            </td>
+            <td class="ValueDesc">
+               <p class="ValueDesc">You cannot join any chat channels while gagged.\n</p>
+            </td>
+         </tr>
+         <tr>
+            <td colspan="3" class="ValueRowSep">
+               <p class="ValueRowSep"></p>
+            </td>
+         </tr>
+         <tr>
+            <td class="ValueVal">
+               <p class="ValueVal">0x549</p>
+            </td>
+            <td class="ValueName">
+               <p class="ValueName"></p>
+            </td>
+            <td class="ValueDesc">
+               <p class="ValueDesc">Your allegiance officer status has been modified. You now hold the position of: %s.\n</p>
+            </td>
+         </tr>
+         <tr>
+            <td colspan="3" class="ValueRowSep">
+               <p class="ValueRowSep"></p>
+            </td>
+         </tr>
+         <tr>
+            <td class="ValueVal">
+               <p class="ValueVal">0x54A</p>
+            </td>
+            <td class="ValueName">
+               <p class="ValueName"></p>
+            </td>
+            <td class="ValueDesc">
+               <p class="ValueDesc">You are no longer an allegiance officer.\n</p>
+            </td>
+         </tr>
+         <tr>
+            <td colspan="3" class="ValueRowSep">
+               <p class="ValueRowSep"></p>
+            </td>
+         </tr>
+         <tr>
+            <td class="ValueVal">
+               <p class="ValueVal">0x54B</p>
+            </td>
+            <td class="ValueName">
+               <p class="ValueName"></p>
+            </td>
+            <td class="ValueDesc">
+               <p class="ValueDesc">%s is already an allegiance officer of that level.\n</p>
+            </td>
+         </tr>
+         <tr>
+            <td colspan="3" class="ValueRowSep">
+               <p class="ValueRowSep"></p>
+            </td>
+         </tr>
+         <tr>
+            <td class="ValueVal">
+               <p class="ValueVal">0x54C</p>
+            </td>
+            <td class="ValueName">
+               <p class="ValueName"></p>
+            </td>
+            <td class="ValueDesc">
+               <p class="ValueDesc">Your allegiance does not have a hometown.\n</p>
+            </td>
+         </tr>
+         <tr>
+            <td colspan="3" class="ValueRowSep">
+               <p class="ValueRowSep"></p>
+            </td>
+         </tr>
+         <tr>
+            <td class="ValueVal">
+               <p class="ValueVal">0x54D</p>
+            </td>
+            <td class="ValueName">
+               <p class="ValueName"></p>
+            </td>
+            <td class="ValueDesc">
+               <p class="ValueDesc">The %s is currently in use.\n</p>
+            </td>
+         </tr>
+         <tr>
+            <td colspan="3" class="ValueRowSep">
+               <p class="ValueRowSep"></p>
+            </td>
+         </tr>
+         <tr>
+            <td class="ValueVal">
+               <p class="ValueVal">0x54E</p>
+            </td>
+            <td class="ValueName">
+               <p class="ValueName"></p>
+            </td>
+            <td class="ValueDesc">
+               <p class="ValueDesc">The hook does not contain a usable item. You cannot open the hook because you do not
+                  own the house to which it belongs.\n
+               </p>
+            </td>
+         </tr>
+         <tr>
+            <td colspan="3" class="ValueRowSep">
+               <p class="ValueRowSep"></p>
+            </td>
+         </tr>
+         <tr>
+            <td class="ValueVal">
+               <p class="ValueVal">0x54F</p>
+            </td>
+            <td class="ValueName">
+               <p class="ValueName"></p>
+            </td>
+            <td class="ValueDesc">
+               <p class="ValueDesc">The hook does not contain a usable item. Use the '@house hooks on'command to make
+                  the hook openable.\n
+               </p>
+            </td>
+         </tr>
+         <tr>
+            <td colspan="3" class="ValueRowSep">
+               <p class="ValueRowSep"></p>
+            </td>
+         </tr>
+         <tr>
+            <td class="ValueVal">
+               <p class="ValueVal">0x550</p>
+            </td>
+            <td class="ValueName">
+               <p class="ValueName"></p>
+            </td>
+            <td class="ValueDesc">
+               <p class="ValueDesc">Out of Range!</p>
+            </td>
+         </tr>
+         <tr>
+            <td colspan="3" class="ValueRowSep">
+               <p class="ValueRowSep"></p>
+            </td>
+         </tr>
+         <tr>
+            <td class="ValueVal">
+               <p class="ValueVal">0x551</p>
+            </td>
+            <td class="ValueName">
+               <p class="ValueName"></p>
+            </td>
+            <td class="ValueDesc">
+               <p class="ValueDesc">You are not listening to the %s channel!\n</p>
+            </td>
+         </tr>
+         <tr>
+            <td colspan="3" class="ValueRowSep">
+               <p class="ValueRowSep"></p>
+            </td>
+         </tr>
+         <tr>
+            <td class="ValueVal">
+               <p class="ValueVal">0x552</p>
+            </td>
+            <td class="ValueName">
+               <p class="ValueName"></p>
+            </td>
+            <td class="ValueDesc">
+               <p class="ValueDesc">You must purchase Asheron's Call -- Throne of Destiny to use this function.</p>
+            </td>
+         </tr>
+         <tr>
+            <td colspan="3" class="ValueRowSep">
+               <p class="ValueRowSep"></p>
+            </td>
+         </tr>
+         <tr>
+            <td class="ValueVal">
+               <p class="ValueVal">0x553</p>
+            </td>
+            <td class="ValueName">
+               <p class="ValueName"></p>
+            </td>
+            <td class="ValueDesc">
+               <p class="ValueDesc">You must purchase Asheron's Call -- Throne of Destiny to use this item.</p>
+            </td>
+         </tr>
+         <tr>
+            <td colspan="3" class="ValueRowSep">
+               <p class="ValueRowSep"></p>
+            </td>
+         </tr>
+         <tr>
+            <td class="ValueVal">
+               <p class="ValueVal">0x554</p>
+            </td>
+            <td class="ValueName">
+               <p class="ValueName"></p>
+            </td>
+            <td class="ValueDesc">
+               <p class="ValueDesc">You must purchase Asheron's Call -- Throne of Destiny to use this portal.</p>
+            </td>
+         </tr>
+         <tr>
+            <td colspan="3" class="ValueRowSep">
+               <p class="ValueRowSep"></p>
+            </td>
+         </tr>
+         <tr>
+            <td class="ValueVal">
+               <p class="ValueVal">0x555</p>
+            </td>
+            <td class="ValueName">
+               <p class="ValueName"></p>
+            </td>
+            <td class="ValueDesc">
+               <p class="ValueDesc">You must purchase Asheron's Call -- Throne of Destiny to access this quest.</p>
+            </td>
+         </tr>
+         <tr>
+            <td colspan="3" class="ValueRowSep">
+               <p class="ValueRowSep"></p>
+            </td>
+         </tr>
+         <tr>
+            <td class="ValueVal">
+               <p class="ValueVal">0x556</p>
+            </td>
+            <td class="ValueName">
+               <p class="ValueName"></p>
+            </td>
+            <td class="ValueDesc">
+               <p class="ValueDesc">You have failed to complete the augmentation.\n</p>
+            </td>
+         </tr>
+         <tr>
+            <td colspan="3" class="ValueRowSep">
+               <p class="ValueRowSep"></p>
+            </td>
+         </tr>
+         <tr>
+            <td class="ValueVal">
+               <p class="ValueVal">0x557</p>
+            </td>
+            <td class="ValueName">
+               <p class="ValueName"></p>
+            </td>
+            <td class="ValueDesc">
+               <p class="ValueDesc">You have used this augmentation too many times already.\n</p>
+            </td>
+         </tr>
+         <tr>
+            <td colspan="3" class="ValueRowSep">
+               <p class="ValueRowSep"></p>
+            </td>
+         </tr>
+         <tr>
+            <td class="ValueVal">
+               <p class="ValueVal">0x558</p>
+            </td>
+            <td class="ValueName">
+               <p class="ValueName"></p>
+            </td>
+            <td class="ValueDesc">
+               <p class="ValueDesc">You have used augmentations of this type too many times already.\n</p>
+            </td>
+         </tr>
+         <tr>
+            <td colspan="3" class="ValueRowSep">
+               <p class="ValueRowSep"></p>
+            </td>
+         </tr>
+         <tr>
+            <td class="ValueVal">
+               <p class="ValueVal">0x559</p>
+            </td>
+            <td class="ValueName">
+               <p class="ValueName"></p>
+            </td>
+            <td class="ValueDesc">
+               <p class="ValueDesc">You do not have enough unspent experience available to purchase this augmentation.\n</p>
+            </td>
+         </tr>
+         <tr>
+            <td colspan="3" class="ValueRowSep">
+               <p class="ValueRowSep"></p>
+            </td>
+         </tr>
+         <tr>
+            <td class="ValueVal">
+               <p class="ValueVal">0x55A</p>
+            </td>
+            <td class="ValueName">
+               <p class="ValueName"></p>
+            </td>
+            <td class="ValueDesc">
+               <p class="ValueDesc">%s\n</p>
+            </td>
+         </tr>
+         <tr>
+            <td colspan="3" class="ValueRowSep">
+               <p class="ValueRowSep"></p>
+            </td>
+         </tr>
+         <tr>
+            <td class="ValueVal">
+               <p class="ValueVal">0x55B</p>
+            </td>
+            <td class="ValueName">
+               <p class="ValueName"></p>
+            </td>
+            <td class="ValueDesc">
+               <p class="ValueDesc">Congratulations! You have succeeded in acquiring the %s augmentation.\n</p>
+            </td>
+         </tr>
+         <tr>
+            <td colspan="3" class="ValueRowSep">
+               <p class="ValueRowSep"></p>
+            </td>
+         </tr>
+         <tr>
+            <td class="ValueVal">
+               <p class="ValueVal">0x55C</p>
+            </td>
+            <td class="ValueName">
+               <p class="ValueName"></p>
+            </td>
+            <td class="ValueDesc">
+               <p class="ValueDesc">Although your augmentation will not allow you to untrain your %s skill, you have succeeded
+                  in recovering all the experience you had invested in it.\n
+               </p>
+            </td>
+         </tr>
+         <tr>
+            <td colspan="3" class="ValueRowSep">
+               <p class="ValueRowSep"></p>
+            </td>
+         </tr>
+         <tr>
+            <td class="ValueVal">
+               <p class="ValueVal">0x55D</p>
+            </td>
+            <td class="ValueName">
+               <p class="ValueName"></p>
+            </td>
+            <td class="ValueDesc">
+               <p class="ValueDesc">You must exit the Training Academy before that command will be available to you.\n</p>
+            </td>
+         </tr>
+         <tr>
+            <td colspan="3" class="ValueRowSep">
+               <p class="ValueRowSep"></p>
+            </td>
+         </tr>
+         <tr>
+            <td class="ValueVal">
+               <p class="ValueVal">0x55E</p>
+            </td>
+            <td class="ValueName">
+               <p class="ValueName"></p>
+            </td>
+            <td class="ValueDesc">
+               <p class="ValueDesc">{arbitrary string sent by server}</p>
+            </td>
+         </tr>
+         <tr>
+            <td colspan="3" class="ValueRowSep">
+               <p class="ValueRowSep"></p>
+            </td>
+         </tr>
+         <tr>
+            <td class="ValueVal">
+               <p class="ValueVal">0x55F</p>
+            </td>
+            <td class="ValueName">
+               <p class="ValueName"></p>
+            </td>
+            <td class="ValueDesc">
+               <p class="ValueDesc">Only Player Killer characters may use this command!\n</p>
+            </td>
+         </tr>
+         <tr>
+            <td colspan="3" class="ValueRowSep">
+               <p class="ValueRowSep"></p>
+            </td>
+         </tr>
+         <tr>
+            <td class="ValueVal">
+               <p class="ValueVal">0x560</p>
+            </td>
+            <td class="ValueName">
+               <p class="ValueName"></p>
+            </td>
+            <td class="ValueDesc">
+               <p class="ValueDesc">Only Player Killer Lite characters may use this command!\n</p>
+            </td>
+         </tr>
+         <tr>
+            <td colspan="3" class="ValueRowSep">
+               <p class="ValueRowSep"></p>
+            </td>
+         </tr>
+         <tr>
+            <td class="ValueVal">
+               <p class="ValueVal">0x561</p>
+            </td>
+            <td class="ValueName">
+               <p class="ValueName"></p>
+            </td>
+            <td class="ValueDesc">
+               <p class="ValueDesc">You may only have a maximum of 50 friends at once. If you wish to add more friends,
+                  you must first remove some.
+               </p>
+            </td>
+         </tr>
+         <tr>
+            <td colspan="3" class="ValueRowSep">
+               <p class="ValueRowSep"></p>
+            </td>
+         </tr>
+         <tr>
+            <td class="ValueVal">
+               <p class="ValueVal">0x562</p>
+            </td>
+            <td class="ValueName">
+               <p class="ValueName"></p>
+            </td>
+            <td class="ValueDesc">
+               <p class="ValueDesc">%s is already on your friends list!\n</p>
+            </td>
+         </tr>
+         <tr>
+            <td colspan="3" class="ValueRowSep">
+               <p class="ValueRowSep"></p>
+            </td>
+         </tr>
+         <tr>
+            <td class="ValueVal">
+               <p class="ValueVal">0x563</p>
+            </td>
+            <td class="ValueName">
+               <p class="ValueName"></p>
+            </td>
+            <td class="ValueDesc">
+               <p class="ValueDesc">That character is not on your friends list!\n</p>
+            </td>
+         </tr>
+         <tr>
+            <td colspan="3" class="ValueRowSep">
+               <p class="ValueRowSep"></p>
+            </td>
+         </tr>
+         <tr>
+            <td class="ValueVal">
+               <p class="ValueVal">0x564</p>
+            </td>
+            <td class="ValueName">
+               <p class="ValueName"></p>
+            </td>
+            <td class="ValueDesc">
+               <p class="ValueDesc">Only the character who owns the house may use this command.</p>
+            </td>
+         </tr>
+         <tr>
+            <td colspan="3" class="ValueRowSep">
+               <p class="ValueRowSep"></p>
+            </td>
+         </tr>
+         <tr>
+            <td class="ValueVal">
+               <p class="ValueVal">0x565</p>
+            </td>
+            <td class="ValueName">
+               <p class="ValueName"></p>
+            </td>
+            <td class="ValueDesc">
+               <p class="ValueDesc">That allegiance name is invalid because it is empty. Please use the @allegiance name
+                  clear command to clear your allegiance name.\n
+               </p>
+            </td>
+         </tr>
+         <tr>
+            <td colspan="3" class="ValueRowSep">
+               <p class="ValueRowSep"></p>
+            </td>
+         </tr>
+         <tr>
+            <td class="ValueVal">
+               <p class="ValueVal">0x566</p>
+            </td>
+            <td class="ValueName">
+               <p class="ValueName"></p>
+            </td>
+            <td class="ValueDesc">
+               <p class="ValueDesc">That allegiance name is too long. Please choose another name.\n</p>
+            </td>
+         </tr>
+         <tr>
+            <td colspan="3" class="ValueRowSep">
+               <p class="ValueRowSep"></p>
+            </td>
+         </tr>
+         <tr>
+            <td class="ValueVal">
+               <p class="ValueVal">0x567</p>
+            </td>
+            <td class="ValueName">
+               <p class="ValueName"></p>
+            </td>
+            <td class="ValueDesc">
+               <p class="ValueDesc">That allegiance name contains illegal characters. Please choose another name using
+                  only letters, spaces, - and '.\n
+               </p>
+            </td>
+         </tr>
+         <tr>
+            <td colspan="3" class="ValueRowSep">
+               <p class="ValueRowSep"></p>
+            </td>
+         </tr>
+         <tr>
+            <td class="ValueVal">
+               <p class="ValueVal">0x568</p>
+            </td>
+            <td class="ValueName">
+               <p class="ValueName"></p>
+            </td>
+            <td class="ValueDesc">
+               <p class="ValueDesc">That allegiance name is not appropriate. Please choose another name.\n</p>
+            </td>
+         </tr>
+         <tr>
+            <td colspan="3" class="ValueRowSep">
+               <p class="ValueRowSep"></p>
+            </td>
+         </tr>
+         <tr>
+            <td class="ValueVal">
+               <p class="ValueVal">0x569</p>
+            </td>
+            <td class="ValueName">
+               <p class="ValueName"></p>
+            </td>
+            <td class="ValueDesc">
+               <p class="ValueDesc">That allegiance name is already in use. Please choose another name.\n</p>
+            </td>
+         </tr>
+         <tr>
+            <td colspan="3" class="ValueRowSep">
+               <p class="ValueRowSep"></p>
+            </td>
+         </tr>
+         <tr>
+            <td class="ValueVal">
+               <p class="ValueVal">0x56A</p>
+            </td>
+            <td class="ValueName">
+               <p class="ValueName"></p>
+            </td>
+            <td class="ValueDesc">
+               <p class="ValueDesc">You may only change your allegiance name once every 24 hours. You may change your
+                  allegiance name again in %s.\n
+               </p>
+            </td>
+         </tr>
+         <tr>
+            <td colspan="3" class="ValueRowSep">
+               <p class="ValueRowSep"></p>
+            </td>
+         </tr>
+         <tr>
+            <td class="ValueVal">
+               <p class="ValueVal">0x56B</p>
+            </td>
+            <td class="ValueName">
+               <p class="ValueName"></p>
+            </td>
+            <td class="ValueDesc">
+               <p class="ValueDesc">Your allegiance name has been cleared.\n</p>
+            </td>
+         </tr>
+         <tr>
+            <td colspan="3" class="ValueRowSep">
+               <p class="ValueRowSep"></p>
+            </td>
+         </tr>
+         <tr>
+            <td class="ValueVal">
+               <p class="ValueVal">0x56C</p>
+            </td>
+            <td class="ValueName">
+               <p class="ValueName"></p>
+            </td>
+            <td class="ValueDesc">
+               <p class="ValueDesc">That is already the name of your allegiance!\n</p>
+            </td>
+         </tr>
+         <tr>
+            <td colspan="3" class="ValueRowSep">
+               <p class="ValueRowSep"></p>
+            </td>
+         </tr>
+         <tr>
+            <td class="ValueVal">
+               <p class="ValueVal">0x56D</p>
+            </td>
+            <td class="ValueName">
+               <p class="ValueName"></p>
+            </td>
+            <td class="ValueDesc">
+               <p class="ValueDesc">%s is the monarch and cannot be promoted or demoted.\n</p>
+            </td>
+         </tr>
+         <tr>
+            <td colspan="3" class="ValueRowSep">
+               <p class="ValueRowSep"></p>
+            </td>
+         </tr>
+         <tr>
+            <td class="ValueVal">
+               <p class="ValueVal">0x56E</p>
+            </td>
+            <td class="ValueName">
+               <p class="ValueName"></p>
+            </td>
+            <td class="ValueDesc">
+               <p class="ValueDesc">That level of allegiance officer is now known as: %s.\n</p>
+            </td>
+         </tr>
+         <tr>
+            <td colspan="3" class="ValueRowSep">
+               <p class="ValueRowSep"></p>
+            </td>
+         </tr>
+         <tr>
+            <td class="ValueVal">
+               <p class="ValueVal">0x56F</p>
+            </td>
+            <td class="ValueName">
+               <p class="ValueName"></p>
+            </td>
+            <td class="ValueDesc">
+               <p class="ValueDesc">That is an invalid officer level.\n</p>
+            </td>
+         </tr>
+         <tr>
+            <td colspan="3" class="ValueRowSep">
+               <p class="ValueRowSep"></p>
+            </td>
+         </tr>
+         <tr>
+            <td class="ValueVal">
+               <p class="ValueVal">0x570</p>
+            </td>
+            <td class="ValueName">
+               <p class="ValueName"></p>
+            </td>
+            <td class="ValueDesc">
+               <p class="ValueDesc">That allegiance officer title is not appropriate.\n</p>
+            </td>
+         </tr>
+         <tr>
+            <td colspan="3" class="ValueRowSep">
+               <p class="ValueRowSep"></p>
+            </td>
+         </tr>
+         <tr>
+            <td class="ValueVal">
+               <p class="ValueVal">0x571</p>
+            </td>
+            <td class="ValueName">
+               <p class="ValueName"></p>
+            </td>
+            <td class="ValueDesc">
+               <p class="ValueDesc">That allegiance name is too long. Please choose another name.\n</p>
+            </td>
+         </tr>
+         <tr>
+            <td colspan="3" class="ValueRowSep">
+               <p class="ValueRowSep"></p>
+            </td>
+         </tr>
+         <tr>
+            <td class="ValueVal">
+               <p class="ValueVal">0x572</p>
+            </td>
+            <td class="ValueName">
+               <p class="ValueName"></p>
+            </td>
+            <td class="ValueDesc">
+               <p class="ValueDesc">All of your allegiance officer titles have been cleared.\n</p>
+            </td>
+         </tr>
+         <tr>
+            <td colspan="3" class="ValueRowSep">
+               <p class="ValueRowSep"></p>
+            </td>
+         </tr>
+         <tr>
+            <td class="ValueVal">
+               <p class="ValueVal">0x573</p>
+            </td>
+            <td class="ValueName">
+               <p class="ValueName"></p>
+            </td>
+            <td class="ValueDesc">
+               <p class="ValueDesc">That allegiance title contains illegal characters. Please choose another name using
+                  only letters, spaces, - and '.\n
+               </p>
+            </td>
+         </tr>
+         <tr>
+            <td colspan="3" class="ValueRowSep">
+               <p class="ValueRowSep"></p>
+            </td>
+         </tr>
+         <tr>
+            <td class="ValueVal">
+               <p class="ValueVal">0x574</p>
+            </td>
+            <td class="ValueName">
+               <p class="ValueName"></p>
+            </td>
+            <td class="ValueDesc">
+               <p class="ValueDesc">Your allegiance is currently: %s.\n</p>
+            </td>
+         </tr>
+         <tr>
+            <td colspan="3" class="ValueRowSep">
+               <p class="ValueRowSep"></p>
+            </td>
+         </tr>
+         <tr>
+            <td class="ValueVal">
+               <p class="ValueVal">0x575</p>
+            </td>
+            <td class="ValueName">
+               <p class="ValueName"></p>
+            </td>
+            <td class="ValueDesc">
+               <p class="ValueDesc">Your allegiance is now: %s.\n</p>
+            </td>
+         </tr>
+         <tr>
+            <td colspan="3" class="ValueRowSep">
+               <p class="ValueRowSep"></p>
+            </td>
+         </tr>
+         <tr>
+            <td class="ValueVal">
+               <p class="ValueVal">0x576</p>
+            </td>
+            <td class="ValueName">
+               <p class="ValueName"></p>
+            </td>
+            <td class="ValueDesc">
+               <p class="ValueDesc">You may not accept the offer of allegiance from %s because your allegiance is locked.\n</p>
+            </td>
+         </tr>
+         <tr>
+            <td colspan="3" class="ValueRowSep">
+               <p class="ValueRowSep"></p>
+            </td>
+         </tr>
+         <tr>
+            <td class="ValueVal">
+               <p class="ValueVal">0x577</p>
+            </td>
+            <td class="ValueName">
+               <p class="ValueName"></p>
+            </td>
+            <td class="ValueDesc">
+               <p class="ValueDesc">You may not swear allegiance at this time because the allegiance of %s is locked.\n</p>
+            </td>
+         </tr>
+         <tr>
+            <td colspan="3" class="ValueRowSep">
+               <p class="ValueRowSep"></p>
+            </td>
+         </tr>
+         <tr>
+            <td class="ValueVal">
+               <p class="ValueVal">0x578</p>
+            </td>
+            <td class="ValueName">
+               <p class="ValueName"></p>
+            </td>
+            <td class="ValueDesc">
+               <p class="ValueDesc">You have pre-approved %s to join your allegiance.\n</p>
+            </td>
+         </tr>
+         <tr>
+            <td colspan="3" class="ValueRowSep">
+               <p class="ValueRowSep"></p>
+            </td>
+         </tr>
+         <tr>
+            <td class="ValueVal">
+               <p class="ValueVal">0x579</p>
+            </td>
+            <td class="ValueName">
+               <p class="ValueName"></p>
+            </td>
+            <td class="ValueDesc">
+               <p class="ValueDesc">You have not pre-approved any vassals to join your allegiance.\n</p>
+            </td>
+         </tr>
+         <tr>
+            <td colspan="3" class="ValueRowSep">
+               <p class="ValueRowSep"></p>
+            </td>
+         </tr>
+         <tr>
+            <td class="ValueVal">
+               <p class="ValueVal">0x57A</p>
+            </td>
+            <td class="ValueName">
+               <p class="ValueName"></p>
+            </td>
+            <td class="ValueDesc">
+               <p class="ValueDesc">%s is already a member of your allegiance!\n</p>
+            </td>
+         </tr>
+         <tr>
+            <td colspan="3" class="ValueRowSep">
+               <p class="ValueRowSep"></p>
+            </td>
+         </tr>
+         <tr>
+            <td class="ValueVal">
+               <p class="ValueVal">0x57B</p>
+            </td>
+            <td class="ValueName">
+               <p class="ValueName"></p>
+            </td>
+            <td class="ValueDesc">
+               <p class="ValueDesc">%s has been pre-approved to join your allegiance.\n</p>
+            </td>
+         </tr>
+         <tr>
+            <td colspan="3" class="ValueRowSep">
+               <p class="ValueRowSep"></p>
+            </td>
+         </tr>
+         <tr>
+            <td class="ValueVal">
+               <p class="ValueVal">0x57C</p>
+            </td>
+            <td class="ValueName">
+               <p class="ValueName"></p>
+            </td>
+            <td class="ValueDesc">
+               <p class="ValueDesc">You have cleared the pre-approved vassal for your allegiance.\n</p>
+            </td>
+         </tr>
+         <tr>
+            <td colspan="3" class="ValueRowSep">
+               <p class="ValueRowSep"></p>
+            </td>
+         </tr>
+         <tr>
+            <td class="ValueVal">
+               <p class="ValueVal">0x57D</p>
+            </td>
+            <td class="ValueName">
+               <p class="ValueName"></p>
+            </td>
+            <td class="ValueDesc">
+               <p class="ValueDesc">That character is already gagged!\n</p>
+            </td>
+         </tr>
+         <tr>
+            <td colspan="3" class="ValueRowSep">
+               <p class="ValueRowSep"></p>
+            </td>
+         </tr>
+         <tr>
+            <td class="ValueVal">
+               <p class="ValueVal">0x57E</p>
+            </td>
+            <td class="ValueName">
+               <p class="ValueName"></p>
+            </td>
+            <td class="ValueDesc">
+               <p class="ValueDesc">That character is not currently gagged!\n</p>
+            </td>
+         </tr>
+         <tr>
+            <td colspan="3" class="ValueRowSep">
+               <p class="ValueRowSep"></p>
+            </td>
+         </tr>
+         <tr>
+            <td class="ValueVal">
+               <p class="ValueVal">0x57F</p>
+            </td>
+            <td class="ValueName">
+               <p class="ValueName"></p>
+            </td>
+            <td class="ValueDesc">
+               <p class="ValueDesc">Your allegiance chat privileges have been temporarily removed by %s. Until they are
+                  restored, you may not view or speak in the allegiance chat channel.
+               </p>
+            </td>
+         </tr>
+         <tr>
+            <td colspan="3" class="ValueRowSep">
+               <p class="ValueRowSep"></p>
+            </td>
+         </tr>
+         <tr>
+            <td class="ValueVal">
+               <p class="ValueVal">0x580</p>
+            </td>
+            <td class="ValueName">
+               <p class="ValueName"></p>
+            </td>
+            <td class="ValueDesc">
+               <p class="ValueDesc">%s is now temporarily unable to view or speak in allegiance chat. The gag will run
+                  out in 5 minutes, or %s may be explicitly ungagged before then.
+               </p>
+            </td>
+         </tr>
+         <tr>
+            <td colspan="3" class="ValueRowSep">
+               <p class="ValueRowSep"></p>
+            </td>
+         </tr>
+         <tr>
+            <td class="ValueVal">
+               <p class="ValueVal">0x581</p>
+            </td>
+            <td class="ValueName">
+               <p class="ValueName"></p>
+            </td>
+            <td class="ValueDesc">
+               <p class="ValueDesc">Your allegiance chat privileges have been restored.\n</p>
+            </td>
+         </tr>
+         <tr>
+            <td colspan="3" class="ValueRowSep">
+               <p class="ValueRowSep"></p>
+            </td>
+         </tr>
+         <tr>
+            <td class="ValueVal">
+               <p class="ValueVal">0x582</p>
+            </td>
+            <td class="ValueName">
+               <p class="ValueName"></p>
+            </td>
+            <td class="ValueDesc">
+               <p class="ValueDesc">Your allegiance chat privileges have been restored by %s.</p>
+            </td>
+         </tr>
+         <tr>
+            <td colspan="3" class="ValueRowSep">
+               <p class="ValueRowSep"></p>
+            </td>
+         </tr>
+         <tr>
+            <td class="ValueVal">
+               <p class="ValueVal">0x583</p>
+            </td>
+            <td class="ValueName">
+               <p class="ValueName"></p>
+            </td>
+            <td class="ValueDesc">
+               <p class="ValueDesc">You have restored allegiance chat privileges to %s.</p>
+            </td>
+         </tr>
+         <tr>
+            <td colspan="3" class="ValueRowSep">
+               <p class="ValueRowSep"></p>
+            </td>
+         </tr>
+         <tr>
+            <td class="ValueVal">
+               <p class="ValueVal">0x584</p>
+            </td>
+            <td class="ValueName">
+               <p class="ValueName"></p>
+            </td>
+            <td class="ValueDesc">
+               <p class="ValueDesc">You cannot pick up more of that item!</p>
+            </td>
+         </tr>
+         <tr>
+            <td colspan="3" class="ValueRowSep">
+               <p class="ValueRowSep"></p>
+            </td>
+         </tr>
+         <tr>
+            <td class="ValueVal">
+               <p class="ValueVal">0x585</p>
+            </td>
+            <td class="ValueName">
+               <p class="ValueName"></p>
+            </td>
+            <td class="ValueDesc">
+               <p class="ValueDesc">You are restricted to clothes and armor created for your race.</p>
+            </td>
+         </tr>
+         <tr>
+            <td colspan="3" class="ValueRowSep">
+               <p class="ValueRowSep"></p>
+            </td>
+         </tr>
+         <tr>
+            <td class="ValueVal">
+               <p class="ValueVal">0x586</p>
+            </td>
+            <td class="ValueName">
+               <p class="ValueName"></p>
+            </td>
+            <td class="ValueDesc">
+               <p class="ValueDesc">That item was specifically created for another race.</p>
+            </td>
+         </tr>
+         <tr>
+            <td colspan="3" class="ValueRowSep">
+               <p class="ValueRowSep"></p>
+            </td>
+         </tr>
+         <tr>
+            <td class="ValueVal">
+               <p class="ValueVal">0x587</p>
+            </td>
+            <td class="ValueName">
+               <p class="ValueName"></p>
+            </td>
+            <td class="ValueDesc">
+               <p class="ValueDesc">Olthoi cannot interact with that!\n</p>
+            </td>
+         </tr>
+         <tr>
+            <td colspan="3" class="ValueRowSep">
+               <p class="ValueRowSep"></p>
+            </td>
+         </tr>
+         <tr>
+            <td class="ValueVal">
+               <p class="ValueVal">0x588</p>
+            </td>
+            <td class="ValueName">
+               <p class="ValueName"></p>
+            </td>
+            <td class="ValueDesc">
+               <p class="ValueDesc">Olthoi cannot use regular lifestones! Asheron would not allow it!\n</p>
+            </td>
+         </tr>
+         <tr>
+            <td colspan="3" class="ValueRowSep">
+               <p class="ValueRowSep"></p>
+            </td>
+         </tr>
+         <tr>
+            <td class="ValueVal">
+               <p class="ValueVal">0x589</p>
+            </td>
+            <td class="ValueName">
+               <p class="ValueName"></p>
+            </td>
+            <td class="ValueDesc">
+               <p class="ValueDesc">The vendor looks at you in horror!\n</p>
+            </td>
+         </tr>
+         <tr>
+            <td colspan="3" class="ValueRowSep">
+               <p class="ValueRowSep"></p>
+            </td>
+         </tr>
+         <tr>
+            <td class="ValueVal">
+               <p class="ValueVal">0x58A</p>
+            </td>
+            <td class="ValueName">
+               <p class="ValueName"></p>
+            </td>
+            <td class="ValueDesc">
+               <p class="ValueDesc">%s cowers from you!\n</p>
+            </td>
+         </tr>
+         <tr>
+            <td colspan="3" class="ValueRowSep">
+               <p class="ValueRowSep"></p>
+            </td>
+         </tr>
+         <tr>
+            <td class="ValueVal">
+               <p class="ValueVal">0x58B</p>
+            </td>
+            <td class="ValueName">
+               <p class="ValueName"></p>
+            </td>
+            <td class="ValueDesc">
+               <p class="ValueDesc">As a mindless engine of destruction an Olthoi cannot join a fellowship!\n</p>
+            </td>
+         </tr>
+         <tr>
+            <td colspan="3" class="ValueRowSep">
+               <p class="ValueRowSep"></p>
+            </td>
+         </tr>
+         <tr>
+            <td class="ValueVal">
+               <p class="ValueVal">0x58C</p>
+            </td>
+            <td class="ValueName">
+               <p class="ValueName"></p>
+            </td>
+            <td class="ValueDesc">
+               <p class="ValueDesc">The Olthoi only have an allegiance to the Olthoi Queen!\n</p>
+            </td>
+         </tr>
+         <tr>
+            <td colspan="3" class="ValueRowSep">
+               <p class="ValueRowSep"></p>
+            </td>
+         </tr>
+         <tr>
+            <td class="ValueVal">
+               <p class="ValueVal">0x58D</p>
+            </td>
+            <td class="ValueName">
+               <p class="ValueName"></p>
+            </td>
+            <td class="ValueDesc">
+               <p class="ValueDesc">You cannot use that item!\n</p>
+            </td>
+         </tr>
+         <tr>
+            <td colspan="3" class="ValueRowSep">
+               <p class="ValueRowSep"></p>
+            </td>
+         </tr>
+         <tr>
+            <td class="ValueVal">
+               <p class="ValueVal">0x58E</p>
+            </td>
+            <td class="ValueName">
+               <p class="ValueName"></p>
+            </td>
+            <td class="ValueDesc">
+               <p class="ValueDesc">This person will not interact with you!\n</p>
+            </td>
+         </tr>
+         <tr>
+            <td colspan="3" class="ValueRowSep">
+               <p class="ValueRowSep"></p>
+            </td>
+         </tr>
+         <tr>
+            <td class="ValueVal">
+               <p class="ValueVal">0x58F</p>
+            </td>
+            <td class="ValueName">
+               <p class="ValueName"></p>
+            </td>
+            <td class="ValueDesc">
+               <p class="ValueDesc">Only Olthoi may pass through this portal!\n</p>
+            </td>
+         </tr>
+         <tr>
+            <td colspan="3" class="ValueRowSep">
+               <p class="ValueRowSep"></p>
+            </td>
+         </tr>
+         <tr>
+            <td class="ValueVal">
+               <p class="ValueVal">0x590</p>
+            </td>
+            <td class="ValueName">
+               <p class="ValueName"></p>
+            </td>
+            <td class="ValueDesc">
+               <p class="ValueDesc">Olthoi may not pass through this portal!\n</p>
+            </td>
+         </tr>
+         <tr>
+            <td colspan="3" class="ValueRowSep">
+               <p class="ValueRowSep"></p>
+            </td>
+         </tr>
+         <tr>
+            <td class="ValueVal">
+               <p class="ValueVal">0x591</p>
+            </td>
+            <td class="ValueName">
+               <p class="ValueName"></p>
+            </td>
+            <td class="ValueDesc">
+               <p class="ValueDesc">You may not pass through this portal while Vitae weakens you!\n</p>
+            </td>
+         </tr>
+         <tr>
+            <td colspan="3" class="ValueRowSep">
+               <p class="ValueRowSep"></p>
+            </td>
+         </tr>
+         <tr>
+            <td class="ValueVal">
+               <p class="ValueVal">0x592</p>
+            </td>
+            <td class="ValueName">
+               <p class="ValueName"></p>
+            </td>
+            <td class="ValueDesc">
+               <p class="ValueDesc">This character must be two weeks old or have been created on an account at least two
+                  weeks old to use this portal!\n
+               </p>
+            </td>
+         </tr>
+         <tr>
+            <td colspan="3" class="ValueRowSep">
+               <p class="ValueRowSep"></p>
+            </td>
+         </tr>
+         <tr>
+            <td class="ValueVal">
+               <p class="ValueVal">0x593</p>
+            </td>
+            <td class="ValueName">
+               <p class="ValueName"></p>
+            </td>
+            <td class="ValueDesc">
+               <p class="ValueDesc">Olthoi characters can only use Lifestone and PK Arena recalls!\n</p>
+            </td>
+         </tr>
+         <tr>
+            <td class="PadBottom" colspan="2"></td>
+         </tr>
+      </table>
+      <p class="Version">Messages.xml version 2017.11.14.0</p>
+   </body>
+</html>

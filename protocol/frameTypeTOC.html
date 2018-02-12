@@ -1,0 +1,845 @@
+<html xmlns:fo="http://www.w3.org/1999/XSL/Format" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:fn="http://www.w3.org/2005/xpath-functions">
+   <head>
+      <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+      <title>AC Protocol version 2017.11.14.0</title>
+      <link type="text/css" rel="stylesheet" href="Classic.css">
+   </head>
+   <body>
+      <table cellspacing="0" cellpadding="0" class="TOC">
+         <tr>
+            <td class="TOCHead">
+               <p class="TOCHead">Struct types</p>
+            </td>
+         </tr>
+         <tr>
+            <td class="TOCEntry">
+               <p class="TOC1"><a target="frameType" href="Types/ACBaseQualities.html"><b>ACBaseQualities</b></a></p>
+            </td>
+         </tr>
+         <tr>
+            <td class="TOCEntry">
+               <p class="TOC1"><a target="frameType" href="Types/ACQualities.html"><b>ACQualities</b></a></p>
+            </td>
+         </tr>
+         <tr>
+            <td class="TOCEntry">
+               <p class="TOC1"><a target="frameType" href="Types/AdminAccountData.html"><b>AdminAccountData</b></a></p>
+            </td>
+         </tr>
+         <tr>
+            <td class="TOCEntry">
+               <p class="TOC1"><a target="frameType" href="Types/AdminPlayerData.html"><b>AdminPlayerData</b></a></p>
+            </td>
+         </tr>
+         <tr>
+            <td class="TOCEntry">
+               <p class="TOC1"><a target="frameType" href="Types/AllegianceData.html"><b>AllegianceData</b></a></p>
+            </td>
+         </tr>
+         <tr>
+            <td class="TOCEntry">
+               <p class="TOC1"><a target="frameType" href="Types/AllegianceHierarchy.html"><b>AllegianceHierarchy</b></a></p>
+            </td>
+         </tr>
+         <tr>
+            <td class="TOCEntry">
+               <p class="TOC1"><a target="frameType" href="Types/AllegianceProfile.html"><b>AllegianceProfile</b></a></p>
+            </td>
+         </tr>
+         <tr>
+            <td class="TOCEntry">
+               <p class="TOC1"><a target="frameType" href="Types/AnimPartChange.html"><b>AnimPartChange</b></a></p>
+            </td>
+         </tr>
+         <tr>
+            <td class="TOCEntry">
+               <p class="TOC1"><a target="frameType" href="Types/ArmorCache.html"><b>ArmorCache</b></a></p>
+            </td>
+         </tr>
+         <tr>
+            <td class="TOCEntry">
+               <p class="TOC1"><a target="frameType" href="Types/ArmorProfile.html"><b>ArmorProfile</b></a></p>
+            </td>
+         </tr>
+         <tr>
+            <td class="TOCEntry">
+               <p class="TOC1"><a target="frameType" href="Types/Attribute.html"><b>Attribute</b></a></p>
+            </td>
+         </tr>
+         <tr>
+            <td class="TOCEntry">
+               <p class="TOC1"><a target="frameType" href="Types/AttributeCache.html"><b>AttributeCache</b></a></p>
+            </td>
+         </tr>
+         <tr>
+            <td class="TOCEntry">
+               <p class="TOC1"><a target="frameType" href="Types/AutonomousPositionPack.html"><b>AutonomousPositionPack</b></a></p>
+            </td>
+         </tr>
+         <tr>
+            <td class="TOCEntry">
+               <p class="TOC1"><a target="frameType" href="Types/Body.html"><b>Body</b></a></p>
+            </td>
+         </tr>
+         <tr>
+            <td class="TOCEntry">
+               <p class="TOC1"><a target="frameType" href="Types/BodyPart.html"><b>BodyPart</b></a></p>
+            </td>
+         </tr>
+         <tr>
+            <td class="TOCEntry">
+               <p class="TOC1"><a target="frameType" href="Types/BodyPartSelectionData.html"><b>BodyPartSelectionData</b></a></p>
+            </td>
+         </tr>
+         <tr>
+            <td class="TOCEntry">
+               <p class="TOC1"><a target="frameType" href="Types/CharGenResult.html"><b>CharGenResult</b></a></p>
+            </td>
+         </tr>
+         <tr>
+            <td class="TOCEntry">
+               <p class="TOC1"><a target="frameType" href="Types/CharacterIdentity.html"><b>CharacterIdentity</b></a></p>
+            </td>
+         </tr>
+         <tr>
+            <td class="TOCEntry">
+               <p class="TOC1"><a target="frameType" href="Types/ContentProfile.html"><b>ContentProfile</b></a></p>
+            </td>
+         </tr>
+         <tr>
+            <td class="TOCEntry">
+               <p class="TOC1"><a target="frameType" href="Types/ContractTracker.html"><b>ContractTracker</b></a></p>
+            </td>
+         </tr>
+         <tr>
+            <td class="TOCEntry">
+               <p class="TOC1"><a target="frameType" href="Types/ContractTrackerTable.html"><b>ContractTrackerTable</b></a></p>
+            </td>
+         </tr>
+         <tr>
+            <td class="TOCEntry">
+               <p class="TOC1"><a target="frameType" href="Types/CreationProfile.html"><b>CreationProfile</b></a></p>
+            </td>
+         </tr>
+         <tr>
+            <td class="TOCEntry">
+               <p class="TOC1"><a target="frameType" href="Types/CreatureAppraisalProfile.html"><b>CreatureAppraisalProfile</b></a></p>
+            </td>
+         </tr>
+         <tr>
+            <td class="TOCEntry">
+               <p class="TOC1"><a target="frameType" href="Types/Emote.html"><b>Emote</b></a></p>
+            </td>
+         </tr>
+         <tr>
+            <td class="TOCEntry">
+               <p class="TOC1"><a target="frameType" href="Types/EmoteSet.html"><b>EmoteSet</b></a></p>
+            </td>
+         </tr>
+         <tr>
+            <td class="TOCEntry">
+               <p class="TOC1"><a target="frameType" href="Types/EmoteSetList.html"><b>EmoteSetList</b></a></p>
+            </td>
+         </tr>
+         <tr>
+            <td class="TOCEntry">
+               <p class="TOC1"><a target="frameType" href="Types/EmoteTable.html"><b>EmoteTable</b></a></p>
+            </td>
+         </tr>
+         <tr>
+            <td class="TOCEntry">
+               <p class="TOC1"><a target="frameType" href="Types/Enchantment.html"><b>Enchantment</b></a></p>
+            </td>
+         </tr>
+         <tr>
+            <td class="TOCEntry">
+               <p class="TOC1"><a target="frameType" href="Types/EnchantmentRegistry.html"><b>EnchantmentRegistry</b></a></p>
+            </td>
+         </tr>
+         <tr>
+            <td class="TOCEntry">
+               <p class="TOC1"><a target="frameType" href="Types/EventFilter.html"><b>EventFilter</b></a></p>
+            </td>
+         </tr>
+         <tr>
+            <td class="TOCEntry">
+               <p class="TOC1"><a target="frameType" href="Types/Fellow.html"><b>Fellow</b></a></p>
+            </td>
+         </tr>
+         <tr>
+            <td class="TOCEntry">
+               <p class="TOC1"><a target="frameType" href="Types/Fellowship.html"><b>Fellowship</b></a></p>
+            </td>
+         </tr>
+         <tr>
+            <td class="TOCEntry">
+               <p class="TOC1"><a target="frameType" href="Types/Frame.html"><b>Frame</b></a></p>
+            </td>
+         </tr>
+         <tr>
+            <td class="TOCEntry">
+               <p class="TOC1"><a target="frameType" href="Types/FriendData.html"><b>FriendData</b></a></p>
+            </td>
+         </tr>
+         <tr>
+            <td class="TOCEntry">
+               <p class="TOC1"><a target="frameType" href="Types/GameMoveData.html"><b>GameMoveData</b></a></p>
+            </td>
+         </tr>
+         <tr>
+            <td class="TOCEntry">
+               <p class="TOC1"><a target="frameType" href="Types/GeneratorProfile.html"><b>GeneratorProfile</b></a></p>
+            </td>
+         </tr>
+         <tr>
+            <td class="TOCEntry">
+               <p class="TOC1"><a target="frameType" href="Types/GeneratorQueue.html"><b>GeneratorQueue</b></a></p>
+            </td>
+         </tr>
+         <tr>
+            <td class="TOCEntry">
+               <p class="TOC1"><a target="frameType" href="Types/GeneratorQueueNode.html"><b>GeneratorQueueNode</b></a></p>
+            </td>
+         </tr>
+         <tr>
+            <td class="TOCEntry">
+               <p class="TOC1"><a target="frameType" href="Types/GeneratorRegistry.html"><b>GeneratorRegistry</b></a></p>
+            </td>
+         </tr>
+         <tr>
+            <td class="TOCEntry">
+               <p class="TOC1"><a target="frameType" href="Types/GeneratorRegistryNode.html"><b>GeneratorRegistryNode</b></a></p>
+            </td>
+         </tr>
+         <tr>
+            <td class="TOCEntry">
+               <p class="TOC1"><a target="frameType" href="Types/GeneratorTable.html"><b>GeneratorTable</b></a></p>
+            </td>
+         </tr>
+         <tr>
+            <td class="TOCEntry">
+               <p class="TOC1"><a target="frameType" href="Types/GenericQualitiesData.html"><b>GenericQualitiesData</b></a></p>
+            </td>
+         </tr>
+         <tr>
+            <td class="TOCEntry">
+               <p class="TOC1"><a target="frameType" href="Types/GuestInfo.html"><b>GuestInfo</b></a></p>
+            </td>
+         </tr>
+         <tr>
+            <td class="TOCEntry">
+               <p class="TOC1"><a target="frameType" href="Types/HAR.html"><b>HAR</b></a></p>
+            </td>
+         </tr>
+         <tr>
+            <td class="TOCEntry">
+               <p class="TOC1"><a target="frameType" href="Types/HookAppraisalProfile.html"><b>HookAppraisalProfile</b></a></p>
+            </td>
+         </tr>
+         <tr>
+            <td class="TOCEntry">
+               <p class="TOC1"><a target="frameType" href="Types/HouseData.html"><b>HouseData</b></a></p>
+            </td>
+         </tr>
+         <tr>
+            <td class="TOCEntry">
+               <p class="TOC1"><a target="frameType" href="Types/HousePayment.html"><b>HousePayment</b></a></p>
+            </td>
+         </tr>
+         <tr>
+            <td class="TOCEntry">
+               <p class="TOC1"><a target="frameType" href="Types/HouseProfile.html"><b>HouseProfile</b></a></p>
+            </td>
+         </tr>
+         <tr>
+            <td class="TOCEntry">
+               <p class="TOC1"><a target="frameType" href="Types/InterpertedMotionState.html"><b>InterpertedMotionState</b></a></p>
+            </td>
+         </tr>
+         <tr>
+            <td class="TOCEntry">
+               <p class="TOC1"><a target="frameType" href="Types/InventoryPlacement.html"><b>InventoryPlacement</b></a></p>
+            </td>
+         </tr>
+         <tr>
+            <td class="TOCEntry">
+               <p class="TOC1"><a target="frameType" href="Types/ItemProfile.html"><b>ItemProfile</b></a></p>
+            </td>
+         </tr>
+         <tr>
+            <td class="TOCEntry">
+               <p class="TOC1"><a target="frameType" href="Types/JumpPack.html"><b>JumpPack</b></a></p>
+            </td>
+         </tr>
+         <tr>
+            <td class="TOCEntry">
+               <p class="TOC1"><a target="frameType" href="Types/LayeredSpellID.html"><b>LayeredSpellID</b></a></p>
+            </td>
+         </tr>
+         <tr>
+            <td class="TOCEntry">
+               <p class="TOC1"><a target="frameType" href="Types/MoveToMovementParameters.html"><b>MoveToMovementParameters</b></a></p>
+            </td>
+         </tr>
+         <tr>
+            <td class="TOCEntry">
+               <p class="TOC1"><a target="frameType" href="Types/MoveToStatePack.html"><b>MoveToStatePack</b></a></p>
+            </td>
+         </tr>
+         <tr>
+            <td class="TOCEntry">
+               <p class="TOC1"><a target="frameType" href="Types/MovementData.html"><b>MovementData</b></a></p>
+            </td>
+         </tr>
+         <tr>
+            <td class="TOCEntry">
+               <p class="TOC1"><a target="frameType" href="Types/ObjDesc.html"><b>ObjDesc</b></a></p>
+            </td>
+         </tr>
+         <tr>
+            <td class="TOCEntry">
+               <p class="TOC1"><a target="frameType" href="Types/OldPublicWeenieDesc.html"><b>OldPublicWeenieDesc</b></a></p>
+            </td>
+         </tr>
+         <tr>
+            <td class="TOCEntry">
+               <p class="TOC1"><a target="frameType" href="Types/Origin.html"><b>Origin</b></a></p>
+            </td>
+         </tr>
+         <tr>
+            <td class="TOCEntry">
+               <p class="TOC1"><a target="frameType" href="Types/PHashTable.html"><b>PHashTable</b></a></p>
+            </td>
+         </tr>
+         <tr>
+            <td class="TOCEntry">
+               <p class="TOC1"><a target="frameType" href="Types/PList.html"><b>PList</b></a></p>
+            </td>
+         </tr>
+         <tr>
+            <td class="TOCEntry">
+               <p class="TOC1"><a target="frameType" href="Types/PSmartArray.html"><b>PSmartArray</b></a></p>
+            </td>
+         </tr>
+         <tr>
+            <td class="TOCEntry">
+               <p class="TOC1"><a target="frameType" href="Types/PackableHashTable.html"><b>PackableHashTable</b></a></p>
+            </td>
+         </tr>
+         <tr>
+            <td class="TOCEntry">
+               <p class="TOC1"><a target="frameType" href="Types/PackableList.html"><b>PackableList</b></a></p>
+            </td>
+         </tr>
+         <tr>
+            <td class="TOCEntry">
+               <p class="TOC1"><a target="frameType" href="Types/PageData.html"><b>PageData</b></a></p>
+            </td>
+         </tr>
+         <tr>
+            <td class="TOCEntry">
+               <p class="TOC1"><a target="frameType" href="Types/PageDataList.html"><b>PageDataList</b></a></p>
+            </td>
+         </tr>
+         <tr>
+            <td class="TOCEntry">
+               <p class="TOC1"><a target="frameType" href="Types/PhysicsDesc.html"><b>PhysicsDesc</b></a></p>
+            </td>
+         </tr>
+         <tr>
+            <td class="TOCEntry">
+               <p class="TOC1"><a target="frameType" href="Types/PlayerModule.html"><b>PlayerModule</b></a></p>
+            </td>
+         </tr>
+         <tr>
+            <td class="TOCEntry">
+               <p class="TOC1"><a target="frameType" href="Types/Position.html"><b>Position</b></a></p>
+            </td>
+         </tr>
+         <tr>
+            <td class="TOCEntry">
+               <p class="TOC1"><a target="frameType" href="Types/PositionPack.html"><b>PositionPack</b></a></p>
+            </td>
+         </tr>
+         <tr>
+            <td class="TOCEntry">
+               <p class="TOC1"><a target="frameType" href="Types/PublicWeenieDesc.html"><b>PublicWeenieDesc</b></a></p>
+            </td>
+         </tr>
+         <tr>
+            <td class="TOCEntry">
+               <p class="TOC1"><a target="frameType" href="Types/Quaternion.html"><b>Quaternion</b></a></p>
+            </td>
+         </tr>
+         <tr>
+            <td class="TOCEntry">
+               <p class="TOC1"><a target="frameType" href="Types/RawMotionState.html"><b>RawMotionState</b></a></p>
+            </td>
+         </tr>
+         <tr>
+            <td class="TOCEntry">
+               <p class="TOC1"><a target="frameType" href="Types/RestrictionDB.html"><b>RestrictionDB</b></a></p>
+            </td>
+         </tr>
+         <tr>
+            <td class="TOCEntry">
+               <p class="TOC1"><a target="frameType" href="Types/SalvageOperationsResultData.html"><b>SalvageOperationsResultData</b></a></p>
+            </td>
+         </tr>
+         <tr>
+            <td class="TOCEntry">
+               <p class="TOC1"><a target="frameType" href="Types/SalvageResult.html"><b>SalvageResult</b></a></p>
+            </td>
+         </tr>
+         <tr>
+            <td class="TOCEntry">
+               <p class="TOC1"><a target="frameType" href="Types/SecondaryAttribute.html"><b>SecondaryAttribute</b></a></p>
+            </td>
+         </tr>
+         <tr>
+            <td class="TOCEntry">
+               <p class="TOC1"><a target="frameType" href="Types/ShortCutData.html"><b>ShortCutData</b></a></p>
+            </td>
+         </tr>
+         <tr>
+            <td class="TOCEntry">
+               <p class="TOC1"><a target="frameType" href="Types/ShortCutManager.html"><b>ShortCutManager</b></a></p>
+            </td>
+         </tr>
+         <tr>
+            <td class="TOCEntry">
+               <p class="TOC1"><a target="frameType" href="Types/Skill.html"><b>Skill</b></a></p>
+            </td>
+         </tr>
+         <tr>
+            <td class="TOCEntry">
+               <p class="TOC1"><a target="frameType" href="Types/SpellBook.html"><b>SpellBook</b></a></p>
+            </td>
+         </tr>
+         <tr>
+            <td class="TOCEntry">
+               <p class="TOC1"><a target="frameType" href="Types/SpellBookPage.html"><b>SpellBookPage</b></a></p>
+            </td>
+         </tr>
+         <tr>
+            <td class="TOCEntry">
+               <p class="TOC1"><a target="frameType" href="Types/SpellTab.html"><b>SpellTab</b></a></p>
+            </td>
+         </tr>
+         <tr>
+            <td class="TOCEntry">
+               <p class="TOC1"><a target="frameType" href="Types/SquelchDB.html"><b>SquelchDB</b></a></p>
+            </td>
+         </tr>
+         <tr>
+            <td class="TOCEntry">
+               <p class="TOC1"><a target="frameType" href="Types/SquelchInfo.html"><b>SquelchInfo</b></a></p>
+            </td>
+         </tr>
+         <tr>
+            <td class="TOCEntry">
+               <p class="TOC1"><a target="frameType" href="Types/StatMod.html"><b>StatMod</b></a></p>
+            </td>
+         </tr>
+         <tr>
+            <td class="TOCEntry">
+               <p class="TOC1"><a target="frameType" href="Types/Subpalette.html"><b>Subpalette</b></a></p>
+            </td>
+         </tr>
+         <tr>
+            <td class="TOCEntry">
+               <p class="TOC1"><a target="frameType" href="Types/TextureMapChange.html"><b>TextureMapChange</b></a></p>
+            </td>
+         </tr>
+         <tr>
+            <td class="TOCEntry">
+               <p class="TOC1"><a target="frameType" href="Types/Trade.html"><b>Trade</b></a></p>
+            </td>
+         </tr>
+         <tr>
+            <td class="TOCEntry">
+               <p class="TOC1"><a target="frameType" href="Types/TurnToMovementParameters.html"><b>TurnToMovementParameters</b></a></p>
+            </td>
+         </tr>
+         <tr>
+            <td class="TOCEntry">
+               <p class="TOC1"><a target="frameType" href="Types/Vector3.html"><b>Vector3</b></a></p>
+            </td>
+         </tr>
+         <tr>
+            <td class="TOCEntry">
+               <p class="TOC1"><a target="frameType" href="Types/VendorProfile.html"><b>VendorProfile</b></a></p>
+            </td>
+         </tr>
+         <tr>
+            <td class="TOCEntry">
+               <p class="TOC1"><a target="frameType" href="Types/WeaponProfile.html"><b>WeaponProfile</b></a></p>
+            </td>
+         </tr>
+      </table>
+      <table cellspacing="0" cellpadding="0" class="TOC">
+         <tr>
+            <td class="TOCHead">
+               <p class="TOCHead">Enum types</p>
+            </td>
+         </tr>
+         <tr>
+            <td class="TOCEntry">
+               <p class="TOC1"><a target="frameType" href="Types/AllegianceHouseAction.html"><b>AllegianceHouseAction</b></a></p>
+            </td>
+         </tr>
+         <tr>
+            <td class="TOCEntry">
+               <p class="TOC1"><a target="frameType" href="Types/AllegianceLockAction.html"><b>AllegianceLockAction</b></a></p>
+            </td>
+         </tr>
+         <tr>
+            <td class="TOCEntry">
+               <p class="TOC1"><a target="frameType" href="Types/AllegianceOfficerLevel.html"><b>AllegianceOfficerLevel</b></a></p>
+            </td>
+         </tr>
+         <tr>
+            <td class="TOCEntry">
+               <p class="TOC1"><a target="frameType" href="Types/AttackHeight.html"><b>AttackHeight</b></a></p>
+            </td>
+         </tr>
+         <tr>
+            <td class="TOCEntry">
+               <p class="TOC1"><a target="frameType" href="Types/AttributeID.html"><b>AttributeID</b></a></p>
+            </td>
+         </tr>
+         <tr>
+            <td class="TOCEntry">
+               <p class="TOC1"><a target="frameType" href="Types/BooleanPropertyID.html"><b>BooleanPropertyID</b></a></p>
+            </td>
+         </tr>
+         <tr>
+            <td class="TOCEntry">
+               <p class="TOC1"><a target="frameType" href="Types/CharGenResponseType.html"><b>CharGenResponseType</b></a></p>
+            </td>
+         </tr>
+         <tr>
+            <td class="TOCEntry">
+               <p class="TOC1"><a target="frameType" href="Types/CharacterErrorType.html"><b>CharacterErrorType</b></a></p>
+            </td>
+         </tr>
+         <tr>
+            <td class="TOCEntry">
+               <p class="TOC1"><a target="frameType" href="Types/ChatMessageType.html"><b>ChatMessageType</b></a></p>
+            </td>
+         </tr>
+         <tr>
+            <td class="TOCEntry">
+               <p class="TOC1"><a target="frameType" href="Types/ChessMoveResult.html"><b>ChessMoveResult</b></a></p>
+            </td>
+         </tr>
+         <tr>
+            <td class="TOCEntry">
+               <p class="TOC1"><a target="frameType" href="Types/Command.html"><b>Command</b></a></p>
+            </td>
+         </tr>
+         <tr>
+            <td class="TOCEntry">
+               <p class="TOC1"><a target="frameType" href="Types/CompressionType.html"><b>CompressionType</b></a></p>
+            </td>
+         </tr>
+         <tr>
+            <td class="TOCEntry">
+               <p class="TOC1"><a target="frameType" href="Types/ConfirmationType.html"><b>ConfirmationType</b></a></p>
+            </td>
+         </tr>
+         <tr>
+            <td class="TOCEntry">
+               <p class="TOC1"><a target="frameType" href="Types/ContainerProperties.html"><b>ContainerProperties</b></a></p>
+            </td>
+         </tr>
+         <tr>
+            <td class="TOCEntry">
+               <p class="TOC1"><a target="frameType" href="Types/ContractStage.html"><b>ContractStage</b></a></p>
+            </td>
+         </tr>
+         <tr>
+            <td class="TOCEntry">
+               <p class="TOC1"><a target="frameType" href="Types/CurVitalID.html"><b>CurVitalID</b></a></p>
+            </td>
+         </tr>
+         <tr>
+            <td class="TOCEntry">
+               <p class="TOC1"><a target="frameType" href="Types/DamageLocation.html"><b>DamageLocation</b></a></p>
+            </td>
+         </tr>
+         <tr>
+            <td class="TOCEntry">
+               <p class="TOC1"><a target="frameType" href="Types/DataPropertyID.html"><b>DataPropertyID</b></a></p>
+            </td>
+         </tr>
+         <tr>
+            <td class="TOCEntry">
+               <p class="TOC1"><a target="frameType" href="Types/EmoteCategory.html"><b>EmoteCategory</b></a></p>
+            </td>
+         </tr>
+         <tr>
+            <td class="TOCEntry">
+               <p class="TOC1"><a target="frameType" href="Types/EmoteType.html"><b>EmoteType</b></a></p>
+            </td>
+         </tr>
+         <tr>
+            <td class="TOCEntry">
+               <p class="TOC1"><a target="frameType" href="Types/EndTradeReason.html"><b>EndTradeReason</b></a></p>
+            </td>
+         </tr>
+         <tr>
+            <td class="TOCEntry">
+               <p class="TOC1"><a target="frameType" href="Types/EnvrionChangeType.html"><b>EnvrionChangeType</b></a></p>
+            </td>
+         </tr>
+         <tr>
+            <td class="TOCEntry">
+               <p class="TOC1"><a target="frameType" href="Types/FellowUpdateType.html"><b>FellowUpdateType</b></a></p>
+            </td>
+         </tr>
+         <tr>
+            <td class="TOCEntry">
+               <p class="TOC1"><a target="frameType" href="Types/FloatPropertyID.html"><b>FloatPropertyID</b></a></p>
+            </td>
+         </tr>
+         <tr>
+            <td class="TOCEntry">
+               <p class="TOC1"><a target="frameType" href="Types/Gender.html"><b>Gender</b></a></p>
+            </td>
+         </tr>
+         <tr>
+            <td class="TOCEntry">
+               <p class="TOC1"><a target="frameType" href="Types/HeritageGroup.html"><b>HeritageGroup</b></a></p>
+            </td>
+         </tr>
+         <tr>
+            <td class="TOCEntry">
+               <p class="TOC1"><a target="frameType" href="Types/HouseType.html"><b>HouseType</b></a></p>
+            </td>
+         </tr>
+         <tr>
+            <td class="TOCEntry">
+               <p class="TOC1"><a target="frameType" href="Types/InstancePropertyID.html"><b>InstancePropertyID</b></a></p>
+            </td>
+         </tr>
+         <tr>
+            <td class="TOCEntry">
+               <p class="TOC1"><a target="frameType" href="Types/Int64PropertyID.html"><b>Int64PropertyID</b></a></p>
+            </td>
+         </tr>
+         <tr>
+            <td class="TOCEntry">
+               <p class="TOC1"><a target="frameType" href="Types/IntPropertyID.html"><b>IntPropertyID</b></a></p>
+            </td>
+         </tr>
+         <tr>
+            <td class="TOCEntry">
+               <p class="TOC1"><a target="frameType" href="Types/LogTextType.html"><b>LogTextType</b></a></p>
+            </td>
+         </tr>
+         <tr>
+            <td class="TOCEntry">
+               <p class="TOC1"><a target="frameType" href="Types/MaterialType.html"><b>MaterialType</b></a></p>
+            </td>
+         </tr>
+         <tr>
+            <td class="TOCEntry">
+               <p class="TOC1"><a target="frameType" href="Types/MessageType.html"><b>MessageType</b></a></p>
+            </td>
+         </tr>
+         <tr>
+            <td class="TOCEntry">
+               <p class="TOC1"><a target="frameType" href="Types/MovementCommand.html"><b>MovementCommand</b></a></p>
+            </td>
+         </tr>
+         <tr>
+            <td class="TOCEntry">
+               <p class="TOC1"><a target="frameType" href="Types/MovementOption.html"><b>MovementOption</b></a></p>
+            </td>
+         </tr>
+         <tr>
+            <td class="TOCEntry">
+               <p class="TOC1"><a target="frameType" href="Types/MovementType.html"><b>MovementType</b></a></p>
+            </td>
+         </tr>
+         <tr>
+            <td class="TOCEntry">
+               <p class="TOC1"><a target="frameType" href="Types/OptionPropertyID.html"><b>OptionPropertyID</b></a></p>
+            </td>
+         </tr>
+         <tr>
+            <td class="TOCEntry">
+               <p class="TOC1"><a target="frameType" href="Types/PositionPropertyID.html"><b>PositionPropertyID</b></a></p>
+            </td>
+         </tr>
+         <tr>
+            <td class="TOCEntry">
+               <p class="TOC1"><a target="frameType" href="Types/PropertyType.html"><b>PropertyType</b></a></p>
+            </td>
+         </tr>
+         <tr>
+            <td class="TOCEntry">
+               <p class="TOC1"><a target="frameType" href="Types/Queues.html"><b>Queues</b></a></p>
+            </td>
+         </tr>
+         <tr>
+            <td class="TOCEntry">
+               <p class="TOC1"><a target="frameType" href="Types/ResourceType.html"><b>ResourceType</b></a></p>
+            </td>
+         </tr>
+         <tr>
+            <td class="TOCEntry">
+               <p class="TOC1"><a target="frameType" href="Types/SkillID.html"><b>SkillID</b></a></p>
+            </td>
+         </tr>
+         <tr>
+            <td class="TOCEntry">
+               <p class="TOC1"><a target="frameType" href="Types/SkillState.html"><b>SkillState</b></a></p>
+            </td>
+         </tr>
+         <tr>
+            <td class="TOCEntry">
+               <p class="TOC1"><a target="frameType" href="Types/StanceMode.html"><b>StanceMode</b></a></p>
+            </td>
+         </tr>
+         <tr>
+            <td class="TOCEntry">
+               <p class="TOC1"><a target="frameType" href="Types/StatusMessage.html"><b>StatusMessage</b></a></p>
+            </td>
+         </tr>
+         <tr>
+            <td class="TOCEntry">
+               <p class="TOC1"><a target="frameType" href="Types/StringPropertyID.html"><b>StringPropertyID</b></a></p>
+            </td>
+         </tr>
+         <tr>
+            <td class="TOCEntry">
+               <p class="TOC1"><a target="frameType" href="Types/TradeSide.html"><b>TradeSide</b></a></p>
+            </td>
+         </tr>
+         <tr>
+            <td class="TOCEntry">
+               <p class="TOC1"><a target="frameType" href="Types/TurbineChatType.html"><b>TurbineChatType</b></a></p>
+            </td>
+         </tr>
+         <tr>
+            <td class="TOCEntry">
+               <p class="TOC1"><a target="frameType" href="Types/VitalID.html"><b>VitalID</b></a></p>
+            </td>
+         </tr>
+      </table>
+      <table cellspacing="0" cellpadding="0" class="TOC">
+         <tr>
+            <td class="TOCHead">
+               <p class="TOCHead">Mask types</p>
+            </td>
+         </tr>
+         <tr>
+            <td class="TOCEntry">
+               <p class="TOC1"><a target="frameType" href="Types/AmmoType.html"><b>AmmoType</b></a></p>
+            </td>
+         </tr>
+         <tr>
+            <td class="TOCEntry">
+               <p class="TOC1"><a target="frameType" href="Types/ArmorHighlightMask.html"><b>ArmorHighlightMask</b></a></p>
+            </td>
+         </tr>
+         <tr>
+            <td class="TOCEntry">
+               <p class="TOC1"><a target="frameType" href="Types/AttackConditionsMask.html"><b>AttackConditionsMask</b></a></p>
+            </td>
+         </tr>
+         <tr>
+            <td class="TOCEntry">
+               <p class="TOC1"><a target="frameType" href="Types/AttributeMask.html"><b>AttributeMask</b></a></p>
+            </td>
+         </tr>
+         <tr>
+            <td class="TOCEntry">
+               <p class="TOC1"><a target="frameType" href="Types/CharacterOptions1.html"><b>CharacterOptions1</b></a></p>
+            </td>
+         </tr>
+         <tr>
+            <td class="TOCEntry">
+               <p class="TOC1"><a target="frameType" href="Types/CharacterOptions2.html"><b>CharacterOptions2</b></a></p>
+            </td>
+         </tr>
+         <tr>
+            <td class="TOCEntry">
+               <p class="TOC1"><a target="frameType" href="Types/CombatMode.html"><b>CombatMode</b></a></p>
+            </td>
+         </tr>
+         <tr>
+            <td class="TOCEntry">
+               <p class="TOC1"><a target="frameType" href="Types/CoverageMask.html"><b>CoverageMask</b></a></p>
+            </td>
+         </tr>
+         <tr>
+            <td class="TOCEntry">
+               <p class="TOC1"><a target="frameType" href="Types/DamageType.html"><b>DamageType</b></a></p>
+            </td>
+         </tr>
+         <tr>
+            <td class="TOCEntry">
+               <p class="TOC1"><a target="frameType" href="Types/EquipMask.html"><b>EquipMask</b></a></p>
+            </td>
+         </tr>
+         <tr>
+            <td class="TOCEntry">
+               <p class="TOC1"><a target="frameType" href="Types/FriendsUpdateType.html"><b>FriendsUpdateType</b></a></p>
+            </td>
+         </tr>
+         <tr>
+            <td class="TOCEntry">
+               <p class="TOC1"><a target="frameType" href="Types/HookAppraisalFlags.html"><b>HookAppraisalFlags</b></a></p>
+            </td>
+         </tr>
+         <tr>
+            <td class="TOCEntry">
+               <p class="TOC1"><a target="frameType" href="Types/HookType.html"><b>HookType</b></a></p>
+            </td>
+         </tr>
+         <tr>
+            <td class="TOCEntry">
+               <p class="TOC1"><a target="frameType" href="Types/ObjectDescriptionFlag.html"><b>ObjectDescriptionFlag</b></a></p>
+            </td>
+         </tr>
+         <tr>
+            <td class="TOCEntry">
+               <p class="TOC1"><a target="frameType" href="Types/ObjectType.html"><b>ObjectType</b></a></p>
+            </td>
+         </tr>
+         <tr>
+            <td class="TOCEntry">
+               <p class="TOC1"><a target="frameType" href="Types/PhysicsState.html"><b>PhysicsState</b></a></p>
+            </td>
+         </tr>
+         <tr>
+            <td class="TOCEntry">
+               <p class="TOC1"><a target="frameType" href="Types/PositionFlags.html"><b>PositionFlags</b></a></p>
+            </td>
+         </tr>
+         <tr>
+            <td class="TOCEntry">
+               <p class="TOC1"><a target="frameType" href="Types/ResistHighlightMask.html"><b>ResistHighlightMask</b></a></p>
+            </td>
+         </tr>
+         <tr>
+            <td class="TOCEntry">
+               <p class="TOC1"><a target="frameType" href="Types/SpellBookFilterOptions.html"><b>SpellBookFilterOptions</b></a></p>
+            </td>
+         </tr>
+         <tr>
+            <td class="TOCEntry">
+               <p class="TOC1"><a target="frameType" href="Types/UsableType.html"><b>UsableType</b></a></p>
+            </td>
+         </tr>
+         <tr>
+            <td class="TOCEntry">
+               <p class="TOC1"><a target="frameType" href="Types/WeaponHighlightMask.html"><b>WeaponHighlightMask</b></a></p>
+            </td>
+         </tr>
+      </table>
+   </body>
+</html>

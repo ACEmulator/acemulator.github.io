@@ -1,0 +1,228 @@
+<html xmlns:fo="http://www.w3.org/1999/XSL/Format" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:fn="http://www.w3.org/2005/xpath-functions">
+   <head>
+      <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+      <title>AC Protocol version 2017.11.14.0</title>
+      <link type="text/css" rel="stylesheet" href="../Classic.css">
+   </head>
+   <body>
+      <table cellspacing="0" cellpadding="0" class="List1">
+         <tr>
+            <td colspan="3">
+               <p class="BoxHead1"><b>0xF7E7:</b> DDD_BeginDDDMessage
+               </p>
+            </td>
+         </tr>
+         <tr>
+            <td class="PadTop" colspan="3"></td>
+         </tr>
+         <tr>
+            <td colspan="3">
+               <p class="BoxDesc">A list of dat files that need to be patched</p>
+            </td>
+         </tr>
+         <tr>
+            <td colspan="3" class="SeqRowSep">
+               <p class="SeqRowSep"></p>
+            </td>
+         </tr>
+         <tr>
+            <td class="FieldType">
+               <p class="FieldType"><span class="TypeRef" title="uint"><a target="frameType" href="../Types/MessageType.html">MessageType</a></span></p>
+            </td>
+            <td class="FieldName">
+               <p class="FieldName">type = 0xF7E7</p>
+            </td>
+            <td class="FieldDesc">
+               <p class="FieldDesc">type of this message</p>
+            </td>
+         </tr>
+         <tr>
+            <td colspan="3" class="FieldRowSep">
+               <p class="FieldRowSep"></p>
+            </td>
+         </tr>
+         <tr>
+            <td class="FieldType">
+               <p class="FieldType"><span class="TypeRef" title="">uint</span></p>
+            </td>
+            <td class="FieldName">
+               <p class="FieldName">dataExpected</p>
+            </td>
+            <td class="FieldDesc">
+               <p class="FieldDesc">Amount of data expected</p>
+            </td>
+         </tr>
+         <tr>
+            <td colspan="3" class="FieldRowSep">
+               <p class="FieldRowSep"></p>
+            </td>
+         </tr>
+         <tr>
+            <td class="FieldType">
+               <p class="FieldType"><span class="TypeRef" title="">uint</span></p>
+            </td>
+            <td class="FieldName">
+               <p class="FieldName">revisionCount</p>
+            </td>
+            <td class="FieldDesc">
+               <p class="FieldDesc">Total number of revisions to follow</p>
+            </td>
+         </tr>
+         <tr>
+            <td class="NestedTable" colspan="3">
+               <table cellspacing="0" cellpadding="0" class="List2">
+                  <tr>
+                     <td colspan="3">
+                        <p class="BoxHead2"><b>revisions</b>: vector of length <b>revisionCount</b></p>
+                     </td>
+                  </tr>
+                  <tr>
+                     <td class="PadTop" colspan="3"></td>
+                  </tr>
+                  <tr>
+                     <td class="FieldType">
+                        <p class="FieldType"><span class="TypeRef" title="">ulong uint</span></p>
+                     </td>
+                     <td class="FieldName">
+                        <p class="FieldName">idDatFile</p>
+                     </td>
+                     <td class="FieldDesc">
+                        <p class="FieldDesc">
+                           write: 
+                           
+                           (datFileType
+                           &lt;&lt; 32)
+                           
+                           ;
+                           Dat File header offset 0x0150, Dat File header offset 0x014C
+                        </p>
+                     </td>
+                  </tr>
+                  <tr align="right">
+                     <td class="FieldType">
+                        <p class="FieldType"><span class="TypeRef" title="">uint</span></p>
+                     </td>
+                     <td class="FieldName">
+                        <p class="FieldName">datFileType</p>
+                     </td>
+                     <td class="FieldDesc">
+                        <p class="FieldDesc">
+                           read: 
+                           idDatFile
+                           &gt;&gt; 32
+                           ; Type of DAT file being revised
+                        </p>
+                     </td>
+                  </tr>
+                  <tr>
+                     <td colspan="3" class="FieldRowSep">
+                        <p class="FieldRowSep"></p>
+                     </td>
+                  </tr>
+                  <tr>
+                     <td class="FieldType">
+                        <p class="FieldType"><span class="TypeRef" title="">uint</span></p>
+                     </td>
+                     <td class="FieldName">
+                        <p class="FieldName">idIteration</p>
+                     </td>
+                     <td class="FieldDesc">
+                        <p class="FieldDesc">The corresponding Dat file revision for this patch set</p>
+                     </td>
+                  </tr>
+                  <tr>
+                     <td colspan="3" class="FieldRowSep">
+                        <p class="FieldRowSep"></p>
+                     </td>
+                  </tr>
+                  <tr>
+                     <td class="FieldType">
+                        <p class="FieldType"><span class="TypeRef" title="">uint</span></p>
+                     </td>
+                     <td class="FieldName">
+                        <p class="FieldName">IDsToDownloadCount</p>
+                     </td>
+                     <td class="FieldDesc">
+                        <p class="FieldDesc">Number of resources to add in this revision</p>
+                     </td>
+                  </tr>
+                  <tr>
+                     <td class="NestedTable" colspan="3">
+                        <table cellspacing="0" cellpadding="0" class="List1">
+                           <tr>
+                              <td colspan="3">
+                                 <p class="BoxHead1"><b>IDsToDownload</b>: vector of length <b>IDsToDownloadCount</b></p>
+                              </td>
+                           </tr>
+                           <tr>
+                              <td class="PadTop" colspan="3"></td>
+                           </tr>
+                           <tr>
+                              <td class="FieldType">
+                                 <p class="FieldType"><span class="TypeRef" title="PackedDWORD">DataID</span></p>
+                              </td>
+                              <td class="FieldName">
+                                 <p class="FieldName">resource</p>
+                              </td>
+                              <td class="FieldDesc">
+                                 <p class="FieldDesc">the resource ID number</p>
+                              </td>
+                           </tr>
+                           <tr>
+                              <td class="PadBottom" colspan="3"></td>
+                           </tr>
+                        </table>
+                     </td>
+                  </tr>
+                  <tr>
+                     <td class="FieldType">
+                        <p class="FieldType"><span class="TypeRef" title="">uint</span></p>
+                     </td>
+                     <td class="FieldName">
+                        <p class="FieldName">IDsToPurgeCount</p>
+                     </td>
+                     <td class="FieldDesc">
+                        <p class="FieldDesc">Number of resources to purge in this revision</p>
+                     </td>
+                  </tr>
+                  <tr>
+                     <td class="NestedTable" colspan="3">
+                        <table cellspacing="0" cellpadding="0" class="List1">
+                           <tr>
+                              <td colspan="3">
+                                 <p class="BoxHead1"><b>IDsToPurge</b>: vector of length <b>IDsToPurgeCount</b></p>
+                              </td>
+                           </tr>
+                           <tr>
+                              <td class="PadTop" colspan="3"></td>
+                           </tr>
+                           <tr>
+                              <td class="FieldType">
+                                 <p class="FieldType"><span class="TypeRef" title="PackedDWORD">DataID</span></p>
+                              </td>
+                              <td class="FieldName">
+                                 <p class="FieldName">resource</p>
+                              </td>
+                              <td class="FieldDesc">
+                                 <p class="FieldDesc">the resource ID number</p>
+                              </td>
+                           </tr>
+                           <tr>
+                              <td class="PadBottom" colspan="3"></td>
+                           </tr>
+                        </table>
+                     </td>
+                  </tr>
+                  <tr>
+                     <td class="PadBottom" colspan="3"></td>
+                  </tr>
+               </table>
+            </td>
+         </tr>
+         <tr>
+            <td class="PadBottom" colspan="3"></td>
+         </tr>
+      </table>
+      <p class="Version">Messages.xml version 2017.11.14.0</p>
+   </body>
+</html>

@@ -1,0 +1,481 @@
+<html xmlns:fo="http://www.w3.org/1999/XSL/Format" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:fn="http://www.w3.org/2005/xpath-functions">
+   <head>
+      <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+      <title>AC Protocol version 2017.11.14.0</title>
+      <link type="text/css" rel="stylesheet" href="../Classic.css">
+   </head>
+   <body>
+      <table cellspacing="0" cellpadding="0" class="List2">
+         <tr>
+            <td colspan="3">
+               <p class="BoxHead2"><b>ACQualities</b></p>
+            </td>
+         </tr>
+         <tr>
+            <td class="PadTop" colspan="3"></td>
+         </tr>
+         <tr>
+            <td colspan="3">
+               <p class="BoxDesc">The ACQualities structure contains character property lists.</p>
+            </td>
+         </tr>
+         <tr>
+            <td colspan="3" class="FieldRowSep">
+               <p class="FieldRowSep"></p>
+            </td>
+         </tr>
+         <tr>
+            <td class="FieldType">
+               <p class="FieldType"><span class="TypeRef" title="Struct"><a target="frameType" href="ACBaseQualities.html">ACBaseQualities</a></span></p>
+            </td>
+            <td class="FieldName">
+               <p class="FieldName">baseQualities</p>
+            </td>
+            <td class="FieldDesc">
+               <p class="FieldDesc">Contains basic data types (int, float bool, etc.)</p>
+            </td>
+         </tr>
+         <tr>
+            <td colspan="3" class="FieldRowSep">
+               <p class="FieldRowSep"></p>
+            </td>
+         </tr>
+         <tr>
+            <td class="FieldType">
+               <p class="FieldType"><span class="TypeRef" title="">uint</span></p>
+            </td>
+            <td class="FieldName">
+               <p class="FieldName">flags</p>
+            </td>
+            <td class="FieldDesc">
+               <p class="FieldDesc">determines which property vector types appear in the message</p>
+            </td>
+         </tr>
+         <tr>
+            <td colspan="3" class="FieldRowSep">
+               <p class="FieldRowSep"></p>
+            </td>
+         </tr>
+         <tr>
+            <td class="FieldType">
+               <p class="FieldType"><span class="TypeRef" title="">bool</span></p>
+            </td>
+            <td class="FieldName">
+               <p class="FieldName">hasHealth</p>
+            </td>
+            <td class="FieldDesc">
+               <p class="FieldDesc">seems to indicate this object has health attribute</p>
+            </td>
+         </tr>
+         <tr>
+            <td class="NestedTable" colspan="3">
+               <table cellspacing="0" cellpadding="0" class="CaseList2">
+                  <tr>
+                     <td colspan="2">
+                        <p class="CaseHead2">Choose valid sections by masking against <b>flags</b></p>
+                     </td>
+                  </tr>
+                  <tr>
+                     <td class="CaseVal2">
+                        <p class="CaseVal2">0x00000001</p>
+                     </td>
+                     <td class="CaseFields2">
+                        <table cellspacing="0" cellpadding="0" class="List2">
+                           <tr>
+                              <td class="PadTop" colspan="3"></td>
+                           </tr>
+                           <tr>
+                              <td class="FieldType">
+                                 <p class="FieldType"><span class="TypeRef" title="Struct"><a target="frameType" href="AttributeCache.html">AttributeCache</a></span></p>
+                              </td>
+                              <td class="FieldName">
+                                 <p class="FieldName">attribCache</p>
+                              </td>
+                              <td class="FieldDesc">
+                                 <p class="FieldDesc">The character attributes</p>
+                              </td>
+                           </tr>
+                           <tr>
+                              <td class="PadBottom" colspan="3"></td>
+                           </tr>
+                        </table>
+                     </td>
+                  </tr>
+                  <tr>
+                     <td class="CaseVal2">
+                        <p class="CaseVal2">0x00000002</p>
+                     </td>
+                     <td class="CaseFields2">
+                        <table cellspacing="0" cellpadding="0" class="List2">
+                           <tr>
+                              <td class="PadTop" colspan="3"></td>
+                           </tr>
+                           <tr>
+                              <td class="FieldType">
+                                 <p class="FieldType"><span class="TypeRef" title="Struct"><a target="frameType" href="PackableHashTable.html">PackableHashTable</a></span>&lt;<span class="TypeRef" title=""><a target="frameType" href="SkillID.html">SkillID</a></span>,<span class="TypeRef" title="Struct"><a target="frameType" href="Skill.html">Skill</a></span>&gt;
+                                 </p>
+                              </td>
+                              <td class="FieldName">
+                                 <p class="FieldName">skillTable</p>
+                              </td>
+                              <td class="FieldDesc">
+                                 <p class="FieldDesc"></p>
+                              </td>
+                           </tr>
+                           <tr>
+                              <td class="PadBottom" colspan="3"></td>
+                           </tr>
+                        </table>
+                     </td>
+                  </tr>
+                  <tr>
+                     <td class="CaseVal2">
+                        <p class="CaseVal2">0x00000004</p>
+                     </td>
+                     <td class="CaseFields2">
+                        <table cellspacing="0" cellpadding="0" class="List2">
+                           <tr>
+                              <td class="PadTop" colspan="3"></td>
+                           </tr>
+                           <tr>
+                              <td colspan="3">
+                                 <p class="BoxDesc">May not be in prod or sent to client?</p>
+                              </td>
+                           </tr>
+                           <tr>
+                              <td colspan="3" class="FieldRowSep">
+                                 <p class="FieldRowSep"></p>
+                              </td>
+                           </tr>
+                           <tr>
+                              <td class="FieldType">
+                                 <p class="FieldType"><span class="TypeRef" title="Struct"><a target="frameType" href="Body.html">Body</a></span></p>
+                              </td>
+                              <td class="FieldName">
+                                 <p class="FieldName">body</p>
+                              </td>
+                              <td class="FieldDesc">
+                                 <p class="FieldDesc"></p>
+                              </td>
+                           </tr>
+                           <tr>
+                              <td class="PadBottom" colspan="3"></td>
+                           </tr>
+                        </table>
+                     </td>
+                  </tr>
+                  <tr>
+                     <td class="CaseVal2">
+                        <p class="CaseVal2">0x00000100</p>
+                     </td>
+                     <td class="CaseFields2">
+                        <table cellspacing="0" cellpadding="0" class="List2">
+                           <tr>
+                              <td class="PadTop" colspan="3"></td>
+                           </tr>
+                           <tr>
+                              <td class="FieldType">
+                                 <p class="FieldType"><span class="TypeRef" title="Struct"><a target="frameType" href="SpellBook.html">SpellBook</a></span></p>
+                              </td>
+                              <td class="FieldName">
+                                 <p class="FieldName">spellBook</p>
+                              </td>
+                              <td class="FieldDesc">
+                                 <p class="FieldDesc">Spells in the characters spellbook</p>
+                              </td>
+                           </tr>
+                           <tr>
+                              <td class="PadBottom" colspan="3"></td>
+                           </tr>
+                        </table>
+                     </td>
+                  </tr>
+                  <tr>
+                     <td class="CaseVal2">
+                        <p class="CaseVal2">0x00000200</p>
+                     </td>
+                     <td class="CaseFields2">
+                        <table cellspacing="0" cellpadding="0" class="List2">
+                           <tr>
+                              <td class="PadTop" colspan="3"></td>
+                           </tr>
+                           <tr>
+                              <td class="FieldType">
+                                 <p class="FieldType"><span class="TypeRef" title="Struct"><a target="frameType" href="EnchantmentRegistry.html">EnchantmentRegistry</a></span></p>
+                              </td>
+                              <td class="FieldName">
+                                 <p class="FieldName">enchantmentRegistry</p>
+                              </td>
+                              <td class="FieldDesc">
+                                 <p class="FieldDesc">The enchantments active on the character</p>
+                              </td>
+                           </tr>
+                           <tr>
+                              <td class="PadBottom" colspan="3"></td>
+                           </tr>
+                        </table>
+                     </td>
+                  </tr>
+                  <tr>
+                     <td class="CaseVal2">
+                        <p class="CaseVal2">0x00000008</p>
+                     </td>
+                     <td class="CaseFields2">
+                        <table cellspacing="0" cellpadding="0" class="List2">
+                           <tr>
+                              <td class="PadTop" colspan="3"></td>
+                           </tr>
+                           <tr>
+                              <td colspan="3">
+                                 <p class="BoxDesc">May not be in prod or sent to client?</p>
+                              </td>
+                           </tr>
+                           <tr>
+                              <td colspan="3" class="FieldRowSep">
+                                 <p class="FieldRowSep"></p>
+                              </td>
+                           </tr>
+                           <tr>
+                              <td class="FieldType">
+                                 <p class="FieldType"><span class="TypeRef" title="Struct"><a target="frameType" href="EventFilter.html">EventFilter</a></span></p>
+                              </td>
+                              <td class="FieldName">
+                                 <p class="FieldName">eventFilter</p>
+                              </td>
+                              <td class="FieldDesc">
+                                 <p class="FieldDesc">Some kind of event filter</p>
+                              </td>
+                           </tr>
+                           <tr>
+                              <td class="PadBottom" colspan="3"></td>
+                           </tr>
+                        </table>
+                     </td>
+                  </tr>
+                  <tr>
+                     <td class="CaseVal2">
+                        <p class="CaseVal2">0x00000010</p>
+                     </td>
+                     <td class="CaseFields2">
+                        <table cellspacing="0" cellpadding="0" class="List2">
+                           <tr>
+                              <td class="PadTop" colspan="3"></td>
+                           </tr>
+                           <tr>
+                              <td colspan="3">
+                                 <p class="BoxDesc">May not be in prod or sent to client?</p>
+                              </td>
+                           </tr>
+                           <tr>
+                              <td colspan="3" class="FieldRowSep">
+                                 <p class="FieldRowSep"></p>
+                              </td>
+                           </tr>
+                           <tr>
+                              <td class="FieldType">
+                                 <p class="FieldType"><span class="TypeRef" title="Struct"><a target="frameType" href="EmoteTable.html">EmoteTable</a></span></p>
+                              </td>
+                              <td class="FieldName">
+                                 <p class="FieldName">emoteTable</p>
+                              </td>
+                              <td class="FieldDesc">
+                                 <p class="FieldDesc"></p>
+                              </td>
+                           </tr>
+                           <tr>
+                              <td class="PadBottom" colspan="3"></td>
+                           </tr>
+                        </table>
+                     </td>
+                  </tr>
+                  <tr>
+                     <td class="CaseVal2">
+                        <p class="CaseVal2">0x00000020</p>
+                     </td>
+                     <td class="CaseFields2">
+                        <table cellspacing="0" cellpadding="0" class="List2">
+                           <tr>
+                              <td class="PadTop" colspan="3"></td>
+                           </tr>
+                           <tr>
+                              <td colspan="3">
+                                 <p class="BoxDesc">May not be in prod or sent to client?</p>
+                              </td>
+                           </tr>
+                           <tr>
+                              <td colspan="3" class="FieldRowSep">
+                                 <p class="FieldRowSep"></p>
+                              </td>
+                           </tr>
+                           <tr>
+                              <td class="FieldType">
+                                 <p class="FieldType"><span class="TypeRef" title="Struct"><a target="frameType" href="PackableList.html">PackableList</a></span>&lt;<span class="TypeRef" title="Struct"><a target="frameType" href="CreationProfile.html">CreationProfile</a></span>&gt;
+                                 </p>
+                              </td>
+                              <td class="FieldName">
+                                 <p class="FieldName">creationProfile</p>
+                              </td>
+                              <td class="FieldDesc">
+                                 <p class="FieldDesc"></p>
+                              </td>
+                           </tr>
+                           <tr>
+                              <td class="PadBottom" colspan="3"></td>
+                           </tr>
+                        </table>
+                     </td>
+                  </tr>
+                  <tr>
+                     <td class="CaseVal2">
+                        <p class="CaseVal2">0x00000040</p>
+                     </td>
+                     <td class="CaseFields2">
+                        <table cellspacing="0" cellpadding="0" class="List2">
+                           <tr>
+                              <td class="PadTop" colspan="3"></td>
+                           </tr>
+                           <tr>
+                              <td colspan="3">
+                                 <p class="BoxDesc">May not be in prod or sent to client?</p>
+                              </td>
+                           </tr>
+                           <tr>
+                              <td colspan="3" class="FieldRowSep">
+                                 <p class="FieldRowSep"></p>
+                              </td>
+                           </tr>
+                           <tr>
+                              <td class="FieldType">
+                                 <p class="FieldType"><span class="TypeRef" title="Struct"><a target="frameType" href="PageDataList.html">PageDataList</a></span></p>
+                              </td>
+                              <td class="FieldName">
+                                 <p class="FieldName">pageDataList</p>
+                              </td>
+                              <td class="FieldDesc">
+                                 <p class="FieldDesc"></p>
+                              </td>
+                           </tr>
+                           <tr>
+                              <td class="PadBottom" colspan="3"></td>
+                           </tr>
+                        </table>
+                     </td>
+                  </tr>
+                  <tr>
+                     <td class="CaseVal2">
+                        <p class="CaseVal2">0x00000080</p>
+                     </td>
+                     <td class="CaseFields2">
+                        <table cellspacing="0" cellpadding="0" class="List2">
+                           <tr>
+                              <td class="PadTop" colspan="3"></td>
+                           </tr>
+                           <tr>
+                              <td colspan="3">
+                                 <p class="BoxDesc">May not be in prod or sent to client?</p>
+                              </td>
+                           </tr>
+                           <tr>
+                              <td colspan="3" class="FieldRowSep">
+                                 <p class="FieldRowSep"></p>
+                              </td>
+                           </tr>
+                           <tr>
+                              <td class="FieldType">
+                                 <p class="FieldType"><span class="TypeRef" title="Struct"><a target="frameType" href="GeneratorTable.html">GeneratorTable</a></span></p>
+                              </td>
+                              <td class="FieldName">
+                                 <p class="FieldName">generatorTable</p>
+                              </td>
+                              <td class="FieldDesc">
+                                 <p class="FieldDesc"></p>
+                              </td>
+                           </tr>
+                           <tr>
+                              <td class="PadBottom" colspan="3"></td>
+                           </tr>
+                        </table>
+                     </td>
+                  </tr>
+                  <tr>
+                     <td class="CaseVal2">
+                        <p class="CaseVal2">0x00000400</p>
+                     </td>
+                     <td class="CaseFields2">
+                        <table cellspacing="0" cellpadding="0" class="List2">
+                           <tr>
+                              <td class="PadTop" colspan="3"></td>
+                           </tr>
+                           <tr>
+                              <td colspan="3">
+                                 <p class="BoxDesc">May not be in prod or sent to client?</p>
+                              </td>
+                           </tr>
+                           <tr>
+                              <td colspan="3" class="FieldRowSep">
+                                 <p class="FieldRowSep"></p>
+                              </td>
+                           </tr>
+                           <tr>
+                              <td class="FieldType">
+                                 <p class="FieldType"><span class="TypeRef" title="Struct"><a target="frameType" href="GeneratorRegistry.html">GeneratorRegistry</a></span></p>
+                              </td>
+                              <td class="FieldName">
+                                 <p class="FieldName">generatorRegistry</p>
+                              </td>
+                              <td class="FieldDesc">
+                                 <p class="FieldDesc"></p>
+                              </td>
+                           </tr>
+                           <tr>
+                              <td class="PadBottom" colspan="3"></td>
+                           </tr>
+                        </table>
+                     </td>
+                  </tr>
+                  <tr>
+                     <td class="CaseVal2">
+                        <p class="CaseVal2">0x00000800</p>
+                     </td>
+                     <td class="CaseFields2">
+                        <table cellspacing="0" cellpadding="0" class="List2">
+                           <tr>
+                              <td class="PadTop" colspan="3"></td>
+                           </tr>
+                           <tr>
+                              <td colspan="3">
+                                 <p class="BoxDesc">May not be in prod or sent to client?</p>
+                              </td>
+                           </tr>
+                           <tr>
+                              <td colspan="3" class="FieldRowSep">
+                                 <p class="FieldRowSep"></p>
+                              </td>
+                           </tr>
+                           <tr>
+                              <td class="FieldType">
+                                 <p class="FieldType"><span class="TypeRef" title="Struct"><a target="frameType" href="GeneratorQueue.html">GeneratorQueue</a></span></p>
+                              </td>
+                              <td class="FieldName">
+                                 <p class="FieldName">generatorQueue</p>
+                              </td>
+                              <td class="FieldDesc">
+                                 <p class="FieldDesc"></p>
+                              </td>
+                           </tr>
+                           <tr>
+                              <td class="PadBottom" colspan="3"></td>
+                           </tr>
+                        </table>
+                     </td>
+                  </tr>
+               </table>
+            </td>
+         </tr>
+         <tr>
+            <td class="PadBottom" colspan="3"></td>
+         </tr>
+      </table>
+      <p class="Version">Messages.xml version 2017.11.14.0</p>
+   </body>
+</html>

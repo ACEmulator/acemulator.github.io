@@ -1,0 +1,287 @@
+<html xmlns:fo="http://www.w3.org/1999/XSL/Format" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:fn="http://www.w3.org/2005/xpath-functions">
+   <head>
+      <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+      <title>AC Protocol version 2017.11.14.0</title>
+      <link type="text/css" rel="stylesheet" href="../Classic.css">
+   </head>
+   <body>
+      <table cellspacing="0" cellpadding="0" class="List2">
+         <tr>
+            <td colspan="3">
+               <p class="BoxHead2"><b>ACBaseQualities</b></p>
+            </td>
+         </tr>
+         <tr>
+            <td class="PadTop" colspan="3"></td>
+         </tr>
+         <tr>
+            <td colspan="3">
+               <p class="BoxDesc">Character properties.</p>
+            </td>
+         </tr>
+         <tr>
+            <td colspan="3" class="FieldRowSep">
+               <p class="FieldRowSep"></p>
+            </td>
+         </tr>
+         <tr>
+            <td class="FieldType">
+               <p class="FieldType"><span class="TypeRef" title="">uint</span></p>
+            </td>
+            <td class="FieldName">
+               <p class="FieldName">flags</p>
+            </td>
+            <td class="FieldDesc">
+               <p class="FieldDesc">determines which property types appear in the message</p>
+            </td>
+         </tr>
+         <tr>
+            <td colspan="3" class="FieldRowSep">
+               <p class="FieldRowSep"></p>
+            </td>
+         </tr>
+         <tr>
+            <td class="FieldType">
+               <p class="FieldType"><span class="TypeRef" title=""><a target="frameType" href="ObjectType.html">ObjectType</a></span></p>
+            </td>
+            <td class="FieldName">
+               <p class="FieldName">weenieType</p>
+            </td>
+            <td class="FieldDesc">
+               <p class="FieldDesc">Expect it always should be 0xA</p>
+            </td>
+         </tr>
+         <tr>
+            <td class="NestedTable" colspan="3">
+               <table cellspacing="0" cellpadding="0" class="CaseList2">
+                  <tr>
+                     <td colspan="2">
+                        <p class="CaseHead2">Choose valid sections by masking against <b>flags</b></p>
+                     </td>
+                  </tr>
+                  <tr>
+                     <td class="CaseVal2">
+                        <p class="CaseVal2">0x00000001</p>
+                     </td>
+                     <td class="CaseFields2">
+                        <table cellspacing="0" cellpadding="0" class="List2">
+                           <tr>
+                              <td class="PadTop" colspan="3"></td>
+                           </tr>
+                           <tr>
+                              <td class="FieldType">
+                                 <p class="FieldType"><span class="TypeRef" title="Struct"><a target="frameType" href="PackableHashTable.html">PackableHashTable</a></span>&lt;<span class="TypeRef" title=""><a target="frameType" href="IntPropertyID.html">IntPropertyID</a></span>,<span class="TypeRef" title="">int</span>&gt;
+                                 </p>
+                              </td>
+                              <td class="FieldName">
+                                 <p class="FieldName">intStatsTable</p>
+                              </td>
+                              <td class="FieldDesc">
+                                 <p class="FieldDesc"></p>
+                              </td>
+                           </tr>
+                           <tr>
+                              <td class="PadBottom" colspan="3"></td>
+                           </tr>
+                        </table>
+                     </td>
+                  </tr>
+                  <tr>
+                     <td class="CaseVal2">
+                        <p class="CaseVal2">0x00000080</p>
+                     </td>
+                     <td class="CaseFields2">
+                        <table cellspacing="0" cellpadding="0" class="List2">
+                           <tr>
+                              <td class="PadTop" colspan="3"></td>
+                           </tr>
+                           <tr>
+                              <td class="FieldType">
+                                 <p class="FieldType"><span class="TypeRef" title="Struct"><a target="frameType" href="PackableHashTable.html">PackableHashTable</a></span>&lt;<span class="TypeRef" title=""><a target="frameType" href="Int64PropertyID.html">Int64PropertyID</a></span>,<span class="TypeRef" title="">long</span>&gt;
+                                 </p>
+                              </td>
+                              <td class="FieldName">
+                                 <p class="FieldName">int64StatsTable</p>
+                              </td>
+                              <td class="FieldDesc">
+                                 <p class="FieldDesc"></p>
+                              </td>
+                           </tr>
+                           <tr>
+                              <td class="PadBottom" colspan="3"></td>
+                           </tr>
+                        </table>
+                     </td>
+                  </tr>
+                  <tr>
+                     <td class="CaseVal2">
+                        <p class="CaseVal2">0x00000002</p>
+                     </td>
+                     <td class="CaseFields2">
+                        <table cellspacing="0" cellpadding="0" class="List2">
+                           <tr>
+                              <td class="PadTop" colspan="3"></td>
+                           </tr>
+                           <tr>
+                              <td class="FieldType">
+                                 <p class="FieldType"><span class="TypeRef" title="Struct"><a target="frameType" href="PackableHashTable.html">PackableHashTable</a></span>&lt;<span class="TypeRef" title=""><a target="frameType" href="BooleanPropertyID.html">BooleanPropertyID</a></span>,<span class="TypeRef" title="">bool</span>&gt;
+                                 </p>
+                              </td>
+                              <td class="FieldName">
+                                 <p class="FieldName">boolStatsTable</p>
+                              </td>
+                              <td class="FieldDesc">
+                                 <p class="FieldDesc"></p>
+                              </td>
+                           </tr>
+                           <tr>
+                              <td class="PadBottom" colspan="3"></td>
+                           </tr>
+                        </table>
+                     </td>
+                  </tr>
+                  <tr>
+                     <td class="CaseVal2">
+                        <p class="CaseVal2">0x00000004</p>
+                     </td>
+                     <td class="CaseFields2">
+                        <table cellspacing="0" cellpadding="0" class="List2">
+                           <tr>
+                              <td class="PadTop" colspan="3"></td>
+                           </tr>
+                           <tr>
+                              <td class="FieldType">
+                                 <p class="FieldType"><span class="TypeRef" title="Struct"><a target="frameType" href="PackableHashTable.html">PackableHashTable</a></span>&lt;<span class="TypeRef" title=""><a target="frameType" href="FloatPropertyID.html">FloatPropertyID</a></span>,<span class="TypeRef" title="">float</span>&gt;
+                                 </p>
+                              </td>
+                              <td class="FieldName">
+                                 <p class="FieldName">floatStatsTable</p>
+                              </td>
+                              <td class="FieldDesc">
+                                 <p class="FieldDesc"></p>
+                              </td>
+                           </tr>
+                           <tr>
+                              <td class="PadBottom" colspan="3"></td>
+                           </tr>
+                        </table>
+                     </td>
+                  </tr>
+                  <tr>
+                     <td class="CaseVal2">
+                        <p class="CaseVal2">0x00000010</p>
+                     </td>
+                     <td class="CaseFields2">
+                        <table cellspacing="0" cellpadding="0" class="List2">
+                           <tr>
+                              <td class="PadTop" colspan="3"></td>
+                           </tr>
+                           <tr>
+                              <td class="FieldType">
+                                 <p class="FieldType"><span class="TypeRef" title="Struct"><a target="frameType" href="PackableHashTable.html">PackableHashTable</a></span>&lt;<span class="TypeRef" title=""><a target="frameType" href="StringPropertyID.html">StringPropertyID</a></span>,<span class="TypeRef" title="">string</span>&gt;
+                                 </p>
+                              </td>
+                              <td class="FieldName">
+                                 <p class="FieldName">strStatsTable</p>
+                              </td>
+                              <td class="FieldDesc">
+                                 <p class="FieldDesc"></p>
+                              </td>
+                           </tr>
+                           <tr>
+                              <td class="PadBottom" colspan="3"></td>
+                           </tr>
+                        </table>
+                     </td>
+                  </tr>
+                  <tr>
+                     <td class="CaseVal2">
+                        <p class="CaseVal2">0x00000040</p>
+                     </td>
+                     <td class="CaseFields2">
+                        <table cellspacing="0" cellpadding="0" class="List2">
+                           <tr>
+                              <td class="PadTop" colspan="3"></td>
+                           </tr>
+                           <tr>
+                              <td class="FieldType">
+                                 <p class="FieldType"><span class="TypeRef" title="Struct"><a target="frameType" href="PackableHashTable.html">PackableHashTable</a></span>&lt;<span class="TypeRef" title=""><a target="frameType" href="DataPropertyID.html">DataPropertyID</a></span>,<span class="TypeRef" title="PackedDWORD">DataID</span>&gt;
+                                 </p>
+                              </td>
+                              <td class="FieldName">
+                                 <p class="FieldName">didStatsTable</p>
+                              </td>
+                              <td class="FieldDesc">
+                                 <p class="FieldDesc"></p>
+                              </td>
+                           </tr>
+                           <tr>
+                              <td class="PadBottom" colspan="3"></td>
+                           </tr>
+                        </table>
+                     </td>
+                  </tr>
+                  <tr>
+                     <td class="CaseVal2">
+                        <p class="CaseVal2">0x00000008</p>
+                     </td>
+                     <td class="CaseFields2">
+                        <table cellspacing="0" cellpadding="0" class="List2">
+                           <tr>
+                              <td class="PadTop" colspan="3"></td>
+                           </tr>
+                           <tr>
+                              <td class="FieldType">
+                                 <p class="FieldType"><span class="TypeRef" title="Struct"><a target="frameType" href="PackableHashTable.html">PackableHashTable</a></span>&lt;<span class="TypeRef" title=""><a target="frameType" href="InstancePropertyID.html">InstancePropertyID</a></span>,<span class="TypeRef" title="uint">ObjectID</span>&gt;
+                                 </p>
+                              </td>
+                              <td class="FieldName">
+                                 <p class="FieldName">iidStatsTable</p>
+                              </td>
+                              <td class="FieldDesc">
+                                 <p class="FieldDesc"></p>
+                              </td>
+                           </tr>
+                           <tr>
+                              <td class="PadBottom" colspan="3"></td>
+                           </tr>
+                        </table>
+                     </td>
+                  </tr>
+                  <tr>
+                     <td class="CaseVal2">
+                        <p class="CaseVal2">0x00000020</p>
+                     </td>
+                     <td class="CaseFields2">
+                        <table cellspacing="0" cellpadding="0" class="List2">
+                           <tr>
+                              <td class="PadTop" colspan="3"></td>
+                           </tr>
+                           <tr>
+                              <td class="FieldType">
+                                 <p class="FieldType"><span class="TypeRef" title="Struct"><a target="frameType" href="PackableHashTable.html">PackableHashTable</a></span>&lt;<span class="TypeRef" title=""><a target="frameType" href="PositionPropertyID.html">PositionPropertyID</a></span>,<span class="TypeRef" title="">Position0</span>&gt;
+                                 </p>
+                              </td>
+                              <td class="FieldName">
+                                 <p class="FieldName">posStatsTable</p>
+                              </td>
+                              <td class="FieldDesc">
+                                 <p class="FieldDesc"></p>
+                              </td>
+                           </tr>
+                           <tr>
+                              <td class="PadBottom" colspan="3"></td>
+                           </tr>
+                        </table>
+                     </td>
+                  </tr>
+               </table>
+            </td>
+         </tr>
+         <tr>
+            <td class="PadBottom" colspan="3"></td>
+         </tr>
+      </table>
+      <p class="Version">Messages.xml version 2017.11.14.0</p>
+   </body>
+</html>

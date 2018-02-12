@@ -1,0 +1,907 @@
+<html xmlns:fo="http://www.w3.org/1999/XSL/Format" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:fn="http://www.w3.org/2005/xpath-functions">
+   <head>
+      <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+      <title>AC Protocol version 2017.11.14.0</title>
+      <link type="text/css" rel="stylesheet" href="../Classic.css">
+   </head>
+   <body>
+      <table cellspacing="0" cellpadding="0" class="List2">
+         <tr>
+            <td colspan="3">
+               <p class="BoxHead2"><b>PhysicsDesc</b></p>
+            </td>
+         </tr>
+         <tr>
+            <td class="PadTop" colspan="3"></td>
+         </tr>
+         <tr>
+            <td colspan="3">
+               <p class="BoxDesc">The PhysicsDesc structure defines an object's physical behavior.</p>
+            </td>
+         </tr>
+         <tr>
+            <td colspan="3" class="FieldRowSep">
+               <p class="FieldRowSep"></p>
+            </td>
+         </tr>
+         <tr>
+            <td class="FieldType">
+               <p class="FieldType"><span class="TypeRef" title="">uint</span></p>
+            </td>
+            <td class="FieldName">
+               <p class="FieldName">flags</p>
+            </td>
+            <td class="FieldDesc">
+               <p class="FieldDesc">physics data flags</p>
+            </td>
+         </tr>
+         <tr>
+            <td colspan="3" class="FieldRowSep">
+               <p class="FieldRowSep"></p>
+            </td>
+         </tr>
+         <tr>
+            <td class="FieldType">
+               <p class="FieldType"><span class="TypeRef" title=""><a target="frameType" href="PhysicsState.html">PhysicsState</a></span></p>
+            </td>
+            <td class="FieldName">
+               <p class="FieldName">state</p>
+            </td>
+            <td class="FieldDesc">
+               <p class="FieldDesc">The current physics state for the object</p>
+            </td>
+         </tr>
+         <tr>
+            <td class="NestedTable" colspan="3">
+               <table cellspacing="0" cellpadding="0" class="CaseList2">
+                  <tr>
+                     <td colspan="2">
+                        <p class="CaseHead2">Choose valid sections by masking against <b>flags</b></p>
+                     </td>
+                  </tr>
+                  <tr>
+                     <td class="CaseVal2">
+                        <p class="CaseVal2">0x00010000</p>
+                     </td>
+                     <td class="CaseFields2">
+                        <table cellspacing="0" cellpadding="0" class="List2">
+                           <tr>
+                              <td class="PadTop" colspan="3"></td>
+                           </tr>
+                           <tr>
+                              <td class="FieldType">
+                                 <p class="FieldType"><span class="TypeRef" title="">uint</span></p>
+                              </td>
+                              <td class="FieldName">
+                                 <p class="FieldName">movementByteCount</p>
+                              </td>
+                              <td class="FieldDesc">
+                                 <p class="FieldDesc">the number of BYTEs in the following movement buffer</p>
+                              </td>
+                           </tr>
+                           <tr>
+                              <td class="NestedTable" colspan="3">
+                                 <table cellspacing="0" cellpadding="0" class="CaseList2">
+                                    <tr>
+                                       <td colspan="2">
+                                          <p class="CaseHead2">Choose based on testing <b>movementByteCount &gt; 0</b></p>
+                                       </td>
+                                    </tr>
+                                    <tr>
+                                       <td class="CaseVal2">
+                                          <p class="CaseVal2">true</p>
+                                       </td>
+                                       <td class="CaseFields2">
+                                          <table cellspacing="0" cellpadding="0" class="List2">
+                                             <tr>
+                                                <td class="PadTop" colspan="3"></td>
+                                             </tr>
+                                             <tr>
+                                                <td class="NestedTable" colspan="3">
+                                                   <table cellspacing="0" cellpadding="0" class="List1">
+                                                      <tr>
+                                                         <td colspan="3">
+                                                            <p class="BoxHead1"><b>bytes</b>: vector of length <b>movementByteCount</b></p>
+                                                         </td>
+                                                      </tr>
+                                                      <tr>
+                                                         <td class="PadTop" colspan="3"></td>
+                                                      </tr>
+                                                      <tr>
+                                                         <td class="FieldType">
+                                                            <p class="FieldType"><span class="TypeRef" title="">byte</span></p>
+                                                         </td>
+                                                         <td class="FieldName">
+                                                            <p class="FieldName">byte</p>
+                                                         </td>
+                                                         <td class="FieldDesc">
+                                                            <p class="FieldDesc"></p>
+                                                         </td>
+                                                      </tr>
+                                                      <tr>
+                                                         <td class="PadBottom" colspan="3"></td>
+                                                      </tr>
+                                                   </table>
+                                                </td>
+                                             </tr>
+                                             <tr>
+                                                <td class="FieldType">
+                                                   <p class="FieldType"><span class="TypeRef" title="">bool</span></p>
+                                                </td>
+                                                <td class="FieldName">
+                                                   <p class="FieldName">autonomous</p>
+                                                </td>
+                                                <td class="FieldDesc">
+                                                   <p class="FieldDesc">Whether the movement is autonomous (0 for no, 1 for yes).  NOTE that this is only
+                                                      present if movementByteCount &gt; 0
+                                                   </p>
+                                                </td>
+                                             </tr>
+                                             <tr>
+                                                <td class="PadBottom" colspan="3"></td>
+                                             </tr>
+                                          </table>
+                                       </td>
+                                    </tr>
+                                 </table>
+                              </td>
+                           </tr>
+                           <tr>
+                              <td class="PadBottom" colspan="3"></td>
+                           </tr>
+                        </table>
+                     </td>
+                  </tr>
+                  <tr>
+                     <td class="CaseVal2">
+                        <p class="CaseVal2">0x00020000</p>
+                     </td>
+                     <td class="CaseFields2">
+                        <table cellspacing="0" cellpadding="0" class="List2">
+                           <tr>
+                              <td class="PadTop" colspan="3"></td>
+                           </tr>
+                           <tr>
+                              <td class="FieldType">
+                                 <p class="FieldType"><span class="TypeRef" title="">uint</span></p>
+                              </td>
+                              <td class="FieldName">
+                                 <p class="FieldName">animationFrame</p>
+                              </td>
+                              <td class="FieldDesc">
+                                 <p class="FieldDesc">The current animation frame.  NOTE this can only be present if 0x00010000 is not set</p>
+                              </td>
+                           </tr>
+                           <tr>
+                              <td class="PadBottom" colspan="3"></td>
+                           </tr>
+                        </table>
+                     </td>
+                  </tr>
+                  <tr>
+                     <td class="CaseVal2">
+                        <p class="CaseVal2">0x00008000</p>
+                     </td>
+                     <td class="CaseFields2">
+                        <table cellspacing="0" cellpadding="0" class="List2">
+                           <tr>
+                              <td class="PadTop" colspan="3"></td>
+                           </tr>
+                           <tr>
+                              <td class="FieldType">
+                                 <p class="FieldType"><span class="TypeRef" title="Struct"><a target="frameType" href="Frame.html">Frame</a></span></p>
+                              </td>
+                              <td class="FieldName">
+                                 <p class="FieldName">position</p>
+                              </td>
+                              <td class="FieldDesc">
+                                 <p class="FieldDesc">object position</p>
+                              </td>
+                           </tr>
+                           <tr>
+                              <td class="PadBottom" colspan="3"></td>
+                           </tr>
+                        </table>
+                     </td>
+                  </tr>
+                  <tr>
+                     <td class="CaseVal2">
+                        <p class="CaseVal2">0x00000002</p>
+                     </td>
+                     <td class="CaseFields2">
+                        <table cellspacing="0" cellpadding="0" class="List2">
+                           <tr>
+                              <td class="PadTop" colspan="3"></td>
+                           </tr>
+                           <tr>
+                              <td class="FieldType">
+                                 <p class="FieldType"><span class="TypeRef" title="PackedDWORD">DataID</span></p>
+                              </td>
+                              <td class="FieldName">
+                                 <p class="FieldName">motionTableID</p>
+                              </td>
+                              <td class="FieldDesc">
+                                 <p class="FieldDesc">motion table id for this object</p>
+                              </td>
+                           </tr>
+                           <tr>
+                              <td class="PadBottom" colspan="3"></td>
+                           </tr>
+                        </table>
+                     </td>
+                  </tr>
+                  <tr>
+                     <td class="CaseVal2">
+                        <p class="CaseVal2">0x00000800</p>
+                     </td>
+                     <td class="CaseFields2">
+                        <table cellspacing="0" cellpadding="0" class="List2">
+                           <tr>
+                              <td class="PadTop" colspan="3"></td>
+                           </tr>
+                           <tr>
+                              <td class="FieldType">
+                                 <p class="FieldType"><span class="TypeRef" title="PackedDWORD">DataID</span></p>
+                              </td>
+                              <td class="FieldName">
+                                 <p class="FieldName">soundTableID</p>
+                              </td>
+                              <td class="FieldDesc">
+                                 <p class="FieldDesc">sound table id for this object</p>
+                              </td>
+                           </tr>
+                           <tr>
+                              <td class="PadBottom" colspan="3"></td>
+                           </tr>
+                        </table>
+                     </td>
+                  </tr>
+                  <tr>
+                     <td class="CaseVal2">
+                        <p class="CaseVal2">0x00001000</p>
+                     </td>
+                     <td class="CaseFields2">
+                        <table cellspacing="0" cellpadding="0" class="List2">
+                           <tr>
+                              <td class="PadTop" colspan="3"></td>
+                           </tr>
+                           <tr>
+                              <td class="FieldType">
+                                 <p class="FieldType"><span class="TypeRef" title="PackedDWORD">DataID</span></p>
+                              </td>
+                              <td class="FieldName">
+                                 <p class="FieldName">physicsScriptTableID</p>
+                              </td>
+                              <td class="FieldDesc">
+                                 <p class="FieldDesc">physics script table id for this object</p>
+                              </td>
+                           </tr>
+                           <tr>
+                              <td class="PadBottom" colspan="3"></td>
+                           </tr>
+                        </table>
+                     </td>
+                  </tr>
+                  <tr>
+                     <td class="CaseVal2">
+                        <p class="CaseVal2">0x00000001</p>
+                     </td>
+                     <td class="CaseFields2">
+                        <table cellspacing="0" cellpadding="0" class="List2">
+                           <tr>
+                              <td class="PadTop" colspan="3"></td>
+                           </tr>
+                           <tr>
+                              <td class="FieldType">
+                                 <p class="FieldType"><span class="TypeRef" title="PackedDWORD">DataID</span></p>
+                              </td>
+                              <td class="FieldName">
+                                 <p class="FieldName">setupTableID</p>
+                              </td>
+                              <td class="FieldDesc">
+                                 <p class="FieldDesc">setup table id for this object</p>
+                              </td>
+                           </tr>
+                           <tr>
+                              <td class="PadBottom" colspan="3"></td>
+                           </tr>
+                        </table>
+                     </td>
+                  </tr>
+                  <tr>
+                     <td class="CaseVal2">
+                        <p class="CaseVal2">0x00000020</p>
+                     </td>
+                     <td class="CaseFields2">
+                        <table cellspacing="0" cellpadding="0" class="List2">
+                           <tr>
+                              <td class="PadTop" colspan="3"></td>
+                           </tr>
+                           <tr>
+                              <td class="FieldType">
+                                 <p class="FieldType"><span class="TypeRef" title="uint">ObjectID</span></p>
+                              </td>
+                              <td class="FieldName">
+                                 <p class="FieldName">parent</p>
+                              </td>
+                              <td class="FieldDesc">
+                                 <p class="FieldDesc">the creature equipping this object</p>
+                              </td>
+                           </tr>
+                           <tr>
+                              <td colspan="3" class="FieldRowSep">
+                                 <p class="FieldRowSep"></p>
+                              </td>
+                           </tr>
+                           <tr>
+                              <td class="FieldType">
+                                 <p class="FieldType"><span class="TypeRef" title="">uint</span></p>
+                              </td>
+                              <td class="FieldName">
+                                 <p class="FieldName">locationID</p>
+                              </td>
+                              <td class="FieldDesc">
+                                 <p class="FieldDesc">the slot in which this object is equipped, referenced in the Setup table of the dats</p>
+                              </td>
+                           </tr>
+                           <tr>
+                              <td class="PadBottom" colspan="3"></td>
+                           </tr>
+                        </table>
+                     </td>
+                  </tr>
+                  <tr>
+                     <td class="CaseVal2">
+                        <p class="CaseVal2">0x00000040</p>
+                     </td>
+                     <td class="CaseFields2">
+                        <table cellspacing="0" cellpadding="0" class="List2">
+                           <tr>
+                              <td class="PadTop" colspan="3"></td>
+                           </tr>
+                           <tr>
+                              <td class="FieldType">
+                                 <p class="FieldType"><span class="TypeRef" title="">uint</span></p>
+                              </td>
+                              <td class="FieldName">
+                                 <p class="FieldName">numChildren</p>
+                              </td>
+                              <td class="FieldDesc">
+                                 <p class="FieldDesc">the number of items equipped by this creature</p>
+                              </td>
+                           </tr>
+                           <tr>
+                              <td class="NestedTable" colspan="3">
+                                 <table cellspacing="0" cellpadding="0" class="List1">
+                                    <tr>
+                                       <td colspan="3">
+                                          <p class="BoxHead1"><b>children</b>: vector of length <b>numChildren</b></p>
+                                       </td>
+                                    </tr>
+                                    <tr>
+                                       <td class="PadTop" colspan="3"></td>
+                                    </tr>
+                                    <tr>
+                                       <td class="FieldType">
+                                          <p class="FieldType"><span class="TypeRef" title="uint">ObjectID</span></p>
+                                       </td>
+                                       <td class="FieldName">
+                                          <p class="FieldName">itemID</p>
+                                       </td>
+                                       <td class="FieldDesc">
+                                          <p class="FieldDesc"></p>
+                                       </td>
+                                    </tr>
+                                    <tr>
+                                       <td colspan="3" class="FieldRowSep">
+                                          <p class="FieldRowSep"></p>
+                                       </td>
+                                    </tr>
+                                    <tr>
+                                       <td class="FieldType">
+                                          <p class="FieldType"><span class="TypeRef" title="">uint</span></p>
+                                       </td>
+                                       <td class="FieldName">
+                                          <p class="FieldName">locationID</p>
+                                       </td>
+                                       <td class="FieldDesc">
+                                          <p class="FieldDesc">the slot in which this object is equipped, referenced in the Setup table of the dats</p>
+                                       </td>
+                                    </tr>
+                                    <tr>
+                                       <td class="PadBottom" colspan="3"></td>
+                                    </tr>
+                                 </table>
+                              </td>
+                           </tr>
+                           <tr>
+                              <td class="PadBottom" colspan="3"></td>
+                           </tr>
+                        </table>
+                     </td>
+                  </tr>
+                  <tr>
+                     <td class="CaseVal2">
+                        <p class="CaseVal2">0x00000080</p>
+                     </td>
+                     <td class="CaseFields2">
+                        <table cellspacing="0" cellpadding="0" class="List2">
+                           <tr>
+                              <td class="PadTop" colspan="3"></td>
+                           </tr>
+                           <tr>
+                              <td class="FieldType">
+                                 <p class="FieldType"><span class="TypeRef" title="">float</span></p>
+                              </td>
+                              <td class="FieldName">
+                                 <p class="FieldName">scale</p>
+                              </td>
+                              <td class="FieldDesc">
+                                 <p class="FieldDesc">the size of this object</p>
+                              </td>
+                           </tr>
+                           <tr>
+                              <td class="PadBottom" colspan="3"></td>
+                           </tr>
+                        </table>
+                     </td>
+                  </tr>
+                  <tr>
+                     <td class="CaseVal2">
+                        <p class="CaseVal2">0x00000100</p>
+                     </td>
+                     <td class="CaseFields2">
+                        <table cellspacing="0" cellpadding="0" class="List2">
+                           <tr>
+                              <td class="PadTop" colspan="3"></td>
+                           </tr>
+                           <tr>
+                              <td class="FieldType">
+                                 <p class="FieldType"><span class="TypeRef" title="">float</span></p>
+                              </td>
+                              <td class="FieldName">
+                                 <p class="FieldName">friction</p>
+                              </td>
+                              <td class="FieldDesc">
+                                 <p class="FieldDesc"></p>
+                              </td>
+                           </tr>
+                           <tr>
+                              <td class="PadBottom" colspan="3"></td>
+                           </tr>
+                        </table>
+                     </td>
+                  </tr>
+                  <tr>
+                     <td class="CaseVal2">
+                        <p class="CaseVal2">0x00000200</p>
+                     </td>
+                     <td class="CaseFields2">
+                        <table cellspacing="0" cellpadding="0" class="List2">
+                           <tr>
+                              <td class="PadTop" colspan="3"></td>
+                           </tr>
+                           <tr>
+                              <td class="FieldType">
+                                 <p class="FieldType"><span class="TypeRef" title="">float</span></p>
+                              </td>
+                              <td class="FieldName">
+                                 <p class="FieldName">elasticity</p>
+                              </td>
+                              <td class="FieldDesc">
+                                 <p class="FieldDesc"></p>
+                              </td>
+                           </tr>
+                           <tr>
+                              <td class="PadBottom" colspan="3"></td>
+                           </tr>
+                        </table>
+                     </td>
+                  </tr>
+                  <tr>
+                     <td class="CaseVal2">
+                        <p class="CaseVal2">0x00040000</p>
+                     </td>
+                     <td class="CaseFields2">
+                        <table cellspacing="0" cellpadding="0" class="List2">
+                           <tr>
+                              <td class="PadTop" colspan="3"></td>
+                           </tr>
+                           <tr>
+                              <td class="FieldType">
+                                 <p class="FieldType"><span class="TypeRef" title="">float</span></p>
+                              </td>
+                              <td class="FieldName">
+                                 <p class="FieldName">translucency</p>
+                              </td>
+                              <td class="FieldDesc">
+                                 <p class="FieldDesc"></p>
+                              </td>
+                           </tr>
+                           <tr>
+                              <td class="PadBottom" colspan="3"></td>
+                           </tr>
+                        </table>
+                     </td>
+                  </tr>
+                  <tr>
+                     <td class="CaseVal2">
+                        <p class="CaseVal2">0x00000004</p>
+                     </td>
+                     <td class="CaseFields2">
+                        <table cellspacing="0" cellpadding="0" class="List2">
+                           <tr>
+                              <td class="PadTop" colspan="3"></td>
+                           </tr>
+                           <tr>
+                              <td class="FieldType">
+                                 <p class="FieldType"><span class="TypeRef" title="">float</span></p>
+                              </td>
+                              <td class="FieldName">
+                                 <p class="FieldName">velocityX</p>
+                              </td>
+                              <td class="FieldDesc">
+                                 <p class="FieldDesc">velocity vector x component</p>
+                              </td>
+                           </tr>
+                           <tr>
+                              <td colspan="3" class="FieldRowSep">
+                                 <p class="FieldRowSep"></p>
+                              </td>
+                           </tr>
+                           <tr>
+                              <td class="FieldType">
+                                 <p class="FieldType"><span class="TypeRef" title="">float</span></p>
+                              </td>
+                              <td class="FieldName">
+                                 <p class="FieldName">velocityY</p>
+                              </td>
+                              <td class="FieldDesc">
+                                 <p class="FieldDesc">velocity vector y component</p>
+                              </td>
+                           </tr>
+                           <tr>
+                              <td colspan="3" class="FieldRowSep">
+                                 <p class="FieldRowSep"></p>
+                              </td>
+                           </tr>
+                           <tr>
+                              <td class="FieldType">
+                                 <p class="FieldType"><span class="TypeRef" title="">float</span></p>
+                              </td>
+                              <td class="FieldName">
+                                 <p class="FieldName">velocityZ</p>
+                              </td>
+                              <td class="FieldDesc">
+                                 <p class="FieldDesc">velocity vector z component</p>
+                              </td>
+                           </tr>
+                           <tr>
+                              <td class="PadBottom" colspan="3"></td>
+                           </tr>
+                        </table>
+                     </td>
+                  </tr>
+                  <tr>
+                     <td class="CaseVal2">
+                        <p class="CaseVal2">0x00000008</p>
+                     </td>
+                     <td class="CaseFields2">
+                        <table cellspacing="0" cellpadding="0" class="List2">
+                           <tr>
+                              <td class="PadTop" colspan="3"></td>
+                           </tr>
+                           <tr>
+                              <td class="FieldType">
+                                 <p class="FieldType"><span class="TypeRef" title="">float</span></p>
+                              </td>
+                              <td class="FieldName">
+                                 <p class="FieldName">accelerationX</p>
+                              </td>
+                              <td class="FieldDesc">
+                                 <p class="FieldDesc">acceleration vector x component</p>
+                              </td>
+                           </tr>
+                           <tr>
+                              <td colspan="3" class="FieldRowSep">
+                                 <p class="FieldRowSep"></p>
+                              </td>
+                           </tr>
+                           <tr>
+                              <td class="FieldType">
+                                 <p class="FieldType"><span class="TypeRef" title="">float</span></p>
+                              </td>
+                              <td class="FieldName">
+                                 <p class="FieldName">accelerationY</p>
+                              </td>
+                              <td class="FieldDesc">
+                                 <p class="FieldDesc">acceleration vector y component</p>
+                              </td>
+                           </tr>
+                           <tr>
+                              <td colspan="3" class="FieldRowSep">
+                                 <p class="FieldRowSep"></p>
+                              </td>
+                           </tr>
+                           <tr>
+                              <td class="FieldType">
+                                 <p class="FieldType"><span class="TypeRef" title="">float</span></p>
+                              </td>
+                              <td class="FieldName">
+                                 <p class="FieldName">accelerationZ</p>
+                              </td>
+                              <td class="FieldDesc">
+                                 <p class="FieldDesc">acceleration vector z component</p>
+                              </td>
+                           </tr>
+                           <tr>
+                              <td class="PadBottom" colspan="3"></td>
+                           </tr>
+                        </table>
+                     </td>
+                  </tr>
+                  <tr>
+                     <td class="CaseVal2">
+                        <p class="CaseVal2">0x00000010</p>
+                     </td>
+                     <td class="CaseFields2">
+                        <table cellspacing="0" cellpadding="0" class="List2">
+                           <tr>
+                              <td class="PadTop" colspan="3"></td>
+                           </tr>
+                           <tr>
+                              <td class="FieldType">
+                                 <p class="FieldType"><span class="TypeRef" title="">float</span></p>
+                              </td>
+                              <td class="FieldName">
+                                 <p class="FieldName">omegaX</p>
+                              </td>
+                              <td class="FieldDesc">
+                                 <p class="FieldDesc">omega vector x component (rotation)</p>
+                              </td>
+                           </tr>
+                           <tr>
+                              <td colspan="3" class="FieldRowSep">
+                                 <p class="FieldRowSep"></p>
+                              </td>
+                           </tr>
+                           <tr>
+                              <td class="FieldType">
+                                 <p class="FieldType"><span class="TypeRef" title="">float</span></p>
+                              </td>
+                              <td class="FieldName">
+                                 <p class="FieldName">omegaY</p>
+                              </td>
+                              <td class="FieldDesc">
+                                 <p class="FieldDesc">omega vector y component (rotation)</p>
+                              </td>
+                           </tr>
+                           <tr>
+                              <td colspan="3" class="FieldRowSep">
+                                 <p class="FieldRowSep"></p>
+                              </td>
+                           </tr>
+                           <tr>
+                              <td class="FieldType">
+                                 <p class="FieldType"><span class="TypeRef" title="">float</span></p>
+                              </td>
+                              <td class="FieldName">
+                                 <p class="FieldName">omegaZ</p>
+                              </td>
+                              <td class="FieldDesc">
+                                 <p class="FieldDesc">omega vector z component (rotation)</p>
+                              </td>
+                           </tr>
+                           <tr>
+                              <td class="PadBottom" colspan="3"></td>
+                           </tr>
+                        </table>
+                     </td>
+                  </tr>
+                  <tr>
+                     <td class="CaseVal2">
+                        <p class="CaseVal2">0x00002000</p>
+                     </td>
+                     <td class="CaseFields2">
+                        <table cellspacing="0" cellpadding="0" class="List2">
+                           <tr>
+                              <td class="PadTop" colspan="3"></td>
+                           </tr>
+                           <tr>
+                              <td class="FieldType">
+                                 <p class="FieldType"><span class="TypeRef" title="">uint</span></p>
+                              </td>
+                              <td class="FieldName">
+                                 <p class="FieldName">defaultScript</p>
+                              </td>
+                              <td class="FieldDesc">
+                                 <p class="FieldDesc"></p>
+                              </td>
+                           </tr>
+                           <tr>
+                              <td class="PadBottom" colspan="3"></td>
+                           </tr>
+                        </table>
+                     </td>
+                  </tr>
+                  <tr>
+                     <td class="CaseVal2">
+                        <p class="CaseVal2">0x00004000</p>
+                     </td>
+                     <td class="CaseFields2">
+                        <table cellspacing="0" cellpadding="0" class="List2">
+                           <tr>
+                              <td class="PadTop" colspan="3"></td>
+                           </tr>
+                           <tr>
+                              <td class="FieldType">
+                                 <p class="FieldType"><span class="TypeRef" title="">float</span></p>
+                              </td>
+                              <td class="FieldName">
+                                 <p class="FieldName">defaultScriptIntensity</p>
+                              </td>
+                              <td class="FieldDesc">
+                                 <p class="FieldDesc"></p>
+                              </td>
+                           </tr>
+                           <tr>
+                              <td class="PadBottom" colspan="3"></td>
+                           </tr>
+                        </table>
+                     </td>
+                  </tr>
+               </table>
+            </td>
+         </tr>
+         <tr>
+            <td class="FieldType">
+               <p class="FieldType"><span class="TypeRef" title="">ushort</span></p>
+            </td>
+            <td class="FieldName">
+               <p class="FieldName">objectPositionSequence</p>
+            </td>
+            <td class="FieldDesc">
+               <p class="FieldDesc"></p>
+            </td>
+         </tr>
+         <tr>
+            <td colspan="3" class="FieldRowSep">
+               <p class="FieldRowSep"></p>
+            </td>
+         </tr>
+         <tr>
+            <td class="FieldType">
+               <p class="FieldType"><span class="TypeRef" title="">ushort</span></p>
+            </td>
+            <td class="FieldName">
+               <p class="FieldName">objectMovementSequence</p>
+            </td>
+            <td class="FieldDesc">
+               <p class="FieldDesc"></p>
+            </td>
+         </tr>
+         <tr>
+            <td colspan="3" class="FieldRowSep">
+               <p class="FieldRowSep"></p>
+            </td>
+         </tr>
+         <tr>
+            <td class="FieldType">
+               <p class="FieldType"><span class="TypeRef" title="">ushort</span></p>
+            </td>
+            <td class="FieldName">
+               <p class="FieldName">objectStateSequence</p>
+            </td>
+            <td class="FieldDesc">
+               <p class="FieldDesc"></p>
+            </td>
+         </tr>
+         <tr>
+            <td colspan="3" class="FieldRowSep">
+               <p class="FieldRowSep"></p>
+            </td>
+         </tr>
+         <tr>
+            <td class="FieldType">
+               <p class="FieldType"><span class="TypeRef" title="">ushort</span></p>
+            </td>
+            <td class="FieldName">
+               <p class="FieldName">objectVectorSequence</p>
+            </td>
+            <td class="FieldDesc">
+               <p class="FieldDesc"></p>
+            </td>
+         </tr>
+         <tr>
+            <td colspan="3" class="FieldRowSep">
+               <p class="FieldRowSep"></p>
+            </td>
+         </tr>
+         <tr>
+            <td class="FieldType">
+               <p class="FieldType"><span class="TypeRef" title="">ushort</span></p>
+            </td>
+            <td class="FieldName">
+               <p class="FieldName">objectTeleportSequence</p>
+            </td>
+            <td class="FieldDesc">
+               <p class="FieldDesc"></p>
+            </td>
+         </tr>
+         <tr>
+            <td colspan="3" class="FieldRowSep">
+               <p class="FieldRowSep"></p>
+            </td>
+         </tr>
+         <tr>
+            <td class="FieldType">
+               <p class="FieldType"><span class="TypeRef" title="">ushort</span></p>
+            </td>
+            <td class="FieldName">
+               <p class="FieldName">objectServerControlSequence</p>
+            </td>
+            <td class="FieldDesc">
+               <p class="FieldDesc"></p>
+            </td>
+         </tr>
+         <tr>
+            <td colspan="3" class="FieldRowSep">
+               <p class="FieldRowSep"></p>
+            </td>
+         </tr>
+         <tr>
+            <td class="FieldType">
+               <p class="FieldType"><span class="TypeRef" title="">ushort</span></p>
+            </td>
+            <td class="FieldName">
+               <p class="FieldName">objectForcePositionSequence</p>
+            </td>
+            <td class="FieldDesc">
+               <p class="FieldDesc"></p>
+            </td>
+         </tr>
+         <tr>
+            <td colspan="3" class="FieldRowSep">
+               <p class="FieldRowSep"></p>
+            </td>
+         </tr>
+         <tr>
+            <td class="FieldType">
+               <p class="FieldType"><span class="TypeRef" title="">ushort</span></p>
+            </td>
+            <td class="FieldName">
+               <p class="FieldName">objectVisualDescSequence</p>
+            </td>
+            <td class="FieldDesc">
+               <p class="FieldDesc"></p>
+            </td>
+         </tr>
+         <tr>
+            <td colspan="3" class="FieldRowSep">
+               <p class="FieldRowSep"></p>
+            </td>
+         </tr>
+         <tr>
+            <td class="FieldType">
+               <p class="FieldType"><span class="TypeRef" title="">ushort</span></p>
+            </td>
+            <td class="FieldName">
+               <p class="FieldName">objectInstanceSequence</p>
+            </td>
+            <td class="FieldDesc">
+               <p class="FieldDesc"></p>
+            </td>
+         </tr>
+         <tr>
+            <td colspan="3">
+               <p class="Align">Align to <b>DWORD</b> boundary
+               </p>
+            </td>
+         </tr>
+         <tr>
+            <td class="PadBottom" colspan="3"></td>
+         </tr>
+      </table>
+      <p class="Version">Messages.xml version 2017.11.14.0</p>
+   </body>
+</html>

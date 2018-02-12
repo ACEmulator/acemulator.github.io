@@ -1,0 +1,509 @@
+<html xmlns:fo="http://www.w3.org/1999/XSL/Format" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:fn="http://www.w3.org/2005/xpath-functions">
+   <head>
+      <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+      <title>AC Protocol version 2017.11.14.0</title>
+      <link type="text/css" rel="stylesheet" href="../Classic.css">
+   </head>
+   <body>
+      <table cellspacing="0" cellpadding="0" class="List2">
+         <tr>
+            <td colspan="3">
+               <p class="BoxHead2"><b>ObjectDescriptionFlag</b>: uint
+               </p>
+            </td>
+         </tr>
+         <tr>
+            <td class="PadTop" colspan="2"></td>
+         </tr>
+         <tr>
+            <td colspan="3">
+               <p class="BoxDesc">Flags related to the use of the item.</p>
+            </td>
+         </tr>
+         <tr>
+            <td colspan="3" class="ValueRowSep">
+               <p class="ValueRowSep"></p>
+            </td>
+         </tr>
+         <tr>
+            <td class="ValueVal">
+               <p class="ValueVal">0x00000001</p>
+            </td>
+            <td class="ValueName">
+               <p class="ValueName">Openable</p>
+            </td>
+            <td class="ValueDesc">
+               <p class="ValueDesc">can be opened (false if locked)</p>
+            </td>
+         </tr>
+         <tr>
+            <td colspan="3" class="ValueRowSep">
+               <p class="ValueRowSep"></p>
+            </td>
+         </tr>
+         <tr>
+            <td class="ValueVal">
+               <p class="ValueVal">0x00000002</p>
+            </td>
+            <td class="ValueName">
+               <p class="ValueName">Inscribable</p>
+            </td>
+            <td class="ValueDesc">
+               <p class="ValueDesc">inscribable</p>
+            </td>
+         </tr>
+         <tr>
+            <td colspan="3" class="ValueRowSep">
+               <p class="ValueRowSep"></p>
+            </td>
+         </tr>
+         <tr>
+            <td class="ValueVal">
+               <p class="ValueVal">0x00000004</p>
+            </td>
+            <td class="ValueName">
+               <p class="ValueName">Stuck</p>
+            </td>
+            <td class="ValueDesc">
+               <p class="ValueDesc">cannot be picked up</p>
+            </td>
+         </tr>
+         <tr>
+            <td colspan="3" class="ValueRowSep">
+               <p class="ValueRowSep"></p>
+            </td>
+         </tr>
+         <tr>
+            <td class="ValueVal">
+               <p class="ValueVal">0x00000008</p>
+            </td>
+            <td class="ValueName">
+               <p class="ValueName">Player</p>
+            </td>
+            <td class="ValueDesc">
+               <p class="ValueDesc">player</p>
+            </td>
+         </tr>
+         <tr>
+            <td colspan="3" class="ValueRowSep">
+               <p class="ValueRowSep"></p>
+            </td>
+         </tr>
+         <tr>
+            <td class="ValueVal">
+               <p class="ValueVal">0x00000010</p>
+            </td>
+            <td class="ValueName">
+               <p class="ValueName">Attackable</p>
+            </td>
+            <td class="ValueDesc">
+               <p class="ValueDesc">attackable</p>
+            </td>
+         </tr>
+         <tr>
+            <td colspan="3" class="ValueRowSep">
+               <p class="ValueRowSep"></p>
+            </td>
+         </tr>
+         <tr>
+            <td class="ValueVal">
+               <p class="ValueVal">0x00000020</p>
+            </td>
+            <td class="ValueName">
+               <p class="ValueName">PlayerKiller</p>
+            </td>
+            <td class="ValueDesc">
+               <p class="ValueDesc">player killer</p>
+            </td>
+         </tr>
+         <tr>
+            <td colspan="3" class="ValueRowSep">
+               <p class="ValueRowSep"></p>
+            </td>
+         </tr>
+         <tr>
+            <td class="ValueVal">
+               <p class="ValueVal">0x00000040</p>
+            </td>
+            <td class="ValueName">
+               <p class="ValueName">HiddenAdmin</p>
+            </td>
+            <td class="ValueDesc">
+               <p class="ValueDesc">hidden admin</p>
+            </td>
+         </tr>
+         <tr>
+            <td colspan="3" class="ValueRowSep">
+               <p class="ValueRowSep"></p>
+            </td>
+         </tr>
+         <tr>
+            <td class="ValueVal">
+               <p class="ValueVal">0x00000080</p>
+            </td>
+            <td class="ValueName">
+               <p class="ValueName">UiHidden</p>
+            </td>
+            <td class="ValueDesc">
+               <p class="ValueDesc">hidden</p>
+            </td>
+         </tr>
+         <tr>
+            <td colspan="3" class="ValueRowSep">
+               <p class="ValueRowSep"></p>
+            </td>
+         </tr>
+         <tr>
+            <td class="ValueVal">
+               <p class="ValueVal">0x00000100</p>
+            </td>
+            <td class="ValueName">
+               <p class="ValueName">Book</p>
+            </td>
+            <td class="ValueDesc">
+               <p class="ValueDesc">book</p>
+            </td>
+         </tr>
+         <tr>
+            <td colspan="3" class="ValueRowSep">
+               <p class="ValueRowSep"></p>
+            </td>
+         </tr>
+         <tr>
+            <td class="ValueVal">
+               <p class="ValueVal">0x00000200</p>
+            </td>
+            <td class="ValueName">
+               <p class="ValueName">Vendor</p>
+            </td>
+            <td class="ValueDesc">
+               <p class="ValueDesc">merchant</p>
+            </td>
+         </tr>
+         <tr>
+            <td colspan="3" class="ValueRowSep">
+               <p class="ValueRowSep"></p>
+            </td>
+         </tr>
+         <tr>
+            <td class="ValueVal">
+               <p class="ValueVal">0x00000400</p>
+            </td>
+            <td class="ValueName">
+               <p class="ValueName">PkSwitch</p>
+            </td>
+            <td class="ValueDesc">
+               <p class="ValueDesc">pk altar</p>
+            </td>
+         </tr>
+         <tr>
+            <td colspan="3" class="ValueRowSep">
+               <p class="ValueRowSep"></p>
+            </td>
+         </tr>
+         <tr>
+            <td class="ValueVal">
+               <p class="ValueVal">0x00000800</p>
+            </td>
+            <td class="ValueName">
+               <p class="ValueName">NpkSwitch</p>
+            </td>
+            <td class="ValueDesc">
+               <p class="ValueDesc">npk altar</p>
+            </td>
+         </tr>
+         <tr>
+            <td colspan="3" class="ValueRowSep">
+               <p class="ValueRowSep"></p>
+            </td>
+         </tr>
+         <tr>
+            <td class="ValueVal">
+               <p class="ValueVal">0x00001000</p>
+            </td>
+            <td class="ValueName">
+               <p class="ValueName">Door</p>
+            </td>
+            <td class="ValueDesc">
+               <p class="ValueDesc">door</p>
+            </td>
+         </tr>
+         <tr>
+            <td colspan="3" class="ValueRowSep">
+               <p class="ValueRowSep"></p>
+            </td>
+         </tr>
+         <tr>
+            <td class="ValueVal">
+               <p class="ValueVal">0x00002000</p>
+            </td>
+            <td class="ValueName">
+               <p class="ValueName">Corpse</p>
+            </td>
+            <td class="ValueDesc">
+               <p class="ValueDesc">corpse</p>
+            </td>
+         </tr>
+         <tr>
+            <td colspan="3" class="ValueRowSep">
+               <p class="ValueRowSep"></p>
+            </td>
+         </tr>
+         <tr>
+            <td class="ValueVal">
+               <p class="ValueVal">0x00004000</p>
+            </td>
+            <td class="ValueName">
+               <p class="ValueName">LifeStone</p>
+            </td>
+            <td class="ValueDesc">
+               <p class="ValueDesc">lifestone</p>
+            </td>
+         </tr>
+         <tr>
+            <td colspan="3" class="ValueRowSep">
+               <p class="ValueRowSep"></p>
+            </td>
+         </tr>
+         <tr>
+            <td class="ValueVal">
+               <p class="ValueVal">0x00008000</p>
+            </td>
+            <td class="ValueName">
+               <p class="ValueName">Food</p>
+            </td>
+            <td class="ValueDesc">
+               <p class="ValueDesc">food</p>
+            </td>
+         </tr>
+         <tr>
+            <td colspan="3" class="ValueRowSep">
+               <p class="ValueRowSep"></p>
+            </td>
+         </tr>
+         <tr>
+            <td class="ValueVal">
+               <p class="ValueVal">0x00010000</p>
+            </td>
+            <td class="ValueName">
+               <p class="ValueName">Healer</p>
+            </td>
+            <td class="ValueDesc">
+               <p class="ValueDesc">healing kit</p>
+            </td>
+         </tr>
+         <tr>
+            <td colspan="3" class="ValueRowSep">
+               <p class="ValueRowSep"></p>
+            </td>
+         </tr>
+         <tr>
+            <td class="ValueVal">
+               <p class="ValueVal">0x00020000</p>
+            </td>
+            <td class="ValueName">
+               <p class="ValueName">Lockpick</p>
+            </td>
+            <td class="ValueDesc">
+               <p class="ValueDesc">lockpick</p>
+            </td>
+         </tr>
+         <tr>
+            <td colspan="3" class="ValueRowSep">
+               <p class="ValueRowSep"></p>
+            </td>
+         </tr>
+         <tr>
+            <td class="ValueVal">
+               <p class="ValueVal">0x00040000</p>
+            </td>
+            <td class="ValueName">
+               <p class="ValueName">Portal</p>
+            </td>
+            <td class="ValueDesc">
+               <p class="ValueDesc">portal</p>
+            </td>
+         </tr>
+         <tr>
+            <td colspan="3" class="ValueRowSep">
+               <p class="ValueRowSep"></p>
+            </td>
+         </tr>
+         <tr>
+            <td class="ValueVal">
+               <p class="ValueVal">0x00100000</p>
+            </td>
+            <td class="ValueName">
+               <p class="ValueName">Admin</p>
+            </td>
+            <td class="ValueDesc">
+               <p class="ValueDesc">admin</p>
+            </td>
+         </tr>
+         <tr>
+            <td colspan="3" class="ValueRowSep">
+               <p class="ValueRowSep"></p>
+            </td>
+         </tr>
+         <tr>
+            <td class="ValueVal">
+               <p class="ValueVal">0x00200000</p>
+            </td>
+            <td class="ValueName">
+               <p class="ValueName">FreePkStatus</p>
+            </td>
+            <td class="ValueDesc">
+               <p class="ValueDesc">free pk status</p>
+            </td>
+         </tr>
+         <tr>
+            <td colspan="3" class="ValueRowSep">
+               <p class="ValueRowSep"></p>
+            </td>
+         </tr>
+         <tr>
+            <td class="ValueVal">
+               <p class="ValueVal">0x00400000</p>
+            </td>
+            <td class="ValueName">
+               <p class="ValueName">ImmuneCellRestrictions</p>
+            </td>
+            <td class="ValueDesc">
+               <p class="ValueDesc">immute cell restrictions</p>
+            </td>
+         </tr>
+         <tr>
+            <td colspan="3" class="ValueRowSep">
+               <p class="ValueRowSep"></p>
+            </td>
+         </tr>
+         <tr>
+            <td class="ValueVal">
+               <p class="ValueVal">0x00800000</p>
+            </td>
+            <td class="ValueName">
+               <p class="ValueName">RequiresPackSlot</p>
+            </td>
+            <td class="ValueDesc">
+               <p class="ValueDesc">requires pack slot</p>
+            </td>
+         </tr>
+         <tr>
+            <td colspan="3" class="ValueRowSep">
+               <p class="ValueRowSep"></p>
+            </td>
+         </tr>
+         <tr>
+            <td class="ValueVal">
+               <p class="ValueVal">0x01000000</p>
+            </td>
+            <td class="ValueName">
+               <p class="ValueName">Retained</p>
+            </td>
+            <td class="ValueDesc">
+               <p class="ValueDesc">retained</p>
+            </td>
+         </tr>
+         <tr>
+            <td colspan="3" class="ValueRowSep">
+               <p class="ValueRowSep"></p>
+            </td>
+         </tr>
+         <tr>
+            <td class="ValueVal">
+               <p class="ValueVal">0x02000000</p>
+            </td>
+            <td class="ValueName">
+               <p class="ValueName">PkLiteStatus</p>
+            </td>
+            <td class="ValueDesc">
+               <p class="ValueDesc">pklite status</p>
+            </td>
+         </tr>
+         <tr>
+            <td colspan="3" class="ValueRowSep">
+               <p class="ValueRowSep"></p>
+            </td>
+         </tr>
+         <tr>
+            <td class="ValueVal">
+               <p class="ValueVal">0x04000000</p>
+            </td>
+            <td class="ValueName">
+               <p class="ValueName">IncludesSecondHeader</p>
+            </td>
+            <td class="ValueDesc">
+               <p class="ValueDesc">has an extra flags DWORD</p>
+            </td>
+         </tr>
+         <tr>
+            <td colspan="3" class="ValueRowSep">
+               <p class="ValueRowSep"></p>
+            </td>
+         </tr>
+         <tr>
+            <td class="ValueVal">
+               <p class="ValueVal">0x08000000</p>
+            </td>
+            <td class="ValueName">
+               <p class="ValueName">BindStone</p>
+            </td>
+            <td class="ValueDesc">
+               <p class="ValueDesc">bindstone</p>
+            </td>
+         </tr>
+         <tr>
+            <td colspan="3" class="ValueRowSep">
+               <p class="ValueRowSep"></p>
+            </td>
+         </tr>
+         <tr>
+            <td class="ValueVal">
+               <p class="ValueVal">0x10000000</p>
+            </td>
+            <td class="ValueName">
+               <p class="ValueName">VolatileRare</p>
+            </td>
+            <td class="ValueDesc">
+               <p class="ValueDesc">volatile rare</p>
+            </td>
+         </tr>
+         <tr>
+            <td colspan="3" class="ValueRowSep">
+               <p class="ValueRowSep"></p>
+            </td>
+         </tr>
+         <tr>
+            <td class="ValueVal">
+               <p class="ValueVal">0x20000000</p>
+            </td>
+            <td class="ValueName">
+               <p class="ValueName">WieldOnUse</p>
+            </td>
+            <td class="ValueDesc">
+               <p class="ValueDesc">wield on use</p>
+            </td>
+         </tr>
+         <tr>
+            <td colspan="3" class="ValueRowSep">
+               <p class="ValueRowSep"></p>
+            </td>
+         </tr>
+         <tr>
+            <td class="ValueVal">
+               <p class="ValueVal">0x40000000</p>
+            </td>
+            <td class="ValueName">
+               <p class="ValueName">WieldLeft</p>
+            </td>
+            <td class="ValueDesc">
+               <p class="ValueDesc">wield left</p>
+            </td>
+         </tr>
+         <tr>
+            <td class="PadBottom" colspan="2"></td>
+         </tr>
+      </table>
+      <p class="Version">Messages.xml version 2017.11.14.0</p>
+   </body>
+</html>

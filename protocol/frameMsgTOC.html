@@ -1,0 +1,2529 @@
+<html xmlns:fo="http://www.w3.org/1999/XSL/Format" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:fn="http://www.w3.org/2005/xpath-functions">
+   <head>
+      <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+      <title>AC Protocol version 2017.11.14.0</title>
+      <link type="text/css" rel="stylesheet" href="Classic.css">
+   </head>
+   <body>
+      <table cellspacing="0" cellpadding="0" class="TOC">
+         <tr>
+            <td class="TOCHead">
+               <p class="TOCHead">Messages</p>
+            </td>
+         </tr>
+         <tr>
+            <td class="TOCEntry">
+               <p class="TOC1"><a target="frameMsg" href="Messages/0x0003-S2C.html"><b>0x0003:</b> Allegiance_AllegianceUpdateAborted</a>
+                  - S2C - UIQueue
+               </p>
+            </td>
+         </tr>
+         <tr>
+            <td class="TOCEntry">
+               <p class="TOC1"><a target="frameMsg" href="Messages/0x0004-S2C.html"><b>0x0004:</b> Communication_PopUpString</a>
+                  - S2C - UIQueue
+               </p>
+            </td>
+         </tr>
+         <tr>
+            <td class="TOCEntry">
+               <p class="TOC1"><a target="frameMsg" href="Messages/0x0005-C2S.html"><b>0x0005:</b> Character_PlayerOptionChangedEvent</a>
+                  - C2S - Weenie
+               </p>
+            </td>
+         </tr>
+         <tr>
+            <td class="TOCEntry">
+               <p class="TOC1"><a target="frameMsg" href="Messages/0x0008-C2S.html"><b>0x0008:</b> Combat_TargetedMeleeAttack</a>
+                  - C2S - Weenie
+               </p>
+            </td>
+         </tr>
+         <tr>
+            <td class="TOCEntry">
+               <p class="TOC1"><a target="frameMsg" href="Messages/0x000A-C2S.html"><b>0x000A:</b> Combat_TargetedMissileAttack</a>
+                  - C2S - Weenie
+               </p>
+            </td>
+         </tr>
+         <tr>
+            <td class="TOCEntry">
+               <p class="TOC1"><a target="frameMsg" href="Messages/0x000F-C2S.html"><b>0x000F:</b> Communication_SetAFKMode</a>
+                  - C2S - Weenie
+               </p>
+            </td>
+         </tr>
+         <tr>
+            <td class="TOCEntry">
+               <p class="TOC1"><a target="frameMsg" href="Messages/0x0010-C2S.html"><b>0x0010:</b> Communication_SetAFKMessage</a>
+                  - C2S - Weenie
+               </p>
+            </td>
+         </tr>
+         <tr>
+            <td class="TOCEntry">
+               <p class="TOC1"><a target="frameMsg" href="Messages/0x0013-S2C.html"><b>0x0013:</b> Login_PlayerDescription</a>
+                  - S2C - UIQueue
+               </p>
+            </td>
+         </tr>
+         <tr>
+            <td class="TOCEntry">
+               <p class="TOC1"><a target="frameMsg" href="Messages/0x0015-C2S.html"><b>0x0015:</b> Communication_Talk</a>
+                  - C2S - Weenie
+               </p>
+            </td>
+         </tr>
+         <tr>
+            <td class="TOCEntry">
+               <p class="TOC1"><a target="frameMsg" href="Messages/0x0017-C2S.html"><b>0x0017:</b> Social_RemoveFriend</a>
+                  - C2S - Weenie
+               </p>
+            </td>
+         </tr>
+         <tr>
+            <td class="TOCEntry">
+               <p class="TOC1"><a target="frameMsg" href="Messages/0x0018-C2S.html"><b>0x0018:</b> Social_AddFriend</a>
+                  - C2S - Weenie
+               </p>
+            </td>
+         </tr>
+         <tr>
+            <td class="TOCEntry">
+               <p class="TOC1"><a target="frameMsg" href="Messages/0x0019-C2S.html"><b>0x0019:</b> Inventory_PutItemInContainer</a>
+                  - C2S - Weenie
+               </p>
+            </td>
+         </tr>
+         <tr>
+            <td class="TOCEntry">
+               <p class="TOC1"><a target="frameMsg" href="Messages/0x001A-C2S.html"><b>0x001A:</b> Inventory_GetAndWieldItem</a>
+                  - C2S - Weenie
+               </p>
+            </td>
+         </tr>
+         <tr>
+            <td class="TOCEntry">
+               <p class="TOC1"><a target="frameMsg" href="Messages/0x001B-C2S.html"><b>0x001B:</b> Inventory_DropItem</a>
+                  - C2S - Weenie
+               </p>
+            </td>
+         </tr>
+         <tr>
+            <td class="TOCEntry">
+               <p class="TOC1"><a target="frameMsg" href="Messages/0x001D-C2S.html"><b>0x001D:</b> Allegiance_SwearAllegiance</a>
+                  - C2S - Weenie
+               </p>
+            </td>
+         </tr>
+         <tr>
+            <td class="TOCEntry">
+               <p class="TOC1"><a target="frameMsg" href="Messages/0x001E-C2S.html"><b>0x001E:</b> Allegiance_BreakAllegiance</a>
+                  - C2S - Weenie
+               </p>
+            </td>
+         </tr>
+         <tr>
+            <td class="TOCEntry">
+               <p class="TOC1"><a target="frameMsg" href="Messages/0x001F-C2S.html"><b>0x001F:</b> Allegiance_UpdateRequest</a>
+                  - C2S - Weenie
+               </p>
+            </td>
+         </tr>
+         <tr>
+            <td class="TOCEntry">
+               <p class="TOC1"><a target="frameMsg" href="Messages/0x0020-S2C.html"><b>0x0020:</b> Allegiance_AllegianceUpdate</a>
+                  - S2C - UIQueue
+               </p>
+            </td>
+         </tr>
+         <tr>
+            <td class="TOCEntry">
+               <p class="TOC1"><a target="frameMsg" href="Messages/0x0021-S2C.html"><b>0x0021:</b> Social_FriendsUpdate</a>
+                  - S2C - UIQueue
+               </p>
+            </td>
+         </tr>
+         <tr>
+            <td class="TOCEntry">
+               <p class="TOC1"><a target="frameMsg" href="Messages/0x0022-S2C.html"><b>0x0022:</b> Item_ServerSaysContainID</a>
+                  - S2C - UIQueue
+               </p>
+            </td>
+         </tr>
+         <tr>
+            <td class="TOCEntry">
+               <p class="TOC1"><a target="frameMsg" href="Messages/0x0023-S2C.html"><b>0x0023:</b> Item_WearItem</a>
+                  - S2C - UIQueue
+               </p>
+            </td>
+         </tr>
+         <tr>
+            <td class="TOCEntry">
+               <p class="TOC1"><a target="frameMsg" href="Messages/0x0024-S2C.html"><b>0x0024:</b> Item_ServerSaysRemove</a>
+                  - S2C - UIQueue
+               </p>
+            </td>
+         </tr>
+         <tr>
+            <td class="TOCEntry">
+               <p class="TOC1"><a target="frameMsg" href="Messages/0x0025-C2S.html"><b>0x0025:</b> Social_ClearFriends</a>
+                  - C2S - Weenie
+               </p>
+            </td>
+         </tr>
+         <tr>
+            <td class="TOCEntry">
+               <p class="TOC1"><a target="frameMsg" href="Messages/0x0026-C2S.html"><b>0x0026:</b> Character_TeleToPKLArena</a>
+                  - C2S - Weenie
+               </p>
+            </td>
+         </tr>
+         <tr>
+            <td class="TOCEntry">
+               <p class="TOC1"><a target="frameMsg" href="Messages/0x0027-C2S.html"><b>0x0027:</b> Character_TeleToPKArena</a>
+                  - C2S - Weenie
+               </p>
+            </td>
+         </tr>
+         <tr>
+            <td class="TOCEntry">
+               <p class="TOC1"><a target="frameMsg" href="Messages/0x0029-S2C.html"><b>0x0029:</b> Social_CharacterTitleTable</a>
+                  - S2C - UIQueue
+               </p>
+            </td>
+         </tr>
+         <tr>
+            <td class="TOCEntry">
+               <p class="TOC1"><a target="frameMsg" href="Messages/0x002B-S2C.html"><b>0x002B:</b> Social_AddOrSetCharacterTitle</a>
+                  - S2C - UIQueue
+               </p>
+            </td>
+         </tr>
+         <tr>
+            <td class="TOCEntry">
+               <p class="TOC1"><a target="frameMsg" href="Messages/0x002C-C2S.html"><b>0x002C:</b> Social_SetDisplayCharacterTitle</a>
+                  - C2S - Weenie
+               </p>
+            </td>
+         </tr>
+         <tr>
+            <td class="TOCEntry">
+               <p class="TOC1"><a target="frameMsg" href="Messages/0x0030-C2S.html"><b>0x0030:</b> Allegiance_QueryAllegianceName</a>
+                  - C2S - Weenie
+               </p>
+            </td>
+         </tr>
+         <tr>
+            <td class="TOCEntry">
+               <p class="TOC1"><a target="frameMsg" href="Messages/0x0031-C2S.html"><b>0x0031:</b> Allegiance_ClearAllegianceName</a>
+                  - C2S - Weenie
+               </p>
+            </td>
+         </tr>
+         <tr>
+            <td class="TOCEntry">
+               <p class="TOC1"><a target="frameMsg" href="Messages/0x0032-C2S.html"><b>0x0032:</b> Communication_TalkDirect</a>
+                  - C2S - Weenie
+               </p>
+            </td>
+         </tr>
+         <tr>
+            <td class="TOCEntry">
+               <p class="TOC1"><a target="frameMsg" href="Messages/0x0033-C2S.html"><b>0x0033:</b> Allegiance_SetAllegianceName</a>
+                  - C2S - Weenie
+               </p>
+            </td>
+         </tr>
+         <tr>
+            <td class="TOCEntry">
+               <p class="TOC1"><a target="frameMsg" href="Messages/0x0035-C2S.html"><b>0x0035:</b> Inventory_UseWithTargetEvent</a>
+                  - C2S - Weenie
+               </p>
+            </td>
+         </tr>
+         <tr>
+            <td class="TOCEntry">
+               <p class="TOC1"><a target="frameMsg" href="Messages/0x0036-C2S.html"><b>0x0036:</b> Inventory_UseEvent</a>
+                  - C2S - Weenie
+               </p>
+            </td>
+         </tr>
+         <tr>
+            <td class="TOCEntry">
+               <p class="TOC1"><a target="frameMsg" href="Messages/0x003B-C2S.html"><b>0x003B:</b> Allegiance_SetAllegianceOfficer</a>
+                  - C2S - Weenie
+               </p>
+            </td>
+         </tr>
+         <tr>
+            <td class="TOCEntry">
+               <p class="TOC1"><a target="frameMsg" href="Messages/0x003C-C2S.html"><b>0x003C:</b> Allegiance_SetAllegianceOfficerTitle</a>
+                  - C2S - Weenie
+               </p>
+            </td>
+         </tr>
+         <tr>
+            <td class="TOCEntry">
+               <p class="TOC1"><a target="frameMsg" href="Messages/0x003D-C2S.html"><b>0x003D:</b> Allegiance_ListAllegianceOfficerTitles</a>
+                  - C2S - Weenie
+               </p>
+            </td>
+         </tr>
+         <tr>
+            <td class="TOCEntry">
+               <p class="TOC1"><a target="frameMsg" href="Messages/0x003E-C2S.html"><b>0x003E:</b> Allegiance_ClearAllegianceOfficerTitles</a>
+                  - C2S - Weenie
+               </p>
+            </td>
+         </tr>
+         <tr>
+            <td class="TOCEntry">
+               <p class="TOC1"><a target="frameMsg" href="Messages/0x003F-C2S.html"><b>0x003F:</b> Allegiance_DoAllegianceLockAction</a>
+                  - C2S - Weenie
+               </p>
+            </td>
+         </tr>
+         <tr>
+            <td class="TOCEntry">
+               <p class="TOC1"><a target="frameMsg" href="Messages/0x0040-C2S.html"><b>0x0040:</b> Allegiance_SetAllegianceApprovedVassal</a>
+                  - C2S - Weenie
+               </p>
+            </td>
+         </tr>
+         <tr>
+            <td class="TOCEntry">
+               <p class="TOC1"><a target="frameMsg" href="Messages/0x0041-C2S.html"><b>0x0041:</b> Allegiance_AllegianceChatGag</a>
+                  - C2S - Weenie
+               </p>
+            </td>
+         </tr>
+         <tr>
+            <td class="TOCEntry">
+               <p class="TOC1"><a target="frameMsg" href="Messages/0x0042-C2S.html"><b>0x0042:</b> Allegiance_DoAllegianceHouseAction</a>
+                  - C2S - Weenie
+               </p>
+            </td>
+         </tr>
+         <tr>
+            <td class="TOCEntry">
+               <p class="TOC1"><a target="frameMsg" href="Messages/0x0044-C2S.html"><b>0x0044:</b> Train_TrainAttribute2nd</a>
+                  - C2S - Weenie
+               </p>
+            </td>
+         </tr>
+         <tr>
+            <td class="TOCEntry">
+               <p class="TOC1"><a target="frameMsg" href="Messages/0x0045-C2S.html"><b>0x0045:</b> Train_TrainAttribute</a>
+                  - C2S - Weenie
+               </p>
+            </td>
+         </tr>
+         <tr>
+            <td class="TOCEntry">
+               <p class="TOC1"><a target="frameMsg" href="Messages/0x0046-C2S.html"><b>0x0046:</b> Train_TrainSkill</a>
+                  - C2S - Weenie
+               </p>
+            </td>
+         </tr>
+         <tr>
+            <td class="TOCEntry">
+               <p class="TOC1"><a target="frameMsg" href="Messages/0x0047-C2S.html"><b>0x0047:</b> Train_TrainSkillAdvancementClass</a>
+                  - C2S - Weenie
+               </p>
+            </td>
+         </tr>
+         <tr>
+            <td class="TOCEntry">
+               <p class="TOC1"><a target="frameMsg" href="Messages/0x0048-C2S.html"><b>0x0048:</b> Magic_CastUntargetedSpell</a>
+                  - C2S - Weenie
+               </p>
+            </td>
+         </tr>
+         <tr>
+            <td class="TOCEntry">
+               <p class="TOC1"><a target="frameMsg" href="Messages/0x004A-C2S.html"><b>0x004A:</b> Magic_CastTargetedSpell</a>
+                  - C2S - Weenie
+               </p>
+            </td>
+         </tr>
+         <tr>
+            <td class="TOCEntry">
+               <p class="TOC1"><a target="frameMsg" href="Messages/0x0052-S2C.html"><b>0x0052:</b> Item_StopViewingObjectContents</a>
+                  - S2C - UIQueue
+               </p>
+            </td>
+         </tr>
+         <tr>
+            <td class="TOCEntry">
+               <p class="TOC1"><a target="frameMsg" href="Messages/0x0053-C2S.html"><b>0x0053:</b> Combat_ChangeCombatMode</a>
+                  - C2S - Weenie
+               </p>
+            </td>
+         </tr>
+         <tr>
+            <td class="TOCEntry">
+               <p class="TOC1"><a target="frameMsg" href="Messages/0x0054-C2S.html"><b>0x0054:</b> Inventory_StackableMerge</a>
+                  - C2S - Weenie
+               </p>
+            </td>
+         </tr>
+         <tr>
+            <td class="TOCEntry">
+               <p class="TOC1"><a target="frameMsg" href="Messages/0x0055-C2S.html"><b>0x0055:</b> Inventory_StackableSplitToContainer</a>
+                  - C2S - Weenie
+               </p>
+            </td>
+         </tr>
+         <tr>
+            <td class="TOCEntry">
+               <p class="TOC1"><a target="frameMsg" href="Messages/0x0056-C2S.html"><b>0x0056:</b> Inventory_StackableSplitTo3D</a>
+                  - C2S - Weenie
+               </p>
+            </td>
+         </tr>
+         <tr>
+            <td class="TOCEntry">
+               <p class="TOC1"><a target="frameMsg" href="Messages/0x0058-C2S.html"><b>0x0058:</b> Communication_ModifyCharacterSquelch</a>
+                  - C2S - Weenie
+               </p>
+            </td>
+         </tr>
+         <tr>
+            <td class="TOCEntry">
+               <p class="TOC1"><a target="frameMsg" href="Messages/0x0059-C2S.html"><b>0x0059:</b> Communication_ModifyAccountSquelch</a>
+                  - C2S - Weenie
+               </p>
+            </td>
+         </tr>
+         <tr>
+            <td class="TOCEntry">
+               <p class="TOC1"><a target="frameMsg" href="Messages/0x005B-C2S.html"><b>0x005B:</b> Communication_ModifyGlobalSquelch</a>
+                  - C2S - Weenie
+               </p>
+            </td>
+         </tr>
+         <tr>
+            <td class="TOCEntry">
+               <p class="TOC1"><a target="frameMsg" href="Messages/0x005D-C2S.html"><b>0x005D:</b> Communication_TalkDirectByName</a>
+                  - C2S - Weenie
+               </p>
+            </td>
+         </tr>
+         <tr>
+            <td class="TOCEntry">
+               <p class="TOC1"><a target="frameMsg" href="Messages/0x005F-C2S.html"><b>0x005F:</b> Vendor_Buy</a>
+                  - C2S - Weenie
+               </p>
+            </td>
+         </tr>
+         <tr>
+            <td class="TOCEntry">
+               <p class="TOC1"><a target="frameMsg" href="Messages/0x0060-C2S.html"><b>0x0060:</b> Vendor_Sell</a>
+                  - C2S - Weenie
+               </p>
+            </td>
+         </tr>
+         <tr>
+            <td class="TOCEntry">
+               <p class="TOC1"><a target="frameMsg" href="Messages/0x0062-S2C.html"><b>0x0062:</b> Vendor_VendorInfo</a>
+                  - S2C - UIQueue
+               </p>
+            </td>
+         </tr>
+         <tr>
+            <td class="TOCEntry">
+               <p class="TOC1"><a target="frameMsg" href="Messages/0x0063-C2S.html"><b>0x0063:</b> Character_TeleToLifestone</a>
+                  - C2S - Weenie
+               </p>
+            </td>
+         </tr>
+         <tr>
+            <td class="TOCEntry">
+               <p class="TOC1"><a target="frameMsg" href="Messages/0x0075-S2C.html"><b>0x0075:</b> Character_StartBarber</a>
+                  - S2C - UIQueue
+               </p>
+            </td>
+         </tr>
+         <tr>
+            <td class="TOCEntry">
+               <p class="TOC1"><a target="frameMsg" href="Messages/0x00A0-S2C.html"><b>0x00A0:</b> Character_ServerSaysAttemptFailed</a>
+                  - S2C - UIQueue
+               </p>
+            </td>
+         </tr>
+         <tr>
+            <td class="TOCEntry">
+               <p class="TOC1"><a target="frameMsg" href="Messages/0x00A1-C2S.html"><b>0x00A1:</b> Character_LoginCompleteNotification</a>
+                  - C2S - Weenie
+               </p>
+            </td>
+         </tr>
+         <tr>
+            <td class="TOCEntry">
+               <p class="TOC1"><a target="frameMsg" href="Messages/0x00A2-C2S.html"><b>0x00A2:</b> Fellowship_Create</a>
+                  - C2S - Weenie
+               </p>
+            </td>
+         </tr>
+         <tr>
+            <td class="TOCEntry">
+               <p class="TOC1"><a target="frameMsg" href="Messages/0x00A3-S2C.html"><b>0x00A3:</b> Fellowship_Quit Fellowship_Quit</a>
+                  - S2C - UIQueue
+               </p>
+            </td>
+         </tr>
+         <tr>
+            <td class="TOCEntry">
+               <p class="TOC1"><a target="frameMsg" href="Messages/0x00A3-C2S.html"><b>0x00A3:</b> Fellowship_Quit Fellowship_Quit</a>
+                  - C2S - Weenie
+               </p>
+            </td>
+         </tr>
+         <tr>
+            <td class="TOCEntry">
+               <p class="TOC1"><a target="frameMsg" href="Messages/0x00A4-S2C.html"><b>0x00A4:</b> Fellowship_Dismiss Fellowship_Dismiss</a>
+                  - S2C - UIQueue
+               </p>
+            </td>
+         </tr>
+         <tr>
+            <td class="TOCEntry">
+               <p class="TOC1"><a target="frameMsg" href="Messages/0x00A4-C2S.html"><b>0x00A4:</b> Fellowship_Dismiss Fellowship_Dismiss</a>
+                  - C2S - Weenie
+               </p>
+            </td>
+         </tr>
+         <tr>
+            <td class="TOCEntry">
+               <p class="TOC1"><a target="frameMsg" href="Messages/0x00A5-C2S.html"><b>0x00A5:</b> Fellowship_Recruit</a>
+                  - C2S - Weenie
+               </p>
+            </td>
+         </tr>
+         <tr>
+            <td class="TOCEntry">
+               <p class="TOC1"><a target="frameMsg" href="Messages/0x00A6-C2S.html"><b>0x00A6:</b> Fellowship_UpdateRequest</a>
+                  - C2S - Weenie
+               </p>
+            </td>
+         </tr>
+         <tr>
+            <td class="TOCEntry">
+               <p class="TOC1"><a target="frameMsg" href="Messages/0x00AA-C2S.html"><b>0x00AA:</b> Writing_BookAddPage</a>
+                  - C2S - Weenie
+               </p>
+            </td>
+         </tr>
+         <tr>
+            <td class="TOCEntry">
+               <p class="TOC1"><a target="frameMsg" href="Messages/0x00AB-C2S.html"><b>0x00AB:</b> Writing_BookModifyPage</a>
+                  - C2S - Weenie
+               </p>
+            </td>
+         </tr>
+         <tr>
+            <td class="TOCEntry">
+               <p class="TOC1"><a target="frameMsg" href="Messages/0x00AC-C2S.html"><b>0x00AC:</b> Writing_BookData</a>
+                  - C2S - Weenie
+               </p>
+            </td>
+         </tr>
+         <tr>
+            <td class="TOCEntry">
+               <p class="TOC1"><a target="frameMsg" href="Messages/0x00AD-C2S.html"><b>0x00AD:</b> Writing_BookDeletePage</a>
+                  - C2S - Weenie
+               </p>
+            </td>
+         </tr>
+         <tr>
+            <td class="TOCEntry">
+               <p class="TOC1"><a target="frameMsg" href="Messages/0x00AE-C2S.html"><b>0x00AE:</b> Writing_BookPageData</a>
+                  - C2S - Weenie
+               </p>
+            </td>
+         </tr>
+         <tr>
+            <td class="TOCEntry">
+               <p class="TOC1"><a target="frameMsg" href="Messages/0x00B4-S2C.html"><b>0x00B4:</b> Writing_BookOpen</a>
+                  - S2C - UIQueue
+               </p>
+            </td>
+         </tr>
+         <tr>
+            <td class="TOCEntry">
+               <p class="TOC1"><a target="frameMsg" href="Messages/0x00B6-S2C.html"><b>0x00B6:</b> Writing_BookAddPageResponse</a>
+                  - S2C - UIQueue
+               </p>
+            </td>
+         </tr>
+         <tr>
+            <td class="TOCEntry">
+               <p class="TOC1"><a target="frameMsg" href="Messages/0x00B7-S2C.html"><b>0x00B7:</b> Writing_BookDeletePageResponse</a>
+                  - S2C - UIQueue
+               </p>
+            </td>
+         </tr>
+         <tr>
+            <td class="TOCEntry">
+               <p class="TOC1"><a target="frameMsg" href="Messages/0x00B8-S2C.html"><b>0x00B8:</b> Writing_BookPageDataResponse</a>
+                  - S2C - UIQueue
+               </p>
+            </td>
+         </tr>
+         <tr>
+            <td class="TOCEntry">
+               <p class="TOC1"><a target="frameMsg" href="Messages/0x00BF-C2S.html"><b>0x00BF:</b> Writing_SetInscription</a>
+                  - C2S - Weenie
+               </p>
+            </td>
+         </tr>
+         <tr>
+            <td class="TOCEntry">
+               <p class="TOC1"><a target="frameMsg" href="Messages/0x00C3-S2C.html"><b>0x00C3:</b> Item_GetInscriptionResponse</a>
+                  - S2C - UIQueue
+               </p>
+            </td>
+         </tr>
+         <tr>
+            <td class="TOCEntry">
+               <p class="TOC1"><a target="frameMsg" href="Messages/0x00C8-C2S.html"><b>0x00C8:</b> Item_Appraise</a>
+                  - C2S - Weenie
+               </p>
+            </td>
+         </tr>
+         <tr>
+            <td class="TOCEntry">
+               <p class="TOC1"><a target="frameMsg" href="Messages/0x00C9-S2C.html"><b>0x00C9:</b> Item_SetAppraiseInfo</a>
+                  - S2C - UIQueue
+               </p>
+            </td>
+         </tr>
+         <tr>
+            <td class="TOCEntry">
+               <p class="TOC1"><a target="frameMsg" href="Messages/0x00CD-C2S.html"><b>0x00CD:</b> Inventory_GiveObjectRequest</a>
+                  - C2S - Weenie
+               </p>
+            </td>
+         </tr>
+         <tr>
+            <td class="TOCEntry">
+               <p class="TOC1"><a target="frameMsg" href="Messages/0x00D6-C2S.html"><b>0x00D6:</b> Advocate_Teleport</a>
+                  - C2S - Weenie
+               </p>
+            </td>
+         </tr>
+         <tr>
+            <td class="TOCEntry">
+               <p class="TOC1"><a target="frameMsg" href="Messages/0x0140-C2S.html"><b>0x0140:</b> Character_AbuseLogRequest</a>
+                  - C2S - Weenie
+               </p>
+            </td>
+         </tr>
+         <tr>
+            <td class="TOCEntry">
+               <p class="TOC1"><a target="frameMsg" href="Messages/0x0145-C2S.html"><b>0x0145:</b> Communication_AddToChannel</a>
+                  - C2S - Weenie
+               </p>
+            </td>
+         </tr>
+         <tr>
+            <td class="TOCEntry">
+               <p class="TOC1"><a target="frameMsg" href="Messages/0x0146-C2S.html"><b>0x0146:</b> Communication_RemoveFromChannel</a>
+                  - C2S - Weenie
+               </p>
+            </td>
+         </tr>
+         <tr>
+            <td class="TOCEntry">
+               <p class="TOC1"><a target="frameMsg" href="Messages/0x0147-S2C.html"><b>0x0147:</b> Communication_ChannelBroadcast Communication_ChannelBroadcast</a>
+                  - S2C - UIQueue
+               </p>
+            </td>
+         </tr>
+         <tr>
+            <td class="TOCEntry">
+               <p class="TOC1"><a target="frameMsg" href="Messages/0x0147-C2S.html"><b>0x0147:</b> Communication_ChannelBroadcast Communication_ChannelBroadcast</a>
+                  - C2S - Weenie
+               </p>
+            </td>
+         </tr>
+         <tr>
+            <td class="TOCEntry">
+               <p class="TOC1"><a target="frameMsg" href="Messages/0x0148-S2C.html"><b>0x0148:</b> Communication_ChannelList Communication_ChannelList</a>
+                  - S2C - UIQueue
+               </p>
+            </td>
+         </tr>
+         <tr>
+            <td class="TOCEntry">
+               <p class="TOC1"><a target="frameMsg" href="Messages/0x0148-C2S.html"><b>0x0148:</b> Communication_ChannelList Communication_ChannelList</a>
+                  - C2S - Weenie
+               </p>
+            </td>
+         </tr>
+         <tr>
+            <td class="TOCEntry">
+               <p class="TOC1"><a target="frameMsg" href="Messages/0x0149-S2C.html"><b>0x0149:</b> Communication_ChannelIndex Communication_ChannelIndex</a>
+                  - S2C - UIQueue
+               </p>
+            </td>
+         </tr>
+         <tr>
+            <td class="TOCEntry">
+               <p class="TOC1"><a target="frameMsg" href="Messages/0x0149-C2S.html"><b>0x0149:</b> Communication_ChannelIndex Communication_ChannelIndex</a>
+                  - C2S - Weenie
+               </p>
+            </td>
+         </tr>
+         <tr>
+            <td class="TOCEntry">
+               <p class="TOC1"><a target="frameMsg" href="Messages/0x0195-C2S.html"><b>0x0195:</b> Inventory_NoLongerViewingContents</a>
+                  - C2S - Weenie
+               </p>
+            </td>
+         </tr>
+         <tr>
+            <td class="TOCEntry">
+               <p class="TOC1"><a target="frameMsg" href="Messages/0x0196-S2C.html"><b>0x0196:</b> Item_OnViewContents</a>
+                  - S2C - UIQueue
+               </p>
+            </td>
+         </tr>
+         <tr>
+            <td class="TOCEntry">
+               <p class="TOC1"><a target="frameMsg" href="Messages/0x0197-S2C.html"><b>0x0197:</b> Item_UpdateStackSize</a>
+                  - S2C - UIQueue
+               </p>
+            </td>
+         </tr>
+         <tr>
+            <td class="TOCEntry">
+               <p class="TOC1"><a target="frameMsg" href="Messages/0x019A-S2C.html"><b>0x019A:</b> Item_ServerSaysMoveItem</a>
+                  - S2C - UIQueue
+               </p>
+            </td>
+         </tr>
+         <tr>
+            <td class="TOCEntry">
+               <p class="TOC1"><a target="frameMsg" href="Messages/0x019B-C2S.html"><b>0x019B:</b> Inventory_StackableSplitToWield</a>
+                  - C2S - Weenie
+               </p>
+            </td>
+         </tr>
+         <tr>
+            <td class="TOCEntry">
+               <p class="TOC1"><a target="frameMsg" href="Messages/0x019C-C2S.html"><b>0x019C:</b> Character_AddShortCut</a>
+                  - C2S - Weenie
+               </p>
+            </td>
+         </tr>
+         <tr>
+            <td class="TOCEntry">
+               <p class="TOC1"><a target="frameMsg" href="Messages/0x019D-C2S.html"><b>0x019D:</b> Character_RemoveShortCut</a>
+                  - C2S - Weenie
+               </p>
+            </td>
+         </tr>
+         <tr>
+            <td class="TOCEntry">
+               <p class="TOC1"><a target="frameMsg" href="Messages/0x019E-S2C.html"><b>0x019E:</b> Combat_HandlePlayerDeathEvent</a>
+                  - S2C - UIQueue
+               </p>
+            </td>
+         </tr>
+         <tr>
+            <td class="TOCEntry">
+               <p class="TOC1"><a target="frameMsg" href="Messages/0x01A1-C2S.html"><b>0x01A1:</b> Character_CharacterOptionsEvent</a>
+                  - C2S - Weenie
+               </p>
+            </td>
+         </tr>
+         <tr>
+            <td class="TOCEntry">
+               <p class="TOC1"><a target="frameMsg" href="Messages/0x01A7-S2C.html"><b>0x01A7:</b> Combat_HandleAttackDoneEvent</a>
+                  - S2C - UIQueue
+               </p>
+            </td>
+         </tr>
+         <tr>
+            <td class="TOCEntry">
+               <p class="TOC1"><a target="frameMsg" href="Messages/0x01A8-S2C.html"><b>0x01A8:</b> Magic_RemoveSpell Magic_RemoveSpell</a>
+                  - S2C - UIQueue
+               </p>
+            </td>
+         </tr>
+         <tr>
+            <td class="TOCEntry">
+               <p class="TOC1"><a target="frameMsg" href="Messages/0x01A8-C2S.html"><b>0x01A8:</b> Magic_RemoveSpell Magic_RemoveSpell</a>
+                  - C2S - Weenie
+               </p>
+            </td>
+         </tr>
+         <tr>
+            <td class="TOCEntry">
+               <p class="TOC1"><a target="frameMsg" href="Messages/0x01AC-S2C.html"><b>0x01AC:</b> Combat_HandleVictimNotificationEventSelf</a>
+                  - S2C - UIQueue
+               </p>
+            </td>
+         </tr>
+         <tr>
+            <td class="TOCEntry">
+               <p class="TOC1"><a target="frameMsg" href="Messages/0x01AD-S2C.html"><b>0x01AD:</b> Combat_HandleVictimNotificationEventOther</a>
+                  - S2C - UIQueue
+               </p>
+            </td>
+         </tr>
+         <tr>
+            <td class="TOCEntry">
+               <p class="TOC1"><a target="frameMsg" href="Messages/0x01B1-S2C.html"><b>0x01B1:</b> Combat_HandleAttackerNotificationEvent</a>
+                  - S2C - UIQueue
+               </p>
+            </td>
+         </tr>
+         <tr>
+            <td class="TOCEntry">
+               <p class="TOC1"><a target="frameMsg" href="Messages/0x01B2-S2C.html"><b>0x01B2:</b> Combat_HandleDefenderNotificationEvent</a>
+                  - S2C - UIQueue
+               </p>
+            </td>
+         </tr>
+         <tr>
+            <td class="TOCEntry">
+               <p class="TOC1"><a target="frameMsg" href="Messages/0x01B3-S2C.html"><b>0x01B3:</b> Combat_HandleEvasionAttackerNotificationEvent</a>
+                  - S2C - UIQueue
+               </p>
+            </td>
+         </tr>
+         <tr>
+            <td class="TOCEntry">
+               <p class="TOC1"><a target="frameMsg" href="Messages/0x01B4-S2C.html"><b>0x01B4:</b> Combat_HandleEvasionDefenderNotificationEvent</a>
+                  - S2C - UIQueue
+               </p>
+            </td>
+         </tr>
+         <tr>
+            <td class="TOCEntry">
+               <p class="TOC1"><a target="frameMsg" href="Messages/0x01B7-C2S.html"><b>0x01B7:</b> Combat_CancelAttack</a>
+                  - C2S - Weenie
+               </p>
+            </td>
+         </tr>
+         <tr>
+            <td class="TOCEntry">
+               <p class="TOC1"><a target="frameMsg" href="Messages/0x01B8-S2C.html"><b>0x01B8:</b> Combat_HandleCommenceAttackEvent</a>
+                  - S2C - UIQueue
+               </p>
+            </td>
+         </tr>
+         <tr>
+            <td class="TOCEntry">
+               <p class="TOC1"><a target="frameMsg" href="Messages/0x01BF-C2S.html"><b>0x01BF:</b> Combat_QueryHealth</a>
+                  - C2S - Weenie
+               </p>
+            </td>
+         </tr>
+         <tr>
+            <td class="TOCEntry">
+               <p class="TOC1"><a target="frameMsg" href="Messages/0x01C0-S2C.html"><b>0x01C0:</b> Combat_QueryHealthResponse</a>
+                  - S2C - UIQueue
+               </p>
+            </td>
+         </tr>
+         <tr>
+            <td class="TOCEntry">
+               <p class="TOC1"><a target="frameMsg" href="Messages/0x01C2-C2S.html"><b>0x01C2:</b> Character_QueryAge</a>
+                  - C2S - Weenie
+               </p>
+            </td>
+         </tr>
+         <tr>
+            <td class="TOCEntry">
+               <p class="TOC1"><a target="frameMsg" href="Messages/0x01C3-S2C.html"><b>0x01C3:</b> Character_QueryAgeResponse</a>
+                  - S2C - UIQueue
+               </p>
+            </td>
+         </tr>
+         <tr>
+            <td class="TOCEntry">
+               <p class="TOC1"><a target="frameMsg" href="Messages/0x01C4-C2S.html"><b>0x01C4:</b> Character_QueryBirth</a>
+                  - C2S - Weenie
+               </p>
+            </td>
+         </tr>
+         <tr>
+            <td class="TOCEntry">
+               <p class="TOC1"><a target="frameMsg" href="Messages/0x01C7-S2C.html"><b>0x01C7:</b> Item_UseDone</a>
+                  - S2C - UIQueue
+               </p>
+            </td>
+         </tr>
+         <tr>
+            <td class="TOCEntry">
+               <p class="TOC1"><a target="frameMsg" href="Messages/0x01C9-S2C.html"><b>0x01C9:</b> Fellowship_FellowUpdateDone</a>
+                  - S2C - UIQueue
+               </p>
+            </td>
+         </tr>
+         <tr>
+            <td class="TOCEntry">
+               <p class="TOC1"><a target="frameMsg" href="Messages/0x01CA-S2C.html"><b>0x01CA:</b> Fellowship_FellowStatsDone</a>
+                  - S2C - UIQueue
+               </p>
+            </td>
+         </tr>
+         <tr>
+            <td class="TOCEntry">
+               <p class="TOC1"><a target="frameMsg" href="Messages/0x01CB-S2C.html"><b>0x01CB:</b> Item_AppraiseDone</a>
+                  - S2C - UIQueue
+               </p>
+            </td>
+         </tr>
+         <tr>
+            <td class="TOCEntry">
+               <p class="TOC1"><a target="frameMsg" href="Messages/0x01D1-S2C.html"><b>0x01D1:</b> Qualities_PrivateRemoveIntEvent</a>
+                  - S2C - UIQueue
+               </p>
+            </td>
+         </tr>
+         <tr>
+            <td class="TOCEntry">
+               <p class="TOC1"><a target="frameMsg" href="Messages/0x01D2-S2C.html"><b>0x01D2:</b> Qualities_RemoveIntEvent</a>
+                  - S2C - UIQueue
+               </p>
+            </td>
+         </tr>
+         <tr>
+            <td class="TOCEntry">
+               <p class="TOC1"><a target="frameMsg" href="Messages/0x01D3-S2C.html"><b>0x01D3:</b> Qualities_PrivateRemoveBoolEvent</a>
+                  - S2C - UIQueue
+               </p>
+            </td>
+         </tr>
+         <tr>
+            <td class="TOCEntry">
+               <p class="TOC1"><a target="frameMsg" href="Messages/0x01D4-S2C.html"><b>0x01D4:</b> Qualities_RemoveBoolEvent</a>
+                  - S2C - UIQueue
+               </p>
+            </td>
+         </tr>
+         <tr>
+            <td class="TOCEntry">
+               <p class="TOC1"><a target="frameMsg" href="Messages/0x01D5-S2C.html"><b>0x01D5:</b> Qualities_PrivateRemoveFloatEvent</a>
+                  - S2C - UIQueue
+               </p>
+            </td>
+         </tr>
+         <tr>
+            <td class="TOCEntry">
+               <p class="TOC1"><a target="frameMsg" href="Messages/0x01D6-S2C.html"><b>0x01D6:</b> Qualities_RemoveFloatEvent</a>
+                  - S2C - UIQueue
+               </p>
+            </td>
+         </tr>
+         <tr>
+            <td class="TOCEntry">
+               <p class="TOC1"><a target="frameMsg" href="Messages/0x01D7-S2C.html"><b>0x01D7:</b> Qualities_PrivateRemoveStringEvent</a>
+                  - S2C - UIQueue
+               </p>
+            </td>
+         </tr>
+         <tr>
+            <td class="TOCEntry">
+               <p class="TOC1"><a target="frameMsg" href="Messages/0x01D8-S2C.html"><b>0x01D8:</b> Qualities_RemoveStringEvent</a>
+                  - S2C - UIQueue
+               </p>
+            </td>
+         </tr>
+         <tr>
+            <td class="TOCEntry">
+               <p class="TOC1"><a target="frameMsg" href="Messages/0x01D9-S2C.html"><b>0x01D9:</b> Qualities_PrivateRemoveDataIDEvent</a>
+                  - S2C - UIQueue
+               </p>
+            </td>
+         </tr>
+         <tr>
+            <td class="TOCEntry">
+               <p class="TOC1"><a target="frameMsg" href="Messages/0x01DA-S2C.html"><b>0x01DA:</b> Qualities_RemoveDataIDEvent</a>
+                  - S2C - UIQueue
+               </p>
+            </td>
+         </tr>
+         <tr>
+            <td class="TOCEntry">
+               <p class="TOC1"><a target="frameMsg" href="Messages/0x01DB-S2C.html"><b>0x01DB:</b> Qualities_PrivateRemoveInstanceIDEvent</a>
+                  - S2C - UIQueue
+               </p>
+            </td>
+         </tr>
+         <tr>
+            <td class="TOCEntry">
+               <p class="TOC1"><a target="frameMsg" href="Messages/0x01DC-S2C.html"><b>0x01DC:</b> Qualities_RemoveInstanceIDEvent</a>
+                  - S2C - UIQueue
+               </p>
+            </td>
+         </tr>
+         <tr>
+            <td class="TOCEntry">
+               <p class="TOC1"><a target="frameMsg" href="Messages/0x01DD-S2C.html"><b>0x01DD:</b> Qualities_PrivateRemovePositionEvent</a>
+                  - S2C - UIQueue
+               </p>
+            </td>
+         </tr>
+         <tr>
+            <td class="TOCEntry">
+               <p class="TOC1"><a target="frameMsg" href="Messages/0x01DE-S2C.html"><b>0x01DE:</b> Qualities_RemovePositionEvent</a>
+                  - S2C - UIQueue
+               </p>
+            </td>
+         </tr>
+         <tr>
+            <td class="TOCEntry">
+               <p class="TOC1"><a target="frameMsg" href="Messages/0x01DF-C2S.html"><b>0x01DF:</b> Communication_Emote</a>
+                  - C2S - Weenie
+               </p>
+            </td>
+         </tr>
+         <tr>
+            <td class="TOCEntry">
+               <p class="TOC1"><a target="frameMsg" href="Messages/0x01E0-S2C.html"><b>0x01E0:</b> Communication_HearEmote</a>
+                  - S2C - UIQueue
+               </p>
+            </td>
+         </tr>
+         <tr>
+            <td class="TOCEntry">
+               <p class="TOC1"><a target="frameMsg" href="Messages/0x01E1-C2S.html"><b>0x01E1:</b> Communication_SoulEmote</a>
+                  - C2S - Weenie
+               </p>
+            </td>
+         </tr>
+         <tr>
+            <td class="TOCEntry">
+               <p class="TOC1"><a target="frameMsg" href="Messages/0x01E2-S2C.html"><b>0x01E2:</b> Communication_HearSoulEmote</a>
+                  - S2C - UIQueue
+               </p>
+            </td>
+         </tr>
+         <tr>
+            <td class="TOCEntry">
+               <p class="TOC1"><a target="frameMsg" href="Messages/0x01E3-C2S.html"><b>0x01E3:</b> Character_AddSpellFavorite</a>
+                  - C2S - Weenie
+               </p>
+            </td>
+         </tr>
+         <tr>
+            <td class="TOCEntry">
+               <p class="TOC1"><a target="frameMsg" href="Messages/0x01E4-C2S.html"><b>0x01E4:</b> Character_RemoveSpellFavorite</a>
+                  - C2S - Weenie
+               </p>
+            </td>
+         </tr>
+         <tr>
+            <td class="TOCEntry">
+               <p class="TOC1"><a target="frameMsg" href="Messages/0x01E9-C2S.html"><b>0x01E9:</b> Character_RequestPing</a>
+                  - C2S - Weenie
+               </p>
+            </td>
+         </tr>
+         <tr>
+            <td class="TOCEntry">
+               <p class="TOC1"><a target="frameMsg" href="Messages/0x01EA-S2C.html"><b>0x01EA:</b> Character_ReturnPing</a>
+                  - S2C - UIQueue
+               </p>
+            </td>
+         </tr>
+         <tr>
+            <td class="TOCEntry">
+               <p class="TOC1"><a target="frameMsg" href="Messages/0x01F4-S2C.html"><b>0x01F4:</b> Communication_SetSquelchDB</a>
+                  - S2C - UIQueue
+               </p>
+            </td>
+         </tr>
+         <tr>
+            <td class="TOCEntry">
+               <p class="TOC1"><a target="frameMsg" href="Messages/0x01F6-C2S.html"><b>0x01F6:</b> Trade_OpenTradeNegotiations</a>
+                  - C2S - Weenie
+               </p>
+            </td>
+         </tr>
+         <tr>
+            <td class="TOCEntry">
+               <p class="TOC1"><a target="frameMsg" href="Messages/0x01F7-C2S.html"><b>0x01F7:</b> Trade_CloseTradeNegotiations</a>
+                  - C2S - Weenie
+               </p>
+            </td>
+         </tr>
+         <tr>
+            <td class="TOCEntry">
+               <p class="TOC1"><a target="frameMsg" href="Messages/0x01F8-C2S.html"><b>0x01F8:</b> Trade_AddToTrade</a>
+                  - C2S - Weenie
+               </p>
+            </td>
+         </tr>
+         <tr>
+            <td class="TOCEntry">
+               <p class="TOC1"><a target="frameMsg" href="Messages/0x01FA-C2S.html"><b>0x01FA:</b> Trade_AcceptTrade</a>
+                  - C2S - Weenie
+               </p>
+            </td>
+         </tr>
+         <tr>
+            <td class="TOCEntry">
+               <p class="TOC1"><a target="frameMsg" href="Messages/0x01FB-C2S.html"><b>0x01FB:</b> Trade_DeclineTrade</a>
+                  - C2S - Weenie
+               </p>
+            </td>
+         </tr>
+         <tr>
+            <td class="TOCEntry">
+               <p class="TOC1"><a target="frameMsg" href="Messages/0x01FD-S2C.html"><b>0x01FD:</b> Trade_RegisterTrade</a>
+                  - S2C - UIQueue
+               </p>
+            </td>
+         </tr>
+         <tr>
+            <td class="TOCEntry">
+               <p class="TOC1"><a target="frameMsg" href="Messages/0x01FE-S2C.html"><b>0x01FE:</b> Trade_OpenTrade</a>
+                  - S2C - UIQueue
+               </p>
+            </td>
+         </tr>
+         <tr>
+            <td class="TOCEntry">
+               <p class="TOC1"><a target="frameMsg" href="Messages/0x01FF-S2C.html"><b>0x01FF:</b> Trade_CloseTrade</a>
+                  - S2C - UIQueue
+               </p>
+            </td>
+         </tr>
+         <tr>
+            <td class="TOCEntry">
+               <p class="TOC1"><a target="frameMsg" href="Messages/0x0200-S2C.html"><b>0x0200:</b> Trade_AddToTrade</a>
+                  - S2C - UIQueue
+               </p>
+            </td>
+         </tr>
+         <tr>
+            <td class="TOCEntry">
+               <p class="TOC1"><a target="frameMsg" href="Messages/0x0201-S2C.html"><b>0x0201:</b> Trade_RemoveFromTrade</a>
+                  - S2C - UIQueue
+               </p>
+            </td>
+         </tr>
+         <tr>
+            <td class="TOCEntry">
+               <p class="TOC1"><a target="frameMsg" href="Messages/0x0202-S2C.html"><b>0x0202:</b> Trade_AcceptTrade</a>
+                  - S2C - UIQueue
+               </p>
+            </td>
+         </tr>
+         <tr>
+            <td class="TOCEntry">
+               <p class="TOC1"><a target="frameMsg" href="Messages/0x0203-S2C.html"><b>0x0203:</b> Trade_DeclineTrade</a>
+                  - S2C - UIQueue
+               </p>
+            </td>
+         </tr>
+         <tr>
+            <td class="TOCEntry">
+               <p class="TOC1"><a target="frameMsg" href="Messages/0x0204-C2S.html"><b>0x0204:</b> Trade_ResetTrade</a>
+                  - C2S - Weenie
+               </p>
+            </td>
+         </tr>
+         <tr>
+            <td class="TOCEntry">
+               <p class="TOC1"><a target="frameMsg" href="Messages/0x0205-S2C.html"><b>0x0205:</b> Trade_ResetTrade</a>
+                  - S2C - UIQueue
+               </p>
+            </td>
+         </tr>
+         <tr>
+            <td class="TOCEntry">
+               <p class="TOC1"><a target="frameMsg" href="Messages/0x0207-S2C.html"><b>0x0207:</b> Trade_TradeFailure</a>
+                  - S2C - UIQueue
+               </p>
+            </td>
+         </tr>
+         <tr>
+            <td class="TOCEntry">
+               <p class="TOC1"><a target="frameMsg" href="Messages/0x0208-S2C.html"><b>0x0208:</b> Trade_ClearTradeAcceptance</a>
+                  - S2C - UIQueue
+               </p>
+            </td>
+         </tr>
+         <tr>
+            <td class="TOCEntry">
+               <p class="TOC1"><a target="frameMsg" href="Messages/0x0216-C2S.html"><b>0x0216:</b> Character_ClearPlayerConsentList</a>
+                  - C2S - Weenie
+               </p>
+            </td>
+         </tr>
+         <tr>
+            <td class="TOCEntry">
+               <p class="TOC1"><a target="frameMsg" href="Messages/0x0217-C2S.html"><b>0x0217:</b> Character_DisplayPlayerConsentList</a>
+                  - C2S - Weenie
+               </p>
+            </td>
+         </tr>
+         <tr>
+            <td class="TOCEntry">
+               <p class="TOC1"><a target="frameMsg" href="Messages/0x0218-C2S.html"><b>0x0218:</b> Character_RemoveFromPlayerConsentList</a>
+                  - C2S - Weenie
+               </p>
+            </td>
+         </tr>
+         <tr>
+            <td class="TOCEntry">
+               <p class="TOC1"><a target="frameMsg" href="Messages/0x0219-C2S.html"><b>0x0219:</b> Character_AddPlayerPermission</a>
+                  - C2S - Weenie
+               </p>
+            </td>
+         </tr>
+         <tr>
+            <td class="TOCEntry">
+               <p class="TOC1"><a target="frameMsg" href="Messages/0x021C-C2S.html"><b>0x021C:</b> House_BuyHouse</a>
+                  - C2S - Weenie
+               </p>
+            </td>
+         </tr>
+         <tr>
+            <td class="TOCEntry">
+               <p class="TOC1"><a target="frameMsg" href="Messages/0x021D-S2C.html"><b>0x021D:</b> House_HouseProfile</a>
+                  - S2C - UIQueue
+               </p>
+            </td>
+         </tr>
+         <tr>
+            <td class="TOCEntry">
+               <p class="TOC1"><a target="frameMsg" href="Messages/0x021E-C2S.html"><b>0x021E:</b> House_QueryHouse</a>
+                  - C2S - Weenie
+               </p>
+            </td>
+         </tr>
+         <tr>
+            <td class="TOCEntry">
+               <p class="TOC1"><a target="frameMsg" href="Messages/0x021F-C2S.html"><b>0x021F:</b> House_AbandonHouse</a>
+                  - C2S - Weenie
+               </p>
+            </td>
+         </tr>
+         <tr>
+            <td class="TOCEntry">
+               <p class="TOC1"><a target="frameMsg" href="Messages/0x0220-C2S.html"><b>0x0220:</b> Character_RemovePlayerPermission</a>
+                  - C2S - Weenie
+               </p>
+            </td>
+         </tr>
+         <tr>
+            <td class="TOCEntry">
+               <p class="TOC1"><a target="frameMsg" href="Messages/0x0221-C2S.html"><b>0x0221:</b> House_RentHouse</a>
+                  - C2S - Weenie
+               </p>
+            </td>
+         </tr>
+         <tr>
+            <td class="TOCEntry">
+               <p class="TOC1"><a target="frameMsg" href="Messages/0x0224-C2S.html"><b>0x0224:</b> Character_SetDesiredComponentLevel</a>
+                  - C2S - Weenie
+               </p>
+            </td>
+         </tr>
+         <tr>
+            <td class="TOCEntry">
+               <p class="TOC1"><a target="frameMsg" href="Messages/0x0225-S2C.html"><b>0x0225:</b> House_HouseData</a>
+                  - S2C - UIQueue
+               </p>
+            </td>
+         </tr>
+         <tr>
+            <td class="TOCEntry">
+               <p class="TOC1"><a target="frameMsg" href="Messages/0x0226-S2C.html"><b>0x0226:</b> House_HouseStatus</a>
+                  - S2C - UIQueue
+               </p>
+            </td>
+         </tr>
+         <tr>
+            <td class="TOCEntry">
+               <p class="TOC1"><a target="frameMsg" href="Messages/0x0227-S2C.html"><b>0x0227:</b> House_UpdateRentTime</a>
+                  - S2C - UIQueue
+               </p>
+            </td>
+         </tr>
+         <tr>
+            <td class="TOCEntry">
+               <p class="TOC1"><a target="frameMsg" href="Messages/0x0228-S2C.html"><b>0x0228:</b> House_UpdateRentPayment</a>
+                  - S2C - UIQueue
+               </p>
+            </td>
+         </tr>
+         <tr>
+            <td class="TOCEntry">
+               <p class="TOC1"><a target="frameMsg" href="Messages/0x0245-C2S.html"><b>0x0245:</b> House_AddPermanentGuest</a>
+                  - C2S - Weenie
+               </p>
+            </td>
+         </tr>
+         <tr>
+            <td class="TOCEntry">
+               <p class="TOC1"><a target="frameMsg" href="Messages/0x0246-C2S.html"><b>0x0246:</b> House_RemovePermanentGuest</a>
+                  - C2S - Weenie
+               </p>
+            </td>
+         </tr>
+         <tr>
+            <td class="TOCEntry">
+               <p class="TOC1"><a target="frameMsg" href="Messages/0x0247-C2S.html"><b>0x0247:</b> House_SetOpenHouseStatus</a>
+                  - C2S - Weenie
+               </p>
+            </td>
+         </tr>
+         <tr>
+            <td class="TOCEntry">
+               <p class="TOC1"><a target="frameMsg" href="Messages/0x0248-S2C.html"><b>0x0248:</b> House_UpdateRestrictions</a>
+                  - S2C - UIQueue
+               </p>
+            </td>
+         </tr>
+         <tr>
+            <td class="TOCEntry">
+               <p class="TOC1"><a target="frameMsg" href="Messages/0x0249-C2S.html"><b>0x0249:</b> House_ChangeStoragePermission</a>
+                  - C2S - Weenie
+               </p>
+            </td>
+         </tr>
+         <tr>
+            <td class="TOCEntry">
+               <p class="TOC1"><a target="frameMsg" href="Messages/0x024A-C2S.html"><b>0x024A:</b> House_BootSpecificHouseGuest</a>
+                  - C2S - Weenie
+               </p>
+            </td>
+         </tr>
+         <tr>
+            <td class="TOCEntry">
+               <p class="TOC1"><a target="frameMsg" href="Messages/0x024C-C2S.html"><b>0x024C:</b> House_RemoveAllStoragePermission</a>
+                  - C2S - Weenie
+               </p>
+            </td>
+         </tr>
+         <tr>
+            <td class="TOCEntry">
+               <p class="TOC1"><a target="frameMsg" href="Messages/0x024D-C2S.html"><b>0x024D:</b> House_RequestFullGuestList</a>
+                  - C2S - Weenie
+               </p>
+            </td>
+         </tr>
+         <tr>
+            <td class="TOCEntry">
+               <p class="TOC1"><a target="frameMsg" href="Messages/0x0254-C2S.html"><b>0x0254:</b> Allegiance_SetMotd</a>
+                  - C2S - Weenie
+               </p>
+            </td>
+         </tr>
+         <tr>
+            <td class="TOCEntry">
+               <p class="TOC1"><a target="frameMsg" href="Messages/0x0255-C2S.html"><b>0x0255:</b> Allegiance_QueryMotd</a>
+                  - C2S - Weenie
+               </p>
+            </td>
+         </tr>
+         <tr>
+            <td class="TOCEntry">
+               <p class="TOC1"><a target="frameMsg" href="Messages/0x0256-C2S.html"><b>0x0256:</b> Allegiance_ClearMotd</a>
+                  - C2S - Weenie
+               </p>
+            </td>
+         </tr>
+         <tr>
+            <td class="TOCEntry">
+               <p class="TOC1"><a target="frameMsg" href="Messages/0x0257-S2C.html"><b>0x0257:</b> House_UpdateHAR</a>
+                  - S2C - UIQueue
+               </p>
+            </td>
+         </tr>
+         <tr>
+            <td class="TOCEntry">
+               <p class="TOC1"><a target="frameMsg" href="Messages/0x0258-C2S.html"><b>0x0258:</b> House_QueryLord</a>
+                  - C2S - Weenie
+               </p>
+            </td>
+         </tr>
+         <tr>
+            <td class="TOCEntry">
+               <p class="TOC1"><a target="frameMsg" href="Messages/0x0259-S2C.html"><b>0x0259:</b> House_HouseTransaction</a>
+                  - S2C - UIQueue
+               </p>
+            </td>
+         </tr>
+         <tr>
+            <td class="TOCEntry">
+               <p class="TOC1"><a target="frameMsg" href="Messages/0x025C-C2S.html"><b>0x025C:</b> House_AddAllStoragePermission</a>
+                  - C2S - Weenie
+               </p>
+            </td>
+         </tr>
+         <tr>
+            <td class="TOCEntry">
+               <p class="TOC1"><a target="frameMsg" href="Messages/0x025E-C2S.html"><b>0x025E:</b> House_RemoveAllPermanentGuests</a>
+                  - C2S - Weenie
+               </p>
+            </td>
+         </tr>
+         <tr>
+            <td class="TOCEntry">
+               <p class="TOC1"><a target="frameMsg" href="Messages/0x025F-C2S.html"><b>0x025F:</b> House_BootEveryone</a>
+                  - C2S - Weenie
+               </p>
+            </td>
+         </tr>
+         <tr>
+            <td class="TOCEntry">
+               <p class="TOC1"><a target="frameMsg" href="Messages/0x0262-C2S.html"><b>0x0262:</b> House_TeleToHouse</a>
+                  - C2S - Weenie
+               </p>
+            </td>
+         </tr>
+         <tr>
+            <td class="TOCEntry">
+               <p class="TOC1"><a target="frameMsg" href="Messages/0x0263-C2S.html"><b>0x0263:</b> Item_QueryItemMana</a>
+                  - C2S - Weenie
+               </p>
+            </td>
+         </tr>
+         <tr>
+            <td class="TOCEntry">
+               <p class="TOC1"><a target="frameMsg" href="Messages/0x0264-S2C.html"><b>0x0264:</b> Item_QueryItemManaResponse</a>
+                  - S2C - UIQueue
+               </p>
+            </td>
+         </tr>
+         <tr>
+            <td class="TOCEntry">
+               <p class="TOC1"><a target="frameMsg" href="Messages/0x0266-C2S.html"><b>0x0266:</b> House_SetHooksVisibility</a>
+                  - C2S - Weenie
+               </p>
+            </td>
+         </tr>
+         <tr>
+            <td class="TOCEntry">
+               <p class="TOC1"><a target="frameMsg" href="Messages/0x0267-C2S.html"><b>0x0267:</b> House_ModifyAllegianceGuestPermission</a>
+                  - C2S - Weenie
+               </p>
+            </td>
+         </tr>
+         <tr>
+            <td class="TOCEntry">
+               <p class="TOC1"><a target="frameMsg" href="Messages/0x0268-C2S.html"><b>0x0268:</b> House_ModifyAllegianceStoragePermission</a>
+                  - C2S - Weenie
+               </p>
+            </td>
+         </tr>
+         <tr>
+            <td class="TOCEntry">
+               <p class="TOC1"><a target="frameMsg" href="Messages/0x0269-C2S.html"><b>0x0269:</b> Game_Join</a>
+                  - C2S - Weenie
+               </p>
+            </td>
+         </tr>
+         <tr>
+            <td class="TOCEntry">
+               <p class="TOC1"><a target="frameMsg" href="Messages/0x026A-C2S.html"><b>0x026A:</b> Game_Quit</a>
+                  - C2S - Weenie
+               </p>
+            </td>
+         </tr>
+         <tr>
+            <td class="TOCEntry">
+               <p class="TOC1"><a target="frameMsg" href="Messages/0x026B-C2S.html"><b>0x026B:</b> Game_Move</a>
+                  - C2S - Weenie
+               </p>
+            </td>
+         </tr>
+         <tr>
+            <td class="TOCEntry">
+               <p class="TOC1"><a target="frameMsg" href="Messages/0x026D-C2S.html"><b>0x026D:</b> Game_MovePass</a>
+                  - C2S - Weenie
+               </p>
+            </td>
+         </tr>
+         <tr>
+            <td class="TOCEntry">
+               <p class="TOC1"><a target="frameMsg" href="Messages/0x026E-C2S.html"><b>0x026E:</b> Game_Stalemate</a>
+                  - C2S - Weenie
+               </p>
+            </td>
+         </tr>
+         <tr>
+            <td class="TOCEntry">
+               <p class="TOC1"><a target="frameMsg" href="Messages/0x0270-C2S.html"><b>0x0270:</b> House_ListAvailableHouses</a>
+                  - C2S - Weenie
+               </p>
+            </td>
+         </tr>
+         <tr>
+            <td class="TOCEntry">
+               <p class="TOC1"><a target="frameMsg" href="Messages/0x0271-S2C.html"><b>0x0271:</b> House_AvailableHouses</a>
+                  - S2C - UIQueue
+               </p>
+            </td>
+         </tr>
+         <tr>
+            <td class="TOCEntry">
+               <p class="TOC1"><a target="frameMsg" href="Messages/0x0274-S2C.html"><b>0x0274:</b> Character_ConfirmationRequest</a>
+                  - S2C - UIQueue
+               </p>
+            </td>
+         </tr>
+         <tr>
+            <td class="TOCEntry">
+               <p class="TOC1"><a target="frameMsg" href="Messages/0x0275-C2S.html"><b>0x0275:</b> Character_ConfirmationResponse</a>
+                  - C2S - Weenie
+               </p>
+            </td>
+         </tr>
+         <tr>
+            <td class="TOCEntry">
+               <p class="TOC1"><a target="frameMsg" href="Messages/0x0276-S2C.html"><b>0x0276:</b> Character_ConfirmationDone</a>
+                  - S2C - UIQueue
+               </p>
+            </td>
+         </tr>
+         <tr>
+            <td class="TOCEntry">
+               <p class="TOC1"><a target="frameMsg" href="Messages/0x0277-C2S.html"><b>0x0277:</b> Allegiance_BreakAllegianceBoot</a>
+                  - C2S - Weenie
+               </p>
+            </td>
+         </tr>
+         <tr>
+            <td class="TOCEntry">
+               <p class="TOC1"><a target="frameMsg" href="Messages/0x0278-C2S.html"><b>0x0278:</b> House_TeleToMansion</a>
+                  - C2S - Weenie
+               </p>
+            </td>
+         </tr>
+         <tr>
+            <td class="TOCEntry">
+               <p class="TOC1"><a target="frameMsg" href="Messages/0x0279-C2S.html"><b>0x0279:</b> Character_Suicide</a>
+                  - C2S - Weenie
+               </p>
+            </td>
+         </tr>
+         <tr>
+            <td class="TOCEntry">
+               <p class="TOC1"><a target="frameMsg" href="Messages/0x027A-S2C.html"><b>0x027A:</b> Allegiance_AllegianceLoginNotificationEvent</a>
+                  - S2C - UIQueue
+               </p>
+            </td>
+         </tr>
+         <tr>
+            <td class="TOCEntry">
+               <p class="TOC1"><a target="frameMsg" href="Messages/0x027B-C2S.html"><b>0x027B:</b> Allegiance_AllegianceInfoRequest</a>
+                  - C2S - Weenie
+               </p>
+            </td>
+         </tr>
+         <tr>
+            <td class="TOCEntry">
+               <p class="TOC1"><a target="frameMsg" href="Messages/0x027C-S2C.html"><b>0x027C:</b> Allegiance_AllegianceInfoResponseEvent</a>
+                  - S2C - UIQueue
+               </p>
+            </td>
+         </tr>
+         <tr>
+            <td class="TOCEntry">
+               <p class="TOC1"><a target="frameMsg" href="Messages/0x027D-C2S.html"><b>0x027D:</b> Inventory_CreateTinkeringTool</a>
+                  - C2S - Weenie
+               </p>
+            </td>
+         </tr>
+         <tr>
+            <td class="TOCEntry">
+               <p class="TOC1"><a target="frameMsg" href="Messages/0x0281-S2C.html"><b>0x0281:</b> Game_JoinGameResponse</a>
+                  - S2C - UIQueue
+               </p>
+            </td>
+         </tr>
+         <tr>
+            <td class="TOCEntry">
+               <p class="TOC1"><a target="frameMsg" href="Messages/0x0282-S2C.html"><b>0x0282:</b> Game_StartGame</a>
+                  - S2C - UIQueue
+               </p>
+            </td>
+         </tr>
+         <tr>
+            <td class="TOCEntry">
+               <p class="TOC1"><a target="frameMsg" href="Messages/0x0283-S2C.html"><b>0x0283:</b> Game_MoveResponse</a>
+                  - S2C - UIQueue
+               </p>
+            </td>
+         </tr>
+         <tr>
+            <td class="TOCEntry">
+               <p class="TOC1"><a target="frameMsg" href="Messages/0x0284-S2C.html"><b>0x0284:</b> Game_OpponentTurn</a>
+                  - S2C - UIQueue
+               </p>
+            </td>
+         </tr>
+         <tr>
+            <td class="TOCEntry">
+               <p class="TOC1"><a target="frameMsg" href="Messages/0x0285-S2C.html"><b>0x0285:</b> Game_OpponentStalemateState</a>
+                  - S2C - UIQueue
+               </p>
+            </td>
+         </tr>
+         <tr>
+            <td class="TOCEntry">
+               <p class="TOC1"><a target="frameMsg" href="Messages/0x0286-C2S.html"><b>0x0286:</b> Character_SpellbookFilterEvent</a>
+                  - C2S - Weenie
+               </p>
+            </td>
+         </tr>
+         <tr>
+            <td class="TOCEntry">
+               <p class="TOC1"><a target="frameMsg" href="Messages/0x028A-S2C.html"><b>0x028A:</b> Communication_WeenieError</a>
+                  - S2C - UIQueue
+               </p>
+            </td>
+         </tr>
+         <tr>
+            <td class="TOCEntry">
+               <p class="TOC1"><a target="frameMsg" href="Messages/0x028B-S2C.html"><b>0x028B:</b> Communication_WeenieErrorWithString</a>
+                  - S2C - UIQueue
+               </p>
+            </td>
+         </tr>
+         <tr>
+            <td class="TOCEntry">
+               <p class="TOC1"><a target="frameMsg" href="Messages/0x028C-S2C.html"><b>0x028C:</b> Game_GameOver</a>
+                  - S2C - UIQueue
+               </p>
+            </td>
+         </tr>
+         <tr>
+            <td class="TOCEntry">
+               <p class="TOC1"><a target="frameMsg" href="Messages/0x028D-C2S.html"><b>0x028D:</b> Character_TeleToMarketplace</a>
+                  - C2S - Weenie
+               </p>
+            </td>
+         </tr>
+         <tr>
+            <td class="TOCEntry">
+               <p class="TOC1"><a target="frameMsg" href="Messages/0x028F-C2S.html"><b>0x028F:</b> Character_EnterPKLite</a>
+                  - C2S - Weenie
+               </p>
+            </td>
+         </tr>
+         <tr>
+            <td class="TOCEntry">
+               <p class="TOC1"><a target="frameMsg" href="Messages/0x0290-C2S.html"><b>0x0290:</b> Fellowship_AssignNewLeader</a>
+                  - C2S - Weenie
+               </p>
+            </td>
+         </tr>
+         <tr>
+            <td class="TOCEntry">
+               <p class="TOC1"><a target="frameMsg" href="Messages/0x0291-C2S.html"><b>0x0291:</b> Fellowship_ChangeFellowOpeness</a>
+                  - C2S - Weenie
+               </p>
+            </td>
+         </tr>
+         <tr>
+            <td class="TOCEntry">
+               <p class="TOC1"><a target="frameMsg" href="Messages/0x0295-S2C.html"><b>0x0295:</b> Communication_ChatRoomTracker</a>
+                  - S2C - UIQueue
+               </p>
+            </td>
+         </tr>
+         <tr>
+            <td class="TOCEntry">
+               <p class="TOC1"><a target="frameMsg" href="Messages/0x02A0-C2S.html"><b>0x02A0:</b> Allegiance_AllegianceChatBoot</a>
+                  - C2S - Weenie
+               </p>
+            </td>
+         </tr>
+         <tr>
+            <td class="TOCEntry">
+               <p class="TOC1"><a target="frameMsg" href="Messages/0x02A1-C2S.html"><b>0x02A1:</b> Allegiance_AddAllegianceBan</a>
+                  - C2S - Weenie
+               </p>
+            </td>
+         </tr>
+         <tr>
+            <td class="TOCEntry">
+               <p class="TOC1"><a target="frameMsg" href="Messages/0x02A2-C2S.html"><b>0x02A2:</b> Allegiance_RemoveAllegianceBan</a>
+                  - C2S - Weenie
+               </p>
+            </td>
+         </tr>
+         <tr>
+            <td class="TOCEntry">
+               <p class="TOC1"><a target="frameMsg" href="Messages/0x02A3-C2S.html"><b>0x02A3:</b> Allegiance_ListAllegianceBans</a>
+                  - C2S - Weenie
+               </p>
+            </td>
+         </tr>
+         <tr>
+            <td class="TOCEntry">
+               <p class="TOC1"><a target="frameMsg" href="Messages/0x02A5-C2S.html"><b>0x02A5:</b> Allegiance_RemoveAllegianceOfficer</a>
+                  - C2S - Weenie
+               </p>
+            </td>
+         </tr>
+         <tr>
+            <td class="TOCEntry">
+               <p class="TOC1"><a target="frameMsg" href="Messages/0x02A6-C2S.html"><b>0x02A6:</b> Allegiance_ListAllegianceOfficers</a>
+                  - C2S - Weenie
+               </p>
+            </td>
+         </tr>
+         <tr>
+            <td class="TOCEntry">
+               <p class="TOC1"><a target="frameMsg" href="Messages/0x02A7-C2S.html"><b>0x02A7:</b> Allegiance_ClearAllegianceOfficers</a>
+                  - C2S - Weenie
+               </p>
+            </td>
+         </tr>
+         <tr>
+            <td class="TOCEntry">
+               <p class="TOC1"><a target="frameMsg" href="Messages/0x02AB-C2S.html"><b>0x02AB:</b> Allegiance_RecallAllegianceHometown</a>
+                  - C2S - Weenie
+               </p>
+            </td>
+         </tr>
+         <tr>
+            <td class="TOCEntry">
+               <p class="TOC1"><a target="frameMsg" href="Messages/0x02AE-S2C.html"><b>0x02AE:</b> Admin_QueryPluginList</a>
+                  - S2C - UIQueue
+               </p>
+            </td>
+         </tr>
+         <tr>
+            <td class="TOCEntry">
+               <p class="TOC1"><a target="frameMsg" href="Messages/0x02AF-C2S.html"><b>0x02AF:</b> Admin_QueryPluginListResponse</a>
+                  - C2S - Weenie
+               </p>
+            </td>
+         </tr>
+         <tr>
+            <td class="TOCEntry">
+               <p class="TOC1"><a target="frameMsg" href="Messages/0x02B1-S2C.html"><b>0x02B1:</b> Admin_QueryPlugin</a>
+                  - S2C - UIQueue
+               </p>
+            </td>
+         </tr>
+         <tr>
+            <td class="TOCEntry">
+               <p class="TOC1"><a target="frameMsg" href="Messages/0x02B2-C2S.html"><b>0x02B2:</b> Admin_QueryPluginResponse</a>
+                  - C2S - Weenie
+               </p>
+            </td>
+         </tr>
+         <tr>
+            <td class="TOCEntry">
+               <p class="TOC1"><a target="frameMsg" href="Messages/0x02B3-S2C.html"><b>0x02B3:</b> Admin_QueryPluginResponse</a>
+                  - S2C - UIQueue
+               </p>
+            </td>
+         </tr>
+         <tr>
+            <td class="TOCEntry">
+               <p class="TOC1"><a target="frameMsg" href="Messages/0x02B4-S2C.html"><b>0x02B4:</b> Inventory_SalvageOperationsResultData</a>
+                  - S2C - UIQueue
+               </p>
+            </td>
+         </tr>
+         <tr>
+            <td class="TOCEntry">
+               <p class="TOC1"><a target="frameMsg" href="Messages/0x02B8-S2C.html"><b>0x02B8:</b> Qualities_PrivateRemoveInt64Event</a>
+                  - S2C - UIQueue
+               </p>
+            </td>
+         </tr>
+         <tr>
+            <td class="TOCEntry">
+               <p class="TOC1"><a target="frameMsg" href="Messages/0x02B9-S2C.html"><b>0x02B9:</b> Qualities_RemoveInt64Event</a>
+                  - S2C - UIQueue
+               </p>
+            </td>
+         </tr>
+         <tr>
+            <td class="TOCEntry">
+               <p class="TOC1"><a target="frameMsg" href="Messages/0x02BB-S2C.html"><b>0x02BB:</b> Communication_HearSpeech</a>
+                  - S2C - UIQueue
+               </p>
+            </td>
+         </tr>
+         <tr>
+            <td class="TOCEntry">
+               <p class="TOC1"><a target="frameMsg" href="Messages/0x02BC-S2C.html"><b>0x02BC:</b> Communication_HearRangedSpeech</a>
+                  - S2C - UIQueue
+               </p>
+            </td>
+         </tr>
+         <tr>
+            <td class="TOCEntry">
+               <p class="TOC1"><a target="frameMsg" href="Messages/0x02BD-S2C.html"><b>0x02BD:</b> Communication_HearDirectSpeech</a>
+                  - S2C - UIQueue
+               </p>
+            </td>
+         </tr>
+         <tr>
+            <td class="TOCEntry">
+               <p class="TOC1"><a target="frameMsg" href="Messages/0x02BE-S2C.html"><b>0x02BE:</b> Fellowship_FullUpdate</a>
+                  - S2C - UIQueue
+               </p>
+            </td>
+         </tr>
+         <tr>
+            <td class="TOCEntry">
+               <p class="TOC1"><a target="frameMsg" href="Messages/0x02BF-S2C.html"><b>0x02BF:</b> Fellowship_Disband</a>
+                  - S2C - UIQueue
+               </p>
+            </td>
+         </tr>
+         <tr>
+            <td class="TOCEntry">
+               <p class="TOC1"><a target="frameMsg" href="Messages/0x02C0-S2C.html"><b>0x02C0:</b> Fellowship_UpdateFellow</a>
+                  - S2C - UIQueue
+               </p>
+            </td>
+         </tr>
+         <tr>
+            <td class="TOCEntry">
+               <p class="TOC1"><a target="frameMsg" href="Messages/0x02C1-S2C.html"><b>0x02C1:</b> Magic_UpdateSpell</a>
+                  - S2C - UIQueue
+               </p>
+            </td>
+         </tr>
+         <tr>
+            <td class="TOCEntry">
+               <p class="TOC1"><a target="frameMsg" href="Messages/0x02C2-S2C.html"><b>0x02C2:</b> Magic_UpdateEnchantment</a>
+                  - S2C - UIQueue
+               </p>
+            </td>
+         </tr>
+         <tr>
+            <td class="TOCEntry">
+               <p class="TOC1"><a target="frameMsg" href="Messages/0x02C3-S2C.html"><b>0x02C3:</b> Magic_RemoveEnchantment</a>
+                  - S2C - UIQueue
+               </p>
+            </td>
+         </tr>
+         <tr>
+            <td class="TOCEntry">
+               <p class="TOC1"><a target="frameMsg" href="Messages/0x02C4-S2C.html"><b>0x02C4:</b> Magic_UpdateMultipleEnchantments</a>
+                  - S2C - UIQueue
+               </p>
+            </td>
+         </tr>
+         <tr>
+            <td class="TOCEntry">
+               <p class="TOC1"><a target="frameMsg" href="Messages/0x02C5-S2C.html"><b>0x02C5:</b> Magic_RemoveMultipleEnchantments</a>
+                  - S2C - UIQueue
+               </p>
+            </td>
+         </tr>
+         <tr>
+            <td class="TOCEntry">
+               <p class="TOC1"><a target="frameMsg" href="Messages/0x02C6-S2C.html"><b>0x02C6:</b> Magic_PurgeEnchantments</a>
+                  - S2C - UIQueue
+               </p>
+            </td>
+         </tr>
+         <tr>
+            <td class="TOCEntry">
+               <p class="TOC1"><a target="frameMsg" href="Messages/0x02C7-S2C.html"><b>0x02C7:</b> Magic_DispelEnchantment</a>
+                  - S2C - UIQueue
+               </p>
+            </td>
+         </tr>
+         <tr>
+            <td class="TOCEntry">
+               <p class="TOC1"><a target="frameMsg" href="Messages/0x02C8-S2C.html"><b>0x02C8:</b> Magic_DispelMultipleEnchantments</a>
+                  - S2C - UIQueue
+               </p>
+            </td>
+         </tr>
+         <tr>
+            <td class="TOCEntry">
+               <p class="TOC1"><a target="frameMsg" href="Messages/0x02C9-S2C.html"><b>0x02C9:</b> Misc_PortalStormBrewing</a>
+                  - S2C - UIQueue
+               </p>
+            </td>
+         </tr>
+         <tr>
+            <td class="TOCEntry">
+               <p class="TOC1"><a target="frameMsg" href="Messages/0x02CA-S2C.html"><b>0x02CA:</b> Misc_PortalStormImminent</a>
+                  - S2C - UIQueue
+               </p>
+            </td>
+         </tr>
+         <tr>
+            <td class="TOCEntry">
+               <p class="TOC1"><a target="frameMsg" href="Messages/0x02CB-S2C.html"><b>0x02CB:</b> Misc_PortalStorm</a>
+                  - S2C - UIQueue
+               </p>
+            </td>
+         </tr>
+         <tr>
+            <td class="TOCEntry">
+               <p class="TOC1"><a target="frameMsg" href="Messages/0x02CC-S2C.html"><b>0x02CC:</b> Misc_PortalStormSubsided</a>
+                  - S2C - UIQueue
+               </p>
+            </td>
+         </tr>
+         <tr>
+            <td class="TOCEntry">
+               <p class="TOC1"><a target="frameMsg" href="Messages/0x02CD-S2C.html"><b>0x02CD:</b> Qualities_PrivateUpdateInt</a>
+                  - S2C - UIQueue
+               </p>
+            </td>
+         </tr>
+         <tr>
+            <td class="TOCEntry">
+               <p class="TOC1"><a target="frameMsg" href="Messages/0x02CE-S2C.html"><b>0x02CE:</b> Qualities_UpdateInt</a>
+                  - S2C - UIQueue
+               </p>
+            </td>
+         </tr>
+         <tr>
+            <td class="TOCEntry">
+               <p class="TOC1"><a target="frameMsg" href="Messages/0x02CF-S2C.html"><b>0x02CF:</b> Qualities_PrivateUpdateInt64</a>
+                  - S2C - UIQueue
+               </p>
+            </td>
+         </tr>
+         <tr>
+            <td class="TOCEntry">
+               <p class="TOC1"><a target="frameMsg" href="Messages/0x02D0-S2C.html"><b>0x02D0:</b> Qualities_UpdateInt64</a>
+                  - S2C - UIQueue
+               </p>
+            </td>
+         </tr>
+         <tr>
+            <td class="TOCEntry">
+               <p class="TOC1"><a target="frameMsg" href="Messages/0x02D1-S2C.html"><b>0x02D1:</b> Qualities_PrivateUpdateBool</a>
+                  - S2C - UIQueue
+               </p>
+            </td>
+         </tr>
+         <tr>
+            <td class="TOCEntry">
+               <p class="TOC1"><a target="frameMsg" href="Messages/0x02D2-S2C.html"><b>0x02D2:</b> Qualities_UpdateBool</a>
+                  - S2C - UIQueue
+               </p>
+            </td>
+         </tr>
+         <tr>
+            <td class="TOCEntry">
+               <p class="TOC1"><a target="frameMsg" href="Messages/0x02D3-S2C.html"><b>0x02D3:</b> Qualities_PrivateUpdateFloat</a>
+                  - S2C - UIQueue
+               </p>
+            </td>
+         </tr>
+         <tr>
+            <td class="TOCEntry">
+               <p class="TOC1"><a target="frameMsg" href="Messages/0x02D4-S2C.html"><b>0x02D4:</b> Qualities_UpdateFloat</a>
+                  - S2C - UIQueue
+               </p>
+            </td>
+         </tr>
+         <tr>
+            <td class="TOCEntry">
+               <p class="TOC1"><a target="frameMsg" href="Messages/0x02D5-S2C.html"><b>0x02D5:</b> Qualities_PrivateUpdateString</a>
+                  - S2C - UIQueue
+               </p>
+            </td>
+         </tr>
+         <tr>
+            <td class="TOCEntry">
+               <p class="TOC1"><a target="frameMsg" href="Messages/0x02D6-S2C.html"><b>0x02D6:</b> Qualities_UpdateString</a>
+                  - S2C - UIQueue
+               </p>
+            </td>
+         </tr>
+         <tr>
+            <td class="TOCEntry">
+               <p class="TOC1"><a target="frameMsg" href="Messages/0x02D7-S2C.html"><b>0x02D7:</b> Qualities_PrivateUpdateDataID</a>
+                  - S2C - UIQueue
+               </p>
+            </td>
+         </tr>
+         <tr>
+            <td class="TOCEntry">
+               <p class="TOC1"><a target="frameMsg" href="Messages/0x02D8-S2C.html"><b>0x02D8:</b> Qualities_UpdateDataID</a>
+                  - S2C - UIQueue
+               </p>
+            </td>
+         </tr>
+         <tr>
+            <td class="TOCEntry">
+               <p class="TOC1"><a target="frameMsg" href="Messages/0x02D9-S2C.html"><b>0x02D9:</b> Qualities_PrivateUpdateInstanceID</a>
+                  - S2C - UIQueue
+               </p>
+            </td>
+         </tr>
+         <tr>
+            <td class="TOCEntry">
+               <p class="TOC1"><a target="frameMsg" href="Messages/0x02DA-S2C.html"><b>0x02DA:</b> Qualities_UpdateInstanceID</a>
+                  - S2C - UIQueue
+               </p>
+            </td>
+         </tr>
+         <tr>
+            <td class="TOCEntry">
+               <p class="TOC1"><a target="frameMsg" href="Messages/0x02DB-S2C.html"><b>0x02DB:</b> Qualities_PrivateUpdatePosition</a>
+                  - S2C - UIQueue
+               </p>
+            </td>
+         </tr>
+         <tr>
+            <td class="TOCEntry">
+               <p class="TOC1"><a target="frameMsg" href="Messages/0x02DC-S2C.html"><b>0x02DC:</b> Qualities_UpdatePosition</a>
+                  - S2C - UIQueue
+               </p>
+            </td>
+         </tr>
+         <tr>
+            <td class="TOCEntry">
+               <p class="TOC1"><a target="frameMsg" href="Messages/0x02DD-S2C.html"><b>0x02DD:</b> Qualities_PrivateUpdateSkill</a>
+                  - S2C - UIQueue
+               </p>
+            </td>
+         </tr>
+         <tr>
+            <td class="TOCEntry">
+               <p class="TOC1"><a target="frameMsg" href="Messages/0x02DE-S2C.html"><b>0x02DE:</b> Qualities_UpdateSkill</a>
+                  - S2C - UIQueue
+               </p>
+            </td>
+         </tr>
+         <tr>
+            <td class="TOCEntry">
+               <p class="TOC1"><a target="frameMsg" href="Messages/0x02DF-S2C.html"><b>0x02DF:</b> Qualities_PrivateUpdateSkillLevel</a>
+                  - S2C - UIQueue
+               </p>
+            </td>
+         </tr>
+         <tr>
+            <td class="TOCEntry">
+               <p class="TOC1"><a target="frameMsg" href="Messages/0x02E0-S2C.html"><b>0x02E0:</b> Qualities_UpdateSkillLevel</a>
+                  - S2C - UIQueue
+               </p>
+            </td>
+         </tr>
+         <tr>
+            <td class="TOCEntry">
+               <p class="TOC1"><a target="frameMsg" href="Messages/0x02E1-S2C.html"><b>0x02E1:</b> Qualities_PrivateUpdateSkillAC</a>
+                  - S2C - UIQueue
+               </p>
+            </td>
+         </tr>
+         <tr>
+            <td class="TOCEntry">
+               <p class="TOC1"><a target="frameMsg" href="Messages/0x02E2-S2C.html"><b>0x02E2:</b> Qualities_UpdateSkillAC</a>
+                  - S2C - UIQueue
+               </p>
+            </td>
+         </tr>
+         <tr>
+            <td class="TOCEntry">
+               <p class="TOC1"><a target="frameMsg" href="Messages/0x02E3-S2C.html"><b>0x02E3:</b> Qualities_PrivateUpdateAttribute</a>
+                  - S2C - UIQueue
+               </p>
+            </td>
+         </tr>
+         <tr>
+            <td class="TOCEntry">
+               <p class="TOC1"><a target="frameMsg" href="Messages/0x02E4-S2C.html"><b>0x02E4:</b> Qualities_UpdateAttribute</a>
+                  - S2C - UIQueue
+               </p>
+            </td>
+         </tr>
+         <tr>
+            <td class="TOCEntry">
+               <p class="TOC1"><a target="frameMsg" href="Messages/0x02E5-S2C.html"><b>0x02E5:</b> Qualities_PrivateUpdateAttributeLevel</a>
+                  - S2C - UIQueue
+               </p>
+            </td>
+         </tr>
+         <tr>
+            <td class="TOCEntry">
+               <p class="TOC1"><a target="frameMsg" href="Messages/0x02E6-S2C.html"><b>0x02E6:</b> Qualities_UpdateAttributeLevel</a>
+                  - S2C - UIQueue
+               </p>
+            </td>
+         </tr>
+         <tr>
+            <td class="TOCEntry">
+               <p class="TOC1"><a target="frameMsg" href="Messages/0x02E7-S2C.html"><b>0x02E7:</b> Qualities_PrivateUpdateAttribute2nd</a>
+                  - S2C - UIQueue
+               </p>
+            </td>
+         </tr>
+         <tr>
+            <td class="TOCEntry">
+               <p class="TOC1"><a target="frameMsg" href="Messages/0x02E8-S2C.html"><b>0x02E8:</b> Qualities_UpdateAttribute2nd</a>
+                  - S2C - UIQueue
+               </p>
+            </td>
+         </tr>
+         <tr>
+            <td class="TOCEntry">
+               <p class="TOC1"><a target="frameMsg" href="Messages/0x02E9-S2C.html"><b>0x02E9:</b> Qualities_PrivateUpdateAttribute2ndLevel</a>
+                  - S2C - UIQueue
+               </p>
+            </td>
+         </tr>
+         <tr>
+            <td class="TOCEntry">
+               <p class="TOC1"><a target="frameMsg" href="Messages/0x02EA-S2C.html"><b>0x02EA:</b> Qualities_UpdateAttribute2ndLevel</a>
+                  - S2C - UIQueue
+               </p>
+            </td>
+         </tr>
+         <tr>
+            <td class="TOCEntry">
+               <p class="TOC1"><a target="frameMsg" href="Messages/0x02EB-S2C.html"><b>0x02EB:</b> Communication_TransientString</a>
+                  - S2C - UIQueue
+               </p>
+            </td>
+         </tr>
+         <tr>
+            <td class="TOCEntry">
+               <p class="TOC1"><a target="frameMsg" href="Messages/0x0311-C2S.html"><b>0x0311:</b> Character_FinishBarber</a>
+                  - C2S - Weenie
+               </p>
+            </td>
+         </tr>
+         <tr>
+            <td class="TOCEntry">
+               <p class="TOC1"><a target="frameMsg" href="Messages/0x0312-S2C.html"><b>0x0312:</b> Magic_PurgeBadEnchantments</a>
+                  - S2C - UIQueue
+               </p>
+            </td>
+         </tr>
+         <tr>
+            <td class="TOCEntry">
+               <p class="TOC1"><a target="frameMsg" href="Messages/0x0314-S2C.html"><b>0x0314:</b> Social_SendClientContractTrackerTable</a>
+                  - S2C - UIQueue
+               </p>
+            </td>
+         </tr>
+         <tr>
+            <td class="TOCEntry">
+               <p class="TOC1"><a target="frameMsg" href="Messages/0x0315-S2C.html"><b>0x0315:</b> Social_SendClientContractTracker</a>
+                  - S2C - UIQueue
+               </p>
+            </td>
+         </tr>
+         <tr>
+            <td class="TOCEntry">
+               <p class="TOC1"><a target="frameMsg" href="Messages/0x0316-C2S.html"><b>0x0316:</b> Social_AbandonContract</a>
+                  - C2S - Weenie
+               </p>
+            </td>
+         </tr>
+         <tr>
+            <td class="TOCEntry">
+               <p class="TOC1"><a target="frameMsg" href="Messages/0xEA60-S2C.html"><b>0xEA60:</b> Admin_Environs</a>
+                  - S2C - UIQueue
+               </p>
+            </td>
+         </tr>
+         <tr>
+            <td class="TOCEntry">
+               <p class="TOC1"><a target="frameMsg" href="Messages/0xF619-S2C.html"><b>0xF619:</b> Movement_PositionAndMovementEvent</a>
+                  - S2C - SmartBox
+               </p>
+            </td>
+         </tr>
+         <tr>
+            <td class="TOCEntry">
+               <p class="TOC1"><a target="frameMsg" href="Messages/0xF61B-C2S.html"><b>0xF61B:</b> Movement_Jump</a>
+                  - C2S - Weenie
+               </p>
+            </td>
+         </tr>
+         <tr>
+            <td class="TOCEntry">
+               <p class="TOC1"><a target="frameMsg" href="Messages/0xF61C-C2S.html"><b>0xF61C:</b> Movement_MoveToState</a>
+                  - C2S - Weenie
+               </p>
+            </td>
+         </tr>
+         <tr>
+            <td class="TOCEntry">
+               <p class="TOC1"><a target="frameMsg" href="Messages/0xF61E-C2S.html"><b>0xF61E:</b> Movement_DoMovementCommand</a>
+                  - C2S - Weenie
+               </p>
+            </td>
+         </tr>
+         <tr>
+            <td class="TOCEntry">
+               <p class="TOC1"><a target="frameMsg" href="Messages/0xF625-S2C.html"><b>0xF625:</b> Item_ObjDescEvent</a>
+                  - S2C - SmartBox
+               </p>
+            </td>
+         </tr>
+         <tr>
+            <td class="TOCEntry">
+               <p class="TOC1"><a target="frameMsg" href="Messages/0xF630-S2C.html"><b>0xF630:</b> Character_SetPlayerVisualDesc</a>
+                  - S2C - UIQueue
+               </p>
+            </td>
+         </tr>
+         <tr>
+            <td class="TOCEntry">
+               <p class="TOC1"><a target="frameMsg" href="Messages/0xF643-S2C.html"><b>0xF643:</b> Character_CharGenVerificationResponse</a>
+                  - S2C - UIQueue
+               </p>
+            </td>
+         </tr>
+         <tr>
+            <td class="TOCEntry">
+               <p class="TOC1"><a target="frameMsg" href="Messages/0xF649-C2S.html"><b>0xF649:</b> Movement_TurnToEvent</a>
+                  - C2S - Weenie
+               </p>
+            </td>
+         </tr>
+         <tr>
+            <td class="TOCEntry">
+               <p class="TOC1"><a target="frameMsg" href="Messages/0xF651-S2C.html"><b>0xF651:</b> Login_AwaitingSubscriptionExpiration</a>
+                  - S2C - UIQueue
+               </p>
+            </td>
+         </tr>
+         <tr>
+            <td class="TOCEntry">
+               <p class="TOC1"><a target="frameMsg" href="Messages/0xF653-C2S.html"><b>0xF653:</b> Login_LogOffCharacter Login_ExecuteLogOff</a>
+                  - C2S - Logon
+               </p>
+            </td>
+         </tr>
+         <tr>
+            <td class="TOCEntry">
+               <p class="TOC1"><a target="frameMsg" href="Messages/0xF653-S2C.html"><b>0xF653:</b> Login_LogOffCharacter Login_ExecuteLogOff</a>
+                  - S2C - UIQueue
+               </p>
+            </td>
+         </tr>
+         <tr>
+            <td class="TOCEntry">
+               <p class="TOC1"><a target="frameMsg" href="Messages/0xF655-C2S.html"><b>0xF655:</b> Character_CharacterDelete Character_CharacterDelete</a>
+                  - C2S - Logon
+               </p>
+            </td>
+         </tr>
+         <tr>
+            <td class="TOCEntry">
+               <p class="TOC1"><a target="frameMsg" href="Messages/0xF655-S2C.html"><b>0xF655:</b> Character_CharacterDelete Character_CharacterDelete</a>
+                  - S2C - UIQueue
+               </p>
+            </td>
+         </tr>
+         <tr>
+            <td class="TOCEntry">
+               <p class="TOC1"><a target="frameMsg" href="Messages/0xF656-C2S.html"><b>0xF656:</b> Character_SendCharGenResult</a>
+                  - C2S - Logon
+               </p>
+            </td>
+         </tr>
+         <tr>
+            <td class="TOCEntry">
+               <p class="TOC1"><a target="frameMsg" href="Messages/0xF657-C2S.html"><b>0xF657:</b> Login_SendEnterWorld</a>
+                  - C2S - Logon
+               </p>
+            </td>
+         </tr>
+         <tr>
+            <td class="TOCEntry">
+               <p class="TOC1"><a target="frameMsg" href="Messages/0xF658-S2C.html"><b>0xF658:</b> Login_LoginCharacterSet</a>
+                  - S2C - UIQueue
+               </p>
+            </td>
+         </tr>
+         <tr>
+            <td class="TOCEntry">
+               <p class="TOC1"><a target="frameMsg" href="Messages/0xF659-S2C.html"><b>0xF659:</b> Character_CharacterError</a>
+                  - S2C - UIQueue
+               </p>
+            </td>
+         </tr>
+         <tr>
+            <td class="TOCEntry">
+               <p class="TOC1"><a target="frameMsg" href="Messages/0xF661-C2S.html"><b>0xF661:</b> Movement_StopMovementCommand</a>
+                  - C2S - Weenie
+               </p>
+            </td>
+         </tr>
+         <tr>
+            <td class="TOCEntry">
+               <p class="TOC1"><a target="frameMsg" href="Messages/0xF6EA-C2S.html"><b>0xF6EA:</b> Object_SendForceObjdesc</a>
+                  - C2S - Control
+               </p>
+            </td>
+         </tr>
+         <tr>
+            <td class="TOCEntry">
+               <p class="TOC1"><a target="frameMsg" href="Messages/0xF745-S2C.html"><b>0xF745:</b> Item_CreateObject</a>
+                  - S2C - SmartBox
+               </p>
+            </td>
+         </tr>
+         <tr>
+            <td class="TOCEntry">
+               <p class="TOC1"><a target="frameMsg" href="Messages/0xF746-S2C.html"><b>0xF746:</b> Login_CreatePlayer</a>
+                  - S2C - SmartBox
+               </p>
+            </td>
+         </tr>
+         <tr>
+            <td class="TOCEntry">
+               <p class="TOC1"><a target="frameMsg" href="Messages/0xF747-S2C.html"><b>0xF747:</b> Item_DeleteObject</a>
+                  - S2C - SmartBox
+               </p>
+            </td>
+         </tr>
+         <tr>
+            <td class="TOCEntry">
+               <p class="TOC1"><a target="frameMsg" href="Messages/0xF748-S2C.html"><b>0xF748:</b> Movement_PositionEvent</a>
+                  - S2C - SmartBox
+               </p>
+            </td>
+         </tr>
+         <tr>
+            <td class="TOCEntry">
+               <p class="TOC1"><a target="frameMsg" href="Messages/0xF749-S2C.html"><b>0xF749:</b> Item_ParentEvent</a>
+                  - S2C - SmartBox
+               </p>
+            </td>
+         </tr>
+         <tr>
+            <td class="TOCEntry">
+               <p class="TOC1"><a target="frameMsg" href="Messages/0xF74A-S2C.html"><b>0xF74A:</b> Inventory_PickupEvent</a>
+                  - S2C - SmartBox
+               </p>
+            </td>
+         </tr>
+         <tr>
+            <td class="TOCEntry">
+               <p class="TOC1"><a target="frameMsg" href="Messages/0xF74B-S2C.html"><b>0xF74B:</b> Item_SetState</a>
+                  - S2C - SmartBox
+               </p>
+            </td>
+         </tr>
+         <tr>
+            <td class="TOCEntry">
+               <p class="TOC1"><a target="frameMsg" href="Messages/0xF74C-S2C.html"><b>0xF74C:</b> Movement_SetObjectMovement</a>
+                  - S2C - SmartBox
+               </p>
+            </td>
+         </tr>
+         <tr>
+            <td class="TOCEntry">
+               <p class="TOC1"><a target="frameMsg" href="Messages/0xF74E-S2C.html"><b>0xF74E:</b> Movement_VectorUpdate</a>
+                  - S2C - SmartBox
+               </p>
+            </td>
+         </tr>
+         <tr>
+            <td class="TOCEntry">
+               <p class="TOC1"><a target="frameMsg" href="Messages/0xF750-S2C.html"><b>0xF750:</b> Effects_SoundEvent</a>
+                  - S2C - SmartBox
+               </p>
+            </td>
+         </tr>
+         <tr>
+            <td class="TOCEntry">
+               <p class="TOC1"><a target="frameMsg" href="Messages/0xF751-S2C.html"><b>0xF751:</b> Effects_PlayerTeleport</a>
+                  - S2C - SmartBox
+               </p>
+            </td>
+         </tr>
+         <tr>
+            <td class="TOCEntry">
+               <p class="TOC1"><a target="frameMsg" href="Messages/0xF752-C2S.html"><b>0xF752:</b> Movement_AutonomyLevel</a>
+                  - C2S - Weenie
+               </p>
+            </td>
+         </tr>
+         <tr>
+            <td class="TOCEntry">
+               <p class="TOC1"><a target="frameMsg" href="Messages/0xF753-C2S.html"><b>0xF753:</b> Movement_AutonomousPosition</a>
+                  - C2S - Weenie
+               </p>
+            </td>
+         </tr>
+         <tr>
+            <td class="TOCEntry">
+               <p class="TOC1"><a target="frameMsg" href="Messages/0xF754-S2C.html"><b>0xF754:</b> Effects_PlayScriptID</a>
+                  - S2C - SmartBox
+               </p>
+            </td>
+         </tr>
+         <tr>
+            <td class="TOCEntry">
+               <p class="TOC1"><a target="frameMsg" href="Messages/0xF755-S2C.html"><b>0xF755:</b> Effects_PlayScriptType</a>
+                  - S2C - SmartBox
+               </p>
+            </td>
+         </tr>
+         <tr>
+            <td class="TOCEntry">
+               <p class="TOC1"><a target="frameMsg" href="Messages/0xF7C1-S2C.html"><b>0xF7C1:</b> Login_AccountBanned</a>
+                  - S2C - UIQueue
+               </p>
+            </td>
+         </tr>
+         <tr>
+            <td class="TOCEntry">
+               <p class="TOC1"><a target="frameMsg" href="Messages/0xF7C8-C2S.html"><b>0xF7C8:</b> Login_SendEnterWorldRequest</a>
+                  - C2S - Logon
+               </p>
+            </td>
+         </tr>
+         <tr>
+            <td class="TOCEntry">
+               <p class="TOC1"><a target="frameMsg" href="Messages/0xF7C9-C2S.html"><b>0xF7C9:</b> Movement_Jump_NonAutonomous</a>
+                  - C2S - Weenie
+               </p>
+            </td>
+         </tr>
+         <tr>
+            <td class="TOCEntry">
+               <p class="TOC1"><a target="frameMsg" href="Messages/0xF7CA-S2C.html"><b>0xF7CA:</b> Admin_ReceiveAccountData</a>
+                  - S2C - UIQueue
+               </p>
+            </td>
+         </tr>
+         <tr>
+            <td class="TOCEntry">
+               <p class="TOC1"><a target="frameMsg" href="Messages/0xF7CB-S2C.html"><b>0xF7CB:</b> Admin_ReceivePlayerData</a>
+                  - S2C - UIQueue
+               </p>
+            </td>
+         </tr>
+         <tr>
+            <td class="TOCEntry">
+               <p class="TOC1"><a target="frameMsg" href="Messages/0xF7CC-C2S.html"><b>0xF7CC:</b> Admin_SendAdminGetServerVersion</a>
+                  - C2S - Control
+               </p>
+            </td>
+         </tr>
+         <tr>
+            <td class="TOCEntry">
+               <p class="TOC1"><a target="frameMsg" href="Messages/0xF7CD-C2S.html"><b>0xF7CD:</b> Social_SendFriendsCommand</a>
+                  - C2S - Control
+               </p>
+            </td>
+         </tr>
+         <tr>
+            <td class="TOCEntry">
+               <p class="TOC1"><a target="frameMsg" href="Messages/0xF7D9-C2S.html"><b>0xF7D9:</b> Admin_SendAdminRestoreCharacter</a>
+                  - C2S - Control
+               </p>
+            </td>
+         </tr>
+         <tr>
+            <td class="TOCEntry">
+               <p class="TOC1"><a target="frameMsg" href="Messages/0xF7DB-S2C.html"><b>0xF7DB:</b> Item_UpdateObject</a>
+                  - S2C - SmartBox
+               </p>
+            </td>
+         </tr>
+         <tr>
+            <td class="TOCEntry">
+               <p class="TOC1"><a target="frameMsg" href="Messages/0xF7DC-S2C.html"><b>0xF7DC:</b> Login_AccountBooted</a>
+                  - S2C - UIQueue
+               </p>
+            </td>
+         </tr>
+         <tr>
+            <td class="TOCEntry">
+               <p class="TOC1"><a target="frameMsg" href="Messages/0xF7DE-S2C.html"><b>0xF7DE:</b> Communication_TurbineChat</a>
+                  - S2C - Logon
+               </p>
+            </td>
+         </tr>
+         <tr>
+            <td class="TOCEntry">
+               <p class="TOC1"><a target="frameMsg" href="Messages/0xF7DF-S2C.html"><b>0xF7DF:</b> Login_EnterGame_ServerReady</a>
+                  - S2C - UIQueue
+               </p>
+            </td>
+         </tr>
+         <tr>
+            <td class="TOCEntry">
+               <p class="TOC1"><a target="frameMsg" href="Messages/0xF7E0-S2C.html"><b>0xF7E0:</b> Communication_TextboxString</a>
+                  - S2C - UIQueue
+               </p>
+            </td>
+         </tr>
+         <tr>
+            <td class="TOCEntry">
+               <p class="TOC1"><a target="frameMsg" href="Messages/0xF7E1-S2C.html"><b>0xF7E1:</b> Login_WorldInfo</a>
+                  - S2C - UIQueue
+               </p>
+            </td>
+         </tr>
+         <tr>
+            <td class="TOCEntry">
+               <p class="TOC1"><a target="frameMsg" href="Messages/0xF7E2-S2C.html"><b>0xF7E2:</b> DDD_DataMessage</a>
+                  - S2C - CLCache
+               </p>
+            </td>
+         </tr>
+         <tr>
+            <td class="TOCEntry">
+               <p class="TOC1"><a target="frameMsg" href="Messages/0xF7E3-C2S.html"><b>0xF7E3:</b> DDD_RequestDataMessage</a>
+                  - C2S - CLCache
+               </p>
+            </td>
+         </tr>
+         <tr>
+            <td class="TOCEntry">
+               <p class="TOC1"><a target="frameMsg" href="Messages/0xF7E4-S2C.html"><b>0xF7E4:</b> DDD_ErrorMessage</a>
+                  - S2C - CLCache
+               </p>
+            </td>
+         </tr>
+         <tr>
+            <td class="TOCEntry">
+               <p class="TOC1"><a target="frameMsg" href="Messages/0xF7E5-S2C.html"><b>0xF7E5:</b> DDD_InterrogationMessage</a>
+                  - S2C - CLCache
+               </p>
+            </td>
+         </tr>
+         <tr>
+            <td class="TOCEntry">
+               <p class="TOC1"><a target="frameMsg" href="Messages/0xF7E6-C2S.html"><b>0xF7E6:</b> DDD_InterrogationResponseMessage</a>
+                  - C2S - CLCache
+               </p>
+            </td>
+         </tr>
+         <tr>
+            <td class="TOCEntry">
+               <p class="TOC1"><a target="frameMsg" href="Messages/0xF7E7-S2C.html"><b>0xF7E7:</b> DDD_BeginDDDMessage</a>
+                  - S2C - CLCache
+               </p>
+            </td>
+         </tr>
+         <tr>
+            <td class="TOCEntry">
+               <p class="TOC1"><a target="frameMsg" href="Messages/0xF7EA-S2C.html"><b>0xF7EA:</b> DDD_OnEndDDD</a>
+                  - S2C - CLCache
+               </p>
+            </td>
+         </tr>
+         <tr>
+            <td class="TOCEntry">
+               <p class="TOC1"><a target="frameMsg" href="Messages/0xF7EB-C2S.html"><b>0xF7EB:</b> DDD_EndDDDMessage</a>
+                  - C2S - CLCache
+               </p>
+            </td>
+         </tr>
+      </table>
+   </body>
+</html>

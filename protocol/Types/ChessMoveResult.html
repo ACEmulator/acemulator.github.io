@@ -1,0 +1,285 @@
+<html xmlns:fo="http://www.w3.org/1999/XSL/Format" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:fn="http://www.w3.org/2005/xpath-functions">
+   <head>
+      <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+      <title>AC Protocol version 2017.11.14.0</title>
+      <link type="text/css" rel="stylesheet" href="../Classic.css">
+   </head>
+   <body>
+      <table cellspacing="0" cellpadding="0" class="List2">
+         <tr>
+            <td colspan="3">
+               <p class="BoxHead2"><b>ChessMoveResult</b>: int
+               </p>
+            </td>
+         </tr>
+         <tr>
+            <td class="PadTop" colspan="2"></td>
+         </tr>
+         <tr>
+            <td colspan="3">
+               <p class="BoxDesc">Identifies the chess move attempt result.  Negative/0 values are failures.</p>
+            </td>
+         </tr>
+         <tr>
+            <td colspan="3" class="ValueRowSep">
+               <p class="ValueRowSep"></p>
+            </td>
+         </tr>
+         <tr>
+            <td class="ValueVal">
+               <p class="ValueVal">-0x03</p>
+            </td>
+            <td class="ValueName">
+               <p class="ValueName">FailureNotYourTurn</p>
+            </td>
+            <td class="ValueDesc">
+               <p class="ValueDesc">Its not your turn, please wait for your opponents move.</p>
+            </td>
+         </tr>
+         <tr>
+            <td colspan="3" class="ValueRowSep">
+               <p class="ValueRowSep"></p>
+            </td>
+         </tr>
+         <tr>
+            <td class="ValueVal">
+               <p class="ValueVal">-0x64</p>
+            </td>
+            <td class="ValueName">
+               <p class="ValueName">FailureInvalidDirection</p>
+            </td>
+            <td class="ValueDesc">
+               <p class="ValueDesc">The selected piece cannot move that direction</p>
+            </td>
+         </tr>
+         <tr>
+            <td colspan="3" class="ValueRowSep">
+               <p class="ValueRowSep"></p>
+            </td>
+         </tr>
+         <tr>
+            <td class="ValueVal">
+               <p class="ValueVal">-0x65</p>
+            </td>
+            <td class="ValueName">
+               <p class="ValueName">FailureInvalidDistance</p>
+            </td>
+            <td class="ValueDesc">
+               <p class="ValueDesc">The selected piece cannot move that far</p>
+            </td>
+         </tr>
+         <tr>
+            <td colspan="3" class="ValueRowSep">
+               <p class="ValueRowSep"></p>
+            </td>
+         </tr>
+         <tr>
+            <td class="ValueVal">
+               <p class="ValueVal">-0x66</p>
+            </td>
+            <td class="ValueName">
+               <p class="ValueName">FailureMovingEmptySquare</p>
+            </td>
+            <td class="ValueDesc">
+               <p class="ValueDesc">You tried to move an empty square</p>
+            </td>
+         </tr>
+         <tr>
+            <td colspan="3" class="ValueRowSep">
+               <p class="ValueRowSep"></p>
+            </td>
+         </tr>
+         <tr>
+            <td class="ValueVal">
+               <p class="ValueVal">-0x67</p>
+            </td>
+            <td class="ValueName">
+               <p class="ValueName">FailureMovingOpponentPiece</p>
+            </td>
+            <td class="ValueDesc">
+               <p class="ValueDesc">The selected piece is not yours</p>
+            </td>
+         </tr>
+         <tr>
+            <td colspan="3" class="ValueRowSep">
+               <p class="ValueRowSep"></p>
+            </td>
+         </tr>
+         <tr>
+            <td class="ValueVal">
+               <p class="ValueVal">-0x68</p>
+            </td>
+            <td class="ValueName">
+               <p class="ValueName">FailureMovedPieceOffBoard</p>
+            </td>
+            <td class="ValueDesc">
+               <p class="ValueDesc">You cannot move off the board</p>
+            </td>
+         </tr>
+         <tr>
+            <td colspan="3" class="ValueRowSep">
+               <p class="ValueRowSep"></p>
+            </td>
+         </tr>
+         <tr>
+            <td class="ValueVal">
+               <p class="ValueVal">-0x69</p>
+            </td>
+            <td class="ValueName">
+               <p class="ValueName">FailureAttackingOwnPiece</p>
+            </td>
+            <td class="ValueDesc">
+               <p class="ValueDesc">You cannot attack your own pieces</p>
+            </td>
+         </tr>
+         <tr>
+            <td colspan="3" class="ValueRowSep">
+               <p class="ValueRowSep"></p>
+            </td>
+         </tr>
+         <tr>
+            <td class="ValueVal">
+               <p class="ValueVal">-0x6A</p>
+            </td>
+            <td class="ValueName">
+               <p class="ValueName">FailureCannotMoveIntoCheck</p>
+            </td>
+            <td class="ValueDesc">
+               <p class="ValueDesc">That move would put you in check</p>
+            </td>
+         </tr>
+         <tr>
+            <td colspan="3" class="ValueRowSep">
+               <p class="ValueRowSep"></p>
+            </td>
+         </tr>
+         <tr>
+            <td class="ValueVal">
+               <p class="ValueVal">-0x6B</p>
+            </td>
+            <td class="ValueName">
+               <p class="ValueName">FailurePathBlocked</p>
+            </td>
+            <td class="ValueDesc">
+               <p class="ValueDesc">You can only move through empty squares</p>
+            </td>
+         </tr>
+         <tr>
+            <td colspan="3" class="ValueRowSep">
+               <p class="ValueRowSep"></p>
+            </td>
+         </tr>
+         <tr>
+            <td class="ValueVal">
+               <p class="ValueVal">-0x6C</p>
+            </td>
+            <td class="ValueName">
+               <p class="ValueName">FailureCastleOutOfCheck</p>
+            </td>
+            <td class="ValueDesc">
+               <p class="ValueDesc">You cannot castle out of check</p>
+            </td>
+         </tr>
+         <tr>
+            <td colspan="3" class="ValueRowSep">
+               <p class="ValueRowSep"></p>
+            </td>
+         </tr>
+         <tr>
+            <td class="ValueVal">
+               <p class="ValueVal">-0x6D</p>
+            </td>
+            <td class="ValueName">
+               <p class="ValueName">FailureCastleThroughCheck</p>
+            </td>
+            <td class="ValueDesc">
+               <p class="ValueDesc">You cannot castle through check</p>
+            </td>
+         </tr>
+         <tr>
+            <td colspan="3" class="ValueRowSep">
+               <p class="ValueRowSep"></p>
+            </td>
+         </tr>
+         <tr>
+            <td class="ValueVal">
+               <p class="ValueVal">-0x6E</p>
+            </td>
+            <td class="ValueName">
+               <p class="ValueName">FailureCastlePieceMoved</p>
+            </td>
+            <td class="ValueDesc">
+               <p class="ValueDesc">You cannot castle after moving the King or Rook</p>
+            </td>
+         </tr>
+         <tr>
+            <td colspan="3" class="ValueRowSep">
+               <p class="ValueRowSep"></p>
+            </td>
+         </tr>
+         <tr>
+            <td class="ValueVal">
+               <p class="ValueVal">0x0</p>
+            </td>
+            <td class="ValueName">
+               <p class="ValueName">FailureInvalidMove</p>
+            </td>
+            <td class="ValueDesc">
+               <p class="ValueDesc">That move is invalid</p>
+            </td>
+         </tr>
+         <tr>
+            <td colspan="3" class="ValueRowSep">
+               <p class="ValueRowSep"></p>
+            </td>
+         </tr>
+         <tr>
+            <td class="ValueVal">
+               <p class="ValueVal">0x1</p>
+            </td>
+            <td class="ValueName">
+               <p class="ValueName">Success</p>
+            </td>
+            <td class="ValueDesc">
+               <p class="ValueDesc">Successful move.</p>
+            </td>
+         </tr>
+         <tr>
+            <td colspan="3" class="ValueRowSep">
+               <p class="ValueRowSep"></p>
+            </td>
+         </tr>
+         <tr>
+            <td class="ValueVal">
+               <p class="ValueVal">0x400</p>
+            </td>
+            <td class="ValueName">
+               <p class="ValueName">OpponentInCheck</p>
+            </td>
+            <td class="ValueDesc">
+               <p class="ValueDesc">Your opponent is in Check.</p>
+            </td>
+         </tr>
+         <tr>
+            <td colspan="3" class="ValueRowSep">
+               <p class="ValueRowSep"></p>
+            </td>
+         </tr>
+         <tr>
+            <td class="ValueVal">
+               <p class="ValueVal">0x800</p>
+            </td>
+            <td class="ValueName">
+               <p class="ValueName">CheckMatedOpponent</p>
+            </td>
+            <td class="ValueDesc">
+               <p class="ValueDesc">You have checkmated your opponent!</p>
+            </td>
+         </tr>
+         <tr>
+            <td class="PadBottom" colspan="2"></td>
+         </tr>
+      </table>
+      <p class="Version">Messages.xml version 2017.11.14.0</p>
+   </body>
+</html>
