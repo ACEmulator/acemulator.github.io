@@ -1,0 +1,393 @@
+<html xmlns:fo="http://www.w3.org/1999/XSL/Format" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:fn="http://www.w3.org/2005/xpath-functions">
+   <head>
+      <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+      <title>AC Protocol version 2017.11.14.0</title>
+      <link type="text/css" rel="stylesheet" href="../Classic.css">
+   </head>
+   <body>
+      <table cellspacing="0" cellpadding="0" class="List2">
+         <tr>
+            <td colspan="3">
+               <p class="BoxHead2"><b>ChatMessageType</b>: uint
+               </p>
+            </td>
+         </tr>
+         <tr>
+            <td class="PadTop" colspan="2"></td>
+         </tr>
+         <tr>
+            <td colspan="3">
+               <p class="BoxDesc">The ChatMessageType categorizes chat window messages to control color and filtering.</p>
+            </td>
+         </tr>
+         <tr>
+            <td colspan="3" class="ValueRowSep">
+               <p class="ValueRowSep"></p>
+            </td>
+         </tr>
+         <tr>
+            <td class="ValueVal">
+               <p class="ValueVal">0x00</p>
+            </td>
+            <td class="ValueName">
+               <p class="ValueName">Default</p>
+            </td>
+            <td class="ValueDesc"></td>
+         </tr>
+         <tr>
+            <td colspan="3" class="ValueRowSep">
+               <p class="ValueRowSep"></p>
+            </td>
+         </tr>
+         <tr>
+            <td class="ValueVal">
+               <p class="ValueVal">0x02</p>
+            </td>
+            <td class="ValueName">
+               <p class="ValueName">Speech</p>
+            </td>
+            <td class="ValueDesc"></td>
+         </tr>
+         <tr>
+            <td colspan="3" class="ValueRowSep">
+               <p class="ValueRowSep"></p>
+            </td>
+         </tr>
+         <tr>
+            <td class="ValueVal">
+               <p class="ValueVal">0x03</p>
+            </td>
+            <td class="ValueName">
+               <p class="ValueName">Tell</p>
+            </td>
+            <td class="ValueDesc"></td>
+         </tr>
+         <tr>
+            <td colspan="3" class="ValueRowSep">
+               <p class="ValueRowSep"></p>
+            </td>
+         </tr>
+         <tr>
+            <td class="ValueVal">
+               <p class="ValueVal">0x04</p>
+            </td>
+            <td class="ValueName">
+               <p class="ValueName">OutgoingTell</p>
+            </td>
+            <td class="ValueDesc"></td>
+         </tr>
+         <tr>
+            <td colspan="3" class="ValueRowSep">
+               <p class="ValueRowSep"></p>
+            </td>
+         </tr>
+         <tr>
+            <td class="ValueVal">
+               <p class="ValueVal">0x05</p>
+            </td>
+            <td class="ValueName">
+               <p class="ValueName">System</p>
+            </td>
+            <td class="ValueDesc"></td>
+         </tr>
+         <tr>
+            <td colspan="3" class="ValueRowSep">
+               <p class="ValueRowSep"></p>
+            </td>
+         </tr>
+         <tr>
+            <td class="ValueVal">
+               <p class="ValueVal">0x06</p>
+            </td>
+            <td class="ValueName">
+               <p class="ValueName">Combat</p>
+            </td>
+            <td class="ValueDesc"></td>
+         </tr>
+         <tr>
+            <td colspan="3" class="ValueRowSep">
+               <p class="ValueRowSep"></p>
+            </td>
+         </tr>
+         <tr>
+            <td class="ValueVal">
+               <p class="ValueVal">0x07</p>
+            </td>
+            <td class="ValueName">
+               <p class="ValueName">Magic</p>
+            </td>
+            <td class="ValueDesc"></td>
+         </tr>
+         <tr>
+            <td colspan="3" class="ValueRowSep">
+               <p class="ValueRowSep"></p>
+            </td>
+         </tr>
+         <tr>
+            <td class="ValueVal">
+               <p class="ValueVal">0x08</p>
+            </td>
+            <td class="ValueName">
+               <p class="ValueName">Channels</p>
+            </td>
+            <td class="ValueDesc"></td>
+         </tr>
+         <tr>
+            <td colspan="3" class="ValueRowSep">
+               <p class="ValueRowSep"></p>
+            </td>
+         </tr>
+         <tr>
+            <td class="ValueVal">
+               <p class="ValueVal">0x09</p>
+            </td>
+            <td class="ValueName">
+               <p class="ValueName">OutgoingChannel</p>
+            </td>
+            <td class="ValueDesc"></td>
+         </tr>
+         <tr>
+            <td colspan="3" class="ValueRowSep">
+               <p class="ValueRowSep"></p>
+            </td>
+         </tr>
+         <tr>
+            <td class="ValueVal">
+               <p class="ValueVal">0x0A</p>
+            </td>
+            <td class="ValueName">
+               <p class="ValueName">Social</p>
+            </td>
+            <td class="ValueDesc"></td>
+         </tr>
+         <tr>
+            <td colspan="3" class="ValueRowSep">
+               <p class="ValueRowSep"></p>
+            </td>
+         </tr>
+         <tr>
+            <td class="ValueVal">
+               <p class="ValueVal">0x0B</p>
+            </td>
+            <td class="ValueName">
+               <p class="ValueName">OutgoingSocial</p>
+            </td>
+            <td class="ValueDesc"></td>
+         </tr>
+         <tr>
+            <td colspan="3" class="ValueRowSep">
+               <p class="ValueRowSep"></p>
+            </td>
+         </tr>
+         <tr>
+            <td class="ValueVal">
+               <p class="ValueVal">0x0C</p>
+            </td>
+            <td class="ValueName">
+               <p class="ValueName">Emote</p>
+            </td>
+            <td class="ValueDesc"></td>
+         </tr>
+         <tr>
+            <td colspan="3" class="ValueRowSep">
+               <p class="ValueRowSep"></p>
+            </td>
+         </tr>
+         <tr>
+            <td class="ValueVal">
+               <p class="ValueVal">0x0D</p>
+            </td>
+            <td class="ValueName">
+               <p class="ValueName">Advancement</p>
+            </td>
+            <td class="ValueDesc"></td>
+         </tr>
+         <tr>
+            <td colspan="3" class="ValueRowSep">
+               <p class="ValueRowSep"></p>
+            </td>
+         </tr>
+         <tr>
+            <td class="ValueVal">
+               <p class="ValueVal">0x0E</p>
+            </td>
+            <td class="ValueName">
+               <p class="ValueName">Abuse</p>
+            </td>
+            <td class="ValueDesc"></td>
+         </tr>
+         <tr>
+            <td colspan="3" class="ValueRowSep">
+               <p class="ValueRowSep"></p>
+            </td>
+         </tr>
+         <tr>
+            <td class="ValueVal">
+               <p class="ValueVal">0x0F</p>
+            </td>
+            <td class="ValueName">
+               <p class="ValueName">Help</p>
+            </td>
+            <td class="ValueDesc"></td>
+         </tr>
+         <tr>
+            <td colspan="3" class="ValueRowSep">
+               <p class="ValueRowSep"></p>
+            </td>
+         </tr>
+         <tr>
+            <td class="ValueVal">
+               <p class="ValueVal">0x10</p>
+            </td>
+            <td class="ValueName">
+               <p class="ValueName">Appraisal</p>
+            </td>
+            <td class="ValueDesc"></td>
+         </tr>
+         <tr>
+            <td colspan="3" class="ValueRowSep">
+               <p class="ValueRowSep"></p>
+            </td>
+         </tr>
+         <tr>
+            <td class="ValueVal">
+               <p class="ValueVal">0x11</p>
+            </td>
+            <td class="ValueName">
+               <p class="ValueName">Spellcasting</p>
+            </td>
+            <td class="ValueDesc"></td>
+         </tr>
+         <tr>
+            <td colspan="3" class="ValueRowSep">
+               <p class="ValueRowSep"></p>
+            </td>
+         </tr>
+         <tr>
+            <td class="ValueVal">
+               <p class="ValueVal">0x12</p>
+            </td>
+            <td class="ValueName">
+               <p class="ValueName">Allegiance</p>
+            </td>
+            <td class="ValueDesc"></td>
+         </tr>
+         <tr>
+            <td colspan="3" class="ValueRowSep">
+               <p class="ValueRowSep"></p>
+            </td>
+         </tr>
+         <tr>
+            <td class="ValueVal">
+               <p class="ValueVal">0x13</p>
+            </td>
+            <td class="ValueName">
+               <p class="ValueName">Fellowship</p>
+            </td>
+            <td class="ValueDesc"></td>
+         </tr>
+         <tr>
+            <td colspan="3" class="ValueRowSep">
+               <p class="ValueRowSep"></p>
+            </td>
+         </tr>
+         <tr>
+            <td class="ValueVal">
+               <p class="ValueVal">0x14</p>
+            </td>
+            <td class="ValueName">
+               <p class="ValueName">WorldBroadcast</p>
+            </td>
+            <td class="ValueDesc"></td>
+         </tr>
+         <tr>
+            <td colspan="3" class="ValueRowSep">
+               <p class="ValueRowSep"></p>
+            </td>
+         </tr>
+         <tr>
+            <td class="ValueVal">
+               <p class="ValueVal">0x15</p>
+            </td>
+            <td class="ValueName">
+               <p class="ValueName">CombatEnemy</p>
+            </td>
+            <td class="ValueDesc"></td>
+         </tr>
+         <tr>
+            <td colspan="3" class="ValueRowSep">
+               <p class="ValueRowSep"></p>
+            </td>
+         </tr>
+         <tr>
+            <td class="ValueVal">
+               <p class="ValueVal">0x16</p>
+            </td>
+            <td class="ValueName">
+               <p class="ValueName">CombatSelf</p>
+            </td>
+            <td class="ValueDesc"></td>
+         </tr>
+         <tr>
+            <td colspan="3" class="ValueRowSep">
+               <p class="ValueRowSep"></p>
+            </td>
+         </tr>
+         <tr>
+            <td class="ValueVal">
+               <p class="ValueVal">0x17</p>
+            </td>
+            <td class="ValueName">
+               <p class="ValueName">Recall</p>
+            </td>
+            <td class="ValueDesc"></td>
+         </tr>
+         <tr>
+            <td colspan="3" class="ValueRowSep">
+               <p class="ValueRowSep"></p>
+            </td>
+         </tr>
+         <tr>
+            <td class="ValueVal">
+               <p class="ValueVal">0x18</p>
+            </td>
+            <td class="ValueName">
+               <p class="ValueName">Craft</p>
+            </td>
+            <td class="ValueDesc"></td>
+         </tr>
+         <tr>
+            <td colspan="3" class="ValueRowSep">
+               <p class="ValueRowSep"></p>
+            </td>
+         </tr>
+         <tr>
+            <td class="ValueVal">
+               <p class="ValueVal">0x19</p>
+            </td>
+            <td class="ValueName">
+               <p class="ValueName">Salvaging</p>
+            </td>
+            <td class="ValueDesc"></td>
+         </tr>
+         <tr>
+            <td colspan="3" class="ValueRowSep">
+               <p class="ValueRowSep"></p>
+            </td>
+         </tr>
+         <tr>
+            <td class="ValueVal">
+               <p class="ValueVal">0x1F</p>
+            </td>
+            <td class="ValueName">
+               <p class="ValueName">AdminTell</p>
+            </td>
+            <td class="ValueDesc"></td>
+         </tr>
+         <tr>
+            <td class="PadBottom" colspan="2"></td>
+         </tr>
+      </table>
+      <p class="Version">Messages.xml version 2017.11.14.0</p>
+   </body>
+</html>

@@ -1,0 +1,5083 @@
+<html xmlns:fo="http://www.w3.org/1999/XSL/Format" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:fn="http://www.w3.org/2005/xpath-functions">
+   <head>
+      <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+      <title>AC Protocol version 2017.11.14.0</title>
+      <link type="text/css" rel="stylesheet" href="../Classic.css">
+   </head>
+   <body>
+      <table cellspacing="0" cellpadding="0" class="List2">
+         <tr>
+            <td colspan="3">
+               <p class="BoxHead2"><b>MessageType</b>: uint
+               </p>
+            </td>
+         </tr>
+         <tr>
+            <td class="PadTop" colspan="2"></td>
+         </tr>
+         <tr>
+            <td colspan="3">
+               <p class="BoxDesc">All message types of game messages</p>
+            </td>
+         </tr>
+         <tr>
+            <td colspan="3" class="ValueRowSep">
+               <p class="ValueRowSep"></p>
+            </td>
+         </tr>
+         <tr>
+            <td class="ValueVal">
+               <p class="ValueVal">0x0003</p>
+            </td>
+            <td class="ValueName">
+               <p class="ValueName">Allegiance_AllegianceUpdateAborted</p>
+            </td>
+            <td class="ValueDesc"></td>
+         </tr>
+         <tr>
+            <td colspan="3" class="ValueRowSep">
+               <p class="ValueRowSep"></p>
+            </td>
+         </tr>
+         <tr>
+            <td class="ValueVal">
+               <p class="ValueVal">0x0004</p>
+            </td>
+            <td class="ValueName">
+               <p class="ValueName">Communication_PopUpString</p>
+            </td>
+            <td class="ValueDesc"></td>
+         </tr>
+         <tr>
+            <td colspan="3" class="ValueRowSep">
+               <p class="ValueRowSep"></p>
+            </td>
+         </tr>
+         <tr>
+            <td class="ValueVal">
+               <p class="ValueVal">0x0005</p>
+            </td>
+            <td class="ValueName">
+               <p class="ValueName">Character_PlayerOptionChangedEvent</p>
+            </td>
+            <td class="ValueDesc"></td>
+         </tr>
+         <tr>
+            <td colspan="3" class="ValueRowSep">
+               <p class="ValueRowSep"></p>
+            </td>
+         </tr>
+         <tr>
+            <td class="ValueVal">
+               <p class="ValueVal">0x0008</p>
+            </td>
+            <td class="ValueName">
+               <p class="ValueName">Combat_TargetedMeleeAttack</p>
+            </td>
+            <td class="ValueDesc"></td>
+         </tr>
+         <tr>
+            <td colspan="3" class="ValueRowSep">
+               <p class="ValueRowSep"></p>
+            </td>
+         </tr>
+         <tr>
+            <td class="ValueVal">
+               <p class="ValueVal">0x000A</p>
+            </td>
+            <td class="ValueName">
+               <p class="ValueName">Combat_TargetedMissileAttack</p>
+            </td>
+            <td class="ValueDesc"></td>
+         </tr>
+         <tr>
+            <td colspan="3" class="ValueRowSep">
+               <p class="ValueRowSep"></p>
+            </td>
+         </tr>
+         <tr>
+            <td class="ValueVal">
+               <p class="ValueVal">0x000F</p>
+            </td>
+            <td class="ValueName">
+               <p class="ValueName">Communication_SetAFKMode</p>
+            </td>
+            <td class="ValueDesc"></td>
+         </tr>
+         <tr>
+            <td colspan="3" class="ValueRowSep">
+               <p class="ValueRowSep"></p>
+            </td>
+         </tr>
+         <tr>
+            <td class="ValueVal">
+               <p class="ValueVal">0x0010</p>
+            </td>
+            <td class="ValueName">
+               <p class="ValueName">Communication_SetAFKMessage</p>
+            </td>
+            <td class="ValueDesc"></td>
+         </tr>
+         <tr>
+            <td colspan="3" class="ValueRowSep">
+               <p class="ValueRowSep"></p>
+            </td>
+         </tr>
+         <tr>
+            <td class="ValueVal">
+               <p class="ValueVal">0x0013</p>
+            </td>
+            <td class="ValueName">
+               <p class="ValueName">Login_PlayerDescription</p>
+            </td>
+            <td class="ValueDesc"></td>
+         </tr>
+         <tr>
+            <td colspan="3" class="ValueRowSep">
+               <p class="ValueRowSep"></p>
+            </td>
+         </tr>
+         <tr>
+            <td class="ValueVal">
+               <p class="ValueVal">0x0015</p>
+            </td>
+            <td class="ValueName">
+               <p class="ValueName">Communication_Talk</p>
+            </td>
+            <td class="ValueDesc"></td>
+         </tr>
+         <tr>
+            <td colspan="3" class="ValueRowSep">
+               <p class="ValueRowSep"></p>
+            </td>
+         </tr>
+         <tr>
+            <td class="ValueVal">
+               <p class="ValueVal">0x0017</p>
+            </td>
+            <td class="ValueName">
+               <p class="ValueName">Social_RemoveFriend</p>
+            </td>
+            <td class="ValueDesc"></td>
+         </tr>
+         <tr>
+            <td colspan="3" class="ValueRowSep">
+               <p class="ValueRowSep"></p>
+            </td>
+         </tr>
+         <tr>
+            <td class="ValueVal">
+               <p class="ValueVal">0x0018</p>
+            </td>
+            <td class="ValueName">
+               <p class="ValueName">Social_AddFriend</p>
+            </td>
+            <td class="ValueDesc"></td>
+         </tr>
+         <tr>
+            <td colspan="3" class="ValueRowSep">
+               <p class="ValueRowSep"></p>
+            </td>
+         </tr>
+         <tr>
+            <td class="ValueVal">
+               <p class="ValueVal">0x0019</p>
+            </td>
+            <td class="ValueName">
+               <p class="ValueName">Inventory_PutItemInContainer</p>
+            </td>
+            <td class="ValueDesc"></td>
+         </tr>
+         <tr>
+            <td colspan="3" class="ValueRowSep">
+               <p class="ValueRowSep"></p>
+            </td>
+         </tr>
+         <tr>
+            <td class="ValueVal">
+               <p class="ValueVal">0x001A</p>
+            </td>
+            <td class="ValueName">
+               <p class="ValueName">Inventory_GetAndWieldItem</p>
+            </td>
+            <td class="ValueDesc"></td>
+         </tr>
+         <tr>
+            <td colspan="3" class="ValueRowSep">
+               <p class="ValueRowSep"></p>
+            </td>
+         </tr>
+         <tr>
+            <td class="ValueVal">
+               <p class="ValueVal">0x001B</p>
+            </td>
+            <td class="ValueName">
+               <p class="ValueName">Inventory_DropItem</p>
+            </td>
+            <td class="ValueDesc"></td>
+         </tr>
+         <tr>
+            <td colspan="3" class="ValueRowSep">
+               <p class="ValueRowSep"></p>
+            </td>
+         </tr>
+         <tr>
+            <td class="ValueVal">
+               <p class="ValueVal">0x001D</p>
+            </td>
+            <td class="ValueName">
+               <p class="ValueName">Allegiance_SwearAllegiance</p>
+            </td>
+            <td class="ValueDesc"></td>
+         </tr>
+         <tr>
+            <td colspan="3" class="ValueRowSep">
+               <p class="ValueRowSep"></p>
+            </td>
+         </tr>
+         <tr>
+            <td class="ValueVal">
+               <p class="ValueVal">0x001E</p>
+            </td>
+            <td class="ValueName">
+               <p class="ValueName">Allegiance_BreakAllegiance</p>
+            </td>
+            <td class="ValueDesc"></td>
+         </tr>
+         <tr>
+            <td colspan="3" class="ValueRowSep">
+               <p class="ValueRowSep"></p>
+            </td>
+         </tr>
+         <tr>
+            <td class="ValueVal">
+               <p class="ValueVal">0x001F</p>
+            </td>
+            <td class="ValueName">
+               <p class="ValueName">Allegiance_UpdateRequest</p>
+            </td>
+            <td class="ValueDesc"></td>
+         </tr>
+         <tr>
+            <td colspan="3" class="ValueRowSep">
+               <p class="ValueRowSep"></p>
+            </td>
+         </tr>
+         <tr>
+            <td class="ValueVal">
+               <p class="ValueVal">0x0020</p>
+            </td>
+            <td class="ValueName">
+               <p class="ValueName">Allegiance_AllegianceUpdate</p>
+            </td>
+            <td class="ValueDesc"></td>
+         </tr>
+         <tr>
+            <td colspan="3" class="ValueRowSep">
+               <p class="ValueRowSep"></p>
+            </td>
+         </tr>
+         <tr>
+            <td class="ValueVal">
+               <p class="ValueVal">0x0021</p>
+            </td>
+            <td class="ValueName">
+               <p class="ValueName">Social_FriendsUpdate</p>
+            </td>
+            <td class="ValueDesc"></td>
+         </tr>
+         <tr>
+            <td colspan="3" class="ValueRowSep">
+               <p class="ValueRowSep"></p>
+            </td>
+         </tr>
+         <tr>
+            <td class="ValueVal">
+               <p class="ValueVal">0x0022</p>
+            </td>
+            <td class="ValueName">
+               <p class="ValueName">Item_ServerSaysContainID</p>
+            </td>
+            <td class="ValueDesc"></td>
+         </tr>
+         <tr>
+            <td colspan="3" class="ValueRowSep">
+               <p class="ValueRowSep"></p>
+            </td>
+         </tr>
+         <tr>
+            <td class="ValueVal">
+               <p class="ValueVal">0x0023</p>
+            </td>
+            <td class="ValueName">
+               <p class="ValueName">Item_WearItem</p>
+            </td>
+            <td class="ValueDesc"></td>
+         </tr>
+         <tr>
+            <td colspan="3" class="ValueRowSep">
+               <p class="ValueRowSep"></p>
+            </td>
+         </tr>
+         <tr>
+            <td class="ValueVal">
+               <p class="ValueVal">0x0024</p>
+            </td>
+            <td class="ValueName">
+               <p class="ValueName">Item_ServerSaysRemove</p>
+            </td>
+            <td class="ValueDesc"></td>
+         </tr>
+         <tr>
+            <td colspan="3" class="ValueRowSep">
+               <p class="ValueRowSep"></p>
+            </td>
+         </tr>
+         <tr>
+            <td class="ValueVal">
+               <p class="ValueVal">0x0025</p>
+            </td>
+            <td class="ValueName">
+               <p class="ValueName">Social_ClearFriends</p>
+            </td>
+            <td class="ValueDesc"></td>
+         </tr>
+         <tr>
+            <td colspan="3" class="ValueRowSep">
+               <p class="ValueRowSep"></p>
+            </td>
+         </tr>
+         <tr>
+            <td class="ValueVal">
+               <p class="ValueVal">0x0026</p>
+            </td>
+            <td class="ValueName">
+               <p class="ValueName">Character_TeleToPKLArena</p>
+            </td>
+            <td class="ValueDesc"></td>
+         </tr>
+         <tr>
+            <td colspan="3" class="ValueRowSep">
+               <p class="ValueRowSep"></p>
+            </td>
+         </tr>
+         <tr>
+            <td class="ValueVal">
+               <p class="ValueVal">0x0027</p>
+            </td>
+            <td class="ValueName">
+               <p class="ValueName">Character_TeleToPKArena</p>
+            </td>
+            <td class="ValueDesc"></td>
+         </tr>
+         <tr>
+            <td colspan="3" class="ValueRowSep">
+               <p class="ValueRowSep"></p>
+            </td>
+         </tr>
+         <tr>
+            <td class="ValueVal">
+               <p class="ValueVal">0x0029</p>
+            </td>
+            <td class="ValueName">
+               <p class="ValueName">Social_CharacterTitleTable</p>
+            </td>
+            <td class="ValueDesc"></td>
+         </tr>
+         <tr>
+            <td colspan="3" class="ValueRowSep">
+               <p class="ValueRowSep"></p>
+            </td>
+         </tr>
+         <tr>
+            <td class="ValueVal">
+               <p class="ValueVal">0x002B</p>
+            </td>
+            <td class="ValueName">
+               <p class="ValueName">Social_AddOrSetCharacterTitle</p>
+            </td>
+            <td class="ValueDesc"></td>
+         </tr>
+         <tr>
+            <td colspan="3" class="ValueRowSep">
+               <p class="ValueRowSep"></p>
+            </td>
+         </tr>
+         <tr>
+            <td class="ValueVal">
+               <p class="ValueVal">0x002C</p>
+            </td>
+            <td class="ValueName">
+               <p class="ValueName">Social_SetDisplayCharacterTitle</p>
+            </td>
+            <td class="ValueDesc"></td>
+         </tr>
+         <tr>
+            <td colspan="3" class="ValueRowSep">
+               <p class="ValueRowSep"></p>
+            </td>
+         </tr>
+         <tr>
+            <td class="ValueVal">
+               <p class="ValueVal">0x0030</p>
+            </td>
+            <td class="ValueName">
+               <p class="ValueName">Allegiance_QueryAllegianceName</p>
+            </td>
+            <td class="ValueDesc"></td>
+         </tr>
+         <tr>
+            <td colspan="3" class="ValueRowSep">
+               <p class="ValueRowSep"></p>
+            </td>
+         </tr>
+         <tr>
+            <td class="ValueVal">
+               <p class="ValueVal">0x0031</p>
+            </td>
+            <td class="ValueName">
+               <p class="ValueName">Allegiance_ClearAllegianceName</p>
+            </td>
+            <td class="ValueDesc"></td>
+         </tr>
+         <tr>
+            <td colspan="3" class="ValueRowSep">
+               <p class="ValueRowSep"></p>
+            </td>
+         </tr>
+         <tr>
+            <td class="ValueVal">
+               <p class="ValueVal">0x0032</p>
+            </td>
+            <td class="ValueName">
+               <p class="ValueName">Communication_TalkDirect</p>
+            </td>
+            <td class="ValueDesc"></td>
+         </tr>
+         <tr>
+            <td colspan="3" class="ValueRowSep">
+               <p class="ValueRowSep"></p>
+            </td>
+         </tr>
+         <tr>
+            <td class="ValueVal">
+               <p class="ValueVal">0x0033</p>
+            </td>
+            <td class="ValueName">
+               <p class="ValueName">Allegiance_SetAllegianceName</p>
+            </td>
+            <td class="ValueDesc"></td>
+         </tr>
+         <tr>
+            <td colspan="3" class="ValueRowSep">
+               <p class="ValueRowSep"></p>
+            </td>
+         </tr>
+         <tr>
+            <td class="ValueVal">
+               <p class="ValueVal">0x0035</p>
+            </td>
+            <td class="ValueName">
+               <p class="ValueName">Inventory_UseWithTargetEvent</p>
+            </td>
+            <td class="ValueDesc"></td>
+         </tr>
+         <tr>
+            <td colspan="3" class="ValueRowSep">
+               <p class="ValueRowSep"></p>
+            </td>
+         </tr>
+         <tr>
+            <td class="ValueVal">
+               <p class="ValueVal">0x0036</p>
+            </td>
+            <td class="ValueName">
+               <p class="ValueName">Inventory_UseEvent</p>
+            </td>
+            <td class="ValueDesc"></td>
+         </tr>
+         <tr>
+            <td colspan="3" class="ValueRowSep">
+               <p class="ValueRowSep"></p>
+            </td>
+         </tr>
+         <tr>
+            <td class="ValueVal">
+               <p class="ValueVal">0x003B</p>
+            </td>
+            <td class="ValueName">
+               <p class="ValueName">Allegiance_SetAllegianceOfficer</p>
+            </td>
+            <td class="ValueDesc"></td>
+         </tr>
+         <tr>
+            <td colspan="3" class="ValueRowSep">
+               <p class="ValueRowSep"></p>
+            </td>
+         </tr>
+         <tr>
+            <td class="ValueVal">
+               <p class="ValueVal">0x003C</p>
+            </td>
+            <td class="ValueName">
+               <p class="ValueName">Allegiance_SetAllegianceOfficerTitle</p>
+            </td>
+            <td class="ValueDesc"></td>
+         </tr>
+         <tr>
+            <td colspan="3" class="ValueRowSep">
+               <p class="ValueRowSep"></p>
+            </td>
+         </tr>
+         <tr>
+            <td class="ValueVal">
+               <p class="ValueVal">0x003D</p>
+            </td>
+            <td class="ValueName">
+               <p class="ValueName">Allegiance_ListAllegianceOfficerTitles</p>
+            </td>
+            <td class="ValueDesc"></td>
+         </tr>
+         <tr>
+            <td colspan="3" class="ValueRowSep">
+               <p class="ValueRowSep"></p>
+            </td>
+         </tr>
+         <tr>
+            <td class="ValueVal">
+               <p class="ValueVal">0x003E</p>
+            </td>
+            <td class="ValueName">
+               <p class="ValueName">Allegiance_ClearAllegianceOfficerTitles</p>
+            </td>
+            <td class="ValueDesc"></td>
+         </tr>
+         <tr>
+            <td colspan="3" class="ValueRowSep">
+               <p class="ValueRowSep"></p>
+            </td>
+         </tr>
+         <tr>
+            <td class="ValueVal">
+               <p class="ValueVal">0x003F</p>
+            </td>
+            <td class="ValueName">
+               <p class="ValueName">Allegiance_DoAllegianceLockAction</p>
+            </td>
+            <td class="ValueDesc"></td>
+         </tr>
+         <tr>
+            <td colspan="3" class="ValueRowSep">
+               <p class="ValueRowSep"></p>
+            </td>
+         </tr>
+         <tr>
+            <td class="ValueVal">
+               <p class="ValueVal">0x0040</p>
+            </td>
+            <td class="ValueName">
+               <p class="ValueName">Allegiance_SetAllegianceApprovedVassal</p>
+            </td>
+            <td class="ValueDesc"></td>
+         </tr>
+         <tr>
+            <td colspan="3" class="ValueRowSep">
+               <p class="ValueRowSep"></p>
+            </td>
+         </tr>
+         <tr>
+            <td class="ValueVal">
+               <p class="ValueVal">0x0041</p>
+            </td>
+            <td class="ValueName">
+               <p class="ValueName">Allegiance_AllegianceChatGag</p>
+            </td>
+            <td class="ValueDesc"></td>
+         </tr>
+         <tr>
+            <td colspan="3" class="ValueRowSep">
+               <p class="ValueRowSep"></p>
+            </td>
+         </tr>
+         <tr>
+            <td class="ValueVal">
+               <p class="ValueVal">0x0042</p>
+            </td>
+            <td class="ValueName">
+               <p class="ValueName">Allegiance_DoAllegianceHouseAction</p>
+            </td>
+            <td class="ValueDesc"></td>
+         </tr>
+         <tr>
+            <td colspan="3" class="ValueRowSep">
+               <p class="ValueRowSep"></p>
+            </td>
+         </tr>
+         <tr>
+            <td class="ValueVal">
+               <p class="ValueVal">0x0044</p>
+            </td>
+            <td class="ValueName">
+               <p class="ValueName">Train_TrainAttribute2nd</p>
+            </td>
+            <td class="ValueDesc"></td>
+         </tr>
+         <tr>
+            <td colspan="3" class="ValueRowSep">
+               <p class="ValueRowSep"></p>
+            </td>
+         </tr>
+         <tr>
+            <td class="ValueVal">
+               <p class="ValueVal">0x0045</p>
+            </td>
+            <td class="ValueName">
+               <p class="ValueName">Train_TrainAttribute</p>
+            </td>
+            <td class="ValueDesc"></td>
+         </tr>
+         <tr>
+            <td colspan="3" class="ValueRowSep">
+               <p class="ValueRowSep"></p>
+            </td>
+         </tr>
+         <tr>
+            <td class="ValueVal">
+               <p class="ValueVal">0x0046</p>
+            </td>
+            <td class="ValueName">
+               <p class="ValueName">Train_TrainSkill</p>
+            </td>
+            <td class="ValueDesc"></td>
+         </tr>
+         <tr>
+            <td colspan="3" class="ValueRowSep">
+               <p class="ValueRowSep"></p>
+            </td>
+         </tr>
+         <tr>
+            <td class="ValueVal">
+               <p class="ValueVal">0x0047</p>
+            </td>
+            <td class="ValueName">
+               <p class="ValueName">Train_TrainSkillAdvancementClass</p>
+            </td>
+            <td class="ValueDesc"></td>
+         </tr>
+         <tr>
+            <td colspan="3" class="ValueRowSep">
+               <p class="ValueRowSep"></p>
+            </td>
+         </tr>
+         <tr>
+            <td class="ValueVal">
+               <p class="ValueVal">0x0048</p>
+            </td>
+            <td class="ValueName">
+               <p class="ValueName">Magic_CastUntargetedSpell</p>
+            </td>
+            <td class="ValueDesc"></td>
+         </tr>
+         <tr>
+            <td colspan="3" class="ValueRowSep">
+               <p class="ValueRowSep"></p>
+            </td>
+         </tr>
+         <tr>
+            <td class="ValueVal">
+               <p class="ValueVal">0x004A</p>
+            </td>
+            <td class="ValueName">
+               <p class="ValueName">Magic_CastTargetedSpell</p>
+            </td>
+            <td class="ValueDesc"></td>
+         </tr>
+         <tr>
+            <td colspan="3" class="ValueRowSep">
+               <p class="ValueRowSep"></p>
+            </td>
+         </tr>
+         <tr>
+            <td class="ValueVal">
+               <p class="ValueVal">0x0052</p>
+            </td>
+            <td class="ValueName">
+               <p class="ValueName">Item_StopViewingObjectContents</p>
+            </td>
+            <td class="ValueDesc"></td>
+         </tr>
+         <tr>
+            <td colspan="3" class="ValueRowSep">
+               <p class="ValueRowSep"></p>
+            </td>
+         </tr>
+         <tr>
+            <td class="ValueVal">
+               <p class="ValueVal">0x0053</p>
+            </td>
+            <td class="ValueName">
+               <p class="ValueName">Combat_ChangeCombatMode</p>
+            </td>
+            <td class="ValueDesc"></td>
+         </tr>
+         <tr>
+            <td colspan="3" class="ValueRowSep">
+               <p class="ValueRowSep"></p>
+            </td>
+         </tr>
+         <tr>
+            <td class="ValueVal">
+               <p class="ValueVal">0x0054</p>
+            </td>
+            <td class="ValueName">
+               <p class="ValueName">Inventory_StackableMerge</p>
+            </td>
+            <td class="ValueDesc"></td>
+         </tr>
+         <tr>
+            <td colspan="3" class="ValueRowSep">
+               <p class="ValueRowSep"></p>
+            </td>
+         </tr>
+         <tr>
+            <td class="ValueVal">
+               <p class="ValueVal">0x0055</p>
+            </td>
+            <td class="ValueName">
+               <p class="ValueName">Inventory_StackableSplitToContainer</p>
+            </td>
+            <td class="ValueDesc"></td>
+         </tr>
+         <tr>
+            <td colspan="3" class="ValueRowSep">
+               <p class="ValueRowSep"></p>
+            </td>
+         </tr>
+         <tr>
+            <td class="ValueVal">
+               <p class="ValueVal">0x0056</p>
+            </td>
+            <td class="ValueName">
+               <p class="ValueName">Inventory_StackableSplitTo3D</p>
+            </td>
+            <td class="ValueDesc"></td>
+         </tr>
+         <tr>
+            <td colspan="3" class="ValueRowSep">
+               <p class="ValueRowSep"></p>
+            </td>
+         </tr>
+         <tr>
+            <td class="ValueVal">
+               <p class="ValueVal">0x0058</p>
+            </td>
+            <td class="ValueName">
+               <p class="ValueName">Communication_ModifyCharacterSquelch</p>
+            </td>
+            <td class="ValueDesc"></td>
+         </tr>
+         <tr>
+            <td colspan="3" class="ValueRowSep">
+               <p class="ValueRowSep"></p>
+            </td>
+         </tr>
+         <tr>
+            <td class="ValueVal">
+               <p class="ValueVal">0x0059</p>
+            </td>
+            <td class="ValueName">
+               <p class="ValueName">Communication_ModifyAccountSquelch</p>
+            </td>
+            <td class="ValueDesc"></td>
+         </tr>
+         <tr>
+            <td colspan="3" class="ValueRowSep">
+               <p class="ValueRowSep"></p>
+            </td>
+         </tr>
+         <tr>
+            <td class="ValueVal">
+               <p class="ValueVal">0x005B</p>
+            </td>
+            <td class="ValueName">
+               <p class="ValueName">Communication_ModifyGlobalSquelch</p>
+            </td>
+            <td class="ValueDesc"></td>
+         </tr>
+         <tr>
+            <td colspan="3" class="ValueRowSep">
+               <p class="ValueRowSep"></p>
+            </td>
+         </tr>
+         <tr>
+            <td class="ValueVal">
+               <p class="ValueVal">0x005D</p>
+            </td>
+            <td class="ValueName">
+               <p class="ValueName">Communication_TalkDirectByName</p>
+            </td>
+            <td class="ValueDesc"></td>
+         </tr>
+         <tr>
+            <td colspan="3" class="ValueRowSep">
+               <p class="ValueRowSep"></p>
+            </td>
+         </tr>
+         <tr>
+            <td class="ValueVal">
+               <p class="ValueVal">0x005F</p>
+            </td>
+            <td class="ValueName">
+               <p class="ValueName">Vendor_Buy</p>
+            </td>
+            <td class="ValueDesc"></td>
+         </tr>
+         <tr>
+            <td colspan="3" class="ValueRowSep">
+               <p class="ValueRowSep"></p>
+            </td>
+         </tr>
+         <tr>
+            <td class="ValueVal">
+               <p class="ValueVal">0x0060</p>
+            </td>
+            <td class="ValueName">
+               <p class="ValueName">Vendor_Sell</p>
+            </td>
+            <td class="ValueDesc"></td>
+         </tr>
+         <tr>
+            <td colspan="3" class="ValueRowSep">
+               <p class="ValueRowSep"></p>
+            </td>
+         </tr>
+         <tr>
+            <td class="ValueVal">
+               <p class="ValueVal">0x0062</p>
+            </td>
+            <td class="ValueName">
+               <p class="ValueName">Vendor_VendorInfo</p>
+            </td>
+            <td class="ValueDesc"></td>
+         </tr>
+         <tr>
+            <td colspan="3" class="ValueRowSep">
+               <p class="ValueRowSep"></p>
+            </td>
+         </tr>
+         <tr>
+            <td class="ValueVal">
+               <p class="ValueVal">0x0063</p>
+            </td>
+            <td class="ValueName">
+               <p class="ValueName">Character_TeleToLifestone</p>
+            </td>
+            <td class="ValueDesc"></td>
+         </tr>
+         <tr>
+            <td colspan="3" class="ValueRowSep">
+               <p class="ValueRowSep"></p>
+            </td>
+         </tr>
+         <tr>
+            <td class="ValueVal">
+               <p class="ValueVal">0x0075</p>
+            </td>
+            <td class="ValueName">
+               <p class="ValueName">Character_StartBarber</p>
+            </td>
+            <td class="ValueDesc"></td>
+         </tr>
+         <tr>
+            <td colspan="3" class="ValueRowSep">
+               <p class="ValueRowSep"></p>
+            </td>
+         </tr>
+         <tr>
+            <td class="ValueVal">
+               <p class="ValueVal">0x00A0</p>
+            </td>
+            <td class="ValueName">
+               <p class="ValueName">Character_ServerSaysAttemptFailed</p>
+            </td>
+            <td class="ValueDesc"></td>
+         </tr>
+         <tr>
+            <td colspan="3" class="ValueRowSep">
+               <p class="ValueRowSep"></p>
+            </td>
+         </tr>
+         <tr>
+            <td class="ValueVal">
+               <p class="ValueVal">0x00A1</p>
+            </td>
+            <td class="ValueName">
+               <p class="ValueName">Character_LoginCompleteNotification</p>
+            </td>
+            <td class="ValueDesc"></td>
+         </tr>
+         <tr>
+            <td colspan="3" class="ValueRowSep">
+               <p class="ValueRowSep"></p>
+            </td>
+         </tr>
+         <tr>
+            <td class="ValueVal">
+               <p class="ValueVal">0x00A2</p>
+            </td>
+            <td class="ValueName">
+               <p class="ValueName">Fellowship_Create</p>
+            </td>
+            <td class="ValueDesc"></td>
+         </tr>
+         <tr>
+            <td colspan="3" class="ValueRowSep">
+               <p class="ValueRowSep"></p>
+            </td>
+         </tr>
+         <tr>
+            <td class="ValueVal">
+               <p class="ValueVal">0x00A3</p>
+            </td>
+            <td class="ValueName">
+               <p class="ValueName">Fellowship_Quit</p>
+            </td>
+            <td class="ValueDesc"></td>
+         </tr>
+         <tr>
+            <td colspan="3" class="ValueRowSep">
+               <p class="ValueRowSep"></p>
+            </td>
+         </tr>
+         <tr>
+            <td class="ValueVal">
+               <p class="ValueVal">0x00A3</p>
+            </td>
+            <td class="ValueName">
+               <p class="ValueName">Fellowship_Quit</p>
+            </td>
+            <td class="ValueDesc"></td>
+         </tr>
+         <tr>
+            <td colspan="3" class="ValueRowSep">
+               <p class="ValueRowSep"></p>
+            </td>
+         </tr>
+         <tr>
+            <td class="ValueVal">
+               <p class="ValueVal">0x00A4</p>
+            </td>
+            <td class="ValueName">
+               <p class="ValueName">Fellowship_Dismiss</p>
+            </td>
+            <td class="ValueDesc"></td>
+         </tr>
+         <tr>
+            <td colspan="3" class="ValueRowSep">
+               <p class="ValueRowSep"></p>
+            </td>
+         </tr>
+         <tr>
+            <td class="ValueVal">
+               <p class="ValueVal">0x00A4</p>
+            </td>
+            <td class="ValueName">
+               <p class="ValueName">Fellowship_Dismiss</p>
+            </td>
+            <td class="ValueDesc"></td>
+         </tr>
+         <tr>
+            <td colspan="3" class="ValueRowSep">
+               <p class="ValueRowSep"></p>
+            </td>
+         </tr>
+         <tr>
+            <td class="ValueVal">
+               <p class="ValueVal">0x00A5</p>
+            </td>
+            <td class="ValueName">
+               <p class="ValueName">Fellowship_Recruit</p>
+            </td>
+            <td class="ValueDesc"></td>
+         </tr>
+         <tr>
+            <td colspan="3" class="ValueRowSep">
+               <p class="ValueRowSep"></p>
+            </td>
+         </tr>
+         <tr>
+            <td class="ValueVal">
+               <p class="ValueVal">0x00A6</p>
+            </td>
+            <td class="ValueName">
+               <p class="ValueName">Fellowship_UpdateRequest</p>
+            </td>
+            <td class="ValueDesc"></td>
+         </tr>
+         <tr>
+            <td colspan="3" class="ValueRowSep">
+               <p class="ValueRowSep"></p>
+            </td>
+         </tr>
+         <tr>
+            <td class="ValueVal">
+               <p class="ValueVal">0x00AA</p>
+            </td>
+            <td class="ValueName">
+               <p class="ValueName">Writing_BookAddPage</p>
+            </td>
+            <td class="ValueDesc"></td>
+         </tr>
+         <tr>
+            <td colspan="3" class="ValueRowSep">
+               <p class="ValueRowSep"></p>
+            </td>
+         </tr>
+         <tr>
+            <td class="ValueVal">
+               <p class="ValueVal">0x00AB</p>
+            </td>
+            <td class="ValueName">
+               <p class="ValueName">Writing_BookModifyPage</p>
+            </td>
+            <td class="ValueDesc"></td>
+         </tr>
+         <tr>
+            <td colspan="3" class="ValueRowSep">
+               <p class="ValueRowSep"></p>
+            </td>
+         </tr>
+         <tr>
+            <td class="ValueVal">
+               <p class="ValueVal">0x00AC</p>
+            </td>
+            <td class="ValueName">
+               <p class="ValueName">Writing_BookData</p>
+            </td>
+            <td class="ValueDesc"></td>
+         </tr>
+         <tr>
+            <td colspan="3" class="ValueRowSep">
+               <p class="ValueRowSep"></p>
+            </td>
+         </tr>
+         <tr>
+            <td class="ValueVal">
+               <p class="ValueVal">0x00AD</p>
+            </td>
+            <td class="ValueName">
+               <p class="ValueName">Writing_BookDeletePage</p>
+            </td>
+            <td class="ValueDesc"></td>
+         </tr>
+         <tr>
+            <td colspan="3" class="ValueRowSep">
+               <p class="ValueRowSep"></p>
+            </td>
+         </tr>
+         <tr>
+            <td class="ValueVal">
+               <p class="ValueVal">0x00AE</p>
+            </td>
+            <td class="ValueName">
+               <p class="ValueName">Writing_BookPageData</p>
+            </td>
+            <td class="ValueDesc"></td>
+         </tr>
+         <tr>
+            <td colspan="3" class="ValueRowSep">
+               <p class="ValueRowSep"></p>
+            </td>
+         </tr>
+         <tr>
+            <td class="ValueVal">
+               <p class="ValueVal">0x00B4</p>
+            </td>
+            <td class="ValueName">
+               <p class="ValueName">Writing_BookOpen</p>
+            </td>
+            <td class="ValueDesc"></td>
+         </tr>
+         <tr>
+            <td colspan="3" class="ValueRowSep">
+               <p class="ValueRowSep"></p>
+            </td>
+         </tr>
+         <tr>
+            <td class="ValueVal">
+               <p class="ValueVal">0x00B6</p>
+            </td>
+            <td class="ValueName">
+               <p class="ValueName">Writing_BookAddPageResponse</p>
+            </td>
+            <td class="ValueDesc"></td>
+         </tr>
+         <tr>
+            <td colspan="3" class="ValueRowSep">
+               <p class="ValueRowSep"></p>
+            </td>
+         </tr>
+         <tr>
+            <td class="ValueVal">
+               <p class="ValueVal">0x00B7</p>
+            </td>
+            <td class="ValueName">
+               <p class="ValueName">Writing_BookDeletePageResponse</p>
+            </td>
+            <td class="ValueDesc"></td>
+         </tr>
+         <tr>
+            <td colspan="3" class="ValueRowSep">
+               <p class="ValueRowSep"></p>
+            </td>
+         </tr>
+         <tr>
+            <td class="ValueVal">
+               <p class="ValueVal">0x00B8</p>
+            </td>
+            <td class="ValueName">
+               <p class="ValueName">Writing_BookPageDataResponse</p>
+            </td>
+            <td class="ValueDesc"></td>
+         </tr>
+         <tr>
+            <td colspan="3" class="ValueRowSep">
+               <p class="ValueRowSep"></p>
+            </td>
+         </tr>
+         <tr>
+            <td class="ValueVal">
+               <p class="ValueVal">0x00BF</p>
+            </td>
+            <td class="ValueName">
+               <p class="ValueName">Writing_SetInscription</p>
+            </td>
+            <td class="ValueDesc"></td>
+         </tr>
+         <tr>
+            <td colspan="3" class="ValueRowSep">
+               <p class="ValueRowSep"></p>
+            </td>
+         </tr>
+         <tr>
+            <td class="ValueVal">
+               <p class="ValueVal">0x00C3</p>
+            </td>
+            <td class="ValueName">
+               <p class="ValueName">Item_GetInscriptionResponse</p>
+            </td>
+            <td class="ValueDesc"></td>
+         </tr>
+         <tr>
+            <td colspan="3" class="ValueRowSep">
+               <p class="ValueRowSep"></p>
+            </td>
+         </tr>
+         <tr>
+            <td class="ValueVal">
+               <p class="ValueVal">0x00C8</p>
+            </td>
+            <td class="ValueName">
+               <p class="ValueName">Item_Appraise</p>
+            </td>
+            <td class="ValueDesc"></td>
+         </tr>
+         <tr>
+            <td colspan="3" class="ValueRowSep">
+               <p class="ValueRowSep"></p>
+            </td>
+         </tr>
+         <tr>
+            <td class="ValueVal">
+               <p class="ValueVal">0x00C9</p>
+            </td>
+            <td class="ValueName">
+               <p class="ValueName">Item_SetAppraiseInfo</p>
+            </td>
+            <td class="ValueDesc"></td>
+         </tr>
+         <tr>
+            <td colspan="3" class="ValueRowSep">
+               <p class="ValueRowSep"></p>
+            </td>
+         </tr>
+         <tr>
+            <td class="ValueVal">
+               <p class="ValueVal">0x00CD</p>
+            </td>
+            <td class="ValueName">
+               <p class="ValueName">Inventory_GiveObjectRequest</p>
+            </td>
+            <td class="ValueDesc"></td>
+         </tr>
+         <tr>
+            <td colspan="3" class="ValueRowSep">
+               <p class="ValueRowSep"></p>
+            </td>
+         </tr>
+         <tr>
+            <td class="ValueVal">
+               <p class="ValueVal">0x00D6</p>
+            </td>
+            <td class="ValueName">
+               <p class="ValueName">Advocate_Teleport</p>
+            </td>
+            <td class="ValueDesc"></td>
+         </tr>
+         <tr>
+            <td colspan="3" class="ValueRowSep">
+               <p class="ValueRowSep"></p>
+            </td>
+         </tr>
+         <tr>
+            <td class="ValueVal">
+               <p class="ValueVal">0x0140</p>
+            </td>
+            <td class="ValueName">
+               <p class="ValueName">Character_AbuseLogRequest</p>
+            </td>
+            <td class="ValueDesc"></td>
+         </tr>
+         <tr>
+            <td colspan="3" class="ValueRowSep">
+               <p class="ValueRowSep"></p>
+            </td>
+         </tr>
+         <tr>
+            <td class="ValueVal">
+               <p class="ValueVal">0x0145</p>
+            </td>
+            <td class="ValueName">
+               <p class="ValueName">Communication_AddToChannel</p>
+            </td>
+            <td class="ValueDesc"></td>
+         </tr>
+         <tr>
+            <td colspan="3" class="ValueRowSep">
+               <p class="ValueRowSep"></p>
+            </td>
+         </tr>
+         <tr>
+            <td class="ValueVal">
+               <p class="ValueVal">0x0146</p>
+            </td>
+            <td class="ValueName">
+               <p class="ValueName">Communication_RemoveFromChannel</p>
+            </td>
+            <td class="ValueDesc"></td>
+         </tr>
+         <tr>
+            <td colspan="3" class="ValueRowSep">
+               <p class="ValueRowSep"></p>
+            </td>
+         </tr>
+         <tr>
+            <td class="ValueVal">
+               <p class="ValueVal">0x0147</p>
+            </td>
+            <td class="ValueName">
+               <p class="ValueName">Communication_ChannelBroadcast</p>
+            </td>
+            <td class="ValueDesc"></td>
+         </tr>
+         <tr>
+            <td colspan="3" class="ValueRowSep">
+               <p class="ValueRowSep"></p>
+            </td>
+         </tr>
+         <tr>
+            <td class="ValueVal">
+               <p class="ValueVal">0x0147</p>
+            </td>
+            <td class="ValueName">
+               <p class="ValueName">Communication_ChannelBroadcast</p>
+            </td>
+            <td class="ValueDesc"></td>
+         </tr>
+         <tr>
+            <td colspan="3" class="ValueRowSep">
+               <p class="ValueRowSep"></p>
+            </td>
+         </tr>
+         <tr>
+            <td class="ValueVal">
+               <p class="ValueVal">0x0148</p>
+            </td>
+            <td class="ValueName">
+               <p class="ValueName">Communication_ChannelList</p>
+            </td>
+            <td class="ValueDesc"></td>
+         </tr>
+         <tr>
+            <td colspan="3" class="ValueRowSep">
+               <p class="ValueRowSep"></p>
+            </td>
+         </tr>
+         <tr>
+            <td class="ValueVal">
+               <p class="ValueVal">0x0148</p>
+            </td>
+            <td class="ValueName">
+               <p class="ValueName">Communication_ChannelList</p>
+            </td>
+            <td class="ValueDesc"></td>
+         </tr>
+         <tr>
+            <td colspan="3" class="ValueRowSep">
+               <p class="ValueRowSep"></p>
+            </td>
+         </tr>
+         <tr>
+            <td class="ValueVal">
+               <p class="ValueVal">0x0149</p>
+            </td>
+            <td class="ValueName">
+               <p class="ValueName">Communication_ChannelIndex</p>
+            </td>
+            <td class="ValueDesc"></td>
+         </tr>
+         <tr>
+            <td colspan="3" class="ValueRowSep">
+               <p class="ValueRowSep"></p>
+            </td>
+         </tr>
+         <tr>
+            <td class="ValueVal">
+               <p class="ValueVal">0x0149</p>
+            </td>
+            <td class="ValueName">
+               <p class="ValueName">Communication_ChannelIndex</p>
+            </td>
+            <td class="ValueDesc"></td>
+         </tr>
+         <tr>
+            <td colspan="3" class="ValueRowSep">
+               <p class="ValueRowSep"></p>
+            </td>
+         </tr>
+         <tr>
+            <td class="ValueVal">
+               <p class="ValueVal">0x0195</p>
+            </td>
+            <td class="ValueName">
+               <p class="ValueName">Inventory_NoLongerViewingContents</p>
+            </td>
+            <td class="ValueDesc"></td>
+         </tr>
+         <tr>
+            <td colspan="3" class="ValueRowSep">
+               <p class="ValueRowSep"></p>
+            </td>
+         </tr>
+         <tr>
+            <td class="ValueVal">
+               <p class="ValueVal">0x0196</p>
+            </td>
+            <td class="ValueName">
+               <p class="ValueName">Item_OnViewContents</p>
+            </td>
+            <td class="ValueDesc"></td>
+         </tr>
+         <tr>
+            <td colspan="3" class="ValueRowSep">
+               <p class="ValueRowSep"></p>
+            </td>
+         </tr>
+         <tr>
+            <td class="ValueVal">
+               <p class="ValueVal">0x0197</p>
+            </td>
+            <td class="ValueName">
+               <p class="ValueName">Item_UpdateStackSize</p>
+            </td>
+            <td class="ValueDesc"></td>
+         </tr>
+         <tr>
+            <td colspan="3" class="ValueRowSep">
+               <p class="ValueRowSep"></p>
+            </td>
+         </tr>
+         <tr>
+            <td class="ValueVal">
+               <p class="ValueVal">0x019A</p>
+            </td>
+            <td class="ValueName">
+               <p class="ValueName">Item_ServerSaysMoveItem</p>
+            </td>
+            <td class="ValueDesc"></td>
+         </tr>
+         <tr>
+            <td colspan="3" class="ValueRowSep">
+               <p class="ValueRowSep"></p>
+            </td>
+         </tr>
+         <tr>
+            <td class="ValueVal">
+               <p class="ValueVal">0x019B</p>
+            </td>
+            <td class="ValueName">
+               <p class="ValueName">Inventory_StackableSplitToWield</p>
+            </td>
+            <td class="ValueDesc"></td>
+         </tr>
+         <tr>
+            <td colspan="3" class="ValueRowSep">
+               <p class="ValueRowSep"></p>
+            </td>
+         </tr>
+         <tr>
+            <td class="ValueVal">
+               <p class="ValueVal">0x019C</p>
+            </td>
+            <td class="ValueName">
+               <p class="ValueName">Character_AddShortCut</p>
+            </td>
+            <td class="ValueDesc"></td>
+         </tr>
+         <tr>
+            <td colspan="3" class="ValueRowSep">
+               <p class="ValueRowSep"></p>
+            </td>
+         </tr>
+         <tr>
+            <td class="ValueVal">
+               <p class="ValueVal">0x019D</p>
+            </td>
+            <td class="ValueName">
+               <p class="ValueName">Character_RemoveShortCut</p>
+            </td>
+            <td class="ValueDesc"></td>
+         </tr>
+         <tr>
+            <td colspan="3" class="ValueRowSep">
+               <p class="ValueRowSep"></p>
+            </td>
+         </tr>
+         <tr>
+            <td class="ValueVal">
+               <p class="ValueVal">0x019E</p>
+            </td>
+            <td class="ValueName">
+               <p class="ValueName">Combat_HandlePlayerDeathEvent</p>
+            </td>
+            <td class="ValueDesc"></td>
+         </tr>
+         <tr>
+            <td colspan="3" class="ValueRowSep">
+               <p class="ValueRowSep"></p>
+            </td>
+         </tr>
+         <tr>
+            <td class="ValueVal">
+               <p class="ValueVal">0x01A1</p>
+            </td>
+            <td class="ValueName">
+               <p class="ValueName">Character_CharacterOptionsEvent</p>
+            </td>
+            <td class="ValueDesc"></td>
+         </tr>
+         <tr>
+            <td colspan="3" class="ValueRowSep">
+               <p class="ValueRowSep"></p>
+            </td>
+         </tr>
+         <tr>
+            <td class="ValueVal">
+               <p class="ValueVal">0x01A7</p>
+            </td>
+            <td class="ValueName">
+               <p class="ValueName">Combat_HandleAttackDoneEvent</p>
+            </td>
+            <td class="ValueDesc"></td>
+         </tr>
+         <tr>
+            <td colspan="3" class="ValueRowSep">
+               <p class="ValueRowSep"></p>
+            </td>
+         </tr>
+         <tr>
+            <td class="ValueVal">
+               <p class="ValueVal">0x01A8</p>
+            </td>
+            <td class="ValueName">
+               <p class="ValueName">Magic_RemoveSpell</p>
+            </td>
+            <td class="ValueDesc"></td>
+         </tr>
+         <tr>
+            <td colspan="3" class="ValueRowSep">
+               <p class="ValueRowSep"></p>
+            </td>
+         </tr>
+         <tr>
+            <td class="ValueVal">
+               <p class="ValueVal">0x01A8</p>
+            </td>
+            <td class="ValueName">
+               <p class="ValueName">Magic_RemoveSpell</p>
+            </td>
+            <td class="ValueDesc"></td>
+         </tr>
+         <tr>
+            <td colspan="3" class="ValueRowSep">
+               <p class="ValueRowSep"></p>
+            </td>
+         </tr>
+         <tr>
+            <td class="ValueVal">
+               <p class="ValueVal">0x01AC</p>
+            </td>
+            <td class="ValueName">
+               <p class="ValueName">Combat_HandleVictimNotificationEventSelf</p>
+            </td>
+            <td class="ValueDesc"></td>
+         </tr>
+         <tr>
+            <td colspan="3" class="ValueRowSep">
+               <p class="ValueRowSep"></p>
+            </td>
+         </tr>
+         <tr>
+            <td class="ValueVal">
+               <p class="ValueVal">0x01AD</p>
+            </td>
+            <td class="ValueName">
+               <p class="ValueName">Combat_HandleVictimNotificationEventOther</p>
+            </td>
+            <td class="ValueDesc"></td>
+         </tr>
+         <tr>
+            <td colspan="3" class="ValueRowSep">
+               <p class="ValueRowSep"></p>
+            </td>
+         </tr>
+         <tr>
+            <td class="ValueVal">
+               <p class="ValueVal">0x01B1</p>
+            </td>
+            <td class="ValueName">
+               <p class="ValueName">Combat_HandleAttackerNotificationEvent</p>
+            </td>
+            <td class="ValueDesc"></td>
+         </tr>
+         <tr>
+            <td colspan="3" class="ValueRowSep">
+               <p class="ValueRowSep"></p>
+            </td>
+         </tr>
+         <tr>
+            <td class="ValueVal">
+               <p class="ValueVal">0x01B2</p>
+            </td>
+            <td class="ValueName">
+               <p class="ValueName">Combat_HandleDefenderNotificationEvent</p>
+            </td>
+            <td class="ValueDesc"></td>
+         </tr>
+         <tr>
+            <td colspan="3" class="ValueRowSep">
+               <p class="ValueRowSep"></p>
+            </td>
+         </tr>
+         <tr>
+            <td class="ValueVal">
+               <p class="ValueVal">0x01B3</p>
+            </td>
+            <td class="ValueName">
+               <p class="ValueName">Combat_HandleEvasionAttackerNotificationEvent</p>
+            </td>
+            <td class="ValueDesc"></td>
+         </tr>
+         <tr>
+            <td colspan="3" class="ValueRowSep">
+               <p class="ValueRowSep"></p>
+            </td>
+         </tr>
+         <tr>
+            <td class="ValueVal">
+               <p class="ValueVal">0x01B4</p>
+            </td>
+            <td class="ValueName">
+               <p class="ValueName">Combat_HandleEvasionDefenderNotificationEvent</p>
+            </td>
+            <td class="ValueDesc"></td>
+         </tr>
+         <tr>
+            <td colspan="3" class="ValueRowSep">
+               <p class="ValueRowSep"></p>
+            </td>
+         </tr>
+         <tr>
+            <td class="ValueVal">
+               <p class="ValueVal">0x01B7</p>
+            </td>
+            <td class="ValueName">
+               <p class="ValueName">Combat_CancelAttack</p>
+            </td>
+            <td class="ValueDesc"></td>
+         </tr>
+         <tr>
+            <td colspan="3" class="ValueRowSep">
+               <p class="ValueRowSep"></p>
+            </td>
+         </tr>
+         <tr>
+            <td class="ValueVal">
+               <p class="ValueVal">0x01B8</p>
+            </td>
+            <td class="ValueName">
+               <p class="ValueName">Combat_HandleCommenceAttackEvent</p>
+            </td>
+            <td class="ValueDesc"></td>
+         </tr>
+         <tr>
+            <td colspan="3" class="ValueRowSep">
+               <p class="ValueRowSep"></p>
+            </td>
+         </tr>
+         <tr>
+            <td class="ValueVal">
+               <p class="ValueVal">0x01BF</p>
+            </td>
+            <td class="ValueName">
+               <p class="ValueName">Combat_QueryHealth</p>
+            </td>
+            <td class="ValueDesc"></td>
+         </tr>
+         <tr>
+            <td colspan="3" class="ValueRowSep">
+               <p class="ValueRowSep"></p>
+            </td>
+         </tr>
+         <tr>
+            <td class="ValueVal">
+               <p class="ValueVal">0x01C0</p>
+            </td>
+            <td class="ValueName">
+               <p class="ValueName">Combat_QueryHealthResponse</p>
+            </td>
+            <td class="ValueDesc"></td>
+         </tr>
+         <tr>
+            <td colspan="3" class="ValueRowSep">
+               <p class="ValueRowSep"></p>
+            </td>
+         </tr>
+         <tr>
+            <td class="ValueVal">
+               <p class="ValueVal">0x01C2</p>
+            </td>
+            <td class="ValueName">
+               <p class="ValueName">Character_QueryAge</p>
+            </td>
+            <td class="ValueDesc"></td>
+         </tr>
+         <tr>
+            <td colspan="3" class="ValueRowSep">
+               <p class="ValueRowSep"></p>
+            </td>
+         </tr>
+         <tr>
+            <td class="ValueVal">
+               <p class="ValueVal">0x01C3</p>
+            </td>
+            <td class="ValueName">
+               <p class="ValueName">Character_QueryAgeResponse</p>
+            </td>
+            <td class="ValueDesc"></td>
+         </tr>
+         <tr>
+            <td colspan="3" class="ValueRowSep">
+               <p class="ValueRowSep"></p>
+            </td>
+         </tr>
+         <tr>
+            <td class="ValueVal">
+               <p class="ValueVal">0x01C4</p>
+            </td>
+            <td class="ValueName">
+               <p class="ValueName">Character_QueryBirth</p>
+            </td>
+            <td class="ValueDesc"></td>
+         </tr>
+         <tr>
+            <td colspan="3" class="ValueRowSep">
+               <p class="ValueRowSep"></p>
+            </td>
+         </tr>
+         <tr>
+            <td class="ValueVal">
+               <p class="ValueVal">0x01C7</p>
+            </td>
+            <td class="ValueName">
+               <p class="ValueName">Item_UseDone</p>
+            </td>
+            <td class="ValueDesc"></td>
+         </tr>
+         <tr>
+            <td colspan="3" class="ValueRowSep">
+               <p class="ValueRowSep"></p>
+            </td>
+         </tr>
+         <tr>
+            <td class="ValueVal">
+               <p class="ValueVal">0x01C9</p>
+            </td>
+            <td class="ValueName">
+               <p class="ValueName">Fellowship_FellowUpdateDone</p>
+            </td>
+            <td class="ValueDesc"></td>
+         </tr>
+         <tr>
+            <td colspan="3" class="ValueRowSep">
+               <p class="ValueRowSep"></p>
+            </td>
+         </tr>
+         <tr>
+            <td class="ValueVal">
+               <p class="ValueVal">0x01CA</p>
+            </td>
+            <td class="ValueName">
+               <p class="ValueName">Fellowship_FellowStatsDone</p>
+            </td>
+            <td class="ValueDesc"></td>
+         </tr>
+         <tr>
+            <td colspan="3" class="ValueRowSep">
+               <p class="ValueRowSep"></p>
+            </td>
+         </tr>
+         <tr>
+            <td class="ValueVal">
+               <p class="ValueVal">0x01CB</p>
+            </td>
+            <td class="ValueName">
+               <p class="ValueName">Item_AppraiseDone</p>
+            </td>
+            <td class="ValueDesc"></td>
+         </tr>
+         <tr>
+            <td colspan="3" class="ValueRowSep">
+               <p class="ValueRowSep"></p>
+            </td>
+         </tr>
+         <tr>
+            <td class="ValueVal">
+               <p class="ValueVal">0x01D1</p>
+            </td>
+            <td class="ValueName">
+               <p class="ValueName">Qualities_PrivateRemoveIntEvent</p>
+            </td>
+            <td class="ValueDesc"></td>
+         </tr>
+         <tr>
+            <td colspan="3" class="ValueRowSep">
+               <p class="ValueRowSep"></p>
+            </td>
+         </tr>
+         <tr>
+            <td class="ValueVal">
+               <p class="ValueVal">0x01D2</p>
+            </td>
+            <td class="ValueName">
+               <p class="ValueName">Qualities_RemoveIntEvent</p>
+            </td>
+            <td class="ValueDesc"></td>
+         </tr>
+         <tr>
+            <td colspan="3" class="ValueRowSep">
+               <p class="ValueRowSep"></p>
+            </td>
+         </tr>
+         <tr>
+            <td class="ValueVal">
+               <p class="ValueVal">0x01D3</p>
+            </td>
+            <td class="ValueName">
+               <p class="ValueName">Qualities_PrivateRemoveBoolEvent</p>
+            </td>
+            <td class="ValueDesc"></td>
+         </tr>
+         <tr>
+            <td colspan="3" class="ValueRowSep">
+               <p class="ValueRowSep"></p>
+            </td>
+         </tr>
+         <tr>
+            <td class="ValueVal">
+               <p class="ValueVal">0x01D4</p>
+            </td>
+            <td class="ValueName">
+               <p class="ValueName">Qualities_RemoveBoolEvent</p>
+            </td>
+            <td class="ValueDesc"></td>
+         </tr>
+         <tr>
+            <td colspan="3" class="ValueRowSep">
+               <p class="ValueRowSep"></p>
+            </td>
+         </tr>
+         <tr>
+            <td class="ValueVal">
+               <p class="ValueVal">0x01D5</p>
+            </td>
+            <td class="ValueName">
+               <p class="ValueName">Qualities_PrivateRemoveFloatEvent</p>
+            </td>
+            <td class="ValueDesc"></td>
+         </tr>
+         <tr>
+            <td colspan="3" class="ValueRowSep">
+               <p class="ValueRowSep"></p>
+            </td>
+         </tr>
+         <tr>
+            <td class="ValueVal">
+               <p class="ValueVal">0x01D6</p>
+            </td>
+            <td class="ValueName">
+               <p class="ValueName">Qualities_RemoveFloatEvent</p>
+            </td>
+            <td class="ValueDesc"></td>
+         </tr>
+         <tr>
+            <td colspan="3" class="ValueRowSep">
+               <p class="ValueRowSep"></p>
+            </td>
+         </tr>
+         <tr>
+            <td class="ValueVal">
+               <p class="ValueVal">0x01D7</p>
+            </td>
+            <td class="ValueName">
+               <p class="ValueName">Qualities_PrivateRemoveStringEvent</p>
+            </td>
+            <td class="ValueDesc"></td>
+         </tr>
+         <tr>
+            <td colspan="3" class="ValueRowSep">
+               <p class="ValueRowSep"></p>
+            </td>
+         </tr>
+         <tr>
+            <td class="ValueVal">
+               <p class="ValueVal">0x01D8</p>
+            </td>
+            <td class="ValueName">
+               <p class="ValueName">Qualities_RemoveStringEvent</p>
+            </td>
+            <td class="ValueDesc"></td>
+         </tr>
+         <tr>
+            <td colspan="3" class="ValueRowSep">
+               <p class="ValueRowSep"></p>
+            </td>
+         </tr>
+         <tr>
+            <td class="ValueVal">
+               <p class="ValueVal">0x01D9</p>
+            </td>
+            <td class="ValueName">
+               <p class="ValueName">Qualities_PrivateRemoveDataIDEvent</p>
+            </td>
+            <td class="ValueDesc"></td>
+         </tr>
+         <tr>
+            <td colspan="3" class="ValueRowSep">
+               <p class="ValueRowSep"></p>
+            </td>
+         </tr>
+         <tr>
+            <td class="ValueVal">
+               <p class="ValueVal">0x01DA</p>
+            </td>
+            <td class="ValueName">
+               <p class="ValueName">Qualities_RemoveDataIDEvent</p>
+            </td>
+            <td class="ValueDesc"></td>
+         </tr>
+         <tr>
+            <td colspan="3" class="ValueRowSep">
+               <p class="ValueRowSep"></p>
+            </td>
+         </tr>
+         <tr>
+            <td class="ValueVal">
+               <p class="ValueVal">0x01DB</p>
+            </td>
+            <td class="ValueName">
+               <p class="ValueName">Qualities_PrivateRemoveInstanceIDEvent</p>
+            </td>
+            <td class="ValueDesc"></td>
+         </tr>
+         <tr>
+            <td colspan="3" class="ValueRowSep">
+               <p class="ValueRowSep"></p>
+            </td>
+         </tr>
+         <tr>
+            <td class="ValueVal">
+               <p class="ValueVal">0x01DC</p>
+            </td>
+            <td class="ValueName">
+               <p class="ValueName">Qualities_RemoveInstanceIDEvent</p>
+            </td>
+            <td class="ValueDesc"></td>
+         </tr>
+         <tr>
+            <td colspan="3" class="ValueRowSep">
+               <p class="ValueRowSep"></p>
+            </td>
+         </tr>
+         <tr>
+            <td class="ValueVal">
+               <p class="ValueVal">0x01DD</p>
+            </td>
+            <td class="ValueName">
+               <p class="ValueName">Qualities_PrivateRemovePositionEvent</p>
+            </td>
+            <td class="ValueDesc"></td>
+         </tr>
+         <tr>
+            <td colspan="3" class="ValueRowSep">
+               <p class="ValueRowSep"></p>
+            </td>
+         </tr>
+         <tr>
+            <td class="ValueVal">
+               <p class="ValueVal">0x01DE</p>
+            </td>
+            <td class="ValueName">
+               <p class="ValueName">Qualities_RemovePositionEvent</p>
+            </td>
+            <td class="ValueDesc"></td>
+         </tr>
+         <tr>
+            <td colspan="3" class="ValueRowSep">
+               <p class="ValueRowSep"></p>
+            </td>
+         </tr>
+         <tr>
+            <td class="ValueVal">
+               <p class="ValueVal">0x01DF</p>
+            </td>
+            <td class="ValueName">
+               <p class="ValueName">Communication_Emote</p>
+            </td>
+            <td class="ValueDesc"></td>
+         </tr>
+         <tr>
+            <td colspan="3" class="ValueRowSep">
+               <p class="ValueRowSep"></p>
+            </td>
+         </tr>
+         <tr>
+            <td class="ValueVal">
+               <p class="ValueVal">0x01E0</p>
+            </td>
+            <td class="ValueName">
+               <p class="ValueName">Communication_HearEmote</p>
+            </td>
+            <td class="ValueDesc"></td>
+         </tr>
+         <tr>
+            <td colspan="3" class="ValueRowSep">
+               <p class="ValueRowSep"></p>
+            </td>
+         </tr>
+         <tr>
+            <td class="ValueVal">
+               <p class="ValueVal">0x01E1</p>
+            </td>
+            <td class="ValueName">
+               <p class="ValueName">Communication_SoulEmote</p>
+            </td>
+            <td class="ValueDesc"></td>
+         </tr>
+         <tr>
+            <td colspan="3" class="ValueRowSep">
+               <p class="ValueRowSep"></p>
+            </td>
+         </tr>
+         <tr>
+            <td class="ValueVal">
+               <p class="ValueVal">0x01E2</p>
+            </td>
+            <td class="ValueName">
+               <p class="ValueName">Communication_HearSoulEmote</p>
+            </td>
+            <td class="ValueDesc"></td>
+         </tr>
+         <tr>
+            <td colspan="3" class="ValueRowSep">
+               <p class="ValueRowSep"></p>
+            </td>
+         </tr>
+         <tr>
+            <td class="ValueVal">
+               <p class="ValueVal">0x01E3</p>
+            </td>
+            <td class="ValueName">
+               <p class="ValueName">Character_AddSpellFavorite</p>
+            </td>
+            <td class="ValueDesc"></td>
+         </tr>
+         <tr>
+            <td colspan="3" class="ValueRowSep">
+               <p class="ValueRowSep"></p>
+            </td>
+         </tr>
+         <tr>
+            <td class="ValueVal">
+               <p class="ValueVal">0x01E4</p>
+            </td>
+            <td class="ValueName">
+               <p class="ValueName">Character_RemoveSpellFavorite</p>
+            </td>
+            <td class="ValueDesc"></td>
+         </tr>
+         <tr>
+            <td colspan="3" class="ValueRowSep">
+               <p class="ValueRowSep"></p>
+            </td>
+         </tr>
+         <tr>
+            <td class="ValueVal">
+               <p class="ValueVal">0x01E9</p>
+            </td>
+            <td class="ValueName">
+               <p class="ValueName">Character_RequestPing</p>
+            </td>
+            <td class="ValueDesc"></td>
+         </tr>
+         <tr>
+            <td colspan="3" class="ValueRowSep">
+               <p class="ValueRowSep"></p>
+            </td>
+         </tr>
+         <tr>
+            <td class="ValueVal">
+               <p class="ValueVal">0x01EA</p>
+            </td>
+            <td class="ValueName">
+               <p class="ValueName">Character_ReturnPing</p>
+            </td>
+            <td class="ValueDesc"></td>
+         </tr>
+         <tr>
+            <td colspan="3" class="ValueRowSep">
+               <p class="ValueRowSep"></p>
+            </td>
+         </tr>
+         <tr>
+            <td class="ValueVal">
+               <p class="ValueVal">0x01F4</p>
+            </td>
+            <td class="ValueName">
+               <p class="ValueName">Communication_SetSquelchDB</p>
+            </td>
+            <td class="ValueDesc"></td>
+         </tr>
+         <tr>
+            <td colspan="3" class="ValueRowSep">
+               <p class="ValueRowSep"></p>
+            </td>
+         </tr>
+         <tr>
+            <td class="ValueVal">
+               <p class="ValueVal">0x01F6</p>
+            </td>
+            <td class="ValueName">
+               <p class="ValueName">Trade_OpenTradeNegotiations</p>
+            </td>
+            <td class="ValueDesc"></td>
+         </tr>
+         <tr>
+            <td colspan="3" class="ValueRowSep">
+               <p class="ValueRowSep"></p>
+            </td>
+         </tr>
+         <tr>
+            <td class="ValueVal">
+               <p class="ValueVal">0x01F7</p>
+            </td>
+            <td class="ValueName">
+               <p class="ValueName">Trade_CloseTradeNegotiations</p>
+            </td>
+            <td class="ValueDesc"></td>
+         </tr>
+         <tr>
+            <td colspan="3" class="ValueRowSep">
+               <p class="ValueRowSep"></p>
+            </td>
+         </tr>
+         <tr>
+            <td class="ValueVal">
+               <p class="ValueVal">0x01F8</p>
+            </td>
+            <td class="ValueName">
+               <p class="ValueName">Trade_AddToTrade</p>
+            </td>
+            <td class="ValueDesc"></td>
+         </tr>
+         <tr>
+            <td colspan="3" class="ValueRowSep">
+               <p class="ValueRowSep"></p>
+            </td>
+         </tr>
+         <tr>
+            <td class="ValueVal">
+               <p class="ValueVal">0x01FA</p>
+            </td>
+            <td class="ValueName">
+               <p class="ValueName">Trade_AcceptTrade</p>
+            </td>
+            <td class="ValueDesc"></td>
+         </tr>
+         <tr>
+            <td colspan="3" class="ValueRowSep">
+               <p class="ValueRowSep"></p>
+            </td>
+         </tr>
+         <tr>
+            <td class="ValueVal">
+               <p class="ValueVal">0x01FB</p>
+            </td>
+            <td class="ValueName">
+               <p class="ValueName">Trade_DeclineTrade</p>
+            </td>
+            <td class="ValueDesc"></td>
+         </tr>
+         <tr>
+            <td colspan="3" class="ValueRowSep">
+               <p class="ValueRowSep"></p>
+            </td>
+         </tr>
+         <tr>
+            <td class="ValueVal">
+               <p class="ValueVal">0x01FD</p>
+            </td>
+            <td class="ValueName">
+               <p class="ValueName">Trade_RegisterTrade</p>
+            </td>
+            <td class="ValueDesc"></td>
+         </tr>
+         <tr>
+            <td colspan="3" class="ValueRowSep">
+               <p class="ValueRowSep"></p>
+            </td>
+         </tr>
+         <tr>
+            <td class="ValueVal">
+               <p class="ValueVal">0x01FE</p>
+            </td>
+            <td class="ValueName">
+               <p class="ValueName">Trade_OpenTrade</p>
+            </td>
+            <td class="ValueDesc"></td>
+         </tr>
+         <tr>
+            <td colspan="3" class="ValueRowSep">
+               <p class="ValueRowSep"></p>
+            </td>
+         </tr>
+         <tr>
+            <td class="ValueVal">
+               <p class="ValueVal">0x01FF</p>
+            </td>
+            <td class="ValueName">
+               <p class="ValueName">Trade_CloseTrade</p>
+            </td>
+            <td class="ValueDesc"></td>
+         </tr>
+         <tr>
+            <td colspan="3" class="ValueRowSep">
+               <p class="ValueRowSep"></p>
+            </td>
+         </tr>
+         <tr>
+            <td class="ValueVal">
+               <p class="ValueVal">0x0200</p>
+            </td>
+            <td class="ValueName">
+               <p class="ValueName">Trade_AddToTrade</p>
+            </td>
+            <td class="ValueDesc"></td>
+         </tr>
+         <tr>
+            <td colspan="3" class="ValueRowSep">
+               <p class="ValueRowSep"></p>
+            </td>
+         </tr>
+         <tr>
+            <td class="ValueVal">
+               <p class="ValueVal">0x0201</p>
+            </td>
+            <td class="ValueName">
+               <p class="ValueName">Trade_RemoveFromTrade</p>
+            </td>
+            <td class="ValueDesc"></td>
+         </tr>
+         <tr>
+            <td colspan="3" class="ValueRowSep">
+               <p class="ValueRowSep"></p>
+            </td>
+         </tr>
+         <tr>
+            <td class="ValueVal">
+               <p class="ValueVal">0x0202</p>
+            </td>
+            <td class="ValueName">
+               <p class="ValueName">Trade_AcceptTrade</p>
+            </td>
+            <td class="ValueDesc"></td>
+         </tr>
+         <tr>
+            <td colspan="3" class="ValueRowSep">
+               <p class="ValueRowSep"></p>
+            </td>
+         </tr>
+         <tr>
+            <td class="ValueVal">
+               <p class="ValueVal">0x0203</p>
+            </td>
+            <td class="ValueName">
+               <p class="ValueName">Trade_DeclineTrade</p>
+            </td>
+            <td class="ValueDesc"></td>
+         </tr>
+         <tr>
+            <td colspan="3" class="ValueRowSep">
+               <p class="ValueRowSep"></p>
+            </td>
+         </tr>
+         <tr>
+            <td class="ValueVal">
+               <p class="ValueVal">0x0204</p>
+            </td>
+            <td class="ValueName">
+               <p class="ValueName">Trade_ResetTrade</p>
+            </td>
+            <td class="ValueDesc"></td>
+         </tr>
+         <tr>
+            <td colspan="3" class="ValueRowSep">
+               <p class="ValueRowSep"></p>
+            </td>
+         </tr>
+         <tr>
+            <td class="ValueVal">
+               <p class="ValueVal">0x0205</p>
+            </td>
+            <td class="ValueName">
+               <p class="ValueName">Trade_ResetTrade</p>
+            </td>
+            <td class="ValueDesc"></td>
+         </tr>
+         <tr>
+            <td colspan="3" class="ValueRowSep">
+               <p class="ValueRowSep"></p>
+            </td>
+         </tr>
+         <tr>
+            <td class="ValueVal">
+               <p class="ValueVal">0x0207</p>
+            </td>
+            <td class="ValueName">
+               <p class="ValueName">Trade_TradeFailure</p>
+            </td>
+            <td class="ValueDesc"></td>
+         </tr>
+         <tr>
+            <td colspan="3" class="ValueRowSep">
+               <p class="ValueRowSep"></p>
+            </td>
+         </tr>
+         <tr>
+            <td class="ValueVal">
+               <p class="ValueVal">0x0208</p>
+            </td>
+            <td class="ValueName">
+               <p class="ValueName">Trade_ClearTradeAcceptance</p>
+            </td>
+            <td class="ValueDesc"></td>
+         </tr>
+         <tr>
+            <td colspan="3" class="ValueRowSep">
+               <p class="ValueRowSep"></p>
+            </td>
+         </tr>
+         <tr>
+            <td class="ValueVal">
+               <p class="ValueVal">0x0216</p>
+            </td>
+            <td class="ValueName">
+               <p class="ValueName">Character_ClearPlayerConsentList</p>
+            </td>
+            <td class="ValueDesc"></td>
+         </tr>
+         <tr>
+            <td colspan="3" class="ValueRowSep">
+               <p class="ValueRowSep"></p>
+            </td>
+         </tr>
+         <tr>
+            <td class="ValueVal">
+               <p class="ValueVal">0x0217</p>
+            </td>
+            <td class="ValueName">
+               <p class="ValueName">Character_DisplayPlayerConsentList</p>
+            </td>
+            <td class="ValueDesc"></td>
+         </tr>
+         <tr>
+            <td colspan="3" class="ValueRowSep">
+               <p class="ValueRowSep"></p>
+            </td>
+         </tr>
+         <tr>
+            <td class="ValueVal">
+               <p class="ValueVal">0x0218</p>
+            </td>
+            <td class="ValueName">
+               <p class="ValueName">Character_RemoveFromPlayerConsentList</p>
+            </td>
+            <td class="ValueDesc"></td>
+         </tr>
+         <tr>
+            <td colspan="3" class="ValueRowSep">
+               <p class="ValueRowSep"></p>
+            </td>
+         </tr>
+         <tr>
+            <td class="ValueVal">
+               <p class="ValueVal">0x0219</p>
+            </td>
+            <td class="ValueName">
+               <p class="ValueName">Character_AddPlayerPermission</p>
+            </td>
+            <td class="ValueDesc"></td>
+         </tr>
+         <tr>
+            <td colspan="3" class="ValueRowSep">
+               <p class="ValueRowSep"></p>
+            </td>
+         </tr>
+         <tr>
+            <td class="ValueVal">
+               <p class="ValueVal">0x021C</p>
+            </td>
+            <td class="ValueName">
+               <p class="ValueName">House_BuyHouse</p>
+            </td>
+            <td class="ValueDesc"></td>
+         </tr>
+         <tr>
+            <td colspan="3" class="ValueRowSep">
+               <p class="ValueRowSep"></p>
+            </td>
+         </tr>
+         <tr>
+            <td class="ValueVal">
+               <p class="ValueVal">0x021D</p>
+            </td>
+            <td class="ValueName">
+               <p class="ValueName">House_HouseProfile</p>
+            </td>
+            <td class="ValueDesc"></td>
+         </tr>
+         <tr>
+            <td colspan="3" class="ValueRowSep">
+               <p class="ValueRowSep"></p>
+            </td>
+         </tr>
+         <tr>
+            <td class="ValueVal">
+               <p class="ValueVal">0x021E</p>
+            </td>
+            <td class="ValueName">
+               <p class="ValueName">House_QueryHouse</p>
+            </td>
+            <td class="ValueDesc"></td>
+         </tr>
+         <tr>
+            <td colspan="3" class="ValueRowSep">
+               <p class="ValueRowSep"></p>
+            </td>
+         </tr>
+         <tr>
+            <td class="ValueVal">
+               <p class="ValueVal">0x021F</p>
+            </td>
+            <td class="ValueName">
+               <p class="ValueName">House_AbandonHouse</p>
+            </td>
+            <td class="ValueDesc"></td>
+         </tr>
+         <tr>
+            <td colspan="3" class="ValueRowSep">
+               <p class="ValueRowSep"></p>
+            </td>
+         </tr>
+         <tr>
+            <td class="ValueVal">
+               <p class="ValueVal">0x0220</p>
+            </td>
+            <td class="ValueName">
+               <p class="ValueName">Character_RemovePlayerPermission</p>
+            </td>
+            <td class="ValueDesc"></td>
+         </tr>
+         <tr>
+            <td colspan="3" class="ValueRowSep">
+               <p class="ValueRowSep"></p>
+            </td>
+         </tr>
+         <tr>
+            <td class="ValueVal">
+               <p class="ValueVal">0x0221</p>
+            </td>
+            <td class="ValueName">
+               <p class="ValueName">House_RentHouse</p>
+            </td>
+            <td class="ValueDesc"></td>
+         </tr>
+         <tr>
+            <td colspan="3" class="ValueRowSep">
+               <p class="ValueRowSep"></p>
+            </td>
+         </tr>
+         <tr>
+            <td class="ValueVal">
+               <p class="ValueVal">0x0224</p>
+            </td>
+            <td class="ValueName">
+               <p class="ValueName">Character_SetDesiredComponentLevel</p>
+            </td>
+            <td class="ValueDesc"></td>
+         </tr>
+         <tr>
+            <td colspan="3" class="ValueRowSep">
+               <p class="ValueRowSep"></p>
+            </td>
+         </tr>
+         <tr>
+            <td class="ValueVal">
+               <p class="ValueVal">0x0225</p>
+            </td>
+            <td class="ValueName">
+               <p class="ValueName">House_HouseData</p>
+            </td>
+            <td class="ValueDesc"></td>
+         </tr>
+         <tr>
+            <td colspan="3" class="ValueRowSep">
+               <p class="ValueRowSep"></p>
+            </td>
+         </tr>
+         <tr>
+            <td class="ValueVal">
+               <p class="ValueVal">0x0226</p>
+            </td>
+            <td class="ValueName">
+               <p class="ValueName">House_HouseStatus</p>
+            </td>
+            <td class="ValueDesc"></td>
+         </tr>
+         <tr>
+            <td colspan="3" class="ValueRowSep">
+               <p class="ValueRowSep"></p>
+            </td>
+         </tr>
+         <tr>
+            <td class="ValueVal">
+               <p class="ValueVal">0x0227</p>
+            </td>
+            <td class="ValueName">
+               <p class="ValueName">House_UpdateRentTime</p>
+            </td>
+            <td class="ValueDesc"></td>
+         </tr>
+         <tr>
+            <td colspan="3" class="ValueRowSep">
+               <p class="ValueRowSep"></p>
+            </td>
+         </tr>
+         <tr>
+            <td class="ValueVal">
+               <p class="ValueVal">0x0228</p>
+            </td>
+            <td class="ValueName">
+               <p class="ValueName">House_UpdateRentPayment</p>
+            </td>
+            <td class="ValueDesc"></td>
+         </tr>
+         <tr>
+            <td colspan="3" class="ValueRowSep">
+               <p class="ValueRowSep"></p>
+            </td>
+         </tr>
+         <tr>
+            <td class="ValueVal">
+               <p class="ValueVal">0x0245</p>
+            </td>
+            <td class="ValueName">
+               <p class="ValueName">House_AddPermanentGuest</p>
+            </td>
+            <td class="ValueDesc"></td>
+         </tr>
+         <tr>
+            <td colspan="3" class="ValueRowSep">
+               <p class="ValueRowSep"></p>
+            </td>
+         </tr>
+         <tr>
+            <td class="ValueVal">
+               <p class="ValueVal">0x0246</p>
+            </td>
+            <td class="ValueName">
+               <p class="ValueName">House_RemovePermanentGuest</p>
+            </td>
+            <td class="ValueDesc"></td>
+         </tr>
+         <tr>
+            <td colspan="3" class="ValueRowSep">
+               <p class="ValueRowSep"></p>
+            </td>
+         </tr>
+         <tr>
+            <td class="ValueVal">
+               <p class="ValueVal">0x0247</p>
+            </td>
+            <td class="ValueName">
+               <p class="ValueName">House_SetOpenHouseStatus</p>
+            </td>
+            <td class="ValueDesc"></td>
+         </tr>
+         <tr>
+            <td colspan="3" class="ValueRowSep">
+               <p class="ValueRowSep"></p>
+            </td>
+         </tr>
+         <tr>
+            <td class="ValueVal">
+               <p class="ValueVal">0x0248</p>
+            </td>
+            <td class="ValueName">
+               <p class="ValueName">House_UpdateRestrictions</p>
+            </td>
+            <td class="ValueDesc"></td>
+         </tr>
+         <tr>
+            <td colspan="3" class="ValueRowSep">
+               <p class="ValueRowSep"></p>
+            </td>
+         </tr>
+         <tr>
+            <td class="ValueVal">
+               <p class="ValueVal">0x0249</p>
+            </td>
+            <td class="ValueName">
+               <p class="ValueName">House_ChangeStoragePermission</p>
+            </td>
+            <td class="ValueDesc"></td>
+         </tr>
+         <tr>
+            <td colspan="3" class="ValueRowSep">
+               <p class="ValueRowSep"></p>
+            </td>
+         </tr>
+         <tr>
+            <td class="ValueVal">
+               <p class="ValueVal">0x024A</p>
+            </td>
+            <td class="ValueName">
+               <p class="ValueName">House_BootSpecificHouseGuest</p>
+            </td>
+            <td class="ValueDesc"></td>
+         </tr>
+         <tr>
+            <td colspan="3" class="ValueRowSep">
+               <p class="ValueRowSep"></p>
+            </td>
+         </tr>
+         <tr>
+            <td class="ValueVal">
+               <p class="ValueVal">0x024C</p>
+            </td>
+            <td class="ValueName">
+               <p class="ValueName">House_RemoveAllStoragePermission</p>
+            </td>
+            <td class="ValueDesc"></td>
+         </tr>
+         <tr>
+            <td colspan="3" class="ValueRowSep">
+               <p class="ValueRowSep"></p>
+            </td>
+         </tr>
+         <tr>
+            <td class="ValueVal">
+               <p class="ValueVal">0x024D</p>
+            </td>
+            <td class="ValueName">
+               <p class="ValueName">House_RequestFullGuestList</p>
+            </td>
+            <td class="ValueDesc"></td>
+         </tr>
+         <tr>
+            <td colspan="3" class="ValueRowSep">
+               <p class="ValueRowSep"></p>
+            </td>
+         </tr>
+         <tr>
+            <td class="ValueVal">
+               <p class="ValueVal">0x0254</p>
+            </td>
+            <td class="ValueName">
+               <p class="ValueName">Allegiance_SetMotd</p>
+            </td>
+            <td class="ValueDesc"></td>
+         </tr>
+         <tr>
+            <td colspan="3" class="ValueRowSep">
+               <p class="ValueRowSep"></p>
+            </td>
+         </tr>
+         <tr>
+            <td class="ValueVal">
+               <p class="ValueVal">0x0255</p>
+            </td>
+            <td class="ValueName">
+               <p class="ValueName">Allegiance_QueryMotd</p>
+            </td>
+            <td class="ValueDesc"></td>
+         </tr>
+         <tr>
+            <td colspan="3" class="ValueRowSep">
+               <p class="ValueRowSep"></p>
+            </td>
+         </tr>
+         <tr>
+            <td class="ValueVal">
+               <p class="ValueVal">0x0256</p>
+            </td>
+            <td class="ValueName">
+               <p class="ValueName">Allegiance_ClearMotd</p>
+            </td>
+            <td class="ValueDesc"></td>
+         </tr>
+         <tr>
+            <td colspan="3" class="ValueRowSep">
+               <p class="ValueRowSep"></p>
+            </td>
+         </tr>
+         <tr>
+            <td class="ValueVal">
+               <p class="ValueVal">0x0257</p>
+            </td>
+            <td class="ValueName">
+               <p class="ValueName">House_UpdateHAR</p>
+            </td>
+            <td class="ValueDesc"></td>
+         </tr>
+         <tr>
+            <td colspan="3" class="ValueRowSep">
+               <p class="ValueRowSep"></p>
+            </td>
+         </tr>
+         <tr>
+            <td class="ValueVal">
+               <p class="ValueVal">0x0258</p>
+            </td>
+            <td class="ValueName">
+               <p class="ValueName">House_QueryLord</p>
+            </td>
+            <td class="ValueDesc"></td>
+         </tr>
+         <tr>
+            <td colspan="3" class="ValueRowSep">
+               <p class="ValueRowSep"></p>
+            </td>
+         </tr>
+         <tr>
+            <td class="ValueVal">
+               <p class="ValueVal">0x0259</p>
+            </td>
+            <td class="ValueName">
+               <p class="ValueName">House_HouseTransaction</p>
+            </td>
+            <td class="ValueDesc"></td>
+         </tr>
+         <tr>
+            <td colspan="3" class="ValueRowSep">
+               <p class="ValueRowSep"></p>
+            </td>
+         </tr>
+         <tr>
+            <td class="ValueVal">
+               <p class="ValueVal">0x025C</p>
+            </td>
+            <td class="ValueName">
+               <p class="ValueName">House_AddAllStoragePermission</p>
+            </td>
+            <td class="ValueDesc"></td>
+         </tr>
+         <tr>
+            <td colspan="3" class="ValueRowSep">
+               <p class="ValueRowSep"></p>
+            </td>
+         </tr>
+         <tr>
+            <td class="ValueVal">
+               <p class="ValueVal">0x025E</p>
+            </td>
+            <td class="ValueName">
+               <p class="ValueName">House_RemoveAllPermanentGuests</p>
+            </td>
+            <td class="ValueDesc"></td>
+         </tr>
+         <tr>
+            <td colspan="3" class="ValueRowSep">
+               <p class="ValueRowSep"></p>
+            </td>
+         </tr>
+         <tr>
+            <td class="ValueVal">
+               <p class="ValueVal">0x025F</p>
+            </td>
+            <td class="ValueName">
+               <p class="ValueName">House_BootEveryone</p>
+            </td>
+            <td class="ValueDesc"></td>
+         </tr>
+         <tr>
+            <td colspan="3" class="ValueRowSep">
+               <p class="ValueRowSep"></p>
+            </td>
+         </tr>
+         <tr>
+            <td class="ValueVal">
+               <p class="ValueVal">0x0262</p>
+            </td>
+            <td class="ValueName">
+               <p class="ValueName">House_TeleToHouse</p>
+            </td>
+            <td class="ValueDesc"></td>
+         </tr>
+         <tr>
+            <td colspan="3" class="ValueRowSep">
+               <p class="ValueRowSep"></p>
+            </td>
+         </tr>
+         <tr>
+            <td class="ValueVal">
+               <p class="ValueVal">0x0263</p>
+            </td>
+            <td class="ValueName">
+               <p class="ValueName">Item_QueryItemMana</p>
+            </td>
+            <td class="ValueDesc"></td>
+         </tr>
+         <tr>
+            <td colspan="3" class="ValueRowSep">
+               <p class="ValueRowSep"></p>
+            </td>
+         </tr>
+         <tr>
+            <td class="ValueVal">
+               <p class="ValueVal">0x0264</p>
+            </td>
+            <td class="ValueName">
+               <p class="ValueName">Item_QueryItemManaResponse</p>
+            </td>
+            <td class="ValueDesc"></td>
+         </tr>
+         <tr>
+            <td colspan="3" class="ValueRowSep">
+               <p class="ValueRowSep"></p>
+            </td>
+         </tr>
+         <tr>
+            <td class="ValueVal">
+               <p class="ValueVal">0x0266</p>
+            </td>
+            <td class="ValueName">
+               <p class="ValueName">House_SetHooksVisibility</p>
+            </td>
+            <td class="ValueDesc"></td>
+         </tr>
+         <tr>
+            <td colspan="3" class="ValueRowSep">
+               <p class="ValueRowSep"></p>
+            </td>
+         </tr>
+         <tr>
+            <td class="ValueVal">
+               <p class="ValueVal">0x0267</p>
+            </td>
+            <td class="ValueName">
+               <p class="ValueName">House_ModifyAllegianceGuestPermission</p>
+            </td>
+            <td class="ValueDesc"></td>
+         </tr>
+         <tr>
+            <td colspan="3" class="ValueRowSep">
+               <p class="ValueRowSep"></p>
+            </td>
+         </tr>
+         <tr>
+            <td class="ValueVal">
+               <p class="ValueVal">0x0268</p>
+            </td>
+            <td class="ValueName">
+               <p class="ValueName">House_ModifyAllegianceStoragePermission</p>
+            </td>
+            <td class="ValueDesc"></td>
+         </tr>
+         <tr>
+            <td colspan="3" class="ValueRowSep">
+               <p class="ValueRowSep"></p>
+            </td>
+         </tr>
+         <tr>
+            <td class="ValueVal">
+               <p class="ValueVal">0x0269</p>
+            </td>
+            <td class="ValueName">
+               <p class="ValueName">Game_Join</p>
+            </td>
+            <td class="ValueDesc"></td>
+         </tr>
+         <tr>
+            <td colspan="3" class="ValueRowSep">
+               <p class="ValueRowSep"></p>
+            </td>
+         </tr>
+         <tr>
+            <td class="ValueVal">
+               <p class="ValueVal">0x026A</p>
+            </td>
+            <td class="ValueName">
+               <p class="ValueName">Game_Quit</p>
+            </td>
+            <td class="ValueDesc"></td>
+         </tr>
+         <tr>
+            <td colspan="3" class="ValueRowSep">
+               <p class="ValueRowSep"></p>
+            </td>
+         </tr>
+         <tr>
+            <td class="ValueVal">
+               <p class="ValueVal">0x026B</p>
+            </td>
+            <td class="ValueName">
+               <p class="ValueName">Game_Move</p>
+            </td>
+            <td class="ValueDesc"></td>
+         </tr>
+         <tr>
+            <td colspan="3" class="ValueRowSep">
+               <p class="ValueRowSep"></p>
+            </td>
+         </tr>
+         <tr>
+            <td class="ValueVal">
+               <p class="ValueVal">0x026D</p>
+            </td>
+            <td class="ValueName">
+               <p class="ValueName">Game_MovePass</p>
+            </td>
+            <td class="ValueDesc"></td>
+         </tr>
+         <tr>
+            <td colspan="3" class="ValueRowSep">
+               <p class="ValueRowSep"></p>
+            </td>
+         </tr>
+         <tr>
+            <td class="ValueVal">
+               <p class="ValueVal">0x026E</p>
+            </td>
+            <td class="ValueName">
+               <p class="ValueName">Game_Stalemate</p>
+            </td>
+            <td class="ValueDesc"></td>
+         </tr>
+         <tr>
+            <td colspan="3" class="ValueRowSep">
+               <p class="ValueRowSep"></p>
+            </td>
+         </tr>
+         <tr>
+            <td class="ValueVal">
+               <p class="ValueVal">0x0270</p>
+            </td>
+            <td class="ValueName">
+               <p class="ValueName">House_ListAvailableHouses</p>
+            </td>
+            <td class="ValueDesc"></td>
+         </tr>
+         <tr>
+            <td colspan="3" class="ValueRowSep">
+               <p class="ValueRowSep"></p>
+            </td>
+         </tr>
+         <tr>
+            <td class="ValueVal">
+               <p class="ValueVal">0x0271</p>
+            </td>
+            <td class="ValueName">
+               <p class="ValueName">House_AvailableHouses</p>
+            </td>
+            <td class="ValueDesc"></td>
+         </tr>
+         <tr>
+            <td colspan="3" class="ValueRowSep">
+               <p class="ValueRowSep"></p>
+            </td>
+         </tr>
+         <tr>
+            <td class="ValueVal">
+               <p class="ValueVal">0x0274</p>
+            </td>
+            <td class="ValueName">
+               <p class="ValueName">Character_ConfirmationRequest</p>
+            </td>
+            <td class="ValueDesc"></td>
+         </tr>
+         <tr>
+            <td colspan="3" class="ValueRowSep">
+               <p class="ValueRowSep"></p>
+            </td>
+         </tr>
+         <tr>
+            <td class="ValueVal">
+               <p class="ValueVal">0x0275</p>
+            </td>
+            <td class="ValueName">
+               <p class="ValueName">Character_ConfirmationResponse</p>
+            </td>
+            <td class="ValueDesc"></td>
+         </tr>
+         <tr>
+            <td colspan="3" class="ValueRowSep">
+               <p class="ValueRowSep"></p>
+            </td>
+         </tr>
+         <tr>
+            <td class="ValueVal">
+               <p class="ValueVal">0x0276</p>
+            </td>
+            <td class="ValueName">
+               <p class="ValueName">Character_ConfirmationDone</p>
+            </td>
+            <td class="ValueDesc"></td>
+         </tr>
+         <tr>
+            <td colspan="3" class="ValueRowSep">
+               <p class="ValueRowSep"></p>
+            </td>
+         </tr>
+         <tr>
+            <td class="ValueVal">
+               <p class="ValueVal">0x0277</p>
+            </td>
+            <td class="ValueName">
+               <p class="ValueName">Allegiance_BreakAllegianceBoot</p>
+            </td>
+            <td class="ValueDesc"></td>
+         </tr>
+         <tr>
+            <td colspan="3" class="ValueRowSep">
+               <p class="ValueRowSep"></p>
+            </td>
+         </tr>
+         <tr>
+            <td class="ValueVal">
+               <p class="ValueVal">0x0278</p>
+            </td>
+            <td class="ValueName">
+               <p class="ValueName">House_TeleToMansion</p>
+            </td>
+            <td class="ValueDesc"></td>
+         </tr>
+         <tr>
+            <td colspan="3" class="ValueRowSep">
+               <p class="ValueRowSep"></p>
+            </td>
+         </tr>
+         <tr>
+            <td class="ValueVal">
+               <p class="ValueVal">0x0279</p>
+            </td>
+            <td class="ValueName">
+               <p class="ValueName">Character_Suicide</p>
+            </td>
+            <td class="ValueDesc"></td>
+         </tr>
+         <tr>
+            <td colspan="3" class="ValueRowSep">
+               <p class="ValueRowSep"></p>
+            </td>
+         </tr>
+         <tr>
+            <td class="ValueVal">
+               <p class="ValueVal">0x027A</p>
+            </td>
+            <td class="ValueName">
+               <p class="ValueName">Allegiance_AllegianceLoginNotificationEvent</p>
+            </td>
+            <td class="ValueDesc"></td>
+         </tr>
+         <tr>
+            <td colspan="3" class="ValueRowSep">
+               <p class="ValueRowSep"></p>
+            </td>
+         </tr>
+         <tr>
+            <td class="ValueVal">
+               <p class="ValueVal">0x027B</p>
+            </td>
+            <td class="ValueName">
+               <p class="ValueName">Allegiance_AllegianceInfoRequest</p>
+            </td>
+            <td class="ValueDesc"></td>
+         </tr>
+         <tr>
+            <td colspan="3" class="ValueRowSep">
+               <p class="ValueRowSep"></p>
+            </td>
+         </tr>
+         <tr>
+            <td class="ValueVal">
+               <p class="ValueVal">0x027C</p>
+            </td>
+            <td class="ValueName">
+               <p class="ValueName">Allegiance_AllegianceInfoResponseEvent</p>
+            </td>
+            <td class="ValueDesc"></td>
+         </tr>
+         <tr>
+            <td colspan="3" class="ValueRowSep">
+               <p class="ValueRowSep"></p>
+            </td>
+         </tr>
+         <tr>
+            <td class="ValueVal">
+               <p class="ValueVal">0x027D</p>
+            </td>
+            <td class="ValueName">
+               <p class="ValueName">Inventory_CreateTinkeringTool</p>
+            </td>
+            <td class="ValueDesc"></td>
+         </tr>
+         <tr>
+            <td colspan="3" class="ValueRowSep">
+               <p class="ValueRowSep"></p>
+            </td>
+         </tr>
+         <tr>
+            <td class="ValueVal">
+               <p class="ValueVal">0x0281</p>
+            </td>
+            <td class="ValueName">
+               <p class="ValueName">Game_JoinGameResponse</p>
+            </td>
+            <td class="ValueDesc"></td>
+         </tr>
+         <tr>
+            <td colspan="3" class="ValueRowSep">
+               <p class="ValueRowSep"></p>
+            </td>
+         </tr>
+         <tr>
+            <td class="ValueVal">
+               <p class="ValueVal">0x0282</p>
+            </td>
+            <td class="ValueName">
+               <p class="ValueName">Game_StartGame</p>
+            </td>
+            <td class="ValueDesc"></td>
+         </tr>
+         <tr>
+            <td colspan="3" class="ValueRowSep">
+               <p class="ValueRowSep"></p>
+            </td>
+         </tr>
+         <tr>
+            <td class="ValueVal">
+               <p class="ValueVal">0x0283</p>
+            </td>
+            <td class="ValueName">
+               <p class="ValueName">Game_MoveResponse</p>
+            </td>
+            <td class="ValueDesc"></td>
+         </tr>
+         <tr>
+            <td colspan="3" class="ValueRowSep">
+               <p class="ValueRowSep"></p>
+            </td>
+         </tr>
+         <tr>
+            <td class="ValueVal">
+               <p class="ValueVal">0x0284</p>
+            </td>
+            <td class="ValueName">
+               <p class="ValueName">Game_OpponentTurn</p>
+            </td>
+            <td class="ValueDesc"></td>
+         </tr>
+         <tr>
+            <td colspan="3" class="ValueRowSep">
+               <p class="ValueRowSep"></p>
+            </td>
+         </tr>
+         <tr>
+            <td class="ValueVal">
+               <p class="ValueVal">0x0285</p>
+            </td>
+            <td class="ValueName">
+               <p class="ValueName">Game_OpponentStalemateState</p>
+            </td>
+            <td class="ValueDesc"></td>
+         </tr>
+         <tr>
+            <td colspan="3" class="ValueRowSep">
+               <p class="ValueRowSep"></p>
+            </td>
+         </tr>
+         <tr>
+            <td class="ValueVal">
+               <p class="ValueVal">0x0286</p>
+            </td>
+            <td class="ValueName">
+               <p class="ValueName">Character_SpellbookFilterEvent</p>
+            </td>
+            <td class="ValueDesc"></td>
+         </tr>
+         <tr>
+            <td colspan="3" class="ValueRowSep">
+               <p class="ValueRowSep"></p>
+            </td>
+         </tr>
+         <tr>
+            <td class="ValueVal">
+               <p class="ValueVal">0x028A</p>
+            </td>
+            <td class="ValueName">
+               <p class="ValueName">Communication_WeenieError</p>
+            </td>
+            <td class="ValueDesc"></td>
+         </tr>
+         <tr>
+            <td colspan="3" class="ValueRowSep">
+               <p class="ValueRowSep"></p>
+            </td>
+         </tr>
+         <tr>
+            <td class="ValueVal">
+               <p class="ValueVal">0x028B</p>
+            </td>
+            <td class="ValueName">
+               <p class="ValueName">Communication_WeenieErrorWithString</p>
+            </td>
+            <td class="ValueDesc"></td>
+         </tr>
+         <tr>
+            <td colspan="3" class="ValueRowSep">
+               <p class="ValueRowSep"></p>
+            </td>
+         </tr>
+         <tr>
+            <td class="ValueVal">
+               <p class="ValueVal">0x028C</p>
+            </td>
+            <td class="ValueName">
+               <p class="ValueName">Game_GameOver</p>
+            </td>
+            <td class="ValueDesc"></td>
+         </tr>
+         <tr>
+            <td colspan="3" class="ValueRowSep">
+               <p class="ValueRowSep"></p>
+            </td>
+         </tr>
+         <tr>
+            <td class="ValueVal">
+               <p class="ValueVal">0x028D</p>
+            </td>
+            <td class="ValueName">
+               <p class="ValueName">Character_TeleToMarketplace</p>
+            </td>
+            <td class="ValueDesc"></td>
+         </tr>
+         <tr>
+            <td colspan="3" class="ValueRowSep">
+               <p class="ValueRowSep"></p>
+            </td>
+         </tr>
+         <tr>
+            <td class="ValueVal">
+               <p class="ValueVal">0x028F</p>
+            </td>
+            <td class="ValueName">
+               <p class="ValueName">Character_EnterPKLite</p>
+            </td>
+            <td class="ValueDesc"></td>
+         </tr>
+         <tr>
+            <td colspan="3" class="ValueRowSep">
+               <p class="ValueRowSep"></p>
+            </td>
+         </tr>
+         <tr>
+            <td class="ValueVal">
+               <p class="ValueVal">0x0290</p>
+            </td>
+            <td class="ValueName">
+               <p class="ValueName">Fellowship_AssignNewLeader</p>
+            </td>
+            <td class="ValueDesc"></td>
+         </tr>
+         <tr>
+            <td colspan="3" class="ValueRowSep">
+               <p class="ValueRowSep"></p>
+            </td>
+         </tr>
+         <tr>
+            <td class="ValueVal">
+               <p class="ValueVal">0x0291</p>
+            </td>
+            <td class="ValueName">
+               <p class="ValueName">Fellowship_ChangeFellowOpeness</p>
+            </td>
+            <td class="ValueDesc"></td>
+         </tr>
+         <tr>
+            <td colspan="3" class="ValueRowSep">
+               <p class="ValueRowSep"></p>
+            </td>
+         </tr>
+         <tr>
+            <td class="ValueVal">
+               <p class="ValueVal">0x0295</p>
+            </td>
+            <td class="ValueName">
+               <p class="ValueName">Communication_ChatRoomTracker</p>
+            </td>
+            <td class="ValueDesc"></td>
+         </tr>
+         <tr>
+            <td colspan="3" class="ValueRowSep">
+               <p class="ValueRowSep"></p>
+            </td>
+         </tr>
+         <tr>
+            <td class="ValueVal">
+               <p class="ValueVal">0x02A0</p>
+            </td>
+            <td class="ValueName">
+               <p class="ValueName">Allegiance_AllegianceChatBoot</p>
+            </td>
+            <td class="ValueDesc"></td>
+         </tr>
+         <tr>
+            <td colspan="3" class="ValueRowSep">
+               <p class="ValueRowSep"></p>
+            </td>
+         </tr>
+         <tr>
+            <td class="ValueVal">
+               <p class="ValueVal">0x02A1</p>
+            </td>
+            <td class="ValueName">
+               <p class="ValueName">Allegiance_AddAllegianceBan</p>
+            </td>
+            <td class="ValueDesc"></td>
+         </tr>
+         <tr>
+            <td colspan="3" class="ValueRowSep">
+               <p class="ValueRowSep"></p>
+            </td>
+         </tr>
+         <tr>
+            <td class="ValueVal">
+               <p class="ValueVal">0x02A2</p>
+            </td>
+            <td class="ValueName">
+               <p class="ValueName">Allegiance_RemoveAllegianceBan</p>
+            </td>
+            <td class="ValueDesc"></td>
+         </tr>
+         <tr>
+            <td colspan="3" class="ValueRowSep">
+               <p class="ValueRowSep"></p>
+            </td>
+         </tr>
+         <tr>
+            <td class="ValueVal">
+               <p class="ValueVal">0x02A3</p>
+            </td>
+            <td class="ValueName">
+               <p class="ValueName">Allegiance_ListAllegianceBans</p>
+            </td>
+            <td class="ValueDesc"></td>
+         </tr>
+         <tr>
+            <td colspan="3" class="ValueRowSep">
+               <p class="ValueRowSep"></p>
+            </td>
+         </tr>
+         <tr>
+            <td class="ValueVal">
+               <p class="ValueVal">0x02A5</p>
+            </td>
+            <td class="ValueName">
+               <p class="ValueName">Allegiance_RemoveAllegianceOfficer</p>
+            </td>
+            <td class="ValueDesc"></td>
+         </tr>
+         <tr>
+            <td colspan="3" class="ValueRowSep">
+               <p class="ValueRowSep"></p>
+            </td>
+         </tr>
+         <tr>
+            <td class="ValueVal">
+               <p class="ValueVal">0x02A6</p>
+            </td>
+            <td class="ValueName">
+               <p class="ValueName">Allegiance_ListAllegianceOfficers</p>
+            </td>
+            <td class="ValueDesc"></td>
+         </tr>
+         <tr>
+            <td colspan="3" class="ValueRowSep">
+               <p class="ValueRowSep"></p>
+            </td>
+         </tr>
+         <tr>
+            <td class="ValueVal">
+               <p class="ValueVal">0x02A7</p>
+            </td>
+            <td class="ValueName">
+               <p class="ValueName">Allegiance_ClearAllegianceOfficers</p>
+            </td>
+            <td class="ValueDesc"></td>
+         </tr>
+         <tr>
+            <td colspan="3" class="ValueRowSep">
+               <p class="ValueRowSep"></p>
+            </td>
+         </tr>
+         <tr>
+            <td class="ValueVal">
+               <p class="ValueVal">0x02AB</p>
+            </td>
+            <td class="ValueName">
+               <p class="ValueName">Allegiance_RecallAllegianceHometown</p>
+            </td>
+            <td class="ValueDesc"></td>
+         </tr>
+         <tr>
+            <td colspan="3" class="ValueRowSep">
+               <p class="ValueRowSep"></p>
+            </td>
+         </tr>
+         <tr>
+            <td class="ValueVal">
+               <p class="ValueVal">0x02AE</p>
+            </td>
+            <td class="ValueName">
+               <p class="ValueName">Admin_QueryPluginList</p>
+            </td>
+            <td class="ValueDesc"></td>
+         </tr>
+         <tr>
+            <td colspan="3" class="ValueRowSep">
+               <p class="ValueRowSep"></p>
+            </td>
+         </tr>
+         <tr>
+            <td class="ValueVal">
+               <p class="ValueVal">0x02AF</p>
+            </td>
+            <td class="ValueName">
+               <p class="ValueName">Admin_QueryPluginListResponse</p>
+            </td>
+            <td class="ValueDesc"></td>
+         </tr>
+         <tr>
+            <td colspan="3" class="ValueRowSep">
+               <p class="ValueRowSep"></p>
+            </td>
+         </tr>
+         <tr>
+            <td class="ValueVal">
+               <p class="ValueVal">0x02B1</p>
+            </td>
+            <td class="ValueName">
+               <p class="ValueName">Admin_QueryPlugin</p>
+            </td>
+            <td class="ValueDesc"></td>
+         </tr>
+         <tr>
+            <td colspan="3" class="ValueRowSep">
+               <p class="ValueRowSep"></p>
+            </td>
+         </tr>
+         <tr>
+            <td class="ValueVal">
+               <p class="ValueVal">0x02B2</p>
+            </td>
+            <td class="ValueName">
+               <p class="ValueName">Admin_QueryPluginResponse</p>
+            </td>
+            <td class="ValueDesc"></td>
+         </tr>
+         <tr>
+            <td colspan="3" class="ValueRowSep">
+               <p class="ValueRowSep"></p>
+            </td>
+         </tr>
+         <tr>
+            <td class="ValueVal">
+               <p class="ValueVal">0x02B3</p>
+            </td>
+            <td class="ValueName">
+               <p class="ValueName">Admin_QueryPluginResponse</p>
+            </td>
+            <td class="ValueDesc"></td>
+         </tr>
+         <tr>
+            <td colspan="3" class="ValueRowSep">
+               <p class="ValueRowSep"></p>
+            </td>
+         </tr>
+         <tr>
+            <td class="ValueVal">
+               <p class="ValueVal">0x02B4</p>
+            </td>
+            <td class="ValueName">
+               <p class="ValueName">Inventory_SalvageOperationsResultData</p>
+            </td>
+            <td class="ValueDesc"></td>
+         </tr>
+         <tr>
+            <td colspan="3" class="ValueRowSep">
+               <p class="ValueRowSep"></p>
+            </td>
+         </tr>
+         <tr>
+            <td class="ValueVal">
+               <p class="ValueVal">0x02B8</p>
+            </td>
+            <td class="ValueName">
+               <p class="ValueName">Qualities_PrivateRemoveInt64Event</p>
+            </td>
+            <td class="ValueDesc"></td>
+         </tr>
+         <tr>
+            <td colspan="3" class="ValueRowSep">
+               <p class="ValueRowSep"></p>
+            </td>
+         </tr>
+         <tr>
+            <td class="ValueVal">
+               <p class="ValueVal">0x02B9</p>
+            </td>
+            <td class="ValueName">
+               <p class="ValueName">Qualities_RemoveInt64Event</p>
+            </td>
+            <td class="ValueDesc"></td>
+         </tr>
+         <tr>
+            <td colspan="3" class="ValueRowSep">
+               <p class="ValueRowSep"></p>
+            </td>
+         </tr>
+         <tr>
+            <td class="ValueVal">
+               <p class="ValueVal">0x02BB</p>
+            </td>
+            <td class="ValueName">
+               <p class="ValueName">Communication_HearSpeech</p>
+            </td>
+            <td class="ValueDesc"></td>
+         </tr>
+         <tr>
+            <td colspan="3" class="ValueRowSep">
+               <p class="ValueRowSep"></p>
+            </td>
+         </tr>
+         <tr>
+            <td class="ValueVal">
+               <p class="ValueVal">0x02BC</p>
+            </td>
+            <td class="ValueName">
+               <p class="ValueName">Communication_HearRangedSpeech</p>
+            </td>
+            <td class="ValueDesc"></td>
+         </tr>
+         <tr>
+            <td colspan="3" class="ValueRowSep">
+               <p class="ValueRowSep"></p>
+            </td>
+         </tr>
+         <tr>
+            <td class="ValueVal">
+               <p class="ValueVal">0x02BD</p>
+            </td>
+            <td class="ValueName">
+               <p class="ValueName">Communication_HearDirectSpeech</p>
+            </td>
+            <td class="ValueDesc"></td>
+         </tr>
+         <tr>
+            <td colspan="3" class="ValueRowSep">
+               <p class="ValueRowSep"></p>
+            </td>
+         </tr>
+         <tr>
+            <td class="ValueVal">
+               <p class="ValueVal">0x02BE</p>
+            </td>
+            <td class="ValueName">
+               <p class="ValueName">Fellowship_FullUpdate</p>
+            </td>
+            <td class="ValueDesc"></td>
+         </tr>
+         <tr>
+            <td colspan="3" class="ValueRowSep">
+               <p class="ValueRowSep"></p>
+            </td>
+         </tr>
+         <tr>
+            <td class="ValueVal">
+               <p class="ValueVal">0x02BF</p>
+            </td>
+            <td class="ValueName">
+               <p class="ValueName">Fellowship_Disband</p>
+            </td>
+            <td class="ValueDesc"></td>
+         </tr>
+         <tr>
+            <td colspan="3" class="ValueRowSep">
+               <p class="ValueRowSep"></p>
+            </td>
+         </tr>
+         <tr>
+            <td class="ValueVal">
+               <p class="ValueVal">0x02C0</p>
+            </td>
+            <td class="ValueName">
+               <p class="ValueName">Fellowship_UpdateFellow</p>
+            </td>
+            <td class="ValueDesc"></td>
+         </tr>
+         <tr>
+            <td colspan="3" class="ValueRowSep">
+               <p class="ValueRowSep"></p>
+            </td>
+         </tr>
+         <tr>
+            <td class="ValueVal">
+               <p class="ValueVal">0x02C1</p>
+            </td>
+            <td class="ValueName">
+               <p class="ValueName">Magic_UpdateSpell</p>
+            </td>
+            <td class="ValueDesc"></td>
+         </tr>
+         <tr>
+            <td colspan="3" class="ValueRowSep">
+               <p class="ValueRowSep"></p>
+            </td>
+         </tr>
+         <tr>
+            <td class="ValueVal">
+               <p class="ValueVal">0x02C2</p>
+            </td>
+            <td class="ValueName">
+               <p class="ValueName">Magic_UpdateEnchantment</p>
+            </td>
+            <td class="ValueDesc"></td>
+         </tr>
+         <tr>
+            <td colspan="3" class="ValueRowSep">
+               <p class="ValueRowSep"></p>
+            </td>
+         </tr>
+         <tr>
+            <td class="ValueVal">
+               <p class="ValueVal">0x02C3</p>
+            </td>
+            <td class="ValueName">
+               <p class="ValueName">Magic_RemoveEnchantment</p>
+            </td>
+            <td class="ValueDesc"></td>
+         </tr>
+         <tr>
+            <td colspan="3" class="ValueRowSep">
+               <p class="ValueRowSep"></p>
+            </td>
+         </tr>
+         <tr>
+            <td class="ValueVal">
+               <p class="ValueVal">0x02C4</p>
+            </td>
+            <td class="ValueName">
+               <p class="ValueName">Magic_UpdateMultipleEnchantments</p>
+            </td>
+            <td class="ValueDesc"></td>
+         </tr>
+         <tr>
+            <td colspan="3" class="ValueRowSep">
+               <p class="ValueRowSep"></p>
+            </td>
+         </tr>
+         <tr>
+            <td class="ValueVal">
+               <p class="ValueVal">0x02C5</p>
+            </td>
+            <td class="ValueName">
+               <p class="ValueName">Magic_RemoveMultipleEnchantments</p>
+            </td>
+            <td class="ValueDesc"></td>
+         </tr>
+         <tr>
+            <td colspan="3" class="ValueRowSep">
+               <p class="ValueRowSep"></p>
+            </td>
+         </tr>
+         <tr>
+            <td class="ValueVal">
+               <p class="ValueVal">0x02C6</p>
+            </td>
+            <td class="ValueName">
+               <p class="ValueName">Magic_PurgeEnchantments</p>
+            </td>
+            <td class="ValueDesc"></td>
+         </tr>
+         <tr>
+            <td colspan="3" class="ValueRowSep">
+               <p class="ValueRowSep"></p>
+            </td>
+         </tr>
+         <tr>
+            <td class="ValueVal">
+               <p class="ValueVal">0x02C7</p>
+            </td>
+            <td class="ValueName">
+               <p class="ValueName">Magic_DispelEnchantment</p>
+            </td>
+            <td class="ValueDesc"></td>
+         </tr>
+         <tr>
+            <td colspan="3" class="ValueRowSep">
+               <p class="ValueRowSep"></p>
+            </td>
+         </tr>
+         <tr>
+            <td class="ValueVal">
+               <p class="ValueVal">0x02C8</p>
+            </td>
+            <td class="ValueName">
+               <p class="ValueName">Magic_DispelMultipleEnchantments</p>
+            </td>
+            <td class="ValueDesc"></td>
+         </tr>
+         <tr>
+            <td colspan="3" class="ValueRowSep">
+               <p class="ValueRowSep"></p>
+            </td>
+         </tr>
+         <tr>
+            <td class="ValueVal">
+               <p class="ValueVal">0x02C9</p>
+            </td>
+            <td class="ValueName">
+               <p class="ValueName">Misc_PortalStormBrewing</p>
+            </td>
+            <td class="ValueDesc"></td>
+         </tr>
+         <tr>
+            <td colspan="3" class="ValueRowSep">
+               <p class="ValueRowSep"></p>
+            </td>
+         </tr>
+         <tr>
+            <td class="ValueVal">
+               <p class="ValueVal">0x02CA</p>
+            </td>
+            <td class="ValueName">
+               <p class="ValueName">Misc_PortalStormImminent</p>
+            </td>
+            <td class="ValueDesc"></td>
+         </tr>
+         <tr>
+            <td colspan="3" class="ValueRowSep">
+               <p class="ValueRowSep"></p>
+            </td>
+         </tr>
+         <tr>
+            <td class="ValueVal">
+               <p class="ValueVal">0x02CB</p>
+            </td>
+            <td class="ValueName">
+               <p class="ValueName">Misc_PortalStorm</p>
+            </td>
+            <td class="ValueDesc"></td>
+         </tr>
+         <tr>
+            <td colspan="3" class="ValueRowSep">
+               <p class="ValueRowSep"></p>
+            </td>
+         </tr>
+         <tr>
+            <td class="ValueVal">
+               <p class="ValueVal">0x02CC</p>
+            </td>
+            <td class="ValueName">
+               <p class="ValueName">Misc_PortalStormSubsided</p>
+            </td>
+            <td class="ValueDesc"></td>
+         </tr>
+         <tr>
+            <td colspan="3" class="ValueRowSep">
+               <p class="ValueRowSep"></p>
+            </td>
+         </tr>
+         <tr>
+            <td class="ValueVal">
+               <p class="ValueVal">0x02CD</p>
+            </td>
+            <td class="ValueName">
+               <p class="ValueName">Qualities_PrivateUpdateInt</p>
+            </td>
+            <td class="ValueDesc"></td>
+         </tr>
+         <tr>
+            <td colspan="3" class="ValueRowSep">
+               <p class="ValueRowSep"></p>
+            </td>
+         </tr>
+         <tr>
+            <td class="ValueVal">
+               <p class="ValueVal">0x02CE</p>
+            </td>
+            <td class="ValueName">
+               <p class="ValueName">Qualities_UpdateInt</p>
+            </td>
+            <td class="ValueDesc"></td>
+         </tr>
+         <tr>
+            <td colspan="3" class="ValueRowSep">
+               <p class="ValueRowSep"></p>
+            </td>
+         </tr>
+         <tr>
+            <td class="ValueVal">
+               <p class="ValueVal">0x02CF</p>
+            </td>
+            <td class="ValueName">
+               <p class="ValueName">Qualities_PrivateUpdateInt64</p>
+            </td>
+            <td class="ValueDesc"></td>
+         </tr>
+         <tr>
+            <td colspan="3" class="ValueRowSep">
+               <p class="ValueRowSep"></p>
+            </td>
+         </tr>
+         <tr>
+            <td class="ValueVal">
+               <p class="ValueVal">0x02D0</p>
+            </td>
+            <td class="ValueName">
+               <p class="ValueName">Qualities_UpdateInt64</p>
+            </td>
+            <td class="ValueDesc"></td>
+         </tr>
+         <tr>
+            <td colspan="3" class="ValueRowSep">
+               <p class="ValueRowSep"></p>
+            </td>
+         </tr>
+         <tr>
+            <td class="ValueVal">
+               <p class="ValueVal">0x02D1</p>
+            </td>
+            <td class="ValueName">
+               <p class="ValueName">Qualities_PrivateUpdateBool</p>
+            </td>
+            <td class="ValueDesc"></td>
+         </tr>
+         <tr>
+            <td colspan="3" class="ValueRowSep">
+               <p class="ValueRowSep"></p>
+            </td>
+         </tr>
+         <tr>
+            <td class="ValueVal">
+               <p class="ValueVal">0x02D2</p>
+            </td>
+            <td class="ValueName">
+               <p class="ValueName">Qualities_UpdateBool</p>
+            </td>
+            <td class="ValueDesc"></td>
+         </tr>
+         <tr>
+            <td colspan="3" class="ValueRowSep">
+               <p class="ValueRowSep"></p>
+            </td>
+         </tr>
+         <tr>
+            <td class="ValueVal">
+               <p class="ValueVal">0x02D3</p>
+            </td>
+            <td class="ValueName">
+               <p class="ValueName">Qualities_PrivateUpdateFloat</p>
+            </td>
+            <td class="ValueDesc"></td>
+         </tr>
+         <tr>
+            <td colspan="3" class="ValueRowSep">
+               <p class="ValueRowSep"></p>
+            </td>
+         </tr>
+         <tr>
+            <td class="ValueVal">
+               <p class="ValueVal">0x02D4</p>
+            </td>
+            <td class="ValueName">
+               <p class="ValueName">Qualities_UpdateFloat</p>
+            </td>
+            <td class="ValueDesc"></td>
+         </tr>
+         <tr>
+            <td colspan="3" class="ValueRowSep">
+               <p class="ValueRowSep"></p>
+            </td>
+         </tr>
+         <tr>
+            <td class="ValueVal">
+               <p class="ValueVal">0x02D5</p>
+            </td>
+            <td class="ValueName">
+               <p class="ValueName">Qualities_PrivateUpdateString</p>
+            </td>
+            <td class="ValueDesc"></td>
+         </tr>
+         <tr>
+            <td colspan="3" class="ValueRowSep">
+               <p class="ValueRowSep"></p>
+            </td>
+         </tr>
+         <tr>
+            <td class="ValueVal">
+               <p class="ValueVal">0x02D6</p>
+            </td>
+            <td class="ValueName">
+               <p class="ValueName">Qualities_UpdateString</p>
+            </td>
+            <td class="ValueDesc"></td>
+         </tr>
+         <tr>
+            <td colspan="3" class="ValueRowSep">
+               <p class="ValueRowSep"></p>
+            </td>
+         </tr>
+         <tr>
+            <td class="ValueVal">
+               <p class="ValueVal">0x02D7</p>
+            </td>
+            <td class="ValueName">
+               <p class="ValueName">Qualities_PrivateUpdateDataID</p>
+            </td>
+            <td class="ValueDesc"></td>
+         </tr>
+         <tr>
+            <td colspan="3" class="ValueRowSep">
+               <p class="ValueRowSep"></p>
+            </td>
+         </tr>
+         <tr>
+            <td class="ValueVal">
+               <p class="ValueVal">0x02D8</p>
+            </td>
+            <td class="ValueName">
+               <p class="ValueName">Qualities_UpdateDataID</p>
+            </td>
+            <td class="ValueDesc"></td>
+         </tr>
+         <tr>
+            <td colspan="3" class="ValueRowSep">
+               <p class="ValueRowSep"></p>
+            </td>
+         </tr>
+         <tr>
+            <td class="ValueVal">
+               <p class="ValueVal">0x02D9</p>
+            </td>
+            <td class="ValueName">
+               <p class="ValueName">Qualities_PrivateUpdateInstanceID</p>
+            </td>
+            <td class="ValueDesc"></td>
+         </tr>
+         <tr>
+            <td colspan="3" class="ValueRowSep">
+               <p class="ValueRowSep"></p>
+            </td>
+         </tr>
+         <tr>
+            <td class="ValueVal">
+               <p class="ValueVal">0x02DA</p>
+            </td>
+            <td class="ValueName">
+               <p class="ValueName">Qualities_UpdateInstanceID</p>
+            </td>
+            <td class="ValueDesc"></td>
+         </tr>
+         <tr>
+            <td colspan="3" class="ValueRowSep">
+               <p class="ValueRowSep"></p>
+            </td>
+         </tr>
+         <tr>
+            <td class="ValueVal">
+               <p class="ValueVal">0x02DB</p>
+            </td>
+            <td class="ValueName">
+               <p class="ValueName">Qualities_PrivateUpdatePosition</p>
+            </td>
+            <td class="ValueDesc"></td>
+         </tr>
+         <tr>
+            <td colspan="3" class="ValueRowSep">
+               <p class="ValueRowSep"></p>
+            </td>
+         </tr>
+         <tr>
+            <td class="ValueVal">
+               <p class="ValueVal">0x02DC</p>
+            </td>
+            <td class="ValueName">
+               <p class="ValueName">Qualities_UpdatePosition</p>
+            </td>
+            <td class="ValueDesc"></td>
+         </tr>
+         <tr>
+            <td colspan="3" class="ValueRowSep">
+               <p class="ValueRowSep"></p>
+            </td>
+         </tr>
+         <tr>
+            <td class="ValueVal">
+               <p class="ValueVal">0x02DD</p>
+            </td>
+            <td class="ValueName">
+               <p class="ValueName">Qualities_PrivateUpdateSkill</p>
+            </td>
+            <td class="ValueDesc"></td>
+         </tr>
+         <tr>
+            <td colspan="3" class="ValueRowSep">
+               <p class="ValueRowSep"></p>
+            </td>
+         </tr>
+         <tr>
+            <td class="ValueVal">
+               <p class="ValueVal">0x02DE</p>
+            </td>
+            <td class="ValueName">
+               <p class="ValueName">Qualities_UpdateSkill</p>
+            </td>
+            <td class="ValueDesc"></td>
+         </tr>
+         <tr>
+            <td colspan="3" class="ValueRowSep">
+               <p class="ValueRowSep"></p>
+            </td>
+         </tr>
+         <tr>
+            <td class="ValueVal">
+               <p class="ValueVal">0x02DF</p>
+            </td>
+            <td class="ValueName">
+               <p class="ValueName">Qualities_PrivateUpdateSkillLevel</p>
+            </td>
+            <td class="ValueDesc"></td>
+         </tr>
+         <tr>
+            <td colspan="3" class="ValueRowSep">
+               <p class="ValueRowSep"></p>
+            </td>
+         </tr>
+         <tr>
+            <td class="ValueVal">
+               <p class="ValueVal">0x02E0</p>
+            </td>
+            <td class="ValueName">
+               <p class="ValueName">Qualities_UpdateSkillLevel</p>
+            </td>
+            <td class="ValueDesc"></td>
+         </tr>
+         <tr>
+            <td colspan="3" class="ValueRowSep">
+               <p class="ValueRowSep"></p>
+            </td>
+         </tr>
+         <tr>
+            <td class="ValueVal">
+               <p class="ValueVal">0x02E1</p>
+            </td>
+            <td class="ValueName">
+               <p class="ValueName">Qualities_PrivateUpdateSkillAC</p>
+            </td>
+            <td class="ValueDesc"></td>
+         </tr>
+         <tr>
+            <td colspan="3" class="ValueRowSep">
+               <p class="ValueRowSep"></p>
+            </td>
+         </tr>
+         <tr>
+            <td class="ValueVal">
+               <p class="ValueVal">0x02E2</p>
+            </td>
+            <td class="ValueName">
+               <p class="ValueName">Qualities_UpdateSkillAC</p>
+            </td>
+            <td class="ValueDesc"></td>
+         </tr>
+         <tr>
+            <td colspan="3" class="ValueRowSep">
+               <p class="ValueRowSep"></p>
+            </td>
+         </tr>
+         <tr>
+            <td class="ValueVal">
+               <p class="ValueVal">0x02E3</p>
+            </td>
+            <td class="ValueName">
+               <p class="ValueName">Qualities_PrivateUpdateAttribute</p>
+            </td>
+            <td class="ValueDesc"></td>
+         </tr>
+         <tr>
+            <td colspan="3" class="ValueRowSep">
+               <p class="ValueRowSep"></p>
+            </td>
+         </tr>
+         <tr>
+            <td class="ValueVal">
+               <p class="ValueVal">0x02E4</p>
+            </td>
+            <td class="ValueName">
+               <p class="ValueName">Qualities_UpdateAttribute</p>
+            </td>
+            <td class="ValueDesc"></td>
+         </tr>
+         <tr>
+            <td colspan="3" class="ValueRowSep">
+               <p class="ValueRowSep"></p>
+            </td>
+         </tr>
+         <tr>
+            <td class="ValueVal">
+               <p class="ValueVal">0x02E5</p>
+            </td>
+            <td class="ValueName">
+               <p class="ValueName">Qualities_PrivateUpdateAttributeLevel</p>
+            </td>
+            <td class="ValueDesc"></td>
+         </tr>
+         <tr>
+            <td colspan="3" class="ValueRowSep">
+               <p class="ValueRowSep"></p>
+            </td>
+         </tr>
+         <tr>
+            <td class="ValueVal">
+               <p class="ValueVal">0x02E6</p>
+            </td>
+            <td class="ValueName">
+               <p class="ValueName">Qualities_UpdateAttributeLevel</p>
+            </td>
+            <td class="ValueDesc"></td>
+         </tr>
+         <tr>
+            <td colspan="3" class="ValueRowSep">
+               <p class="ValueRowSep"></p>
+            </td>
+         </tr>
+         <tr>
+            <td class="ValueVal">
+               <p class="ValueVal">0x02E7</p>
+            </td>
+            <td class="ValueName">
+               <p class="ValueName">Qualities_PrivateUpdateAttribute2nd</p>
+            </td>
+            <td class="ValueDesc"></td>
+         </tr>
+         <tr>
+            <td colspan="3" class="ValueRowSep">
+               <p class="ValueRowSep"></p>
+            </td>
+         </tr>
+         <tr>
+            <td class="ValueVal">
+               <p class="ValueVal">0x02E8</p>
+            </td>
+            <td class="ValueName">
+               <p class="ValueName">Qualities_UpdateAttribute2nd</p>
+            </td>
+            <td class="ValueDesc"></td>
+         </tr>
+         <tr>
+            <td colspan="3" class="ValueRowSep">
+               <p class="ValueRowSep"></p>
+            </td>
+         </tr>
+         <tr>
+            <td class="ValueVal">
+               <p class="ValueVal">0x02E9</p>
+            </td>
+            <td class="ValueName">
+               <p class="ValueName">Qualities_PrivateUpdateAttribute2ndLevel</p>
+            </td>
+            <td class="ValueDesc"></td>
+         </tr>
+         <tr>
+            <td colspan="3" class="ValueRowSep">
+               <p class="ValueRowSep"></p>
+            </td>
+         </tr>
+         <tr>
+            <td class="ValueVal">
+               <p class="ValueVal">0x02EA</p>
+            </td>
+            <td class="ValueName">
+               <p class="ValueName">Qualities_UpdateAttribute2ndLevel</p>
+            </td>
+            <td class="ValueDesc"></td>
+         </tr>
+         <tr>
+            <td colspan="3" class="ValueRowSep">
+               <p class="ValueRowSep"></p>
+            </td>
+         </tr>
+         <tr>
+            <td class="ValueVal">
+               <p class="ValueVal">0x02EB</p>
+            </td>
+            <td class="ValueName">
+               <p class="ValueName">Communication_TransientString</p>
+            </td>
+            <td class="ValueDesc"></td>
+         </tr>
+         <tr>
+            <td colspan="3" class="ValueRowSep">
+               <p class="ValueRowSep"></p>
+            </td>
+         </tr>
+         <tr>
+            <td class="ValueVal">
+               <p class="ValueVal">0x0311</p>
+            </td>
+            <td class="ValueName">
+               <p class="ValueName">Character_FinishBarber</p>
+            </td>
+            <td class="ValueDesc"></td>
+         </tr>
+         <tr>
+            <td colspan="3" class="ValueRowSep">
+               <p class="ValueRowSep"></p>
+            </td>
+         </tr>
+         <tr>
+            <td class="ValueVal">
+               <p class="ValueVal">0x0312</p>
+            </td>
+            <td class="ValueName">
+               <p class="ValueName">Magic_PurgeBadEnchantments</p>
+            </td>
+            <td class="ValueDesc"></td>
+         </tr>
+         <tr>
+            <td colspan="3" class="ValueRowSep">
+               <p class="ValueRowSep"></p>
+            </td>
+         </tr>
+         <tr>
+            <td class="ValueVal">
+               <p class="ValueVal">0x0314</p>
+            </td>
+            <td class="ValueName">
+               <p class="ValueName">Social_SendClientContractTrackerTable</p>
+            </td>
+            <td class="ValueDesc"></td>
+         </tr>
+         <tr>
+            <td colspan="3" class="ValueRowSep">
+               <p class="ValueRowSep"></p>
+            </td>
+         </tr>
+         <tr>
+            <td class="ValueVal">
+               <p class="ValueVal">0x0315</p>
+            </td>
+            <td class="ValueName">
+               <p class="ValueName">Social_SendClientContractTracker</p>
+            </td>
+            <td class="ValueDesc"></td>
+         </tr>
+         <tr>
+            <td colspan="3" class="ValueRowSep">
+               <p class="ValueRowSep"></p>
+            </td>
+         </tr>
+         <tr>
+            <td class="ValueVal">
+               <p class="ValueVal">0x0316</p>
+            </td>
+            <td class="ValueName">
+               <p class="ValueName">Social_AbandonContract</p>
+            </td>
+            <td class="ValueDesc"></td>
+         </tr>
+         <tr>
+            <td colspan="3" class="ValueRowSep">
+               <p class="ValueRowSep"></p>
+            </td>
+         </tr>
+         <tr>
+            <td class="ValueVal">
+               <p class="ValueVal">0xEA60</p>
+            </td>
+            <td class="ValueName">
+               <p class="ValueName">Admin_Environs</p>
+            </td>
+            <td class="ValueDesc"></td>
+         </tr>
+         <tr>
+            <td colspan="3" class="ValueRowSep">
+               <p class="ValueRowSep"></p>
+            </td>
+         </tr>
+         <tr>
+            <td class="ValueVal">
+               <p class="ValueVal">0xF619</p>
+            </td>
+            <td class="ValueName">
+               <p class="ValueName">Movement_PositionAndMovementEvent</p>
+            </td>
+            <td class="ValueDesc"></td>
+         </tr>
+         <tr>
+            <td colspan="3" class="ValueRowSep">
+               <p class="ValueRowSep"></p>
+            </td>
+         </tr>
+         <tr>
+            <td class="ValueVal">
+               <p class="ValueVal">0xF61B</p>
+            </td>
+            <td class="ValueName">
+               <p class="ValueName">Movement_Jump</p>
+            </td>
+            <td class="ValueDesc"></td>
+         </tr>
+         <tr>
+            <td colspan="3" class="ValueRowSep">
+               <p class="ValueRowSep"></p>
+            </td>
+         </tr>
+         <tr>
+            <td class="ValueVal">
+               <p class="ValueVal">0xF61C</p>
+            </td>
+            <td class="ValueName">
+               <p class="ValueName">Movement_MoveToState</p>
+            </td>
+            <td class="ValueDesc"></td>
+         </tr>
+         <tr>
+            <td colspan="3" class="ValueRowSep">
+               <p class="ValueRowSep"></p>
+            </td>
+         </tr>
+         <tr>
+            <td class="ValueVal">
+               <p class="ValueVal">0xF61E</p>
+            </td>
+            <td class="ValueName">
+               <p class="ValueName">Movement_DoMovementCommand</p>
+            </td>
+            <td class="ValueDesc"></td>
+         </tr>
+         <tr>
+            <td colspan="3" class="ValueRowSep">
+               <p class="ValueRowSep"></p>
+            </td>
+         </tr>
+         <tr>
+            <td class="ValueVal">
+               <p class="ValueVal">0xF625</p>
+            </td>
+            <td class="ValueName">
+               <p class="ValueName">Item_ObjDescEvent</p>
+            </td>
+            <td class="ValueDesc"></td>
+         </tr>
+         <tr>
+            <td colspan="3" class="ValueRowSep">
+               <p class="ValueRowSep"></p>
+            </td>
+         </tr>
+         <tr>
+            <td class="ValueVal">
+               <p class="ValueVal">0xF630</p>
+            </td>
+            <td class="ValueName">
+               <p class="ValueName">Character_SetPlayerVisualDesc</p>
+            </td>
+            <td class="ValueDesc"></td>
+         </tr>
+         <tr>
+            <td colspan="3" class="ValueRowSep">
+               <p class="ValueRowSep"></p>
+            </td>
+         </tr>
+         <tr>
+            <td class="ValueVal">
+               <p class="ValueVal">0xF643</p>
+            </td>
+            <td class="ValueName">
+               <p class="ValueName">Character_CharGenVerificationResponse</p>
+            </td>
+            <td class="ValueDesc"></td>
+         </tr>
+         <tr>
+            <td colspan="3" class="ValueRowSep">
+               <p class="ValueRowSep"></p>
+            </td>
+         </tr>
+         <tr>
+            <td class="ValueVal">
+               <p class="ValueVal">0xF649</p>
+            </td>
+            <td class="ValueName">
+               <p class="ValueName">Movement_TurnToEvent</p>
+            </td>
+            <td class="ValueDesc"></td>
+         </tr>
+         <tr>
+            <td colspan="3" class="ValueRowSep">
+               <p class="ValueRowSep"></p>
+            </td>
+         </tr>
+         <tr>
+            <td class="ValueVal">
+               <p class="ValueVal">0xF651</p>
+            </td>
+            <td class="ValueName">
+               <p class="ValueName">Login_AwaitingSubscriptionExpiration</p>
+            </td>
+            <td class="ValueDesc"></td>
+         </tr>
+         <tr>
+            <td colspan="3" class="ValueRowSep">
+               <p class="ValueRowSep"></p>
+            </td>
+         </tr>
+         <tr>
+            <td class="ValueVal">
+               <p class="ValueVal">0xF653</p>
+            </td>
+            <td class="ValueName">
+               <p class="ValueName">Login_LogOffCharacter</p>
+            </td>
+            <td class="ValueDesc"></td>
+         </tr>
+         <tr>
+            <td colspan="3" class="ValueRowSep">
+               <p class="ValueRowSep"></p>
+            </td>
+         </tr>
+         <tr>
+            <td class="ValueVal">
+               <p class="ValueVal">0xF653</p>
+            </td>
+            <td class="ValueName">
+               <p class="ValueName">Login_ExecuteLogOff</p>
+            </td>
+            <td class="ValueDesc"></td>
+         </tr>
+         <tr>
+            <td colspan="3" class="ValueRowSep">
+               <p class="ValueRowSep"></p>
+            </td>
+         </tr>
+         <tr>
+            <td class="ValueVal">
+               <p class="ValueVal">0xF655</p>
+            </td>
+            <td class="ValueName">
+               <p class="ValueName">Character_CharacterDelete</p>
+            </td>
+            <td class="ValueDesc"></td>
+         </tr>
+         <tr>
+            <td colspan="3" class="ValueRowSep">
+               <p class="ValueRowSep"></p>
+            </td>
+         </tr>
+         <tr>
+            <td class="ValueVal">
+               <p class="ValueVal">0xF655</p>
+            </td>
+            <td class="ValueName">
+               <p class="ValueName">Character_CharacterDelete</p>
+            </td>
+            <td class="ValueDesc"></td>
+         </tr>
+         <tr>
+            <td colspan="3" class="ValueRowSep">
+               <p class="ValueRowSep"></p>
+            </td>
+         </tr>
+         <tr>
+            <td class="ValueVal">
+               <p class="ValueVal">0xF656</p>
+            </td>
+            <td class="ValueName">
+               <p class="ValueName">Character_SendCharGenResult</p>
+            </td>
+            <td class="ValueDesc"></td>
+         </tr>
+         <tr>
+            <td colspan="3" class="ValueRowSep">
+               <p class="ValueRowSep"></p>
+            </td>
+         </tr>
+         <tr>
+            <td class="ValueVal">
+               <p class="ValueVal">0xF657</p>
+            </td>
+            <td class="ValueName">
+               <p class="ValueName">Login_SendEnterWorld</p>
+            </td>
+            <td class="ValueDesc"></td>
+         </tr>
+         <tr>
+            <td colspan="3" class="ValueRowSep">
+               <p class="ValueRowSep"></p>
+            </td>
+         </tr>
+         <tr>
+            <td class="ValueVal">
+               <p class="ValueVal">0xF658</p>
+            </td>
+            <td class="ValueName">
+               <p class="ValueName">Login_LoginCharacterSet</p>
+            </td>
+            <td class="ValueDesc"></td>
+         </tr>
+         <tr>
+            <td colspan="3" class="ValueRowSep">
+               <p class="ValueRowSep"></p>
+            </td>
+         </tr>
+         <tr>
+            <td class="ValueVal">
+               <p class="ValueVal">0xF659</p>
+            </td>
+            <td class="ValueName">
+               <p class="ValueName">Character_CharacterError</p>
+            </td>
+            <td class="ValueDesc"></td>
+         </tr>
+         <tr>
+            <td colspan="3" class="ValueRowSep">
+               <p class="ValueRowSep"></p>
+            </td>
+         </tr>
+         <tr>
+            <td class="ValueVal">
+               <p class="ValueVal">0xF661</p>
+            </td>
+            <td class="ValueName">
+               <p class="ValueName">Movement_StopMovementCommand</p>
+            </td>
+            <td class="ValueDesc"></td>
+         </tr>
+         <tr>
+            <td colspan="3" class="ValueRowSep">
+               <p class="ValueRowSep"></p>
+            </td>
+         </tr>
+         <tr>
+            <td class="ValueVal">
+               <p class="ValueVal">0xF6EA</p>
+            </td>
+            <td class="ValueName">
+               <p class="ValueName">Object_SendForceObjdesc</p>
+            </td>
+            <td class="ValueDesc"></td>
+         </tr>
+         <tr>
+            <td colspan="3" class="ValueRowSep">
+               <p class="ValueRowSep"></p>
+            </td>
+         </tr>
+         <tr>
+            <td class="ValueVal">
+               <p class="ValueVal">0xF745</p>
+            </td>
+            <td class="ValueName">
+               <p class="ValueName">Item_CreateObject</p>
+            </td>
+            <td class="ValueDesc"></td>
+         </tr>
+         <tr>
+            <td colspan="3" class="ValueRowSep">
+               <p class="ValueRowSep"></p>
+            </td>
+         </tr>
+         <tr>
+            <td class="ValueVal">
+               <p class="ValueVal">0xF746</p>
+            </td>
+            <td class="ValueName">
+               <p class="ValueName">Login_CreatePlayer</p>
+            </td>
+            <td class="ValueDesc"></td>
+         </tr>
+         <tr>
+            <td colspan="3" class="ValueRowSep">
+               <p class="ValueRowSep"></p>
+            </td>
+         </tr>
+         <tr>
+            <td class="ValueVal">
+               <p class="ValueVal">0xF747</p>
+            </td>
+            <td class="ValueName">
+               <p class="ValueName">Item_DeleteObject</p>
+            </td>
+            <td class="ValueDesc"></td>
+         </tr>
+         <tr>
+            <td colspan="3" class="ValueRowSep">
+               <p class="ValueRowSep"></p>
+            </td>
+         </tr>
+         <tr>
+            <td class="ValueVal">
+               <p class="ValueVal">0xF748</p>
+            </td>
+            <td class="ValueName">
+               <p class="ValueName">Movement_PositionEvent</p>
+            </td>
+            <td class="ValueDesc"></td>
+         </tr>
+         <tr>
+            <td colspan="3" class="ValueRowSep">
+               <p class="ValueRowSep"></p>
+            </td>
+         </tr>
+         <tr>
+            <td class="ValueVal">
+               <p class="ValueVal">0xF749</p>
+            </td>
+            <td class="ValueName">
+               <p class="ValueName">Item_ParentEvent</p>
+            </td>
+            <td class="ValueDesc"></td>
+         </tr>
+         <tr>
+            <td colspan="3" class="ValueRowSep">
+               <p class="ValueRowSep"></p>
+            </td>
+         </tr>
+         <tr>
+            <td class="ValueVal">
+               <p class="ValueVal">0xF74A</p>
+            </td>
+            <td class="ValueName">
+               <p class="ValueName">Inventory_PickupEvent</p>
+            </td>
+            <td class="ValueDesc"></td>
+         </tr>
+         <tr>
+            <td colspan="3" class="ValueRowSep">
+               <p class="ValueRowSep"></p>
+            </td>
+         </tr>
+         <tr>
+            <td class="ValueVal">
+               <p class="ValueVal">0xF74B</p>
+            </td>
+            <td class="ValueName">
+               <p class="ValueName">Item_SetState</p>
+            </td>
+            <td class="ValueDesc"></td>
+         </tr>
+         <tr>
+            <td colspan="3" class="ValueRowSep">
+               <p class="ValueRowSep"></p>
+            </td>
+         </tr>
+         <tr>
+            <td class="ValueVal">
+               <p class="ValueVal">0xF74C</p>
+            </td>
+            <td class="ValueName">
+               <p class="ValueName">Movement_SetObjectMovement</p>
+            </td>
+            <td class="ValueDesc"></td>
+         </tr>
+         <tr>
+            <td colspan="3" class="ValueRowSep">
+               <p class="ValueRowSep"></p>
+            </td>
+         </tr>
+         <tr>
+            <td class="ValueVal">
+               <p class="ValueVal">0xF74E</p>
+            </td>
+            <td class="ValueName">
+               <p class="ValueName">Movement_VectorUpdate</p>
+            </td>
+            <td class="ValueDesc"></td>
+         </tr>
+         <tr>
+            <td colspan="3" class="ValueRowSep">
+               <p class="ValueRowSep"></p>
+            </td>
+         </tr>
+         <tr>
+            <td class="ValueVal">
+               <p class="ValueVal">0xF750</p>
+            </td>
+            <td class="ValueName">
+               <p class="ValueName">Effects_SoundEvent</p>
+            </td>
+            <td class="ValueDesc"></td>
+         </tr>
+         <tr>
+            <td colspan="3" class="ValueRowSep">
+               <p class="ValueRowSep"></p>
+            </td>
+         </tr>
+         <tr>
+            <td class="ValueVal">
+               <p class="ValueVal">0xF751</p>
+            </td>
+            <td class="ValueName">
+               <p class="ValueName">Effects_PlayerTeleport</p>
+            </td>
+            <td class="ValueDesc"></td>
+         </tr>
+         <tr>
+            <td colspan="3" class="ValueRowSep">
+               <p class="ValueRowSep"></p>
+            </td>
+         </tr>
+         <tr>
+            <td class="ValueVal">
+               <p class="ValueVal">0xF752</p>
+            </td>
+            <td class="ValueName">
+               <p class="ValueName">Movement_AutonomyLevel</p>
+            </td>
+            <td class="ValueDesc"></td>
+         </tr>
+         <tr>
+            <td colspan="3" class="ValueRowSep">
+               <p class="ValueRowSep"></p>
+            </td>
+         </tr>
+         <tr>
+            <td class="ValueVal">
+               <p class="ValueVal">0xF753</p>
+            </td>
+            <td class="ValueName">
+               <p class="ValueName">Movement_AutonomousPosition</p>
+            </td>
+            <td class="ValueDesc"></td>
+         </tr>
+         <tr>
+            <td colspan="3" class="ValueRowSep">
+               <p class="ValueRowSep"></p>
+            </td>
+         </tr>
+         <tr>
+            <td class="ValueVal">
+               <p class="ValueVal">0xF754</p>
+            </td>
+            <td class="ValueName">
+               <p class="ValueName">Effects_PlayScriptID</p>
+            </td>
+            <td class="ValueDesc"></td>
+         </tr>
+         <tr>
+            <td colspan="3" class="ValueRowSep">
+               <p class="ValueRowSep"></p>
+            </td>
+         </tr>
+         <tr>
+            <td class="ValueVal">
+               <p class="ValueVal">0xF755</p>
+            </td>
+            <td class="ValueName">
+               <p class="ValueName">Effects_PlayScriptType</p>
+            </td>
+            <td class="ValueDesc"></td>
+         </tr>
+         <tr>
+            <td colspan="3" class="ValueRowSep">
+               <p class="ValueRowSep"></p>
+            </td>
+         </tr>
+         <tr>
+            <td class="ValueVal">
+               <p class="ValueVal">0xF7B0</p>
+            </td>
+            <td class="ValueName">
+               <p class="ValueName">Network_WOrderHdr</p>
+            </td>
+            <td class="ValueDesc"></td>
+         </tr>
+         <tr>
+            <td colspan="3" class="ValueRowSep">
+               <p class="ValueRowSep"></p>
+            </td>
+         </tr>
+         <tr>
+            <td class="ValueVal">
+               <p class="ValueVal">0xF7B1</p>
+            </td>
+            <td class="ValueName">
+               <p class="ValueName">Network_OrderHdr</p>
+            </td>
+            <td class="ValueDesc"></td>
+         </tr>
+         <tr>
+            <td colspan="3" class="ValueRowSep">
+               <p class="ValueRowSep"></p>
+            </td>
+         </tr>
+         <tr>
+            <td class="ValueVal">
+               <p class="ValueVal">0xF7C1</p>
+            </td>
+            <td class="ValueName">
+               <p class="ValueName">Login_AccountBanned</p>
+            </td>
+            <td class="ValueDesc"></td>
+         </tr>
+         <tr>
+            <td colspan="3" class="ValueRowSep">
+               <p class="ValueRowSep"></p>
+            </td>
+         </tr>
+         <tr>
+            <td class="ValueVal">
+               <p class="ValueVal">0xF7C8</p>
+            </td>
+            <td class="ValueName">
+               <p class="ValueName">Login_SendEnterWorldRequest</p>
+            </td>
+            <td class="ValueDesc"></td>
+         </tr>
+         <tr>
+            <td colspan="3" class="ValueRowSep">
+               <p class="ValueRowSep"></p>
+            </td>
+         </tr>
+         <tr>
+            <td class="ValueVal">
+               <p class="ValueVal">0xF7C9</p>
+            </td>
+            <td class="ValueName">
+               <p class="ValueName">Movement_Jump_NonAutonomous</p>
+            </td>
+            <td class="ValueDesc"></td>
+         </tr>
+         <tr>
+            <td colspan="3" class="ValueRowSep">
+               <p class="ValueRowSep"></p>
+            </td>
+         </tr>
+         <tr>
+            <td class="ValueVal">
+               <p class="ValueVal">0xF7CA</p>
+            </td>
+            <td class="ValueName">
+               <p class="ValueName">Admin_ReceiveAccountData</p>
+            </td>
+            <td class="ValueDesc"></td>
+         </tr>
+         <tr>
+            <td colspan="3" class="ValueRowSep">
+               <p class="ValueRowSep"></p>
+            </td>
+         </tr>
+         <tr>
+            <td class="ValueVal">
+               <p class="ValueVal">0xF7CB</p>
+            </td>
+            <td class="ValueName">
+               <p class="ValueName">Admin_ReceivePlayerData</p>
+            </td>
+            <td class="ValueDesc"></td>
+         </tr>
+         <tr>
+            <td colspan="3" class="ValueRowSep">
+               <p class="ValueRowSep"></p>
+            </td>
+         </tr>
+         <tr>
+            <td class="ValueVal">
+               <p class="ValueVal">0xF7CC</p>
+            </td>
+            <td class="ValueName">
+               <p class="ValueName">Admin_SendAdminGetServerVersion</p>
+            </td>
+            <td class="ValueDesc"></td>
+         </tr>
+         <tr>
+            <td colspan="3" class="ValueRowSep">
+               <p class="ValueRowSep"></p>
+            </td>
+         </tr>
+         <tr>
+            <td class="ValueVal">
+               <p class="ValueVal">0xF7CD</p>
+            </td>
+            <td class="ValueName">
+               <p class="ValueName">Social_SendFriendsCommand</p>
+            </td>
+            <td class="ValueDesc"></td>
+         </tr>
+         <tr>
+            <td colspan="3" class="ValueRowSep">
+               <p class="ValueRowSep"></p>
+            </td>
+         </tr>
+         <tr>
+            <td class="ValueVal">
+               <p class="ValueVal">0xF7D9</p>
+            </td>
+            <td class="ValueName">
+               <p class="ValueName">Admin_SendAdminRestoreCharacter</p>
+            </td>
+            <td class="ValueDesc"></td>
+         </tr>
+         <tr>
+            <td colspan="3" class="ValueRowSep">
+               <p class="ValueRowSep"></p>
+            </td>
+         </tr>
+         <tr>
+            <td class="ValueVal">
+               <p class="ValueVal">0xF7DB</p>
+            </td>
+            <td class="ValueName">
+               <p class="ValueName">Item_UpdateObject</p>
+            </td>
+            <td class="ValueDesc"></td>
+         </tr>
+         <tr>
+            <td colspan="3" class="ValueRowSep">
+               <p class="ValueRowSep"></p>
+            </td>
+         </tr>
+         <tr>
+            <td class="ValueVal">
+               <p class="ValueVal">0xF7DC</p>
+            </td>
+            <td class="ValueName">
+               <p class="ValueName">Login_AccountBooted</p>
+            </td>
+            <td class="ValueDesc"></td>
+         </tr>
+         <tr>
+            <td colspan="3" class="ValueRowSep">
+               <p class="ValueRowSep"></p>
+            </td>
+         </tr>
+         <tr>
+            <td class="ValueVal">
+               <p class="ValueVal">0xF7DE</p>
+            </td>
+            <td class="ValueName">
+               <p class="ValueName">Communication_TurbineChat</p>
+            </td>
+            <td class="ValueDesc"></td>
+         </tr>
+         <tr>
+            <td colspan="3" class="ValueRowSep">
+               <p class="ValueRowSep"></p>
+            </td>
+         </tr>
+         <tr>
+            <td class="ValueVal">
+               <p class="ValueVal">0xF7DF</p>
+            </td>
+            <td class="ValueName">
+               <p class="ValueName">Login_EnterGame_ServerReady</p>
+            </td>
+            <td class="ValueDesc"></td>
+         </tr>
+         <tr>
+            <td colspan="3" class="ValueRowSep">
+               <p class="ValueRowSep"></p>
+            </td>
+         </tr>
+         <tr>
+            <td class="ValueVal">
+               <p class="ValueVal">0xF7E0</p>
+            </td>
+            <td class="ValueName">
+               <p class="ValueName">Communication_TextboxString</p>
+            </td>
+            <td class="ValueDesc"></td>
+         </tr>
+         <tr>
+            <td colspan="3" class="ValueRowSep">
+               <p class="ValueRowSep"></p>
+            </td>
+         </tr>
+         <tr>
+            <td class="ValueVal">
+               <p class="ValueVal">0xF7E1</p>
+            </td>
+            <td class="ValueName">
+               <p class="ValueName">Login_WorldInfo</p>
+            </td>
+            <td class="ValueDesc"></td>
+         </tr>
+         <tr>
+            <td colspan="3" class="ValueRowSep">
+               <p class="ValueRowSep"></p>
+            </td>
+         </tr>
+         <tr>
+            <td class="ValueVal">
+               <p class="ValueVal">0xF7E2</p>
+            </td>
+            <td class="ValueName">
+               <p class="ValueName">DDD_DataMessage</p>
+            </td>
+            <td class="ValueDesc"></td>
+         </tr>
+         <tr>
+            <td colspan="3" class="ValueRowSep">
+               <p class="ValueRowSep"></p>
+            </td>
+         </tr>
+         <tr>
+            <td class="ValueVal">
+               <p class="ValueVal">0xF7E3</p>
+            </td>
+            <td class="ValueName">
+               <p class="ValueName">DDD_RequestDataMessage</p>
+            </td>
+            <td class="ValueDesc"></td>
+         </tr>
+         <tr>
+            <td colspan="3" class="ValueRowSep">
+               <p class="ValueRowSep"></p>
+            </td>
+         </tr>
+         <tr>
+            <td class="ValueVal">
+               <p class="ValueVal">0xF7E4</p>
+            </td>
+            <td class="ValueName">
+               <p class="ValueName">DDD_ErrorMessage</p>
+            </td>
+            <td class="ValueDesc"></td>
+         </tr>
+         <tr>
+            <td colspan="3" class="ValueRowSep">
+               <p class="ValueRowSep"></p>
+            </td>
+         </tr>
+         <tr>
+            <td class="ValueVal">
+               <p class="ValueVal">0xF7E5</p>
+            </td>
+            <td class="ValueName">
+               <p class="ValueName">DDD_InterrogationMessage</p>
+            </td>
+            <td class="ValueDesc"></td>
+         </tr>
+         <tr>
+            <td colspan="3" class="ValueRowSep">
+               <p class="ValueRowSep"></p>
+            </td>
+         </tr>
+         <tr>
+            <td class="ValueVal">
+               <p class="ValueVal">0xF7E6</p>
+            </td>
+            <td class="ValueName">
+               <p class="ValueName">DDD_InterrogationResponseMessage</p>
+            </td>
+            <td class="ValueDesc"></td>
+         </tr>
+         <tr>
+            <td colspan="3" class="ValueRowSep">
+               <p class="ValueRowSep"></p>
+            </td>
+         </tr>
+         <tr>
+            <td class="ValueVal">
+               <p class="ValueVal">0xF7E7</p>
+            </td>
+            <td class="ValueName">
+               <p class="ValueName">DDD_BeginDDDMessage</p>
+            </td>
+            <td class="ValueDesc"></td>
+         </tr>
+         <tr>
+            <td colspan="3" class="ValueRowSep">
+               <p class="ValueRowSep"></p>
+            </td>
+         </tr>
+         <tr>
+            <td class="ValueVal">
+               <p class="ValueVal">0xF7EA</p>
+            </td>
+            <td class="ValueName">
+               <p class="ValueName">DDD_OnEndDDD</p>
+            </td>
+            <td class="ValueDesc"></td>
+         </tr>
+         <tr>
+            <td colspan="3" class="ValueRowSep">
+               <p class="ValueRowSep"></p>
+            </td>
+         </tr>
+         <tr>
+            <td class="ValueVal">
+               <p class="ValueVal">0xF7EB</p>
+            </td>
+            <td class="ValueName">
+               <p class="ValueName">DDD_EndDDDMessage</p>
+            </td>
+            <td class="ValueDesc"></td>
+         </tr>
+         <tr>
+            <td class="PadBottom" colspan="2"></td>
+         </tr>
+      </table>
+      <p class="Version">Messages.xml version 2017.11.14.0</p>
+   </body>
+</html>

@@ -1,0 +1,205 @@
+<html xmlns:fo="http://www.w3.org/1999/XSL/Format" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:fn="http://www.w3.org/2005/xpath-functions">
+   <head>
+      <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+      <title>AC Protocol version 2017.11.14.0</title>
+      <link type="text/css" rel="stylesheet" href="../Classic.css">
+   </head>
+   <body>
+      <table cellspacing="0" cellpadding="0" class="List1">
+         <tr>
+            <td colspan="3">
+               <p class="BoxHead1"><b>0xF658:</b> Login_LoginCharacterSet
+               </p>
+            </td>
+         </tr>
+         <tr>
+            <td class="PadTop" colspan="3"></td>
+         </tr>
+         <tr>
+            <td colspan="3">
+               <p class="BoxDesc">The list of characters on the current account.</p>
+            </td>
+         </tr>
+         <tr>
+            <td colspan="3" class="SeqRowSep">
+               <p class="SeqRowSep"></p>
+            </td>
+         </tr>
+         <tr>
+            <td class="FieldType">
+               <p class="FieldType"><span class="TypeRef" title="uint"><a target="frameType" href="../Types/MessageType.html">MessageType</a></span></p>
+            </td>
+            <td class="FieldName">
+               <p class="FieldName">type = 0xF658</p>
+            </td>
+            <td class="FieldDesc">
+               <p class="FieldDesc">type of this message</p>
+            </td>
+         </tr>
+         <tr>
+            <td colspan="3" class="FieldRowSep">
+               <p class="FieldRowSep"></p>
+            </td>
+         </tr>
+         <tr>
+            <td class="FieldType">
+               <p class="FieldType"><span class="TypeRef" title="">uint</span></p>
+            </td>
+            <td class="FieldName">
+               <p class="FieldName">status</p>
+            </td>
+            <td class="FieldDesc">
+               <p class="FieldDesc"></p>
+            </td>
+         </tr>
+         <tr>
+            <td colspan="3" class="FieldRowSep">
+               <p class="FieldRowSep"></p>
+            </td>
+         </tr>
+         <tr>
+            <td class="FieldType">
+               <p class="FieldType"><span class="TypeRef" title="">uint</span></p>
+            </td>
+            <td class="FieldName">
+               <p class="FieldName">characterCount</p>
+            </td>
+            <td class="FieldDesc">
+               <p class="FieldDesc">The number of characters in the list.  Characters appear in the list ordered most-recently-used
+                  first, but are displayed alphabetically.
+               </p>
+            </td>
+         </tr>
+         <tr>
+            <td class="NestedTable" colspan="3">
+               <table cellspacing="0" cellpadding="0" class="List2">
+                  <tr>
+                     <td colspan="3">
+                        <p class="BoxHead2"><b>set</b>: vector of length <b>characterCount</b></p>
+                     </td>
+                  </tr>
+                  <tr>
+                     <td class="PadTop" colspan="3"></td>
+                  </tr>
+                  <tr>
+                     <td class="FieldType">
+                        <p class="FieldType"><span class="TypeRef" title="Struct"><a target="frameType" href="../Types/CharacterIdentity.html">CharacterIdentity</a></span></p>
+                     </td>
+                     <td class="FieldName">
+                        <p class="FieldName">id</p>
+                     </td>
+                     <td class="FieldDesc">
+                        <p class="FieldDesc"></p>
+                     </td>
+                  </tr>
+                  <tr>
+                     <td class="PadBottom" colspan="3"></td>
+                  </tr>
+               </table>
+            </td>
+         </tr>
+         <tr>
+            <td class="FieldType">
+               <p class="FieldType"><span class="TypeRef" title="">uint</span></p>
+            </td>
+            <td class="FieldName">
+               <p class="FieldName">characterCount2</p>
+            </td>
+            <td class="FieldDesc">
+               <p class="FieldDesc">This is a second list which goes into delSet, not sure what it is, deleted characters?</p>
+            </td>
+         </tr>
+         <tr>
+            <td class="NestedTable" colspan="3">
+               <table cellspacing="0" cellpadding="0" class="List2">
+                  <tr>
+                     <td colspan="3">
+                        <p class="BoxHead2"><b>delset</b>: vector of length <b>characterCount2</b></p>
+                     </td>
+                  </tr>
+                  <tr>
+                     <td class="PadTop" colspan="3"></td>
+                  </tr>
+                  <tr>
+                     <td class="FieldType">
+                        <p class="FieldType"><span class="TypeRef" title="Struct"><a target="frameType" href="../Types/CharacterIdentity.html">CharacterIdentity</a></span></p>
+                     </td>
+                     <td class="FieldName">
+                        <p class="FieldName">id</p>
+                     </td>
+                     <td class="FieldDesc">
+                        <p class="FieldDesc"></p>
+                     </td>
+                  </tr>
+                  <tr>
+                     <td class="PadBottom" colspan="3"></td>
+                  </tr>
+               </table>
+            </td>
+         </tr>
+         <tr>
+            <td class="FieldType">
+               <p class="FieldType"><span class="TypeRef" title="">uint</span></p>
+            </td>
+            <td class="FieldName">
+               <p class="FieldName">numAllowedCharacters</p>
+            </td>
+            <td class="FieldDesc">
+               <p class="FieldDesc">The total count of character slots.</p>
+            </td>
+         </tr>
+         <tr>
+            <td colspan="3" class="FieldRowSep">
+               <p class="FieldRowSep"></p>
+            </td>
+         </tr>
+         <tr>
+            <td class="FieldType">
+               <p class="FieldType"><span class="TypeRef" title="">string</span></p>
+            </td>
+            <td class="FieldName">
+               <p class="FieldName">account</p>
+            </td>
+            <td class="FieldDesc">
+               <p class="FieldDesc">The name for this account.</p>
+            </td>
+         </tr>
+         <tr>
+            <td colspan="3" class="FieldRowSep">
+               <p class="FieldRowSep"></p>
+            </td>
+         </tr>
+         <tr>
+            <td class="FieldType">
+               <p class="FieldType"><span class="TypeRef" title="">bool</span></p>
+            </td>
+            <td class="FieldName">
+               <p class="FieldName">useTurbineChat</p>
+            </td>
+            <td class="FieldDesc">
+               <p class="FieldDesc">Whether or not Turbine Chat (Allegiance chat) enabled.</p>
+            </td>
+         </tr>
+         <tr>
+            <td colspan="3" class="FieldRowSep">
+               <p class="FieldRowSep"></p>
+            </td>
+         </tr>
+         <tr>
+            <td class="FieldType">
+               <p class="FieldType"><span class="TypeRef" title="">bool</span></p>
+            </td>
+            <td class="FieldName">
+               <p class="FieldName">hasThroneofDestiny</p>
+            </td>
+            <td class="FieldDesc">
+               <p class="FieldDesc">Whether or not this account has purchansed ToD</p>
+            </td>
+         </tr>
+         <tr>
+            <td class="PadBottom" colspan="3"></td>
+         </tr>
+      </table>
+      <p class="Version">Messages.xml version 2017.11.14.0</p>
+   </body>
+</html>

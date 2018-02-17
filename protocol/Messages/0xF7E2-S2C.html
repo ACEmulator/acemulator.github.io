@@ -1,0 +1,265 @@
+<html xmlns:fo="http://www.w3.org/1999/XSL/Format" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:fn="http://www.w3.org/2005/xpath-functions">
+   <head>
+      <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+      <title>AC Protocol version 2017.11.14.0</title>
+      <link type="text/css" rel="stylesheet" href="../Classic.css">
+   </head>
+   <body>
+      <table cellspacing="0" cellpadding="0" class="List1">
+         <tr>
+            <td colspan="3">
+               <p class="BoxHead1"><b>0xF7E2:</b> DDD_DataMessage
+               </p>
+            </td>
+         </tr>
+         <tr>
+            <td class="PadTop" colspan="3"></td>
+         </tr>
+         <tr>
+            <td colspan="3">
+               <p class="BoxDesc">Add or update a dat file Resource.</p>
+            </td>
+         </tr>
+         <tr>
+            <td colspan="3" class="SeqRowSep">
+               <p class="SeqRowSep"></p>
+            </td>
+         </tr>
+         <tr>
+            <td class="FieldType">
+               <p class="FieldType"><span class="TypeRef" title="uint"><a target="frameType" href="../Types/MessageType.html">MessageType</a></span></p>
+            </td>
+            <td class="FieldName">
+               <p class="FieldName">type = 0xF7E2</p>
+            </td>
+            <td class="FieldDesc">
+               <p class="FieldDesc">type of this message</p>
+            </td>
+         </tr>
+         <tr>
+            <td colspan="3" class="FieldRowSep">
+               <p class="FieldRowSep"></p>
+            </td>
+         </tr>
+         <tr>
+            <td class="FieldType">
+               <p class="FieldType"><span class="TypeRef" title=""><a target="frameType" href="../Types/ResourceType.html">ResourceType</a></span></p>
+            </td>
+            <td class="FieldName">
+               <p class="FieldName">idDatFile</p>
+            </td>
+            <td class="FieldDesc">
+               <p class="FieldDesc">which dat file should store this resource</p>
+            </td>
+         </tr>
+         <tr>
+            <td colspan="3" class="FieldRowSep">
+               <p class="FieldRowSep"></p>
+            </td>
+         </tr>
+         <tr>
+            <td class="FieldType">
+               <p class="FieldType"><span class="TypeRef" title="">uint</span></p>
+            </td>
+            <td class="FieldName">
+               <p class="FieldName">resourceType</p>
+            </td>
+            <td class="FieldDesc">
+               <p class="FieldDesc">the resource type</p>
+            </td>
+         </tr>
+         <tr>
+            <td colspan="3" class="FieldRowSep">
+               <p class="FieldRowSep"></p>
+            </td>
+         </tr>
+         <tr>
+            <td class="FieldType">
+               <p class="FieldType"><span class="TypeRef" title="PackedDWORD">DataID</span></p>
+            </td>
+            <td class="FieldName">
+               <p class="FieldName">resourceId</p>
+            </td>
+            <td class="FieldDesc">
+               <p class="FieldDesc">the resource ID number</p>
+            </td>
+         </tr>
+         <tr>
+            <td colspan="3" class="FieldRowSep">
+               <p class="FieldRowSep"></p>
+            </td>
+         </tr>
+         <tr>
+            <td class="FieldType">
+               <p class="FieldType"><span class="TypeRef" title="">uint</span></p>
+            </td>
+            <td class="FieldName">
+               <p class="FieldName">idIteration</p>
+            </td>
+            <td class="FieldDesc">
+               <p class="FieldDesc">the file version number</p>
+            </td>
+         </tr>
+         <tr>
+            <td colspan="3" class="FieldRowSep">
+               <p class="FieldRowSep"></p>
+            </td>
+         </tr>
+         <tr>
+            <td class="FieldType">
+               <p class="FieldType"><span class="TypeRef" title=""><a target="frameType" href="../Types/CompressionType.html">CompressionType</a></span></p>
+            </td>
+            <td class="FieldName">
+               <p class="FieldName">compressed</p>
+            </td>
+            <td class="FieldDesc">
+               <p class="FieldDesc">the type of compression used</p>
+            </td>
+         </tr>
+         <tr>
+            <td colspan="3" class="FieldRowSep">
+               <p class="FieldRowSep"></p>
+            </td>
+         </tr>
+         <tr>
+            <td class="FieldType">
+               <p class="FieldType"><span class="TypeRef" title="">uint</span></p>
+            </td>
+            <td class="FieldName">
+               <p class="FieldName">version</p>
+            </td>
+            <td class="FieldDesc">
+               <p class="FieldDesc">version of some sort</p>
+            </td>
+         </tr>
+         <tr>
+            <td colspan="3" class="FieldRowSep">
+               <p class="FieldRowSep"></p>
+            </td>
+         </tr>
+         <tr>
+            <td class="FieldType">
+               <p class="FieldType"><span class="TypeRef" title="">uint</span></p>
+            </td>
+            <td class="FieldName">
+               <p class="FieldName">dataSize</p>
+            </td>
+            <td class="FieldDesc">
+               <p class="FieldDesc">the number of bytes required for the remainder of this message, including this DWORD</p>
+            </td>
+         </tr>
+         <tr>
+            <td class="NestedTable" colspan="3">
+               <table cellspacing="0" cellpadding="0" class="CaseList1">
+                  <tr>
+                     <td colspan="2">
+                        <p class="CaseHead1">Select one section based on the value of <b>compression</b></p>
+                     </td>
+                  </tr>
+                  <tr>
+                     <td class="CaseVal1">
+                        <p class="CaseVal1">0x00</p>
+                     </td>
+                     <td class="CaseFields1">
+                        <table cellspacing="0" cellpadding="0" class="List1">
+                           <tr>
+                              <td class="PadTop" colspan="3"></td>
+                           </tr>
+                           <tr>
+                              <td class="NestedTable" colspan="3">
+                                 <table cellspacing="0" cellpadding="0" class="List2">
+                                    <tr>
+                                       <td colspan="3">
+                                          <p class="BoxHead2"><b>data</b>: vector of length <b>dataSize</b></p>
+                                       </td>
+                                    </tr>
+                                    <tr>
+                                       <td class="PadTop" colspan="3"></td>
+                                    </tr>
+                                    <tr>
+                                       <td class="FieldType">
+                                          <p class="FieldType"><span class="TypeRef" title="">byte</span></p>
+                                       </td>
+                                       <td class="FieldName">
+                                          <p class="FieldName">byte</p>
+                                       </td>
+                                       <td class="FieldDesc">
+                                          <p class="FieldDesc">(dataSize-4) bytes of uncompressed file data</p>
+                                       </td>
+                                    </tr>
+                                    <tr>
+                                       <td class="PadBottom" colspan="3"></td>
+                                    </tr>
+                                 </table>
+                              </td>
+                           </tr>
+                           <tr>
+                              <td class="PadBottom" colspan="3"></td>
+                           </tr>
+                        </table>
+                     </td>
+                  </tr>
+                  <tr>
+                     <td class="CaseVal1">
+                        <p class="CaseVal1">0x01</p>
+                     </td>
+                     <td class="CaseFields1">
+                        <table cellspacing="0" cellpadding="0" class="List1">
+                           <tr>
+                              <td class="PadTop" colspan="3"></td>
+                           </tr>
+                           <tr>
+                              <td class="FieldType">
+                                 <p class="FieldType"><span class="TypeRef" title="">uint</span></p>
+                              </td>
+                              <td class="FieldName">
+                                 <p class="FieldName">fileSize</p>
+                              </td>
+                              <td class="FieldDesc">
+                                 <p class="FieldDesc">the size of the uncompressed file</p>
+                              </td>
+                           </tr>
+                           <tr>
+                              <td class="NestedTable" colspan="3">
+                                 <table cellspacing="0" cellpadding="0" class="List2">
+                                    <tr>
+                                       <td colspan="3">
+                                          <p class="BoxHead2"><b>data</b>: vector of length <b>dataSize</b></p>
+                                       </td>
+                                    </tr>
+                                    <tr>
+                                       <td class="PadTop" colspan="3"></td>
+                                    </tr>
+                                    <tr>
+                                       <td class="FieldType">
+                                          <p class="FieldType"><span class="TypeRef" title="">byte</span></p>
+                                       </td>
+                                       <td class="FieldName">
+                                          <p class="FieldName">byte</p>
+                                       </td>
+                                       <td class="FieldDesc">
+                                          <p class="FieldDesc">(dataSize-8) bytes of zlib compressed file data</p>
+                                       </td>
+                                    </tr>
+                                    <tr>
+                                       <td class="PadBottom" colspan="3"></td>
+                                    </tr>
+                                 </table>
+                              </td>
+                           </tr>
+                           <tr>
+                              <td class="PadBottom" colspan="3"></td>
+                           </tr>
+                        </table>
+                     </td>
+                  </tr>
+               </table>
+            </td>
+         </tr>
+         <tr>
+            <td class="PadBottom" colspan="3"></td>
+         </tr>
+      </table>
+      <p class="Version">Messages.xml version 2017.11.14.0</p>
+   </body>
+</html>

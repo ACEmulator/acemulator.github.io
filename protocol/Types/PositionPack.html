@@ -1,0 +1,297 @@
+<html xmlns:fo="http://www.w3.org/1999/XSL/Format" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:fn="http://www.w3.org/2005/xpath-functions">
+   <head>
+      <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+      <title>AC Protocol version 2017.11.14.0</title>
+      <link type="text/css" rel="stylesheet" href="../Classic.css">
+   </head>
+   <body>
+      <table cellspacing="0" cellpadding="0" class="List2">
+         <tr>
+            <td colspan="3">
+               <p class="BoxHead2"><b>PositionPack</b></p>
+            </td>
+         </tr>
+         <tr>
+            <td class="PadTop" colspan="3"></td>
+         </tr>
+         <tr>
+            <td colspan="3">
+               <p class="BoxDesc">A position with sequences</p>
+            </td>
+         </tr>
+         <tr>
+            <td colspan="3" class="FieldRowSep">
+               <p class="FieldRowSep"></p>
+            </td>
+         </tr>
+         <tr>
+            <td class="FieldType">
+               <p class="FieldType"><span class="TypeRef" title=""><a target="frameType" href="PositionFlags.html">PositionFlags</a></span></p>
+            </td>
+            <td class="FieldName">
+               <p class="FieldName">flags</p>
+            </td>
+            <td class="FieldDesc">
+               <p class="FieldDesc"></p>
+            </td>
+         </tr>
+         <tr>
+            <td colspan="3" class="FieldRowSep">
+               <p class="FieldRowSep"></p>
+            </td>
+         </tr>
+         <tr>
+            <td class="FieldType">
+               <p class="FieldType"><span class="TypeRef" title="Struct"><a target="frameType" href="Origin.html">Origin</a></span></p>
+            </td>
+            <td class="FieldName">
+               <p class="FieldName">origin</p>
+            </td>
+            <td class="FieldDesc">
+               <p class="FieldDesc">the location of the object in the world</p>
+            </td>
+         </tr>
+         <tr>
+            <td class="NestedTable" colspan="3">
+               <table cellspacing="0" cellpadding="0" class="CaseList2">
+                  <tr>
+                     <td colspan="2">
+                        <p class="CaseHead2">Choose valid sections by masking against <b>flags xor 0x00000078</b></p>
+                     </td>
+                  </tr>
+                  <tr>
+                     <td class="CaseVal2">
+                        <p class="CaseVal2">0x00000008</p>
+                     </td>
+                     <td class="CaseFields2">
+                        <table cellspacing="0" cellpadding="0" class="List2">
+                           <tr>
+                              <td class="PadTop" colspan="3"></td>
+                           </tr>
+                           <tr>
+                              <td class="FieldType">
+                                 <p class="FieldType"><span class="TypeRef" title="">float</span></p>
+                              </td>
+                              <td class="FieldName">
+                                 <p class="FieldName">wQuat</p>
+                              </td>
+                              <td class="FieldDesc">
+                                 <p class="FieldDesc"></p>
+                              </td>
+                           </tr>
+                           <tr>
+                              <td class="PadBottom" colspan="3"></td>
+                           </tr>
+                        </table>
+                     </td>
+                  </tr>
+                  <tr>
+                     <td class="CaseVal2">
+                        <p class="CaseVal2">0x00000010</p>
+                     </td>
+                     <td class="CaseFields2">
+                        <table cellspacing="0" cellpadding="0" class="List2">
+                           <tr>
+                              <td class="PadTop" colspan="3"></td>
+                           </tr>
+                           <tr>
+                              <td class="FieldType">
+                                 <p class="FieldType"><span class="TypeRef" title="">float</span></p>
+                              </td>
+                              <td class="FieldName">
+                                 <p class="FieldName">xQuat</p>
+                              </td>
+                              <td class="FieldDesc">
+                                 <p class="FieldDesc"></p>
+                              </td>
+                           </tr>
+                           <tr>
+                              <td class="PadBottom" colspan="3"></td>
+                           </tr>
+                        </table>
+                     </td>
+                  </tr>
+                  <tr>
+                     <td class="CaseVal2">
+                        <p class="CaseVal2">0x00000020</p>
+                     </td>
+                     <td class="CaseFields2">
+                        <table cellspacing="0" cellpadding="0" class="List2">
+                           <tr>
+                              <td class="PadTop" colspan="3"></td>
+                           </tr>
+                           <tr>
+                              <td class="FieldType">
+                                 <p class="FieldType"><span class="TypeRef" title="">float</span></p>
+                              </td>
+                              <td class="FieldName">
+                                 <p class="FieldName">yQuat</p>
+                              </td>
+                              <td class="FieldDesc">
+                                 <p class="FieldDesc"></p>
+                              </td>
+                           </tr>
+                           <tr>
+                              <td class="PadBottom" colspan="3"></td>
+                           </tr>
+                        </table>
+                     </td>
+                  </tr>
+                  <tr>
+                     <td class="CaseVal2">
+                        <p class="CaseVal2">0x00000040</p>
+                     </td>
+                     <td class="CaseFields2">
+                        <table cellspacing="0" cellpadding="0" class="List2">
+                           <tr>
+                              <td class="PadTop" colspan="3"></td>
+                           </tr>
+                           <tr>
+                              <td class="FieldType">
+                                 <p class="FieldType"><span class="TypeRef" title="">float</span></p>
+                              </td>
+                              <td class="FieldName">
+                                 <p class="FieldName">zQuat</p>
+                              </td>
+                              <td class="FieldDesc">
+                                 <p class="FieldDesc"></p>
+                              </td>
+                           </tr>
+                           <tr>
+                              <td class="PadBottom" colspan="3"></td>
+                           </tr>
+                        </table>
+                     </td>
+                  </tr>
+               </table>
+            </td>
+         </tr>
+         <tr>
+            <td class="NestedTable" colspan="3">
+               <table cellspacing="0" cellpadding="0" class="CaseList2">
+                  <tr>
+                     <td colspan="2">
+                        <p class="CaseHead2">Choose valid sections by masking against <b>flags</b></p>
+                     </td>
+                  </tr>
+                  <tr>
+                     <td class="CaseVal2">
+                        <p class="CaseVal2">0x00000001</p>
+                     </td>
+                     <td class="CaseFields2">
+                        <table cellspacing="0" cellpadding="0" class="List2">
+                           <tr>
+                              <td class="PadTop" colspan="3"></td>
+                           </tr>
+                           <tr>
+                              <td class="FieldType">
+                                 <p class="FieldType"><span class="TypeRef" title="Struct"><a target="frameType" href="Vector3.html">Vector3</a></span></p>
+                              </td>
+                              <td class="FieldName">
+                                 <p class="FieldName">velocity</p>
+                              </td>
+                              <td class="FieldDesc">
+                                 <p class="FieldDesc"></p>
+                              </td>
+                           </tr>
+                           <tr>
+                              <td class="PadBottom" colspan="3"></td>
+                           </tr>
+                        </table>
+                     </td>
+                  </tr>
+                  <tr>
+                     <td class="CaseVal2">
+                        <p class="CaseVal2">0x00000002</p>
+                     </td>
+                     <td class="CaseFields2">
+                        <table cellspacing="0" cellpadding="0" class="List2">
+                           <tr>
+                              <td class="PadTop" colspan="3"></td>
+                           </tr>
+                           <tr>
+                              <td class="FieldType">
+                                 <p class="FieldType"><span class="TypeRef" title="">uint</span></p>
+                              </td>
+                              <td class="FieldName">
+                                 <p class="FieldName">placementID</p>
+                              </td>
+                              <td class="FieldDesc">
+                                 <p class="FieldDesc"></p>
+                              </td>
+                           </tr>
+                           <tr>
+                              <td class="PadBottom" colspan="3"></td>
+                           </tr>
+                        </table>
+                     </td>
+                  </tr>
+               </table>
+            </td>
+         </tr>
+         <tr>
+            <td class="FieldType">
+               <p class="FieldType"><span class="TypeRef" title="">ushort</span></p>
+            </td>
+            <td class="FieldName">
+               <p class="FieldName">objectInstanceSequence</p>
+            </td>
+            <td class="FieldDesc">
+               <p class="FieldDesc">The instance sequence value for the object (number of logins for players)</p>
+            </td>
+         </tr>
+         <tr>
+            <td colspan="3" class="FieldRowSep">
+               <p class="FieldRowSep"></p>
+            </td>
+         </tr>
+         <tr>
+            <td class="FieldType">
+               <p class="FieldType"><span class="TypeRef" title="">ushort</span></p>
+            </td>
+            <td class="FieldName">
+               <p class="FieldName">objectPositionSequence</p>
+            </td>
+            <td class="FieldDesc">
+               <p class="FieldDesc">The position sequence value for the object</p>
+            </td>
+         </tr>
+         <tr>
+            <td colspan="3" class="FieldRowSep">
+               <p class="FieldRowSep"></p>
+            </td>
+         </tr>
+         <tr>
+            <td class="FieldType">
+               <p class="FieldType"><span class="TypeRef" title="">ushort</span></p>
+            </td>
+            <td class="FieldName">
+               <p class="FieldName">objectTeleportSequence</p>
+            </td>
+            <td class="FieldDesc">
+               <p class="FieldDesc">The teleport sequence value for the object</p>
+            </td>
+         </tr>
+         <tr>
+            <td colspan="3" class="FieldRowSep">
+               <p class="FieldRowSep"></p>
+            </td>
+         </tr>
+         <tr>
+            <td class="FieldType">
+               <p class="FieldType"><span class="TypeRef" title="">ushort</span></p>
+            </td>
+            <td class="FieldName">
+               <p class="FieldName">objectForcePositionSequence</p>
+            </td>
+            <td class="FieldDesc">
+               <p class="FieldDesc">The forced position sequence value for the object</p>
+            </td>
+         </tr>
+         <tr>
+            <td class="PadBottom" colspan="3"></td>
+         </tr>
+      </table>
+      <p class="Version">Messages.xml version 2017.11.14.0</p>
+   </body>
+</html>

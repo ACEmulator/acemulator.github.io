@@ -1,0 +1,5741 @@
+<html xmlns:fo="http://www.w3.org/1999/XSL/Format" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:fn="http://www.w3.org/2005/xpath-functions">
+   <head>
+      <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+      <title>AC Protocol version 2017.11.14.0</title>
+      <link type="text/css" rel="stylesheet" href="../Classic.css">
+   </head>
+   <body>
+      <table cellspacing="0" cellpadding="0" class="List2">
+         <tr>
+            <td colspan="3">
+               <p class="BoxHead2"><b>Command</b>: ushort
+               </p>
+            </td>
+         </tr>
+         <tr>
+            <td class="PadTop" colspan="2"></td>
+         </tr>
+         <tr>
+            <td colspan="3">
+               <p class="BoxDesc">Command types</p>
+            </td>
+         </tr>
+         <tr>
+            <td colspan="3" class="ValueRowSep">
+               <p class="ValueRowSep"></p>
+            </td>
+         </tr>
+         <tr>
+            <td class="ValueVal">
+               <p class="ValueVal">0x00</p>
+            </td>
+            <td class="ValueName">
+               <p class="ValueName">Invalid</p>
+            </td>
+            <td class="ValueDesc"></td>
+         </tr>
+         <tr>
+            <td colspan="3" class="ValueRowSep">
+               <p class="ValueRowSep"></p>
+            </td>
+         </tr>
+         <tr>
+            <td class="ValueVal">
+               <p class="ValueVal">0x01</p>
+            </td>
+            <td class="ValueName">
+               <p class="ValueName">HoldRun</p>
+            </td>
+            <td class="ValueDesc"></td>
+         </tr>
+         <tr>
+            <td colspan="3" class="ValueRowSep">
+               <p class="ValueRowSep"></p>
+            </td>
+         </tr>
+         <tr>
+            <td class="ValueVal">
+               <p class="ValueVal">0x02</p>
+            </td>
+            <td class="ValueName">
+               <p class="ValueName">HoldSidestep</p>
+            </td>
+            <td class="ValueDesc"></td>
+         </tr>
+         <tr>
+            <td colspan="3" class="ValueRowSep">
+               <p class="ValueRowSep"></p>
+            </td>
+         </tr>
+         <tr>
+            <td class="ValueVal">
+               <p class="ValueVal">0x03</p>
+            </td>
+            <td class="ValueName">
+               <p class="ValueName">Ready</p>
+            </td>
+            <td class="ValueDesc"></td>
+         </tr>
+         <tr>
+            <td colspan="3" class="ValueRowSep">
+               <p class="ValueRowSep"></p>
+            </td>
+         </tr>
+         <tr>
+            <td class="ValueVal">
+               <p class="ValueVal">0x04</p>
+            </td>
+            <td class="ValueName">
+               <p class="ValueName">Stop</p>
+            </td>
+            <td class="ValueDesc"></td>
+         </tr>
+         <tr>
+            <td colspan="3" class="ValueRowSep">
+               <p class="ValueRowSep"></p>
+            </td>
+         </tr>
+         <tr>
+            <td class="ValueVal">
+               <p class="ValueVal">0x05</p>
+            </td>
+            <td class="ValueName">
+               <p class="ValueName">WalkForward</p>
+            </td>
+            <td class="ValueDesc"></td>
+         </tr>
+         <tr>
+            <td colspan="3" class="ValueRowSep">
+               <p class="ValueRowSep"></p>
+            </td>
+         </tr>
+         <tr>
+            <td class="ValueVal">
+               <p class="ValueVal">0x06</p>
+            </td>
+            <td class="ValueName">
+               <p class="ValueName">WalkBackwards</p>
+            </td>
+            <td class="ValueDesc"></td>
+         </tr>
+         <tr>
+            <td colspan="3" class="ValueRowSep">
+               <p class="ValueRowSep"></p>
+            </td>
+         </tr>
+         <tr>
+            <td class="ValueVal">
+               <p class="ValueVal">0x07</p>
+            </td>
+            <td class="ValueName">
+               <p class="ValueName">RunForward</p>
+            </td>
+            <td class="ValueDesc"></td>
+         </tr>
+         <tr>
+            <td colspan="3" class="ValueRowSep">
+               <p class="ValueRowSep"></p>
+            </td>
+         </tr>
+         <tr>
+            <td class="ValueVal">
+               <p class="ValueVal">0x08</p>
+            </td>
+            <td class="ValueName">
+               <p class="ValueName">Fallen</p>
+            </td>
+            <td class="ValueDesc"></td>
+         </tr>
+         <tr>
+            <td colspan="3" class="ValueRowSep">
+               <p class="ValueRowSep"></p>
+            </td>
+         </tr>
+         <tr>
+            <td class="ValueVal">
+               <p class="ValueVal">0x09</p>
+            </td>
+            <td class="ValueName">
+               <p class="ValueName">Interpolating</p>
+            </td>
+            <td class="ValueDesc"></td>
+         </tr>
+         <tr>
+            <td colspan="3" class="ValueRowSep">
+               <p class="ValueRowSep"></p>
+            </td>
+         </tr>
+         <tr>
+            <td class="ValueVal">
+               <p class="ValueVal">0x0A</p>
+            </td>
+            <td class="ValueName">
+               <p class="ValueName">Hover</p>
+            </td>
+            <td class="ValueDesc"></td>
+         </tr>
+         <tr>
+            <td colspan="3" class="ValueRowSep">
+               <p class="ValueRowSep"></p>
+            </td>
+         </tr>
+         <tr>
+            <td class="ValueVal">
+               <p class="ValueVal">0x0B</p>
+            </td>
+            <td class="ValueName">
+               <p class="ValueName">On</p>
+            </td>
+            <td class="ValueDesc"></td>
+         </tr>
+         <tr>
+            <td colspan="3" class="ValueRowSep">
+               <p class="ValueRowSep"></p>
+            </td>
+         </tr>
+         <tr>
+            <td class="ValueVal">
+               <p class="ValueVal">0x0C</p>
+            </td>
+            <td class="ValueName">
+               <p class="ValueName">Off</p>
+            </td>
+            <td class="ValueDesc"></td>
+         </tr>
+         <tr>
+            <td colspan="3" class="ValueRowSep">
+               <p class="ValueRowSep"></p>
+            </td>
+         </tr>
+         <tr>
+            <td class="ValueVal">
+               <p class="ValueVal">0x0D</p>
+            </td>
+            <td class="ValueName">
+               <p class="ValueName">TurnRight</p>
+            </td>
+            <td class="ValueDesc"></td>
+         </tr>
+         <tr>
+            <td colspan="3" class="ValueRowSep">
+               <p class="ValueRowSep"></p>
+            </td>
+         </tr>
+         <tr>
+            <td class="ValueVal">
+               <p class="ValueVal">0x0E</p>
+            </td>
+            <td class="ValueName">
+               <p class="ValueName">TurnLeft</p>
+            </td>
+            <td class="ValueDesc"></td>
+         </tr>
+         <tr>
+            <td colspan="3" class="ValueRowSep">
+               <p class="ValueRowSep"></p>
+            </td>
+         </tr>
+         <tr>
+            <td class="ValueVal">
+               <p class="ValueVal">0x0F</p>
+            </td>
+            <td class="ValueName">
+               <p class="ValueName">SideStepRight</p>
+            </td>
+            <td class="ValueDesc"></td>
+         </tr>
+         <tr>
+            <td colspan="3" class="ValueRowSep">
+               <p class="ValueRowSep"></p>
+            </td>
+         </tr>
+         <tr>
+            <td class="ValueVal">
+               <p class="ValueVal">0x10</p>
+            </td>
+            <td class="ValueName">
+               <p class="ValueName">SideStepLeft</p>
+            </td>
+            <td class="ValueDesc"></td>
+         </tr>
+         <tr>
+            <td colspan="3" class="ValueRowSep">
+               <p class="ValueRowSep"></p>
+            </td>
+         </tr>
+         <tr>
+            <td class="ValueVal">
+               <p class="ValueVal">0x11</p>
+            </td>
+            <td class="ValueName">
+               <p class="ValueName">Dead</p>
+            </td>
+            <td class="ValueDesc"></td>
+         </tr>
+         <tr>
+            <td colspan="3" class="ValueRowSep">
+               <p class="ValueRowSep"></p>
+            </td>
+         </tr>
+         <tr>
+            <td class="ValueVal">
+               <p class="ValueVal">0x12</p>
+            </td>
+            <td class="ValueName">
+               <p class="ValueName">Crouch</p>
+            </td>
+            <td class="ValueDesc"></td>
+         </tr>
+         <tr>
+            <td colspan="3" class="ValueRowSep">
+               <p class="ValueRowSep"></p>
+            </td>
+         </tr>
+         <tr>
+            <td class="ValueVal">
+               <p class="ValueVal">0x13</p>
+            </td>
+            <td class="ValueName">
+               <p class="ValueName">Sitting</p>
+            </td>
+            <td class="ValueDesc"></td>
+         </tr>
+         <tr>
+            <td colspan="3" class="ValueRowSep">
+               <p class="ValueRowSep"></p>
+            </td>
+         </tr>
+         <tr>
+            <td class="ValueVal">
+               <p class="ValueVal">0x14</p>
+            </td>
+            <td class="ValueName">
+               <p class="ValueName">Sleeping</p>
+            </td>
+            <td class="ValueDesc"></td>
+         </tr>
+         <tr>
+            <td colspan="3" class="ValueRowSep">
+               <p class="ValueRowSep"></p>
+            </td>
+         </tr>
+         <tr>
+            <td class="ValueVal">
+               <p class="ValueVal">0x15</p>
+            </td>
+            <td class="ValueName">
+               <p class="ValueName">Falling</p>
+            </td>
+            <td class="ValueDesc"></td>
+         </tr>
+         <tr>
+            <td colspan="3" class="ValueRowSep">
+               <p class="ValueRowSep"></p>
+            </td>
+         </tr>
+         <tr>
+            <td class="ValueVal">
+               <p class="ValueVal">0x16</p>
+            </td>
+            <td class="ValueName">
+               <p class="ValueName">Reload</p>
+            </td>
+            <td class="ValueDesc"></td>
+         </tr>
+         <tr>
+            <td colspan="3" class="ValueRowSep">
+               <p class="ValueRowSep"></p>
+            </td>
+         </tr>
+         <tr>
+            <td class="ValueVal">
+               <p class="ValueVal">0x17</p>
+            </td>
+            <td class="ValueName">
+               <p class="ValueName">Unload</p>
+            </td>
+            <td class="ValueDesc"></td>
+         </tr>
+         <tr>
+            <td colspan="3" class="ValueRowSep">
+               <p class="ValueRowSep"></p>
+            </td>
+         </tr>
+         <tr>
+            <td class="ValueVal">
+               <p class="ValueVal">0x18</p>
+            </td>
+            <td class="ValueName">
+               <p class="ValueName">Pickup</p>
+            </td>
+            <td class="ValueDesc"></td>
+         </tr>
+         <tr>
+            <td colspan="3" class="ValueRowSep">
+               <p class="ValueRowSep"></p>
+            </td>
+         </tr>
+         <tr>
+            <td class="ValueVal">
+               <p class="ValueVal">0x19</p>
+            </td>
+            <td class="ValueName">
+               <p class="ValueName">StoreInBackpack</p>
+            </td>
+            <td class="ValueDesc"></td>
+         </tr>
+         <tr>
+            <td colspan="3" class="ValueRowSep">
+               <p class="ValueRowSep"></p>
+            </td>
+         </tr>
+         <tr>
+            <td class="ValueVal">
+               <p class="ValueVal">0x1A</p>
+            </td>
+            <td class="ValueName">
+               <p class="ValueName">Eat</p>
+            </td>
+            <td class="ValueDesc"></td>
+         </tr>
+         <tr>
+            <td colspan="3" class="ValueRowSep">
+               <p class="ValueRowSep"></p>
+            </td>
+         </tr>
+         <tr>
+            <td class="ValueVal">
+               <p class="ValueVal">0x1B</p>
+            </td>
+            <td class="ValueName">
+               <p class="ValueName">Drink</p>
+            </td>
+            <td class="ValueDesc"></td>
+         </tr>
+         <tr>
+            <td colspan="3" class="ValueRowSep">
+               <p class="ValueRowSep"></p>
+            </td>
+         </tr>
+         <tr>
+            <td class="ValueVal">
+               <p class="ValueVal">0x1C</p>
+            </td>
+            <td class="ValueName">
+               <p class="ValueName">Reading</p>
+            </td>
+            <td class="ValueDesc"></td>
+         </tr>
+         <tr>
+            <td colspan="3" class="ValueRowSep">
+               <p class="ValueRowSep"></p>
+            </td>
+         </tr>
+         <tr>
+            <td class="ValueVal">
+               <p class="ValueVal">0x1D</p>
+            </td>
+            <td class="ValueName">
+               <p class="ValueName">JumpCharging</p>
+            </td>
+            <td class="ValueDesc"></td>
+         </tr>
+         <tr>
+            <td colspan="3" class="ValueRowSep">
+               <p class="ValueRowSep"></p>
+            </td>
+         </tr>
+         <tr>
+            <td class="ValueVal">
+               <p class="ValueVal">0x1E</p>
+            </td>
+            <td class="ValueName">
+               <p class="ValueName">AimLevel</p>
+            </td>
+            <td class="ValueDesc"></td>
+         </tr>
+         <tr>
+            <td colspan="3" class="ValueRowSep">
+               <p class="ValueRowSep"></p>
+            </td>
+         </tr>
+         <tr>
+            <td class="ValueVal">
+               <p class="ValueVal">0x1F</p>
+            </td>
+            <td class="ValueName">
+               <p class="ValueName">AimHigh15</p>
+            </td>
+            <td class="ValueDesc"></td>
+         </tr>
+         <tr>
+            <td colspan="3" class="ValueRowSep">
+               <p class="ValueRowSep"></p>
+            </td>
+         </tr>
+         <tr>
+            <td class="ValueVal">
+               <p class="ValueVal">0x20</p>
+            </td>
+            <td class="ValueName">
+               <p class="ValueName">AimHigh30</p>
+            </td>
+            <td class="ValueDesc"></td>
+         </tr>
+         <tr>
+            <td colspan="3" class="ValueRowSep">
+               <p class="ValueRowSep"></p>
+            </td>
+         </tr>
+         <tr>
+            <td class="ValueVal">
+               <p class="ValueVal">0x21</p>
+            </td>
+            <td class="ValueName">
+               <p class="ValueName">AimHigh45</p>
+            </td>
+            <td class="ValueDesc"></td>
+         </tr>
+         <tr>
+            <td colspan="3" class="ValueRowSep">
+               <p class="ValueRowSep"></p>
+            </td>
+         </tr>
+         <tr>
+            <td class="ValueVal">
+               <p class="ValueVal">0x22</p>
+            </td>
+            <td class="ValueName">
+               <p class="ValueName">AimHigh60</p>
+            </td>
+            <td class="ValueDesc"></td>
+         </tr>
+         <tr>
+            <td colspan="3" class="ValueRowSep">
+               <p class="ValueRowSep"></p>
+            </td>
+         </tr>
+         <tr>
+            <td class="ValueVal">
+               <p class="ValueVal">0x23</p>
+            </td>
+            <td class="ValueName">
+               <p class="ValueName">AimHigh75</p>
+            </td>
+            <td class="ValueDesc"></td>
+         </tr>
+         <tr>
+            <td colspan="3" class="ValueRowSep">
+               <p class="ValueRowSep"></p>
+            </td>
+         </tr>
+         <tr>
+            <td class="ValueVal">
+               <p class="ValueVal">0x24</p>
+            </td>
+            <td class="ValueName">
+               <p class="ValueName">AimHigh90</p>
+            </td>
+            <td class="ValueDesc"></td>
+         </tr>
+         <tr>
+            <td colspan="3" class="ValueRowSep">
+               <p class="ValueRowSep"></p>
+            </td>
+         </tr>
+         <tr>
+            <td class="ValueVal">
+               <p class="ValueVal">0x25</p>
+            </td>
+            <td class="ValueName">
+               <p class="ValueName">AimLow15</p>
+            </td>
+            <td class="ValueDesc"></td>
+         </tr>
+         <tr>
+            <td colspan="3" class="ValueRowSep">
+               <p class="ValueRowSep"></p>
+            </td>
+         </tr>
+         <tr>
+            <td class="ValueVal">
+               <p class="ValueVal">0x26</p>
+            </td>
+            <td class="ValueName">
+               <p class="ValueName">AimLow30</p>
+            </td>
+            <td class="ValueDesc"></td>
+         </tr>
+         <tr>
+            <td colspan="3" class="ValueRowSep">
+               <p class="ValueRowSep"></p>
+            </td>
+         </tr>
+         <tr>
+            <td class="ValueVal">
+               <p class="ValueVal">0x27</p>
+            </td>
+            <td class="ValueName">
+               <p class="ValueName">AimLow45</p>
+            </td>
+            <td class="ValueDesc"></td>
+         </tr>
+         <tr>
+            <td colspan="3" class="ValueRowSep">
+               <p class="ValueRowSep"></p>
+            </td>
+         </tr>
+         <tr>
+            <td class="ValueVal">
+               <p class="ValueVal">0x28</p>
+            </td>
+            <td class="ValueName">
+               <p class="ValueName">AimLow60</p>
+            </td>
+            <td class="ValueDesc"></td>
+         </tr>
+         <tr>
+            <td colspan="3" class="ValueRowSep">
+               <p class="ValueRowSep"></p>
+            </td>
+         </tr>
+         <tr>
+            <td class="ValueVal">
+               <p class="ValueVal">0x29</p>
+            </td>
+            <td class="ValueName">
+               <p class="ValueName">AimLow75</p>
+            </td>
+            <td class="ValueDesc"></td>
+         </tr>
+         <tr>
+            <td colspan="3" class="ValueRowSep">
+               <p class="ValueRowSep"></p>
+            </td>
+         </tr>
+         <tr>
+            <td class="ValueVal">
+               <p class="ValueVal">0x2A</p>
+            </td>
+            <td class="ValueName">
+               <p class="ValueName">AimLow90</p>
+            </td>
+            <td class="ValueDesc"></td>
+         </tr>
+         <tr>
+            <td colspan="3" class="ValueRowSep">
+               <p class="ValueRowSep"></p>
+            </td>
+         </tr>
+         <tr>
+            <td class="ValueVal">
+               <p class="ValueVal">0x2B</p>
+            </td>
+            <td class="ValueName">
+               <p class="ValueName">MagicBlast</p>
+            </td>
+            <td class="ValueDesc"></td>
+         </tr>
+         <tr>
+            <td colspan="3" class="ValueRowSep">
+               <p class="ValueRowSep"></p>
+            </td>
+         </tr>
+         <tr>
+            <td class="ValueVal">
+               <p class="ValueVal">0x2C</p>
+            </td>
+            <td class="ValueName">
+               <p class="ValueName">MagicSelfHead</p>
+            </td>
+            <td class="ValueDesc"></td>
+         </tr>
+         <tr>
+            <td colspan="3" class="ValueRowSep">
+               <p class="ValueRowSep"></p>
+            </td>
+         </tr>
+         <tr>
+            <td class="ValueVal">
+               <p class="ValueVal">0x2D</p>
+            </td>
+            <td class="ValueName">
+               <p class="ValueName">MagicSelfHeart</p>
+            </td>
+            <td class="ValueDesc"></td>
+         </tr>
+         <tr>
+            <td colspan="3" class="ValueRowSep">
+               <p class="ValueRowSep"></p>
+            </td>
+         </tr>
+         <tr>
+            <td class="ValueVal">
+               <p class="ValueVal">0x2E</p>
+            </td>
+            <td class="ValueName">
+               <p class="ValueName">MagicBonus</p>
+            </td>
+            <td class="ValueDesc"></td>
+         </tr>
+         <tr>
+            <td colspan="3" class="ValueRowSep">
+               <p class="ValueRowSep"></p>
+            </td>
+         </tr>
+         <tr>
+            <td class="ValueVal">
+               <p class="ValueVal">0x2F</p>
+            </td>
+            <td class="ValueName">
+               <p class="ValueName">MagicClap</p>
+            </td>
+            <td class="ValueDesc"></td>
+         </tr>
+         <tr>
+            <td colspan="3" class="ValueRowSep">
+               <p class="ValueRowSep"></p>
+            </td>
+         </tr>
+         <tr>
+            <td class="ValueVal">
+               <p class="ValueVal">0x30</p>
+            </td>
+            <td class="ValueName">
+               <p class="ValueName">MagicHarm</p>
+            </td>
+            <td class="ValueDesc"></td>
+         </tr>
+         <tr>
+            <td colspan="3" class="ValueRowSep">
+               <p class="ValueRowSep"></p>
+            </td>
+         </tr>
+         <tr>
+            <td class="ValueVal">
+               <p class="ValueVal">0x31</p>
+            </td>
+            <td class="ValueName">
+               <p class="ValueName">MagicHeal</p>
+            </td>
+            <td class="ValueDesc"></td>
+         </tr>
+         <tr>
+            <td colspan="3" class="ValueRowSep">
+               <p class="ValueRowSep"></p>
+            </td>
+         </tr>
+         <tr>
+            <td class="ValueVal">
+               <p class="ValueVal">0x32</p>
+            </td>
+            <td class="ValueName">
+               <p class="ValueName">MagicThrowMissile</p>
+            </td>
+            <td class="ValueDesc"></td>
+         </tr>
+         <tr>
+            <td colspan="3" class="ValueRowSep">
+               <p class="ValueRowSep"></p>
+            </td>
+         </tr>
+         <tr>
+            <td class="ValueVal">
+               <p class="ValueVal">0x33</p>
+            </td>
+            <td class="ValueName">
+               <p class="ValueName">MagicRecoilMissile</p>
+            </td>
+            <td class="ValueDesc"></td>
+         </tr>
+         <tr>
+            <td colspan="3" class="ValueRowSep">
+               <p class="ValueRowSep"></p>
+            </td>
+         </tr>
+         <tr>
+            <td class="ValueVal">
+               <p class="ValueVal">0x34</p>
+            </td>
+            <td class="ValueName">
+               <p class="ValueName">MagicPenalty</p>
+            </td>
+            <td class="ValueDesc"></td>
+         </tr>
+         <tr>
+            <td colspan="3" class="ValueRowSep">
+               <p class="ValueRowSep"></p>
+            </td>
+         </tr>
+         <tr>
+            <td class="ValueVal">
+               <p class="ValueVal">0x35</p>
+            </td>
+            <td class="ValueName">
+               <p class="ValueName">MagicTransfer</p>
+            </td>
+            <td class="ValueDesc"></td>
+         </tr>
+         <tr>
+            <td colspan="3" class="ValueRowSep">
+               <p class="ValueRowSep"></p>
+            </td>
+         </tr>
+         <tr>
+            <td class="ValueVal">
+               <p class="ValueVal">0x36</p>
+            </td>
+            <td class="ValueName">
+               <p class="ValueName">MagicVision</p>
+            </td>
+            <td class="ValueDesc"></td>
+         </tr>
+         <tr>
+            <td colspan="3" class="ValueRowSep">
+               <p class="ValueRowSep"></p>
+            </td>
+         </tr>
+         <tr>
+            <td class="ValueVal">
+               <p class="ValueVal">0x37</p>
+            </td>
+            <td class="ValueName">
+               <p class="ValueName">MagicEnchantItem</p>
+            </td>
+            <td class="ValueDesc"></td>
+         </tr>
+         <tr>
+            <td colspan="3" class="ValueRowSep">
+               <p class="ValueRowSep"></p>
+            </td>
+         </tr>
+         <tr>
+            <td class="ValueVal">
+               <p class="ValueVal">0x38</p>
+            </td>
+            <td class="ValueName">
+               <p class="ValueName">MagicPortal</p>
+            </td>
+            <td class="ValueDesc"></td>
+         </tr>
+         <tr>
+            <td colspan="3" class="ValueRowSep">
+               <p class="ValueRowSep"></p>
+            </td>
+         </tr>
+         <tr>
+            <td class="ValueVal">
+               <p class="ValueVal">0x39</p>
+            </td>
+            <td class="ValueName">
+               <p class="ValueName">MagicPray</p>
+            </td>
+            <td class="ValueDesc"></td>
+         </tr>
+         <tr>
+            <td colspan="3" class="ValueRowSep">
+               <p class="ValueRowSep"></p>
+            </td>
+         </tr>
+         <tr>
+            <td class="ValueVal">
+               <p class="ValueVal">0x3A</p>
+            </td>
+            <td class="ValueName">
+               <p class="ValueName">StopTurning</p>
+            </td>
+            <td class="ValueDesc"></td>
+         </tr>
+         <tr>
+            <td colspan="3" class="ValueRowSep">
+               <p class="ValueRowSep"></p>
+            </td>
+         </tr>
+         <tr>
+            <td class="ValueVal">
+               <p class="ValueVal">0x3B</p>
+            </td>
+            <td class="ValueName">
+               <p class="ValueName">Jump</p>
+            </td>
+            <td class="ValueDesc"></td>
+         </tr>
+         <tr>
+            <td colspan="3" class="ValueRowSep">
+               <p class="ValueRowSep"></p>
+            </td>
+         </tr>
+         <tr>
+            <td class="ValueVal">
+               <p class="ValueVal">0x3C</p>
+            </td>
+            <td class="ValueName">
+               <p class="ValueName">HandCombat</p>
+            </td>
+            <td class="ValueDesc"></td>
+         </tr>
+         <tr>
+            <td colspan="3" class="ValueRowSep">
+               <p class="ValueRowSep"></p>
+            </td>
+         </tr>
+         <tr>
+            <td class="ValueVal">
+               <p class="ValueVal">0x3D</p>
+            </td>
+            <td class="ValueName">
+               <p class="ValueName">NonCombat</p>
+            </td>
+            <td class="ValueDesc"></td>
+         </tr>
+         <tr>
+            <td colspan="3" class="ValueRowSep">
+               <p class="ValueRowSep"></p>
+            </td>
+         </tr>
+         <tr>
+            <td class="ValueVal">
+               <p class="ValueVal">0x3E</p>
+            </td>
+            <td class="ValueName">
+               <p class="ValueName">SwordCombat</p>
+            </td>
+            <td class="ValueDesc"></td>
+         </tr>
+         <tr>
+            <td colspan="3" class="ValueRowSep">
+               <p class="ValueRowSep"></p>
+            </td>
+         </tr>
+         <tr>
+            <td class="ValueVal">
+               <p class="ValueVal">0x3F</p>
+            </td>
+            <td class="ValueName">
+               <p class="ValueName">BowCombat</p>
+            </td>
+            <td class="ValueDesc"></td>
+         </tr>
+         <tr>
+            <td colspan="3" class="ValueRowSep">
+               <p class="ValueRowSep"></p>
+            </td>
+         </tr>
+         <tr>
+            <td class="ValueVal">
+               <p class="ValueVal">0x40</p>
+            </td>
+            <td class="ValueName">
+               <p class="ValueName">SwordShieldCombat</p>
+            </td>
+            <td class="ValueDesc"></td>
+         </tr>
+         <tr>
+            <td colspan="3" class="ValueRowSep">
+               <p class="ValueRowSep"></p>
+            </td>
+         </tr>
+         <tr>
+            <td class="ValueVal">
+               <p class="ValueVal">0x41</p>
+            </td>
+            <td class="ValueName">
+               <p class="ValueName">CrossbowCombat</p>
+            </td>
+            <td class="ValueDesc"></td>
+         </tr>
+         <tr>
+            <td colspan="3" class="ValueRowSep">
+               <p class="ValueRowSep"></p>
+            </td>
+         </tr>
+         <tr>
+            <td class="ValueVal">
+               <p class="ValueVal">0x42</p>
+            </td>
+            <td class="ValueName">
+               <p class="ValueName">UnusedCombat</p>
+            </td>
+            <td class="ValueDesc"></td>
+         </tr>
+         <tr>
+            <td colspan="3" class="ValueRowSep">
+               <p class="ValueRowSep"></p>
+            </td>
+         </tr>
+         <tr>
+            <td class="ValueVal">
+               <p class="ValueVal">0x43</p>
+            </td>
+            <td class="ValueName">
+               <p class="ValueName">SlingCombat</p>
+            </td>
+            <td class="ValueDesc"></td>
+         </tr>
+         <tr>
+            <td colspan="3" class="ValueRowSep">
+               <p class="ValueRowSep"></p>
+            </td>
+         </tr>
+         <tr>
+            <td class="ValueVal">
+               <p class="ValueVal">0x44</p>
+            </td>
+            <td class="ValueName">
+               <p class="ValueName">2HandedSwordCombat</p>
+            </td>
+            <td class="ValueDesc"></td>
+         </tr>
+         <tr>
+            <td colspan="3" class="ValueRowSep">
+               <p class="ValueRowSep"></p>
+            </td>
+         </tr>
+         <tr>
+            <td class="ValueVal">
+               <p class="ValueVal">0x45</p>
+            </td>
+            <td class="ValueName">
+               <p class="ValueName">2HandedStaffCombat</p>
+            </td>
+            <td class="ValueDesc"></td>
+         </tr>
+         <tr>
+            <td colspan="3" class="ValueRowSep">
+               <p class="ValueRowSep"></p>
+            </td>
+         </tr>
+         <tr>
+            <td class="ValueVal">
+               <p class="ValueVal">0x46</p>
+            </td>
+            <td class="ValueName">
+               <p class="ValueName">DualWieldCombat</p>
+            </td>
+            <td class="ValueDesc"></td>
+         </tr>
+         <tr>
+            <td colspan="3" class="ValueRowSep">
+               <p class="ValueRowSep"></p>
+            </td>
+         </tr>
+         <tr>
+            <td class="ValueVal">
+               <p class="ValueVal">0x47</p>
+            </td>
+            <td class="ValueName">
+               <p class="ValueName">ThrownWeaponCombat</p>
+            </td>
+            <td class="ValueDesc"></td>
+         </tr>
+         <tr>
+            <td colspan="3" class="ValueRowSep">
+               <p class="ValueRowSep"></p>
+            </td>
+         </tr>
+         <tr>
+            <td class="ValueVal">
+               <p class="ValueVal">0x48</p>
+            </td>
+            <td class="ValueName">
+               <p class="ValueName">Graze</p>
+            </td>
+            <td class="ValueDesc"></td>
+         </tr>
+         <tr>
+            <td colspan="3" class="ValueRowSep">
+               <p class="ValueRowSep"></p>
+            </td>
+         </tr>
+         <tr>
+            <td class="ValueVal">
+               <p class="ValueVal">0x49</p>
+            </td>
+            <td class="ValueName">
+               <p class="ValueName">Magi</p>
+            </td>
+            <td class="ValueDesc"></td>
+         </tr>
+         <tr>
+            <td colspan="3" class="ValueRowSep">
+               <p class="ValueRowSep"></p>
+            </td>
+         </tr>
+         <tr>
+            <td class="ValueVal">
+               <p class="ValueVal">0x4A</p>
+            </td>
+            <td class="ValueName">
+               <p class="ValueName">Hop</p>
+            </td>
+            <td class="ValueDesc"></td>
+         </tr>
+         <tr>
+            <td colspan="3" class="ValueRowSep">
+               <p class="ValueRowSep"></p>
+            </td>
+         </tr>
+         <tr>
+            <td class="ValueVal">
+               <p class="ValueVal">0x4B</p>
+            </td>
+            <td class="ValueName">
+               <p class="ValueName">Jumpup</p>
+            </td>
+            <td class="ValueDesc"></td>
+         </tr>
+         <tr>
+            <td colspan="3" class="ValueRowSep">
+               <p class="ValueRowSep"></p>
+            </td>
+         </tr>
+         <tr>
+            <td class="ValueVal">
+               <p class="ValueVal">0x4C</p>
+            </td>
+            <td class="ValueName">
+               <p class="ValueName">Cheer</p>
+            </td>
+            <td class="ValueDesc"></td>
+         </tr>
+         <tr>
+            <td colspan="3" class="ValueRowSep">
+               <p class="ValueRowSep"></p>
+            </td>
+         </tr>
+         <tr>
+            <td class="ValueVal">
+               <p class="ValueVal">0x4D</p>
+            </td>
+            <td class="ValueName">
+               <p class="ValueName">ChestBeat</p>
+            </td>
+            <td class="ValueDesc"></td>
+         </tr>
+         <tr>
+            <td colspan="3" class="ValueRowSep">
+               <p class="ValueRowSep"></p>
+            </td>
+         </tr>
+         <tr>
+            <td class="ValueVal">
+               <p class="ValueVal">0x4E</p>
+            </td>
+            <td class="ValueName">
+               <p class="ValueName">TippedLeft</p>
+            </td>
+            <td class="ValueDesc"></td>
+         </tr>
+         <tr>
+            <td colspan="3" class="ValueRowSep">
+               <p class="ValueRowSep"></p>
+            </td>
+         </tr>
+         <tr>
+            <td class="ValueVal">
+               <p class="ValueVal">0x4F</p>
+            </td>
+            <td class="ValueName">
+               <p class="ValueName">TippedRight</p>
+            </td>
+            <td class="ValueDesc"></td>
+         </tr>
+         <tr>
+            <td colspan="3" class="ValueRowSep">
+               <p class="ValueRowSep"></p>
+            </td>
+         </tr>
+         <tr>
+            <td class="ValueVal">
+               <p class="ValueVal">0x50</p>
+            </td>
+            <td class="ValueName">
+               <p class="ValueName">FallDown</p>
+            </td>
+            <td class="ValueDesc"></td>
+         </tr>
+         <tr>
+            <td colspan="3" class="ValueRowSep">
+               <p class="ValueRowSep"></p>
+            </td>
+         </tr>
+         <tr>
+            <td class="ValueVal">
+               <p class="ValueVal">0x51</p>
+            </td>
+            <td class="ValueName">
+               <p class="ValueName">Twitch1</p>
+            </td>
+            <td class="ValueDesc"></td>
+         </tr>
+         <tr>
+            <td colspan="3" class="ValueRowSep">
+               <p class="ValueRowSep"></p>
+            </td>
+         </tr>
+         <tr>
+            <td class="ValueVal">
+               <p class="ValueVal">0x52</p>
+            </td>
+            <td class="ValueName">
+               <p class="ValueName">Twitch2</p>
+            </td>
+            <td class="ValueDesc"></td>
+         </tr>
+         <tr>
+            <td colspan="3" class="ValueRowSep">
+               <p class="ValueRowSep"></p>
+            </td>
+         </tr>
+         <tr>
+            <td class="ValueVal">
+               <p class="ValueVal">0x53</p>
+            </td>
+            <td class="ValueName">
+               <p class="ValueName">Twitch3</p>
+            </td>
+            <td class="ValueDesc"></td>
+         </tr>
+         <tr>
+            <td colspan="3" class="ValueRowSep">
+               <p class="ValueRowSep"></p>
+            </td>
+         </tr>
+         <tr>
+            <td class="ValueVal">
+               <p class="ValueVal">0x54</p>
+            </td>
+            <td class="ValueName">
+               <p class="ValueName">Twitch4</p>
+            </td>
+            <td class="ValueDesc"></td>
+         </tr>
+         <tr>
+            <td colspan="3" class="ValueRowSep">
+               <p class="ValueRowSep"></p>
+            </td>
+         </tr>
+         <tr>
+            <td class="ValueVal">
+               <p class="ValueVal">0x55</p>
+            </td>
+            <td class="ValueName">
+               <p class="ValueName">StaggerBackward</p>
+            </td>
+            <td class="ValueDesc"></td>
+         </tr>
+         <tr>
+            <td colspan="3" class="ValueRowSep">
+               <p class="ValueRowSep"></p>
+            </td>
+         </tr>
+         <tr>
+            <td class="ValueVal">
+               <p class="ValueVal">0x56</p>
+            </td>
+            <td class="ValueName">
+               <p class="ValueName">StaggerForward</p>
+            </td>
+            <td class="ValueDesc"></td>
+         </tr>
+         <tr>
+            <td colspan="3" class="ValueRowSep">
+               <p class="ValueRowSep"></p>
+            </td>
+         </tr>
+         <tr>
+            <td class="ValueVal">
+               <p class="ValueVal">0x57</p>
+            </td>
+            <td class="ValueName">
+               <p class="ValueName">Sanctuary</p>
+            </td>
+            <td class="ValueDesc"></td>
+         </tr>
+         <tr>
+            <td colspan="3" class="ValueRowSep">
+               <p class="ValueRowSep"></p>
+            </td>
+         </tr>
+         <tr>
+            <td class="ValueVal">
+               <p class="ValueVal">0x58</p>
+            </td>
+            <td class="ValueName">
+               <p class="ValueName">ThrustMed</p>
+            </td>
+            <td class="ValueDesc"></td>
+         </tr>
+         <tr>
+            <td colspan="3" class="ValueRowSep">
+               <p class="ValueRowSep"></p>
+            </td>
+         </tr>
+         <tr>
+            <td class="ValueVal">
+               <p class="ValueVal">0x59</p>
+            </td>
+            <td class="ValueName">
+               <p class="ValueName">ThrustLow</p>
+            </td>
+            <td class="ValueDesc"></td>
+         </tr>
+         <tr>
+            <td colspan="3" class="ValueRowSep">
+               <p class="ValueRowSep"></p>
+            </td>
+         </tr>
+         <tr>
+            <td class="ValueVal">
+               <p class="ValueVal">0x5A</p>
+            </td>
+            <td class="ValueName">
+               <p class="ValueName">ThrustHigh</p>
+            </td>
+            <td class="ValueDesc"></td>
+         </tr>
+         <tr>
+            <td colspan="3" class="ValueRowSep">
+               <p class="ValueRowSep"></p>
+            </td>
+         </tr>
+         <tr>
+            <td class="ValueVal">
+               <p class="ValueVal">0x5B</p>
+            </td>
+            <td class="ValueName">
+               <p class="ValueName">SlashHigh</p>
+            </td>
+            <td class="ValueDesc"></td>
+         </tr>
+         <tr>
+            <td colspan="3" class="ValueRowSep">
+               <p class="ValueRowSep"></p>
+            </td>
+         </tr>
+         <tr>
+            <td class="ValueVal">
+               <p class="ValueVal">0x5C</p>
+            </td>
+            <td class="ValueName">
+               <p class="ValueName">SlashMed</p>
+            </td>
+            <td class="ValueDesc"></td>
+         </tr>
+         <tr>
+            <td colspan="3" class="ValueRowSep">
+               <p class="ValueRowSep"></p>
+            </td>
+         </tr>
+         <tr>
+            <td class="ValueVal">
+               <p class="ValueVal">0x5D</p>
+            </td>
+            <td class="ValueName">
+               <p class="ValueName">SlashLow</p>
+            </td>
+            <td class="ValueDesc"></td>
+         </tr>
+         <tr>
+            <td colspan="3" class="ValueRowSep">
+               <p class="ValueRowSep"></p>
+            </td>
+         </tr>
+         <tr>
+            <td class="ValueVal">
+               <p class="ValueVal">0x5E</p>
+            </td>
+            <td class="ValueName">
+               <p class="ValueName">BackhandHigh</p>
+            </td>
+            <td class="ValueDesc"></td>
+         </tr>
+         <tr>
+            <td colspan="3" class="ValueRowSep">
+               <p class="ValueRowSep"></p>
+            </td>
+         </tr>
+         <tr>
+            <td class="ValueVal">
+               <p class="ValueVal">0x5F</p>
+            </td>
+            <td class="ValueName">
+               <p class="ValueName">BackhandMed</p>
+            </td>
+            <td class="ValueDesc"></td>
+         </tr>
+         <tr>
+            <td colspan="3" class="ValueRowSep">
+               <p class="ValueRowSep"></p>
+            </td>
+         </tr>
+         <tr>
+            <td class="ValueVal">
+               <p class="ValueVal">0x60</p>
+            </td>
+            <td class="ValueName">
+               <p class="ValueName">BackhandLow</p>
+            </td>
+            <td class="ValueDesc"></td>
+         </tr>
+         <tr>
+            <td colspan="3" class="ValueRowSep">
+               <p class="ValueRowSep"></p>
+            </td>
+         </tr>
+         <tr>
+            <td class="ValueVal">
+               <p class="ValueVal">0x61</p>
+            </td>
+            <td class="ValueName">
+               <p class="ValueName">Shoot</p>
+            </td>
+            <td class="ValueDesc"></td>
+         </tr>
+         <tr>
+            <td colspan="3" class="ValueRowSep">
+               <p class="ValueRowSep"></p>
+            </td>
+         </tr>
+         <tr>
+            <td class="ValueVal">
+               <p class="ValueVal">0x62</p>
+            </td>
+            <td class="ValueName">
+               <p class="ValueName">AttackHigh1</p>
+            </td>
+            <td class="ValueDesc"></td>
+         </tr>
+         <tr>
+            <td colspan="3" class="ValueRowSep">
+               <p class="ValueRowSep"></p>
+            </td>
+         </tr>
+         <tr>
+            <td class="ValueVal">
+               <p class="ValueVal">0x63</p>
+            </td>
+            <td class="ValueName">
+               <p class="ValueName">AttackMed1</p>
+            </td>
+            <td class="ValueDesc"></td>
+         </tr>
+         <tr>
+            <td colspan="3" class="ValueRowSep">
+               <p class="ValueRowSep"></p>
+            </td>
+         </tr>
+         <tr>
+            <td class="ValueVal">
+               <p class="ValueVal">0x64</p>
+            </td>
+            <td class="ValueName">
+               <p class="ValueName">AttackLow1</p>
+            </td>
+            <td class="ValueDesc"></td>
+         </tr>
+         <tr>
+            <td colspan="3" class="ValueRowSep">
+               <p class="ValueRowSep"></p>
+            </td>
+         </tr>
+         <tr>
+            <td class="ValueVal">
+               <p class="ValueVal">0x65</p>
+            </td>
+            <td class="ValueName">
+               <p class="ValueName">AttackHigh2</p>
+            </td>
+            <td class="ValueDesc"></td>
+         </tr>
+         <tr>
+            <td colspan="3" class="ValueRowSep">
+               <p class="ValueRowSep"></p>
+            </td>
+         </tr>
+         <tr>
+            <td class="ValueVal">
+               <p class="ValueVal">0x66</p>
+            </td>
+            <td class="ValueName">
+               <p class="ValueName">AttackMed2</p>
+            </td>
+            <td class="ValueDesc"></td>
+         </tr>
+         <tr>
+            <td colspan="3" class="ValueRowSep">
+               <p class="ValueRowSep"></p>
+            </td>
+         </tr>
+         <tr>
+            <td class="ValueVal">
+               <p class="ValueVal">0x67</p>
+            </td>
+            <td class="ValueName">
+               <p class="ValueName">AttackLow2</p>
+            </td>
+            <td class="ValueDesc"></td>
+         </tr>
+         <tr>
+            <td colspan="3" class="ValueRowSep">
+               <p class="ValueRowSep"></p>
+            </td>
+         </tr>
+         <tr>
+            <td class="ValueVal">
+               <p class="ValueVal">0x68</p>
+            </td>
+            <td class="ValueName">
+               <p class="ValueName">AttackHigh3</p>
+            </td>
+            <td class="ValueDesc"></td>
+         </tr>
+         <tr>
+            <td colspan="3" class="ValueRowSep">
+               <p class="ValueRowSep"></p>
+            </td>
+         </tr>
+         <tr>
+            <td class="ValueVal">
+               <p class="ValueVal">0x69</p>
+            </td>
+            <td class="ValueName">
+               <p class="ValueName">AttackMed3</p>
+            </td>
+            <td class="ValueDesc"></td>
+         </tr>
+         <tr>
+            <td colspan="3" class="ValueRowSep">
+               <p class="ValueRowSep"></p>
+            </td>
+         </tr>
+         <tr>
+            <td class="ValueVal">
+               <p class="ValueVal">0x6A</p>
+            </td>
+            <td class="ValueName">
+               <p class="ValueName">AttackLow3</p>
+            </td>
+            <td class="ValueDesc"></td>
+         </tr>
+         <tr>
+            <td colspan="3" class="ValueRowSep">
+               <p class="ValueRowSep"></p>
+            </td>
+         </tr>
+         <tr>
+            <td class="ValueVal">
+               <p class="ValueVal">0x6B</p>
+            </td>
+            <td class="ValueName">
+               <p class="ValueName">HeadThrow</p>
+            </td>
+            <td class="ValueDesc"></td>
+         </tr>
+         <tr>
+            <td colspan="3" class="ValueRowSep">
+               <p class="ValueRowSep"></p>
+            </td>
+         </tr>
+         <tr>
+            <td class="ValueVal">
+               <p class="ValueVal">0x6C</p>
+            </td>
+            <td class="ValueName">
+               <p class="ValueName">FistSlam</p>
+            </td>
+            <td class="ValueDesc"></td>
+         </tr>
+         <tr>
+            <td colspan="3" class="ValueRowSep">
+               <p class="ValueRowSep"></p>
+            </td>
+         </tr>
+         <tr>
+            <td class="ValueVal">
+               <p class="ValueVal">0x6D</p>
+            </td>
+            <td class="ValueName">
+               <p class="ValueName">BreatheFlame_</p>
+            </td>
+            <td class="ValueDesc"></td>
+         </tr>
+         <tr>
+            <td colspan="3" class="ValueRowSep">
+               <p class="ValueRowSep"></p>
+            </td>
+         </tr>
+         <tr>
+            <td class="ValueVal">
+               <p class="ValueVal">0x6E</p>
+            </td>
+            <td class="ValueName">
+               <p class="ValueName">SpinAttack</p>
+            </td>
+            <td class="ValueDesc"></td>
+         </tr>
+         <tr>
+            <td colspan="3" class="ValueRowSep">
+               <p class="ValueRowSep"></p>
+            </td>
+         </tr>
+         <tr>
+            <td class="ValueVal">
+               <p class="ValueVal">0x6F</p>
+            </td>
+            <td class="ValueName">
+               <p class="ValueName">MagicPowerUp01</p>
+            </td>
+            <td class="ValueDesc"></td>
+         </tr>
+         <tr>
+            <td colspan="3" class="ValueRowSep">
+               <p class="ValueRowSep"></p>
+            </td>
+         </tr>
+         <tr>
+            <td class="ValueVal">
+               <p class="ValueVal">0x70</p>
+            </td>
+            <td class="ValueName">
+               <p class="ValueName">MagicPowerUp02</p>
+            </td>
+            <td class="ValueDesc"></td>
+         </tr>
+         <tr>
+            <td colspan="3" class="ValueRowSep">
+               <p class="ValueRowSep"></p>
+            </td>
+         </tr>
+         <tr>
+            <td class="ValueVal">
+               <p class="ValueVal">0x71</p>
+            </td>
+            <td class="ValueName">
+               <p class="ValueName">MagicPowerUp03</p>
+            </td>
+            <td class="ValueDesc"></td>
+         </tr>
+         <tr>
+            <td colspan="3" class="ValueRowSep">
+               <p class="ValueRowSep"></p>
+            </td>
+         </tr>
+         <tr>
+            <td class="ValueVal">
+               <p class="ValueVal">0x72</p>
+            </td>
+            <td class="ValueName">
+               <p class="ValueName">MagicPowerUp04</p>
+            </td>
+            <td class="ValueDesc"></td>
+         </tr>
+         <tr>
+            <td colspan="3" class="ValueRowSep">
+               <p class="ValueRowSep"></p>
+            </td>
+         </tr>
+         <tr>
+            <td class="ValueVal">
+               <p class="ValueVal">0x73</p>
+            </td>
+            <td class="ValueName">
+               <p class="ValueName">MagicPowerUp05</p>
+            </td>
+            <td class="ValueDesc"></td>
+         </tr>
+         <tr>
+            <td colspan="3" class="ValueRowSep">
+               <p class="ValueRowSep"></p>
+            </td>
+         </tr>
+         <tr>
+            <td class="ValueVal">
+               <p class="ValueVal">0x74</p>
+            </td>
+            <td class="ValueName">
+               <p class="ValueName">MagicPowerUp06</p>
+            </td>
+            <td class="ValueDesc"></td>
+         </tr>
+         <tr>
+            <td colspan="3" class="ValueRowSep">
+               <p class="ValueRowSep"></p>
+            </td>
+         </tr>
+         <tr>
+            <td class="ValueVal">
+               <p class="ValueVal">0x75</p>
+            </td>
+            <td class="ValueName">
+               <p class="ValueName">MagicPowerUp07</p>
+            </td>
+            <td class="ValueDesc"></td>
+         </tr>
+         <tr>
+            <td colspan="3" class="ValueRowSep">
+               <p class="ValueRowSep"></p>
+            </td>
+         </tr>
+         <tr>
+            <td class="ValueVal">
+               <p class="ValueVal">0x76</p>
+            </td>
+            <td class="ValueName">
+               <p class="ValueName">MagicPowerUp08</p>
+            </td>
+            <td class="ValueDesc"></td>
+         </tr>
+         <tr>
+            <td colspan="3" class="ValueRowSep">
+               <p class="ValueRowSep"></p>
+            </td>
+         </tr>
+         <tr>
+            <td class="ValueVal">
+               <p class="ValueVal">0x77</p>
+            </td>
+            <td class="ValueName">
+               <p class="ValueName">MagicPowerUp09</p>
+            </td>
+            <td class="ValueDesc"></td>
+         </tr>
+         <tr>
+            <td colspan="3" class="ValueRowSep">
+               <p class="ValueRowSep"></p>
+            </td>
+         </tr>
+         <tr>
+            <td class="ValueVal">
+               <p class="ValueVal">0x78</p>
+            </td>
+            <td class="ValueName">
+               <p class="ValueName">MagicPowerUp10</p>
+            </td>
+            <td class="ValueDesc"></td>
+         </tr>
+         <tr>
+            <td colspan="3" class="ValueRowSep">
+               <p class="ValueRowSep"></p>
+            </td>
+         </tr>
+         <tr>
+            <td class="ValueVal">
+               <p class="ValueVal">0x79</p>
+            </td>
+            <td class="ValueName">
+               <p class="ValueName">ShakeFist</p>
+            </td>
+            <td class="ValueDesc"></td>
+         </tr>
+         <tr>
+            <td colspan="3" class="ValueRowSep">
+               <p class="ValueRowSep"></p>
+            </td>
+         </tr>
+         <tr>
+            <td class="ValueVal">
+               <p class="ValueVal">0x7A</p>
+            </td>
+            <td class="ValueName">
+               <p class="ValueName">Beckon</p>
+            </td>
+            <td class="ValueDesc"></td>
+         </tr>
+         <tr>
+            <td colspan="3" class="ValueRowSep">
+               <p class="ValueRowSep"></p>
+            </td>
+         </tr>
+         <tr>
+            <td class="ValueVal">
+               <p class="ValueVal">0x7B</p>
+            </td>
+            <td class="ValueName">
+               <p class="ValueName">BeSeeingYou</p>
+            </td>
+            <td class="ValueDesc"></td>
+         </tr>
+         <tr>
+            <td colspan="3" class="ValueRowSep">
+               <p class="ValueRowSep"></p>
+            </td>
+         </tr>
+         <tr>
+            <td class="ValueVal">
+               <p class="ValueVal">0x7C</p>
+            </td>
+            <td class="ValueName">
+               <p class="ValueName">BlowKiss</p>
+            </td>
+            <td class="ValueDesc"></td>
+         </tr>
+         <tr>
+            <td colspan="3" class="ValueRowSep">
+               <p class="ValueRowSep"></p>
+            </td>
+         </tr>
+         <tr>
+            <td class="ValueVal">
+               <p class="ValueVal">0x7D</p>
+            </td>
+            <td class="ValueName">
+               <p class="ValueName">BowDeep</p>
+            </td>
+            <td class="ValueDesc"></td>
+         </tr>
+         <tr>
+            <td colspan="3" class="ValueRowSep">
+               <p class="ValueRowSep"></p>
+            </td>
+         </tr>
+         <tr>
+            <td class="ValueVal">
+               <p class="ValueVal">0x7E</p>
+            </td>
+            <td class="ValueName">
+               <p class="ValueName">ClapHands</p>
+            </td>
+            <td class="ValueDesc"></td>
+         </tr>
+         <tr>
+            <td colspan="3" class="ValueRowSep">
+               <p class="ValueRowSep"></p>
+            </td>
+         </tr>
+         <tr>
+            <td class="ValueVal">
+               <p class="ValueVal">0x7F</p>
+            </td>
+            <td class="ValueName">
+               <p class="ValueName">Cry</p>
+            </td>
+            <td class="ValueDesc"></td>
+         </tr>
+         <tr>
+            <td colspan="3" class="ValueRowSep">
+               <p class="ValueRowSep"></p>
+            </td>
+         </tr>
+         <tr>
+            <td class="ValueVal">
+               <p class="ValueVal">0x80</p>
+            </td>
+            <td class="ValueName">
+               <p class="ValueName">Laugh</p>
+            </td>
+            <td class="ValueDesc"></td>
+         </tr>
+         <tr>
+            <td colspan="3" class="ValueRowSep">
+               <p class="ValueRowSep"></p>
+            </td>
+         </tr>
+         <tr>
+            <td class="ValueVal">
+               <p class="ValueVal">0x81</p>
+            </td>
+            <td class="ValueName">
+               <p class="ValueName">MimeEat</p>
+            </td>
+            <td class="ValueDesc"></td>
+         </tr>
+         <tr>
+            <td colspan="3" class="ValueRowSep">
+               <p class="ValueRowSep"></p>
+            </td>
+         </tr>
+         <tr>
+            <td class="ValueVal">
+               <p class="ValueVal">0x82</p>
+            </td>
+            <td class="ValueName">
+               <p class="ValueName">MimeDrink</p>
+            </td>
+            <td class="ValueDesc"></td>
+         </tr>
+         <tr>
+            <td colspan="3" class="ValueRowSep">
+               <p class="ValueRowSep"></p>
+            </td>
+         </tr>
+         <tr>
+            <td class="ValueVal">
+               <p class="ValueVal">0x83</p>
+            </td>
+            <td class="ValueName">
+               <p class="ValueName">Nod</p>
+            </td>
+            <td class="ValueDesc"></td>
+         </tr>
+         <tr>
+            <td colspan="3" class="ValueRowSep">
+               <p class="ValueRowSep"></p>
+            </td>
+         </tr>
+         <tr>
+            <td class="ValueVal">
+               <p class="ValueVal">0x84</p>
+            </td>
+            <td class="ValueName">
+               <p class="ValueName">Point</p>
+            </td>
+            <td class="ValueDesc"></td>
+         </tr>
+         <tr>
+            <td colspan="3" class="ValueRowSep">
+               <p class="ValueRowSep"></p>
+            </td>
+         </tr>
+         <tr>
+            <td class="ValueVal">
+               <p class="ValueVal">0x85</p>
+            </td>
+            <td class="ValueName">
+               <p class="ValueName">ShakeHead</p>
+            </td>
+            <td class="ValueDesc"></td>
+         </tr>
+         <tr>
+            <td colspan="3" class="ValueRowSep">
+               <p class="ValueRowSep"></p>
+            </td>
+         </tr>
+         <tr>
+            <td class="ValueVal">
+               <p class="ValueVal">0x86</p>
+            </td>
+            <td class="ValueName">
+               <p class="ValueName">Shrug</p>
+            </td>
+            <td class="ValueDesc"></td>
+         </tr>
+         <tr>
+            <td colspan="3" class="ValueRowSep">
+               <p class="ValueRowSep"></p>
+            </td>
+         </tr>
+         <tr>
+            <td class="ValueVal">
+               <p class="ValueVal">0x87</p>
+            </td>
+            <td class="ValueName">
+               <p class="ValueName">Wave</p>
+            </td>
+            <td class="ValueDesc"></td>
+         </tr>
+         <tr>
+            <td colspan="3" class="ValueRowSep">
+               <p class="ValueRowSep"></p>
+            </td>
+         </tr>
+         <tr>
+            <td class="ValueVal">
+               <p class="ValueVal">0x88</p>
+            </td>
+            <td class="ValueName">
+               <p class="ValueName">Akimbo</p>
+            </td>
+            <td class="ValueDesc"></td>
+         </tr>
+         <tr>
+            <td colspan="3" class="ValueRowSep">
+               <p class="ValueRowSep"></p>
+            </td>
+         </tr>
+         <tr>
+            <td class="ValueVal">
+               <p class="ValueVal">0x89</p>
+            </td>
+            <td class="ValueName">
+               <p class="ValueName">HeartyLaugh</p>
+            </td>
+            <td class="ValueDesc"></td>
+         </tr>
+         <tr>
+            <td colspan="3" class="ValueRowSep">
+               <p class="ValueRowSep"></p>
+            </td>
+         </tr>
+         <tr>
+            <td class="ValueVal">
+               <p class="ValueVal">0x8A</p>
+            </td>
+            <td class="ValueName">
+               <p class="ValueName">Salute</p>
+            </td>
+            <td class="ValueDesc"></td>
+         </tr>
+         <tr>
+            <td colspan="3" class="ValueRowSep">
+               <p class="ValueRowSep"></p>
+            </td>
+         </tr>
+         <tr>
+            <td class="ValueVal">
+               <p class="ValueVal">0x8B</p>
+            </td>
+            <td class="ValueName">
+               <p class="ValueName">ScratchHead</p>
+            </td>
+            <td class="ValueDesc"></td>
+         </tr>
+         <tr>
+            <td colspan="3" class="ValueRowSep">
+               <p class="ValueRowSep"></p>
+            </td>
+         </tr>
+         <tr>
+            <td class="ValueVal">
+               <p class="ValueVal">0x8C</p>
+            </td>
+            <td class="ValueName">
+               <p class="ValueName">SmackHead</p>
+            </td>
+            <td class="ValueDesc"></td>
+         </tr>
+         <tr>
+            <td colspan="3" class="ValueRowSep">
+               <p class="ValueRowSep"></p>
+            </td>
+         </tr>
+         <tr>
+            <td class="ValueVal">
+               <p class="ValueVal">0x8D</p>
+            </td>
+            <td class="ValueName">
+               <p class="ValueName">TapFoot</p>
+            </td>
+            <td class="ValueDesc"></td>
+         </tr>
+         <tr>
+            <td colspan="3" class="ValueRowSep">
+               <p class="ValueRowSep"></p>
+            </td>
+         </tr>
+         <tr>
+            <td class="ValueVal">
+               <p class="ValueVal">0x8E</p>
+            </td>
+            <td class="ValueName">
+               <p class="ValueName">WaveHigh</p>
+            </td>
+            <td class="ValueDesc"></td>
+         </tr>
+         <tr>
+            <td colspan="3" class="ValueRowSep">
+               <p class="ValueRowSep"></p>
+            </td>
+         </tr>
+         <tr>
+            <td class="ValueVal">
+               <p class="ValueVal">0x8F</p>
+            </td>
+            <td class="ValueName">
+               <p class="ValueName">WaveLow</p>
+            </td>
+            <td class="ValueDesc"></td>
+         </tr>
+         <tr>
+            <td colspan="3" class="ValueRowSep">
+               <p class="ValueRowSep"></p>
+            </td>
+         </tr>
+         <tr>
+            <td class="ValueVal">
+               <p class="ValueVal">0x90</p>
+            </td>
+            <td class="ValueName">
+               <p class="ValueName">YawnStretch</p>
+            </td>
+            <td class="ValueDesc"></td>
+         </tr>
+         <tr>
+            <td colspan="3" class="ValueRowSep">
+               <p class="ValueRowSep"></p>
+            </td>
+         </tr>
+         <tr>
+            <td class="ValueVal">
+               <p class="ValueVal">0x91</p>
+            </td>
+            <td class="ValueName">
+               <p class="ValueName">Cringe</p>
+            </td>
+            <td class="ValueDesc"></td>
+         </tr>
+         <tr>
+            <td colspan="3" class="ValueRowSep">
+               <p class="ValueRowSep"></p>
+            </td>
+         </tr>
+         <tr>
+            <td class="ValueVal">
+               <p class="ValueVal">0x92</p>
+            </td>
+            <td class="ValueName">
+               <p class="ValueName">Kneel</p>
+            </td>
+            <td class="ValueDesc"></td>
+         </tr>
+         <tr>
+            <td colspan="3" class="ValueRowSep">
+               <p class="ValueRowSep"></p>
+            </td>
+         </tr>
+         <tr>
+            <td class="ValueVal">
+               <p class="ValueVal">0x93</p>
+            </td>
+            <td class="ValueName">
+               <p class="ValueName">Plead</p>
+            </td>
+            <td class="ValueDesc"></td>
+         </tr>
+         <tr>
+            <td colspan="3" class="ValueRowSep">
+               <p class="ValueRowSep"></p>
+            </td>
+         </tr>
+         <tr>
+            <td class="ValueVal">
+               <p class="ValueVal">0x94</p>
+            </td>
+            <td class="ValueName">
+               <p class="ValueName">Shiver</p>
+            </td>
+            <td class="ValueDesc"></td>
+         </tr>
+         <tr>
+            <td colspan="3" class="ValueRowSep">
+               <p class="ValueRowSep"></p>
+            </td>
+         </tr>
+         <tr>
+            <td class="ValueVal">
+               <p class="ValueVal">0x95</p>
+            </td>
+            <td class="ValueName">
+               <p class="ValueName">Shoo</p>
+            </td>
+            <td class="ValueDesc"></td>
+         </tr>
+         <tr>
+            <td colspan="3" class="ValueRowSep">
+               <p class="ValueRowSep"></p>
+            </td>
+         </tr>
+         <tr>
+            <td class="ValueVal">
+               <p class="ValueVal">0x96</p>
+            </td>
+            <td class="ValueName">
+               <p class="ValueName">Slouch</p>
+            </td>
+            <td class="ValueDesc"></td>
+         </tr>
+         <tr>
+            <td colspan="3" class="ValueRowSep">
+               <p class="ValueRowSep"></p>
+            </td>
+         </tr>
+         <tr>
+            <td class="ValueVal">
+               <p class="ValueVal">0x97</p>
+            </td>
+            <td class="ValueName">
+               <p class="ValueName">Spit</p>
+            </td>
+            <td class="ValueDesc"></td>
+         </tr>
+         <tr>
+            <td colspan="3" class="ValueRowSep">
+               <p class="ValueRowSep"></p>
+            </td>
+         </tr>
+         <tr>
+            <td class="ValueVal">
+               <p class="ValueVal">0x98</p>
+            </td>
+            <td class="ValueName">
+               <p class="ValueName">Surrender</p>
+            </td>
+            <td class="ValueDesc"></td>
+         </tr>
+         <tr>
+            <td colspan="3" class="ValueRowSep">
+               <p class="ValueRowSep"></p>
+            </td>
+         </tr>
+         <tr>
+            <td class="ValueVal">
+               <p class="ValueVal">0x99</p>
+            </td>
+            <td class="ValueName">
+               <p class="ValueName">Woah</p>
+            </td>
+            <td class="ValueDesc"></td>
+         </tr>
+         <tr>
+            <td colspan="3" class="ValueRowSep">
+               <p class="ValueRowSep"></p>
+            </td>
+         </tr>
+         <tr>
+            <td class="ValueVal">
+               <p class="ValueVal">0x9A</p>
+            </td>
+            <td class="ValueName">
+               <p class="ValueName">Winded</p>
+            </td>
+            <td class="ValueDesc"></td>
+         </tr>
+         <tr>
+            <td colspan="3" class="ValueRowSep">
+               <p class="ValueRowSep"></p>
+            </td>
+         </tr>
+         <tr>
+            <td class="ValueVal">
+               <p class="ValueVal">0x9B</p>
+            </td>
+            <td class="ValueName">
+               <p class="ValueName">YMCA</p>
+            </td>
+            <td class="ValueDesc"></td>
+         </tr>
+         <tr>
+            <td colspan="3" class="ValueRowSep">
+               <p class="ValueRowSep"></p>
+            </td>
+         </tr>
+         <tr>
+            <td class="ValueVal">
+               <p class="ValueVal">0x9C</p>
+            </td>
+            <td class="ValueName">
+               <p class="ValueName">EnterGame</p>
+            </td>
+            <td class="ValueDesc"></td>
+         </tr>
+         <tr>
+            <td colspan="3" class="ValueRowSep">
+               <p class="ValueRowSep"></p>
+            </td>
+         </tr>
+         <tr>
+            <td class="ValueVal">
+               <p class="ValueVal">0x9D</p>
+            </td>
+            <td class="ValueName">
+               <p class="ValueName">ExitGame</p>
+            </td>
+            <td class="ValueDesc"></td>
+         </tr>
+         <tr>
+            <td colspan="3" class="ValueRowSep">
+               <p class="ValueRowSep"></p>
+            </td>
+         </tr>
+         <tr>
+            <td class="ValueVal">
+               <p class="ValueVal">0x9E</p>
+            </td>
+            <td class="ValueName">
+               <p class="ValueName">OnCreation</p>
+            </td>
+            <td class="ValueDesc"></td>
+         </tr>
+         <tr>
+            <td colspan="3" class="ValueRowSep">
+               <p class="ValueRowSep"></p>
+            </td>
+         </tr>
+         <tr>
+            <td class="ValueVal">
+               <p class="ValueVal">0x9F</p>
+            </td>
+            <td class="ValueName">
+               <p class="ValueName">OnDestruction</p>
+            </td>
+            <td class="ValueDesc"></td>
+         </tr>
+         <tr>
+            <td colspan="3" class="ValueRowSep">
+               <p class="ValueRowSep"></p>
+            </td>
+         </tr>
+         <tr>
+            <td class="ValueVal">
+               <p class="ValueVal">0xA0</p>
+            </td>
+            <td class="ValueName">
+               <p class="ValueName">EnterPortal</p>
+            </td>
+            <td class="ValueDesc"></td>
+         </tr>
+         <tr>
+            <td colspan="3" class="ValueRowSep">
+               <p class="ValueRowSep"></p>
+            </td>
+         </tr>
+         <tr>
+            <td class="ValueVal">
+               <p class="ValueVal">0xA1</p>
+            </td>
+            <td class="ValueName">
+               <p class="ValueName">ExitPortal</p>
+            </td>
+            <td class="ValueDesc"></td>
+         </tr>
+         <tr>
+            <td colspan="3" class="ValueRowSep">
+               <p class="ValueRowSep"></p>
+            </td>
+         </tr>
+         <tr>
+            <td class="ValueVal">
+               <p class="ValueVal">0xA2</p>
+            </td>
+            <td class="ValueName">
+               <p class="ValueName">Cancel</p>
+            </td>
+            <td class="ValueDesc"></td>
+         </tr>
+         <tr>
+            <td colspan="3" class="ValueRowSep">
+               <p class="ValueRowSep"></p>
+            </td>
+         </tr>
+         <tr>
+            <td class="ValueVal">
+               <p class="ValueVal">0xA3</p>
+            </td>
+            <td class="ValueName">
+               <p class="ValueName">UseSelected</p>
+            </td>
+            <td class="ValueDesc"></td>
+         </tr>
+         <tr>
+            <td colspan="3" class="ValueRowSep">
+               <p class="ValueRowSep"></p>
+            </td>
+         </tr>
+         <tr>
+            <td class="ValueVal">
+               <p class="ValueVal">0xA4</p>
+            </td>
+            <td class="ValueName">
+               <p class="ValueName">AutosortSelected</p>
+            </td>
+            <td class="ValueDesc"></td>
+         </tr>
+         <tr>
+            <td colspan="3" class="ValueRowSep">
+               <p class="ValueRowSep"></p>
+            </td>
+         </tr>
+         <tr>
+            <td class="ValueVal">
+               <p class="ValueVal">0xA5</p>
+            </td>
+            <td class="ValueName">
+               <p class="ValueName">DropSelected</p>
+            </td>
+            <td class="ValueDesc"></td>
+         </tr>
+         <tr>
+            <td colspan="3" class="ValueRowSep">
+               <p class="ValueRowSep"></p>
+            </td>
+         </tr>
+         <tr>
+            <td class="ValueVal">
+               <p class="ValueVal">0xA6</p>
+            </td>
+            <td class="ValueName">
+               <p class="ValueName">GiveSelected</p>
+            </td>
+            <td class="ValueDesc"></td>
+         </tr>
+         <tr>
+            <td colspan="3" class="ValueRowSep">
+               <p class="ValueRowSep"></p>
+            </td>
+         </tr>
+         <tr>
+            <td class="ValueVal">
+               <p class="ValueVal">0xA7</p>
+            </td>
+            <td class="ValueName">
+               <p class="ValueName">SplitSelected</p>
+            </td>
+            <td class="ValueDesc"></td>
+         </tr>
+         <tr>
+            <td colspan="3" class="ValueRowSep">
+               <p class="ValueRowSep"></p>
+            </td>
+         </tr>
+         <tr>
+            <td class="ValueVal">
+               <p class="ValueVal">0xA8</p>
+            </td>
+            <td class="ValueName">
+               <p class="ValueName">ExamineSelected</p>
+            </td>
+            <td class="ValueDesc"></td>
+         </tr>
+         <tr>
+            <td colspan="3" class="ValueRowSep">
+               <p class="ValueRowSep"></p>
+            </td>
+         </tr>
+         <tr>
+            <td class="ValueVal">
+               <p class="ValueVal">0xA9</p>
+            </td>
+            <td class="ValueName">
+               <p class="ValueName">CreateShortcutToSelected</p>
+            </td>
+            <td class="ValueDesc"></td>
+         </tr>
+         <tr>
+            <td colspan="3" class="ValueRowSep">
+               <p class="ValueRowSep"></p>
+            </td>
+         </tr>
+         <tr>
+            <td class="ValueVal">
+               <p class="ValueVal">0xAA</p>
+            </td>
+            <td class="ValueName">
+               <p class="ValueName">PreviousCompassItem</p>
+            </td>
+            <td class="ValueDesc"></td>
+         </tr>
+         <tr>
+            <td colspan="3" class="ValueRowSep">
+               <p class="ValueRowSep"></p>
+            </td>
+         </tr>
+         <tr>
+            <td class="ValueVal">
+               <p class="ValueVal">0xAB</p>
+            </td>
+            <td class="ValueName">
+               <p class="ValueName">NextCompassItem</p>
+            </td>
+            <td class="ValueDesc"></td>
+         </tr>
+         <tr>
+            <td colspan="3" class="ValueRowSep">
+               <p class="ValueRowSep"></p>
+            </td>
+         </tr>
+         <tr>
+            <td class="ValueVal">
+               <p class="ValueVal">0xAC</p>
+            </td>
+            <td class="ValueName">
+               <p class="ValueName">ClosestCompassItem</p>
+            </td>
+            <td class="ValueDesc"></td>
+         </tr>
+         <tr>
+            <td colspan="3" class="ValueRowSep">
+               <p class="ValueRowSep"></p>
+            </td>
+         </tr>
+         <tr>
+            <td class="ValueVal">
+               <p class="ValueVal">0xAD</p>
+            </td>
+            <td class="ValueName">
+               <p class="ValueName">PreviousSelection</p>
+            </td>
+            <td class="ValueDesc"></td>
+         </tr>
+         <tr>
+            <td colspan="3" class="ValueRowSep">
+               <p class="ValueRowSep"></p>
+            </td>
+         </tr>
+         <tr>
+            <td class="ValueVal">
+               <p class="ValueVal">0xAE</p>
+            </td>
+            <td class="ValueName">
+               <p class="ValueName">LastAttacker</p>
+            </td>
+            <td class="ValueDesc"></td>
+         </tr>
+         <tr>
+            <td colspan="3" class="ValueRowSep">
+               <p class="ValueRowSep"></p>
+            </td>
+         </tr>
+         <tr>
+            <td class="ValueVal">
+               <p class="ValueVal">0xAF</p>
+            </td>
+            <td class="ValueName">
+               <p class="ValueName">PreviousFellow</p>
+            </td>
+            <td class="ValueDesc"></td>
+         </tr>
+         <tr>
+            <td colspan="3" class="ValueRowSep">
+               <p class="ValueRowSep"></p>
+            </td>
+         </tr>
+         <tr>
+            <td class="ValueVal">
+               <p class="ValueVal">0xB0</p>
+            </td>
+            <td class="ValueName">
+               <p class="ValueName">NextFellow</p>
+            </td>
+            <td class="ValueDesc"></td>
+         </tr>
+         <tr>
+            <td colspan="3" class="ValueRowSep">
+               <p class="ValueRowSep"></p>
+            </td>
+         </tr>
+         <tr>
+            <td class="ValueVal">
+               <p class="ValueVal">0xB1</p>
+            </td>
+            <td class="ValueName">
+               <p class="ValueName">ToggleCombat</p>
+            </td>
+            <td class="ValueDesc"></td>
+         </tr>
+         <tr>
+            <td colspan="3" class="ValueRowSep">
+               <p class="ValueRowSep"></p>
+            </td>
+         </tr>
+         <tr>
+            <td class="ValueVal">
+               <p class="ValueVal">0xB2</p>
+            </td>
+            <td class="ValueName">
+               <p class="ValueName">HighAttack</p>
+            </td>
+            <td class="ValueDesc"></td>
+         </tr>
+         <tr>
+            <td colspan="3" class="ValueRowSep">
+               <p class="ValueRowSep"></p>
+            </td>
+         </tr>
+         <tr>
+            <td class="ValueVal">
+               <p class="ValueVal">0xB3</p>
+            </td>
+            <td class="ValueName">
+               <p class="ValueName">MediumAttack</p>
+            </td>
+            <td class="ValueDesc"></td>
+         </tr>
+         <tr>
+            <td colspan="3" class="ValueRowSep">
+               <p class="ValueRowSep"></p>
+            </td>
+         </tr>
+         <tr>
+            <td class="ValueVal">
+               <p class="ValueVal">0xB4</p>
+            </td>
+            <td class="ValueName">
+               <p class="ValueName">LowAttack</p>
+            </td>
+            <td class="ValueDesc"></td>
+         </tr>
+         <tr>
+            <td colspan="3" class="ValueRowSep">
+               <p class="ValueRowSep"></p>
+            </td>
+         </tr>
+         <tr>
+            <td class="ValueVal">
+               <p class="ValueVal">0xB5</p>
+            </td>
+            <td class="ValueName">
+               <p class="ValueName">EnterChat</p>
+            </td>
+            <td class="ValueDesc"></td>
+         </tr>
+         <tr>
+            <td colspan="3" class="ValueRowSep">
+               <p class="ValueRowSep"></p>
+            </td>
+         </tr>
+         <tr>
+            <td class="ValueVal">
+               <p class="ValueVal">0xB6</p>
+            </td>
+            <td class="ValueName">
+               <p class="ValueName">ToggleChat</p>
+            </td>
+            <td class="ValueDesc"></td>
+         </tr>
+         <tr>
+            <td colspan="3" class="ValueRowSep">
+               <p class="ValueRowSep"></p>
+            </td>
+         </tr>
+         <tr>
+            <td class="ValueVal">
+               <p class="ValueVal">0xB7</p>
+            </td>
+            <td class="ValueName">
+               <p class="ValueName">SavePosition</p>
+            </td>
+            <td class="ValueDesc"></td>
+         </tr>
+         <tr>
+            <td colspan="3" class="ValueRowSep">
+               <p class="ValueRowSep"></p>
+            </td>
+         </tr>
+         <tr>
+            <td class="ValueVal">
+               <p class="ValueVal">0xB8</p>
+            </td>
+            <td class="ValueName">
+               <p class="ValueName">OptionsPanel</p>
+            </td>
+            <td class="ValueDesc"></td>
+         </tr>
+         <tr>
+            <td colspan="3" class="ValueRowSep">
+               <p class="ValueRowSep"></p>
+            </td>
+         </tr>
+         <tr>
+            <td class="ValueVal">
+               <p class="ValueVal">0xB9</p>
+            </td>
+            <td class="ValueName">
+               <p class="ValueName">ResetView</p>
+            </td>
+            <td class="ValueDesc"></td>
+         </tr>
+         <tr>
+            <td colspan="3" class="ValueRowSep">
+               <p class="ValueRowSep"></p>
+            </td>
+         </tr>
+         <tr>
+            <td class="ValueVal">
+               <p class="ValueVal">0xBA</p>
+            </td>
+            <td class="ValueName">
+               <p class="ValueName">CameraLeftRotate</p>
+            </td>
+            <td class="ValueDesc"></td>
+         </tr>
+         <tr>
+            <td colspan="3" class="ValueRowSep">
+               <p class="ValueRowSep"></p>
+            </td>
+         </tr>
+         <tr>
+            <td class="ValueVal">
+               <p class="ValueVal">0xBB</p>
+            </td>
+            <td class="ValueName">
+               <p class="ValueName">CameraRightRotate</p>
+            </td>
+            <td class="ValueDesc"></td>
+         </tr>
+         <tr>
+            <td colspan="3" class="ValueRowSep">
+               <p class="ValueRowSep"></p>
+            </td>
+         </tr>
+         <tr>
+            <td class="ValueVal">
+               <p class="ValueVal">0xBC</p>
+            </td>
+            <td class="ValueName">
+               <p class="ValueName">CameraRaise</p>
+            </td>
+            <td class="ValueDesc"></td>
+         </tr>
+         <tr>
+            <td colspan="3" class="ValueRowSep">
+               <p class="ValueRowSep"></p>
+            </td>
+         </tr>
+         <tr>
+            <td class="ValueVal">
+               <p class="ValueVal">0xBD</p>
+            </td>
+            <td class="ValueName">
+               <p class="ValueName">CameraLower</p>
+            </td>
+            <td class="ValueDesc"></td>
+         </tr>
+         <tr>
+            <td colspan="3" class="ValueRowSep">
+               <p class="ValueRowSep"></p>
+            </td>
+         </tr>
+         <tr>
+            <td class="ValueVal">
+               <p class="ValueVal">0xBE</p>
+            </td>
+            <td class="ValueName">
+               <p class="ValueName">CameraCloser</p>
+            </td>
+            <td class="ValueDesc"></td>
+         </tr>
+         <tr>
+            <td colspan="3" class="ValueRowSep">
+               <p class="ValueRowSep"></p>
+            </td>
+         </tr>
+         <tr>
+            <td class="ValueVal">
+               <p class="ValueVal">0xBF</p>
+            </td>
+            <td class="ValueName">
+               <p class="ValueName">CameraFarther</p>
+            </td>
+            <td class="ValueDesc"></td>
+         </tr>
+         <tr>
+            <td colspan="3" class="ValueRowSep">
+               <p class="ValueRowSep"></p>
+            </td>
+         </tr>
+         <tr>
+            <td class="ValueVal">
+               <p class="ValueVal">0xC0</p>
+            </td>
+            <td class="ValueName">
+               <p class="ValueName">FloorView</p>
+            </td>
+            <td class="ValueDesc"></td>
+         </tr>
+         <tr>
+            <td colspan="3" class="ValueRowSep">
+               <p class="ValueRowSep"></p>
+            </td>
+         </tr>
+         <tr>
+            <td class="ValueVal">
+               <p class="ValueVal">0xC1</p>
+            </td>
+            <td class="ValueName">
+               <p class="ValueName">MouseLook</p>
+            </td>
+            <td class="ValueDesc"></td>
+         </tr>
+         <tr>
+            <td colspan="3" class="ValueRowSep">
+               <p class="ValueRowSep"></p>
+            </td>
+         </tr>
+         <tr>
+            <td class="ValueVal">
+               <p class="ValueVal">0xC2</p>
+            </td>
+            <td class="ValueName">
+               <p class="ValueName">PreviousItem</p>
+            </td>
+            <td class="ValueDesc"></td>
+         </tr>
+         <tr>
+            <td colspan="3" class="ValueRowSep">
+               <p class="ValueRowSep"></p>
+            </td>
+         </tr>
+         <tr>
+            <td class="ValueVal">
+               <p class="ValueVal">0xC3</p>
+            </td>
+            <td class="ValueName">
+               <p class="ValueName">NextItem</p>
+            </td>
+            <td class="ValueDesc"></td>
+         </tr>
+         <tr>
+            <td colspan="3" class="ValueRowSep">
+               <p class="ValueRowSep"></p>
+            </td>
+         </tr>
+         <tr>
+            <td class="ValueVal">
+               <p class="ValueVal">0xC4</p>
+            </td>
+            <td class="ValueName">
+               <p class="ValueName">ClosestItem</p>
+            </td>
+            <td class="ValueDesc"></td>
+         </tr>
+         <tr>
+            <td colspan="3" class="ValueRowSep">
+               <p class="ValueRowSep"></p>
+            </td>
+         </tr>
+         <tr>
+            <td class="ValueVal">
+               <p class="ValueVal">0xC5</p>
+            </td>
+            <td class="ValueName">
+               <p class="ValueName">ShiftView</p>
+            </td>
+            <td class="ValueDesc"></td>
+         </tr>
+         <tr>
+            <td colspan="3" class="ValueRowSep">
+               <p class="ValueRowSep"></p>
+            </td>
+         </tr>
+         <tr>
+            <td class="ValueVal">
+               <p class="ValueVal">0xC6</p>
+            </td>
+            <td class="ValueName">
+               <p class="ValueName">MapView</p>
+            </td>
+            <td class="ValueDesc"></td>
+         </tr>
+         <tr>
+            <td colspan="3" class="ValueRowSep">
+               <p class="ValueRowSep"></p>
+            </td>
+         </tr>
+         <tr>
+            <td class="ValueVal">
+               <p class="ValueVal">0xC7</p>
+            </td>
+            <td class="ValueName">
+               <p class="ValueName">AutoRun</p>
+            </td>
+            <td class="ValueDesc"></td>
+         </tr>
+         <tr>
+            <td colspan="3" class="ValueRowSep">
+               <p class="ValueRowSep"></p>
+            </td>
+         </tr>
+         <tr>
+            <td class="ValueVal">
+               <p class="ValueVal">0xC8</p>
+            </td>
+            <td class="ValueName">
+               <p class="ValueName">DecreasePowerSetting</p>
+            </td>
+            <td class="ValueDesc"></td>
+         </tr>
+         <tr>
+            <td colspan="3" class="ValueRowSep">
+               <p class="ValueRowSep"></p>
+            </td>
+         </tr>
+         <tr>
+            <td class="ValueVal">
+               <p class="ValueVal">0xC9</p>
+            </td>
+            <td class="ValueName">
+               <p class="ValueName">IncreasePowerSetting</p>
+            </td>
+            <td class="ValueDesc"></td>
+         </tr>
+         <tr>
+            <td colspan="3" class="ValueRowSep">
+               <p class="ValueRowSep"></p>
+            </td>
+         </tr>
+         <tr>
+            <td class="ValueVal">
+               <p class="ValueVal">0xCA</p>
+            </td>
+            <td class="ValueName">
+               <p class="ValueName">Pray</p>
+            </td>
+            <td class="ValueDesc"></td>
+         </tr>
+         <tr>
+            <td colspan="3" class="ValueRowSep">
+               <p class="ValueRowSep"></p>
+            </td>
+         </tr>
+         <tr>
+            <td class="ValueVal">
+               <p class="ValueVal">0xCB</p>
+            </td>
+            <td class="ValueName">
+               <p class="ValueName">Mock</p>
+            </td>
+            <td class="ValueDesc"></td>
+         </tr>
+         <tr>
+            <td colspan="3" class="ValueRowSep">
+               <p class="ValueRowSep"></p>
+            </td>
+         </tr>
+         <tr>
+            <td class="ValueVal">
+               <p class="ValueVal">0xCC</p>
+            </td>
+            <td class="ValueName">
+               <p class="ValueName">Teapot</p>
+            </td>
+            <td class="ValueDesc"></td>
+         </tr>
+         <tr>
+            <td colspan="3" class="ValueRowSep">
+               <p class="ValueRowSep"></p>
+            </td>
+         </tr>
+         <tr>
+            <td class="ValueVal">
+               <p class="ValueVal">0xCD</p>
+            </td>
+            <td class="ValueName">
+               <p class="ValueName">SpecialAttack1</p>
+            </td>
+            <td class="ValueDesc"></td>
+         </tr>
+         <tr>
+            <td colspan="3" class="ValueRowSep">
+               <p class="ValueRowSep"></p>
+            </td>
+         </tr>
+         <tr>
+            <td class="ValueVal">
+               <p class="ValueVal">0xCE</p>
+            </td>
+            <td class="ValueName">
+               <p class="ValueName">SpecialAttack2</p>
+            </td>
+            <td class="ValueDesc"></td>
+         </tr>
+         <tr>
+            <td colspan="3" class="ValueRowSep">
+               <p class="ValueRowSep"></p>
+            </td>
+         </tr>
+         <tr>
+            <td class="ValueVal">
+               <p class="ValueVal">0xCF</p>
+            </td>
+            <td class="ValueName">
+               <p class="ValueName">SpecialAttack3</p>
+            </td>
+            <td class="ValueDesc"></td>
+         </tr>
+         <tr>
+            <td colspan="3" class="ValueRowSep">
+               <p class="ValueRowSep"></p>
+            </td>
+         </tr>
+         <tr>
+            <td class="ValueVal">
+               <p class="ValueVal">0xD0</p>
+            </td>
+            <td class="ValueName">
+               <p class="ValueName">MissileAttack1</p>
+            </td>
+            <td class="ValueDesc"></td>
+         </tr>
+         <tr>
+            <td colspan="3" class="ValueRowSep">
+               <p class="ValueRowSep"></p>
+            </td>
+         </tr>
+         <tr>
+            <td class="ValueVal">
+               <p class="ValueVal">0xD1</p>
+            </td>
+            <td class="ValueName">
+               <p class="ValueName">MissileAttack2</p>
+            </td>
+            <td class="ValueDesc"></td>
+         </tr>
+         <tr>
+            <td colspan="3" class="ValueRowSep">
+               <p class="ValueRowSep"></p>
+            </td>
+         </tr>
+         <tr>
+            <td class="ValueVal">
+               <p class="ValueVal">0xD2</p>
+            </td>
+            <td class="ValueName">
+               <p class="ValueName">MissileAttack3</p>
+            </td>
+            <td class="ValueDesc"></td>
+         </tr>
+         <tr>
+            <td colspan="3" class="ValueRowSep">
+               <p class="ValueRowSep"></p>
+            </td>
+         </tr>
+         <tr>
+            <td class="ValueVal">
+               <p class="ValueVal">0xD3</p>
+            </td>
+            <td class="ValueName">
+               <p class="ValueName">CastSpell</p>
+            </td>
+            <td class="ValueDesc"></td>
+         </tr>
+         <tr>
+            <td colspan="3" class="ValueRowSep">
+               <p class="ValueRowSep"></p>
+            </td>
+         </tr>
+         <tr>
+            <td class="ValueVal">
+               <p class="ValueVal">0xD4</p>
+            </td>
+            <td class="ValueName">
+               <p class="ValueName">Flatulence</p>
+            </td>
+            <td class="ValueDesc"></td>
+         </tr>
+         <tr>
+            <td colspan="3" class="ValueRowSep">
+               <p class="ValueRowSep"></p>
+            </td>
+         </tr>
+         <tr>
+            <td class="ValueVal">
+               <p class="ValueVal">0xD5</p>
+            </td>
+            <td class="ValueName">
+               <p class="ValueName">FirstPersonView</p>
+            </td>
+            <td class="ValueDesc"></td>
+         </tr>
+         <tr>
+            <td colspan="3" class="ValueRowSep">
+               <p class="ValueRowSep"></p>
+            </td>
+         </tr>
+         <tr>
+            <td class="ValueVal">
+               <p class="ValueVal">0xD6</p>
+            </td>
+            <td class="ValueName">
+               <p class="ValueName">AllegiancePanel</p>
+            </td>
+            <td class="ValueDesc"></td>
+         </tr>
+         <tr>
+            <td colspan="3" class="ValueRowSep">
+               <p class="ValueRowSep"></p>
+            </td>
+         </tr>
+         <tr>
+            <td class="ValueVal">
+               <p class="ValueVal">0xD7</p>
+            </td>
+            <td class="ValueName">
+               <p class="ValueName">FellowshipPanel</p>
+            </td>
+            <td class="ValueDesc"></td>
+         </tr>
+         <tr>
+            <td colspan="3" class="ValueRowSep">
+               <p class="ValueRowSep"></p>
+            </td>
+         </tr>
+         <tr>
+            <td class="ValueVal">
+               <p class="ValueVal">0xD8</p>
+            </td>
+            <td class="ValueName">
+               <p class="ValueName">SpellbookPanel</p>
+            </td>
+            <td class="ValueDesc"></td>
+         </tr>
+         <tr>
+            <td colspan="3" class="ValueRowSep">
+               <p class="ValueRowSep"></p>
+            </td>
+         </tr>
+         <tr>
+            <td class="ValueVal">
+               <p class="ValueVal">0xD9</p>
+            </td>
+            <td class="ValueName">
+               <p class="ValueName">SpellComponentsPanel</p>
+            </td>
+            <td class="ValueDesc"></td>
+         </tr>
+         <tr>
+            <td colspan="3" class="ValueRowSep">
+               <p class="ValueRowSep"></p>
+            </td>
+         </tr>
+         <tr>
+            <td class="ValueVal">
+               <p class="ValueVal">0xDA</p>
+            </td>
+            <td class="ValueName">
+               <p class="ValueName">HousePanel</p>
+            </td>
+            <td class="ValueDesc"></td>
+         </tr>
+         <tr>
+            <td colspan="3" class="ValueRowSep">
+               <p class="ValueRowSep"></p>
+            </td>
+         </tr>
+         <tr>
+            <td class="ValueVal">
+               <p class="ValueVal">0xDB</p>
+            </td>
+            <td class="ValueName">
+               <p class="ValueName">AttributesPanel</p>
+            </td>
+            <td class="ValueDesc"></td>
+         </tr>
+         <tr>
+            <td colspan="3" class="ValueRowSep">
+               <p class="ValueRowSep"></p>
+            </td>
+         </tr>
+         <tr>
+            <td class="ValueVal">
+               <p class="ValueVal">0xDC</p>
+            </td>
+            <td class="ValueName">
+               <p class="ValueName">SkillsPanel</p>
+            </td>
+            <td class="ValueDesc"></td>
+         </tr>
+         <tr>
+            <td colspan="3" class="ValueRowSep">
+               <p class="ValueRowSep"></p>
+            </td>
+         </tr>
+         <tr>
+            <td class="ValueVal">
+               <p class="ValueVal">0xDD</p>
+            </td>
+            <td class="ValueName">
+               <p class="ValueName">MapPanel</p>
+            </td>
+            <td class="ValueDesc"></td>
+         </tr>
+         <tr>
+            <td colspan="3" class="ValueRowSep">
+               <p class="ValueRowSep"></p>
+            </td>
+         </tr>
+         <tr>
+            <td class="ValueVal">
+               <p class="ValueVal">0xDE</p>
+            </td>
+            <td class="ValueName">
+               <p class="ValueName">InventoryPanel</p>
+            </td>
+            <td class="ValueDesc"></td>
+         </tr>
+         <tr>
+            <td colspan="3" class="ValueRowSep">
+               <p class="ValueRowSep"></p>
+            </td>
+         </tr>
+         <tr>
+            <td class="ValueVal">
+               <p class="ValueVal">0xDF</p>
+            </td>
+            <td class="ValueName">
+               <p class="ValueName">Demonet</p>
+            </td>
+            <td class="ValueDesc"></td>
+         </tr>
+         <tr>
+            <td colspan="3" class="ValueRowSep">
+               <p class="ValueRowSep"></p>
+            </td>
+         </tr>
+         <tr>
+            <td class="ValueVal">
+               <p class="ValueVal">0xE0</p>
+            </td>
+            <td class="ValueName">
+               <p class="ValueName">UseMagicStaff</p>
+            </td>
+            <td class="ValueDesc"></td>
+         </tr>
+         <tr>
+            <td colspan="3" class="ValueRowSep">
+               <p class="ValueRowSep"></p>
+            </td>
+         </tr>
+         <tr>
+            <td class="ValueVal">
+               <p class="ValueVal">0xE1</p>
+            </td>
+            <td class="ValueName">
+               <p class="ValueName">UseMagicWand</p>
+            </td>
+            <td class="ValueDesc"></td>
+         </tr>
+         <tr>
+            <td colspan="3" class="ValueRowSep">
+               <p class="ValueRowSep"></p>
+            </td>
+         </tr>
+         <tr>
+            <td class="ValueVal">
+               <p class="ValueVal">0xE2</p>
+            </td>
+            <td class="ValueName">
+               <p class="ValueName">Blink</p>
+            </td>
+            <td class="ValueDesc"></td>
+         </tr>
+         <tr>
+            <td colspan="3" class="ValueRowSep">
+               <p class="ValueRowSep"></p>
+            </td>
+         </tr>
+         <tr>
+            <td class="ValueVal">
+               <p class="ValueVal">0xE3</p>
+            </td>
+            <td class="ValueName">
+               <p class="ValueName">Bite</p>
+            </td>
+            <td class="ValueDesc"></td>
+         </tr>
+         <tr>
+            <td colspan="3" class="ValueRowSep">
+               <p class="ValueRowSep"></p>
+            </td>
+         </tr>
+         <tr>
+            <td class="ValueVal">
+               <p class="ValueVal">0xE4</p>
+            </td>
+            <td class="ValueName">
+               <p class="ValueName">TwitchSubstate1</p>
+            </td>
+            <td class="ValueDesc"></td>
+         </tr>
+         <tr>
+            <td colspan="3" class="ValueRowSep">
+               <p class="ValueRowSep"></p>
+            </td>
+         </tr>
+         <tr>
+            <td class="ValueVal">
+               <p class="ValueVal">0xE5</p>
+            </td>
+            <td class="ValueName">
+               <p class="ValueName">TwitchSubstate2</p>
+            </td>
+            <td class="ValueDesc"></td>
+         </tr>
+         <tr>
+            <td colspan="3" class="ValueRowSep">
+               <p class="ValueRowSep"></p>
+            </td>
+         </tr>
+         <tr>
+            <td class="ValueVal">
+               <p class="ValueVal">0xE6</p>
+            </td>
+            <td class="ValueName">
+               <p class="ValueName">TwitchSubstate3</p>
+            </td>
+            <td class="ValueDesc"></td>
+         </tr>
+         <tr>
+            <td colspan="3" class="ValueRowSep">
+               <p class="ValueRowSep"></p>
+            </td>
+         </tr>
+         <tr>
+            <td class="ValueVal">
+               <p class="ValueVal">0xE7</p>
+            </td>
+            <td class="ValueName">
+               <p class="ValueName">CaptureScreenshotToFile</p>
+            </td>
+            <td class="ValueDesc"></td>
+         </tr>
+         <tr>
+            <td colspan="3" class="ValueRowSep">
+               <p class="ValueRowSep"></p>
+            </td>
+         </tr>
+         <tr>
+            <td class="ValueVal">
+               <p class="ValueVal">0xE8</p>
+            </td>
+            <td class="ValueName">
+               <p class="ValueName">BowNoAmmo</p>
+            </td>
+            <td class="ValueDesc"></td>
+         </tr>
+         <tr>
+            <td colspan="3" class="ValueRowSep">
+               <p class="ValueRowSep"></p>
+            </td>
+         </tr>
+         <tr>
+            <td class="ValueVal">
+               <p class="ValueVal">0xE9</p>
+            </td>
+            <td class="ValueName">
+               <p class="ValueName">CrossBowNoAmmo</p>
+            </td>
+            <td class="ValueDesc"></td>
+         </tr>
+         <tr>
+            <td colspan="3" class="ValueRowSep">
+               <p class="ValueRowSep"></p>
+            </td>
+         </tr>
+         <tr>
+            <td class="ValueVal">
+               <p class="ValueVal">0xEA</p>
+            </td>
+            <td class="ValueName">
+               <p class="ValueName">ShakeFistState</p>
+            </td>
+            <td class="ValueDesc"></td>
+         </tr>
+         <tr>
+            <td colspan="3" class="ValueRowSep">
+               <p class="ValueRowSep"></p>
+            </td>
+         </tr>
+         <tr>
+            <td class="ValueVal">
+               <p class="ValueVal">0xEB</p>
+            </td>
+            <td class="ValueName">
+               <p class="ValueName">PrayState</p>
+            </td>
+            <td class="ValueDesc"></td>
+         </tr>
+         <tr>
+            <td colspan="3" class="ValueRowSep">
+               <p class="ValueRowSep"></p>
+            </td>
+         </tr>
+         <tr>
+            <td class="ValueVal">
+               <p class="ValueVal">0xEC</p>
+            </td>
+            <td class="ValueName">
+               <p class="ValueName">BowDeepState</p>
+            </td>
+            <td class="ValueDesc"></td>
+         </tr>
+         <tr>
+            <td colspan="3" class="ValueRowSep">
+               <p class="ValueRowSep"></p>
+            </td>
+         </tr>
+         <tr>
+            <td class="ValueVal">
+               <p class="ValueVal">0xED</p>
+            </td>
+            <td class="ValueName">
+               <p class="ValueName">ClapHandsState</p>
+            </td>
+            <td class="ValueDesc"></td>
+         </tr>
+         <tr>
+            <td colspan="3" class="ValueRowSep">
+               <p class="ValueRowSep"></p>
+            </td>
+         </tr>
+         <tr>
+            <td class="ValueVal">
+               <p class="ValueVal">0xEE</p>
+            </td>
+            <td class="ValueName">
+               <p class="ValueName">CrossArmsState</p>
+            </td>
+            <td class="ValueDesc"></td>
+         </tr>
+         <tr>
+            <td colspan="3" class="ValueRowSep">
+               <p class="ValueRowSep"></p>
+            </td>
+         </tr>
+         <tr>
+            <td class="ValueVal">
+               <p class="ValueVal">0xEF</p>
+            </td>
+            <td class="ValueName">
+               <p class="ValueName">ShiverState</p>
+            </td>
+            <td class="ValueDesc"></td>
+         </tr>
+         <tr>
+            <td colspan="3" class="ValueRowSep">
+               <p class="ValueRowSep"></p>
+            </td>
+         </tr>
+         <tr>
+            <td class="ValueVal">
+               <p class="ValueVal">0xF0</p>
+            </td>
+            <td class="ValueName">
+               <p class="ValueName">PointState</p>
+            </td>
+            <td class="ValueDesc"></td>
+         </tr>
+         <tr>
+            <td colspan="3" class="ValueRowSep">
+               <p class="ValueRowSep"></p>
+            </td>
+         </tr>
+         <tr>
+            <td class="ValueVal">
+               <p class="ValueVal">0xF1</p>
+            </td>
+            <td class="ValueName">
+               <p class="ValueName">WaveState</p>
+            </td>
+            <td class="ValueDesc"></td>
+         </tr>
+         <tr>
+            <td colspan="3" class="ValueRowSep">
+               <p class="ValueRowSep"></p>
+            </td>
+         </tr>
+         <tr>
+            <td class="ValueVal">
+               <p class="ValueVal">0xF2</p>
+            </td>
+            <td class="ValueName">
+               <p class="ValueName">AkimboState</p>
+            </td>
+            <td class="ValueDesc"></td>
+         </tr>
+         <tr>
+            <td colspan="3" class="ValueRowSep">
+               <p class="ValueRowSep"></p>
+            </td>
+         </tr>
+         <tr>
+            <td class="ValueVal">
+               <p class="ValueVal">0xF3</p>
+            </td>
+            <td class="ValueName">
+               <p class="ValueName">SaluteState</p>
+            </td>
+            <td class="ValueDesc"></td>
+         </tr>
+         <tr>
+            <td colspan="3" class="ValueRowSep">
+               <p class="ValueRowSep"></p>
+            </td>
+         </tr>
+         <tr>
+            <td class="ValueVal">
+               <p class="ValueVal">0xF4</p>
+            </td>
+            <td class="ValueName">
+               <p class="ValueName">ScratchHeadState</p>
+            </td>
+            <td class="ValueDesc"></td>
+         </tr>
+         <tr>
+            <td colspan="3" class="ValueRowSep">
+               <p class="ValueRowSep"></p>
+            </td>
+         </tr>
+         <tr>
+            <td class="ValueVal">
+               <p class="ValueVal">0xF5</p>
+            </td>
+            <td class="ValueName">
+               <p class="ValueName">TapFootState</p>
+            </td>
+            <td class="ValueDesc"></td>
+         </tr>
+         <tr>
+            <td colspan="3" class="ValueRowSep">
+               <p class="ValueRowSep"></p>
+            </td>
+         </tr>
+         <tr>
+            <td class="ValueVal">
+               <p class="ValueVal">0xF6</p>
+            </td>
+            <td class="ValueName">
+               <p class="ValueName">LeanState</p>
+            </td>
+            <td class="ValueDesc"></td>
+         </tr>
+         <tr>
+            <td colspan="3" class="ValueRowSep">
+               <p class="ValueRowSep"></p>
+            </td>
+         </tr>
+         <tr>
+            <td class="ValueVal">
+               <p class="ValueVal">0xF7</p>
+            </td>
+            <td class="ValueName">
+               <p class="ValueName">KneelState</p>
+            </td>
+            <td class="ValueDesc"></td>
+         </tr>
+         <tr>
+            <td colspan="3" class="ValueRowSep">
+               <p class="ValueRowSep"></p>
+            </td>
+         </tr>
+         <tr>
+            <td class="ValueVal">
+               <p class="ValueVal">0xF8</p>
+            </td>
+            <td class="ValueName">
+               <p class="ValueName">PleadState</p>
+            </td>
+            <td class="ValueDesc"></td>
+         </tr>
+         <tr>
+            <td colspan="3" class="ValueRowSep">
+               <p class="ValueRowSep"></p>
+            </td>
+         </tr>
+         <tr>
+            <td class="ValueVal">
+               <p class="ValueVal">0xF9</p>
+            </td>
+            <td class="ValueName">
+               <p class="ValueName">ATOYOT</p>
+            </td>
+            <td class="ValueDesc"></td>
+         </tr>
+         <tr>
+            <td colspan="3" class="ValueRowSep">
+               <p class="ValueRowSep"></p>
+            </td>
+         </tr>
+         <tr>
+            <td class="ValueVal">
+               <p class="ValueVal">0xFA</p>
+            </td>
+            <td class="ValueName">
+               <p class="ValueName">SlouchState</p>
+            </td>
+            <td class="ValueDesc"></td>
+         </tr>
+         <tr>
+            <td colspan="3" class="ValueRowSep">
+               <p class="ValueRowSep"></p>
+            </td>
+         </tr>
+         <tr>
+            <td class="ValueVal">
+               <p class="ValueVal">0xFB</p>
+            </td>
+            <td class="ValueName">
+               <p class="ValueName">SurrenderState</p>
+            </td>
+            <td class="ValueDesc"></td>
+         </tr>
+         <tr>
+            <td colspan="3" class="ValueRowSep">
+               <p class="ValueRowSep"></p>
+            </td>
+         </tr>
+         <tr>
+            <td class="ValueVal">
+               <p class="ValueVal">0xFC</p>
+            </td>
+            <td class="ValueName">
+               <p class="ValueName">WoahState</p>
+            </td>
+            <td class="ValueDesc"></td>
+         </tr>
+         <tr>
+            <td colspan="3" class="ValueRowSep">
+               <p class="ValueRowSep"></p>
+            </td>
+         </tr>
+         <tr>
+            <td class="ValueVal">
+               <p class="ValueVal">0xFD</p>
+            </td>
+            <td class="ValueName">
+               <p class="ValueName">WindedState</p>
+            </td>
+            <td class="ValueDesc"></td>
+         </tr>
+         <tr>
+            <td colspan="3" class="ValueRowSep">
+               <p class="ValueRowSep"></p>
+            </td>
+         </tr>
+         <tr>
+            <td class="ValueVal">
+               <p class="ValueVal">0xFE</p>
+            </td>
+            <td class="ValueName">
+               <p class="ValueName">AutoCreateShortcuts</p>
+            </td>
+            <td class="ValueDesc"></td>
+         </tr>
+         <tr>
+            <td colspan="3" class="ValueRowSep">
+               <p class="ValueRowSep"></p>
+            </td>
+         </tr>
+         <tr>
+            <td class="ValueVal">
+               <p class="ValueVal">0xFF</p>
+            </td>
+            <td class="ValueName">
+               <p class="ValueName">AutoRepeatAttacks</p>
+            </td>
+            <td class="ValueDesc"></td>
+         </tr>
+         <tr>
+            <td colspan="3" class="ValueRowSep">
+               <p class="ValueRowSep"></p>
+            </td>
+         </tr>
+         <tr>
+            <td class="ValueVal">
+               <p class="ValueVal">0x100</p>
+            </td>
+            <td class="ValueName">
+               <p class="ValueName">AutoTarget</p>
+            </td>
+            <td class="ValueDesc"></td>
+         </tr>
+         <tr>
+            <td colspan="3" class="ValueRowSep">
+               <p class="ValueRowSep"></p>
+            </td>
+         </tr>
+         <tr>
+            <td class="ValueVal">
+               <p class="ValueVal">0x101</p>
+            </td>
+            <td class="ValueName">
+               <p class="ValueName">AdvancedCombatInterface</p>
+            </td>
+            <td class="ValueDesc"></td>
+         </tr>
+         <tr>
+            <td colspan="3" class="ValueRowSep">
+               <p class="ValueRowSep"></p>
+            </td>
+         </tr>
+         <tr>
+            <td class="ValueVal">
+               <p class="ValueVal">0x102</p>
+            </td>
+            <td class="ValueName">
+               <p class="ValueName">IgnoreAllegianceRequests</p>
+            </td>
+            <td class="ValueDesc"></td>
+         </tr>
+         <tr>
+            <td colspan="3" class="ValueRowSep">
+               <p class="ValueRowSep"></p>
+            </td>
+         </tr>
+         <tr>
+            <td class="ValueVal">
+               <p class="ValueVal">0x103</p>
+            </td>
+            <td class="ValueName">
+               <p class="ValueName">IgnoreFellowshipRequests</p>
+            </td>
+            <td class="ValueDesc"></td>
+         </tr>
+         <tr>
+            <td colspan="3" class="ValueRowSep">
+               <p class="ValueRowSep"></p>
+            </td>
+         </tr>
+         <tr>
+            <td class="ValueVal">
+               <p class="ValueVal">0x104</p>
+            </td>
+            <td class="ValueName">
+               <p class="ValueName">InvertMouseLook</p>
+            </td>
+            <td class="ValueDesc"></td>
+         </tr>
+         <tr>
+            <td colspan="3" class="ValueRowSep">
+               <p class="ValueRowSep"></p>
+            </td>
+         </tr>
+         <tr>
+            <td class="ValueVal">
+               <p class="ValueVal">0x105</p>
+            </td>
+            <td class="ValueName">
+               <p class="ValueName">LetPlayersGiveYouItems</p>
+            </td>
+            <td class="ValueDesc"></td>
+         </tr>
+         <tr>
+            <td colspan="3" class="ValueRowSep">
+               <p class="ValueRowSep"></p>
+            </td>
+         </tr>
+         <tr>
+            <td class="ValueVal">
+               <p class="ValueVal">0x106</p>
+            </td>
+            <td class="ValueName">
+               <p class="ValueName">AutoTrackCombatTargets</p>
+            </td>
+            <td class="ValueDesc"></td>
+         </tr>
+         <tr>
+            <td colspan="3" class="ValueRowSep">
+               <p class="ValueRowSep"></p>
+            </td>
+         </tr>
+         <tr>
+            <td class="ValueVal">
+               <p class="ValueVal">0x107</p>
+            </td>
+            <td class="ValueName">
+               <p class="ValueName">DisplayTooltips</p>
+            </td>
+            <td class="ValueDesc"></td>
+         </tr>
+         <tr>
+            <td colspan="3" class="ValueRowSep">
+               <p class="ValueRowSep"></p>
+            </td>
+         </tr>
+         <tr>
+            <td class="ValueVal">
+               <p class="ValueVal">0x108</p>
+            </td>
+            <td class="ValueName">
+               <p class="ValueName">AttemptToDeceivePlayers</p>
+            </td>
+            <td class="ValueDesc"></td>
+         </tr>
+         <tr>
+            <td colspan="3" class="ValueRowSep">
+               <p class="ValueRowSep"></p>
+            </td>
+         </tr>
+         <tr>
+            <td class="ValueVal">
+               <p class="ValueVal">0x109</p>
+            </td>
+            <td class="ValueName">
+               <p class="ValueName">RunAsDefaultMovement</p>
+            </td>
+            <td class="ValueDesc"></td>
+         </tr>
+         <tr>
+            <td colspan="3" class="ValueRowSep">
+               <p class="ValueRowSep"></p>
+            </td>
+         </tr>
+         <tr>
+            <td class="ValueVal">
+               <p class="ValueVal">0x10A</p>
+            </td>
+            <td class="ValueName">
+               <p class="ValueName">StayInChatModeAfterSend</p>
+            </td>
+            <td class="ValueDesc"></td>
+         </tr>
+         <tr>
+            <td colspan="3" class="ValueRowSep">
+               <p class="ValueRowSep"></p>
+            </td>
+         </tr>
+         <tr>
+            <td class="ValueVal">
+               <p class="ValueVal">0x10B</p>
+            </td>
+            <td class="ValueName">
+               <p class="ValueName">RightClickToMouseLook</p>
+            </td>
+            <td class="ValueDesc"></td>
+         </tr>
+         <tr>
+            <td colspan="3" class="ValueRowSep">
+               <p class="ValueRowSep"></p>
+            </td>
+         </tr>
+         <tr>
+            <td class="ValueVal">
+               <p class="ValueVal">0x10C</p>
+            </td>
+            <td class="ValueName">
+               <p class="ValueName">VividTargetIndicator</p>
+            </td>
+            <td class="ValueDesc"></td>
+         </tr>
+         <tr>
+            <td colspan="3" class="ValueRowSep">
+               <p class="ValueRowSep"></p>
+            </td>
+         </tr>
+         <tr>
+            <td class="ValueVal">
+               <p class="ValueVal">0x10D</p>
+            </td>
+            <td class="ValueName">
+               <p class="ValueName">SelectSelf</p>
+            </td>
+            <td class="ValueDesc"></td>
+         </tr>
+         <tr>
+            <td colspan="3" class="ValueRowSep">
+               <p class="ValueRowSep"></p>
+            </td>
+         </tr>
+         <tr>
+            <td class="ValueVal">
+               <p class="ValueVal">0x10E</p>
+            </td>
+            <td class="ValueName">
+               <p class="ValueName">SkillHealSelf</p>
+            </td>
+            <td class="ValueDesc"></td>
+         </tr>
+         <tr>
+            <td colspan="3" class="ValueRowSep">
+               <p class="ValueRowSep"></p>
+            </td>
+         </tr>
+         <tr>
+            <td class="ValueVal">
+               <p class="ValueVal">0x10F</p>
+            </td>
+            <td class="ValueName">
+               <p class="ValueName">NextMonster</p>
+            </td>
+            <td class="ValueDesc"></td>
+         </tr>
+         <tr>
+            <td colspan="3" class="ValueRowSep">
+               <p class="ValueRowSep"></p>
+            </td>
+         </tr>
+         <tr>
+            <td class="ValueVal">
+               <p class="ValueVal">0x110</p>
+            </td>
+            <td class="ValueName">
+               <p class="ValueName">PreviousMonster</p>
+            </td>
+            <td class="ValueDesc"></td>
+         </tr>
+         <tr>
+            <td colspan="3" class="ValueRowSep">
+               <p class="ValueRowSep"></p>
+            </td>
+         </tr>
+         <tr>
+            <td class="ValueVal">
+               <p class="ValueVal">0x111</p>
+            </td>
+            <td class="ValueName">
+               <p class="ValueName">ClosestMonster</p>
+            </td>
+            <td class="ValueDesc"></td>
+         </tr>
+         <tr>
+            <td colspan="3" class="ValueRowSep">
+               <p class="ValueRowSep"></p>
+            </td>
+         </tr>
+         <tr>
+            <td class="ValueVal">
+               <p class="ValueVal">0x112</p>
+            </td>
+            <td class="ValueName">
+               <p class="ValueName">NextPlayer</p>
+            </td>
+            <td class="ValueDesc"></td>
+         </tr>
+         <tr>
+            <td colspan="3" class="ValueRowSep">
+               <p class="ValueRowSep"></p>
+            </td>
+         </tr>
+         <tr>
+            <td class="ValueVal">
+               <p class="ValueVal">0x113</p>
+            </td>
+            <td class="ValueName">
+               <p class="ValueName">PreviousPlayer</p>
+            </td>
+            <td class="ValueDesc"></td>
+         </tr>
+         <tr>
+            <td colspan="3" class="ValueRowSep">
+               <p class="ValueRowSep"></p>
+            </td>
+         </tr>
+         <tr>
+            <td class="ValueVal">
+               <p class="ValueVal">0x114</p>
+            </td>
+            <td class="ValueName">
+               <p class="ValueName">ClosestPlayer</p>
+            </td>
+            <td class="ValueDesc"></td>
+         </tr>
+         <tr>
+            <td colspan="3" class="ValueRowSep">
+               <p class="ValueRowSep"></p>
+            </td>
+         </tr>
+         <tr>
+            <td class="ValueVal">
+               <p class="ValueVal">0x115</p>
+            </td>
+            <td class="ValueName">
+               <p class="ValueName">SnowAngelState</p>
+            </td>
+            <td class="ValueDesc"></td>
+         </tr>
+         <tr>
+            <td colspan="3" class="ValueRowSep">
+               <p class="ValueRowSep"></p>
+            </td>
+         </tr>
+         <tr>
+            <td class="ValueVal">
+               <p class="ValueVal">0x116</p>
+            </td>
+            <td class="ValueName">
+               <p class="ValueName">WarmHands</p>
+            </td>
+            <td class="ValueDesc"></td>
+         </tr>
+         <tr>
+            <td colspan="3" class="ValueRowSep">
+               <p class="ValueRowSep"></p>
+            </td>
+         </tr>
+         <tr>
+            <td class="ValueVal">
+               <p class="ValueVal">0x117</p>
+            </td>
+            <td class="ValueName">
+               <p class="ValueName">CurtseyState</p>
+            </td>
+            <td class="ValueDesc"></td>
+         </tr>
+         <tr>
+            <td colspan="3" class="ValueRowSep">
+               <p class="ValueRowSep"></p>
+            </td>
+         </tr>
+         <tr>
+            <td class="ValueVal">
+               <p class="ValueVal">0x118</p>
+            </td>
+            <td class="ValueName">
+               <p class="ValueName">AFKState</p>
+            </td>
+            <td class="ValueDesc"></td>
+         </tr>
+         <tr>
+            <td colspan="3" class="ValueRowSep">
+               <p class="ValueRowSep"></p>
+            </td>
+         </tr>
+         <tr>
+            <td class="ValueVal">
+               <p class="ValueVal">0x119</p>
+            </td>
+            <td class="ValueName">
+               <p class="ValueName">MeditateState</p>
+            </td>
+            <td class="ValueDesc"></td>
+         </tr>
+         <tr>
+            <td colspan="3" class="ValueRowSep">
+               <p class="ValueRowSep"></p>
+            </td>
+         </tr>
+         <tr>
+            <td class="ValueVal">
+               <p class="ValueVal">0x11A</p>
+            </td>
+            <td class="ValueName">
+               <p class="ValueName">TradePanel</p>
+            </td>
+            <td class="ValueDesc"></td>
+         </tr>
+         <tr>
+            <td colspan="3" class="ValueRowSep">
+               <p class="ValueRowSep"></p>
+            </td>
+         </tr>
+         <tr>
+            <td class="ValueVal">
+               <p class="ValueVal">0x11B</p>
+            </td>
+            <td class="ValueName">
+               <p class="ValueName">LogOut</p>
+            </td>
+            <td class="ValueDesc"></td>
+         </tr>
+         <tr>
+            <td colspan="3" class="ValueRowSep">
+               <p class="ValueRowSep"></p>
+            </td>
+         </tr>
+         <tr>
+            <td class="ValueVal">
+               <p class="ValueVal">0x11C</p>
+            </td>
+            <td class="ValueName">
+               <p class="ValueName">DoubleSlashLow</p>
+            </td>
+            <td class="ValueDesc"></td>
+         </tr>
+         <tr>
+            <td colspan="3" class="ValueRowSep">
+               <p class="ValueRowSep"></p>
+            </td>
+         </tr>
+         <tr>
+            <td class="ValueVal">
+               <p class="ValueVal">0x11D</p>
+            </td>
+            <td class="ValueName">
+               <p class="ValueName">DoubleSlashMed</p>
+            </td>
+            <td class="ValueDesc"></td>
+         </tr>
+         <tr>
+            <td colspan="3" class="ValueRowSep">
+               <p class="ValueRowSep"></p>
+            </td>
+         </tr>
+         <tr>
+            <td class="ValueVal">
+               <p class="ValueVal">0x11E</p>
+            </td>
+            <td class="ValueName">
+               <p class="ValueName">DoubleSlashHigh</p>
+            </td>
+            <td class="ValueDesc"></td>
+         </tr>
+         <tr>
+            <td colspan="3" class="ValueRowSep">
+               <p class="ValueRowSep"></p>
+            </td>
+         </tr>
+         <tr>
+            <td class="ValueVal">
+               <p class="ValueVal">0x11F</p>
+            </td>
+            <td class="ValueName">
+               <p class="ValueName">TripleSlashLow</p>
+            </td>
+            <td class="ValueDesc"></td>
+         </tr>
+         <tr>
+            <td colspan="3" class="ValueRowSep">
+               <p class="ValueRowSep"></p>
+            </td>
+         </tr>
+         <tr>
+            <td class="ValueVal">
+               <p class="ValueVal">0x120</p>
+            </td>
+            <td class="ValueName">
+               <p class="ValueName">TripleSlashMed</p>
+            </td>
+            <td class="ValueDesc"></td>
+         </tr>
+         <tr>
+            <td colspan="3" class="ValueRowSep">
+               <p class="ValueRowSep"></p>
+            </td>
+         </tr>
+         <tr>
+            <td class="ValueVal">
+               <p class="ValueVal">0x121</p>
+            </td>
+            <td class="ValueName">
+               <p class="ValueName">TripleSlashHigh</p>
+            </td>
+            <td class="ValueDesc"></td>
+         </tr>
+         <tr>
+            <td colspan="3" class="ValueRowSep">
+               <p class="ValueRowSep"></p>
+            </td>
+         </tr>
+         <tr>
+            <td class="ValueVal">
+               <p class="ValueVal">0x122</p>
+            </td>
+            <td class="ValueName">
+               <p class="ValueName">DoubleThrustLow</p>
+            </td>
+            <td class="ValueDesc"></td>
+         </tr>
+         <tr>
+            <td colspan="3" class="ValueRowSep">
+               <p class="ValueRowSep"></p>
+            </td>
+         </tr>
+         <tr>
+            <td class="ValueVal">
+               <p class="ValueVal">0x123</p>
+            </td>
+            <td class="ValueName">
+               <p class="ValueName">DoubleThrustMed</p>
+            </td>
+            <td class="ValueDesc"></td>
+         </tr>
+         <tr>
+            <td colspan="3" class="ValueRowSep">
+               <p class="ValueRowSep"></p>
+            </td>
+         </tr>
+         <tr>
+            <td class="ValueVal">
+               <p class="ValueVal">0x124</p>
+            </td>
+            <td class="ValueName">
+               <p class="ValueName">DoubleThrustHigh</p>
+            </td>
+            <td class="ValueDesc"></td>
+         </tr>
+         <tr>
+            <td colspan="3" class="ValueRowSep">
+               <p class="ValueRowSep"></p>
+            </td>
+         </tr>
+         <tr>
+            <td class="ValueVal">
+               <p class="ValueVal">0x125</p>
+            </td>
+            <td class="ValueName">
+               <p class="ValueName">TripleThrustLow</p>
+            </td>
+            <td class="ValueDesc"></td>
+         </tr>
+         <tr>
+            <td colspan="3" class="ValueRowSep">
+               <p class="ValueRowSep"></p>
+            </td>
+         </tr>
+         <tr>
+            <td class="ValueVal">
+               <p class="ValueVal">0x126</p>
+            </td>
+            <td class="ValueName">
+               <p class="ValueName">TripleThrustMed</p>
+            </td>
+            <td class="ValueDesc"></td>
+         </tr>
+         <tr>
+            <td colspan="3" class="ValueRowSep">
+               <p class="ValueRowSep"></p>
+            </td>
+         </tr>
+         <tr>
+            <td class="ValueVal">
+               <p class="ValueVal">0x127</p>
+            </td>
+            <td class="ValueName">
+               <p class="ValueName">TripleThrustHigh</p>
+            </td>
+            <td class="ValueDesc"></td>
+         </tr>
+         <tr>
+            <td colspan="3" class="ValueRowSep">
+               <p class="ValueRowSep"></p>
+            </td>
+         </tr>
+         <tr>
+            <td class="ValueVal">
+               <p class="ValueVal">0x128</p>
+            </td>
+            <td class="ValueName">
+               <p class="ValueName">MagicPowerUp01Purple</p>
+            </td>
+            <td class="ValueDesc"></td>
+         </tr>
+         <tr>
+            <td colspan="3" class="ValueRowSep">
+               <p class="ValueRowSep"></p>
+            </td>
+         </tr>
+         <tr>
+            <td class="ValueVal">
+               <p class="ValueVal">0x129</p>
+            </td>
+            <td class="ValueName">
+               <p class="ValueName">MagicPowerUp02Purple</p>
+            </td>
+            <td class="ValueDesc"></td>
+         </tr>
+         <tr>
+            <td colspan="3" class="ValueRowSep">
+               <p class="ValueRowSep"></p>
+            </td>
+         </tr>
+         <tr>
+            <td class="ValueVal">
+               <p class="ValueVal">0x12A</p>
+            </td>
+            <td class="ValueName">
+               <p class="ValueName">MagicPowerUp03Purple</p>
+            </td>
+            <td class="ValueDesc"></td>
+         </tr>
+         <tr>
+            <td colspan="3" class="ValueRowSep">
+               <p class="ValueRowSep"></p>
+            </td>
+         </tr>
+         <tr>
+            <td class="ValueVal">
+               <p class="ValueVal">0x12B</p>
+            </td>
+            <td class="ValueName">
+               <p class="ValueName">MagicPowerUp04Purple</p>
+            </td>
+            <td class="ValueDesc"></td>
+         </tr>
+         <tr>
+            <td colspan="3" class="ValueRowSep">
+               <p class="ValueRowSep"></p>
+            </td>
+         </tr>
+         <tr>
+            <td class="ValueVal">
+               <p class="ValueVal">0x12C</p>
+            </td>
+            <td class="ValueName">
+               <p class="ValueName">MagicPowerUp05Purple</p>
+            </td>
+            <td class="ValueDesc"></td>
+         </tr>
+         <tr>
+            <td colspan="3" class="ValueRowSep">
+               <p class="ValueRowSep"></p>
+            </td>
+         </tr>
+         <tr>
+            <td class="ValueVal">
+               <p class="ValueVal">0x12D</p>
+            </td>
+            <td class="ValueName">
+               <p class="ValueName">MagicPowerUp06Purple</p>
+            </td>
+            <td class="ValueDesc"></td>
+         </tr>
+         <tr>
+            <td colspan="3" class="ValueRowSep">
+               <p class="ValueRowSep"></p>
+            </td>
+         </tr>
+         <tr>
+            <td class="ValueVal">
+               <p class="ValueVal">0x12E</p>
+            </td>
+            <td class="ValueName">
+               <p class="ValueName">MagicPowerUp07Purple</p>
+            </td>
+            <td class="ValueDesc"></td>
+         </tr>
+         <tr>
+            <td colspan="3" class="ValueRowSep">
+               <p class="ValueRowSep"></p>
+            </td>
+         </tr>
+         <tr>
+            <td class="ValueVal">
+               <p class="ValueVal">0x12F</p>
+            </td>
+            <td class="ValueName">
+               <p class="ValueName">MagicPowerUp08Purple</p>
+            </td>
+            <td class="ValueDesc"></td>
+         </tr>
+         <tr>
+            <td colspan="3" class="ValueRowSep">
+               <p class="ValueRowSep"></p>
+            </td>
+         </tr>
+         <tr>
+            <td class="ValueVal">
+               <p class="ValueVal">0x130</p>
+            </td>
+            <td class="ValueName">
+               <p class="ValueName">MagicPowerUp09Purple</p>
+            </td>
+            <td class="ValueDesc"></td>
+         </tr>
+         <tr>
+            <td colspan="3" class="ValueRowSep">
+               <p class="ValueRowSep"></p>
+            </td>
+         </tr>
+         <tr>
+            <td class="ValueVal">
+               <p class="ValueVal">0x131</p>
+            </td>
+            <td class="ValueName">
+               <p class="ValueName">MagicPowerUp10Purple</p>
+            </td>
+            <td class="ValueDesc"></td>
+         </tr>
+         <tr>
+            <td colspan="3" class="ValueRowSep">
+               <p class="ValueRowSep"></p>
+            </td>
+         </tr>
+         <tr>
+            <td class="ValueVal">
+               <p class="ValueVal">0x132</p>
+            </td>
+            <td class="ValueName">
+               <p class="ValueName">Helper</p>
+            </td>
+            <td class="ValueDesc"></td>
+         </tr>
+         <tr>
+            <td colspan="3" class="ValueRowSep">
+               <p class="ValueRowSep"></p>
+            </td>
+         </tr>
+         <tr>
+            <td class="ValueVal">
+               <p class="ValueVal">0x133</p>
+            </td>
+            <td class="ValueName">
+               <p class="ValueName">Pickup5</p>
+            </td>
+            <td class="ValueDesc"></td>
+         </tr>
+         <tr>
+            <td colspan="3" class="ValueRowSep">
+               <p class="ValueRowSep"></p>
+            </td>
+         </tr>
+         <tr>
+            <td class="ValueVal">
+               <p class="ValueVal">0x134</p>
+            </td>
+            <td class="ValueName">
+               <p class="ValueName">Pickup10</p>
+            </td>
+            <td class="ValueDesc"></td>
+         </tr>
+         <tr>
+            <td colspan="3" class="ValueRowSep">
+               <p class="ValueRowSep"></p>
+            </td>
+         </tr>
+         <tr>
+            <td class="ValueVal">
+               <p class="ValueVal">0x135</p>
+            </td>
+            <td class="ValueName">
+               <p class="ValueName">Pickup15</p>
+            </td>
+            <td class="ValueDesc"></td>
+         </tr>
+         <tr>
+            <td colspan="3" class="ValueRowSep">
+               <p class="ValueRowSep"></p>
+            </td>
+         </tr>
+         <tr>
+            <td class="ValueVal">
+               <p class="ValueVal">0x136</p>
+            </td>
+            <td class="ValueName">
+               <p class="ValueName">Pickup20</p>
+            </td>
+            <td class="ValueDesc"></td>
+         </tr>
+         <tr>
+            <td colspan="3" class="ValueRowSep">
+               <p class="ValueRowSep"></p>
+            </td>
+         </tr>
+         <tr>
+            <td class="ValueVal">
+               <p class="ValueVal">0x137</p>
+            </td>
+            <td class="ValueName">
+               <p class="ValueName">HouseRecall</p>
+            </td>
+            <td class="ValueDesc"></td>
+         </tr>
+         <tr>
+            <td colspan="3" class="ValueRowSep">
+               <p class="ValueRowSep"></p>
+            </td>
+         </tr>
+         <tr>
+            <td class="ValueVal">
+               <p class="ValueVal">0x138</p>
+            </td>
+            <td class="ValueName">
+               <p class="ValueName">AtlatlCombat</p>
+            </td>
+            <td class="ValueDesc"></td>
+         </tr>
+         <tr>
+            <td colspan="3" class="ValueRowSep">
+               <p class="ValueRowSep"></p>
+            </td>
+         </tr>
+         <tr>
+            <td class="ValueVal">
+               <p class="ValueVal">0x139</p>
+            </td>
+            <td class="ValueName">
+               <p class="ValueName">ThrownShieldCombat</p>
+            </td>
+            <td class="ValueDesc"></td>
+         </tr>
+         <tr>
+            <td colspan="3" class="ValueRowSep">
+               <p class="ValueRowSep"></p>
+            </td>
+         </tr>
+         <tr>
+            <td class="ValueVal">
+               <p class="ValueVal">0x13A</p>
+            </td>
+            <td class="ValueName">
+               <p class="ValueName">SitState</p>
+            </td>
+            <td class="ValueDesc"></td>
+         </tr>
+         <tr>
+            <td colspan="3" class="ValueRowSep">
+               <p class="ValueRowSep"></p>
+            </td>
+         </tr>
+         <tr>
+            <td class="ValueVal">
+               <p class="ValueVal">0x13B</p>
+            </td>
+            <td class="ValueName">
+               <p class="ValueName">SitCrossleggedState</p>
+            </td>
+            <td class="ValueDesc"></td>
+         </tr>
+         <tr>
+            <td colspan="3" class="ValueRowSep">
+               <p class="ValueRowSep"></p>
+            </td>
+         </tr>
+         <tr>
+            <td class="ValueVal">
+               <p class="ValueVal">0x13C</p>
+            </td>
+            <td class="ValueName">
+               <p class="ValueName">SitBackState</p>
+            </td>
+            <td class="ValueDesc"></td>
+         </tr>
+         <tr>
+            <td colspan="3" class="ValueRowSep">
+               <p class="ValueRowSep"></p>
+            </td>
+         </tr>
+         <tr>
+            <td class="ValueVal">
+               <p class="ValueVal">0x13D</p>
+            </td>
+            <td class="ValueName">
+               <p class="ValueName">PointLeftState</p>
+            </td>
+            <td class="ValueDesc"></td>
+         </tr>
+         <tr>
+            <td colspan="3" class="ValueRowSep">
+               <p class="ValueRowSep"></p>
+            </td>
+         </tr>
+         <tr>
+            <td class="ValueVal">
+               <p class="ValueVal">0x13E</p>
+            </td>
+            <td class="ValueName">
+               <p class="ValueName">PointRightState</p>
+            </td>
+            <td class="ValueDesc"></td>
+         </tr>
+         <tr>
+            <td colspan="3" class="ValueRowSep">
+               <p class="ValueRowSep"></p>
+            </td>
+         </tr>
+         <tr>
+            <td class="ValueVal">
+               <p class="ValueVal">0x13F</p>
+            </td>
+            <td class="ValueName">
+               <p class="ValueName">TalktotheHandState</p>
+            </td>
+            <td class="ValueDesc"></td>
+         </tr>
+         <tr>
+            <td colspan="3" class="ValueRowSep">
+               <p class="ValueRowSep"></p>
+            </td>
+         </tr>
+         <tr>
+            <td class="ValueVal">
+               <p class="ValueVal">0x140</p>
+            </td>
+            <td class="ValueName">
+               <p class="ValueName">PointDownState</p>
+            </td>
+            <td class="ValueDesc"></td>
+         </tr>
+         <tr>
+            <td colspan="3" class="ValueRowSep">
+               <p class="ValueRowSep"></p>
+            </td>
+         </tr>
+         <tr>
+            <td class="ValueVal">
+               <p class="ValueVal">0x141</p>
+            </td>
+            <td class="ValueName">
+               <p class="ValueName">DrudgeDanceState</p>
+            </td>
+            <td class="ValueDesc"></td>
+         </tr>
+         <tr>
+            <td colspan="3" class="ValueRowSep">
+               <p class="ValueRowSep"></p>
+            </td>
+         </tr>
+         <tr>
+            <td class="ValueVal">
+               <p class="ValueVal">0x142</p>
+            </td>
+            <td class="ValueName">
+               <p class="ValueName">PossumState</p>
+            </td>
+            <td class="ValueDesc"></td>
+         </tr>
+         <tr>
+            <td colspan="3" class="ValueRowSep">
+               <p class="ValueRowSep"></p>
+            </td>
+         </tr>
+         <tr>
+            <td class="ValueVal">
+               <p class="ValueVal">0x143</p>
+            </td>
+            <td class="ValueName">
+               <p class="ValueName">ReadState</p>
+            </td>
+            <td class="ValueDesc"></td>
+         </tr>
+         <tr>
+            <td colspan="3" class="ValueRowSep">
+               <p class="ValueRowSep"></p>
+            </td>
+         </tr>
+         <tr>
+            <td class="ValueVal">
+               <p class="ValueVal">0x144</p>
+            </td>
+            <td class="ValueName">
+               <p class="ValueName">ThinkerState</p>
+            </td>
+            <td class="ValueDesc"></td>
+         </tr>
+         <tr>
+            <td colspan="3" class="ValueRowSep">
+               <p class="ValueRowSep"></p>
+            </td>
+         </tr>
+         <tr>
+            <td class="ValueVal">
+               <p class="ValueVal">0x145</p>
+            </td>
+            <td class="ValueName">
+               <p class="ValueName">HaveASeatState</p>
+            </td>
+            <td class="ValueDesc"></td>
+         </tr>
+         <tr>
+            <td colspan="3" class="ValueRowSep">
+               <p class="ValueRowSep"></p>
+            </td>
+         </tr>
+         <tr>
+            <td class="ValueVal">
+               <p class="ValueVal">0x146</p>
+            </td>
+            <td class="ValueName">
+               <p class="ValueName">AtEaseState</p>
+            </td>
+            <td class="ValueDesc"></td>
+         </tr>
+         <tr>
+            <td colspan="3" class="ValueRowSep">
+               <p class="ValueRowSep"></p>
+            </td>
+         </tr>
+         <tr>
+            <td class="ValueVal">
+               <p class="ValueVal">0x147</p>
+            </td>
+            <td class="ValueName">
+               <p class="ValueName">NudgeLeft</p>
+            </td>
+            <td class="ValueDesc"></td>
+         </tr>
+         <tr>
+            <td colspan="3" class="ValueRowSep">
+               <p class="ValueRowSep"></p>
+            </td>
+         </tr>
+         <tr>
+            <td class="ValueVal">
+               <p class="ValueVal">0x148</p>
+            </td>
+            <td class="ValueName">
+               <p class="ValueName">NudgeRight</p>
+            </td>
+            <td class="ValueDesc"></td>
+         </tr>
+         <tr>
+            <td colspan="3" class="ValueRowSep">
+               <p class="ValueRowSep"></p>
+            </td>
+         </tr>
+         <tr>
+            <td class="ValueVal">
+               <p class="ValueVal">0x149</p>
+            </td>
+            <td class="ValueName">
+               <p class="ValueName">PointLeft</p>
+            </td>
+            <td class="ValueDesc"></td>
+         </tr>
+         <tr>
+            <td colspan="3" class="ValueRowSep">
+               <p class="ValueRowSep"></p>
+            </td>
+         </tr>
+         <tr>
+            <td class="ValueVal">
+               <p class="ValueVal">0x14A</p>
+            </td>
+            <td class="ValueName">
+               <p class="ValueName">PointRight</p>
+            </td>
+            <td class="ValueDesc"></td>
+         </tr>
+         <tr>
+            <td colspan="3" class="ValueRowSep">
+               <p class="ValueRowSep"></p>
+            </td>
+         </tr>
+         <tr>
+            <td class="ValueVal">
+               <p class="ValueVal">0x14B</p>
+            </td>
+            <td class="ValueName">
+               <p class="ValueName">PointDown</p>
+            </td>
+            <td class="ValueDesc"></td>
+         </tr>
+         <tr>
+            <td colspan="3" class="ValueRowSep">
+               <p class="ValueRowSep"></p>
+            </td>
+         </tr>
+         <tr>
+            <td class="ValueVal">
+               <p class="ValueVal">0x14C</p>
+            </td>
+            <td class="ValueName">
+               <p class="ValueName">Knock</p>
+            </td>
+            <td class="ValueDesc"></td>
+         </tr>
+         <tr>
+            <td colspan="3" class="ValueRowSep">
+               <p class="ValueRowSep"></p>
+            </td>
+         </tr>
+         <tr>
+            <td class="ValueVal">
+               <p class="ValueVal">0x14D</p>
+            </td>
+            <td class="ValueName">
+               <p class="ValueName">ScanHorizon</p>
+            </td>
+            <td class="ValueDesc"></td>
+         </tr>
+         <tr>
+            <td colspan="3" class="ValueRowSep">
+               <p class="ValueRowSep"></p>
+            </td>
+         </tr>
+         <tr>
+            <td class="ValueVal">
+               <p class="ValueVal">0x14E</p>
+            </td>
+            <td class="ValueName">
+               <p class="ValueName">DrudgeDance</p>
+            </td>
+            <td class="ValueDesc"></td>
+         </tr>
+         <tr>
+            <td colspan="3" class="ValueRowSep">
+               <p class="ValueRowSep"></p>
+            </td>
+         </tr>
+         <tr>
+            <td class="ValueVal">
+               <p class="ValueVal">0x14F</p>
+            </td>
+            <td class="ValueName">
+               <p class="ValueName">HaveASeat</p>
+            </td>
+            <td class="ValueDesc"></td>
+         </tr>
+         <tr>
+            <td colspan="3" class="ValueRowSep">
+               <p class="ValueRowSep"></p>
+            </td>
+         </tr>
+         <tr>
+            <td class="ValueVal">
+               <p class="ValueVal">0x150</p>
+            </td>
+            <td class="ValueName">
+               <p class="ValueName">LifestoneRecall</p>
+            </td>
+            <td class="ValueDesc"></td>
+         </tr>
+         <tr>
+            <td colspan="3" class="ValueRowSep">
+               <p class="ValueRowSep"></p>
+            </td>
+         </tr>
+         <tr>
+            <td class="ValueVal">
+               <p class="ValueVal">0x151</p>
+            </td>
+            <td class="ValueName">
+               <p class="ValueName">CharacterOptionsPanel</p>
+            </td>
+            <td class="ValueDesc"></td>
+         </tr>
+         <tr>
+            <td colspan="3" class="ValueRowSep">
+               <p class="ValueRowSep"></p>
+            </td>
+         </tr>
+         <tr>
+            <td class="ValueVal">
+               <p class="ValueVal">0x152</p>
+            </td>
+            <td class="ValueName">
+               <p class="ValueName">SoundAndGraphicsPanel</p>
+            </td>
+            <td class="ValueDesc"></td>
+         </tr>
+         <tr>
+            <td colspan="3" class="ValueRowSep">
+               <p class="ValueRowSep"></p>
+            </td>
+         </tr>
+         <tr>
+            <td class="ValueVal">
+               <p class="ValueVal">0x153</p>
+            </td>
+            <td class="ValueName">
+               <p class="ValueName">HelpfulSpellsPanel</p>
+            </td>
+            <td class="ValueDesc"></td>
+         </tr>
+         <tr>
+            <td colspan="3" class="ValueRowSep">
+               <p class="ValueRowSep"></p>
+            </td>
+         </tr>
+         <tr>
+            <td class="ValueVal">
+               <p class="ValueVal">0x154</p>
+            </td>
+            <td class="ValueName">
+               <p class="ValueName">HarmfulSpellsPanel</p>
+            </td>
+            <td class="ValueDesc"></td>
+         </tr>
+         <tr>
+            <td colspan="3" class="ValueRowSep">
+               <p class="ValueRowSep"></p>
+            </td>
+         </tr>
+         <tr>
+            <td class="ValueVal">
+               <p class="ValueVal">0x155</p>
+            </td>
+            <td class="ValueName">
+               <p class="ValueName">CharacterInformationPanel</p>
+            </td>
+            <td class="ValueDesc"></td>
+         </tr>
+         <tr>
+            <td colspan="3" class="ValueRowSep">
+               <p class="ValueRowSep"></p>
+            </td>
+         </tr>
+         <tr>
+            <td class="ValueVal">
+               <p class="ValueVal">0x156</p>
+            </td>
+            <td class="ValueName">
+               <p class="ValueName">LinkStatusPanel</p>
+            </td>
+            <td class="ValueDesc"></td>
+         </tr>
+         <tr>
+            <td colspan="3" class="ValueRowSep">
+               <p class="ValueRowSep"></p>
+            </td>
+         </tr>
+         <tr>
+            <td class="ValueVal">
+               <p class="ValueVal">0x157</p>
+            </td>
+            <td class="ValueName">
+               <p class="ValueName">VitaePanel</p>
+            </td>
+            <td class="ValueDesc"></td>
+         </tr>
+         <tr>
+            <td colspan="3" class="ValueRowSep">
+               <p class="ValueRowSep"></p>
+            </td>
+         </tr>
+         <tr>
+            <td class="ValueVal">
+               <p class="ValueVal">0x158</p>
+            </td>
+            <td class="ValueName">
+               <p class="ValueName">ShareFellowshipXP</p>
+            </td>
+            <td class="ValueDesc"></td>
+         </tr>
+         <tr>
+            <td colspan="3" class="ValueRowSep">
+               <p class="ValueRowSep"></p>
+            </td>
+         </tr>
+         <tr>
+            <td class="ValueVal">
+               <p class="ValueVal">0x159</p>
+            </td>
+            <td class="ValueName">
+               <p class="ValueName">ShareFellowshipLoot</p>
+            </td>
+            <td class="ValueDesc"></td>
+         </tr>
+         <tr>
+            <td colspan="3" class="ValueRowSep">
+               <p class="ValueRowSep"></p>
+            </td>
+         </tr>
+         <tr>
+            <td class="ValueVal">
+               <p class="ValueVal">0x15A</p>
+            </td>
+            <td class="ValueName">
+               <p class="ValueName">AcceptCorpseLooting</p>
+            </td>
+            <td class="ValueDesc"></td>
+         </tr>
+         <tr>
+            <td colspan="3" class="ValueRowSep">
+               <p class="ValueRowSep"></p>
+            </td>
+         </tr>
+         <tr>
+            <td class="ValueVal">
+               <p class="ValueVal">0x15B</p>
+            </td>
+            <td class="ValueName">
+               <p class="ValueName">IgnoreTradeRequests</p>
+            </td>
+            <td class="ValueDesc"></td>
+         </tr>
+         <tr>
+            <td colspan="3" class="ValueRowSep">
+               <p class="ValueRowSep"></p>
+            </td>
+         </tr>
+         <tr>
+            <td class="ValueVal">
+               <p class="ValueVal">0x15C</p>
+            </td>
+            <td class="ValueName">
+               <p class="ValueName">DisableWeather</p>
+            </td>
+            <td class="ValueDesc"></td>
+         </tr>
+         <tr>
+            <td colspan="3" class="ValueRowSep">
+               <p class="ValueRowSep"></p>
+            </td>
+         </tr>
+         <tr>
+            <td class="ValueVal">
+               <p class="ValueVal">0x15D</p>
+            </td>
+            <td class="ValueName">
+               <p class="ValueName">DisableHouseEffect</p>
+            </td>
+            <td class="ValueDesc"></td>
+         </tr>
+         <tr>
+            <td colspan="3" class="ValueRowSep">
+               <p class="ValueRowSep"></p>
+            </td>
+         </tr>
+         <tr>
+            <td class="ValueVal">
+               <p class="ValueVal">0x15E</p>
+            </td>
+            <td class="ValueName">
+               <p class="ValueName">SideBySideVitals</p>
+            </td>
+            <td class="ValueDesc"></td>
+         </tr>
+         <tr>
+            <td colspan="3" class="ValueRowSep">
+               <p class="ValueRowSep"></p>
+            </td>
+         </tr>
+         <tr>
+            <td class="ValueVal">
+               <p class="ValueVal">0x15F</p>
+            </td>
+            <td class="ValueName">
+               <p class="ValueName">ShowRadarCoordinates</p>
+            </td>
+            <td class="ValueDesc"></td>
+         </tr>
+         <tr>
+            <td colspan="3" class="ValueRowSep">
+               <p class="ValueRowSep"></p>
+            </td>
+         </tr>
+         <tr>
+            <td class="ValueVal">
+               <p class="ValueVal">0x160</p>
+            </td>
+            <td class="ValueName">
+               <p class="ValueName">ShowSpellDurations</p>
+            </td>
+            <td class="ValueDesc"></td>
+         </tr>
+         <tr>
+            <td colspan="3" class="ValueRowSep">
+               <p class="ValueRowSep"></p>
+            </td>
+         </tr>
+         <tr>
+            <td class="ValueVal">
+               <p class="ValueVal">0x161</p>
+            </td>
+            <td class="ValueName">
+               <p class="ValueName">MuteOnLosingFocus</p>
+            </td>
+            <td class="ValueDesc"></td>
+         </tr>
+         <tr>
+            <td colspan="3" class="ValueRowSep">
+               <p class="ValueRowSep"></p>
+            </td>
+         </tr>
+         <tr>
+            <td class="ValueVal">
+               <p class="ValueVal">0x162</p>
+            </td>
+            <td class="ValueName">
+               <p class="ValueName">Fishing</p>
+            </td>
+            <td class="ValueDesc"></td>
+         </tr>
+         <tr>
+            <td colspan="3" class="ValueRowSep">
+               <p class="ValueRowSep"></p>
+            </td>
+         </tr>
+         <tr>
+            <td class="ValueVal">
+               <p class="ValueVal">0x163</p>
+            </td>
+            <td class="ValueName">
+               <p class="ValueName">MarketplaceRecall</p>
+            </td>
+            <td class="ValueDesc"></td>
+         </tr>
+         <tr>
+            <td colspan="3" class="ValueRowSep">
+               <p class="ValueRowSep"></p>
+            </td>
+         </tr>
+         <tr>
+            <td class="ValueVal">
+               <p class="ValueVal">0x164</p>
+            </td>
+            <td class="ValueName">
+               <p class="ValueName">EnterPKLite</p>
+            </td>
+            <td class="ValueDesc"></td>
+         </tr>
+         <tr>
+            <td colspan="3" class="ValueRowSep">
+               <p class="ValueRowSep"></p>
+            </td>
+         </tr>
+         <tr>
+            <td class="ValueVal">
+               <p class="ValueVal">0x165</p>
+            </td>
+            <td class="ValueName">
+               <p class="ValueName">AllegianceChat</p>
+            </td>
+            <td class="ValueDesc"></td>
+         </tr>
+         <tr>
+            <td colspan="3" class="ValueRowSep">
+               <p class="ValueRowSep"></p>
+            </td>
+         </tr>
+         <tr>
+            <td class="ValueVal">
+               <p class="ValueVal">0x166</p>
+            </td>
+            <td class="ValueName">
+               <p class="ValueName">AutomaticallyAcceptFellowshipRequests</p>
+            </td>
+            <td class="ValueDesc"></td>
+         </tr>
+         <tr>
+            <td colspan="3" class="ValueRowSep">
+               <p class="ValueRowSep"></p>
+            </td>
+         </tr>
+         <tr>
+            <td class="ValueVal">
+               <p class="ValueVal">0x167</p>
+            </td>
+            <td class="ValueName">
+               <p class="ValueName">Reply</p>
+            </td>
+            <td class="ValueDesc"></td>
+         </tr>
+         <tr>
+            <td colspan="3" class="ValueRowSep">
+               <p class="ValueRowSep"></p>
+            </td>
+         </tr>
+         <tr>
+            <td class="ValueVal">
+               <p class="ValueVal">0x168</p>
+            </td>
+            <td class="ValueName">
+               <p class="ValueName">MonarchReply</p>
+            </td>
+            <td class="ValueDesc"></td>
+         </tr>
+         <tr>
+            <td colspan="3" class="ValueRowSep">
+               <p class="ValueRowSep"></p>
+            </td>
+         </tr>
+         <tr>
+            <td class="ValueVal">
+               <p class="ValueVal">0x169</p>
+            </td>
+            <td class="ValueName">
+               <p class="ValueName">PatronReply</p>
+            </td>
+            <td class="ValueDesc"></td>
+         </tr>
+         <tr>
+            <td colspan="3" class="ValueRowSep">
+               <p class="ValueRowSep"></p>
+            </td>
+         </tr>
+         <tr>
+            <td class="ValueVal">
+               <p class="ValueVal">0x16A</p>
+            </td>
+            <td class="ValueName">
+               <p class="ValueName">ToggleCraftingChanceOfSuccessDialog</p>
+            </td>
+            <td class="ValueDesc"></td>
+         </tr>
+         <tr>
+            <td colspan="3" class="ValueRowSep">
+               <p class="ValueRowSep"></p>
+            </td>
+         </tr>
+         <tr>
+            <td class="ValueVal">
+               <p class="ValueVal">0x16B</p>
+            </td>
+            <td class="ValueName">
+               <p class="ValueName">UseClosestUnopenedCorpse</p>
+            </td>
+            <td class="ValueDesc"></td>
+         </tr>
+         <tr>
+            <td colspan="3" class="ValueRowSep">
+               <p class="ValueRowSep"></p>
+            </td>
+         </tr>
+         <tr>
+            <td class="ValueVal">
+               <p class="ValueVal">0x16C</p>
+            </td>
+            <td class="ValueName">
+               <p class="ValueName">UseNextUnopenedCorpse</p>
+            </td>
+            <td class="ValueDesc"></td>
+         </tr>
+         <tr>
+            <td colspan="3" class="ValueRowSep">
+               <p class="ValueRowSep"></p>
+            </td>
+         </tr>
+         <tr>
+            <td class="ValueVal">
+               <p class="ValueVal">0x16D</p>
+            </td>
+            <td class="ValueName">
+               <p class="ValueName">IssueSlashCommand</p>
+            </td>
+            <td class="ValueDesc"></td>
+         </tr>
+         <tr>
+            <td colspan="3" class="ValueRowSep">
+               <p class="ValueRowSep"></p>
+            </td>
+         </tr>
+         <tr>
+            <td class="ValueVal">
+               <p class="ValueVal">0x16E</p>
+            </td>
+            <td class="ValueName">
+               <p class="ValueName">AllegianceHometownRecall</p>
+            </td>
+            <td class="ValueDesc"></td>
+         </tr>
+         <tr>
+            <td colspan="3" class="ValueRowSep">
+               <p class="ValueRowSep"></p>
+            </td>
+         </tr>
+         <tr>
+            <td class="ValueVal">
+               <p class="ValueVal">0x16F</p>
+            </td>
+            <td class="ValueName">
+               <p class="ValueName">PKArenaRecall</p>
+            </td>
+            <td class="ValueDesc"></td>
+         </tr>
+         <tr>
+            <td colspan="3" class="ValueRowSep">
+               <p class="ValueRowSep"></p>
+            </td>
+         </tr>
+         <tr>
+            <td class="ValueVal">
+               <p class="ValueVal">0x170</p>
+            </td>
+            <td class="ValueName">
+               <p class="ValueName">OffhandSlashHigh</p>
+            </td>
+            <td class="ValueDesc"></td>
+         </tr>
+         <tr>
+            <td colspan="3" class="ValueRowSep">
+               <p class="ValueRowSep"></p>
+            </td>
+         </tr>
+         <tr>
+            <td class="ValueVal">
+               <p class="ValueVal">0x171</p>
+            </td>
+            <td class="ValueName">
+               <p class="ValueName">OffhandSlashMed</p>
+            </td>
+            <td class="ValueDesc"></td>
+         </tr>
+         <tr>
+            <td colspan="3" class="ValueRowSep">
+               <p class="ValueRowSep"></p>
+            </td>
+         </tr>
+         <tr>
+            <td class="ValueVal">
+               <p class="ValueVal">0x172</p>
+            </td>
+            <td class="ValueName">
+               <p class="ValueName">OffhandSlashLow</p>
+            </td>
+            <td class="ValueDesc"></td>
+         </tr>
+         <tr>
+            <td colspan="3" class="ValueRowSep">
+               <p class="ValueRowSep"></p>
+            </td>
+         </tr>
+         <tr>
+            <td class="ValueVal">
+               <p class="ValueVal">0x173</p>
+            </td>
+            <td class="ValueName">
+               <p class="ValueName">OffhandThrustHigh</p>
+            </td>
+            <td class="ValueDesc"></td>
+         </tr>
+         <tr>
+            <td colspan="3" class="ValueRowSep">
+               <p class="ValueRowSep"></p>
+            </td>
+         </tr>
+         <tr>
+            <td class="ValueVal">
+               <p class="ValueVal">0x174</p>
+            </td>
+            <td class="ValueName">
+               <p class="ValueName">OffhandThrustMed</p>
+            </td>
+            <td class="ValueDesc"></td>
+         </tr>
+         <tr>
+            <td colspan="3" class="ValueRowSep">
+               <p class="ValueRowSep"></p>
+            </td>
+         </tr>
+         <tr>
+            <td class="ValueVal">
+               <p class="ValueVal">0x175</p>
+            </td>
+            <td class="ValueName">
+               <p class="ValueName">OffhandThrustLow</p>
+            </td>
+            <td class="ValueDesc"></td>
+         </tr>
+         <tr>
+            <td colspan="3" class="ValueRowSep">
+               <p class="ValueRowSep"></p>
+            </td>
+         </tr>
+         <tr>
+            <td class="ValueVal">
+               <p class="ValueVal">0x176</p>
+            </td>
+            <td class="ValueName">
+               <p class="ValueName">OffhandDoubleSlashLow</p>
+            </td>
+            <td class="ValueDesc"></td>
+         </tr>
+         <tr>
+            <td colspan="3" class="ValueRowSep">
+               <p class="ValueRowSep"></p>
+            </td>
+         </tr>
+         <tr>
+            <td class="ValueVal">
+               <p class="ValueVal">0x177</p>
+            </td>
+            <td class="ValueName">
+               <p class="ValueName">OffhandDoubleSlashMed</p>
+            </td>
+            <td class="ValueDesc"></td>
+         </tr>
+         <tr>
+            <td colspan="3" class="ValueRowSep">
+               <p class="ValueRowSep"></p>
+            </td>
+         </tr>
+         <tr>
+            <td class="ValueVal">
+               <p class="ValueVal">0x178</p>
+            </td>
+            <td class="ValueName">
+               <p class="ValueName">OffhandDoubleSlashHigh</p>
+            </td>
+            <td class="ValueDesc"></td>
+         </tr>
+         <tr>
+            <td colspan="3" class="ValueRowSep">
+               <p class="ValueRowSep"></p>
+            </td>
+         </tr>
+         <tr>
+            <td class="ValueVal">
+               <p class="ValueVal">0x179</p>
+            </td>
+            <td class="ValueName">
+               <p class="ValueName">OffhandTripleSlashLow</p>
+            </td>
+            <td class="ValueDesc"></td>
+         </tr>
+         <tr>
+            <td colspan="3" class="ValueRowSep">
+               <p class="ValueRowSep"></p>
+            </td>
+         </tr>
+         <tr>
+            <td class="ValueVal">
+               <p class="ValueVal">0x17A</p>
+            </td>
+            <td class="ValueName">
+               <p class="ValueName">OffhandTripleSlashMed</p>
+            </td>
+            <td class="ValueDesc"></td>
+         </tr>
+         <tr>
+            <td colspan="3" class="ValueRowSep">
+               <p class="ValueRowSep"></p>
+            </td>
+         </tr>
+         <tr>
+            <td class="ValueVal">
+               <p class="ValueVal">0x17B</p>
+            </td>
+            <td class="ValueName">
+               <p class="ValueName">OffhandTripleSlashHigh</p>
+            </td>
+            <td class="ValueDesc"></td>
+         </tr>
+         <tr>
+            <td colspan="3" class="ValueRowSep">
+               <p class="ValueRowSep"></p>
+            </td>
+         </tr>
+         <tr>
+            <td class="ValueVal">
+               <p class="ValueVal">0x17C</p>
+            </td>
+            <td class="ValueName">
+               <p class="ValueName">OffhandDoubleThrustLow</p>
+            </td>
+            <td class="ValueDesc"></td>
+         </tr>
+         <tr>
+            <td colspan="3" class="ValueRowSep">
+               <p class="ValueRowSep"></p>
+            </td>
+         </tr>
+         <tr>
+            <td class="ValueVal">
+               <p class="ValueVal">0x17D</p>
+            </td>
+            <td class="ValueName">
+               <p class="ValueName">OffhandDoubleThrustMed</p>
+            </td>
+            <td class="ValueDesc"></td>
+         </tr>
+         <tr>
+            <td colspan="3" class="ValueRowSep">
+               <p class="ValueRowSep"></p>
+            </td>
+         </tr>
+         <tr>
+            <td class="ValueVal">
+               <p class="ValueVal">0x17E</p>
+            </td>
+            <td class="ValueName">
+               <p class="ValueName">OffhandDoubleThrustHigh</p>
+            </td>
+            <td class="ValueDesc"></td>
+         </tr>
+         <tr>
+            <td colspan="3" class="ValueRowSep">
+               <p class="ValueRowSep"></p>
+            </td>
+         </tr>
+         <tr>
+            <td class="ValueVal">
+               <p class="ValueVal">0x17F</p>
+            </td>
+            <td class="ValueName">
+               <p class="ValueName">OffhandTripleThrustLow</p>
+            </td>
+            <td class="ValueDesc"></td>
+         </tr>
+         <tr>
+            <td colspan="3" class="ValueRowSep">
+               <p class="ValueRowSep"></p>
+            </td>
+         </tr>
+         <tr>
+            <td class="ValueVal">
+               <p class="ValueVal">0x180</p>
+            </td>
+            <td class="ValueName">
+               <p class="ValueName">OffhandTripleThrustMed</p>
+            </td>
+            <td class="ValueDesc"></td>
+         </tr>
+         <tr>
+            <td colspan="3" class="ValueRowSep">
+               <p class="ValueRowSep"></p>
+            </td>
+         </tr>
+         <tr>
+            <td class="ValueVal">
+               <p class="ValueVal">0x181</p>
+            </td>
+            <td class="ValueName">
+               <p class="ValueName">OffhandTripleThrustHigh</p>
+            </td>
+            <td class="ValueDesc"></td>
+         </tr>
+         <tr>
+            <td colspan="3" class="ValueRowSep">
+               <p class="ValueRowSep"></p>
+            </td>
+         </tr>
+         <tr>
+            <td class="ValueVal">
+               <p class="ValueVal">0x182</p>
+            </td>
+            <td class="ValueName">
+               <p class="ValueName">OffhandKick</p>
+            </td>
+            <td class="ValueDesc"></td>
+         </tr>
+         <tr>
+            <td colspan="3" class="ValueRowSep">
+               <p class="ValueRowSep"></p>
+            </td>
+         </tr>
+         <tr>
+            <td class="ValueVal">
+               <p class="ValueVal">0x183</p>
+            </td>
+            <td class="ValueName">
+               <p class="ValueName">AttackHigh4</p>
+            </td>
+            <td class="ValueDesc"></td>
+         </tr>
+         <tr>
+            <td colspan="3" class="ValueRowSep">
+               <p class="ValueRowSep"></p>
+            </td>
+         </tr>
+         <tr>
+            <td class="ValueVal">
+               <p class="ValueVal">0x184</p>
+            </td>
+            <td class="ValueName">
+               <p class="ValueName">AttackMed4</p>
+            </td>
+            <td class="ValueDesc"></td>
+         </tr>
+         <tr>
+            <td colspan="3" class="ValueRowSep">
+               <p class="ValueRowSep"></p>
+            </td>
+         </tr>
+         <tr>
+            <td class="ValueVal">
+               <p class="ValueVal">0x185</p>
+            </td>
+            <td class="ValueName">
+               <p class="ValueName">AttackLow4</p>
+            </td>
+            <td class="ValueDesc"></td>
+         </tr>
+         <tr>
+            <td colspan="3" class="ValueRowSep">
+               <p class="ValueRowSep"></p>
+            </td>
+         </tr>
+         <tr>
+            <td class="ValueVal">
+               <p class="ValueVal">0x186</p>
+            </td>
+            <td class="ValueName">
+               <p class="ValueName">AttackHigh5</p>
+            </td>
+            <td class="ValueDesc"></td>
+         </tr>
+         <tr>
+            <td colspan="3" class="ValueRowSep">
+               <p class="ValueRowSep"></p>
+            </td>
+         </tr>
+         <tr>
+            <td class="ValueVal">
+               <p class="ValueVal">0x187</p>
+            </td>
+            <td class="ValueName">
+               <p class="ValueName">AttackMed5</p>
+            </td>
+            <td class="ValueDesc"></td>
+         </tr>
+         <tr>
+            <td colspan="3" class="ValueRowSep">
+               <p class="ValueRowSep"></p>
+            </td>
+         </tr>
+         <tr>
+            <td class="ValueVal">
+               <p class="ValueVal">0x188</p>
+            </td>
+            <td class="ValueName">
+               <p class="ValueName">AttackLow5</p>
+            </td>
+            <td class="ValueDesc"></td>
+         </tr>
+         <tr>
+            <td colspan="3" class="ValueRowSep">
+               <p class="ValueRowSep"></p>
+            </td>
+         </tr>
+         <tr>
+            <td class="ValueVal">
+               <p class="ValueVal">0x189</p>
+            </td>
+            <td class="ValueName">
+               <p class="ValueName">AttackHigh6</p>
+            </td>
+            <td class="ValueDesc"></td>
+         </tr>
+         <tr>
+            <td colspan="3" class="ValueRowSep">
+               <p class="ValueRowSep"></p>
+            </td>
+         </tr>
+         <tr>
+            <td class="ValueVal">
+               <p class="ValueVal">0x18A</p>
+            </td>
+            <td class="ValueName">
+               <p class="ValueName">AttackMed6</p>
+            </td>
+            <td class="ValueDesc"></td>
+         </tr>
+         <tr>
+            <td colspan="3" class="ValueRowSep">
+               <p class="ValueRowSep"></p>
+            </td>
+         </tr>
+         <tr>
+            <td class="ValueVal">
+               <p class="ValueVal">0x18B</p>
+            </td>
+            <td class="ValueName">
+               <p class="ValueName">AttackLow6</p>
+            </td>
+            <td class="ValueDesc"></td>
+         </tr>
+         <tr>
+            <td colspan="3" class="ValueRowSep">
+               <p class="ValueRowSep"></p>
+            </td>
+         </tr>
+         <tr>
+            <td class="ValueVal">
+               <p class="ValueVal">0x18C</p>
+            </td>
+            <td class="ValueName">
+               <p class="ValueName">PunchFastHigh</p>
+            </td>
+            <td class="ValueDesc"></td>
+         </tr>
+         <tr>
+            <td colspan="3" class="ValueRowSep">
+               <p class="ValueRowSep"></p>
+            </td>
+         </tr>
+         <tr>
+            <td class="ValueVal">
+               <p class="ValueVal">0x18D</p>
+            </td>
+            <td class="ValueName">
+               <p class="ValueName">PunchFastMed</p>
+            </td>
+            <td class="ValueDesc"></td>
+         </tr>
+         <tr>
+            <td colspan="3" class="ValueRowSep">
+               <p class="ValueRowSep"></p>
+            </td>
+         </tr>
+         <tr>
+            <td class="ValueVal">
+               <p class="ValueVal">0x18E</p>
+            </td>
+            <td class="ValueName">
+               <p class="ValueName">PunchFastLow</p>
+            </td>
+            <td class="ValueDesc"></td>
+         </tr>
+         <tr>
+            <td colspan="3" class="ValueRowSep">
+               <p class="ValueRowSep"></p>
+            </td>
+         </tr>
+         <tr>
+            <td class="ValueVal">
+               <p class="ValueVal">0x18F</p>
+            </td>
+            <td class="ValueName">
+               <p class="ValueName">PunchSlowHigh</p>
+            </td>
+            <td class="ValueDesc"></td>
+         </tr>
+         <tr>
+            <td colspan="3" class="ValueRowSep">
+               <p class="ValueRowSep"></p>
+            </td>
+         </tr>
+         <tr>
+            <td class="ValueVal">
+               <p class="ValueVal">0x190</p>
+            </td>
+            <td class="ValueName">
+               <p class="ValueName">PunchSlowMed</p>
+            </td>
+            <td class="ValueDesc"></td>
+         </tr>
+         <tr>
+            <td colspan="3" class="ValueRowSep">
+               <p class="ValueRowSep"></p>
+            </td>
+         </tr>
+         <tr>
+            <td class="ValueVal">
+               <p class="ValueVal">0x191</p>
+            </td>
+            <td class="ValueName">
+               <p class="ValueName">PunchSlowLow</p>
+            </td>
+            <td class="ValueDesc"></td>
+         </tr>
+         <tr>
+            <td colspan="3" class="ValueRowSep">
+               <p class="ValueRowSep"></p>
+            </td>
+         </tr>
+         <tr>
+            <td class="ValueVal">
+               <p class="ValueVal">0x192</p>
+            </td>
+            <td class="ValueName">
+               <p class="ValueName">OffhandPunchFastHigh</p>
+            </td>
+            <td class="ValueDesc"></td>
+         </tr>
+         <tr>
+            <td colspan="3" class="ValueRowSep">
+               <p class="ValueRowSep"></p>
+            </td>
+         </tr>
+         <tr>
+            <td class="ValueVal">
+               <p class="ValueVal">0x193</p>
+            </td>
+            <td class="ValueName">
+               <p class="ValueName">OffhandPunchFastMed</p>
+            </td>
+            <td class="ValueDesc"></td>
+         </tr>
+         <tr>
+            <td colspan="3" class="ValueRowSep">
+               <p class="ValueRowSep"></p>
+            </td>
+         </tr>
+         <tr>
+            <td class="ValueVal">
+               <p class="ValueVal">0x194</p>
+            </td>
+            <td class="ValueName">
+               <p class="ValueName">OffhandPunchFastLow</p>
+            </td>
+            <td class="ValueDesc"></td>
+         </tr>
+         <tr>
+            <td colspan="3" class="ValueRowSep">
+               <p class="ValueRowSep"></p>
+            </td>
+         </tr>
+         <tr>
+            <td class="ValueVal">
+               <p class="ValueVal">0x195</p>
+            </td>
+            <td class="ValueName">
+               <p class="ValueName">OffhandPunchSlowHigh</p>
+            </td>
+            <td class="ValueDesc"></td>
+         </tr>
+         <tr>
+            <td colspan="3" class="ValueRowSep">
+               <p class="ValueRowSep"></p>
+            </td>
+         </tr>
+         <tr>
+            <td class="ValueVal">
+               <p class="ValueVal">0x196</p>
+            </td>
+            <td class="ValueName">
+               <p class="ValueName">OffhandPunchSlowMed</p>
+            </td>
+            <td class="ValueDesc"></td>
+         </tr>
+         <tr>
+            <td colspan="3" class="ValueRowSep">
+               <p class="ValueRowSep"></p>
+            </td>
+         </tr>
+         <tr>
+            <td class="ValueVal">
+               <p class="ValueVal">0x197</p>
+            </td>
+            <td class="ValueName">
+               <p class="ValueName">OffhandPunchSlowLow</p>
+            </td>
+            <td class="ValueDesc"></td>
+         </tr>
+         <tr>
+            <td class="PadBottom" colspan="2"></td>
+         </tr>
+      </table>
+      <p class="Version">Messages.xml version 2017.11.14.0</p>
+   </body>
+</html>

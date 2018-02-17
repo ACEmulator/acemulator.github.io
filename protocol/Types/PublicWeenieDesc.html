@@ -1,0 +1,1153 @@
+<html xmlns:fo="http://www.w3.org/1999/XSL/Format" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:fn="http://www.w3.org/2005/xpath-functions">
+   <head>
+      <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+      <title>AC Protocol version 2017.11.14.0</title>
+      <link type="text/css" rel="stylesheet" href="../Classic.css">
+   </head>
+   <body>
+      <table cellspacing="0" cellpadding="0" class="List2">
+         <tr>
+            <td colspan="3">
+               <p class="BoxHead2"><b>PublicWeenieDesc</b></p>
+            </td>
+         </tr>
+         <tr>
+            <td class="PadTop" colspan="3"></td>
+         </tr>
+         <tr>
+            <td colspan="3">
+               <p class="BoxDesc">The PublicWeenieDesc structure defines an object's game behavior.</p>
+            </td>
+         </tr>
+         <tr>
+            <td colspan="3" class="FieldRowSep">
+               <p class="FieldRowSep"></p>
+            </td>
+         </tr>
+         <tr>
+            <td class="FieldType">
+               <p class="FieldType"><span class="TypeRef" title="">uint</span></p>
+            </td>
+            <td class="FieldName">
+               <p class="FieldName">header</p>
+            </td>
+            <td class="FieldDesc">
+               <p class="FieldDesc">game data flags</p>
+            </td>
+         </tr>
+         <tr>
+            <td colspan="3" class="FieldRowSep">
+               <p class="FieldRowSep"></p>
+            </td>
+         </tr>
+         <tr>
+            <td class="FieldType">
+               <p class="FieldType"><span class="TypeRef" title="">string</span></p>
+            </td>
+            <td class="FieldName">
+               <p class="FieldName">name</p>
+            </td>
+            <td class="FieldDesc">
+               <p class="FieldDesc">object name</p>
+            </td>
+         </tr>
+         <tr>
+            <td colspan="3" class="FieldRowSep">
+               <p class="FieldRowSep"></p>
+            </td>
+         </tr>
+         <tr>
+            <td class="FieldType">
+               <p class="FieldType"><span class="TypeRef" title="">PackedDWORD</span></p>
+            </td>
+            <td class="FieldName">
+               <p class="FieldName">weenieClassID</p>
+            </td>
+            <td class="FieldDesc">
+               <p class="FieldDesc">object weenie class id</p>
+            </td>
+         </tr>
+         <tr>
+            <td colspan="3" class="FieldRowSep">
+               <p class="FieldRowSep"></p>
+            </td>
+         </tr>
+         <tr>
+            <td class="FieldType">
+               <p class="FieldType"><span class="TypeRef" title="">PackedDWORD</span></p>
+            </td>
+            <td class="FieldName">
+               <p class="FieldName">icon</p>
+            </td>
+            <td class="FieldDesc">
+               <p class="FieldDesc">icon ResourceID (minus 0x06000000)</p>
+            </td>
+         </tr>
+         <tr>
+            <td colspan="3" class="FieldRowSep">
+               <p class="FieldRowSep"></p>
+            </td>
+         </tr>
+         <tr>
+            <td class="FieldType">
+               <p class="FieldType"><span class="TypeRef" title=""><a target="frameType" href="ObjectType.html">ObjectType</a></span></p>
+            </td>
+            <td class="FieldName">
+               <p class="FieldName">type</p>
+            </td>
+            <td class="FieldDesc">
+               <p class="FieldDesc">object type</p>
+            </td>
+         </tr>
+         <tr>
+            <td colspan="3" class="FieldRowSep">
+               <p class="FieldRowSep"></p>
+            </td>
+         </tr>
+         <tr>
+            <td class="FieldType">
+               <p class="FieldType"><span class="TypeRef" title=""><a target="frameType" href="ObjectDescriptionFlag.html">ObjectDescriptionFlag</a></span></p>
+            </td>
+            <td class="FieldName">
+               <p class="FieldName">bitfield</p>
+            </td>
+            <td class="FieldDesc">
+               <p class="FieldDesc">object behaviors</p>
+            </td>
+         </tr>
+         <tr>
+            <td colspan="3">
+               <p class="Align">Align to <b>DWORD</b> boundary
+               </p>
+            </td>
+         </tr>
+         <tr>
+            <td class="NestedTable" colspan="3">
+               <table cellspacing="0" cellpadding="0" class="CaseList2">
+                  <tr>
+                     <td colspan="2">
+                        <p class="CaseHead2">Choose valid sections by masking against <b>bitfield</b></p>
+                     </td>
+                  </tr>
+                  <tr>
+                     <td class="CaseVal2">
+                        <p class="CaseVal2">0x04000000</p>
+                     </td>
+                     <td class="CaseFields2">
+                        <table cellspacing="0" cellpadding="0" class="List2">
+                           <tr>
+                              <td class="PadTop" colspan="3"></td>
+                           </tr>
+                           <tr>
+                              <td class="FieldType">
+                                 <p class="FieldType"><span class="TypeRef" title="">uint</span></p>
+                              </td>
+                              <td class="FieldName">
+                                 <p class="FieldName">header2</p>
+                              </td>
+                              <td class="FieldDesc">
+                                 <p class="FieldDesc">additional game data flags</p>
+                              </td>
+                           </tr>
+                           <tr>
+                              <td class="PadBottom" colspan="3"></td>
+                           </tr>
+                        </table>
+                     </td>
+                  </tr>
+               </table>
+            </td>
+         </tr>
+         <tr>
+            <td class="NestedTable" colspan="3">
+               <table cellspacing="0" cellpadding="0" class="CaseList2">
+                  <tr>
+                     <td colspan="2">
+                        <p class="CaseHead2">Choose valid sections by masking against <b>header</b></p>
+                     </td>
+                  </tr>
+                  <tr>
+                     <td class="CaseVal2">
+                        <p class="CaseVal2">0x00000001</p>
+                     </td>
+                     <td class="CaseFields2">
+                        <table cellspacing="0" cellpadding="0" class="List2">
+                           <tr>
+                              <td class="PadTop" colspan="3"></td>
+                           </tr>
+                           <tr>
+                              <td class="FieldType">
+                                 <p class="FieldType"><span class="TypeRef" title="">string</span></p>
+                              </td>
+                              <td class="FieldName">
+                                 <p class="FieldName">pluralName</p>
+                              </td>
+                              <td class="FieldDesc">
+                                 <p class="FieldDesc">plural object name (if not specified, use &lt;name&gt; followed by 's' or 'es')</p>
+                              </td>
+                           </tr>
+                           <tr>
+                              <td class="PadBottom" colspan="3"></td>
+                           </tr>
+                        </table>
+                     </td>
+                  </tr>
+                  <tr>
+                     <td class="CaseVal2">
+                        <p class="CaseVal2">0x00000002</p>
+                     </td>
+                     <td class="CaseFields2">
+                        <table cellspacing="0" cellpadding="0" class="List2">
+                           <tr>
+                              <td class="PadTop" colspan="3"></td>
+                           </tr>
+                           <tr>
+                              <td class="FieldType">
+                                 <p class="FieldType"><span class="TypeRef" title="">ubyte</span></p>
+                              </td>
+                              <td class="FieldName">
+                                 <p class="FieldName">itemsCapacity</p>
+                              </td>
+                              <td class="FieldDesc">
+                                 <p class="FieldDesc">number of item slots</p>
+                              </td>
+                           </tr>
+                           <tr>
+                              <td class="PadBottom" colspan="3"></td>
+                           </tr>
+                        </table>
+                     </td>
+                  </tr>
+                  <tr>
+                     <td class="CaseVal2">
+                        <p class="CaseVal2">0x00000004</p>
+                     </td>
+                     <td class="CaseFields2">
+                        <table cellspacing="0" cellpadding="0" class="List2">
+                           <tr>
+                              <td class="PadTop" colspan="3"></td>
+                           </tr>
+                           <tr>
+                              <td class="FieldType">
+                                 <p class="FieldType"><span class="TypeRef" title="">ubyte</span></p>
+                              </td>
+                              <td class="FieldName">
+                                 <p class="FieldName">containerCapacity</p>
+                              </td>
+                              <td class="FieldDesc">
+                                 <p class="FieldDesc">number of pack slots</p>
+                              </td>
+                           </tr>
+                           <tr>
+                              <td class="PadBottom" colspan="3"></td>
+                           </tr>
+                        </table>
+                     </td>
+                  </tr>
+                  <tr>
+                     <td class="CaseVal2">
+                        <p class="CaseVal2">0x00000100</p>
+                     </td>
+                     <td class="CaseFields2">
+                        <table cellspacing="0" cellpadding="0" class="List2">
+                           <tr>
+                              <td class="PadTop" colspan="3"></td>
+                           </tr>
+                           <tr>
+                              <td class="FieldType">
+                                 <p class="FieldType"><span class="TypeRef" title=""><a target="frameType" href="AmmoType.html">AmmoType</a></span></p>
+                              </td>
+                              <td class="FieldName">
+                                 <p class="FieldName">ammunitionType</p>
+                              </td>
+                              <td class="FieldDesc">
+                                 <p class="FieldDesc">missile ammunition type</p>
+                              </td>
+                           </tr>
+                           <tr>
+                              <td class="PadBottom" colspan="3"></td>
+                           </tr>
+                        </table>
+                     </td>
+                  </tr>
+                  <tr>
+                     <td class="CaseVal2">
+                        <p class="CaseVal2">0x00000008</p>
+                     </td>
+                     <td class="CaseFields2">
+                        <table cellspacing="0" cellpadding="0" class="List2">
+                           <tr>
+                              <td class="PadTop" colspan="3"></td>
+                           </tr>
+                           <tr>
+                              <td class="FieldType">
+                                 <p class="FieldType"><span class="TypeRef" title="">uint</span></p>
+                              </td>
+                              <td class="FieldName">
+                                 <p class="FieldName">value</p>
+                              </td>
+                              <td class="FieldDesc">
+                                 <p class="FieldDesc">object value</p>
+                              </td>
+                           </tr>
+                           <tr>
+                              <td class="PadBottom" colspan="3"></td>
+                           </tr>
+                        </table>
+                     </td>
+                  </tr>
+                  <tr>
+                     <td class="CaseVal2">
+                        <p class="CaseVal2">0x00000010</p>
+                     </td>
+                     <td class="CaseFields2">
+                        <table cellspacing="0" cellpadding="0" class="List2">
+                           <tr>
+                              <td class="PadTop" colspan="3"></td>
+                           </tr>
+                           <tr>
+                              <td class="FieldType">
+                                 <p class="FieldType"><span class="TypeRef" title=""><a target="frameType" href="UsableType.html">UsableType</a></span></p>
+                              </td>
+                              <td class="FieldName">
+                                 <p class="FieldName">useability</p>
+                              </td>
+                              <td class="FieldDesc">
+                                 <p class="FieldDesc"></p>
+                              </td>
+                           </tr>
+                           <tr>
+                              <td class="PadBottom" colspan="3"></td>
+                           </tr>
+                        </table>
+                     </td>
+                  </tr>
+                  <tr>
+                     <td class="CaseVal2">
+                        <p class="CaseVal2">0x00000020</p>
+                     </td>
+                     <td class="CaseFields2">
+                        <table cellspacing="0" cellpadding="0" class="List2">
+                           <tr>
+                              <td class="PadTop" colspan="3"></td>
+                           </tr>
+                           <tr>
+                              <td class="FieldType">
+                                 <p class="FieldType"><span class="TypeRef" title="">float</span></p>
+                              </td>
+                              <td class="FieldName">
+                                 <p class="FieldName">useRadius</p>
+                              </td>
+                              <td class="FieldDesc">
+                                 <p class="FieldDesc">distance a player will walk to use an object</p>
+                              </td>
+                           </tr>
+                           <tr>
+                              <td class="PadBottom" colspan="3"></td>
+                           </tr>
+                        </table>
+                     </td>
+                  </tr>
+                  <tr>
+                     <td class="CaseVal2">
+                        <p class="CaseVal2">0x00080000</p>
+                     </td>
+                     <td class="CaseFields2">
+                        <table cellspacing="0" cellpadding="0" class="List2">
+                           <tr>
+                              <td class="PadTop" colspan="3"></td>
+                           </tr>
+                           <tr>
+                              <td class="FieldType">
+                                 <p class="FieldType"><span class="TypeRef" title=""><a target="frameType" href="ObjectType.html">ObjectType</a></span></p>
+                              </td>
+                              <td class="FieldName">
+                                 <p class="FieldName">targetType</p>
+                              </td>
+                              <td class="FieldDesc">
+                                 <p class="FieldDesc">the object categories this object may be used on</p>
+                              </td>
+                           </tr>
+                           <tr>
+                              <td class="PadBottom" colspan="3"></td>
+                           </tr>
+                        </table>
+                     </td>
+                  </tr>
+                  <tr>
+                     <td class="CaseVal2">
+                        <p class="CaseVal2">0x00000080</p>
+                     </td>
+                     <td class="CaseFields2">
+                        <table cellspacing="0" cellpadding="0" class="List2">
+                           <tr>
+                              <td class="PadTop" colspan="3"></td>
+                           </tr>
+                           <tr>
+                              <td class="FieldType">
+                                 <p class="FieldType"><span class="TypeRef" title="">IconHighlight</span></p>
+                              </td>
+                              <td class="FieldName">
+                                 <p class="FieldName">effects</p>
+                              </td>
+                              <td class="FieldDesc">
+                                 <p class="FieldDesc">the type of highlight (outline) applied to the object's icon</p>
+                              </td>
+                           </tr>
+                           <tr>
+                              <td class="PadBottom" colspan="3"></td>
+                           </tr>
+                        </table>
+                     </td>
+                  </tr>
+                  <tr>
+                     <td class="CaseVal2">
+                        <p class="CaseVal2">0x00000200</p>
+                     </td>
+                     <td class="CaseFields2">
+                        <table cellspacing="0" cellpadding="0" class="List2">
+                           <tr>
+                              <td class="PadTop" colspan="3"></td>
+                           </tr>
+                           <tr>
+                              <td class="FieldType">
+                                 <p class="FieldType"><span class="TypeRef" title="">WieldType</span></p>
+                              </td>
+                              <td class="FieldName">
+                                 <p class="FieldName">combatUse</p>
+                              </td>
+                              <td class="FieldDesc">
+                                 <p class="FieldDesc">the type of wieldable item this is</p>
+                              </td>
+                           </tr>
+                           <tr>
+                              <td class="PadBottom" colspan="3"></td>
+                           </tr>
+                        </table>
+                     </td>
+                  </tr>
+                  <tr>
+                     <td class="CaseVal2">
+                        <p class="CaseVal2">0x00000400</p>
+                     </td>
+                     <td class="CaseFields2">
+                        <table cellspacing="0" cellpadding="0" class="List2">
+                           <tr>
+                              <td class="PadTop" colspan="3"></td>
+                           </tr>
+                           <tr>
+                              <td class="FieldType">
+                                 <p class="FieldType"><span class="TypeRef" title="">ushort</span></p>
+                              </td>
+                              <td class="FieldName">
+                                 <p class="FieldName">structure</p>
+                              </td>
+                              <td class="FieldDesc">
+                                 <p class="FieldDesc">the number of uses remaining for this item (also salvage quantity)</p>
+                              </td>
+                           </tr>
+                           <tr>
+                              <td class="PadBottom" colspan="3"></td>
+                           </tr>
+                        </table>
+                     </td>
+                  </tr>
+                  <tr>
+                     <td class="CaseVal2">
+                        <p class="CaseVal2">0x00000800</p>
+                     </td>
+                     <td class="CaseFields2">
+                        <table cellspacing="0" cellpadding="0" class="List2">
+                           <tr>
+                              <td class="PadTop" colspan="3"></td>
+                           </tr>
+                           <tr>
+                              <td class="FieldType">
+                                 <p class="FieldType"><span class="TypeRef" title="">ushort</span></p>
+                              </td>
+                              <td class="FieldName">
+                                 <p class="FieldName">maxStructure</p>
+                              </td>
+                              <td class="FieldDesc">
+                                 <p class="FieldDesc">the maximum number of uses possible for this item (also maximum salvage quantity)</p>
+                              </td>
+                           </tr>
+                           <tr>
+                              <td class="PadBottom" colspan="3"></td>
+                           </tr>
+                        </table>
+                     </td>
+                  </tr>
+                  <tr>
+                     <td class="CaseVal2">
+                        <p class="CaseVal2">0x00001000</p>
+                     </td>
+                     <td class="CaseFields2">
+                        <table cellspacing="0" cellpadding="0" class="List2">
+                           <tr>
+                              <td class="PadTop" colspan="3"></td>
+                           </tr>
+                           <tr>
+                              <td class="FieldType">
+                                 <p class="FieldType"><span class="TypeRef" title="">ushort</span></p>
+                              </td>
+                              <td class="FieldName">
+                                 <p class="FieldName">stackSize</p>
+                              </td>
+                              <td class="FieldDesc">
+                                 <p class="FieldDesc">the number of items in this stack of objects</p>
+                              </td>
+                           </tr>
+                           <tr>
+                              <td class="PadBottom" colspan="3"></td>
+                           </tr>
+                        </table>
+                     </td>
+                  </tr>
+                  <tr>
+                     <td class="CaseVal2">
+                        <p class="CaseVal2">0x00002000</p>
+                     </td>
+                     <td class="CaseFields2">
+                        <table cellspacing="0" cellpadding="0" class="List2">
+                           <tr>
+                              <td class="PadTop" colspan="3"></td>
+                           </tr>
+                           <tr>
+                              <td class="FieldType">
+                                 <p class="FieldType"><span class="TypeRef" title="">ushort</span></p>
+                              </td>
+                              <td class="FieldName">
+                                 <p class="FieldName">maxStackSize</p>
+                              </td>
+                              <td class="FieldDesc">
+                                 <p class="FieldDesc">the maximum number of items possible in this stack of objects</p>
+                              </td>
+                           </tr>
+                           <tr>
+                              <td class="PadBottom" colspan="3"></td>
+                           </tr>
+                        </table>
+                     </td>
+                  </tr>
+                  <tr>
+                     <td class="CaseVal2">
+                        <p class="CaseVal2">0x00004000</p>
+                     </td>
+                     <td class="CaseFields2">
+                        <table cellspacing="0" cellpadding="0" class="List2">
+                           <tr>
+                              <td class="PadTop" colspan="3"></td>
+                           </tr>
+                           <tr>
+                              <td class="FieldType">
+                                 <p class="FieldType"><span class="TypeRef" title="uint">ObjectID</span></p>
+                              </td>
+                              <td class="FieldName">
+                                 <p class="FieldName">containerID</p>
+                              </td>
+                              <td class="FieldDesc">
+                                 <p class="FieldDesc">the ID of the container holding this object</p>
+                              </td>
+                           </tr>
+                           <tr>
+                              <td class="PadBottom" colspan="3"></td>
+                           </tr>
+                        </table>
+                     </td>
+                  </tr>
+                  <tr>
+                     <td class="CaseVal2">
+                        <p class="CaseVal2">0x00008000</p>
+                     </td>
+                     <td class="CaseFields2">
+                        <table cellspacing="0" cellpadding="0" class="List2">
+                           <tr>
+                              <td class="PadTop" colspan="3"></td>
+                           </tr>
+                           <tr>
+                              <td class="FieldType">
+                                 <p class="FieldType"><span class="TypeRef" title="uint">ObjectID</span></p>
+                              </td>
+                              <td class="FieldName">
+                                 <p class="FieldName">wielderID</p>
+                              </td>
+                              <td class="FieldDesc">
+                                 <p class="FieldDesc">the ID of the creature equipping this object</p>
+                              </td>
+                           </tr>
+                           <tr>
+                              <td class="PadBottom" colspan="3"></td>
+                           </tr>
+                        </table>
+                     </td>
+                  </tr>
+                  <tr>
+                     <td class="CaseVal2">
+                        <p class="CaseVal2">0x00010000</p>
+                     </td>
+                     <td class="CaseFields2">
+                        <table cellspacing="0" cellpadding="0" class="List2">
+                           <tr>
+                              <td class="PadTop" colspan="3"></td>
+                           </tr>
+                           <tr>
+                              <td class="FieldType">
+                                 <p class="FieldType"><span class="TypeRef" title=""><a target="frameType" href="EquipMask.html">EquipMask</a></span></p>
+                              </td>
+                              <td class="FieldName">
+                                 <p class="FieldName">validLocations</p>
+                              </td>
+                              <td class="FieldDesc">
+                                 <p class="FieldDesc">the potential equipment slots this object may be placed in</p>
+                              </td>
+                           </tr>
+                           <tr>
+                              <td class="PadBottom" colspan="3"></td>
+                           </tr>
+                        </table>
+                     </td>
+                  </tr>
+                  <tr>
+                     <td class="CaseVal2">
+                        <p class="CaseVal2">0x00020000</p>
+                     </td>
+                     <td class="CaseFields2">
+                        <table cellspacing="0" cellpadding="0" class="List2">
+                           <tr>
+                              <td class="PadTop" colspan="3"></td>
+                           </tr>
+                           <tr>
+                              <td class="FieldType">
+                                 <p class="FieldType"><span class="TypeRef" title=""><a target="frameType" href="EquipMask.html">EquipMask</a></span></p>
+                              </td>
+                              <td class="FieldName">
+                                 <p class="FieldName">location</p>
+                              </td>
+                              <td class="FieldDesc">
+                                 <p class="FieldDesc">the actual equipment slots this object is currently placed in</p>
+                              </td>
+                           </tr>
+                           <tr>
+                              <td class="PadBottom" colspan="3"></td>
+                           </tr>
+                        </table>
+                     </td>
+                  </tr>
+                  <tr>
+                     <td class="CaseVal2">
+                        <p class="CaseVal2">0x00040000</p>
+                     </td>
+                     <td class="CaseFields2">
+                        <table cellspacing="0" cellpadding="0" class="List2">
+                           <tr>
+                              <td class="PadTop" colspan="3"></td>
+                           </tr>
+                           <tr>
+                              <td class="FieldType">
+                                 <p class="FieldType"><span class="TypeRef" title=""><a target="frameType" href="CoverageMask.html">CoverageMask</a></span></p>
+                              </td>
+                              <td class="FieldName">
+                                 <p class="FieldName">priority</p>
+                              </td>
+                              <td class="FieldDesc">
+                                 <p class="FieldDesc">the parts of the body this object protects</p>
+                              </td>
+                           </tr>
+                           <tr>
+                              <td class="PadBottom" colspan="3"></td>
+                           </tr>
+                        </table>
+                     </td>
+                  </tr>
+                  <tr>
+                     <td class="CaseVal2">
+                        <p class="CaseVal2">0x00100000</p>
+                     </td>
+                     <td class="CaseFields2">
+                        <table cellspacing="0" cellpadding="0" class="List2">
+                           <tr>
+                              <td class="PadTop" colspan="3"></td>
+                           </tr>
+                           <tr>
+                              <td class="FieldType">
+                                 <p class="FieldType"><span class="TypeRef" title="">ubyte</span></p>
+                              </td>
+                              <td class="FieldName">
+                                 <p class="FieldName">blipColor</p>
+                              </td>
+                              <td class="FieldDesc">
+                                 <p class="FieldDesc">radar dot color</p>
+                              </td>
+                           </tr>
+                           <tr>
+                              <td class="PadBottom" colspan="3"></td>
+                           </tr>
+                        </table>
+                     </td>
+                  </tr>
+                  <tr>
+                     <td class="CaseVal2">
+                        <p class="CaseVal2">0x00800000</p>
+                     </td>
+                     <td class="CaseFields2">
+                        <table cellspacing="0" cellpadding="0" class="List2">
+                           <tr>
+                              <td class="PadTop" colspan="3"></td>
+                           </tr>
+                           <tr>
+                              <td class="FieldType">
+                                 <p class="FieldType"><span class="TypeRef" title="">ubyte</span></p>
+                              </td>
+                              <td class="FieldName">
+                                 <p class="FieldName">radarEnum</p>
+                              </td>
+                              <td class="FieldDesc">
+                                 <p class="FieldDesc">radar type</p>
+                              </td>
+                           </tr>
+                           <tr>
+                              <td class="PadBottom" colspan="3"></td>
+                           </tr>
+                        </table>
+                     </td>
+                  </tr>
+                  <tr>
+                     <td class="CaseVal2">
+                        <p class="CaseVal2">0x08000000</p>
+                     </td>
+                     <td class="CaseFields2">
+                        <table cellspacing="0" cellpadding="0" class="List2">
+                           <tr>
+                              <td class="PadTop" colspan="3"></td>
+                           </tr>
+                           <tr>
+                              <td class="FieldType">
+                                 <p class="FieldType"><span class="TypeRef" title="">ushort</span></p>
+                              </td>
+                              <td class="FieldName">
+                                 <p class="FieldName">physicsScript</p>
+                              </td>
+                              <td class="FieldDesc">
+                                 <p class="FieldDesc"></p>
+                              </td>
+                           </tr>
+                           <tr>
+                              <td class="PadBottom" colspan="3"></td>
+                           </tr>
+                        </table>
+                     </td>
+                  </tr>
+                  <tr>
+                     <td class="CaseVal2">
+                        <p class="CaseVal2">0x01000000</p>
+                     </td>
+                     <td class="CaseFields2">
+                        <table cellspacing="0" cellpadding="0" class="List2">
+                           <tr>
+                              <td class="PadTop" colspan="3"></td>
+                           </tr>
+                           <tr>
+                              <td class="FieldType">
+                                 <p class="FieldType"><span class="TypeRef" title="">float</span></p>
+                              </td>
+                              <td class="FieldName">
+                                 <p class="FieldName">workmanship</p>
+                              </td>
+                              <td class="FieldDesc">
+                                 <p class="FieldDesc">object workmanship</p>
+                              </td>
+                           </tr>
+                           <tr>
+                              <td class="PadBottom" colspan="3"></td>
+                           </tr>
+                        </table>
+                     </td>
+                  </tr>
+                  <tr>
+                     <td class="CaseVal2">
+                        <p class="CaseVal2">0x00200000</p>
+                     </td>
+                     <td class="CaseFields2">
+                        <table cellspacing="0" cellpadding="0" class="List2">
+                           <tr>
+                              <td class="PadTop" colspan="3"></td>
+                           </tr>
+                           <tr>
+                              <td class="FieldType">
+                                 <p class="FieldType"><span class="TypeRef" title="">ushort</span></p>
+                              </td>
+                              <td class="FieldName">
+                                 <p class="FieldName">burden</p>
+                              </td>
+                              <td class="FieldDesc">
+                                 <p class="FieldDesc">total burden of this object</p>
+                              </td>
+                           </tr>
+                           <tr>
+                              <td class="PadBottom" colspan="3"></td>
+                           </tr>
+                        </table>
+                     </td>
+                  </tr>
+                  <tr>
+                     <td class="CaseVal2">
+                        <p class="CaseVal2">0x00400000</p>
+                     </td>
+                     <td class="CaseFields2">
+                        <table cellspacing="0" cellpadding="0" class="List2">
+                           <tr>
+                              <td class="PadTop" colspan="3"></td>
+                           </tr>
+                           <tr>
+                              <td class="FieldType">
+                                 <p class="FieldType"><span class="TypeRef" title="ushort">SpellID</span></p>
+                              </td>
+                              <td class="FieldName">
+                                 <p class="FieldName">spell</p>
+                              </td>
+                              <td class="FieldDesc">
+                                 <p class="FieldDesc">the spell cast by this object</p>
+                              </td>
+                           </tr>
+                           <tr>
+                              <td class="PadBottom" colspan="3"></td>
+                           </tr>
+                        </table>
+                     </td>
+                  </tr>
+                  <tr>
+                     <td class="CaseVal2">
+                        <p class="CaseVal2">0x02000000</p>
+                     </td>
+                     <td class="CaseFields2">
+                        <table cellspacing="0" cellpadding="0" class="List2">
+                           <tr>
+                              <td class="PadTop" colspan="3"></td>
+                           </tr>
+                           <tr>
+                              <td class="FieldType">
+                                 <p class="FieldType"><span class="TypeRef" title="uint">ObjectID</span></p>
+                              </td>
+                              <td class="FieldName">
+                                 <p class="FieldName">owner</p>
+                              </td>
+                              <td class="FieldDesc">
+                                 <p class="FieldDesc">the owner of this object</p>
+                              </td>
+                           </tr>
+                           <tr>
+                              <td class="PadBottom" colspan="3"></td>
+                           </tr>
+                        </table>
+                     </td>
+                  </tr>
+                  <tr>
+                     <td class="CaseVal2">
+                        <p class="CaseVal2">0x04000000</p>
+                     </td>
+                     <td class="CaseFields2">
+                        <table cellspacing="0" cellpadding="0" class="List2">
+                           <tr>
+                              <td class="PadTop" colspan="3"></td>
+                           </tr>
+                           <tr>
+                              <td class="FieldType">
+                                 <p class="FieldType"><span class="TypeRef" title="Struct"><a target="frameType" href="RestrictionDB.html">RestrictionDB</a></span></p>
+                              </td>
+                              <td class="FieldName">
+                                 <p class="FieldName">restrictions</p>
+                              </td>
+                              <td class="FieldDesc">
+                                 <p class="FieldDesc">the access control list for this dwelling object</p>
+                              </td>
+                           </tr>
+                           <tr>
+                              <td class="PadBottom" colspan="3"></td>
+                           </tr>
+                        </table>
+                     </td>
+                  </tr>
+                  <tr>
+                     <td class="CaseVal2">
+                        <p class="CaseVal2">0x20000000</p>
+                     </td>
+                     <td class="CaseFields2">
+                        <table cellspacing="0" cellpadding="0" class="List2">
+                           <tr>
+                              <td class="PadTop" colspan="3"></td>
+                           </tr>
+                           <tr>
+                              <td class="FieldType">
+                                 <p class="FieldType"><span class="TypeRef" title=""><a target="frameType" href="HookType.html">HookType</a></span></p>
+                              </td>
+                              <td class="FieldName">
+                                 <p class="FieldName">hookItemTypes</p>
+                              </td>
+                              <td class="FieldDesc">
+                                 <p class="FieldDesc">what type of dwelling hook is this</p>
+                              </td>
+                           </tr>
+                           <tr>
+                              <td class="PadBottom" colspan="3"></td>
+                           </tr>
+                        </table>
+                     </td>
+                  </tr>
+                  <tr>
+                     <td class="CaseVal2">
+                        <p class="CaseVal2">0x00000040</p>
+                     </td>
+                     <td class="CaseFields2">
+                        <table cellspacing="0" cellpadding="0" class="List2">
+                           <tr>
+                              <td class="PadTop" colspan="3"></td>
+                           </tr>
+                           <tr>
+                              <td class="FieldType">
+                                 <p class="FieldType"><span class="TypeRef" title="uint">ObjectID</span></p>
+                              </td>
+                              <td class="FieldName">
+                                 <p class="FieldName">monarch</p>
+                              </td>
+                              <td class="FieldDesc">
+                                 <p class="FieldDesc">this player's monarch</p>
+                              </td>
+                           </tr>
+                           <tr>
+                              <td class="PadBottom" colspan="3"></td>
+                           </tr>
+                        </table>
+                     </td>
+                  </tr>
+                  <tr>
+                     <td class="CaseVal2">
+                        <p class="CaseVal2">0x10000000</p>
+                     </td>
+                     <td class="CaseFields2">
+                        <table cellspacing="0" cellpadding="0" class="List2">
+                           <tr>
+                              <td class="PadTop" colspan="3"></td>
+                           </tr>
+                           <tr>
+                              <td class="FieldType">
+                                 <p class="FieldType"><span class="TypeRef" title=""><a target="frameType" href="HookType.html">HookType</a></span></p>
+                              </td>
+                              <td class="FieldName">
+                                 <p class="FieldName">hookType</p>
+                              </td>
+                              <td class="FieldDesc">
+                                 <p class="FieldDesc">the types of hooks this object may be placed on (-1 for hooks)</p>
+                              </td>
+                           </tr>
+                           <tr>
+                              <td class="PadBottom" colspan="3"></td>
+                           </tr>
+                        </table>
+                     </td>
+                  </tr>
+                  <tr>
+                     <td class="CaseVal2">
+                        <p class="CaseVal2">0x40000000</p>
+                     </td>
+                     <td class="CaseFields2">
+                        <table cellspacing="0" cellpadding="0" class="List2">
+                           <tr>
+                              <td class="PadTop" colspan="3"></td>
+                           </tr>
+                           <tr>
+                              <td class="FieldType">
+                                 <p class="FieldType"><span class="TypeRef" title="">PackedDWORD</span></p>
+                              </td>
+                              <td class="FieldName">
+                                 <p class="FieldName">iconOverlay</p>
+                              </td>
+                              <td class="FieldDesc">
+                                 <p class="FieldDesc">icon overlay ResourceID (minus 0x06000000)</p>
+                              </td>
+                           </tr>
+                           <tr>
+                              <td class="PadBottom" colspan="3"></td>
+                           </tr>
+                        </table>
+                     </td>
+                  </tr>
+               </table>
+            </td>
+         </tr>
+         <tr>
+            <td class="NestedTable" colspan="3">
+               <table cellspacing="0" cellpadding="0" class="CaseList2">
+                  <tr>
+                     <td colspan="2">
+                        <p class="CaseHead2">Choose valid sections by masking against <b>header2</b></p>
+                     </td>
+                  </tr>
+                  <tr>
+                     <td class="CaseVal2">
+                        <p class="CaseVal2">0x00000001</p>
+                     </td>
+                     <td class="CaseFields2">
+                        <table cellspacing="0" cellpadding="0" class="List2">
+                           <tr>
+                              <td class="PadTop" colspan="3"></td>
+                           </tr>
+                           <tr>
+                              <td class="FieldType">
+                                 <p class="FieldType"><span class="TypeRef" title="">PackedDWORD</span></p>
+                              </td>
+                              <td class="FieldName">
+                                 <p class="FieldName">iconUnderlay</p>
+                              </td>
+                              <td class="FieldDesc">
+                                 <p class="FieldDesc">icon underlay ResourceID (minus 0x06000000)</p>
+                              </td>
+                           </tr>
+                           <tr>
+                              <td class="PadBottom" colspan="3"></td>
+                           </tr>
+                        </table>
+                     </td>
+                  </tr>
+               </table>
+            </td>
+         </tr>
+         <tr>
+            <td class="NestedTable" colspan="3">
+               <table cellspacing="0" cellpadding="0" class="CaseList2">
+                  <tr>
+                     <td colspan="2">
+                        <p class="CaseHead2">Choose valid sections by masking against <b>header</b></p>
+                     </td>
+                  </tr>
+                  <tr>
+                     <td class="CaseVal2">
+                        <p class="CaseVal2">0x80000000</p>
+                     </td>
+                     <td class="CaseFields2">
+                        <table cellspacing="0" cellpadding="0" class="List2">
+                           <tr>
+                              <td class="PadTop" colspan="3"></td>
+                           </tr>
+                           <tr>
+                              <td class="FieldType">
+                                 <p class="FieldType"><span class="TypeRef" title=""><a target="frameType" href="MaterialType.html">MaterialType</a></span></p>
+                              </td>
+                              <td class="FieldName">
+                                 <p class="FieldName">material</p>
+                              </td>
+                              <td class="FieldDesc">
+                                 <p class="FieldDesc">the type of material this object is made of</p>
+                              </td>
+                           </tr>
+                           <tr>
+                              <td class="PadBottom" colspan="3"></td>
+                           </tr>
+                        </table>
+                     </td>
+                  </tr>
+               </table>
+            </td>
+         </tr>
+         <tr>
+            <td class="NestedTable" colspan="3">
+               <table cellspacing="0" cellpadding="0" class="CaseList2">
+                  <tr>
+                     <td colspan="2">
+                        <p class="CaseHead2">Choose valid sections by masking against <b>header2</b></p>
+                     </td>
+                  </tr>
+                  <tr>
+                     <td class="CaseVal2">
+                        <p class="CaseVal2">0x00000002</p>
+                     </td>
+                     <td class="CaseFields2">
+                        <table cellspacing="0" cellpadding="0" class="List2">
+                           <tr>
+                              <td class="PadTop" colspan="3"></td>
+                           </tr>
+                           <tr>
+                              <td class="FieldType">
+                                 <p class="FieldType"><span class="TypeRef" title="">uint</span></p>
+                              </td>
+                              <td class="FieldName">
+                                 <p class="FieldName">cooldownID</p>
+                              </td>
+                              <td class="FieldDesc">
+                                 <p class="FieldDesc"></p>
+                              </td>
+                           </tr>
+                           <tr>
+                              <td class="PadBottom" colspan="3"></td>
+                           </tr>
+                        </table>
+                     </td>
+                  </tr>
+                  <tr>
+                     <td class="CaseVal2">
+                        <p class="CaseVal2">0x00000004</p>
+                     </td>
+                     <td class="CaseFields2">
+                        <table cellspacing="0" cellpadding="0" class="List2">
+                           <tr>
+                              <td class="PadTop" colspan="3"></td>
+                           </tr>
+                           <tr>
+                              <td class="FieldType">
+                                 <p class="FieldType"><span class="TypeRef" title="">ulong</span></p>
+                              </td>
+                              <td class="FieldName">
+                                 <p class="FieldName">cooldownDuration</p>
+                              </td>
+                              <td class="FieldDesc">
+                                 <p class="FieldDesc"></p>
+                              </td>
+                           </tr>
+                           <tr>
+                              <td class="PadBottom" colspan="3"></td>
+                           </tr>
+                        </table>
+                     </td>
+                  </tr>
+                  <tr>
+                     <td class="CaseVal2">
+                        <p class="CaseVal2">0x00000008</p>
+                     </td>
+                     <td class="CaseFields2">
+                        <table cellspacing="0" cellpadding="0" class="List2">
+                           <tr>
+                              <td class="PadTop" colspan="3"></td>
+                           </tr>
+                           <tr>
+                              <td class="FieldType">
+                                 <p class="FieldType"><span class="TypeRef" title="uint">ObjectID</span></p>
+                              </td>
+                              <td class="FieldName">
+                                 <p class="FieldName">petOwner</p>
+                              </td>
+                              <td class="FieldDesc">
+                                 <p class="FieldDesc"></p>
+                              </td>
+                           </tr>
+                           <tr>
+                              <td class="PadBottom" colspan="3"></td>
+                           </tr>
+                        </table>
+                     </td>
+                  </tr>
+               </table>
+            </td>
+         </tr>
+         <tr>
+            <td colspan="3">
+               <p class="Align">Align to <b>DWORD</b> boundary
+               </p>
+            </td>
+         </tr>
+         <tr>
+            <td class="PadBottom" colspan="3"></td>
+         </tr>
+      </table>
+      <p class="Version">Messages.xml version 2017.11.14.0</p>
+   </body>
+</html>

@@ -1,0 +1,477 @@
+<html xmlns:fo="http://www.w3.org/1999/XSL/Format" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:fn="http://www.w3.org/2005/xpath-functions">
+   <head>
+      <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+      <title>AC Protocol version 2017.11.14.0</title>
+      <link type="text/css" rel="stylesheet" href="../Classic.css">
+   </head>
+   <body>
+      <table cellspacing="0" cellpadding="0" class="List2">
+         <tr>
+            <td colspan="3">
+               <p class="BoxHead2"><b>EnvrionChangeType</b>: uint
+               </p>
+            </td>
+         </tr>
+         <tr>
+            <td class="PadTop" colspan="2"></td>
+         </tr>
+         <tr>
+            <td colspan="3">
+               <p class="BoxDesc">The EnvrionChangeType identifies the environment option set.</p>
+            </td>
+         </tr>
+         <tr>
+            <td colspan="3" class="ValueRowSep">
+               <p class="ValueRowSep"></p>
+            </td>
+         </tr>
+         <tr>
+            <td class="ValueVal">
+               <p class="ValueVal">0x00</p>
+            </td>
+            <td class="ValueName">
+               <p class="ValueName">Clear</p>
+            </td>
+            <td class="ValueDesc">
+               <p class="ValueDesc">Removes all overrides</p>
+            </td>
+         </tr>
+         <tr>
+            <td colspan="3" class="ValueRowSep">
+               <p class="ValueRowSep"></p>
+            </td>
+         </tr>
+         <tr>
+            <td class="ValueVal">
+               <p class="ValueVal">0x01</p>
+            </td>
+            <td class="ValueName">
+               <p class="ValueName">RedFog</p>
+            </td>
+            <td class="ValueDesc">
+               <p class="ValueDesc">Sets Red Fog</p>
+            </td>
+         </tr>
+         <tr>
+            <td colspan="3" class="ValueRowSep">
+               <p class="ValueRowSep"></p>
+            </td>
+         </tr>
+         <tr>
+            <td class="ValueVal">
+               <p class="ValueVal">0x02</p>
+            </td>
+            <td class="ValueName">
+               <p class="ValueName">BlueFog</p>
+            </td>
+            <td class="ValueDesc">
+               <p class="ValueDesc">Sets Blue Fog</p>
+            </td>
+         </tr>
+         <tr>
+            <td colspan="3" class="ValueRowSep">
+               <p class="ValueRowSep"></p>
+            </td>
+         </tr>
+         <tr>
+            <td class="ValueVal">
+               <p class="ValueVal">0x03</p>
+            </td>
+            <td class="ValueName">
+               <p class="ValueName">WhiteFog</p>
+            </td>
+            <td class="ValueDesc">
+               <p class="ValueDesc">Sets White Fog</p>
+            </td>
+         </tr>
+         <tr>
+            <td colspan="3" class="ValueRowSep">
+               <p class="ValueRowSep"></p>
+            </td>
+         </tr>
+         <tr>
+            <td class="ValueVal">
+               <p class="ValueVal">0x04</p>
+            </td>
+            <td class="ValueName">
+               <p class="ValueName">GreenFog</p>
+            </td>
+            <td class="ValueDesc">
+               <p class="ValueDesc">Sets Green Fog</p>
+            </td>
+         </tr>
+         <tr>
+            <td colspan="3" class="ValueRowSep">
+               <p class="ValueRowSep"></p>
+            </td>
+         </tr>
+         <tr>
+            <td class="ValueVal">
+               <p class="ValueVal">0x05</p>
+            </td>
+            <td class="ValueName">
+               <p class="ValueName">BlackFog</p>
+            </td>
+            <td class="ValueDesc">
+               <p class="ValueDesc">Sets Black Fog</p>
+            </td>
+         </tr>
+         <tr>
+            <td colspan="3" class="ValueRowSep">
+               <p class="ValueRowSep"></p>
+            </td>
+         </tr>
+         <tr>
+            <td class="ValueVal">
+               <p class="ValueVal">0x06</p>
+            </td>
+            <td class="ValueName">
+               <p class="ValueName">BlackFog2</p>
+            </td>
+            <td class="ValueDesc">
+               <p class="ValueDesc">Sets Black Fog</p>
+            </td>
+         </tr>
+         <tr>
+            <td colspan="3" class="ValueRowSep">
+               <p class="ValueRowSep"></p>
+            </td>
+         </tr>
+         <tr>
+            <td class="ValueVal">
+               <p class="ValueVal">0x65</p>
+            </td>
+            <td class="ValueName">
+               <p class="ValueName">RoarSound</p>
+            </td>
+            <td class="ValueDesc">
+               <p class="ValueDesc">Play Roar Sound</p>
+            </td>
+         </tr>
+         <tr>
+            <td colspan="3" class="ValueRowSep">
+               <p class="ValueRowSep"></p>
+            </td>
+         </tr>
+         <tr>
+            <td class="ValueVal">
+               <p class="ValueVal">0x66</p>
+            </td>
+            <td class="ValueName">
+               <p class="ValueName">BellSound</p>
+            </td>
+            <td class="ValueDesc">
+               <p class="ValueDesc">Play Bell Sound</p>
+            </td>
+         </tr>
+         <tr>
+            <td colspan="3" class="ValueRowSep">
+               <p class="ValueRowSep"></p>
+            </td>
+         </tr>
+         <tr>
+            <td class="ValueVal">
+               <p class="ValueVal">0x67</p>
+            </td>
+            <td class="ValueName">
+               <p class="ValueName">Chant1Sound</p>
+            </td>
+            <td class="ValueDesc">
+               <p class="ValueDesc">Play Chant1 Sound</p>
+            </td>
+         </tr>
+         <tr>
+            <td colspan="3" class="ValueRowSep">
+               <p class="ValueRowSep"></p>
+            </td>
+         </tr>
+         <tr>
+            <td class="ValueVal">
+               <p class="ValueVal">0x68</p>
+            </td>
+            <td class="ValueName">
+               <p class="ValueName">Chant2Sound</p>
+            </td>
+            <td class="ValueDesc">
+               <p class="ValueDesc">Play Chant2 Sound</p>
+            </td>
+         </tr>
+         <tr>
+            <td colspan="3" class="ValueRowSep">
+               <p class="ValueRowSep"></p>
+            </td>
+         </tr>
+         <tr>
+            <td class="ValueVal">
+               <p class="ValueVal">0x69</p>
+            </td>
+            <td class="ValueName">
+               <p class="ValueName">DarkWhispers1Sound</p>
+            </td>
+            <td class="ValueDesc">
+               <p class="ValueDesc">Play DarkWhispers1 Sound</p>
+            </td>
+         </tr>
+         <tr>
+            <td colspan="3" class="ValueRowSep">
+               <p class="ValueRowSep"></p>
+            </td>
+         </tr>
+         <tr>
+            <td class="ValueVal">
+               <p class="ValueVal">0x6A</p>
+            </td>
+            <td class="ValueName">
+               <p class="ValueName">DarkWhispers2Sound</p>
+            </td>
+            <td class="ValueDesc">
+               <p class="ValueDesc">Play DarkWhispers2 Sound</p>
+            </td>
+         </tr>
+         <tr>
+            <td colspan="3" class="ValueRowSep">
+               <p class="ValueRowSep"></p>
+            </td>
+         </tr>
+         <tr>
+            <td class="ValueVal">
+               <p class="ValueVal">0x6B</p>
+            </td>
+            <td class="ValueName">
+               <p class="ValueName">DarkLaughSound</p>
+            </td>
+            <td class="ValueDesc">
+               <p class="ValueDesc">Play DarkLaugh Sound</p>
+            </td>
+         </tr>
+         <tr>
+            <td colspan="3" class="ValueRowSep">
+               <p class="ValueRowSep"></p>
+            </td>
+         </tr>
+         <tr>
+            <td class="ValueVal">
+               <p class="ValueVal">0x6C</p>
+            </td>
+            <td class="ValueName">
+               <p class="ValueName">DarkWindSound</p>
+            </td>
+            <td class="ValueDesc">
+               <p class="ValueDesc">Play DarkWind Sound</p>
+            </td>
+         </tr>
+         <tr>
+            <td colspan="3" class="ValueRowSep">
+               <p class="ValueRowSep"></p>
+            </td>
+         </tr>
+         <tr>
+            <td class="ValueVal">
+               <p class="ValueVal">0x6D</p>
+            </td>
+            <td class="ValueName">
+               <p class="ValueName">DarkSpeechSound</p>
+            </td>
+            <td class="ValueDesc">
+               <p class="ValueDesc">Play DarkSpeech Sound</p>
+            </td>
+         </tr>
+         <tr>
+            <td colspan="3" class="ValueRowSep">
+               <p class="ValueRowSep"></p>
+            </td>
+         </tr>
+         <tr>
+            <td class="ValueVal">
+               <p class="ValueVal">0x6E</p>
+            </td>
+            <td class="ValueName">
+               <p class="ValueName">DrumsSound</p>
+            </td>
+            <td class="ValueDesc">
+               <p class="ValueDesc">Play Drums Sound</p>
+            </td>
+         </tr>
+         <tr>
+            <td colspan="3" class="ValueRowSep">
+               <p class="ValueRowSep"></p>
+            </td>
+         </tr>
+         <tr>
+            <td class="ValueVal">
+               <p class="ValueVal">0x6F</p>
+            </td>
+            <td class="ValueName">
+               <p class="ValueName">GhostSpeakSound</p>
+            </td>
+            <td class="ValueDesc">
+               <p class="ValueDesc">Play GhostSpeak Sound</p>
+            </td>
+         </tr>
+         <tr>
+            <td colspan="3" class="ValueRowSep">
+               <p class="ValueRowSep"></p>
+            </td>
+         </tr>
+         <tr>
+            <td class="ValueVal">
+               <p class="ValueVal">0x70</p>
+            </td>
+            <td class="ValueName">
+               <p class="ValueName">BreathingSound</p>
+            </td>
+            <td class="ValueDesc">
+               <p class="ValueDesc">Play Breathing Sound</p>
+            </td>
+         </tr>
+         <tr>
+            <td colspan="3" class="ValueRowSep">
+               <p class="ValueRowSep"></p>
+            </td>
+         </tr>
+         <tr>
+            <td class="ValueVal">
+               <p class="ValueVal">0x71</p>
+            </td>
+            <td class="ValueName">
+               <p class="ValueName">HowlSound</p>
+            </td>
+            <td class="ValueDesc">
+               <p class="ValueDesc">Play Howl Sound</p>
+            </td>
+         </tr>
+         <tr>
+            <td colspan="3" class="ValueRowSep">
+               <p class="ValueRowSep"></p>
+            </td>
+         </tr>
+         <tr>
+            <td class="ValueVal">
+               <p class="ValueVal">0x72</p>
+            </td>
+            <td class="ValueName">
+               <p class="ValueName">LostSoulsSound</p>
+            </td>
+            <td class="ValueDesc">
+               <p class="ValueDesc">Play LostSouls Sound</p>
+            </td>
+         </tr>
+         <tr>
+            <td colspan="3" class="ValueRowSep">
+               <p class="ValueRowSep"></p>
+            </td>
+         </tr>
+         <tr>
+            <td class="ValueVal">
+               <p class="ValueVal">0x75</p>
+            </td>
+            <td class="ValueName">
+               <p class="ValueName">SquealSound</p>
+            </td>
+            <td class="ValueDesc">
+               <p class="ValueDesc">Play Squeal Sound</p>
+            </td>
+         </tr>
+         <tr>
+            <td colspan="3" class="ValueRowSep">
+               <p class="ValueRowSep"></p>
+            </td>
+         </tr>
+         <tr>
+            <td class="ValueVal">
+               <p class="ValueVal">0x76</p>
+            </td>
+            <td class="ValueName">
+               <p class="ValueName">Thunder1Sound</p>
+            </td>
+            <td class="ValueDesc">
+               <p class="ValueDesc">Play Thunder1 Sound</p>
+            </td>
+         </tr>
+         <tr>
+            <td colspan="3" class="ValueRowSep">
+               <p class="ValueRowSep"></p>
+            </td>
+         </tr>
+         <tr>
+            <td class="ValueVal">
+               <p class="ValueVal">0x77</p>
+            </td>
+            <td class="ValueName">
+               <p class="ValueName">Thunder2Sound</p>
+            </td>
+            <td class="ValueDesc">
+               <p class="ValueDesc">Play Thunder2 Sound</p>
+            </td>
+         </tr>
+         <tr>
+            <td colspan="3" class="ValueRowSep">
+               <p class="ValueRowSep"></p>
+            </td>
+         </tr>
+         <tr>
+            <td class="ValueVal">
+               <p class="ValueVal">0x78</p>
+            </td>
+            <td class="ValueName">
+               <p class="ValueName">Thunder3Sound</p>
+            </td>
+            <td class="ValueDesc">
+               <p class="ValueDesc">Play Thunder3 Sound</p>
+            </td>
+         </tr>
+         <tr>
+            <td colspan="3" class="ValueRowSep">
+               <p class="ValueRowSep"></p>
+            </td>
+         </tr>
+         <tr>
+            <td class="ValueVal">
+               <p class="ValueVal">0x79</p>
+            </td>
+            <td class="ValueName">
+               <p class="ValueName">Thunder4Sound</p>
+            </td>
+            <td class="ValueDesc">
+               <p class="ValueDesc">Play Thunder4 Sound</p>
+            </td>
+         </tr>
+         <tr>
+            <td colspan="3" class="ValueRowSep">
+               <p class="ValueRowSep"></p>
+            </td>
+         </tr>
+         <tr>
+            <td class="ValueVal">
+               <p class="ValueVal">0x7A</p>
+            </td>
+            <td class="ValueName">
+               <p class="ValueName">Thunder5Sound</p>
+            </td>
+            <td class="ValueDesc">
+               <p class="ValueDesc">Play Thunder5 Sound</p>
+            </td>
+         </tr>
+         <tr>
+            <td colspan="3" class="ValueRowSep">
+               <p class="ValueRowSep"></p>
+            </td>
+         </tr>
+         <tr>
+            <td class="ValueVal">
+               <p class="ValueVal">0x7B</p>
+            </td>
+            <td class="ValueName">
+               <p class="ValueName">Thunder6Sound</p>
+            </td>
+            <td class="ValueDesc">
+               <p class="ValueDesc">Play Thunder6 Sound</p>
+            </td>
+         </tr>
+         <tr>
+            <td class="PadBottom" colspan="2"></td>
+         </tr>
+      </table>
+      <p class="Version">Messages.xml version 2017.11.14.0</p>
+   </body>
+</html>

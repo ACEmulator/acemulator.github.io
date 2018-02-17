@@ -1,0 +1,289 @@
+<html xmlns:fo="http://www.w3.org/1999/XSL/Format" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:fn="http://www.w3.org/2005/xpath-functions">
+   <head>
+      <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+      <title>AC Protocol version 2017.11.14.0</title>
+      <link type="text/css" rel="stylesheet" href="../Classic.css">
+   </head>
+   <body>
+      <table cellspacing="0" cellpadding="0" class="List2">
+         <tr>
+            <td colspan="3">
+               <p class="BoxHead2"><b>CreatureAppraisalProfile</b></p>
+            </td>
+         </tr>
+         <tr>
+            <td class="PadTop" colspan="3"></td>
+         </tr>
+         <tr>
+            <td class="FieldType">
+               <p class="FieldType"><span class="TypeRef" title="">uint</span></p>
+            </td>
+            <td class="FieldName">
+               <p class="FieldName">flags</p>
+            </td>
+            <td class="FieldDesc">
+               <p class="FieldDesc">These Flags indication which members will be available for assess.</p>
+            </td>
+         </tr>
+         <tr>
+            <td colspan="3" class="FieldRowSep">
+               <p class="FieldRowSep"></p>
+            </td>
+         </tr>
+         <tr>
+            <td class="FieldType">
+               <p class="FieldType"><span class="TypeRef" title="">uint</span></p>
+            </td>
+            <td class="FieldName">
+               <p class="FieldName">health</p>
+            </td>
+            <td class="FieldDesc">
+               <p class="FieldDesc">current health</p>
+            </td>
+         </tr>
+         <tr>
+            <td colspan="3" class="FieldRowSep">
+               <p class="FieldRowSep"></p>
+            </td>
+         </tr>
+         <tr>
+            <td class="FieldType">
+               <p class="FieldType"><span class="TypeRef" title="">uint</span></p>
+            </td>
+            <td class="FieldName">
+               <p class="FieldName">healthMax</p>
+            </td>
+            <td class="FieldDesc">
+               <p class="FieldDesc">maximum health</p>
+            </td>
+         </tr>
+         <tr>
+            <td class="NestedTable" colspan="3">
+               <table cellspacing="0" cellpadding="0" class="CaseList2">
+                  <tr>
+                     <td colspan="2">
+                        <p class="CaseHead2">Choose valid sections by masking against <b>flags</b></p>
+                     </td>
+                  </tr>
+                  <tr>
+                     <td class="CaseVal2">
+                        <p class="CaseVal2">0x00000008</p>
+                     </td>
+                     <td class="CaseFields2">
+                        <table cellspacing="0" cellpadding="0" class="List2">
+                           <tr>
+                              <td class="PadTop" colspan="3"></td>
+                           </tr>
+                           <tr>
+                              <td class="FieldType">
+                                 <p class="FieldType"><span class="TypeRef" title="">uint</span></p>
+                              </td>
+                              <td class="FieldName">
+                                 <p class="FieldName">strength</p>
+                              </td>
+                              <td class="FieldDesc">
+                                 <p class="FieldDesc">strength</p>
+                              </td>
+                           </tr>
+                           <tr>
+                              <td colspan="3" class="FieldRowSep">
+                                 <p class="FieldRowSep"></p>
+                              </td>
+                           </tr>
+                           <tr>
+                              <td class="FieldType">
+                                 <p class="FieldType"><span class="TypeRef" title="">uint</span></p>
+                              </td>
+                              <td class="FieldName">
+                                 <p class="FieldName">endurance</p>
+                              </td>
+                              <td class="FieldDesc">
+                                 <p class="FieldDesc">endurance</p>
+                              </td>
+                           </tr>
+                           <tr>
+                              <td colspan="3" class="FieldRowSep">
+                                 <p class="FieldRowSep"></p>
+                              </td>
+                           </tr>
+                           <tr>
+                              <td class="FieldType">
+                                 <p class="FieldType"><span class="TypeRef" title="">uint</span></p>
+                              </td>
+                              <td class="FieldName">
+                                 <p class="FieldName">quickness</p>
+                              </td>
+                              <td class="FieldDesc">
+                                 <p class="FieldDesc">quickness</p>
+                              </td>
+                           </tr>
+                           <tr>
+                              <td colspan="3" class="FieldRowSep">
+                                 <p class="FieldRowSep"></p>
+                              </td>
+                           </tr>
+                           <tr>
+                              <td class="FieldType">
+                                 <p class="FieldType"><span class="TypeRef" title="">uint</span></p>
+                              </td>
+                              <td class="FieldName">
+                                 <p class="FieldName">coordination</p>
+                              </td>
+                              <td class="FieldDesc">
+                                 <p class="FieldDesc">coordination</p>
+                              </td>
+                           </tr>
+                           <tr>
+                              <td colspan="3" class="FieldRowSep">
+                                 <p class="FieldRowSep"></p>
+                              </td>
+                           </tr>
+                           <tr>
+                              <td class="FieldType">
+                                 <p class="FieldType"><span class="TypeRef" title="">uint</span></p>
+                              </td>
+                              <td class="FieldName">
+                                 <p class="FieldName">focus</p>
+                              </td>
+                              <td class="FieldDesc">
+                                 <p class="FieldDesc">focus</p>
+                              </td>
+                           </tr>
+                           <tr>
+                              <td colspan="3" class="FieldRowSep">
+                                 <p class="FieldRowSep"></p>
+                              </td>
+                           </tr>
+                           <tr>
+                              <td class="FieldType">
+                                 <p class="FieldType"><span class="TypeRef" title="">uint</span></p>
+                              </td>
+                              <td class="FieldName">
+                                 <p class="FieldName">self</p>
+                              </td>
+                              <td class="FieldDesc">
+                                 <p class="FieldDesc">self</p>
+                              </td>
+                           </tr>
+                           <tr>
+                              <td colspan="3" class="FieldRowSep">
+                                 <p class="FieldRowSep"></p>
+                              </td>
+                           </tr>
+                           <tr>
+                              <td class="FieldType">
+                                 <p class="FieldType"><span class="TypeRef" title="">uint</span></p>
+                              </td>
+                              <td class="FieldName">
+                                 <p class="FieldName">stamina</p>
+                              </td>
+                              <td class="FieldDesc">
+                                 <p class="FieldDesc">current stamina</p>
+                              </td>
+                           </tr>
+                           <tr>
+                              <td colspan="3" class="FieldRowSep">
+                                 <p class="FieldRowSep"></p>
+                              </td>
+                           </tr>
+                           <tr>
+                              <td class="FieldType">
+                                 <p class="FieldType"><span class="TypeRef" title="">uint</span></p>
+                              </td>
+                              <td class="FieldName">
+                                 <p class="FieldName">mana</p>
+                              </td>
+                              <td class="FieldDesc">
+                                 <p class="FieldDesc">current mana</p>
+                              </td>
+                           </tr>
+                           <tr>
+                              <td colspan="3" class="FieldRowSep">
+                                 <p class="FieldRowSep"></p>
+                              </td>
+                           </tr>
+                           <tr>
+                              <td class="FieldType">
+                                 <p class="FieldType"><span class="TypeRef" title="">uint</span></p>
+                              </td>
+                              <td class="FieldName">
+                                 <p class="FieldName">staminaMax</p>
+                              </td>
+                              <td class="FieldDesc">
+                                 <p class="FieldDesc">maximum stamina</p>
+                              </td>
+                           </tr>
+                           <tr>
+                              <td colspan="3" class="FieldRowSep">
+                                 <p class="FieldRowSep"></p>
+                              </td>
+                           </tr>
+                           <tr>
+                              <td class="FieldType">
+                                 <p class="FieldType"><span class="TypeRef" title="">uint</span></p>
+                              </td>
+                              <td class="FieldName">
+                                 <p class="FieldName">manaMax</p>
+                              </td>
+                              <td class="FieldDesc">
+                                 <p class="FieldDesc">maximum mana</p>
+                              </td>
+                           </tr>
+                           <tr>
+                              <td class="PadBottom" colspan="3"></td>
+                           </tr>
+                        </table>
+                     </td>
+                  </tr>
+                  <tr>
+                     <td class="CaseVal2">
+                        <p class="CaseVal2">0x00000001</p>
+                     </td>
+                     <td class="CaseFields2">
+                        <table cellspacing="0" cellpadding="0" class="List2">
+                           <tr>
+                              <td class="PadTop" colspan="3"></td>
+                           </tr>
+                           <tr>
+                              <td class="FieldType">
+                                 <p class="FieldType"><span class="TypeRef" title=""><a target="frameType" href="AttributeMask.html">AttributeMask</a></span></p>
+                              </td>
+                              <td class="FieldName">
+                                 <p class="FieldName">attrHighlight</p>
+                              </td>
+                              <td class="FieldDesc">
+                                 <p class="FieldDesc">highlight enable bitmask: 0=no, 1=yes</p>
+                              </td>
+                           </tr>
+                           <tr>
+                              <td colspan="3" class="FieldRowSep">
+                                 <p class="FieldRowSep"></p>
+                              </td>
+                           </tr>
+                           <tr>
+                              <td class="FieldType">
+                                 <p class="FieldType"><span class="TypeRef" title=""><a target="frameType" href="AttributeMask.html">AttributeMask</a></span></p>
+                              </td>
+                              <td class="FieldName">
+                                 <p class="FieldName">attrColor</p>
+                              </td>
+                              <td class="FieldDesc">
+                                 <p class="FieldDesc">highlight color bitmask: 0=red, 1=green</p>
+                              </td>
+                           </tr>
+                           <tr>
+                              <td class="PadBottom" colspan="3"></td>
+                           </tr>
+                        </table>
+                     </td>
+                  </tr>
+               </table>
+            </td>
+         </tr>
+         <tr>
+            <td class="PadBottom" colspan="3"></td>
+         </tr>
+      </table>
+      <p class="Version">Messages.xml version 2017.11.14.0</p>
+   </body>
+</html>

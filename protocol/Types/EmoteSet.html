@@ -1,0 +1,237 @@
+<html xmlns:fo="http://www.w3.org/1999/XSL/Format" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:fn="http://www.w3.org/2005/xpath-functions">
+   <head>
+      <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+      <title>AC Protocol version 2017.11.14.0</title>
+      <link type="text/css" rel="stylesheet" href="../Classic.css">
+   </head>
+   <body>
+      <table cellspacing="0" cellpadding="0" class="List2">
+         <tr>
+            <td colspan="3">
+               <p class="BoxHead2"><b>EmoteSet</b></p>
+            </td>
+         </tr>
+         <tr>
+            <td class="PadTop" colspan="3"></td>
+         </tr>
+         <tr>
+            <td class="FieldType">
+               <p class="FieldType"><span class="TypeRef" title=""><a target="frameType" href="EmoteCategory.html">EmoteCategory</a></span></p>
+            </td>
+            <td class="FieldName">
+               <p class="FieldName">category</p>
+            </td>
+            <td class="FieldDesc">
+               <p class="FieldDesc"></p>
+            </td>
+         </tr>
+         <tr>
+            <td colspan="3" class="FieldRowSep">
+               <p class="FieldRowSep"></p>
+            </td>
+         </tr>
+         <tr>
+            <td class="FieldType">
+               <p class="FieldType"><span class="TypeRef" title="">float</span></p>
+            </td>
+            <td class="FieldName">
+               <p class="FieldName">probability</p>
+            </td>
+            <td class="FieldDesc">
+               <p class="FieldDesc"></p>
+            </td>
+         </tr>
+         <tr>
+            <td class="NestedTable" colspan="3">
+               <table cellspacing="0" cellpadding="0" class="CaseList2">
+                  <tr>
+                     <td colspan="2">
+                        <p class="CaseHead2">Select one section based on the value of <b>category</b></p>
+                     </td>
+                  </tr>
+                  <tr>
+                     <td class="CaseVal2">
+                        <p class="CaseVal2">0x01 | 0x06</p>
+                     </td>
+                     <td class="CaseFields2">
+                        <table cellspacing="0" cellpadding="0" class="List2">
+                           <tr>
+                              <td class="PadTop" colspan="3"></td>
+                           </tr>
+                           <tr>
+                              <td class="FieldType">
+                                 <p class="FieldType"><span class="TypeRef" title="">uint</span></p>
+                              </td>
+                              <td class="FieldName">
+                                 <p class="FieldName">classID</p>
+                              </td>
+                              <td class="FieldDesc">
+                                 <p class="FieldDesc"></p>
+                              </td>
+                           </tr>
+                           <tr>
+                              <td class="PadBottom" colspan="3"></td>
+                           </tr>
+                        </table>
+                     </td>
+                  </tr>
+                  <tr>
+                     <td class="CaseVal2">
+                        <p class="CaseVal2">0x05</p>
+                     </td>
+                     <td class="CaseFields2">
+                        <table cellspacing="0" cellpadding="0" class="List2">
+                           <tr>
+                              <td class="PadTop" colspan="3"></td>
+                           </tr>
+                           <tr>
+                              <td class="FieldType">
+                                 <p class="FieldType"><span class="TypeRef" title="">uint</span></p>
+                              </td>
+                              <td class="FieldName">
+                                 <p class="FieldName">style</p>
+                              </td>
+                              <td class="FieldDesc">
+                                 <p class="FieldDesc"></p>
+                              </td>
+                           </tr>
+                           <tr>
+                              <td colspan="3" class="FieldRowSep">
+                                 <p class="FieldRowSep"></p>
+                              </td>
+                           </tr>
+                           <tr>
+                              <td class="FieldType">
+                                 <p class="FieldType"><span class="TypeRef" title="">uint</span></p>
+                              </td>
+                              <td class="FieldName">
+                                 <p class="FieldName">substyle</p>
+                              </td>
+                              <td class="FieldDesc">
+                                 <p class="FieldDesc"></p>
+                              </td>
+                           </tr>
+                           <tr>
+                              <td class="PadBottom" colspan="3"></td>
+                           </tr>
+                        </table>
+                     </td>
+                  </tr>
+                  <tr>
+                     <td class="CaseVal2">
+                        <p class="CaseVal2">0x0C | 0x0D | 0x16 | 0x17 | 0x1B | 0x1C | 0x1D | 0x1E | 0x1F | 0x20 | 0x21 | 0x22
+                           | 0x23 | 0x24 | 0x25 | 0x26
+                        </p>
+                     </td>
+                     <td class="CaseFields2">
+                        <table cellspacing="0" cellpadding="0" class="List2">
+                           <tr>
+                              <td class="PadTop" colspan="3"></td>
+                           </tr>
+                           <tr>
+                              <td class="FieldType">
+                                 <p class="FieldType"><span class="TypeRef" title="">string</span></p>
+                              </td>
+                              <td class="FieldName">
+                                 <p class="FieldName">quest</p>
+                              </td>
+                              <td class="FieldDesc">
+                                 <p class="FieldDesc"></p>
+                              </td>
+                           </tr>
+                           <tr>
+                              <td class="PadBottom" colspan="3"></td>
+                           </tr>
+                        </table>
+                     </td>
+                  </tr>
+                  <tr>
+                     <td class="CaseVal2">
+                        <p class="CaseVal2">0x02</p>
+                     </td>
+                     <td class="CaseFields2">
+                        <table cellspacing="0" cellpadding="0" class="List2">
+                           <tr>
+                              <td class="PadTop" colspan="3"></td>
+                           </tr>
+                           <tr>
+                              <td class="FieldType">
+                                 <p class="FieldType"><span class="TypeRef" title="">uint</span></p>
+                              </td>
+                              <td class="FieldName">
+                                 <p class="FieldName">vendorType</p>
+                              </td>
+                              <td class="FieldDesc">
+                                 <p class="FieldDesc"></p>
+                              </td>
+                           </tr>
+                           <tr>
+                              <td class="PadBottom" colspan="3"></td>
+                           </tr>
+                        </table>
+                     </td>
+                  </tr>
+                  <tr>
+                     <td class="CaseVal2">
+                        <p class="CaseVal2">0x0F</p>
+                     </td>
+                     <td class="CaseFields2">
+                        <table cellspacing="0" cellpadding="0" class="List2">
+                           <tr>
+                              <td class="PadTop" colspan="3"></td>
+                           </tr>
+                           <tr>
+                              <td class="FieldType">
+                                 <p class="FieldType"><span class="TypeRef" title="">float</span></p>
+                              </td>
+                              <td class="FieldName">
+                                 <p class="FieldName">minhealth</p>
+                              </td>
+                              <td class="FieldDesc">
+                                 <p class="FieldDesc"></p>
+                              </td>
+                           </tr>
+                           <tr>
+                              <td colspan="3" class="FieldRowSep">
+                                 <p class="FieldRowSep"></p>
+                              </td>
+                           </tr>
+                           <tr>
+                              <td class="FieldType">
+                                 <p class="FieldType"><span class="TypeRef" title="">float</span></p>
+                              </td>
+                              <td class="FieldName">
+                                 <p class="FieldName">maxhealth</p>
+                              </td>
+                              <td class="FieldDesc">
+                                 <p class="FieldDesc"></p>
+                              </td>
+                           </tr>
+                           <tr>
+                              <td class="PadBottom" colspan="3"></td>
+                           </tr>
+                        </table>
+                     </td>
+                  </tr>
+               </table>
+            </td>
+         </tr>
+         <tr>
+            <td class="FieldType">
+               <p class="FieldType"><span class="TypeRef" title="Struct"><a target="frameType" href="PackableList.html">PackableList</a></span>&lt;<span class="TypeRef" title="Struct"><a target="frameType" href="Emote.html">Emote</a></span>&gt;
+               </p>
+            </td>
+            <td class="FieldName">
+               <p class="FieldName">emotes</p>
+            </td>
+            <td class="FieldDesc">
+               <p class="FieldDesc">List of emotes</p>
+            </td>
+         </tr>
+         <tr>
+            <td class="PadBottom" colspan="3"></td>
+         </tr>
+      </table>
+      <p class="Version">Messages.xml version 2017.11.14.0</p>
+   </body>
+</html>

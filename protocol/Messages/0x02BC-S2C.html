@@ -1,0 +1,125 @@
+<html xmlns:fo="http://www.w3.org/1999/XSL/Format" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:fn="http://www.w3.org/2005/xpath-functions">
+   <head>
+      <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+      <title>AC Protocol version 2017.11.14.0</title>
+      <link type="text/css" rel="stylesheet" href="../Classic.css">
+   </head>
+   <body>
+      <table cellspacing="0" cellpadding="0" class="List1">
+         <tr>
+            <td colspan="3">
+               <p class="BoxHead1"><b>0x02BC:</b> Communication_HearRangedSpeech
+               </p>
+            </td>
+         </tr>
+         <tr>
+            <td class="PadTop" colspan="3"></td>
+         </tr>
+         <tr>
+            <td colspan="3">
+               <p class="BoxDesc">A message to be displayed in the chat window, spoken by a nearby player, NPC or creature</p>
+            </td>
+         </tr>
+         <tr>
+            <td colspan="3" class="SeqRowSep">
+               <p class="SeqRowSep"></p>
+            </td>
+         </tr>
+         <tr>
+            <td class="FieldType">
+               <p class="FieldType"><span class="TypeRef" title="uint"><a target="frameType" href="../Types/MessageType.html">MessageType</a></span></p>
+            </td>
+            <td class="FieldName">
+               <p class="FieldName">type = 0x02BC</p>
+            </td>
+            <td class="FieldDesc">
+               <p class="FieldDesc">type of this message</p>
+            </td>
+         </tr>
+         <tr>
+            <td colspan="3" class="FieldRowSep">
+               <p class="FieldRowSep"></p>
+            </td>
+         </tr>
+         <tr>
+            <td class="FieldType">
+               <p class="FieldType"><span class="TypeRef" title="">string</span></p>
+            </td>
+            <td class="FieldName">
+               <p class="FieldName">msg</p>
+            </td>
+            <td class="FieldDesc">
+               <p class="FieldDesc">message text</p>
+            </td>
+         </tr>
+         <tr>
+            <td colspan="3" class="FieldRowSep">
+               <p class="FieldRowSep"></p>
+            </td>
+         </tr>
+         <tr>
+            <td class="FieldType">
+               <p class="FieldType"><span class="TypeRef" title="">string</span></p>
+            </td>
+            <td class="FieldName">
+               <p class="FieldName">senderName</p>
+            </td>
+            <td class="FieldDesc">
+               <p class="FieldDesc">sender name</p>
+            </td>
+         </tr>
+         <tr>
+            <td colspan="3" class="FieldRowSep">
+               <p class="FieldRowSep"></p>
+            </td>
+         </tr>
+         <tr>
+            <td class="FieldType">
+               <p class="FieldType"><span class="TypeRef" title="uint">ObjectID</span></p>
+            </td>
+            <td class="FieldName">
+               <p class="FieldName">senderID</p>
+            </td>
+            <td class="FieldDesc">
+               <p class="FieldDesc">sender ID, must be between 0x50000001 and 0x6FFFFFFF to appear as clickable</p>
+            </td>
+         </tr>
+         <tr>
+            <td colspan="3" class="FieldRowSep">
+               <p class="FieldRowSep"></p>
+            </td>
+         </tr>
+         <tr>
+            <td class="FieldType">
+               <p class="FieldType"><span class="TypeRef" title="">float</span></p>
+            </td>
+            <td class="FieldName">
+               <p class="FieldName">range</p>
+            </td>
+            <td class="FieldDesc">
+               <p class="FieldDesc">broadcast range</p>
+            </td>
+         </tr>
+         <tr>
+            <td colspan="3" class="FieldRowSep">
+               <p class="FieldRowSep"></p>
+            </td>
+         </tr>
+         <tr>
+            <td class="FieldType">
+               <p class="FieldType"><span class="TypeRef" title=""><a target="frameType" href="../Types/ChatMessageType.html">ChatMessageType</a></span></p>
+            </td>
+            <td class="FieldName">
+               <p class="FieldName">type</p>
+            </td>
+            <td class="FieldDesc">
+               <p class="FieldDesc">message type</p>
+            </td>
+         </tr>
+         <tr>
+            <td class="PadBottom" colspan="3"></td>
+         </tr>
+      </table>
+      <p class="Version">Messages.xml version 2017.11.14.0</p>
+   </body>
+</html>

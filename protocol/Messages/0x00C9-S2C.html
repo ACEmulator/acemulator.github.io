@@ -1,0 +1,730 @@
+<html xmlns:fo="http://www.w3.org/1999/XSL/Format" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:fn="http://www.w3.org/2005/xpath-functions">
+   <head>
+      <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+      <title>AC Protocol version 2017.11.14.0</title>
+      <link type="text/css" rel="stylesheet" href="../Classic.css">
+   </head>
+   <body>
+      <table cellspacing="0" cellpadding="0" class="List1">
+         <tr>
+            <td colspan="3">
+               <p class="BoxHead1"><b>0x00C9:</b> Item_SetAppraiseInfo
+               </p>
+            </td>
+         </tr>
+         <tr>
+            <td class="PadTop" colspan="3"></td>
+         </tr>
+         <tr>
+            <td colspan="3">
+               <p class="BoxDesc">The result of an attempt to assess an item or creature.</p>
+            </td>
+         </tr>
+         <tr>
+            <td colspan="3" class="SeqRowSep">
+               <p class="SeqRowSep"></p>
+            </td>
+         </tr>
+         <tr class="SeqHeader">
+            <td class="FieldType">
+               <p class="FieldType"><span class="TypeRef" title="uint">uint</span></p>
+            </td>
+            <td class="FieldName">
+               <p class="FieldName">
+                  orderHdr = 
+                  
+                  0xF7B0
+                  
+               </p>
+            </td>
+            <td class="FieldDesc">
+               <p class="FieldDesc">Value indicating this message has a sequencing header</p>
+            </td>
+         </tr>
+         <tr>
+            <td colspan="3" class="SeqRowSep">
+               <p class="SeqRowSep"></p>
+            </td>
+         </tr>
+         <tr class="SeqHeader">
+            <td class="FieldType">
+               <p class="FieldType"><span class="TypeRef" title="uint">ObjectID</span></p>
+            </td>
+            <td class="FieldName">
+               <p class="FieldName">characterID</p>
+            </td>
+            <td class="FieldDesc">
+               <p class="FieldDesc">the object ID of the message recipient (should be you)</p>
+            </td>
+         </tr>
+         <tr>
+            <td colspan="3" class="SeqRowSep">
+               <p class="SeqRowSep"></p>
+            </td>
+         </tr>
+         <tr class="SeqHeader">
+            <td class="FieldType">
+               <p class="FieldType"><span class="TypeRef" title="uint">uint</span></p>
+            </td>
+            <td class="FieldName">
+               <p class="FieldName">sequence</p>
+            </td>
+            <td class="FieldDesc">
+               <p class="FieldDesc">sequence number</p>
+            </td>
+         </tr>
+         <tr>
+            <td colspan="3" class="SeqRowSep">
+               <p class="SeqRowSep"></p>
+            </td>
+         </tr>
+         <tr>
+            <td class="FieldType">
+               <p class="FieldType"><span class="TypeRef" title="uint"><a target="frameType" href="../Types/MessageType.html">MessageType</a></span></p>
+            </td>
+            <td class="FieldName">
+               <p class="FieldName">type = 0x00C9</p>
+            </td>
+            <td class="FieldDesc">
+               <p class="FieldDesc">type of this message</p>
+            </td>
+         </tr>
+         <tr>
+            <td colspan="3" class="FieldRowSep">
+               <p class="FieldRowSep"></p>
+            </td>
+         </tr>
+         <tr>
+            <td class="FieldType">
+               <p class="FieldType"><span class="TypeRef" title="uint">ObjectID</span></p>
+            </td>
+            <td class="FieldName">
+               <p class="FieldName">objectID</p>
+            </td>
+            <td class="FieldDesc">
+               <p class="FieldDesc">the object ID of the item or creature being assessed</p>
+            </td>
+         </tr>
+         <tr>
+            <td colspan="3" class="FieldRowSep">
+               <p class="FieldRowSep"></p>
+            </td>
+         </tr>
+         <tr>
+            <td class="FieldType">
+               <p class="FieldType"><span class="TypeRef" title="">uint</span></p>
+            </td>
+            <td class="FieldName">
+               <p class="FieldName">flags</p>
+            </td>
+            <td class="FieldDesc">
+               <p class="FieldDesc"></p>
+            </td>
+         </tr>
+         <tr>
+            <td colspan="3" class="FieldRowSep">
+               <p class="FieldRowSep"></p>
+            </td>
+         </tr>
+         <tr>
+            <td class="FieldType">
+               <p class="FieldType"><span class="TypeRef" title="">bool</span></p>
+            </td>
+            <td class="FieldName">
+               <p class="FieldName">success</p>
+            </td>
+            <td class="FieldDesc">
+               <p class="FieldDesc">assessment successful: 0=no, 1=yes</p>
+            </td>
+         </tr>
+         <tr>
+            <td class="NestedTable" colspan="3">
+               <table cellspacing="0" cellpadding="0" class="CaseList1">
+                  <tr>
+                     <td colspan="2">
+                        <p class="CaseHead1">Choose valid sections by masking against <b>flags</b></p>
+                     </td>
+                  </tr>
+                  <tr>
+                     <td class="CaseVal1">
+                        <p class="CaseVal1">0x00000001</p>
+                     </td>
+                     <td class="CaseFields1">
+                        <table cellspacing="0" cellpadding="0" class="List1">
+                           <tr>
+                              <td class="PadTop" colspan="3"></td>
+                           </tr>
+                           <tr>
+                              <td class="FieldType">
+                                 <p class="FieldType"><span class="TypeRef" title="Struct"><a target="frameType" href="../Types/PackableHashTable.html">PackableHashTable</a></span>&lt;<span class="TypeRef" title=""><a target="frameType" href="../Types/IntPropertyID.html">IntPropertyID</a></span>,<span class="TypeRef" title="">int</span>&gt;
+                                 </p>
+                              </td>
+                              <td class="FieldName">
+                                 <p class="FieldName">intStatsTable</p>
+                              </td>
+                              <td class="FieldDesc">
+                                 <p class="FieldDesc"></p>
+                              </td>
+                           </tr>
+                           <tr>
+                              <td class="PadBottom" colspan="3"></td>
+                           </tr>
+                        </table>
+                     </td>
+                  </tr>
+                  <tr>
+                     <td class="CaseVal1">
+                        <p class="CaseVal1">0x00002000</p>
+                     </td>
+                     <td class="CaseFields1">
+                        <table cellspacing="0" cellpadding="0" class="List1">
+                           <tr>
+                              <td class="PadTop" colspan="3"></td>
+                           </tr>
+                           <tr>
+                              <td class="FieldType">
+                                 <p class="FieldType"><span class="TypeRef" title="Struct"><a target="frameType" href="../Types/PackableHashTable.html">PackableHashTable</a></span>&lt;<span class="TypeRef" title=""><a target="frameType" href="../Types/Int64PropertyID.html">Int64PropertyID</a></span>,<span class="TypeRef" title="">long</span>&gt;
+                                 </p>
+                              </td>
+                              <td class="FieldName">
+                                 <p class="FieldName">int64StatsTable</p>
+                              </td>
+                              <td class="FieldDesc">
+                                 <p class="FieldDesc"></p>
+                              </td>
+                           </tr>
+                           <tr>
+                              <td class="PadBottom" colspan="3"></td>
+                           </tr>
+                        </table>
+                     </td>
+                  </tr>
+                  <tr>
+                     <td class="CaseVal1">
+                        <p class="CaseVal1">0x00000002</p>
+                     </td>
+                     <td class="CaseFields1">
+                        <table cellspacing="0" cellpadding="0" class="List1">
+                           <tr>
+                              <td class="PadTop" colspan="3"></td>
+                           </tr>
+                           <tr>
+                              <td class="FieldType">
+                                 <p class="FieldType"><span class="TypeRef" title="Struct"><a target="frameType" href="../Types/PackableHashTable.html">PackableHashTable</a></span>&lt;<span class="TypeRef" title=""><a target="frameType" href="../Types/BooleanPropertyID.html">BooleanPropertyID</a></span>,<span class="TypeRef" title="">bool</span>&gt;
+                                 </p>
+                              </td>
+                              <td class="FieldName">
+                                 <p class="FieldName">boolStatsTable</p>
+                              </td>
+                              <td class="FieldDesc">
+                                 <p class="FieldDesc"></p>
+                              </td>
+                           </tr>
+                           <tr>
+                              <td class="PadBottom" colspan="3"></td>
+                           </tr>
+                        </table>
+                     </td>
+                  </tr>
+                  <tr>
+                     <td class="CaseVal1">
+                        <p class="CaseVal1">0x00000004</p>
+                     </td>
+                     <td class="CaseFields1">
+                        <table cellspacing="0" cellpadding="0" class="List1">
+                           <tr>
+                              <td class="PadTop" colspan="3"></td>
+                           </tr>
+                           <tr>
+                              <td class="FieldType">
+                                 <p class="FieldType"><span class="TypeRef" title="Struct"><a target="frameType" href="../Types/PackableHashTable.html">PackableHashTable</a></span>&lt;<span class="TypeRef" title=""><a target="frameType" href="../Types/FloatPropertyID.html">FloatPropertyID</a></span>,<span class="TypeRef" title="">float</span>&gt;
+                                 </p>
+                              </td>
+                              <td class="FieldName">
+                                 <p class="FieldName">floatStatsTable</p>
+                              </td>
+                              <td class="FieldDesc">
+                                 <p class="FieldDesc"></p>
+                              </td>
+                           </tr>
+                           <tr>
+                              <td class="PadBottom" colspan="3"></td>
+                           </tr>
+                        </table>
+                     </td>
+                  </tr>
+                  <tr>
+                     <td class="CaseVal1">
+                        <p class="CaseVal1">0x00000008</p>
+                     </td>
+                     <td class="CaseFields1">
+                        <table cellspacing="0" cellpadding="0" class="List1">
+                           <tr>
+                              <td class="PadTop" colspan="3"></td>
+                           </tr>
+                           <tr>
+                              <td class="FieldType">
+                                 <p class="FieldType"><span class="TypeRef" title="Struct"><a target="frameType" href="../Types/PackableHashTable.html">PackableHashTable</a></span>&lt;<span class="TypeRef" title=""><a target="frameType" href="../Types/StringPropertyID.html">StringPropertyID</a></span>,<span class="TypeRef" title="">string</span>&gt;
+                                 </p>
+                              </td>
+                              <td class="FieldName">
+                                 <p class="FieldName">strStatsTable</p>
+                              </td>
+                              <td class="FieldDesc">
+                                 <p class="FieldDesc"></p>
+                              </td>
+                           </tr>
+                           <tr>
+                              <td class="PadBottom" colspan="3"></td>
+                           </tr>
+                        </table>
+                     </td>
+                  </tr>
+                  <tr>
+                     <td class="CaseVal1">
+                        <p class="CaseVal1">0x00001000</p>
+                     </td>
+                     <td class="CaseFields1">
+                        <table cellspacing="0" cellpadding="0" class="List1">
+                           <tr>
+                              <td class="PadTop" colspan="3"></td>
+                           </tr>
+                           <tr>
+                              <td class="FieldType">
+                                 <p class="FieldType"><span class="TypeRef" title="Struct"><a target="frameType" href="../Types/PackableHashTable.html">PackableHashTable</a></span>&lt;<span class="TypeRef" title=""><a target="frameType" href="../Types/DataPropertyID.html">DataPropertyID</a></span>,<span class="TypeRef" title="PackedDWORD">DataID</span>&gt;
+                                 </p>
+                              </td>
+                              <td class="FieldName">
+                                 <p class="FieldName">didStatsTable</p>
+                              </td>
+                              <td class="FieldDesc">
+                                 <p class="FieldDesc"></p>
+                              </td>
+                           </tr>
+                           <tr>
+                              <td class="PadBottom" colspan="3"></td>
+                           </tr>
+                        </table>
+                     </td>
+                  </tr>
+                  <tr>
+                     <td class="CaseVal1">
+                        <p class="CaseVal1">0x00000010</p>
+                     </td>
+                     <td class="CaseFields1">
+                        <table cellspacing="0" cellpadding="0" class="List1">
+                           <tr>
+                              <td class="PadTop" colspan="3"></td>
+                           </tr>
+                           <tr>
+                              <td class="FieldType">
+                                 <p class="FieldType"><span class="TypeRef" title="Struct"><a target="frameType" href="../Types/PSmartArray.html">PSmartArray</a></span>&lt;<span class="TypeRef" title="Struct"><a target="frameType" href="../Types/LayeredSpellID.html">LayeredSpellID</a></span>&gt;
+                                 </p>
+                              </td>
+                              <td class="FieldName">
+                                 <p class="FieldName">spellBook</p>
+                              </td>
+                              <td class="FieldDesc">
+                                 <p class="FieldDesc"></p>
+                              </td>
+                           </tr>
+                           <tr>
+                              <td class="PadBottom" colspan="3"></td>
+                           </tr>
+                        </table>
+                     </td>
+                  </tr>
+                  <tr>
+                     <td class="CaseVal1">
+                        <p class="CaseVal1">0x00000080</p>
+                     </td>
+                     <td class="CaseFields1">
+                        <table cellspacing="0" cellpadding="0" class="List1">
+                           <tr>
+                              <td class="PadTop" colspan="3"></td>
+                           </tr>
+                           <tr>
+                              <td class="FieldType">
+                                 <p class="FieldType"><span class="TypeRef" title="Struct"><a target="frameType" href="../Types/ArmorProfile.html">ArmorProfile</a></span></p>
+                              </td>
+                              <td class="FieldName">
+                                 <p class="FieldName">armorProfile</p>
+                              </td>
+                              <td class="FieldDesc">
+                                 <p class="FieldDesc"></p>
+                              </td>
+                           </tr>
+                           <tr>
+                              <td class="PadBottom" colspan="3"></td>
+                           </tr>
+                        </table>
+                     </td>
+                  </tr>
+                  <tr>
+                     <td class="CaseVal1">
+                        <p class="CaseVal1">0x00000100</p>
+                     </td>
+                     <td class="CaseFields1">
+                        <table cellspacing="0" cellpadding="0" class="List1">
+                           <tr>
+                              <td class="PadTop" colspan="3"></td>
+                           </tr>
+                           <tr>
+                              <td class="FieldType">
+                                 <p class="FieldType"><span class="TypeRef" title="Struct"><a target="frameType" href="../Types/CreatureAppraisalProfile.html">CreatureAppraisalProfile</a></span></p>
+                              </td>
+                              <td class="FieldName">
+                                 <p class="FieldName">creatureProfile</p>
+                              </td>
+                              <td class="FieldDesc">
+                                 <p class="FieldDesc"></p>
+                              </td>
+                           </tr>
+                           <tr>
+                              <td class="PadBottom" colspan="3"></td>
+                           </tr>
+                        </table>
+                     </td>
+                  </tr>
+                  <tr>
+                     <td class="CaseVal1">
+                        <p class="CaseVal1">0x00000020</p>
+                     </td>
+                     <td class="CaseFields1">
+                        <table cellspacing="0" cellpadding="0" class="List1">
+                           <tr>
+                              <td class="PadTop" colspan="3"></td>
+                           </tr>
+                           <tr>
+                              <td class="FieldType">
+                                 <p class="FieldType"><span class="TypeRef" title="Struct"><a target="frameType" href="../Types/WeaponProfile.html">WeaponProfile</a></span></p>
+                              </td>
+                              <td class="FieldName">
+                                 <p class="FieldName">weaponProfile</p>
+                              </td>
+                              <td class="FieldDesc">
+                                 <p class="FieldDesc"></p>
+                              </td>
+                           </tr>
+                           <tr>
+                              <td class="PadBottom" colspan="3"></td>
+                           </tr>
+                        </table>
+                     </td>
+                  </tr>
+                  <tr>
+                     <td class="CaseVal1">
+                        <p class="CaseVal1">0x00000040</p>
+                     </td>
+                     <td class="CaseFields1">
+                        <table cellspacing="0" cellpadding="0" class="List1">
+                           <tr>
+                              <td class="PadTop" colspan="3"></td>
+                           </tr>
+                           <tr>
+                              <td class="FieldType">
+                                 <p class="FieldType"><span class="TypeRef" title="Struct"><a target="frameType" href="../Types/HookAppraisalProfile.html">HookAppraisalProfile</a></span></p>
+                              </td>
+                              <td class="FieldName">
+                                 <p class="FieldName">hookAppraisalProfile</p>
+                              </td>
+                              <td class="FieldDesc">
+                                 <p class="FieldDesc"></p>
+                              </td>
+                           </tr>
+                           <tr>
+                              <td class="PadBottom" colspan="3"></td>
+                           </tr>
+                        </table>
+                     </td>
+                  </tr>
+                  <tr>
+                     <td class="CaseVal1">
+                        <p class="CaseVal1">0x00000200</p>
+                     </td>
+                     <td class="CaseFields1">
+                        <table cellspacing="0" cellpadding="0" class="List1">
+                           <tr>
+                              <td class="PadTop" colspan="3"></td>
+                           </tr>
+                           <tr>
+                              <td class="FieldType">
+                                 <p class="FieldType"><span class="TypeRef" title=""><a target="frameType" href="../Types/ArmorHighlightMask.html">ArmorHighlightMask</a></span></p>
+                              </td>
+                              <td class="FieldName">
+                                 <p class="FieldName">protHighlight</p>
+                              </td>
+                              <td class="FieldDesc">
+                                 <p class="FieldDesc">highlight enable bitmask: 0=no, 1=yes</p>
+                              </td>
+                           </tr>
+                           <tr>
+                              <td colspan="3" class="FieldRowSep">
+                                 <p class="FieldRowSep"></p>
+                              </td>
+                           </tr>
+                           <tr>
+                              <td class="FieldType">
+                                 <p class="FieldType"><span class="TypeRef" title=""><a target="frameType" href="../Types/ArmorHighlightMask.html">ArmorHighlightMask</a></span></p>
+                              </td>
+                              <td class="FieldName">
+                                 <p class="FieldName">protColor</p>
+                              </td>
+                              <td class="FieldDesc">
+                                 <p class="FieldDesc">highlight color bitmask: 0=red, 1=green</p>
+                              </td>
+                           </tr>
+                           <tr>
+                              <td class="PadBottom" colspan="3"></td>
+                           </tr>
+                        </table>
+                     </td>
+                  </tr>
+                  <tr>
+                     <td class="CaseVal1">
+                        <p class="CaseVal1">0x00000800</p>
+                     </td>
+                     <td class="CaseFields1">
+                        <table cellspacing="0" cellpadding="0" class="List1">
+                           <tr>
+                              <td class="PadTop" colspan="3"></td>
+                           </tr>
+                           <tr>
+                              <td class="FieldType">
+                                 <p class="FieldType"><span class="TypeRef" title=""><a target="frameType" href="../Types/WeaponHighlightMask.html">WeaponHighlightMask</a></span></p>
+                              </td>
+                              <td class="FieldName">
+                                 <p class="FieldName">weapHighlight</p>
+                              </td>
+                              <td class="FieldDesc">
+                                 <p class="FieldDesc">highlight enable bitmask: 0=no, 1=yes</p>
+                              </td>
+                           </tr>
+                           <tr>
+                              <td colspan="3" class="FieldRowSep">
+                                 <p class="FieldRowSep"></p>
+                              </td>
+                           </tr>
+                           <tr>
+                              <td class="FieldType">
+                                 <p class="FieldType"><span class="TypeRef" title=""><a target="frameType" href="../Types/WeaponHighlightMask.html">WeaponHighlightMask</a></span></p>
+                              </td>
+                              <td class="FieldName">
+                                 <p class="FieldName">weapColor</p>
+                              </td>
+                              <td class="FieldDesc">
+                                 <p class="FieldDesc">highlight color bitmask: 0=red, 1=green</p>
+                              </td>
+                           </tr>
+                           <tr>
+                              <td class="PadBottom" colspan="3"></td>
+                           </tr>
+                        </table>
+                     </td>
+                  </tr>
+                  <tr>
+                     <td class="CaseVal1">
+                        <p class="CaseVal1">0x00000400</p>
+                     </td>
+                     <td class="CaseFields1">
+                        <table cellspacing="0" cellpadding="0" class="List1">
+                           <tr>
+                              <td class="PadTop" colspan="3"></td>
+                           </tr>
+                           <tr>
+                              <td class="FieldType">
+                                 <p class="FieldType"><span class="TypeRef" title=""><a target="frameType" href="../Types/ResistHighlightMask.html">ResistHighlightMask</a></span></p>
+                              </td>
+                              <td class="FieldName">
+                                 <p class="FieldName">resistHighlight</p>
+                              </td>
+                              <td class="FieldDesc">
+                                 <p class="FieldDesc">highlight enable bitmask: 0=no, 1=yes</p>
+                              </td>
+                           </tr>
+                           <tr>
+                              <td colspan="3" class="FieldRowSep">
+                                 <p class="FieldRowSep"></p>
+                              </td>
+                           </tr>
+                           <tr>
+                              <td class="FieldType">
+                                 <p class="FieldType"><span class="TypeRef" title=""><a target="frameType" href="../Types/ResistHighlightMask.html">ResistHighlightMask</a></span></p>
+                              </td>
+                              <td class="FieldName">
+                                 <p class="FieldName">resistColor</p>
+                              </td>
+                              <td class="FieldDesc">
+                                 <p class="FieldDesc">highlight color bitmask: 0=red, 1=green</p>
+                              </td>
+                           </tr>
+                           <tr>
+                              <td class="PadBottom" colspan="3"></td>
+                           </tr>
+                        </table>
+                     </td>
+                  </tr>
+                  <tr>
+                     <td class="CaseVal1">
+                        <p class="CaseVal1">0x00004000</p>
+                     </td>
+                     <td class="CaseFields1">
+                        <table cellspacing="0" cellpadding="0" class="List1">
+                           <tr>
+                              <td class="PadTop" colspan="3"></td>
+                           </tr>
+                           <tr>
+                              <td class="FieldType">
+                                 <p class="FieldType"><span class="TypeRef" title="">uint</span></p>
+                              </td>
+                              <td class="FieldName">
+                                 <p class="FieldName">baseArmorHead</p>
+                              </td>
+                              <td class="FieldDesc">
+                                 <p class="FieldDesc">Armor level</p>
+                              </td>
+                           </tr>
+                           <tr>
+                              <td colspan="3" class="FieldRowSep">
+                                 <p class="FieldRowSep"></p>
+                              </td>
+                           </tr>
+                           <tr>
+                              <td class="FieldType">
+                                 <p class="FieldType"><span class="TypeRef" title="">uint</span></p>
+                              </td>
+                              <td class="FieldName">
+                                 <p class="FieldName">baseArmorChest</p>
+                              </td>
+                              <td class="FieldDesc">
+                                 <p class="FieldDesc">Armor level</p>
+                              </td>
+                           </tr>
+                           <tr>
+                              <td colspan="3" class="FieldRowSep">
+                                 <p class="FieldRowSep"></p>
+                              </td>
+                           </tr>
+                           <tr>
+                              <td class="FieldType">
+                                 <p class="FieldType"><span class="TypeRef" title="">uint</span></p>
+                              </td>
+                              <td class="FieldName">
+                                 <p class="FieldName">baseArmorGroin</p>
+                              </td>
+                              <td class="FieldDesc">
+                                 <p class="FieldDesc">Armor level</p>
+                              </td>
+                           </tr>
+                           <tr>
+                              <td colspan="3" class="FieldRowSep">
+                                 <p class="FieldRowSep"></p>
+                              </td>
+                           </tr>
+                           <tr>
+                              <td class="FieldType">
+                                 <p class="FieldType"><span class="TypeRef" title="">uint</span></p>
+                              </td>
+                              <td class="FieldName">
+                                 <p class="FieldName">baseArmorBicep</p>
+                              </td>
+                              <td class="FieldDesc">
+                                 <p class="FieldDesc">Armor level</p>
+                              </td>
+                           </tr>
+                           <tr>
+                              <td colspan="3" class="FieldRowSep">
+                                 <p class="FieldRowSep"></p>
+                              </td>
+                           </tr>
+                           <tr>
+                              <td class="FieldType">
+                                 <p class="FieldType"><span class="TypeRef" title="">uint</span></p>
+                              </td>
+                              <td class="FieldName">
+                                 <p class="FieldName">baseArmorWrist</p>
+                              </td>
+                              <td class="FieldDesc">
+                                 <p class="FieldDesc">Armor level</p>
+                              </td>
+                           </tr>
+                           <tr>
+                              <td colspan="3" class="FieldRowSep">
+                                 <p class="FieldRowSep"></p>
+                              </td>
+                           </tr>
+                           <tr>
+                              <td class="FieldType">
+                                 <p class="FieldType"><span class="TypeRef" title="">uint</span></p>
+                              </td>
+                              <td class="FieldName">
+                                 <p class="FieldName">baseArmorHand</p>
+                              </td>
+                              <td class="FieldDesc">
+                                 <p class="FieldDesc">Armor level</p>
+                              </td>
+                           </tr>
+                           <tr>
+                              <td colspan="3" class="FieldRowSep">
+                                 <p class="FieldRowSep"></p>
+                              </td>
+                           </tr>
+                           <tr>
+                              <td class="FieldType">
+                                 <p class="FieldType"><span class="TypeRef" title="">uint</span></p>
+                              </td>
+                              <td class="FieldName">
+                                 <p class="FieldName">baseArmorThigh</p>
+                              </td>
+                              <td class="FieldDesc">
+                                 <p class="FieldDesc">Armor level</p>
+                              </td>
+                           </tr>
+                           <tr>
+                              <td colspan="3" class="FieldRowSep">
+                                 <p class="FieldRowSep"></p>
+                              </td>
+                           </tr>
+                           <tr>
+                              <td class="FieldType">
+                                 <p class="FieldType"><span class="TypeRef" title="">uint</span></p>
+                              </td>
+                              <td class="FieldName">
+                                 <p class="FieldName">baseArmorShin</p>
+                              </td>
+                              <td class="FieldDesc">
+                                 <p class="FieldDesc">Armor level</p>
+                              </td>
+                           </tr>
+                           <tr>
+                              <td colspan="3" class="FieldRowSep">
+                                 <p class="FieldRowSep"></p>
+                              </td>
+                           </tr>
+                           <tr>
+                              <td class="FieldType">
+                                 <p class="FieldType"><span class="TypeRef" title="">uint</span></p>
+                              </td>
+                              <td class="FieldName">
+                                 <p class="FieldName">baseArmorFoot</p>
+                              </td>
+                              <td class="FieldDesc">
+                                 <p class="FieldDesc">Armor level</p>
+                              </td>
+                           </tr>
+                           <tr>
+                              <td class="PadBottom" colspan="3"></td>
+                           </tr>
+                        </table>
+                     </td>
+                  </tr>
+               </table>
+            </td>
+         </tr>
+         <tr>
+            <td class="PadBottom" colspan="3"></td>
+         </tr>
+      </table>
+      <p class="Version">Messages.xml version 2017.11.14.0</p>
+   </body>
+</html>
