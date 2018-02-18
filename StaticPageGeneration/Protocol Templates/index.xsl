@@ -1,6 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <xsl:stylesheet version="2.0" xmlns:xsl="http://www.w3.org/1999/XSL/Transform" xmlns:fo="http://www.w3.org/1999/XSL/Format" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:fn="http://www.w3.org/2005/xpath-functions">
-	<xsl:template name="index" match="/">
+  <xsl:output method="html" doctype-public="-//W3C//DTD HTML 4.0 Strict//EN" encoding="UTF-8"/>
+  <xsl:template name="index" match="/">
 		<xsl:result-document href="./index.html" method="html">
 			<html>
 				<head>

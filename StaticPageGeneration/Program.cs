@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
+using System.Reflection;
 using System.Text;
 using System.Threading.Tasks;
 using Saxon.Api;
@@ -12,9 +13,10 @@ namespace StaticPageGeneration
     {
         static void Main(string[] args)
         {
+            string currentDirectory = Path.GetDirectoryName(Assembly.GetEntryAssembly().Location);
             // It is important to have a trailing backslash at the end of our output directory.
-            var outputDirectory = Path.GetFullPath(@"..\..\..\") + @"\protocol\";
-            var templateDirectory = Path.GetFullPath(@"..\..\") + @"Protocol Templates\";
+            var outputDirectory = Path.GetFullPath(Path.Combine(currentDirectory, @"..\..\..\")) + @"protocol\";
+            var templateDirectory = Path.GetFullPath(Path.Combine(currentDirectory, @"..\..\")) + @"Protocol Templates\";
             var xmlPath = templateDirectory + "Messages.xml";
             var transform = new Transform();
             var filelist = Directory.GetFiles(templateDirectory, "*.xsl");
@@ -24,8 +26,7 @@ namespace StaticPageGeneration
             {
                 transform.Execute(xmlPath, file, outputDirectory);
             }
-            Console.WriteLine("All transforms have finished. Press enter to exit.");
-            Console.ReadLine();
+            Console.WriteLine("All transforms have finished.");
         }
     }
 
