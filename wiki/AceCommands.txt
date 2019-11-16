@@ -1,0 +1,215 @@
+0:10:09 Copying chat to AceCommands.txt.  Run command again with no arguments to turn off logging.
+0:10:18 Note: You may substitute a forward slash (/) for the at symbol (@).
+For more information, type @acehelp < command >.
+@accountcreate - Creates a new account.
+@acecommands - Lists all commands.
+@acehelp - Displays help.
+@addallspells - Adds all known spells to your own spellbook.
+@addalltitles - Add all titles to yourself
+@addspell - Adds the specified spell to your own spellbook.
+@addtitle - Add title to yourself
+@adminhouse - 
+@adminui - 
+@adminvision - Allows the admin to see admin - only visible items.
+@allstats - Displays a summary of all server statistics and usage
+@animation - Sends a MovementEvent to you.
+@attackable - Sets whether monsters will attack you or not.
+@auditobjectmaint - Iterates over physics objects to find leaks
+@ban - 
+@banlist - 
+@barbershop - 
+@bestow - 
+@boot - Boots the session of the logged in character from the server and displays CoC Violation Warning or supplied reason.
+<who> can be either a character iid or character name.
+@bornagain - 
+@buff - Buffs you (or a player) with all beneficial spells.
+@cacheallweenies - Loads and caches all Weenies. This may take 15+ minutes and is very heavy on the database.
+@cancel-shutdown - Stops an active server shutdown.
+@chatdump - Spews 1000 lines of text to you.
+@ci - Creates an object in your inventory.
+@ciloot - Generates randomized loot in player's inventory
+@cirand - Creates random objects in your inventory.
+@cisalvage - Create a salvage bag in your inventory
+@clearphysicscaches - Clears Physics Object Caches
+@cloak - Sets your cloaking state.
+@cm - 
+@comps - Creates spell component items in your inventory for testing.
+@contract - Send a contract to yourself.
+@copychar - 
+@crack - Cracks the most recently appraised locked target.
+@create - Creates an object in the world.
+@currency - Creates some currency items in your inventory for testing.
+@databaseperftest - Test server/database performance.
+@databasequeueinfo - Show database queue information.
+@de_n - 
+@de_s - 
+@deaf - 
+@deathxp - Displays how much experience the last appraised creature iw worth when killed.
+@debugboard - Shows the current chess board state
+@debugchess - Shows the chess move history for a player
+@debugdamage - Toggles the display for player damage info
+@debugemote - Enables emote debugging for the last appraised object
+@debugmove - Toggles movement debugging for the last appraised monster
+@delete - Deletes the selected object.
+@destructionqueue - Shows the list of previously visible objects queued for destruction for this player
+@direct_emote_name - 
+@direct_emote_select - 
+@dispel - Removes all enchantments from the player
+@dist - Returns the distance to the last appraised object
+@draw - 
+@dumpattackers - 
+@echo - Send text back to yourself.
+@echoflags - Echo flags back to you
+@effect - Plays an effect.
+@enable-aetheria - Enables the aetheria slots for the player
+@equiptest - Simulates equipping a new item to your character, replacing all other items.
+@event - Maniuplates the state of an event
+@fellowbuff - Buffs your fellowship (or a player's fellowship) with all beneficial spells.
+@fetchbool - Fetches a server property that is a bool
+@fetchdouble - Fetches a server property that is a double
+@fetchlong - Fetches a server property that is a long
+@fetchstring - Fetches a server property that is a string
+@finger - Show the given character's account name or vice-versa.
+@fix-allegiances - Fixes the monarch data for allegiances
+@fixbusy - Attempts to remove the hourglass / fix the busy state for the player
+@fix-shortcut-bars - Outputs to console SQL scripting to fix the players with duplicate items on their shortcut bars.
+@food - Creates some food items in your inventory for testing.
+@forcegc - Forces .NET Garbage Collection
+@forcelogoff - Force log off of last appraised character
+@forcepos - Toggles server monster position
+@freeze - 
+@fumble - 
+@gag - Prevents a character from talking.
+@gamecast - Sends a world-wide broadcast.
+@gamecastemote - Sends text to all players, formatted exactly as entered.
+@gamecastlocal - Sends a server-wide broadcast.
+@gamecastlocalemote - Sends text to all players within chat range, formatted exactly as entered.
+@getenchantments - Shows the enchantments for the last appraised item
+@getproperty - Gets a property for the last appraised object
+@givemana - Gives mana to the last appraised object
+@god - 
+@gps - Display location.
+@grantxp - Give XP to yourself (or the specified character).
+@harmself - 
+@heal - Heals yourself(or the selected creature)
+@home - Teleports you to your sanctuary position.
+@housekeep - 
+@idlist - Shows the next ID that will be allocated from GuidManager.
+@inv - Creates sample items, foci and containers in your inventory.
+@junk - Toggle synthetically junky S2C and C2S connections of a 10% payload corruption rate.
+@junk_c2s - Toggle synthetically junky C2S connection of a 10% payload corruption rate.
+@junk_s2c - Toggle synthetically junky S2C connection of a 10% payload corruption rate.
+@knownobjs - Shows the list of objects known to this player
+@knownplayers - Shows the list of players known to this player
+@landblockperformance - Displays a summary of landblock performance statistics
+@lbinterval - 
+@lbthresh - 
+@limbo - 
+@listplayers - Displays all of the active players connected too the server.
+@listpositions - Displays all available saved character positions from the database.
+@loadalllandblocks - Loads all Landblocks. This is VERY crude. Do NOT use it on a live server!!! It will likely crash the server.  Landblock resources will be loaded async and will continue to do work even after all landblocks have been loaded.
+@location - 
+@lootgen - Generate a piece of loot from the LootGenerationFactory. Syntax is "lootgen (wcid) <tier>"
+@lostest - Tests for direct visibilty with latest appraised object
+@magic god - 
+@makeiou - Make an IOU and put it in your inventory
+@modifybool - Modifies a server property that is a bool
+@modifydouble - Modifies a server property that is a double
+@modifylong - Modifies a server property that is a long
+@modifypropertydesc - Modifies a server property's description
+@modifystring - Modifies a server property that is a string
+@morph - Morphs your bodily form into that of the specified creature. Be careful with this one!
+@movement - Movement testing command, to be removed soon
+@MoveTo - Used to test the MoveToObject message.   It will spawn a training wand in front of you and then move to that object.
+@mrt - Toggles the ability to bypass housing boundaries
+@myiid - Displays your Instance ID(IID)
+@myloc - Shows the current player location, from the server perspective
+@myquests - Shows your quest log
+@myserver - 
+@netstats - View network statistics
+@neversaydie - Turn immortality on or off.
+@nudge - Correct player position cell ID after teleporting into black space.
+@passwd - Change your account password.
+@pk - sets your own PK state.
+@playsound - Plays a sound.
+@pop - Show current world population
+@portal_bypass - Toggles the ability to bypass portal restrictions
+@propertydump - Lists all properties for the last world object you examined.
+@qst - 
+@queryplugin - 
+@querypluginlist - 
+@radar - 
+@raise - 
+@rares dump - 
+@regen - 
+@reloadsysmsg - 
+@remove - 
+@rename - Rename a character. (Do NOT include +'s for admin names)
+@repeat - 
+@reportbug - 
+@resyncproperties - Resync the properties database
+@run - Temporarily boosts your run skill.
+@safecomps - Enables / disables spell component burning
+@save - Sets your sanctuary position or a named recall point.
+@save-now - Saves your session.
+@serverlist - 
+@serverperformance - Displays a summary of server performance statistics
+@serverstatus - Displays a summary of server statistics and usage
+@set-accountaccess - Change the access level of an account.
+@set-accountpassword - Set the account password.
+@setadvclass - 
+@set-characteraccess - Sets the access level for the character
+@setcoin - Set Coin display debug only usage
+@sethealth - sets your current health to a specific value.
+@setposition - Saves the supplied character position type to the database.
+@setproperty - Sets a property for the last appraised object
+@setpurchasetime - Sets the house purchase time for this player
+@set-shutdown-interval - Changes the delay, in seconds, before the server will shutdown.
+@setvital - Sets the specified vital to a specified value
+@show-allegiances - Shows all of the allegiance chains on the server.
+@showsession - Show IP and ID for network session of last appraised character
+@showstats - Shows a list of player's current attribute/skill levels in console window
+@shutdown - Begins the server shutdown process. Optionally displays a shutdown message, if a string is passed.
+@smite - Kills the selected target or all monsters in radar range if "all" is specified.
+@snoop - 
+@spendallxp - Spend all available XP on Attributes, Vitals and Skills.
+@spendxp - 
+@splits - Creates some stackable items in your inventory for testing.
+@sticky - 
+@stop-now - Shuts the server down, immediately!
+@stormnumstormed - 
+@stormthresh - 
+@tele - Teleports you(or a player) to some location.
+@teleallto - Teleports all players to a player. If no target is specified, all players will be teleported to you.
+@teledist - Teleports a some distance ahead of the last object spawned
+@teledungeon - <dungeon name or landblock>
+@teleloc - Teleport yourself to the specified location.
+@telepoi - Teleport yourself to a named Point of Interest
+@telereturn - Return a player to their previous location.
+@teleto - Teleport yourself to a player
+@teletome - Teleports a player to your current location.
+@teletype - Teleport to a saved character position.
+@telexyz - Teleport to a location.
+@testdeathitems - Test death item selection
+@time - Displays the server's current game time.
+@trainskill - 
+@trash_c2s - Trash (corrupt) the next C2S packet that arrives.
+@trash_s2c - Trash (corrupt) the next S2C packet that is sent.
+@trophies - 
+@turnto - Turns the last appraised object to the player
+@unban - 
+@unfreeze - 
+@ungag - Allows a gagged character to talk again.
+@unlock - 
+@userlimit - 
+@verify-xp - fixes skill ranks from spec temple
+@visibleobjs - Shows the list of objects known to this player
+@visibleplayers - Shows the list of players visible to this player
+@voyeurs - Shows the list of voyeurs for this player
+@watchmen - Displays a list of accounts with the specified level of admin access.
+@we - Sends text to all players, formatted exactly as entered.
+@weapons - Creates testing items in your inventory.
+@whoami - Shows you your GUIDs.
+@world - Open or Close world to player access.
+0:10:18 Wrote long string (10573 characters) to log file instead of to the screen.
+0:10:26 Chat log AceCommands.txt closed.
